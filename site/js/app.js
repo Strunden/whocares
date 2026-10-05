@@ -51,6 +51,8 @@
   function isJunk(s) {
     const v = cleanProse(s).toLowerCase();
     if (!v) return true;
+    if (v.replace(/\.+$/, "").trim() === "used by older adults") return true;
+    if (/^it is a seniors\b/.test(v)) return true;
     return /not found|hypothetical|fetch fail|deep dive pending|http\s*404|domain for sale|see card|see theme|pickable-menu|thesis-cards|stressed, still|europe\/berlin/.test(v);
   }
   function safeUrl(u) {
@@ -85,19 +87,6 @@
     const s = cleanProse(e.summary || "");
     if (!s || isJunk(s)) return "";
     return s;
-  }
-  function knownCountry(e) {
-    const original = nd(e.country || "");
-    if (!original.trim()) return "";
-    if (/index|page says|page shows|not named|not confirmed|not printed|not opened/i.test(original)) return "";
-    let raw = original.split(";")[0].replace(/\s*\([^)]*\)/g, "").trim();
-    raw = raw.replace(/\s*\/\s*EU\b.*/i, "").replace(/\s*\(focus\).*/i, "").trim();
-    if (/global/i.test(raw) && /germany|\bDE\b/i.test(original)) return "Germany";
-    if (/^united states\s*\/\s*canada$/i.test(raw)) return "United States and Canada";
-    if (/^canada\s*\/\s*(us|usa)$/i.test(raw)) return "Canada and the United States";
-    if (/\//.test(raw)) return "";
-    if (!raw || /^global$/i.test(raw)) return "";
-    return raw;
   }
   const COUNTRY_NAMES = {
     AE: "United Arab Emirates", AR: "Argentina", AT: "Austria", AU: "Australia",
@@ -533,7 +522,7 @@
     const killed = isKilled(e);
     const kind = e.type === "idea" ? "Idea" : "Company";
     const origin = e.type === "company" ? countryInfo(e) : null;
-    const country = origin ? origin.name : (e.type === "idea" ? knownCountry(e) : "");
+    const country = origin ? origin.name : "";
     const headMeta = country ? kind + ", " + country : kind;
     const summary = displaySummary(e);
     const draft = e.writeup && typeof e.writeup === "object";

@@ -119,7 +119,7 @@ When a write-up passes, it is always open, directly under the name and the one-l
 
 `facts` fields, each with its own `source` URL:
 
-- `country`: `{code, source}`. `code` is ISO 3166-1 alpha-2. The list shows that country's flag next to the name, and the detail page shows it beside Headquarters. Leave it out when you cannot point at a public page. A domain such as `.de` is a hint to check the imprint, not proof. Ideas do not get a flag.
+- `country`: `{code, source}`. `code` is ISO 3166-1 alpha-2. The list shows that country's flag next to the name, and the detail page shows it beside Headquarters. The subtitle under the name is "Company, Germany" (or whichever verified country) only when this fact is present. With no verified country the subtitle is "Company", or "Idea" for an idea. The old free-text `country` string from the import is not shown. Leave the fact out when you cannot point at a public page. A domain such as `.de` is a hint to check the imprint, not proof. Ideas do not get a flag.
 - `founded`: `{year, source}`
 - `hq`: `{city, source}`
 - `founders`: `[{name, linkedin, source}]`. `linkedin` only when that profile URL was found.
