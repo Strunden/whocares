@@ -15563,7 +15563,7 @@
       "id": "company-call-knut",
       "type": "company",
       "name": "Call Knut",
-      "summary": "Calls elderly relatives by voice to check in and monitor them.",
+      "summary": "Phoned older relatives on a schedule and asked if they were well.",
       "status": "new_this_scan",
       "kill_reason": null,
       "kill_source": null,
@@ -15614,6 +15614,12 @@
           "url": "https://www.linkedin.com/company/callknut",
           "source": "https://www.linkedin.com/company/callknut"
         }
+      },
+      "closed": {
+        "state": "shut_down",
+        "date": "2025-10-10",
+        "text": "Bankruptcy concluded 10 Oct 2025, Swedish register 559243-9052",
+        "source": "https://www.allabolag.se/5592439052/call-knut-ab"
       }
     },
     {
