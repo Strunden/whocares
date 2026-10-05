@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to add - AgeTech continuum</title>
+<link rel="stylesheet" href="css/site.css"></head>
+<body>
+<nav class="nav">
+  <a href="index.html">Home</a>
+  <a href="mechanism.html">Filtering mechanism</a>
+  <a href="companies.html">Map and index</a>
+  <a href="sources.html">Sources</a>
+  <a href="README.html">How to add</a>
+</nav>
+<main class="wrap"><p><h1>AgeTech continuum site - how to add and rescan</h1></p><p>Static-hostable. All map, table, and entry pages fetch <code>data/index.json</code> at runtime. Adding an entry does not require editing HTML.</p><p><h2>Schema (<code>data/index.json</code>)</h2></p><p>Top level:</p><p>- <code>schema_version</code> (number, currently 1)
+- <code>generated</code> (ISO date)
+- <code>title</code> (string)
+- <code>changelog</code> (array of <code>{date, text}</code>)
+- <code>counts</code> (object, recomputed by tools)
+- <code>entries</code> (array)</p><p>Each entry:</p><p>| Field | Company | Idea |
+|-------|---------|------|
+| <code>id</code> | <code>company-...</code> | <code>idea-...</code> |
+| <code>type</code> | <code>company</code> | <code>idea</code> |
+| <code>name</code> | required | required |
+| <code>summary</code> | required | required |
+| <code>status</code> | <code>new_this_scan</code> \| <code>deep_dive_done</code> \| <code>deep_dive_pending</code> | <code>open</code> \| <code>stressed</code> \| <code>standing</code> \| <code>killed</code> \| <code>parked</code> |
+| <code>kill_reason</code> / <code>kill_source</code> | optional | required when <code>killed</code> |
+| <code>added_date</code> | ISO date | ISO date |
+| <code>source_scan</code> | which map/scan found it | e.g. THESIS-CARDS.md |
+| <code>themes</code> | string[] e.g. <code>[&quot;T04&quot;]</code> | string[] |
+| <code>country</code> / <code>city</code> | strings | strings |
+| <code>scene</code> | <code>{job, seller, payer}</code> | same |
+| <code>website</code> | URL | usually empty |
+| <code>related</code> | ids of related entries | ids |
+| <code>deep_dive</code> | object with product, thesis, sources, ... | n/a |
+| <code>claim</code> | n/a | what-if text |
+| <code>idea_kind</code> | n/a | <code>theme</code> \| <code>parent_theme</code> \| <code>thesis_card</code> \| <code>manual</code> |</p><p>Visuals: companies = solid circles on the map; ideas = dashed squares / dashed row accent.</p><p><h2>Preview locally</h2></p><p></p><pre class="card">cd site
+python3 -m http.server 8877
+# open http://127.0.0.1:8877/
+</pre><p></p><p><code>file://</code> may block <code>fetch</code> of JSON in some browsers. Prefer a static server.</p><p><h2>Add one entry</h2></p><p></p><pre class="card">cd site
+python3 tools/add_entry.py \
+  --type company \
+  --id exampleco \
+  --name &quot;Example Co&quot; \
+  --website https://example.com \
+  --country Germany \
+  --themes T04 \
+  --summary &quot;One-line product.&quot; \
+  --source-scan &quot;manual 2026-10-05&quot; \
+  --status deep_dive_pending
+</pre><p></p><p>Or pass a JSON file: <code>python3 tools/add_entry.py --file path/to/entry.json</code></p><p>Dedupe: refuses same company name or same website domain unless <code>--force</code>. Same <code>id</code> merges fields.</p><p>For ideas:</p><p></p><pre class="card">python3 tools/add_entry.py \
+  --type idea \
+  --id T99-H1 \
+  --name T99-H1 \
+  --claim &quot;What if ...&quot; \
+  --status open \
+  --themes T99 \
+  --source-scan &quot;manual what-if&quot;
+</pre><p></p><p><h2>Rescan AgeTechX</h2></p><p></p><pre class="card">python3 tools/scan_agetechx.py          # live fetch Ones to Watch
+python3 tools/scan_agetechx.py --dry-run
+python3 tools/scan_agetechx.py --url https://agetechx.com/ones-to-watch
+</pre><p></p><p>New names become <code>status: new_this_scan</code> (treated as pending deep dive). Existing name/domain skipped. Extend the script to other maps by adding parsers or more <code>--url</code> sources.</p><p>After adding, refresh the browser. Changelog on the home page shows the latest tool lines.</p><p><h2>Seed content</h2></p><p>- Companies: continuum COMPANY-CLUSTERS + deep-dive pass (25 done, rest pending)
+- Ideas: PICKABLE-MENU themes T01-T18, parent themes P01-P07, thesis cards from THESIS-CARDS.md</p><p><h2>Files</h2></p><p>- <code>data/index.json</code> - canonical index (edit via tools)
+- <code>data/companies.json</code> - earlier deep-dive payload (kept as archive seed; runtime uses index.json)
+- <code>js/app.js</code> - runtime renderer
+- <code>companies/entry.html?id=...</code> - single template for all entries
+- <code>tools/add_entry.py</code>, <code>tools/scan_agetechx.py</code>
+</p>
+<p class="muted">Also see README.md in this folder.</p>
+</main></body></html>

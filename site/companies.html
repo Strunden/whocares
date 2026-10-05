@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="description" content="Who Cares is a live map of ageing tech: companies, ideas, and what we killed.">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="whocares-base" content="">
+<title>Map and index - Who Cares</title>
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html">Home</a>
+  <a href="mechanism.html">Filtering mechanism</a>
+  <a href="companies.html">Map and index</a>
+  <a href="sources.html">Sources</a>
+  <a href="README.html">How to add</a>
+</nav>
+<main class="wrap">
+  <p class="meta"><a href="index.html">Home</a> / Map and index</p>
+  <h1>Landscape map and index</h1>
+  <p class="lead">Rendered from <code>data/index.json</code>. Companies are solid circles; ideas are dashed squares. Click a row for the full entry page.</p>
+  <div class="filters">
+    <label>Show<select id="f-type"><option value="both">Companies and ideas</option><option value="companies">Companies only</option><option value="ideas">Ideas only</option></select></label>
+    <label>New since<input id="f-since" type="date"></label>
+    <label>Theme<select id="f-theme"><option value="">All</option></select></label>
+    <label>Country<select id="f-country"><option value="">All</option></select></label>
+    <label>Status<select id="f-status"><option value="">All</option></select></label>
+    <label>Search<input id="f-search" placeholder="name or keyword"></label>
+  </div>
+  <p class="map-legend" id="filter-count">Loading…</p>
+  <canvas id="landscape-map" width="900" height="420" aria-label="Landsape map by theme"></canvas>
+  <div style="overflow:auto;margin-top:1rem">
+  <table>
+    <thead><tr><th>Entry</th><th>Country</th><th>Themes</th><th>Scene</th><th>Added / scan</th></tr></thead>
+    <tbody id="entry-rows"></tbody>
+  </table>
+  </div>
+</main>
+<footer class="wrap">Add entries with site/tools/add_entry.py. Rescan AgeTechX with site/tools/scan_agetechx.py.</footer>
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
+</body></html>

@@ -1,0 +1,19 @@
+{
+  "name": "whocares",
+  "private": true,
+  "type": "module",
+  "description": "Who Cares: a live map of ageing tech. Static site plus optional Neon-backed API.",
+  "scripts": {
+    "dev": "node server/dev.mjs",
+    "migrate": "node db/migrate.mjs",
+    "seed": "node db/seed.mjs",
+    "export": "node db/export.mjs",
+    "test": "node --test api/_lib/shape.test.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "pg": "^8.16.3"
+  }
+}
