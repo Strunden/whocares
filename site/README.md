@@ -1,6 +1,6 @@
 # AgeTech continuum site - how to add and rescan
 
-Static-hostable. All map, table, and entry pages fetch `data/index.json` at runtime. Adding an entry does not require editing HTML.
+The live list, tags, and logos come from the Worker `GET /api/index` and `GET /api/logo/<id>`. `data/index.json` is only the outage fallback. Adding a company is a database insert. It does not need a site rebuild or a Worker deploy.
 
 ## Schema (`data/index.json`)
 
@@ -34,7 +34,7 @@ Each entry:
 | `claim` | n/a | what-if text |
 | `idea_kind` | n/a | `theme` \| `parent_theme` \| `thesis_card` \| `manual` |
 
-Visuals: companies = solid circles on the map; ideas = dashed squares / dashed row accent.
+The public site is one list. It does not draw a map.
 
 ## Preview locally
 
@@ -48,36 +48,57 @@ python3 -m http.server 8877
 
 ## Add one entry
 
-```bash
-cd site
-python3 tools/add_entry.py \
-  --type company \
-  --id exampleco \
-  --name "Example Co" \
-  --website https://example.com \
-  --country Germany \
-  --themes T04 \
-  --summary "One-line product." \
-  --source-scan "manual 2026-10-05" \
-  --status deep_dive_pending
+One SQL insert on the Neon project `proud-sea-34268045`, database `neondb`. The site reads `document` from `GET /api/index`. If `logo_bytes` is set, the API sets `logo` to `/api/logo/<id>` and `GET /api/logo/<id>` returns the PNG. Set `published` to false to keep a row out of the public list without deleting it.
+
+```sql
+INSERT INTO entries (
+  id, type, name, summary, status, themes, related,
+  country, website, position,
+  title, job, who_sells, who_pays, tag, tag_secondary, published,
+  logo_bytes, document
+) VALUES (
+  'company-example',
+  'company',
+  'Example',
+  'One sentence about what it does.',
+  'new_this_scan',
+  '{}',
+  '{}',
+  'Germany',
+  'https://example.com',
+  (SELECT COALESCE(MAX(position), 0) + 1 FROM entries),
+  'Example',
+  'It does this thing for older adults.',
+  'Families buy it.',
+  'Families pay for it themselves.',
+  'Health and medicines',
+  NULL,
+  true,
+  decode('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==', 'base64'),
+  jsonb_build_object(
+    'id', 'company-example',
+    'type', 'company',
+    'name', 'Example',
+    'title', 'Example',
+    'summary', 'One sentence about what it does.',
+    'job', 'It does this thing for older adults.',
+    'who_sells', 'Families buy it.',
+    'who_pays', 'Families pay for it themselves.',
+    'tag', 'Health and medicines',
+    'tag_secondary', NULL,
+    'published', true,
+    'status', 'new_this_scan',
+    'website', 'https://example.com',
+    'country', 'Germany',
+    'themes', '[]'::jsonb,
+    'related', '[]'::jsonb
+  )
+);
 ```
 
-Or pass a JSON file: `python3 tools/add_entry.py --file path/to/entry.json`
+`logo_bytes` is a PNG. The sample above is a 1 pixel image. Replace the base64 with the real logo (app icon, apple-touch-icon, or favicon). Leave `logo_bytes` null to show the generic company icon. Tags are plain names: Health and medicines, Safety and falls, Memory and dementia, Loneliness and connection, Daily life and getting around, Home and housing, Family caregivers, Care staff and services, Money and retirement, End of life and inheritance. `tag_secondary` is optional.
 
-Dedupe: refuses same company name or same website domain unless `--force`. Same `id` merges fields.
-
-For ideas:
-
-```bash
-python3 tools/add_entry.py \
-  --type idea \
-  --id T99-H1 \
-  --name T99-H1 \
-  --claim "What if ..." \
-  --status open \
-  --themes T99 \
-  --source-scan "manual what-if"
-```
+Company `status` is `new_this_scan`, `deep_dive_done`, or `deep_dive_pending`. Idea `status` is `open`, `stressed`, `standing`, `killed`, or `parked`.
 
 ## Rescan AgeTechX
 
@@ -89,7 +110,7 @@ python3 tools/scan_agetechx.py --url https://agetechx.com/ones-to-watch
 
 New names become `status: new_this_scan` (treated as pending deep dive). Existing name/domain skipped. Extend the script to other maps by adding parsers or more `--url` sources.
 
-After adding, refresh the browser. Changelog on the home page shows the latest tool lines.
+A new row shows up on the next visit. The home list does not show a changelog.
 
 ## Seed content
 
@@ -98,8 +119,8 @@ After adding, refresh the browser. Changelog on the home page shows the latest t
 
 ## Files
 
-- `data/index.json` - canonical index (edit via tools)
-- `data/companies.json` - earlier deep-dive payload (kept as archive seed; runtime uses index.json)
+- `data/index.json` - outage fallback only. The live list is the database, via `GET /api/index`
+- `data/companies.json` - earlier deep-dive payload (archive seed)
 - `js/app.js` - runtime renderer
 - `companies/entry.html?id=...` - single template for all entries
 - `tools/add_entry.py`, `tools/scan_agetechx.py`
