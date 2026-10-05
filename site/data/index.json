@@ -15987,7 +15987,7 @@
       "id": "company-call-knut",
       "type": "company",
       "name": "Call Knut",
-      "summary": "Calls elderly relatives by voice to check in and monitor them.",
+      "summary": "Phoned older relatives on a schedule and asked if they were well.",
       "status": "new_this_scan",
       "kill_reason": null,
       "kill_source": null,
@@ -16038,6 +16038,12 @@
           "url": "https://www.linkedin.com/company/callknut",
           "source": "https://www.linkedin.com/company/callknut"
         }
+      },
+      "closed": {
+        "state": "shut_down",
+        "date": "2025-10-10",
+        "text": "Bankruptcy concluded 10 Oct 2025, Swedish register 559243-9052",
+        "source": "https://www.allabolag.se/5592439052/call-knut-ab"
       }
     },
     {
@@ -22279,7 +22285,7 @@
       "id": "company-braincheck",
       "type": "company",
       "name": "BrainCheck",
-      "summary": "Gives clinicians an FDA-cleared digital test to spot and track decline and dementia.",
+      "summary": "Gives clinics a digital test to spot and track memory decline.",
       "status": "new_this_scan",
       "kill_reason": null,
       "kill_source": null,
@@ -22323,6 +22329,119 @@
         "linkedin": {
           "url": "https://www.linkedin.com/company/braincheck",
           "source": "https://www.linkedin.com/company/braincheck"
+        },
+        "founded": {
+          "year": 2015,
+          "source": "https://www.s3vc.com/news-and-insights/dr-yael-katz-spotlight"
+        },
+        "founders": [
+          {
+            "name": "Yael Katz",
+            "source": "https://www.s3vc.com/news-and-insights/dr-yael-katz-spotlight"
+          },
+          {
+            "name": "David Eagleman",
+            "source": "https://www.businessinsider.com/see-cognitive-testing-startups-10-million-series-b-pitch-deck-2021-11"
+          }
+        ],
+        "funding": {
+          "last_round": {
+            "amount": "$13 million",
+            "date": "2026-02-26",
+            "source": "https://www.beckershospitalreview.com/healthcare-information-technology/ai/upmc-backs-ai-startup-in-13m-investment/"
+          }
+        }
+      },
+      "writeup": {
+        "what_it_does": {
+          "text": "BrainCheck sells clinics cognitive tests and a care plan. BrainCheck Assess is an FDA Class II digital test a clinician can run in the visit or by sending a link. Business Insider described it as software that turns usual paper checks into a score, then shares a management plan with the doctor. Unlike Five Lives, which offers a consumer app for memory coaching, BrainCheck is sold to clinics as a clinical test. Compared with BrainTrip, which scores an 8-minute resting brain-wave recording, BrainCheck uses tasks a patient completes on a phone, tablet, or computer.",
+          "sources": [
+            "https://www.businessinsider.com/see-cognitive-testing-startups-10-million-series-b-pitch-deck-2021-11",
+            "https://fivelives.health/",
+            "https://braintrip.net/cogniscore"
+          ]
+        },
+        "who_pays": {
+          "text": "Clinics, health systems, and research sites are the buyers. No public price. It is sold by direct sales to those organisations. In 2021 Yael Katz told Business Insider the company worked with Medicare and many private plans to cover roughly 90 percent of costs. That was a coverage claim, not a fee list.",
+          "sources": [
+            "https://www.businessinsider.com/see-cognitive-testing-startups-10-million-series-b-pitch-deck-2021-11",
+            "https://braincheck.com/about"
+          ]
+        },
+        "traction": {
+          "text": "Business Insider reported on 3 November 2021 that a Series B took funding reported to that date to 20 million dollars. Becker's Hospital Review reported on 27 February 2026 that UPMC Enterprises joined a 13 million dollar round, and that the platform was in use at 500 healthcare organisations.",
+          "sources": [
+            "https://www.businessinsider.com/see-cognitive-testing-startups-10-million-series-b-pitch-deck-2021-11",
+            "https://www.beckershospitalreview.com/healthcare-information-technology/ai/upmc-backs-ai-startup-in-13m-investment/"
+          ]
+        },
+        "why_interesting": {
+          "text": "Yael Katz, who has a PhD and studied at the University of Pennsylvania, Northwestern, and Princeton, started BrainCheck in 2015 with David Eagleman, then a neuroscientist at Baylor College of Medicine. She had worked as a neuroscience researcher at Northwestern and Princeton. She told S3 Ventures the first customers were not the ones the company expected.",
+          "sources": [
+            "https://www.s3vc.com/news-and-insights/dr-yael-katz-spotlight",
+            "https://www.businessinsider.com/see-cognitive-testing-startups-10-million-series-b-pitch-deck-2021-11"
+          ]
+        },
+        "status": {
+          "text": "The about page lists the office at 5209 Burnet Road, Austin. Becker's Hospital Review dated 27 February 2026 reported the new 13 million dollar round.",
+          "state": "active",
+          "as_of": "2026-10-05",
+          "sources": [
+            "https://braincheck.com/about",
+            "https://www.beckershospitalreview.com/healthcare-information-technology/ai/upmc-backs-ai-startup-in-13m-investment/"
+          ]
+        }
+      },
+      "writeup_qa": {
+        "pass": true,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": false,
+        "word_count": 277,
+        "criteria": {
+          "independent_sources": {
+            "pass": true,
+            "note": "5 independent source(s): businessinsider.com, fivelives.health, braintrip.net, beckershospitalreview.com, s3vc.com."
+          },
+          "claims_sourced": {
+            "pass": true,
+            "note": "Each included section has a source URL."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": true,
+            "note": "Buyer, public price, and reimbursement route are stated."
+          },
+          "traction": {
+            "pass": true,
+            "note": "Traction has a number and a date."
+          },
+          "story": {
+            "pass": true,
+            "note": "Founding, background, funding, and operating status are in the write-up."
+          },
+          "competitors": {
+            "pass": true,
+            "note": "Names Five Lives, Wave, BrainTrip and says how this company differs."
+          },
+          "insight": {
+            "pass": true,
+            "note": "3 sentences of insight."
+          },
+          "recent_news": {
+            "pass": true,
+            "note": "Dated item 2026-02-27 via businessinsider.com."
+          },
+          "shape": {
+            "pass": true,
+            "note": "150 to 300 words, no dash, does not repeat the one-liner."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
+          }
         }
       }
     },
@@ -23940,7 +24059,7 @@
       "id": "company-carefull",
       "type": "company",
       "name": "Carefull",
-      "summary": "Checks older adults' bank accounts for errors, fraud, and early mental decline.",
+      "summary": "Checks older adults' bank accounts for fraud and odd spending.",
       "status": "new_this_scan",
       "kill_reason": null,
       "kill_source": null,
@@ -23984,6 +24103,118 @@
         "linkedin": {
           "url": "https://www.linkedin.com/company/getcarefull",
           "source": "https://www.linkedin.com/company/getcarefull"
+        },
+        "founded": {
+          "year": 2019,
+          "source": "https://carefullsupport.zendesk.com/hc/en-us/articles/33808436941851-Who-is-the-team-behind-Carefull"
+        },
+        "founders": [
+          {
+            "name": "Max Goldman",
+            "source": "https://carefullsupport.zendesk.com/hc/en-us/articles/33808436941851-Who-is-the-team-behind-Carefull"
+          },
+          {
+            "name": "Todd Rovak",
+            "source": "https://carefullsupport.zendesk.com/hc/en-us/articles/33808436941851-Who-is-the-team-behind-Carefull"
+          }
+        ],
+        "funding": {
+          "total": {
+            "amount": "$19.7 million publicly announced",
+            "source": "https://finance.yahoo.com/news/financial-monitoring-application-carefull-announces-184228506.html"
+          }
+        }
+      },
+      "writeup": {
+        "what_it_does": {
+          "text": "Carefull watches checking, savings, credit card, and investment accounts for duplicate charges, odd fees, scam withdrawals, and spending that does not match a person's usual pattern. It can share view-only alerts with a trusted contact. The site says one membership covers two people. Unlike True Link, which issues a prepaid card that families can control, Carefull connects to accounts the person already has. Compared with Pflege.de, which guides families through care benefits, Carefull stays on the money: fraud, mistakes, and spending that does not look like the person's own.",
+          "sources": [
+            "https://getcarefull.com",
+            "https://www.truelinkfinancial.com/",
+            "https://www.pflege.de/"
+          ]
+        },
+        "who_pays": {
+          "text": "A help page updated on 1 August 2025 says a 30-day trial is free, then families pay $29.99 a month or $299.99 a year. Banks, credit unions, and wealth firms also give it to customers. A household can pay out of pocket, or an institution can include it.",
+          "sources": [
+            "https://carefullsupport.zendesk.com/hc/en-us/articles/33704017001115-How-much-does-Carefull-cost",
+            "https://getcarefull.com"
+          ]
+        },
+        "traction": {
+          "text": "Yahoo Finance reported on 27 October 2025 that Carefull announced an insights engine called GreyMatter at Money20/20 in Las Vegas. The same article said publicly announced funding totalled 19.7 million dollars, including 3.2 million dollars in February 2021 and 16.5 million dollars in a Series A in late 2023. The about page says the company was established in 2019.",
+          "sources": [
+            "https://finance.yahoo.com/news/financial-monitoring-application-carefull-announces-184228506.html",
+            "https://getcarefull.com/about"
+          ]
+        },
+        "why_interesting": {
+          "text": "Max Goldman and Todd Rovak founded Carefull in 2019. Goldman previously managed products at Google, and Directr, a company he started, was acquired by YouTube, while Rovak was previously chief executive of Fahrenheit 212, which Capgemini acquired. The 2025 article says the new engine looks for fraud and for signs of cognitive decline in how money moves.",
+          "sources": [
+            "https://carefullsupport.zendesk.com/hc/en-us/articles/33808436941851-Who-is-the-team-behind-Carefull",
+            "https://finance.yahoo.com/news/financial-monitoring-application-carefull-announces-184228506.html"
+          ]
+        },
+        "status": {
+          "text": "The site lists Carefull Corporation at 132 West 31st Street, 9th floor, New York, and a phone number. Yahoo Finance dated 27 October 2025 reported the GreyMatter launch.",
+          "state": "active",
+          "as_of": "2026-10-05",
+          "sources": [
+            "https://getcarefull.com/about",
+            "https://finance.yahoo.com/news/financial-monitoring-application-carefull-announces-184228506.html"
+          ]
+        }
+      },
+      "writeup_qa": {
+        "pass": true,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": false,
+        "word_count": 281,
+        "criteria": {
+          "independent_sources": {
+            "pass": true,
+            "note": "3 independent source(s): truelinkfinancial.com, pflege.de, finance.yahoo.com."
+          },
+          "claims_sourced": {
+            "pass": true,
+            "note": "Each included section has a source URL."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": true,
+            "note": "Buyer, public price, and reimbursement route are stated."
+          },
+          "traction": {
+            "pass": true,
+            "note": "Traction has a number and a date."
+          },
+          "story": {
+            "pass": true,
+            "note": "Founding, background, funding, and operating status are in the write-up."
+          },
+          "competitors": {
+            "pass": true,
+            "note": "Names Pflege.de, True Link and says how this company differs."
+          },
+          "insight": {
+            "pass": true,
+            "note": "3 sentences of insight."
+          },
+          "recent_news": {
+            "pass": true,
+            "note": "Dated item 2025-10-27 via finance.yahoo.com."
+          },
+          "shape": {
+            "pass": true,
+            "note": "150 to 300 words, no dash, does not repeat the one-liner."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
+          }
         }
       }
     },
@@ -25305,7 +25536,7 @@
       "id": "company-carepredict",
       "type": "company",
       "name": "CarePredict",
-      "summary": "Tracks activity in senior living and sends fall alerts to staff apps.",
+      "summary": "Warns senior-living staff about falls and changes in daily routine.",
       "status": "new_this_scan",
       "kill_reason": null,
       "kill_source": null,
@@ -25346,6 +25577,123 @@
         "linkedin": {
           "url": "https://www.linkedin.com/company/carepredict",
           "source": "https://www.linkedin.com/company/carepredict"
+        },
+        "founded": {
+          "year": 2013,
+          "source": "https://homehealthcarenews.com/2023/07/after-29m-fundraising-round-carepredict-looks-to-partner-with-home-based-care-providers/"
+        },
+        "founders": [
+          {
+            "name": "Satish Movva",
+            "source": "https://homehealthcarenews.com/2023/07/after-29m-fundraising-round-carepredict-looks-to-partner-with-home-based-care-providers/"
+          }
+        ],
+        "hq": {
+          "city": "Plantation",
+          "source": "https://www.sec.gov/Archives/edgar/data/1641753/000164175326000003/primary_doc.xml"
+        },
+        "country": {
+          "code": "US",
+          "source": "https://www.sec.gov/Archives/edgar/data/1641753/000164175326000003/primary_doc.xml"
+        },
+        "funding": {
+          "last_round": {
+            "amount": "$2 million sold of a $10 million offering",
+            "date": "2026-06-25",
+            "source": "https://www.sec.gov/Archives/edgar/data/1641753/000164175326000003/primary_doc.xml"
+          }
+        }
+      },
+      "writeup": {
+        "what_it_does": {
+          "text": "CarePredict sells senior-living communities a wrist device. A resident can press a button for help. The company says the platform can flag a fall and slower changes in daily activity, then alert staff. The about page says it began as a way to watch parents from afar and is used in senior living. Unlike cogvis, which watches a room with a 3D sensor and says it stores no camera pictures, CarePredict uses a wrist device the resident wears. Compared with CallPanion, which plans phone chats for a family, CarePredict alerts staff inside a senior-living community.",
+          "sources": [
+            "https://www.carepredict.com/about",
+            "https://www.cogvis.ai/",
+            "https://callpanion.co.uk"
+          ]
+        },
+        "who_pays": {
+          "text": "Senior-living operators buy it for their communities. No public price. It is sold by direct sales and a request for a demo. No family reimbursement route was found on the pages reviewed.",
+          "sources": [
+            "https://www.carepredict.com/about"
+          ]
+        },
+        "traction": {
+          "text": "Home Health Care News reported in July 2023 that Satish Movva founded CarePredict in 2013 and that the company had raised 29 million dollars. The about page says it is used in hundreds of communities. A US securities filing shows a first sale on 25 June 2026, with 2 million dollars sold of a 10 million dollar offering.",
+          "sources": [
+            "https://homehealthcarenews.com/2023/07/after-29m-fundraising-round-carepredict-looks-to-partner-with-home-based-care-providers/",
+            "https://www.carepredict.com/about",
+            "https://www.sec.gov/Archives/edgar/data/1641753/000164175326000003/primary_doc.xml"
+          ]
+        },
+        "why_interesting": {
+          "text": "Movva founded CarePredict in 2013 while caring for his parents from afar. He previously served as chief information officer at Interim HealthCare, and this was his second startup. The June 2026 filing shows a share sale still mostly unsold.",
+          "sources": [
+            "https://homehealthcarenews.com/2023/07/after-29m-fundraising-round-carepredict-looks-to-partner-with-home-based-care-providers/",
+            "https://www.sec.gov/Archives/edgar/data/1641753/000164175326000003/primary_doc.xml"
+          ]
+        },
+        "status": {
+          "text": "The site lists headquarters at 600 North Pine Island Road, Suite 370, Plantation, Florida. The filing names CarePredict, Inc., a Delaware corporation, and Satish Movva as chief executive. No news found in the last 12 months.",
+          "state": "active",
+          "as_of": "2026-10-05",
+          "sources": [
+            "https://www.carepredict.com/about",
+            "https://www.sec.gov/Archives/edgar/data/1641753/000164175326000003/primary_doc.xml"
+          ]
+        }
+      },
+      "writeup_qa": {
+        "pass": true,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": false,
+        "word_count": 260,
+        "criteria": {
+          "independent_sources": {
+            "pass": true,
+            "note": "4 independent source(s): cogvis.ai, callpanion.co.uk, homehealthcarenews.com, sec.gov."
+          },
+          "claims_sourced": {
+            "pass": true,
+            "note": "Each included section has a source URL."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": true,
+            "note": "Buyer, public price, and reimbursement route are stated."
+          },
+          "traction": {
+            "pass": true,
+            "note": "Traction has a number and a date."
+          },
+          "story": {
+            "pass": true,
+            "note": "Founding, background, funding, and operating status are in the write-up."
+          },
+          "competitors": {
+            "pass": true,
+            "note": "Names cogvis, CallPanion and says how this company differs."
+          },
+          "insight": {
+            "pass": true,
+            "note": "3 sentences of insight."
+          },
+          "recent_news": {
+            "pass": true,
+            "note": "States that no recent item was found."
+          },
+          "shape": {
+            "pass": true,
+            "note": "150 to 300 words, no dash, does not repeat the one-liner."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
+          }
         }
       }
     },
