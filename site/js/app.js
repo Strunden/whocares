@@ -272,23 +272,45 @@
     if (scene && typeof scene === "object" && scene[key]) return scene[key];
     return "";
   }
+  function canonicalUrl(u) {
+    const trimmed = String(u || "").replace(/\s*\(accessed[^)]*\)\s*$/i, "").trim();
+    const raw = safeUrl(trimmed);
+    if (!raw) return "";
+    try {
+      const url = new URL(raw);
+      url.hash = "";
+      const host = url.hostname.toLowerCase().replace(/^www\./, "");
+      const path = url.pathname.replace(/\/+$/, "");
+      return url.protocol.toLowerCase() + "//" + host + path + url.search;
+    } catch (err) {
+      return "";
+    }
+  }
+  function sourceLabel(url, note) {
+    const title = cleanProse(note || "");
+    if (title && !isJunk(title) && !/^https?:/i.test(title) && title.length <= 80 && !/\.md\b/i.test(title)) return title;
+    try {
+      return new URL(url).hostname.replace(/^www\./, "");
+    } catch (err) {
+      return "";
+    }
+  }
   function sourcesOf(e) {
     const list = e.deep_dive && Array.isArray(e.deep_dive.sources) ? e.deep_dive.sources : [];
     const urls = [];
     const seen = new Set();
-    list.forEach((s) => {
-      const url = safeUrl(s && s.url);
-      if (!url || seen.has(url)) return;
-      seen.add(url);
-      urls.push({ url, note: s && s.note && !isJunk(s.note) ? cleanProse(s.note) : "" });
-    });
+    const home = canonicalUrl(e.website);
+    function push(raw, note) {
+      const key = canonicalUrl(raw);
+      if (!key || seen.has(key) || (home && key === home)) return;
+      seen.add(key);
+      const label = sourceLabel(key, note);
+      if (!label) return;
+      urls.push({ url: key, label: label });
+    }
+    list.forEach((s) => push(s && s.url, s && s.note));
     const extra = e.deep_dive && Array.isArray(e.deep_dive.thesis_sources) ? e.deep_dive.thesis_sources : [];
-    extra.forEach((item) => {
-      const url = safeUrl(item);
-      if (!url || seen.has(url)) return;
-      seen.add(url);
-      urls.push({ url, note: "" });
-    });
+    extra.forEach((item) => push(item, ""));
     return urls;
   }
   const JOB_STOP = new Set("a an the and or of to for with in on at by from that this it its is are be as their them they who into over per via your our can help helps people older care aging ageing".split(" "));
@@ -366,7 +388,9 @@
         const href = safeUrl(person.source);
         if (href && sources.indexOf(href) === -1) sources.push(href);
       });
-      rows.push(`<div class="kv"><p class="kicker">Founders</p><p>${names}${sources.map(sourceLink).join("")}</p></div>`);
+      const directors = founders.every((person) => /managing director|geschäftsführer/i.test(person.role || ""));
+      const peopleLabel = directors ? "Managing directors" : "Founders";
+      rows.push(`<div class="kv"><p class="kicker">${peopleLabel}</p><p>${names}${sources.map(sourceLink).join("")}</p></div>`);
     }
     const funding = facts.funding && typeof facts.funding === "object" ? facts.funding : null;
     if (funding) {
@@ -485,7 +509,7 @@
     if (sources.length) {
       html += `<div class="group"><div class="pad"><p class="kicker">Sources</p><ul class="src-list">`;
       sources.forEach((s) => {
-        html += `<li><a class="src-link" href="${esc(s.url)}" target="_blank" rel="noopener">${t(s.url)}</a></li>`;
+        html += `<li><a class="src-link" href="${esc(s.url)}" target="_blank" rel="noopener">${t(s.label)}</a></li>`;
       });
       html += `</ul></div></div>`;
     }
