@@ -7,30 +7,67 @@
    Tap replaces the list. Back walks up. API_BASE /api/index, then JSON. */
 (function () {
   const STATUS = {
-    deep_dive_done: "Deep dive",
-    deep_dive_pending: "Pending",
-    new_this_scan: "New",
-    open: "Open",
-    stressed: "Stressed",
-    standing: "Standing",
-    killed: "Killed",
-    parked: "Parked"
+    deep_dive_done: "Researched",
+    deep_dive_pending: "Not fully researched",
+    new_this_scan: "Just added",
+    open: "Not decided yet",
+    stressed: "Tested, still open",
+    standing: "Kept on the list",
+    killed: "Dropped",
+    parked: "Set aside"
+  };
+  const STATUS_GLOSS = {
+    deep_dive_done: "We wrote up what it does.",
+    deep_dive_pending: "We have a short note, not a full write-up.",
+    new_this_scan: "Added in the latest pass.",
+    open: "We have not decided yet.",
+    stressed: "We tested the idea and it is still open.",
+    standing: "We kept it on the list.",
+    killed: "We researched it and dropped it.",
+    parked: "Set aside for now."
+  };
+  const GLYPH = {
+    life: '<path d="M5 19V11M12 19V5M19 19v-6"/>',
+    theme: '<path d="M4 8h9l7 7-7 7H4V8z"/><circle cx="8.5" cy="13" r="1.1" fill="currentColor" stroke="none"/>',
+    company: '<path d="M4 20V9l8-5 8 5v11"/><path d="M10 20v-5h4v5M9 11h.01M15 11h.01M9 14.5h.01M15 14.5h.01"/>',
+    idea: '<path d="M9 18h6M10 21h4"/><path d="M12 3a5.5 5.5 0 0 1 3.6 9.6V16H8.4v-3.4A5.5 5.5 0 0 1 12 3z"/>',
+    kill: '<circle cx="12" cy="12" r="8"/><path d="M9 9l6 6M15 9l-6 6"/>',
+    link: '<path d="M14 5h5v5"/><path d="M10 14L19 5"/><path d="M17 13v6H5V7h6"/>',
+    note: '<path d="M7 4h7l4 4v12H7V4z"/><path d="M14 4v4h4M9 12h6M9 16h4"/>',
+    researched: '<path d="M5 12.5l4.5 4.5L19 7"/>',
+    dropped: '<circle cx="12" cy="12" r="8"/><path d="M9 9l6 6M15 9l-6 6"/>',
+    considering: '<path d="M7 4h7l4 4v12H7V4z"/><path d="M14 4v4h4"/>',
+    open: '<circle cx="12" cy="12" r="7"/>',
+    parked: '<path d="M9 6v12M15 6v12"/>',
+    pending: '<circle cx="12" cy="12" r="8"/><path d="M12 8v5l3 2"/>',
+    stressed: '<circle cx="12" cy="12" r="8"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/>',
+    fresh: '<path d="M12 6v12M6 12h12"/>'
+  };
+  const STATUS_ICON = {
+    killed: "dropped",
+    standing: "considering",
+    open: "open",
+    parked: "parked",
+    deep_dive_done: "researched",
+    deep_dive_pending: "pending",
+    stressed: "stressed",
+    new_this_scan: "fresh"
   };
   const MORE_LABELS = {
     product: "Product",
     how_it_works: "How it works",
     user: "User",
-    buyer: "Buyer",
-    payer: "Payer",
-    business_model: "Business model",
+    buyer: "Who buys",
+    payer: "Who pays",
+    business_model: "How it makes money",
     traction: "Traction",
     funding: "Funding",
     team: "Team",
     competitors: "Competitors",
-    regulatory: "Regulatory",
-    thesis: "Thesis",
+    regulatory: "Rules and payment",
+    thesis: "Our read",
     risks: "Risks",
-    relevance: "Relevance",
+    relevance: "Why it matters here",
     open_questions: "Open questions"
   };
 
@@ -77,6 +114,75 @@
   }
   function chevron() {
     return '<svg class="chev" viewBox="0 0 12 20" width="10" height="18" aria-hidden="true"><path d="M2 2 L10 10 L2 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  }
+  function svgIcon(name) {
+    const body = GLYPH[name] || GLYPH.idea;
+    return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${body}</svg>`;
+  }
+  function iconTile(kind) {
+    const key = GLYPH[kind] ? kind : "idea";
+    return `<span class="ico ico-${key}">${svgIcon(key)}</span>`;
+  }
+  function statusMark(status) {
+    const key = STATUS_ICON[status];
+    if (!key) return "";
+    return `<span class="mark mark-${key}">${svgIcon(key)}</span>`;
+  }
+  function isKilled(e) {
+    return !!(e && (e.status === "killed" || e.kill_reason));
+  }
+  function entryKind(e) {
+    if (isKilled(e)) return "kill";
+    if (e.idea_kind === "parent_theme") return "life";
+    if (e.idea_kind === "theme") return "theme";
+    if (e.type === "idea") return "idea";
+    return "company";
+  }
+  function roleWord(e) {
+    if (e.idea_kind === "parent_theme") return "Life stage";
+    if (e.idea_kind === "theme") return "Theme";
+    if (e.type === "idea") return "Idea";
+    return "Company";
+  }
+  function rolePhrase(e) {
+    const word = roleWord(e);
+    return isKilled(e) ? "Dropped " + word.toLowerCase() : word;
+  }
+  function displayName(e) {
+    const name = nd(e.name || "Untitled").trim();
+    const prefixed = name.match(/^(?:P\d+|T\d+):\s*(.+)$/i);
+    if (prefixed && prefixed[1]) return prefixed[1].trim();
+    if (/^[PT]\d+-H\d+$/i.test(name)) {
+      const human = nd(e.summary || e.claim || "").replace(/\s+/g, " ").trim();
+      if (human) return human;
+    }
+    return name;
+  }
+  function codeOf(e) {
+    const name = nd(e.name || "").trim();
+    const fromName = name.match(/^([PT]\d+(?:-H\d+)?)/i);
+    if (fromName && (e.type === "idea" || e.idea_kind)) return fromName[1].toUpperCase();
+    return "";
+  }
+  function placeLabel(e) {
+    const raw = nd(e.country || "").trim();
+    if (!raw) return "";
+    return raw.split(/\s+\(|\s*;/)[0].trim();
+  }
+  function callLabel(value) {
+    const key = String(value || "").toLowerCase();
+    if (key === "kill") return "Dropped";
+    if (key === "continue") return "Kept on the list";
+    if (key === "park") return "Set aside";
+    return nd(value);
+  }
+  function kindLabel(value) {
+    const key = String(value || "");
+    if (key === "parent_theme") return "Life stage";
+    if (key === "theme") return "Theme";
+    if (key === "thesis_card") return "Idea";
+    if (key === "manual") return "Note";
+    return nd(value);
   }
 
   function apiBase() {
@@ -274,22 +380,28 @@
     return { total: entries.length, companies, ideas, killed };
   }
 
-  function rowButton(path, name, meta, kill) {
+  function rowButton(path, name, meta, opts) {
+    const kind = (opts && opts.kind) || "idea";
+    const kill = !!(opts && opts.kill);
+    const status = opts && opts.status;
+    const mark = kind === "kill" ? "" : statusMark(status);
     return `<button type="button" class="row" data-go="${esc(path)}">
+      ${iconTile(kind)}
       <span class="row-text"><span class="name">${t(name)}</span><span class="meta${kill ? " kill" : ""}">${t(meta)}</span></span>
+      ${mark}
       ${chevron()}
     </button>`;
   }
 
   function entryMeta(e) {
-    const killed = e.status === "killed" || !!e.kill_reason;
+    const killed = isKilled(e);
+    const code = codeOf(e);
     if (killed) {
-      const reason = clip(e.kill_reason || "Killed", 88);
-      return { text: joinMeta([typeLabel(e), "Killed", reason === "Killed" ? "" : reason]), kill: true };
+      const reason = clip(e.kill_reason || "", 72);
+      return { text: joinMeta([rolePhrase(e), reason, code]), kill: true };
     }
-    const place = joinMeta([e.country, e.city].filter(Boolean).length ? [e.country] : []);
     return {
-      text: joinMeta([typeLabel(e), place || "", statusLabel(e.status)]),
+      text: joinMeta([rolePhrase(e), placeLabel(e), statusLabel(e.status), code]),
       kill: false
     };
   }
@@ -317,37 +429,47 @@
       });
     }
     const groups = [
-      ["life", "Life stage"],
-      ["theme", "Theme"],
-      ["other", "Other"]
+      ["life", "Life stage", "Big moments in later life."],
+      ["theme", "Theme", "Problems in ageing and care."],
+      ["other", "Other", "Items that do not sit in a life stage or theme."]
     ];
     let html = "";
-    groups.forEach(([key, label]) => {
+    groups.forEach(([key, label, hint]) => {
       const rows = shown.filter((b) => b.group === key);
       if (!rows.length) return;
-      html += `<h2 class="section-label">${t(label)}</h2><div class="group">`;
+      html += `<h2 class="section-label">${t(label)}</h2><p class="section-hint">${t(hint)}</p><div class="group">`;
       rows.forEach((b) => {
         const killed = b.status === "killed";
+        const kindWord = b.group === "life" ? "Life stage" : b.group === "theme" ? "Theme" : "Group";
         const meta = killed
-          ? joinMeta([b.code, "Killed", clip(b.summary, 72)])
+          ? joinMeta([kindWord, "Researched and dropped", clip(b.summary, 64), b.code])
           : joinMeta([
-            b.code,
+            kindWord,
             b.count + (b.count === 1 ? " entry" : " entries"),
-            statusLabel(b.status)
+            statusLabel(b.status),
+            b.code
           ]);
-        html += rowButton("/t/" + encodeURIComponent(b.code), b.title, meta, killed);
+        html += rowButton("/t/" + encodeURIComponent(b.code), b.title, meta, {
+          kind: b.group === "life" ? "life" : "theme",
+          kill: killed,
+          status: b.status
+        });
       });
       html += "</div>";
     });
     if (entryHits.length) {
-      html += `<h2 class="section-label">Entries</h2><div class="group">`;
+      html += `<h2 class="section-label">Matches</h2><p class="section-hint">Names and notes that match your search.</p><div class="group">`;
       entryHits.forEach((e) => {
         const meta = entryMeta(e);
-        html += rowButton("/e/" + encodeURIComponent(e.id), e.name, meta.text, meta.kill);
+        html += rowButton("/e/" + encodeURIComponent(e.id), displayName(e), meta.text, {
+          kind: entryKind(e),
+          kill: meta.kill,
+          status: e.status
+        });
       });
       html += "</div>";
     }
-    if (!html) html = `<p class="empty">Nothing matches.</p>`;
+    if (!html) html = `<p class="empty">Nothing in this list matches.</p>`;
     return html;
   }
 
@@ -355,27 +477,31 @@
     const kids = entriesFor(entries, route.code);
     const nq = query.trim().toLowerCase();
     const rows = nq ? kids.filter((e) => entryHay(e).includes(nq)) : kids;
-    if (!rows.length) return `<p class="empty">Nothing matches.</p>`;
+    if (!rows.length) return `<p class="empty">Nothing in this list matches.</p>`;
     let html = `<div class="group">`;
     rows.forEach((e) => {
       const meta = entryMeta(e);
-      html += rowButton(entryPath(route, e), e.name, meta.text, meta.kill);
+      html += rowButton(entryPath(route, e), displayName(e), meta.text, {
+        kind: entryKind(e),
+        kill: meta.kill,
+        status: e.status
+      });
     });
     html += "</div>";
     if (nq) {
-      html = `<p class="screen-meta">${rows.length} of ${kids.length}</p>` + html;
+      html = `<p class="screen-meta">${rows.length} of ${kids.length} match</p>` + html;
     }
     return html;
   }
 
   function sceneBlocks(scene) {
     if (!scene || typeof scene === "string") {
-      return scene ? `<div class="kv"><p class="kicker">Scene</p><p>${t(scene)}</p></div>` : "";
+      return scene ? `<div class="kv"><p class="kicker">Job</p><p>${t(scene)}</p></div>` : "";
     }
     const bits = [
       ["Job", scene.job],
-      ["Seller", scene.seller],
-      ["Payer", scene.payer]
+      ["Who sells", scene.seller],
+      ["Who pays", scene.payer]
     ].filter((pair) => pair[1]);
     if (!bits.length) return "";
     return bits.map(([k, v]) => `<div class="kv"><p class="kicker">${t(k)}</p><p>${t(v)}</p></div>`).join("");
@@ -399,11 +525,11 @@
           return;
         }
         let heading = MORE_LABELS[key];
-        if (key === "thesis" && dive.thesis_label) heading += " (" + nd(dive.thesis_label) + ")";
+        if (key === "thesis" && dive.thesis_label) heading += ". " + (String(dive.thesis_label).toLowerCase() === "interpreted" ? "This is our read, not a quote from the company." : nd(dive.thesis_label));
         blocks.push(`<h2>${t(heading)}</h2><p>${t(val)}</p>`);
       });
       if (Array.isArray(dive.thesis_sources) && dive.thesis_sources.length) {
-        blocks.push(`<h2>Thesis sources</h2><ul>${dive.thesis_sources.map((item) => `<li>${t(item)}</li>`).join("")}</ul>`);
+        blocks.push(`<h2>What that read is based on</h2><ul>${dive.thesis_sources.map((item) => `<li>${t(item)}</li>`).join("")}</ul>`);
       }
       const sources = sourcesOf(e);
       if (sources.length) {
@@ -416,18 +542,22 @@
         }).join("")}</ul>`);
       }
     }
-    if (e.claim && e.claim !== e.summary) blocks.push(`<h2>Claim</h2><p>${t(e.claim)}</p>`);
-    if (e.expert_role) blocks.push(`<h2>Expert role</h2><p>${t(e.expert_role)}</p>`);
-    if (e.killer_experiment) blocks.push(`<h2>Killer experiment</h2><p>${t(e.killer_experiment)}</p>`);
-    if (e.menu_disposition) blocks.push(`<h2>Menu</h2><p>${t(e.menu_disposition)}</p>`);
-    if (e.status_raw) blocks.push(`<h2>Status note</h2><p>${t(e.status_raw)}</p>`);
-    if (e.source_scan) blocks.push(`<h2>Source scan</h2><p>${t(e.source_scan)}</p>`);
-    if (e.idea_kind) blocks.push(`<h2>Kind</h2><p>${t(e.idea_kind)}</p>`);
+    if (e.claim && e.claim !== e.summary) blocks.push(`<h2>The question</h2><p>${t(e.claim)}</p>`);
+    if (e.expert_role) blocks.push(`<h2>Who should pressure-test it</h2><p>${t(e.expert_role)}</p>`);
+    if (e.killer_experiment) blocks.push(`<h2>The test that would drop it</h2><p>${t(e.killer_experiment)}</p>`);
+    if (e.menu_disposition) blocks.push(`<h2>Our call</h2><p>${t(callLabel(e.menu_disposition))}</p>`);
+    if (e.status_raw) blocks.push(`<h2>Note</h2><p>${t(e.status_raw)}</p>`);
+    if (e.source_scan) blocks.push(`<h2>Where we found it</h2><p>${t(e.source_scan)}</p>`);
+    if (e.idea_kind) blocks.push(`<h2>What this is</h2><p>${t(kindLabel(e.idea_kind))}</p>`);
     const related = (e.related || []).map((id) => findEntry(indexData.entries, id)).filter(Boolean);
     if (related.length) {
       blocks.push(`<h2>Related</h2>` + related.map((r) => {
         const meta = entryMeta(r);
-        return `<p><button type="button" class="row" data-go="${esc("/e/" + encodeURIComponent(r.id))}"><span class="row-text"><span class="name">${t(r.name)}</span><span class="meta${meta.kill ? " kill" : ""}">${t(meta.text)}</span></span>${chevron()}</button></p>`;
+        return rowButton("/e/" + encodeURIComponent(r.id), displayName(r), meta.text, {
+          kind: entryKind(r),
+          kill: meta.kill,
+          status: r.status
+        });
       }).join(""));
     }
     return blocks.join("");
@@ -435,14 +565,16 @@
 
   function renderDetail(route, entries) {
     const e = findEntry(entries, route.id);
-    if (!e) return `<p class="empty">Not in the index.</p>`;
-    const killed = e.status === "killed" || !!e.kill_reason;
-    const place = [e.country, e.city].filter(Boolean).join(", ");
-    const headMeta = killed
-      ? joinMeta([typeLabel(e), "Killed", place])
-      : joinMeta([typeLabel(e), statusLabel(e.status), place]);
+    if (!e) return `<p class="empty">That item is not in the list.</p>`;
+    const killed = isKilled(e);
+    const place = [placeLabel(e), e.city].filter(Boolean).join(", ");
+    const gloss = STATUS_GLOSS[e.status] || (killed ? STATUS_GLOSS.killed : "");
+    const headMeta = joinMeta([rolePhrase(e) + (gloss ? ". " + gloss : ""), place, codeOf(e)]);
+    const shownName = displayName(e);
     const summaryRaw = e.summary || e.claim || "";
-    const summary = (e.kill_reason && nd(summaryRaw).trim() === nd(e.kill_reason).trim()) ? "" : summaryRaw;
+    const sameAsTitle = nd(summaryRaw).trim() === nd(shownName).trim();
+    const sameAsKill = e.kill_reason && nd(summaryRaw).trim() === nd(e.kill_reason).trim();
+    const summary = (sameAsTitle || sameAsKill) ? "" : summaryRaw;
     const scene = sceneBlocks(e.scene);
     const web = safeUrl(e.website);
     let host = "";
@@ -454,21 +586,27 @@
     const firstUrl = first ? safeUrl(first.url) : "";
     const extra = moreHtml(e);
     let html = `<article class="detail">
-      <h1>${t(e.name)}</h1>
-      <p class="screen-meta">${t(headMeta)}</p>
+      <div class="detail-head">
+        ${iconTile(entryKind(e))}
+        <div>
+          <h1>${t(shownName)}</h1>
+          <p class="screen-meta${killed ? " kill" : ""}">${t(headMeta)}</p>
+        </div>
+      </div>
       ${summary ? `<p class="summary">${t(summary)}</p>` : ""}`;
     if (scene) html += `<div class="group">${scene}</div>`;
     if (web) {
       html += `<div class="group"><a class="row" href="${esc(web)}" target="_blank" rel="noopener">
+        ${iconTile("link")}
         <span class="row-text"><span class="name">Website</span><span class="meta">${t(host)}</span></span>
         ${chevron()}
       </a></div>`;
     }
     if (killed) {
       html += `<div class="group killbox"><div class="pad">
-        <p class="kicker">Kill reason</p>
-        <p class="killtext">${t(e.kill_reason || "Killed")}</p>
-        ${e.kill_source ? `<p class="meta">Kill source: ${t(e.kill_source)}</p>` : ""}
+        <p class="kicker">Why we killed it</p>
+        <p class="killtext">${t(e.kill_reason || "We researched it and dropped it.")}</p>
+        ${e.kill_source ? `<p class="meta">Where we wrote that down: ${t(e.kill_source)}</p>` : ""}
       </div></div>`;
     }
     if (sources.length || e.source_scan) {
@@ -486,7 +624,8 @@
     if (extra) {
       html += `<div class="group">
         <button type="button" class="row more" data-more aria-expanded="${moreOpen ? "true" : "false"}">
-          <span class="row-text"><span class="name">${moreOpen ? "Less" : "More"}</span></span>
+          ${iconTile("note")}
+          <span class="row-text"><span class="name">${moreOpen ? "Hide the full note" : "Read the full note"}</span></span>
           ${chevron()}
         </button>
         ${moreOpen ? `<div class="more-panel">${extra}</div>` : ""}
@@ -507,14 +646,16 @@
       code = primaryCode(entry);
     }
     if (code) {
+      const cards = themeCards(entries);
       parts.push({
-        label: code,
+        label: themeTitle(code, cards.get(code) || null),
         path: "/t/" + encodeURIComponent(code)
       });
     }
     if (route.view === "entry") {
       const entry = findEntry(entries, route.id);
-      parts.push({ label: entry ? nd(entry.name) : "Entry", path: "" });
+      const label = entry ? displayName(entry) : "Entry";
+      parts.push({ label: label.length > 36 ? clip(label, 32) : label, path: "" });
     }
     const last = parts.length - 1;
     return `<p class="crumb">${parts.map((p, i) => {
@@ -541,23 +682,35 @@
     if (route.view === "root") {
       const c = countsOf(entries);
       intro = `<div class="intro">
-        <p class="lede">Companies, ideas, and kills in ageing tech.</p>
-        <p class="counts">${c.total} entries · ${c.companies} companies · ${c.ideas} ideas · ${c.killed} killed</p>
+        <p class="lede">A public list of companies and ideas in ageing and care, including the ones we researched and dropped.</p>
+        <p class="counts">${c.total} in the list · ${c.companies} companies · ${c.ideas} ideas · ${c.killed} dropped</p>
       </div>`;
       body = renderBuckets(entries, buckets, query);
     } else if (route.view === "theme") {
       if (!bucket) {
         title = "Who Cares";
-        body = `<p class="empty">Not in the index.</p>`;
+        body = `<p class="empty">That item is not in the list.</p>`;
       } else {
         title = bucket.title + " - Who Cares";
         const killed = bucket.status === "killed";
-        const themeMeta = killed
-          ? joinMeta([bucket.code, bucket.count + (bucket.count === 1 ? " entry" : " entries"), "Killed"])
-          : joinMeta([bucket.code, bucket.count + (bucket.count === 1 ? " entry" : " entries"), statusLabel(bucket.status)]);
+        const level = bucket.group === "life" ? "Life stage" : "Theme";
+        const themeMeta = joinMeta([
+          level,
+          bucket.count + (bucket.count === 1 ? " entry" : " entries"),
+          killed ? "Researched and dropped" : statusLabel(bucket.status),
+          bucket.code
+        ]);
+        const reason = killed ? clip(bucket.summary, 160) : "";
         intro = "";
-        body = `<h1 class="screen-title">${t(bucket.title)}</h1>
-          <p class="screen-meta${killed ? " kill" : ""}">${t(themeMeta)}</p>`
+        body = `<div class="screen-head">
+            ${iconTile(bucket.group === "life" ? "life" : "theme")}
+            <div>
+              <h1 class="screen-title">${t(bucket.title)}</h1>
+              <p class="screen-meta${killed ? " kill" : ""}">${t(themeMeta)}</p>
+            </div>
+            ${statusMark(bucket.status)}
+          </div>
+          ${reason ? `<p class="screen-reason">${t(reason)}</p>` : ""}`
           + renderThemeList(route, entries);
       }
     } else {
@@ -611,7 +764,7 @@
       if (boot) boot.hidden = true;
       render(false);
     }).catch(() => {
-      if (boot) boot.textContent = "The index could not be loaded.";
+      if (boot) boot.textContent = "We could not load the list. Try again in a moment.";
     });
   });
 })();
