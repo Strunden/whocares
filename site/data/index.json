@@ -45,7 +45,7 @@
       "themes": [
         "T07"
       ],
-      "country": "Germany",
+      "country": "DE",
       "city": "Berlin",
       "scene": {
         "job": "It gives an older adult a voice-controlled tablet for calls, music, and reminders, while the family manages it from an app.",
@@ -181,7 +181,11 @@
             "name": "IBB Ventures",
             "source": "https://www.ibbventures.de/de/news/amara-sammelt-3-7-millionen-euro-ein"
           }
-        ]
+        ],
+        "country": {
+          "code": "DE",
+          "source": "https://amara.app/impressum"
+        }
       }
     },
     {
@@ -197,7 +201,7 @@
       "themes": [
         "T02"
       ],
-      "country": "Germany",
+      "country": "DE",
       "city": "Berlin",
       "scene": {
         "job": "It senses when an incontinence product should be changed and alerts care staff, and it can also signal movement and falls.",
@@ -328,7 +332,11 @@
             "name": "IBB Capital",
             "source": "https://www.heuking.de/en/news-events/latest-news/article/heuking-advises-assistme-gmbh-on-its-65-million-euro-financing-round.html"
           }
-        ]
+        ],
+        "country": {
+          "code": "DE",
+          "source": "https://invest-in.berlin/n/berlin-care-tech-startup-assistme-bags-eur65m/"
+        }
       }
     },
     {
@@ -344,7 +352,7 @@
       "themes": [
         "T04"
       ],
-      "country": "Austria",
+      "country": "AT",
       "city": "Vienna",
       "scene": {
         "job": "It uses 3D infrared sensors to detect falls, absence, and activity in care homes and clinics without taking camera pictures.",
@@ -430,7 +438,11 @@
             "name": "Raiffeisen-Landesbank Steiermark",
             "source": "https://www.ots.at/presseaussendung/OTS_20250312_OTS0020/cogvis-sichert-sich-siebenstelliges-investment-der-raiffeisen-landesbank-steiermark"
           }
-        ]
+        ],
+        "country": {
+          "code": "AT",
+          "source": "https://www.ots.at/presseaussendung/OTS_20250312_OTS0020/cogvis-sichert-sich-siebenstelliges-investment-der-raiffeisen-landesbank-steiermark"
+        }
       }
     },
     {
@@ -446,7 +458,7 @@
       "themes": [
         "T04"
       ],
-      "country": "Germany",
+      "country": "DE",
       "city": "not named on page",
       "scene": {
         "job": "It uses sound to detect a critical situation in care or at home and alerts the team, without a camera.",
@@ -526,7 +538,11 @@
             "role": "Managing director",
             "source": "https://www.northdata.com/auditect%20GmbH"
           }
-        ]
+        ],
+        "country": {
+          "code": "DE",
+          "source": "https://www.auditect.de/impressum.html"
+        }
       }
     },
     {
@@ -683,7 +699,7 @@
         "T04",
         "T08"
       ],
-      "country": "Germany",
+      "country": "DE",
       "city": "Kassel / Munich",
       "scene": {
         "job": "It reads existing electricity and water meters to notice inactivity or a leak and alerts a contact, without installing room sensors.",
@@ -805,7 +821,11 @@
             "name": "Matthias Sandrock",
             "source": "https://hessian.ai/de/aisr-startup-alumni-veli-sichert-sich-800-000-e-investition-um-ki-gestutzte-hausliche-altenpflege-voranzutreiben/"
           }
-        ]
+        ],
+        "country": {
+          "code": "DE",
+          "source": "https://www.veli-care.de/impressum"
+        }
       }
     },
     {
@@ -976,7 +996,7 @@
         "T07",
         "T15"
       ],
-      "country": "Germany",
+      "country": "DE",
       "city": "Munich",
       "scene": {
         "job": "It is a robot for care homes that holds conversations, remembers people, and runs activity sessions.",
@@ -1066,7 +1086,11 @@
             "role": "Managing director",
             "source": "https://www.northdata.com/navel%20robotics%20GmbH"
           }
-        ]
+        ],
+        "country": {
+          "code": "DE",
+          "source": "https://navelrobotics.com/impressum/"
+        }
       }
     },
     {
@@ -1082,7 +1106,7 @@
       "themes": [
         "T07"
       ],
-      "country": "Germany",
+      "country": "DE",
       "city": "Darmstadt",
       "scene": {
         "job": "It puts video calls, reminders, and messages on the television, with a simple remote, for the time between care visits.",
@@ -1165,6 +1189,10 @@
         "founded": {
           "year": 2025,
           "source": "https://www.northdata.com/Zenaris%20GmbH"
+        },
+        "country": {
+          "code": "DE",
+          "source": "https://www.zenaris.com/impressum"
         }
       }
     },
@@ -1334,7 +1362,7 @@
       "themes": [
         "T11"
       ],
-      "country": "Belgium",
+      "country": "BE",
       "city": "Antwerp",
       "scene": {
         "job": "It matches screened students to older adults and busy families for shopping, company, garden work, and digital help.",
@@ -1404,7 +1432,11 @@
             "url": "https://play.google.com/store/apps/details?id=be.mauricenora.student",
             "source": "https://mauricenora.be"
           }
-        ]
+        ],
+        "country": {
+          "code": "BE",
+          "source": "https://mauricenora.be/contact"
+        }
       }
     },
     {
@@ -1655,7 +1687,7 @@
       "themes": [
         "T04"
       ],
-      "country": "Germany",
+      "country": "DE",
       "city": "Berlin (from continuum context)",
       "scene": {
         "job": "It analyses mobility and fall risk for care teams from a smartphone.",
@@ -1738,7 +1770,11 @@
             "role": "Managing director",
             "source": "https://www.northdata.com/LINDERA%20GmbH"
           }
-        ]
+        ],
+        "country": {
+          "code": "DE",
+          "source": "https://lindera.de/de/impressum"
+        }
       }
     },
     {
@@ -2437,7 +2473,7 @@
       "themes": [
         "T11"
       ],
-      "country": "Canada",
+      "country": "CA",
       "city": "",
       "scene": {
         "job": "It matches people in Vancouver for everyday help."
@@ -2482,7 +2518,11 @@
             "url": "https://play.google.com/store/apps/details?id=com.tuktu",
             "source": "https://tuktu.ca/"
           }
-        ]
+        ],
+        "country": {
+          "code": "CA",
+          "source": "https://tuktu.ca/contact-us"
+        }
       }
     },
     {
@@ -3452,7 +3492,7 @@
       "themes": [
         "T02"
       ],
-      "country": "Global / DE",
+      "country": "SE",
       "city": "",
       "scene": {
         "job": "It is a sensor worn for 72 hours to assess continence in a care facility."
@@ -3488,6 +3528,10 @@
       "facts": {
         "hq": {
           "city": "Stockholm",
+          "source": "https://www.tena.de/imprint"
+        },
+        "country": {
+          "code": "SE",
           "source": "https://www.tena.de/imprint"
         }
       }
@@ -3552,7 +3596,7 @@
       "themes": [
         "T13"
       ],
-      "country": "Germany",
+      "country": "DE",
       "city": "",
       "scene": {
         "job": "It is administration and electronic care-record software for care operators."
@@ -3605,7 +3649,11 @@
             "role": "Managing director",
             "source": "https://www.northdata.com/MEDIFOX%20DAN%20GmbH"
           }
-        ]
+        ],
+        "country": {
+          "code": "DE",
+          "source": "https://www.medifoxdan.de/impressum"
+        }
       }
     },
     {
@@ -3666,7 +3714,7 @@
       "themes": [
         "T10"
       ],
-      "country": "Germany",
+      "country": "DE",
       "city": "",
       "scene": {
         "job": "It provides catering for senior care homes."
@@ -3707,6 +3755,10 @@
         "founded": {
           "year": 1991,
           "source": "https://www.northdata.com/apetito%20AG"
+        },
+        "country": {
+          "code": "DE",
+          "source": "https://www.apetito.de/ueber-apetito"
         }
       }
     },
@@ -6945,7 +6997,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is a patient AI that listens during doctor visits, turns notes into plain German, and helps share understanding with family.",
@@ -6984,6 +7036,10 @@
         },
         "hq": {
           "city": "Munich",
+          "source": "https://www.mymeda.ai/impressum"
+        },
+        "country": {
+          "code": "DE",
           "source": "https://www.mymeda.ai/impressum"
         }
       }
@@ -7264,7 +7320,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is an easy-to-use service that connects elderly individuals to the internet, enabling them to engage in video calls, send photo messages, and access various online content through a simple card system.",
@@ -7301,6 +7357,10 @@
         },
         "hq": {
           "city": "München",
+          "source": "https://enna.care/impressum"
+        },
+        "country": {
+          "code": "DE",
           "source": "https://enna.care/impressum"
         }
       }
@@ -7434,7 +7494,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "Cliniserve brings digital technologies into the processes of nursing at hospitals and elderly care facilities.",
@@ -7491,7 +7551,11 @@
             "role": "Managing director",
             "source": "https://www.northdata.com/Cliniserve%20GmbH"
           }
-        ]
+        ],
+        "country": {
+          "code": "DE",
+          "source": "https://www.northdata.com/Cliniserve%20GmbH"
+        }
       }
     },
     {
@@ -7505,7 +7569,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is a personalized and family-centered elderly home care services, ensuring comprehensive support through a single point of contact for families caring for their loved ones.",
@@ -7550,7 +7614,11 @@
             "role": "Managing director",
             "source": "https://www.northdata.com/Hemby%20GmbH"
           }
-        ]
+        ],
+        "country": {
+          "code": "DE",
+          "source": "https://www.northdata.com/Hemby%20GmbH"
+        }
       }
     },
     {
@@ -7564,7 +7632,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is a myo formfix is a software that simplifies the application process for long-term care subsidies, speeds up the approval process, and thereby reduces outstanding payments to care home operators by at least half.",
@@ -7597,6 +7665,10 @@
       "facts": {
         "hq": {
           "city": "Berlin",
+          "source": "https://myo-formfix.de/impressum"
+        },
+        "country": {
+          "code": "DE",
           "source": "https://myo-formfix.de/impressum"
         }
       }
@@ -7728,7 +7800,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "United States",
+      "country": "US",
       "city": null,
       "scene": {
         "job": "Listens during medical appointments, explains terms in plain language, and helps share visit summaries with family.",
@@ -7780,7 +7852,11 @@
             "name": "Julian Pscheid",
             "source": "https://www.hedy.ai/de/about/"
           }
-        ]
+        ],
+        "country": {
+          "code": "US",
+          "source": "https://www.hedy.ai/de/about/"
+        }
       }
     },
     {
@@ -7877,7 +7953,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is an eli die Fee Seniorendienst offers senior care and household assistance, combating loneliness and empowering seniors to participate in social life.",
@@ -7910,6 +7986,10 @@
       "facts": {
         "hq": {
           "city": "Bochum",
+          "source": "https://www.elidiefee.de/impressum"
+        },
+        "country": {
+          "code": "DE",
           "source": "https://www.elidiefee.de/impressum"
         }
       }
@@ -7966,7 +8046,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "France",
+      "country": "FR",
       "city": null,
       "scene": {
         "job": "It provides home care for older adults, with trained caregivers and Alzheimer's co-housing.",
@@ -8021,7 +8101,11 @@
             "role": "Founder",
             "source": "https://www.silvereco.fr/la-startup-sociale-alenvi-leve-11-million-deuros-pour-humaniser-laide-a-domicile-des-personnes-agees-a-grande-echelle/"
           }
-        ]
+        ],
+        "country": {
+          "code": "FR",
+          "source": "https://www.alenvi.io/mentions-legales"
+        }
       }
     },
     {
@@ -8079,7 +8163,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "United Kingdom",
+      "country": "GB",
       "city": null,
       "scene": {
         "job": "It is a digital-first home healthcare company that harnesses technology to bring care directly to homes, transforming the healthcare landscape by providing higher quality services at a fraction of the cost.",
@@ -8127,6 +8211,10 @@
             "source": "https://techcrunch.com/2025/01/12/uk-in-home-healthcare-provider-cera-raises-150m-to-expand-its-ai-platform/",
             "date": "January 2025"
           }
+        },
+        "country": {
+          "code": "GB",
+          "source": "https://www.cerahq.com/contact-us"
         }
       }
     },
@@ -8141,7 +8229,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is a German caregiver diary app for voice/text/photo entries and PDF weekly reports for doctor or MD assessments.",
@@ -8189,6 +8277,10 @@
         "hq": {
           "city": "Duisburg",
           "source": "https://meinpflegetagebuch.de/impressum"
+        },
+        "country": {
+          "code": "DE",
+          "source": "https://meinpflegetagebuch.de/impressum"
         }
       }
     },
@@ -8203,7 +8295,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It makes a wearable that tracks vital signs for older adults and connects to an app for caregivers.",
@@ -8248,7 +8340,11 @@
             "role": "Managing director",
             "source": "https://www.northdata.com/Movacare%20GmbH"
           }
-        ]
+        ],
+        "country": {
+          "code": "DE",
+          "source": "https://www.northdata.com/Movacare%20GmbH"
+        }
       }
     },
     {
@@ -8492,7 +8588,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is a HealthX Future GmbH provides a collaborative platform for elderly care, utilizing data-driven medicine and machine learning.",
@@ -8542,7 +8638,11 @@
             "role": "Managing director",
             "source": "https://www.northdata.com/HealthX%20Future%20GmbH"
           }
-        ]
+        ],
+        "country": {
+          "code": "DE",
+          "source": "https://www.healthx-future.de/impressum"
+        }
       }
     },
     {
@@ -8556,7 +8656,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "Provides security solutions for apartments that allow access in case of emergency."
@@ -8600,7 +8700,11 @@
             "role": "Managing director",
             "source": "https://www.northdata.com/NOX%20AAL%20Technologies%20GmbH"
           }
-        ]
+        ],
+        "country": {
+          "code": "DE",
+          "source": "https://www.northdata.com/NOX%20AAL%20Technologies%20GmbH"
+        }
       }
     },
     {
@@ -8614,7 +8718,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "United States",
+      "country": "US",
       "city": null,
       "scene": {
         "job": "It is a platform for social service agencies to digitize benefits screening and care coordination for older adults."
@@ -8642,7 +8746,13 @@
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": "/api/logo/company-blooming-health"
+      "logo": "/api/logo/company-blooming-health",
+      "facts": {
+        "country": {
+          "code": "US",
+          "source": "https://gobloominghealth.com/contact-us"
+        }
+      }
     },
     {
       "id": "company-confidant",
@@ -9006,7 +9116,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Netherlands",
+      "country": "NL",
       "city": null,
       "scene": {
         "job": "Compaan specializes in user-friendly tablets for seniors, connecting generations through secure communication.",
@@ -9035,7 +9145,13 @@
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": "/api/logo/company-compaan"
+      "logo": "/api/logo/company-compaan",
+      "facts": {
+        "country": {
+          "code": "NL",
+          "source": "https://www.uwcompaan.nl/contact/"
+        }
+      }
     },
     {
       "id": "company-mercury-alert-ai",
@@ -9201,7 +9317,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is a pioneer in smart exoskeletons and wearable tools for workplace safety, using AI to support lifting movements and prevent poor posture."
@@ -9263,7 +9379,11 @@
             "name": "IT Farm",
             "source": "https://techcrunch.com/2020/12/14/german-bionic-raises-20m-led-by-samsung-for-exoskeleton-tech-to-supercharge-human-labor/"
           }
-        ]
+        ],
+        "country": {
+          "code": "DE",
+          "source": "https://techcrunch.com/2020/12/14/german-bionic-raises-20m-led-by-samsung-for-exoskeleton-tech-to-supercharge-human-labor/"
+        }
       }
     },
     {
@@ -9277,7 +9397,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "United States",
+      "country": "US",
       "city": null,
       "scene": {
         "job": "HelpAny provides an on-demand assistance platform connecting seniors with local helpers for everyday tasks, errands, and home assistance."
@@ -9305,7 +9425,13 @@
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": "/api/logo/company-sedimentum-ag"
+      "logo": "/api/logo/company-sedimentum-ag",
+      "facts": {
+        "country": {
+          "code": "US",
+          "source": "https://helpany.com/contact-us/"
+        }
+      }
     },
     {
       "id": "company-careloop",
@@ -9318,7 +9444,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It recruits, trains, and places international nurses in healthcare facilities in Germany."
@@ -9362,7 +9488,11 @@
             "role": "Managing director",
             "source": "https://www.northdata.com/Careloop%20GmbH"
           }
-        ]
+        ],
+        "country": {
+          "code": "DE",
+          "source": "https://careloop.io/impressum/"
+        }
       }
     },
     {
@@ -9479,7 +9609,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is a navigation technology for the Visually Impaired."
@@ -9512,6 +9642,10 @@
         "hq": {
           "city": "Garching",
           "source": "https://www.habric.com/imprint"
+        },
+        "country": {
+          "code": "DE",
+          "source": "https://www.habric.com/imprint"
         }
       }
     },
@@ -9526,7 +9660,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is a German AI assistant that helps people understand, optimise and complete statutory pension applications through text, voice, images and guided workflows."
@@ -9559,6 +9693,10 @@
         "hq": {
           "city": "Stuttgart",
           "source": "https://www.rentennavi.de/impressum/"
+        },
+        "country": {
+          "code": "DE",
+          "source": "https://www.rentennavi.de/impressum/"
         }
       }
     },
@@ -9573,7 +9711,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Netherlands",
+      "country": "NL",
       "city": null,
       "scene": {
         "job": "It is a clock functions via mobile, laptop or computer which connects the elderly people and their family and health organizations.",
@@ -9602,7 +9740,13 @@
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": "/api/logo/company-dayclocks"
+      "logo": "/api/logo/company-dayclocks",
+      "facts": {
+        "country": {
+          "code": "NL",
+          "source": "https://www.dayclocks.nl/contact/"
+        }
+      }
     },
     {
       "id": "company-cerascreen",
@@ -9615,7 +9759,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is an at-home self-tests for health issues like deficiencies, allergies, and intolerances, along with personalized health reports and recommendations for wellness."
@@ -9659,7 +9803,11 @@
             "role": "Managing director",
             "source": "https://www.northdata.com/Cerascreen%20GmbH"
           }
-        ]
+        ],
+        "country": {
+          "code": "DE",
+          "source": "https://www.northdata.com/Cerascreen%20GmbH"
+        }
       }
     },
     {
@@ -9714,7 +9862,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "Provides science-backed physical therapy and training for long-term health and recovery."
@@ -9753,7 +9901,11 @@
             "name": "Jesaja Brinkmann",
             "source": "https://somana.com/about-us"
           }
-        ]
+        ],
+        "country": {
+          "code": "DE",
+          "source": "https://somana.com/imprint"
+        }
       }
     },
     {
@@ -9767,7 +9919,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is a DALUMA: Elevate human potential with highest quality skincare, supplements, and functional liquids."
@@ -9814,6 +9966,10 @@
         "founded": {
           "year": 2014,
           "source": "https://www.northdata.com/DALUMA%20GmbH"
+        },
+        "country": {
+          "code": "DE",
+          "source": "https://daluma.de/pages/impressum"
         }
       }
     },
@@ -9912,7 +10068,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is a motus Health is a mobile app for stroke recovery and socialization, developed by medical experts to cater to all stroke survivors' needs."
@@ -9945,6 +10101,10 @@
         "hq": {
           "city": "Köln",
           "source": "https://motus.health/impressum/"
+        },
+        "country": {
+          "code": "DE",
+          "source": "https://motus.health/impressum/"
         }
       }
     },
@@ -9959,7 +10119,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is a company that offers products with high bioavailability, supported by clinical studies."
@@ -10008,7 +10168,11 @@
             "role": "Managing director",
             "source": "https://www.northdata.com/Myricals%20GmbH"
           }
-        ]
+        ],
+        "country": {
+          "code": "DE",
+          "source": "https://www.northdata.com/Myricals%20GmbH"
+        }
       }
     },
     {
@@ -10022,7 +10186,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "France",
+      "country": "FR",
       "city": null,
       "scene": {
         "job": "It is an AsWeShare has designed and developed Familink - Digital Frame designed for the elderly people who are not wired in.",
@@ -10076,6 +10240,10 @@
         "hq": {
           "city": "Rouen",
           "source": "https://www.northdata.com/AsWeShare%20SAS"
+        },
+        "country": {
+          "code": "FR",
+          "source": "https://www.northdata.com/AsWeShare%20SAS"
         }
       }
     },
@@ -10090,7 +10258,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is a software solutions for the social economy such as elderly care, disability aid, youth welfare, and outpatient care.",
@@ -10123,6 +10291,10 @@
       "facts": {
         "hq": {
           "city": "Augsburg",
+          "source": "https://www.managingcare.de/impressum/"
+        },
+        "country": {
+          "code": "DE",
           "source": "https://www.managingcare.de/impressum/"
         }
       }
@@ -10262,7 +10434,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "United Kingdom",
+      "country": "GB",
       "city": null,
       "scene": {
         "job": "It is a pioneering AI-enabled 3D ultrasound sensing for safe, reliable perception in autonomous mobility, infrastructure, and assisted living."
@@ -10290,7 +10462,13 @@
       "why_dropped": null,
       "tag": "Daily life and getting around",
       "tag_secondary": null,
-      "logo": "/api/logo/company-calyo"
+      "logo": "/api/logo/company-calyo",
+      "facts": {
+        "country": {
+          "code": "GB",
+          "source": "https://calyo.com/contact/"
+        }
+      }
     },
     {
       "id": "company-ezygain",
@@ -10303,7 +10481,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "France",
+      "country": "FR",
       "city": null,
       "scene": {
         "job": "It is a gaming-based rehabilitation devices for neurorehabilitation, including cerebral palsy and aging-related mobility loss, serving home users, rehabilitation centers, physiotherapists, and nursing homes.",
@@ -10341,6 +10519,10 @@
         "hq": {
           "city": "Boulogne-Billancourt",
           "source": "https://www.northdata.com/EzyGain%20SAS"
+        },
+        "country": {
+          "code": "FR",
+          "source": "https://www.northdata.com/EzyGain%20SAS"
         }
       }
     },
@@ -10355,7 +10537,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is a PARAVAN GmbH is a global leader in accessible vehicle modifications and mobility solutions for disabled individuals, offering a complete range of products and services tailored to individual needs."
@@ -10387,6 +10569,10 @@
       "facts": {
         "hq": {
           "city": "Aichelau",
+          "source": "https://www.paravan.de/beratung-service/uebersicht-beratung-service"
+        },
+        "country": {
+          "code": "DE",
           "source": "https://www.paravan.de/beratung-service/uebersicht-beratung-service"
         }
       }
@@ -10443,7 +10629,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is a home-based intestinal flora analysis test that helps individuals understand their gut bacteria and provides personalized dietary recommendations to address digestive issues, immune deficiencies, and weight problems."
@@ -10476,6 +10662,10 @@
         "model": {
           "text": "Prices start at 99€.",
           "source": "https://biomes.world/de/"
+        },
+        "country": {
+          "code": "DE",
+          "source": "https://biomes.world/de/rechtliches/impressum/"
         }
       }
     },
@@ -10490,7 +10680,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is a humanoid home robots combining AI autonomy with human teleoperation to provide practical support, companionship and remote presence for older adults.",
@@ -10519,7 +10709,13 @@
       "why_dropped": null,
       "tag": "Daily life and getting around",
       "tag_secondary": null,
-      "logo": "/api/logo/company-plim"
+      "logo": "/api/logo/company-plim",
+      "facts": {
+        "country": {
+          "code": "DE",
+          "source": "https://www.devanthro.com/contact/"
+        }
+      }
     },
     {
       "id": "company-hypershell",
@@ -10532,7 +10728,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Canada",
+      "country": "CN",
       "city": null,
       "scene": {
         "job": "It is a wearable powered exoskeleton devices to augment physical capability and reduce fatigue for users in outdoor, mobility, and daily activity contexts."
@@ -10565,6 +10761,10 @@
         "founded": {
           "year": 2021,
           "source": "https://hypershell.tech/pages/about-us"
+        },
+        "country": {
+          "code": "CN",
+          "source": "https://hypershell.tech/pages/about-us"
         }
       }
     },
@@ -10579,7 +10779,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Netherlands",
+      "country": "NL",
       "city": null,
       "scene": {
         "job": "Cue2Walk develops a wearable rhythmic auditory stimulation device to help Parkinson's patients improve their walking gait and reduce freezing episodes."
@@ -10607,7 +10807,13 @@
       "why_dropped": null,
       "tag": "Daily life and getting around",
       "tag_secondary": null,
-      "logo": "/api/logo/company-cue2walk-international"
+      "logo": "/api/logo/company-cue2walk-international",
+      "facts": {
+        "country": {
+          "code": "NL",
+          "source": "https://cue2walk.nl/contact/"
+        }
+      }
     },
     {
       "id": "company-supportpay",
@@ -10679,7 +10885,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "United Kingdom",
+      "country": "GB",
       "city": null,
       "scene": {
         "job": "It is a personalized fitness and diet recommendations through DNA testing, analyzing over 40 genes to create tailored workout and nutrition plans for individuals worldwide."
@@ -10707,7 +10913,13 @@
       "why_dropped": null,
       "tag": "Daily life and getting around",
       "tag_secondary": null,
-      "logo": "/api/logo/company-fitnessgenes"
+      "logo": "/api/logo/company-fitnessgenes",
+      "facts": {
+        "country": {
+          "code": "GB",
+          "source": "https://www.fitnessgenes.com/contact"
+        }
+      }
     },
     {
       "id": "company-hyli",
@@ -10720,7 +10932,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is the community platform for all individuals who want to organize their estate and inheritance digitally and sustainably within their loved ones."
@@ -10753,6 +10965,10 @@
         "hq": {
           "city": "Hamburg",
           "source": "https://www.hyli.de/impressum/"
+        },
+        "country": {
+          "code": "DE",
+          "source": "https://www.hyli.de/impressum/"
         }
       }
     },
@@ -10767,7 +10983,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "United States",
+      "country": "US",
       "city": null,
       "scene": {
         "job": "It is an AI-powered sign language translation technology that converts sign language to text and speech in real time for accessibility."
@@ -10795,7 +11011,13 @@
       "why_dropped": null,
       "tag": "Daily life and getting around",
       "tag_secondary": null,
-      "logo": "/api/logo/company-sign-speak"
+      "logo": "/api/logo/company-sign-speak",
+      "facts": {
+        "country": {
+          "code": "US",
+          "source": "https://sign-speak.com/contact-us"
+        }
+      }
     },
     {
       "id": "company-zoe",
@@ -10863,7 +11085,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Netherlands",
+      "country": "NL",
       "city": null,
       "scene": {
         "job": "It is a social enterprise that empowers individuals aged 10 to 90 to travel independently in their daily lives."
@@ -10891,7 +11113,13 @@
       "why_dropped": null,
       "tag": "Daily life and getting around",
       "tag_secondary": null,
-      "logo": "/api/logo/company-goov"
+      "logo": "/api/logo/company-goov",
+      "facts": {
+        "country": {
+          "code": "NL",
+          "source": "https://go-ov.nl/contact-2/"
+        }
+      }
     },
     {
       "id": "company-sphaira-medical",
@@ -10904,7 +11132,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is a MedTech startup based in Berlin, aiming to transform medical isolation by enabling safe and immersive interactions through MOBY™, a cutting-edge 360-degree mobile protective pod."
@@ -10948,7 +11176,11 @@
             "role": "Managing director",
             "source": "https://www.northdata.com/Sphaira%20Medical%20GmbH"
           }
-        ]
+        ],
+        "country": {
+          "code": "DE",
+          "source": "https://www.northdata.com/Sphaira%20Medical%20GmbH"
+        }
       }
     },
     {
@@ -10962,7 +11194,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "United Kingdom",
+      "country": "GB",
       "city": null,
       "scene": {
         "job": "It is a hip Impact Protection specializes in dilatant-based hip protectors with wearable sensors to prevent hip fractures and falls in the elderly.",
@@ -10991,7 +11223,13 @@
       "why_dropped": null,
       "tag": "Daily life and getting around",
       "tag_secondary": null,
-      "logo": "/api/logo/company-hip-impact-protection"
+      "logo": "/api/logo/company-hip-impact-protection",
+      "facts": {
+        "country": {
+          "code": "GB",
+          "source": "https://hips-protect.com/pages/about-us"
+        }
+      }
     },
     {
       "id": "company-invictus-active",
@@ -11045,7 +11283,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "United Kingdom",
+      "country": "GB",
       "city": null,
       "scene": {
         "job": "It is a discreet wearable medical technologies for Parkinson’s, including gaitQ tempo™, a vibrational cueing system to enhance mobility and stability in walking."
@@ -11073,7 +11311,13 @@
       "why_dropped": null,
       "tag": "Daily life and getting around",
       "tag_secondary": null,
-      "logo": "/api/logo/company-gaitq"
+      "logo": "/api/logo/company-gaitq",
+      "facts": {
+        "country": {
+          "code": "GB",
+          "source": "https://www.gaitq.com/contact/"
+        }
+      }
     },
     {
       "id": "company-holifya",
@@ -11169,7 +11413,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Netherlands",
+      "country": "NL",
       "city": null,
       "scene": {
         "job": "It handles the paperwork of ending and transferring contracts after a death, and notifies the service providers."
@@ -11197,7 +11441,13 @@
       "why_dropped": null,
       "tag": "End of life and inheritance",
       "tag_secondary": null,
-      "logo": "/api/logo/company-closure"
+      "logo": "/api/logo/company-closure",
+      "facts": {
+        "country": {
+          "code": "NL",
+          "source": "https://closure.nl/contact/"
+        }
+      }
     },
     {
       "id": "company-big-launcher",
@@ -11261,7 +11511,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Switzerland",
+      "country": "CH",
       "city": null,
       "scene": {
         "job": "It is a company that specializes in manufacturing innovative medical equipment, including the Scewo BRO electric wheelchair."
@@ -11297,6 +11547,10 @@
         },
         "hq": {
           "city": "Winterthur",
+          "source": "https://www.northdata.com/Scewo%20AG"
+        },
+        "country": {
+          "code": "CH",
           "source": "https://www.northdata.com/Scewo%20AG"
         }
       }
@@ -11353,7 +11607,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is a German digital Vorsorge companion for wills, living wills, powers of attorney, digital estate and death-case checklists.",
@@ -11387,6 +11641,10 @@
       "facts": {
         "hq": {
           "city": "Kirchweiler",
+          "source": "https://eritaj.de/impressum"
+        },
+        "country": {
+          "code": "DE",
           "source": "https://eritaj.de/impressum"
         }
       }
@@ -11443,7 +11701,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "United Kingdom",
+      "country": "GB",
       "city": null,
       "scene": {
         "job": "It is a specialized software aimed at transforming the probate industry by enabling legal and financial professionals to streamline estate administration processes and enhance collaboration, ultimately improving client outcomes."
@@ -11471,7 +11729,13 @@
       "why_dropped": null,
       "tag": "End of life and inheritance",
       "tag_secondary": null,
-      "logo": "/api/logo/company-exizent"
+      "logo": "/api/logo/company-exizent",
+      "facts": {
+        "country": {
+          "code": "GB",
+          "source": "https://www.exizent.com/contact"
+        }
+      }
     },
     {
       "id": "company-funeral-safe",
@@ -11484,7 +11748,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "United Kingdom",
+      "country": "GB",
       "city": null,
       "scene": {
         "job": "It is an accessible and affordable funeral loans to help individuals cover the costs associated with funerals, ensuring financial support during difficult times."
@@ -11512,7 +11776,13 @@
       "why_dropped": null,
       "tag": "End of life and inheritance",
       "tag_secondary": null,
-      "logo": "/api/logo/company-funeral-safe"
+      "logo": "/api/logo/company-funeral-safe",
+      "facts": {
+        "country": {
+          "code": "GB",
+          "source": "https://funeralsafe.co.uk/impressum"
+        }
+      }
     },
     {
       "id": "company-trust-will",
@@ -11580,7 +11850,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "United Kingdom",
+      "country": "GB",
       "city": null,
       "scene": {
         "job": "It is the UK's largest will-writing service and end-of-life platform, offering affordable online wills, probate services, and funeral planning."
@@ -11667,7 +11937,11 @@
             "name": "Kindred Capital",
             "source": "https://techcrunch.com/2020/07/08/uks-farewill-raises-25m-for-its-new-approach-online-will-writing-funerals-and-other-death-services/"
           }
-        ]
+        ],
+        "country": {
+          "code": "GB",
+          "source": "https://farewill.com/about"
+        }
       }
     },
     {
@@ -11720,7 +11994,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "France",
+      "country": "CZ",
       "city": null,
       "scene": {
         "job": "It is a digital legacy and estate-planning product for documenting wishes and assets for heirs."
@@ -11761,7 +12035,11 @@
             "url": "https://play.google.com/store/apps/details?id=io.eterny.app",
             "source": "https://www.eterny.io/"
           }
-        ]
+        ],
+        "country": {
+          "code": "CZ",
+          "source": "https://www.eterny.io/about"
+        }
       }
     },
     {
@@ -11775,7 +12053,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "United Kingdom",
+      "country": "GB",
       "city": null,
       "scene": {
         "job": "It is a free end-of-life planning platform that helps people document and share their wishes, funeral plans, and legacy messages with loved ones."
@@ -11803,7 +12081,13 @@
       "why_dropped": null,
       "tag": "End of life and inheritance",
       "tag_secondary": null,
-      "logo": "/api/logo/company-mywishes"
+      "logo": "/api/logo/company-mywishes",
+      "facts": {
+        "country": {
+          "code": "GB",
+          "source": "https://www.mywishes.co.uk/contact-us"
+        }
+      }
     },
     {
       "id": "company-careship",
@@ -11816,7 +12100,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is a senior care and everyday assistance services by connecting seniors with local caregivers.",
@@ -11891,7 +12175,11 @@
             "name": "Axel Springer Plug and Play",
             "source": "https://tech.eu/2018/04/05/careship-funding/"
           }
-        ]
+        ],
+        "country": {
+          "code": "DE",
+          "source": "https://www.careship.de/impressum"
+        }
       }
     },
     {
@@ -11905,7 +12193,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is a vorsorge app that stores estate details, documents, funeral wishes and timed releases so families are not left searching after a death.",
@@ -11950,6 +12238,10 @@
         "hq": {
           "city": "Isernhagen",
           "source": "https://getbyond.app/impressum"
+        },
+        "country": {
+          "code": "DE",
+          "source": "https://getbyond.app/impressum"
         }
       }
     },
@@ -11964,7 +12256,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is an online generator that builds a legally structured handwritten will text for users in Germany to copy and sign.",
@@ -11999,6 +12291,10 @@
         "hq": {
           "city": "Berlin",
           "source": "https://erbio.de/impressum/"
+        },
+        "country": {
+          "code": "DE",
+          "source": "https://erbio.de/impressum/"
         }
       }
     },
@@ -12013,7 +12309,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is a platform that connects care providers with vetted caregivers, simplifying the recruitment process for care agencies by allowing them to focus on their core business while ensuring reliable staffing solutions."
@@ -12062,7 +12358,11 @@
             "role": "Managing director",
             "source": "https://www.northdata.com/Careli%20GmbH"
           }
-        ]
+        ],
+        "country": {
+          "code": "DE",
+          "source": "https://careli.de/impressum"
+        }
       }
     },
     {
@@ -12117,7 +12417,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is a German life-story book service that turns questionnaires and interviews into printed memory books for families."
@@ -12162,6 +12462,10 @@
         "hq": {
           "city": "Mosbach",
           "source": "https://meminto.com/imprint/"
+        },
+        "country": {
+          "code": "DE",
+          "source": "https://meminto.com/imprint/"
         }
       }
     },
@@ -12176,7 +12480,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "Marta enables families and caregivers to connect efficiently, offering transparency and fairness in the elderly care market.",
@@ -12255,7 +12559,11 @@
             "name": "Verve Ventures",
             "source": "https://www.startbase.de/news/66-millionen-euro-fuer-marta/"
           }
-        ]
+        ],
+        "country": {
+          "code": "DE",
+          "source": "https://www.marta.de/impressum"
+        }
       }
     },
     {
@@ -12269,7 +12577,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "United Kingdom",
+      "country": "GB",
       "city": null,
       "scene": {
         "job": "It is a funeral Guide is an online platform providing comparison of funeral directors, guidance on funeral arrangements, and bereavement support resources."
@@ -12297,7 +12605,13 @@
       "why_dropped": null,
       "tag": "End of life and inheritance",
       "tag_secondary": null,
-      "logo": "/api/logo/company-funeral-zone"
+      "logo": "/api/logo/company-funeral-zone",
+      "facts": {
+        "country": {
+          "code": "GB",
+          "source": "https://www.funeralguide.co.uk/contact"
+        }
+      }
     },
     {
       "id": "company-guardian-angel",
@@ -12402,7 +12716,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It helps family caregivers organize daily care and find the benefits they are entitled to.",
@@ -12453,7 +12767,11 @@
             "role": "Managing director",
             "source": "https://www.northdata.com/Nui%20Care%20GmbH"
           }
-        ]
+        ],
+        "country": {
+          "code": "DE",
+          "source": "https://www.nui.care/impressum"
+        }
       }
     },
     {
@@ -12467,7 +12785,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is a germany's leading portal for living and aging.",
@@ -12507,7 +12825,11 @@
             "name": "Lars Kilchert",
             "source": "https://www.pflege.de/ueber-pflege-de/"
           }
-        ]
+        ],
+        "country": {
+          "code": "DE",
+          "source": "https://www.pflege.de/impressum/"
+        }
       }
     },
     {
@@ -12645,7 +12967,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is a famPlus GmbH is a Munich- and Hamburg-based provider of employer-funded work-life balance services-including care counseling, parental guidance, and life-situation coaching-offered to employees as a confidential supplementary benefit."
@@ -12689,7 +13011,11 @@
             "role": "Managing director",
             "source": "https://www.northdata.com/famPlus%20GmbH"
           }
-        ]
+        ],
+        "country": {
+          "code": "DE",
+          "source": "https://famplus.de/impressum"
+        }
       }
     },
     {
@@ -12703,7 +13029,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Spain",
+      "country": "ES",
       "city": null,
       "scene": {
         "job": "It is the top digital platform for hiring and managing home care solutions for the elderly in Spain and France.",
@@ -12732,7 +13058,13 @@
       "why_dropped": null,
       "tag": "Family caregivers",
       "tag_secondary": null,
-      "logo": "/api/logo/company-cuideo"
+      "logo": "/api/logo/company-cuideo",
+      "facts": {
+        "country": {
+          "code": "ES",
+          "source": "https://cuideo.com/aviso-legal/"
+        }
+      }
     },
     {
       "id": "company-meet5-meet-new-people",
@@ -12745,7 +13077,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "Meet5 is a social app that facilitates in-person group meetings for middle-aged adults, helping users meet new people locally for activities such as dining, hiking, or cultural outings."
@@ -12785,6 +13117,10 @@
             "source": "https://www.meet5.de/presse",
             "date": "2025"
           }
+        },
+        "country": {
+          "code": "DE",
+          "source": "https://www.meet5.de/impressum"
         }
       }
     },
@@ -12895,7 +13231,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is a digital platform for home care coordination, supporting caregivers and care recipients with task management and communication tools."
@@ -12939,6 +13275,10 @@
         ],
         "hq": {
           "city": "Hamburg",
+          "source": "https://fabel.care/de/imprint"
+        },
+        "country": {
+          "code": "DE",
           "source": "https://fabel.care/de/imprint"
         }
       }
@@ -12996,7 +13336,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "United Kingdom",
+      "country": "GB",
       "city": null,
       "scene": {
         "job": "It is a good Life Sorted connects older and vulnerable individuals with local Helpers for practical Home Help services, promoting independence and a happy living environment."
@@ -13031,7 +13371,11 @@
             "name": "Verity Batchelder",
             "source": "https://goodlifesorted.com/about/"
           }
-        ]
+        ],
+        "country": {
+          "code": "GB",
+          "source": "https://goodlifesorted.com/contact-us/"
+        }
       }
     },
     {
@@ -13045,7 +13389,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is a company that supports individuals in obtaining their rightful care level, specializing in assisting both care recipients and caregivers in navigating the process."
@@ -13089,7 +13433,11 @@
             "role": "Managing director",
             "source": "https://www.northdata.com/FAMILIARA%20GmbH"
           }
-        ]
+        ],
+        "country": {
+          "code": "DE",
+          "source": "https://www.northdata.com/FAMILIARA%20GmbH"
+        }
       }
     },
     {
@@ -13368,7 +13716,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Sweden",
+      "country": "SE",
       "city": null,
       "scene": {
         "job": "It is a smart voice bot service designed to help monitor and check in with elderly relatives.",
@@ -13406,6 +13754,10 @@
         "hq": {
           "city": "Helsingborg",
           "source": "https://www.northdata.com/Call%20Knut%20AB"
+        },
+        "country": {
+          "code": "SE",
+          "source": "https://www.northdata.com/Call%20Knut%20AB"
         }
       }
     },
@@ -13420,7 +13772,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "United States",
+      "country": "US",
       "city": null,
       "scene": {
         "job": "It is an interactive care management platform that improves quality of life for individuals with disabilities through visual mapping and behavioral interventions."
@@ -13461,6 +13813,10 @@
             "amount": "$11 million in NIH grants",
             "source": "https://maphabit.com"
           }
+        },
+        "country": {
+          "code": "US",
+          "source": "https://maphabit.com/pages/contact"
         }
       }
     },
@@ -13690,7 +14046,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "United Kingdom",
+      "country": "GB",
       "city": null,
       "scene": {
         "job": "It is a comprehensive platform that enables individuals to search for and compare local elderly care homes and in-home care providers, facilitating informed decisions for families seeking care for their loved ones.",
@@ -13719,7 +14075,13 @@
       "why_dropped": null,
       "tag": "Family caregivers",
       "tag_secondary": null,
-      "logo": "/api/logo/company-care-sourcer"
+      "logo": "/api/logo/company-care-sourcer",
+      "facts": {
+        "country": {
+          "code": "GB",
+          "source": "https://www.caresourcer.com/aboutus/"
+        }
+      }
     },
     {
       "id": "company-amalia-care",
@@ -13732,7 +14094,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Italy",
+      "country": "IT",
       "city": null,
       "scene": {
         "job": "AmaliaCare is a social-oriented startup using advanced technology to match perfect caregivers with families, providing quality home care based on responsibility and trust."
@@ -13760,7 +14122,13 @@
       "why_dropped": null,
       "tag": "Family caregivers",
       "tag_secondary": null,
-      "logo": "/api/logo/company-amalia-care"
+      "logo": "/api/logo/company-amalia-care",
+      "facts": {
+        "country": {
+          "code": "IT",
+          "source": "https://amaliacare.it/"
+        }
+      }
     },
     {
       "id": "company-eldersvr",
@@ -13814,7 +14182,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is a company focused on smart incontinence management, offering disposable incontinence briefs with smart inlay technology and real-time alerts."
@@ -13863,7 +14231,11 @@
             "role": "Managing director",
             "source": "https://www.northdata.com/Advosense%20GmbH"
           }
-        ]
+        ],
+        "country": {
+          "code": "DE",
+          "source": "https://www.northdata.com/Advosense%20GmbH"
+        }
       }
     },
     {
@@ -13877,7 +14249,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Switzerland",
+      "country": "CH",
       "city": null,
       "scene": {
         "job": "It is a smart, climate-controlled home medicine cabinet and app for older adults managing polypharmacy.",
@@ -13915,6 +14287,10 @@
         "hq": {
           "city": "Basel",
           "source": "https://www.northdata.com/Bayartis%20AG"
+        },
+        "country": {
+          "code": "CH",
+          "source": "https://www.northdata.com/Bayartis%20AG"
         }
       }
     },
@@ -13929,7 +14305,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is a developing a next-gen, AI-powered MRI machine that is portable, affordable, and revolutionizing medical imaging globally."
@@ -13978,7 +14354,11 @@
             "role": "Managing director",
             "source": "https://www.northdata.com/DeepSpin%20GmbH"
           }
-        ]
+        ],
+        "country": {
+          "code": "DE",
+          "source": "https://www.northdata.com/DeepSpin%20GmbH"
+        }
       }
     },
     {
@@ -13992,7 +14372,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Sweden",
+      "country": "SE",
       "city": null,
       "scene": {
         "job": "It gives care teams shared notes, secure messages, and training lessons."
@@ -14028,6 +14408,10 @@
         },
         "hq": {
           "city": "Stockholm",
+          "source": "https://www.northdata.com/Minnity%20AB"
+        },
+        "country": {
+          "code": "SE",
           "source": "https://www.northdata.com/Minnity%20AB"
         }
       }
@@ -14154,7 +14538,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Switzerland",
+      "country": "CH",
       "city": null,
       "scene": {
         "job": "It is a flowbone SA, operating under the domain flowbone.com, is a company dedicated to developing a highly injectable biomaterial for restoring natural bone strength."
@@ -14182,7 +14566,13 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": "/api/logo/company-flowbone-sa"
+      "logo": "/api/logo/company-flowbone-sa",
+      "facts": {
+        "country": {
+          "code": "CH",
+          "source": "https://www.flowbone.com/"
+        }
+      }
     },
     {
       "id": "company-hellomed",
@@ -14195,7 +14585,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is a hellomed - e-pharmacy and medication management SaaS for elderly care.",
@@ -14229,6 +14619,10 @@
         "hq": {
           "city": "Berlin",
           "source": "https://hellomed.com/legal/impressum"
+        },
+        "country": {
+          "code": "DE",
+          "source": "https://hellomed.com/legal/impressum"
         }
       }
     },
@@ -14243,7 +14637,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "Offers Bloodtest for Biomarkers to offer personalised action plans to patients."
@@ -14279,6 +14673,10 @@
         },
         "hq": {
           "city": "Berlin",
+          "source": "https://anivahealth.com/imprint"
+        },
+        "country": {
+          "code": "DE",
           "source": "https://anivahealth.com/imprint"
         }
       }
@@ -14431,7 +14829,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is an AI-Powered Workflow Automation for Nurses."
@@ -14480,7 +14878,11 @@
             "role": "Managing director",
             "source": "https://www.northdata.com/dexter%20health%20GmbH"
           }
-        ]
+        ],
+        "country": {
+          "code": "DE",
+          "source": "https://www.dexter-health.com/impressum"
+        }
       }
     },
     {
@@ -14494,7 +14896,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Switzerland",
+      "country": "CH",
       "city": null,
       "scene": {
         "job": "It is a preventive-health membership combining longitudinal blood testing, Swiss clinical review and full-body MRI to identify health risks earlier."
@@ -14531,6 +14933,10 @@
         "hq": {
           "city": "Zürich",
           "source": "https://www.northdata.com/Ahead%20Health%20AG"
+        },
+        "country": {
+          "code": "CH",
+          "source": "https://www.northdata.com/Ahead%20Health%20AG"
         }
       }
     },
@@ -14545,7 +14951,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Finland",
+      "country": "FI",
       "city": null,
       "scene": {
         "job": "It is a digital therapeutics company focused on addressing the challenges of polypharmacy by developing software solutions for medication reviews."
@@ -14581,6 +14987,10 @@
         },
         "hq": {
           "city": "Helsinki",
+          "source": "https://www.northdata.com/Causalus%20Oy"
+        },
+        "country": {
+          "code": "FI",
           "source": "https://www.northdata.com/Causalus%20Oy"
         }
       }
@@ -14763,7 +15173,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "France",
+      "country": "FR",
       "city": null,
       "scene": {
         "job": "It is a CRO supporting development of therapies for hearing loss and tinnitus in the health and life sciences sector."
@@ -14800,6 +15210,10 @@
         "hq": {
           "city": "Montpellier",
           "source": "https://www.northdata.com/Cilcare%20SAS"
+        },
+        "country": {
+          "code": "FR",
+          "source": "https://www.northdata.com/Cilcare%20SAS"
         }
       }
     },
@@ -14814,7 +15228,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Switzerland",
+      "country": "CH",
       "city": null,
       "scene": {
         "job": "It is a healthcare remedies, advice, and instructions to improve the quality of life for the elderly community.",
@@ -14852,6 +15266,10 @@
         "hq": {
           "city": "Pfäffikon",
           "source": "https://www.northdata.com/Helvetic%20Care%20AG"
+        },
+        "country": {
+          "code": "CH",
+          "source": "https://www.northdata.com/Helvetic%20Care%20AG"
         }
       }
     },
@@ -14866,7 +15284,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "France",
+      "country": "FR",
       "city": null,
       "scene": {
         "job": "It is an auxivia has developed connected glasses to track and monitor fluid intake in dependent individuals, supporting hydration management in elderly care.",
@@ -14903,6 +15321,10 @@
         },
         "hq": {
           "city": "Paris",
+          "source": "https://www.northdata.com/Auxivia%20SAS"
+        },
+        "country": {
+          "code": "FR",
           "source": "https://www.northdata.com/Auxivia%20SAS"
         }
       }
@@ -15010,7 +15432,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "Liv turns at-home health tests into actionable health insights - so people can act before it’s too late."
@@ -15042,6 +15464,10 @@
       "facts": {
         "hq": {
           "city": "Berlin",
+          "source": "https://www.liv.health/en/legal/imprint"
+        },
+        "country": {
+          "code": "DE",
           "source": "https://www.liv.health/en/legal/imprint"
         }
       }
@@ -15098,7 +15524,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is a frieda Health offers digital programs to empower women in managing menopausal symptoms, with costs covered by health insurance.",
@@ -15131,6 +15557,10 @@
       "facts": {
         "hq": {
           "city": "Hamburg",
+          "source": "https://frieda.health/impressum"
+        },
+        "country": {
+          "code": "DE",
           "source": "https://frieda.health/impressum"
         }
       }
@@ -15229,7 +15659,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Finland",
+      "country": "FI",
       "city": null,
       "scene": {
         "job": "It is a market leader in automated medicine dispensing services, providing safe and precise medication distribution in professional home care across the Nordics."
@@ -15278,7 +15708,11 @@
             "role": "Managing director",
             "source": "https://www.northdata.com/Evondos%20Oy"
           }
-        ]
+        ],
+        "country": {
+          "code": "FI",
+          "source": "https://www.evondos.com/about-us"
+        }
       }
     },
     {
@@ -15386,7 +15820,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "United States",
+      "country": "US",
       "city": null,
       "scene": {
         "job": "It is a technology-enabled independent living solutions for the elderly, promoting independence, safety, and comfort through innovative telehealth services accessible on TV, PC, or smartphone."
@@ -15425,6 +15859,10 @@
             "amount": "$25M",
             "source": "https://independa.com/about/investors/"
           }
+        },
+        "country": {
+          "code": "US",
+          "source": "https://independa.com/about/team/"
         }
       }
     },
@@ -15439,7 +15877,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Finland",
+      "country": "FI",
       "city": null,
       "scene": {
         "job": "It is a non-contact health monitoring technology for sleep, stress, and recovery."
@@ -15483,7 +15921,11 @@
             "role": "Managing director",
             "source": "https://www.northdata.com/Emfit%20Oy"
           }
-        ]
+        ],
+        "country": {
+          "code": "FI",
+          "source": "https://www.northdata.com/Emfit%20Oy"
+        }
       }
     },
     {
@@ -15620,7 +16062,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is the Operating System for Patient Monitoring."
@@ -15652,6 +16094,10 @@
       "facts": {
         "hq": {
           "city": "Chorin",
+          "source": "https://livy-care.com/impressum"
+        },
+        "country": {
+          "code": "DE",
           "source": "https://livy-care.com/impressum"
         }
       }
@@ -15708,7 +16154,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "United States",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "JUNI serves as a springboard for science-based and technology startups in Berlin and Brandenburg, facilitating collaboration between founders and experts to drive innovation."
@@ -15747,7 +16193,11 @@
             "name": "Christoph Krüger",
             "source": "https://juni.science/about-us/"
           }
-        ]
+        ],
+        "country": {
+          "code": "DE",
+          "source": "https://juni.science/imprint/"
+        }
       }
     },
     {
@@ -15857,7 +16307,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Italy",
+      "country": "IT",
       "city": null,
       "scene": {
         "job": "It is an innovative startup empowering cities to embrace sustainability and make ESG decisions through their technology for global resilience."
@@ -15885,7 +16335,13 @@
       "why_dropped": null,
       "tag": "Home and housing",
       "tag_secondary": null,
-      "logo": "/api/logo/company-latitudo-40"
+      "logo": "/api/logo/company-latitudo-40",
+      "facts": {
+        "country": {
+          "code": "IT",
+          "source": "https://www.latitudo40.com/contact-us"
+        }
+      }
     },
     {
       "id": "company-jubenial",
@@ -15980,7 +16436,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is a wellness startup that brings independent living of elderly people.",
@@ -16025,7 +16481,11 @@
             "role": "Managing director",
             "source": "https://www.northdata.com/IoCare%20GmbH"
           }
-        ]
+        ],
+        "country": {
+          "code": "DE",
+          "source": "https://iocare.de/de/impressum/"
+        }
       }
     },
     {
@@ -16080,7 +16540,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is an app to understand every letter, website and email, scan for scams and fact check."
@@ -16120,6 +16580,10 @@
         "hq": {
           "city": "Berlin",
           "source": "https://secondread.eu/impressum"
+        },
+        "country": {
+          "code": "DE",
+          "source": "https://secondread.eu/impressum"
         }
       }
     },
@@ -16134,7 +16598,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "United States",
+      "country": "US",
       "city": null,
       "scene": {
         "job": "It is a smart toilet technology that passively monitors users' health biomarkers through urine analysis for early detection of health issues."
@@ -16162,7 +16626,13 @@
       "why_dropped": null,
       "tag": "Home and housing",
       "tag_secondary": null,
-      "logo": "/api/logo/company-toi-labs"
+      "logo": "/api/logo/company-toi-labs",
+      "facts": {
+        "country": {
+          "code": "US",
+          "source": "https://toilabs.com/contact-us/"
+        }
+      }
     },
     {
       "id": "company-genesys-bio",
@@ -16216,7 +16686,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Portugal",
+      "country": "PT",
       "city": null,
       "scene": {
         "job": "Omniflow specializes in providing innovative solutions for Smart Cities by integrating wind and solar energy into smart poles and lamp posts, promoting CO2 reduction and sustainable urban development through advanced IoT technology."
@@ -16244,7 +16714,13 @@
       "why_dropped": null,
       "tag": "Home and housing",
       "tag_secondary": null,
-      "logo": "/api/logo/company-omniflow"
+      "logo": "/api/logo/company-omniflow",
+      "facts": {
+        "country": {
+          "code": "PT",
+          "source": "https://www.omniflow.io/contacts"
+        }
+      }
     },
     {
       "id": "company-pointr",
@@ -16467,7 +16943,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Netherlands",
+      "country": "NL",
       "city": null,
       "scene": {
         "job": "It is a digital therapeutics that provide personalized health monitoring and guidance for patients under clinical supervision.",
@@ -16496,7 +16972,13 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": "/api/logo/company-dhealthiq"
+      "logo": "/api/logo/company-dhealthiq",
+      "facts": {
+        "country": {
+          "code": "NL",
+          "source": "https://dhealthiq.com/company/about/"
+        }
+      }
     },
     {
       "id": "company-the-embassies",
@@ -16550,7 +17032,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "Its SmarKo wearable tracks vital signs and the surroundings and turns those readings into health insights."
@@ -16594,7 +17076,11 @@
             "role": "Managing director",
             "source": "https://www.northdata.com/MCS%20Data%20Labs%20GmbH"
           }
-        ]
+        ],
+        "country": {
+          "code": "DE",
+          "source": "https://www.northdata.com/MCS%20Data%20Labs%20GmbH"
+        }
       }
     },
     {
@@ -16690,7 +17176,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "United States",
+      "country": "US",
       "city": null,
       "scene": {
         "job": "Lutso is an AI-powered aging-in-place solution that helps older adults live independently for longer."
@@ -16718,7 +17204,13 @@
       "why_dropped": null,
       "tag": "Home and housing",
       "tag_secondary": null,
-      "logo": "/api/logo/company-lutso-health"
+      "logo": "/api/logo/company-lutso-health",
+      "facts": {
+        "country": {
+          "code": "US",
+          "source": "https://lutsohealth.com/about-us"
+        }
+      }
     },
     {
       "id": "company-buddyhub",
@@ -17091,7 +17583,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "Teresa.AI is a digital assistant and language assistant that helps seniors avoid loneliness and stay active.",
@@ -17136,7 +17628,11 @@
             "role": "Managing director",
             "source": "https://www.northdata.com/Teresa%20AI%20GmbH"
           }
-        ]
+        ],
+        "country": {
+          "code": "DE",
+          "source": "https://teresa.ai/impressum"
+        }
       }
     },
     {
@@ -17357,7 +17853,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is the worldwide gym for your brain, offering personalized IQ improvement and over 40 challenging games to enhance cognitive skills."
@@ -17413,7 +17909,11 @@
             "role": "Managing director",
             "source": "https://www.northdata.com/Memorado%20GmbH"
           }
-        ]
+        ],
+        "country": {
+          "code": "DE",
+          "source": "https://www.northdata.com/Memorado%20GmbH"
+        }
       }
     },
     {
@@ -17507,7 +18007,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "United States",
+      "country": "US",
       "city": null,
       "scene": {
         "job": "It is a tablet-based rehabilitation software for post-acute and long-term care facilities using gamified therapy activities to improve patient outcomes."
@@ -17535,7 +18035,13 @@
       "why_dropped": null,
       "tag": "Loneliness and connection",
       "tag_secondary": null,
-      "logo": "/api/logo/company-restore"
+      "logo": "/api/logo/company-restore",
+      "facts": {
+        "country": {
+          "code": "US",
+          "source": "https://restoreskills.com/contact-us-and-support/"
+        }
+      }
     },
     {
       "id": "company-wohnen-im-alter-internet",
@@ -17548,7 +18054,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is a wohnen Im Alter Internet GmbH offers a platform for finding senior care living options and resources on elderly care.",
@@ -17593,7 +18099,11 @@
             "role": "Managing director",
             "source": "https://www.northdata.com/Wohnen%20Im%20Alter%20Internet%20GmbH"
           }
-        ]
+        ],
+        "country": {
+          "code": "DE",
+          "source": "https://www.wohnen-im-alter.de/impressum"
+        }
       }
     },
     {
@@ -17607,7 +18117,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Austria",
+      "country": "AT",
       "city": null,
       "scene": {
         "job": "It offers digital memory journeys so seniors in social care can share memories with family and other residents.",
@@ -17652,7 +18162,11 @@
             "role": "Managing director",
             "source": "https://www.northdata.com/VitaBlick%20GmbH"
           }
-        ]
+        ],
+        "country": {
+          "code": "AT",
+          "source": "https://www.northdata.com/VitaBlick%20GmbH"
+        }
       }
     },
     {
@@ -17803,7 +18317,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Finland",
+      "country": "FI",
       "city": null,
       "scene": {
         "job": "It is a pieni piiri offers eyeglasses, hearing aids, learning platform, and a mobile service for seniors, connecting them through video chat.",
@@ -17840,6 +18354,10 @@
         },
         "hq": {
           "city": "Helsinki",
+          "source": "https://www.northdata.com/Pieni%20piiri%20Oy"
+        },
+        "country": {
+          "code": "FI",
           "source": "https://www.northdata.com/Pieni%20piiri%20Oy"
         }
       }
@@ -17979,7 +18497,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "United States",
+      "country": "US",
       "city": null,
       "scene": {
         "job": "It is a FDA-cleared digital cognitive health assessments used by clinicians to detect and monitor cognitive decline and dementia."
@@ -18007,7 +18525,13 @@
       "why_dropped": null,
       "tag": "Memory and dementia",
       "tag_secondary": null,
-      "logo": "/api/logo/company-braincheck"
+      "logo": "/api/logo/company-braincheck",
+      "facts": {
+        "country": {
+          "code": "US",
+          "source": "https://braincheck.com/about"
+        }
+      }
     },
     {
       "id": "company-memodio",
@@ -18020,7 +18544,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is an app designed to help individuals with mild cognitive impairment maintain their memory and reduce their risk of dementia through various cognitive exercises and features."
@@ -18064,7 +18588,11 @@
             "role": "Managing director",
             "source": "https://www.northdata.com/memodio%20GmbH"
           }
-        ]
+        ],
+        "country": {
+          "code": "DE",
+          "source": "https://memodio-app.com/impressum/"
+        }
       }
     },
     {
@@ -18160,7 +18688,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "France",
+      "country": "FR",
       "city": null,
       "scene": {
         "job": "It is a tom & Josette is the first network of intergenerational micro-nurseries, fostering relationships between children and seniors in warm and open spaces.",
@@ -18193,6 +18721,10 @@
       "facts": {
         "hq": {
           "city": "Paris",
+          "source": "https://tometjosette.fr/mentions-legales/"
+        },
+        "country": {
+          "code": "FR",
           "source": "https://tometjosette.fr/mentions-legales/"
         }
       }
@@ -18249,7 +18781,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "United States",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is a seniors with easy access to digital services on their TV through intuitive cards, offering video calls, family photos, exercise routines, relaxation techniques, music, and entertainment.",
@@ -18283,6 +18815,10 @@
         "hq": {
           "city": "Berlin",
           "source": "https://family.cards/policies/legal-notice"
+        },
+        "country": {
+          "code": "DE",
+          "source": "https://family.cards/policies/legal-notice"
         }
       }
     },
@@ -18297,7 +18833,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "United States",
+      "country": "US",
       "city": null,
       "scene": {
         "job": "It is an ageless Innovation LLC creates lifelike robotic pets for seniors with Alzheimer's or dementia, providing comfort and companionship to address social isolation and cognitive decline through the Power of Play.",
@@ -18326,7 +18862,13 @@
       "why_dropped": null,
       "tag": "Memory and dementia",
       "tag_secondary": null,
-      "logo": "/api/logo/company-joy-for-all"
+      "logo": "/api/logo/company-joy-for-all",
+      "facts": {
+        "country": {
+          "code": "US",
+          "source": "https://joyforall.com/pages/contact-us"
+        }
+      }
     },
     {
       "id": "company-motitech",
@@ -18339,7 +18881,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Norway",
+      "country": "NO",
       "city": null,
       "scene": {
         "job": "Motiview provides a motivational tool for seniors and individuals with dementia to increase physical activity through virtual cycle trips and motivating videos, enhancing quality of life and physical health.",
@@ -18396,7 +18938,11 @@
             "role": "Managing director",
             "source": "https://www.northdata.com/Motitech%20AS"
           }
-        ]
+        ],
+        "country": {
+          "code": "NO",
+          "source": "https://www.northdata.com/Motitech%20AS"
+        }
       }
     },
     {
@@ -18452,7 +18998,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is a digital all-in-one payment solution for care facilities."
@@ -18506,7 +19052,11 @@
             "role": "Managing director",
             "source": "https://www.northdata.com/Parto%20Group%20GmbH"
           }
-        ]
+        ],
+        "country": {
+          "code": "DE",
+          "source": "https://www.goparto.com/impressum"
+        }
       }
     },
     {
@@ -18562,7 +19112,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Switzerland",
+      "country": "CH",
       "city": null,
       "scene": {
         "job": "It is a neurotechnology for brain health and motor recovery, using gaming environments for neurological rehabilitation and treatment of movement disorders."
@@ -18590,7 +19140,13 @@
       "why_dropped": null,
       "tag": "Memory and dementia",
       "tag_secondary": null,
-      "logo": "/api/logo/company-mindmaze"
+      "logo": "/api/logo/company-mindmaze",
+      "facts": {
+        "country": {
+          "code": "CH",
+          "source": "https://mindmazetherapeutics.com/about/contact/"
+        }
+      }
     },
     {
       "id": "company-silber-salon",
@@ -18603,7 +19159,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is a social learning platform that enables companies to connect with older adults.",
@@ -18641,6 +19197,10 @@
         "hq": {
           "city": "Berlin",
           "source": "https://www.northdata.com/Silber%20Salon%20GmbH"
+        },
+        "country": {
+          "code": "DE",
+          "source": "https://www.northdata.com/Silber%20Salon%20GmbH"
         }
       }
     },
@@ -18655,7 +19215,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "France",
+      "country": "FR",
       "city": null,
       "scene": {
         "job": "It is a subscription-based app offering ready-made activities, cognitive games, music jukebox and printed gazettes."
@@ -18692,6 +19252,10 @@
         "hq": {
           "city": "Lille",
           "source": "https://www.northdata.com/Wivy%20SAS"
+        },
+        "country": {
+          "code": "FR",
+          "source": "https://www.northdata.com/Wivy%20SAS"
         }
       }
     },
@@ -18706,7 +19270,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "France",
+      "country": "FR",
       "city": null,
       "scene": {
         "job": "It is an intergenerational home assistance by connecting trusted students with elderly individuals to enhance their daily lives through companionship and support.",
@@ -18735,7 +19299,13 @@
       "why_dropped": null,
       "tag": "Loneliness and connection",
       "tag_secondary": null,
-      "logo": "/api/logo/company-granny-charly"
+      "logo": "/api/logo/company-granny-charly",
+      "facts": {
+        "country": {
+          "code": "FR",
+          "source": "https://grannycharly.fr/nous-contacter-granny-et-charly/"
+        }
+      }
     },
     {
       "id": "company-senior-connect",
@@ -18748,7 +19318,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is a senior Connect: Bridging expertise for companies and professionals over 60, addressing workforce challenges with AI-based job matching.",
@@ -18798,7 +19368,11 @@
             "role": "Managing director",
             "source": "https://www.northdata.com/Senior%20Connect%20GmbH"
           }
-        ]
+        ],
+        "country": {
+          "code": "DE",
+          "source": "https://www.northdata.com/Senior%20Connect%20GmbH"
+        }
       }
     },
     {
@@ -18950,7 +19524,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "France",
+      "country": "FR",
       "city": null,
       "scene": {
         "job": "It is a financial services for homeowners over 70 to convert home equity into cash."
@@ -18987,6 +19561,10 @@
         "hq": {
           "city": "Paris",
           "source": "https://www.northdata.com/Merci%20Prosper%20SAS"
+        },
+        "country": {
+          "code": "FR",
+          "source": "https://www.northdata.com/Merci%20Prosper%20SAS"
         }
       }
     },
@@ -19001,7 +19579,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is a digital posture analysis and exergame solutions that promote physical activity and healthy sitting behavior."
@@ -19045,7 +19623,11 @@
             "role": "Managing director",
             "source": "https://www.northdata.com/ergofox%20GmbH"
           }
-        ]
+        ],
+        "country": {
+          "code": "DE",
+          "source": "https://ergofox.me/de/impressum.html"
+        }
       }
     },
     {
@@ -19108,7 +19690,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "United States",
+      "country": "US",
       "city": null,
       "scene": {
         "job": "It is a financial safety platform for aging adults that uses AI to monitor bank accounts for errors, fraud, and early signs of cognitive decline."
@@ -19136,7 +19718,13 @@
       "why_dropped": null,
       "tag": "Money and retirement",
       "tag_secondary": null,
-      "logo": "/api/logo/company-carefull"
+      "logo": "/api/logo/company-carefull",
+      "facts": {
+        "country": {
+          "code": "US",
+          "source": "https://getcarefull.com/about"
+        }
+      }
     },
     {
       "id": "company-hanzeland-personeelsdiensten",
@@ -19190,7 +19778,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "United States",
+      "country": "US",
       "city": null,
       "scene": {
         "job": "It is a smart medication adherence device with video telehealth capabilities enabling pharmacists to remotely supervise medication administration."
@@ -19218,7 +19806,13 @@
       "why_dropped": null,
       "tag": "Money and retirement",
       "tag_secondary": null,
-      "logo": "/api/logo/company-omcare"
+      "logo": "/api/logo/company-omcare",
+      "facts": {
+        "country": {
+          "code": "US",
+          "source": "https://omcare.com/contact/"
+        }
+      }
     },
     {
       "id": "company-true-link",
@@ -19231,7 +19825,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "United States",
+      "country": "US",
       "city": null,
       "scene": {
         "job": "It is a true Link Financial provides financial tools and a prepaid Visa card protecting seniors and vulnerable adults from scams, fraud, and financial exploitation.",
@@ -19273,7 +19867,11 @@
             "url": "https://play.google.com/store/apps/details?id=com.truelinkfinancial.cardapp",
             "source": "https://www.truelinkfinancial.com/"
           }
-        ]
+        ],
+        "country": {
+          "code": "US",
+          "source": "https://www.truelinkfinancial.com/contact-us"
+        }
       }
     },
     {
@@ -19328,7 +19926,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is an AI-powered fall detection and prevention solutions for eldercare facilities under its nevisCura product line."
@@ -19372,7 +19970,11 @@
             "role": "Managing director",
             "source": "https://www.northdata.com/nevisQ%20GmbH"
           }
-        ]
+        ],
+        "country": {
+          "code": "DE",
+          "source": "https://www.northdata.com/nevisQ%20GmbH"
+        }
       }
     },
     {
@@ -19468,7 +20070,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is a workplace communication platform providing a mobile intranet and tools for internal messaging and team collaboration."
@@ -19524,7 +20126,11 @@
             "role": "Managing director",
             "source": "https://www.northdata.com/LUCI%20GmbH"
           }
-        ]
+        ],
+        "country": {
+          "code": "DE",
+          "source": "https://luciapp.de/impressum/"
+        }
       }
     },
     {
@@ -19780,7 +20386,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "France",
+      "country": "FR",
       "city": null,
       "scene": {
         "job": "It is the first loan specifically designed for seniors, secured by real estate, to finance their life projects.",
@@ -19814,6 +20420,10 @@
         "hq": {
           "city": "Paris",
           "source": "https://www.jubile.fr/mentions-legales-jubile/"
+        },
+        "country": {
+          "code": "FR",
+          "source": "https://www.jubile.fr/mentions-legales-jubile/"
         }
       }
     },
@@ -19828,7 +20438,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Switzerland",
+      "country": "CH",
       "city": null,
       "scene": {
         "job": "It is the operating system for the virtual care home."
@@ -19864,6 +20474,10 @@
         },
         "hq": {
           "city": "Zürich",
+          "source": "https://www.northdata.com/CARU%20AG"
+        },
+        "country": {
+          "code": "CH",
           "source": "https://www.northdata.com/CARU%20AG"
         }
       }
@@ -20087,7 +20701,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "United Kingdom",
+      "country": "GB",
       "city": null,
       "scene": {
         "job": "It is a timewise: Social enterprise promoting inclusive workplaces through flexible working."
@@ -20115,7 +20729,13 @@
       "why_dropped": null,
       "tag": "Money and retirement",
       "tag_secondary": null,
-      "logo": "/api/logo/company-timewise"
+      "logo": "/api/logo/company-timewise",
+      "facts": {
+        "country": {
+          "code": "GB",
+          "source": "https://timewise.co.uk/about-us/contact-us/"
+        }
+      }
     },
     {
       "id": "company-freesense-solutions",
@@ -20211,7 +20831,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Belgium",
+      "country": "BE",
       "city": null,
       "scene": {
         "job": "It is a reliable fall detection and prevention solution for seniors in hospitals, rest homes, and service flats."
@@ -20239,7 +20859,13 @@
       "why_dropped": null,
       "tag": "Safety and falls",
       "tag_secondary": null,
-      "logo": "/api/logo/company-mintt"
+      "logo": "/api/logo/company-mintt",
+      "facts": {
+        "country": {
+          "code": "BE",
+          "source": "https://mintt.care/mentions-legales"
+        }
+      }
     },
     {
       "id": "company-kinetikos-health",
@@ -20293,7 +20919,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is an IT security consulting and ambient assisted living systems such as radar-based fall detection and care robots."
@@ -20337,7 +20963,11 @@
             "role": "Managing director",
             "source": "https://www.northdata.com/Puresec%20Gmbh"
           }
-        ]
+        ],
+        "country": {
+          "code": "DE",
+          "source": "https://smart-altern.de/impressum/"
+        }
       }
     },
     {
@@ -20351,7 +20981,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Sweden",
+      "country": "SE",
       "city": null,
       "scene": {
         "job": "It is a next Step Dynamics transforms ageing from reactive care to proactive prevention through fall-risk assessment, AI-powered personalised interventions and continuous monitoring."
@@ -20387,6 +21017,10 @@
         },
         "hq": {
           "city": "Trelleborg",
+          "source": "https://www.northdata.com/Next%20Step%20Dynamics%20AB"
+        },
+        "country": {
+          "code": "SE",
           "source": "https://www.northdata.com/Next%20Step%20Dynamics%20AB"
         }
       }
@@ -20540,7 +21174,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "France",
+      "country": "FR",
       "city": null,
       "scene": {
         "job": "It provides fall detection, wandering alerts, and medical monitoring for senior residences, nursing homes, and clinics."
@@ -20577,6 +21211,10 @@
         "founded": {
           "year": 2015,
           "source": "https://www.northdata.com/Life%20Plus%20SAS"
+        },
+        "country": {
+          "code": "FR",
+          "source": "https://www.lifeplus.io/pages-legales/mentions-legales"
         }
       }
     },
@@ -20683,7 +21321,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "France",
+      "country": "FR",
       "city": null,
       "scene": {
         "job": "It is a fall prevention solutions for vulnerable and elderly individuals, along with customized fitness programs for all ages."
@@ -20719,6 +21357,10 @@
         },
         "hq": {
           "city": "Ivry-sur-Seine",
+          "source": "https://www.northdata.com/Age%20Impulse%20SAS"
+        },
+        "country": {
+          "code": "FR",
           "source": "https://www.northdata.com/Age%20Impulse%20SAS"
         }
       }
@@ -20775,7 +21417,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Norway",
+      "country": "NO",
       "city": null,
       "scene": {
         "job": "It senses a person nearby, including small movements such as breathing, with an ultra-wideband sensor."
@@ -20803,7 +21445,13 @@
       "why_dropped": null,
       "tag": "Safety and falls",
       "tag_secondary": null,
-      "logo": "/api/logo/company-novelda"
+      "logo": "/api/logo/company-novelda",
+      "facts": {
+        "country": {
+          "code": "NO",
+          "source": "https://novelda.com/contact/"
+        }
+      }
     },
     {
       "id": "company-sensotiss",
@@ -20857,7 +21505,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is an easierLife provide older people security in their own homes."
@@ -20911,7 +21559,11 @@
             "role": "Managing director",
             "source": "https://www.northdata.com/easierLife%20GmbH"
           }
-        ]
+        ],
+        "country": {
+          "code": "DE",
+          "source": "https://www.northdata.com/easierLife%20GmbH"
+        }
       }
     },
     {
@@ -20925,7 +21577,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Belgium",
+      "country": "BE",
       "city": null,
       "scene": {
         "job": "Ixicare provides a remote monitoring distress solution that utilizes wireless connectivity and mobile technology to enhance safety and care for individuals, particularly focusing on wandering detection to alert caregivers for at-risk residents."
@@ -20953,7 +21605,13 @@
       "why_dropped": null,
       "tag": "Safety and falls",
       "tag_secondary": null,
-      "logo": "/api/logo/company-watcherr"
+      "logo": "/api/logo/company-watcherr",
+      "facts": {
+        "country": {
+          "code": "BE",
+          "source": "https://www.ixicare.com/"
+        }
+      }
     },
     {
       "id": "company-qumea",
@@ -20966,7 +21624,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Switzerland",
+      "country": "CH",
       "city": null,
       "scene": {
         "job": "It is the advanced system for fall prevention and mobility monitoring in care institutions, ensuring patient safety and therapy success while respecting privacy."
@@ -21002,6 +21660,10 @@
         },
         "hq": {
           "city": "Solothurn",
+          "source": "https://www.northdata.com/QUMEA%20AG"
+        },
+        "country": {
+          "code": "CH",
           "source": "https://www.northdata.com/QUMEA%20AG"
         }
       }
@@ -21058,7 +21720,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is a German modern Hausnotruf product for families who want to keep older relatives safer at home.",
@@ -21091,6 +21753,10 @@
       "facts": {
         "hq": {
           "city": "Darmstadt",
+          "source": "https://chrood.com/legal/imprint"
+        },
+        "country": {
+          "code": "DE",
           "source": "https://chrood.com/legal/imprint"
         }
       }
@@ -21230,7 +21896,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Australia",
+      "country": "AU",
       "city": null,
       "scene": {
         "job": "It is a groundbreaking 'Talent as a Service' platform that connects employers with mature age workers, revolutionizing recruitment by removing bias and automating talent assessment for successful hiring."
@@ -21258,7 +21924,13 @@
       "why_dropped": null,
       "tag": "Money and retirement",
       "tag_secondary": null,
-      "logo": "/api/logo/company-maturious"
+      "logo": "/api/logo/company-maturious",
+      "facts": {
+        "country": {
+          "code": "AU",
+          "source": "https://www.maturious.com/contact-us/"
+        }
+      }
     },
     {
       "id": "company-hip-guard",
@@ -21271,7 +21943,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "France",
+      "country": "FR",
       "city": null,
       "scene": {
         "job": "It is a hip Guard is a company that specializes in the development and production of an airbag belt designed to protect the hips of seniors.",
@@ -21305,6 +21977,10 @@
         "hq": {
           "city": "Fontaine",
           "source": "https://hipguard.eu/mentions-legales-ceinture-airbag-hip-guard/"
+        },
+        "country": {
+          "code": "FR",
+          "source": "https://hipguard.eu/mentions-legales-ceinture-airbag-hip-guard/"
         }
       }
     },
@@ -21319,7 +21995,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "France",
+      "country": "FR",
       "city": null,
       "scene": {
         "job": "DYNSEO specializes in cognitive rehabilitation and stimulation apps for seniors, providing interactive games to boost memory and cognitive functions, with a focus on e-health and well-being.",
@@ -21359,6 +22035,10 @@
         ],
         "hq": {
           "city": "Paris",
+          "source": "https://www.dynseo.com/mentions-legales/"
+        },
+        "country": {
+          "code": "FR",
           "source": "https://www.dynseo.com/mentions-legales/"
         }
       }
@@ -21415,7 +22095,7 @@
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "France",
+      "country": "FR",
       "city": null,
       "scene": {
         "job": "It is a telecare, telemonitoring, and home automation solutions for seniors in EHPADs, senior residences, and homes."
@@ -21452,6 +22132,10 @@
         "founded": {
           "year": 2013,
           "source": "https://www.northdata.com/TELEGRAFIK%20SAS"
+        },
+        "country": {
+          "code": "FR",
+          "source": "https://www.telegrafik.fr/mentions-legales/"
         }
       }
     },

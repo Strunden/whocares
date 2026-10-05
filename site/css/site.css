@@ -263,6 +263,13 @@ a { color: var(--link); }
   line-height: 1.25;
   font-weight: 400;
 }
+.flag {
+  display: inline-block;
+  margin-left: 6px;
+  font-size: 13px;
+  line-height: 1;
+  vertical-align: 0;
+}
 .meta {
   display: -webkit-box;
   -webkit-box-orient: vertical;
