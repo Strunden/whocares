@@ -290,7 +290,17 @@ a { color: var(--link); }
 
 .detail { padding: 4px 0 12px; }
 .detail h1 { margin: 4px 16px 6px; font-size: 34px; line-height: 1.1; letter-spacing: -0.5px; }
-.summary { margin: 8px 16px 14px; font-size: 17px; line-height: 1.4; }
+.summary { margin: 8px 16px 4px; font-size: 17px; line-height: 1.4; }
+.analysis { padding: 0 16px 8px; }
+.analysis h2 {
+  margin: 18px 0 6px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--meta);
+}
+.analysis p { margin: 0; font-size: 17px; line-height: 1.45; }
+.analysis .fact-src { font-size: 13px; }
 .pad { padding: 12px 14px; }
 .kicker { margin: 0 0 4px; font-size: 13px; color: var(--meta); }
 .kv { padding: 10px 14px; border-top: 0.5px solid var(--line); }

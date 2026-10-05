@@ -103,7 +103,7 @@ INSERT INTO entries (
 
 Verified company facts live in `document.facts` (and the `facts` column). The detail page reads them from `GET /api/index`. Leave out any fact you cannot point at a public page. Do not write "unknown".
 
-A researched write-up lives in `document.writeup`. The detail page shows any of these sections that are present, and hides the old job card once a write-up exists. Each section is `{text, sources}` with `sources` as an array of URLs you actually opened. Omit a section when you cannot support it. `summary` stays the one-line list text, verb first, at most 90 characters. `writeup.status.text` is the operating status (active, acquired, shut down, or pivoted), not the internal workflow `status`.
+A researched write-up lives in `document.writeup`. On the detail page it is always open, directly under the name and the one-line summary, in this order: What it does, Who pays, Traction, Why it's interesting, Status. Facts, Similar, the website, and sources come after that. There is no show/hide control. The old job card is hidden once a write-up exists. Each section is `{text, sources}` with `sources` as an array of URLs you actually opened. Omit a section when you cannot support it. `summary` stays the one-line list text, verb first, at most 90 characters. `writeup.status.text` is the operating status (active, acquired, shut down, or pivoted), not the internal workflow `status`.
 
 ```json
 "writeup": {

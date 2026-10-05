@@ -14,24 +14,6 @@
     "Money and retirement",
     "End of life and inheritance"
   ];
-  const MORE_LABELS = {
-    product: "Product",
-    how_it_works: "How it works",
-    user: "Who uses it",
-    buyer: "Who buys",
-    payer: "Who pays",
-    business_model: "How it makes money",
-    traction: "Traction",
-    funding: "Funding",
-    team: "Team",
-    competitors: "Competitors",
-    regulatory: "Rules and payment",
-    thesis: "Our read",
-    risks: "Risks",
-    relevance: "Why it matters here",
-    open_questions: "Open questions",
-    note: "Note"
-  };
   const GLYPH = {
     company: '<path d="M4 20V9l8-5 8 5v11"/><path d="M10 20v-5h4v5M9 11h.01M15 11h.01M9 14.5h.01M15 14.5h.01"/>',
     idea: '<path d="M9 18h6M10 21h4"/><path d="M12 3a5.5 5.5 0 0 1 3.6 9.6V16H8.4v-3.4A5.5 5.5 0 0 1 12 3z"/>',
@@ -211,7 +193,6 @@
   let query = "";
   let tagFilter = "";
   let listScroll = 0;
-  let moreOpen = false;
 
   const app = document.getElementById("app");
   const boot = document.getElementById("boot");
@@ -244,7 +225,6 @@
     if (routeNow().view === "root") listScroll = scrollPos();
     depth += 1;
     history.pushState({ wc: 1, depth }, "", next);
-    moreOpen = false;
     render(routeNow().view === "entry" ? "top" : "restore");
   }
   function back() {
@@ -254,7 +234,6 @@
       return;
     }
     history.replaceState({ wc: 1, depth: 0 }, "", "#/");
-    moreOpen = false;
     render("restore");
   }
 
@@ -498,40 +477,13 @@
   function writeupCard(e) {
     const blocks = writeupBlocks(e);
     if (!blocks.length) return "";
-    return `<div class="group">${blocks.map((block) => `<div class="kv"><p class="kicker">${t(block.label)}</p><p>${t(block.text)}${block.sources.map(sourceLink).join("")}</p></div>`).join("")}</div>`;
+    return `<div class="analysis">${blocks.map((block) => `<section><h2>${t(block.label)}</h2><p>${t(block.text)}${block.sources.map(sourceLink).join("")}</p></section>`).join("")}</div>`;
   }
 
   function similarCard(e) {
     const rows = similarEntries(e);
     if (!rows.length) return "";
     return `<div class="group"><div class="pad"><p class="kicker">Similar in Who Cares</p></div>${rows.map(rowButton).join("")}</div>`;
-  }
-
-  function moreHtml(e) {
-    const blocks = [];
-    const dive = e.deep_dive && typeof e.deep_dive === "object" ? e.deep_dive : null;
-    if (dive) {
-      Object.keys(MORE_LABELS).forEach((key) => {
-        const val = dive[key];
-        if (val == null || val === "" || Array.isArray(val)) return;
-        const text = cleanProse(val);
-        if (isJunk(text)) return;
-        blocks.push(`<h2>${t(MORE_LABELS[key])}</h2><p>${t(text)}</p>`);
-      });
-      if (Array.isArray(dive.risks)) {
-        const risks = dive.risks.map(cleanProse).filter((x) => x && !isJunk(x));
-        if (risks.length) blocks.push(`<h2>Risks</h2><ul>${risks.map((item) => `<li>${t(item)}</li>`).join("")}</ul>`);
-      }
-      if (Array.isArray(dive.open_questions)) {
-        const qs = dive.open_questions.map(cleanProse).filter((x) => x && !isJunk(x));
-        if (qs.length) blocks.push(`<h2>Open questions</h2><ul>${qs.map((item) => `<li>${t(item)}</li>`).join("")}</ul>`);
-      }
-    }
-    const related = (e.related || []).map((id) => findEntry(indexData.entries, id)).filter((r) => r && isPublished(r));
-    if (related.length) {
-      blocks.push(`<h2>Related</h2>` + related.map(rowButton).join(""));
-    }
-    return blocks.join("");
   }
 
   function renderDetail(e) {
@@ -551,8 +503,11 @@
         ["Who pays", sceneValue(e, "payer", "who_pays")]
       );
     }
-    if (killed) fields.push(["Why we dropped it", e.why_dropped || e.kill_reason || ""]);
+    const dropped = killed ? (e.why_dropped || e.kill_reason || "") : "";
     const card = fields.filter((pair) => pair[1] && !isJunk(pair[1])).map(([k, v]) => `<div class="kv"><p class="kicker">${t(k)}</p><p>${t(cleanProse(v))}</p></div>`).join("");
+    const droppedCard = dropped && !isJunk(dropped)
+      ? `<div class="group"><div class="kv"><p class="kicker">Why we dropped it</p><p>${t(cleanProse(dropped))}</p></div></div>`
+      : "";
     const web = safeUrl(e.website);
     let host = "";
     if (web) {
@@ -568,8 +523,9 @@
         </div>
       </div>
       ${summary ? `<p class="summary">${t(summary)}</p>` : ""}`;
-    if (card) html += `<div class="group">${card}</div>`;
     html += writeupCard(e);
+    if (card) html += `<div class="group">${card}</div>`;
+    html += droppedCard;
     html += factsCard(e);
     html += similarCard(e);
     if (web) {
@@ -682,14 +638,6 @@
   }
   if (app) {
     app.addEventListener("click", (ev) => {
-      const more = ev.target.closest("[data-more]");
-      if (more) {
-        moreOpen = !moreOpen;
-        const y = scrollPos();
-        render("keep");
-        setScroll(y);
-        return;
-      }
       const dest = ev.target.closest("[data-go]");
       if (!dest) return;
       ev.preventDefault();
@@ -699,7 +647,6 @@
   window.addEventListener("popstate", () => {
     const stateDepth = history.state && typeof history.state.depth === "number" ? history.state.depth : 0;
     depth = stateDepth;
-    moreOpen = false;
     render(routeNow().view === "root" ? "restore" : "top");
   });
 

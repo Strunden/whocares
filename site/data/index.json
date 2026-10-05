@@ -23008,14 +23008,14 @@
       "id": "company-seniordomo",
       "type": "company",
       "name": "SeniorDomo",
-      "summary": "Alerts around the clock with location, fall detection, and emergency calls.",
+      "summary": "Sells a 4G wristwatch that calls family or a centre when an older person falls.",
       "status": "new_this_scan",
       "kill_reason": null,
       "kill_source": null,
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Spain",
+      "country": "ES",
       "city": null,
       "scene": {
         "job": "It is a SeniorDomo revolutionizes senior care with advanced telecare services, offering 24/7 protection through GPS, SOS, fall detection, and calls.",
@@ -23038,13 +23038,81 @@
       "published": true,
       "title": "SeniorDomo",
       "research_summary": "SeniorDomo revolutionizes senior care with advanced telecare services, offering 24/7 protection through GPS, SOS, fall detection, and calls.",
-      "job": "It is a SeniorDomo revolutionizes senior care with advanced telecare services, offering 24/7 protection through GPS, SOS, fall detection, and calls.",
+      "job": "The watch carries its own 4G SIM, so it needs no phone and no wifi. Holding the button for three seconds sends an SOS. If an accelerometer sees a sudden movement or impact, the watch vibrates, beeps, and counts down. The wearer can cancel by holding the button. Otherwise the Family plan calls relatives, and the Professional plan calls Eulen, which can contact 112. Satellites locate it outdoors. Indoors it uses wifi, which can take a minute and fails underground. Pulse is checked about every 10 minutes. The company says the health numbers are not for diagnosis. Battery life is about four days.",
       "who_sells": "Used by older adults.",
-      "who_pays": null,
+      "who_pays": "The watch is 49 euros, down from 99. Family costs 11.99 euros a month on a yearly bill, or 16.99 month to month. The first year on the yearly plan is 192.90 euros including the watch. There is no lock-in and a one-month return. The Professional plan, with Eulen and a MediQuo chat, has no listed price. The company says more than 30 town halls in Spain, France, and Italy also contract it.",
       "why_dropped": null,
       "tag": "Safety and falls",
       "tag_secondary": null,
-      "logo": "/api/logo/company-seniordomo"
+      "logo": "/api/logo/company-seniordomo",
+      "writeup": {
+        "what_it_does": {
+          "text": "The watch carries its own 4G SIM, so it needs no phone and no wifi. Holding the button for three seconds sends an SOS. If an accelerometer sees a sudden movement or impact, the watch vibrates, beeps, and counts down. The wearer can cancel by holding the button. Otherwise the Family plan calls relatives, and the Professional plan calls Eulen, which can contact 112. Satellites locate it outdoors. Indoors it uses wifi, which can take a minute and fails underground. Pulse is checked about every 10 minutes. The company says the health numbers are not for diagnosis. Battery life is about four days.",
+          "sources": [
+            "https://www.seniordomo.com/blog/preguntas-frecuentes",
+            "https://seniordomo.es"
+          ]
+        },
+        "who_pays": {
+          "text": "The watch is 49 euros, down from 99. Family costs 11.99 euros a month on a yearly bill, or 16.99 month to month. The first year on the yearly plan is 192.90 euros including the watch. There is no lock-in and a one-month return. The Professional plan, with Eulen and a MediQuo chat, has no listed price. The company says more than 30 town halls in Spain, France, and Italy also contract it.",
+          "sources": [
+            "https://www.seniordomo.com/blog/preguntas-frecuentes",
+            "https://www.seniordomo.com/blog/envejecer-en-casa-es-posible-estos-son-los-datos-que-lo-demuestran",
+            "https://seniordomo.es"
+          ]
+        },
+        "traction": {
+          "text": "In August 2019 the Open University of Catalonia said it had been selling for two months around Barcelona, with 12 staff, a watch, room speakers, and a key fob, from 17 to 45 euros a month. On 4 August 2026 the company said 12,500 families use it. That figure is its own.",
+          "sources": [
+            "https://www.uoc.edu/es/news/2019/208-seniordomo-teleasistencia",
+            "https://www.seniordomo.com/blog/envejecer-en-casa-es-posible-estos-son-los-datos-que-lo-demuestran"
+          ]
+        },
+        "why_interesting": {
+          "text": "Public telecare in Spain, in its basic form, is a button in the house. This is the outdoor add-on, and the FAQ says families can keep both. Since 2019 the bundle has shrunk from speakers and a social worker to one watch and the Domio app. The countdown exists because the fall sensor false-alarms, and indoor location is approximate.",
+          "sources": [
+            "https://www.seniordomo.com/blog/preguntas-frecuentes",
+            "https://www.uoc.edu/es/news/2019/208-seniordomo-teleasistencia"
+          ]
+        },
+        "status": {
+          "state": "active",
+          "as_of": "2026-10-05",
+          "text": "Active in October 2026. The shop and an FAQ dated 13 August 2026 were live, and the blog had posts through 29 September 2026. The consent form names the company SeniorDomo, S.L.",
+          "sources": [
+            "https://seniordomo.es",
+            "https://www.seniordomo.com/blog/preguntas-frecuentes",
+            "https://www.seniordomo.es/consentimiento"
+          ]
+        }
+      },
+      "facts": {
+        "hq": {
+          "city": "Barcelona",
+          "source": "https://www.uoc.edu/es/news/2019/208-seniordomo-teleasistencia"
+        },
+        "country": {
+          "code": "ES",
+          "source": "https://www.uoc.edu/es/news/2019/208-seniordomo-teleasistencia"
+        },
+        "founders": [
+          {
+            "name": "Ángel Puertas",
+            "role": "Co-founder",
+            "source": "https://www.uoc.edu/es/news/2019/208-seniordomo-teleasistencia"
+          },
+          {
+            "name": "Pedro Puertas",
+            "role": "Co-founder",
+            "source": "https://www.uoc.edu/es/news/2019/208-seniordomo-teleasistencia"
+          },
+          {
+            "name": "Jordi Mercé",
+            "role": "Co-founder",
+            "source": "https://www.uoc.edu/es/news/2019/208-seniordomo-teleasistencia"
+          }
+        ]
+      }
     },
     {
       "id": "company-age-impulse",
