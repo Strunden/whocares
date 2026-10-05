@@ -48,8 +48,30 @@ export function countsFor(entries) {
   return counts;
 }
 
-export function buildIndex(meta, changelog, documents) {
-  const entries = (documents || []).map(asEntry).filter(Boolean);
+export function logoPath(id) {
+  return `/api/logo/${id}`;
+}
+
+export function withLogos(entries, hasLogo) {
+  const flags = hasLogo || [];
+  return (entries || []).map((entry, index) => {
+    if (!entry || typeof entry !== "object") return entry;
+    const next = { ...entry };
+    const flag = flags[index];
+    const present = flag === true || flag === "t" || flag === "true" || flag === "1";
+    if (present && next.id) next.logo = logoPath(next.id);
+    else delete next.logo;
+    return next;
+  });
+}
+
+export function buildIndex(meta, changelog, documents, hasLogo) {
+  const flags = hasLogo || [];
+  const paired = (documents || []).map((document, index) => ({
+    entry: asEntry(document),
+    flag: flags[index],
+  })).filter((item) => item.entry);
+  const entries = withLogos(paired.map((item) => item.entry), paired.map((item) => item.flag));
   const row = meta || {};
   return {
     schema_version: row.schema_version == null || row.schema_version === ""

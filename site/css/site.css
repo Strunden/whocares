@@ -87,6 +87,19 @@ a { color: var(--link); }
   font-size: 16px;
 }
 .search::placeholder { color: #555; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; padding: 2px 0 8px; }
+.tags[hidden] { display: none; }
+.chip {
+  border: 0;
+  background: var(--fill);
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 6px 10px;
+  min-height: 32px;
+  font-size: 13px;
+  line-height: 1.2;
+}
+.chip[aria-pressed="true"] { background: #111; color: #fff; }
 
 .intro { padding: 2px 0 8px; }
 .bar .screen-title { margin: 2px 0 2px; }
@@ -120,6 +133,8 @@ a { color: var(--link); }
   color: var(--ink);
 }
 .ico svg, .mark svg { width: 20px; height: 20px; display: block; }
+.ico-logo { padding: 0; overflow: hidden; background: #fff; }
+.ico-logo img { width: 32px; height: 32px; object-fit: cover; display: block; }
 .ico-life { border-radius: 16px; background: #111; color: #fff; }
 .ico-company { background: #111; color: #fff; }
 .ico-idea { background: #fff; color: #111; border: 1.5px dashed #111; }
@@ -178,14 +193,14 @@ a { color: var(--link); }
   font-weight: 400;
 }
 .meta {
-  display: block;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
   margin-top: 2px;
   font-size: 13px;
   line-height: 1.3;
   color: var(--meta);
-  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
 }
 .meta.kill, .screen-meta.kill { color: var(--kill); }
 .crumb p { margin: 0; }

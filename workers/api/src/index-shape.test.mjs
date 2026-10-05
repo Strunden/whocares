@@ -46,6 +46,20 @@ test("counts follow entry type and status", () => {
   });
 });
 
+test("logo url is attached only when the row has image bytes", () => {
+  const index = buildIndex(
+    { schema_version: 1, generated: "2026-10-05", title: "Who Cares" },
+    [],
+    [
+      { id: "company-ditto", type: "company", status: "deep_dive_done", logo: "logos/ditto.png" },
+      { id: "company-oma-care", type: "company", status: "new_this_scan", logo: "logos/oma-care.png" },
+    ],
+    ["t", "f"],
+  );
+  assert.equal(index.entries[0].logo, "/api/logo/company-ditto");
+  assert.equal(index.entries[1].logo, undefined);
+});
+
 test("buildIndex keeps document order and changelog dates", () => {
   const index = buildIndex(
     { schema_version: 1, generated: "2026-10-05", title: "Who Cares" },

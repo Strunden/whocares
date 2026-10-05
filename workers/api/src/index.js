@@ -38,7 +38,8 @@ async function readIndex(env) {
       ORDER BY position ASC, id ASC
     `);
     const entryRows = await sql.simpleQuery(`
-      SELECT document
+      SELECT document,
+             (logo_bytes IS NOT NULL) AS has_logo
       FROM entries
       ORDER BY position ASC, id ASC
     `);
@@ -46,6 +47,7 @@ async function readIndex(env) {
       metaRows[0] || null,
       changelog,
       entryRows.map((row) => row.document),
+      entryRows.map((row) => row.has_logo),
     );
   });
 }
@@ -76,7 +78,7 @@ export default {
     const url = new URL(request.url);
     const path = url.pathname.replace(/\/+$/, "") || "/";
 
-    if (request.method === "OPTIONS" && (path === "/api/index" || path === "/api/health")) {
+    if (request.method === "OPTIONS" && (path === "/api/index" || path === "/api/health" || path.startsWith("/api/logo/"))) {
       return new Response(null, { status: 204, headers: corsHeaders() });
     }
 
@@ -100,6 +102,37 @@ export default {
     if (path === "/api/index") {
       try {
         return json(await readIndex(env));
+      } catch (error) {
+        return dbError(error);
+      }
+    }
+
+    if (path.startsWith("/api/logo/")) {
+      const slug = decodeURIComponent(path.slice("/api/logo/".length));
+      if (!/^[A-Za-z0-9][A-Za-z0-9_-]{0,80}$/.test(slug)) {
+        return json({ ok: false, error: "not found" }, 404);
+      }
+      try {
+        const rows = await withSql(env, (sql) => sql.simpleQuery(`
+          SELECT encode(logo_bytes, 'base64') AS logo_b64
+          FROM entries
+          WHERE id = '${slug}'
+            AND logo_bytes IS NOT NULL
+          LIMIT 1
+        `));
+        const b64 = rows[0] && rows[0].logo_b64;
+        if (!b64) return json({ ok: false, error: "not found" }, 404);
+        const raw = atob(b64);
+        const bytes = new Uint8Array(raw.length);
+        for (let i = 0; i < raw.length; i += 1) bytes[i] = raw.charCodeAt(i);
+        return new Response(bytes, {
+          status: 200,
+          headers: {
+            "Content-Type": "image/png",
+            "Cache-Control": "public, max-age=86400",
+            ...corsHeaders(),
+          },
+        });
       } catch (error) {
         return dbError(error);
       }

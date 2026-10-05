@@ -1,6 +1,8 @@
 # Who Cares API
 
-Cloudflare Worker in front of Neon Postgres. `GET /api/index` returns the same document as `site/data/index.json`: `schema_version`, `generated`, `title`, `changelog`, `counts`, and `entries` (the `document` column, ordered by `position`). `GET /api/health` checks the database. CORS allows `https://strunden.github.io`.
+Cloudflare Worker in front of Neon Postgres. `GET /api/index` returns `schema_version`, `generated`, `title`, `changelog`, `counts`, and `entries` (the `document` column, ordered by `position`). When `logo_bytes` is present, each entry's `logo` is set to `/api/logo/<id>`. `GET /api/logo/<id>` returns that PNG with a one-day cache. `GET /api/health` checks the database. CORS allows `https://strunden.github.io`.
+
+Adding a company is one insert into `entries`, including `document` and optional `logo_bytes`. No site rebuild and no Worker deploy. See `site/README.md` for the statement. The static `site/data/index.json` file is only the outage fallback.
 
 The Worker reads whatever is in the database. An empty database returns meta plus `"entries": []`. It does not invent companies.
 
