@@ -21,7 +21,7 @@
     },
     {
       "date": "2026-10-05",
-      "text": "Scored the first 50 company notes. 5 of 50 pass and are on the page: Ally Labs, Aumens, Careship, Cera, and Closure. Per check: independent sources 40/50, claims sourced 50/50, mechanics 50/50, money 31/50, traction 38/50, story 13/50, competitors 40/50, insight 46/50, recent news 50/50, shape 39/50."
+      "text": "Scored the first 50 company notes. 7 of 50 pass and are on the page: Ally Labs, Able Human Motion, Aumens, Bayartis, Careship, Cera, and Closure. Per check: independent sources 40/50, claims sourced 50/50, mechanics 50/50, money 31/50, traction 38/50, story 14/50, competitors 40/50, insight 47/50, recent news 50/50, shape 39/50."
     }
   ],
   "counts": {
@@ -14385,7 +14385,7 @@
       "id": "company-able-human-motion",
       "type": "company",
       "name": "ABLE Human Motion",
-      "summary": "Sells lightweight exoskeletons that help people with lower limb paralysis walk.",
+      "summary": "Sells a clinic exoskeleton for walking practice.",
       "status": "new_this_scan",
       "kill_reason": null,
       "kill_source": null,
@@ -14422,10 +14422,126 @@
       "tag_secondary": null,
       "logo": "/api/logo/company-able-human-motion",
       "facts": {
+        "hq": {
+          "city": "Barcelona",
+          "source": "https://www.ablehumanmotion.com/en/our-company-about-us/"
+        },
+        "founded": {
+          "year": 2018,
+          "source": "https://www.ablehumanmotion.com/en/our-company-about-us/"
+        },
+        "founders": [
+          {
+            "name": "Alfons Carnicero",
+            "source": "https://genesis-biomed.com/interview-alfons-carnicero-ceo-and-co-founder-able-human-motion/"
+          },
+          {
+            "name": "Alex Garcia",
+            "source": "https://www.ablehumanmotion.com/en/our-company-about-us/"
+          },
+          {
+            "name": "Josep M. Font",
+            "source": "https://www.ablehumanmotion.com/en/our-company-about-us/"
+          }
+        ],
         "linkedin": {
           "url": "https://www.linkedin.com/company/ablehumanmotion",
           "source": "https://www.linkedin.com/company/ablehumanmotion"
         }
+      },
+      "writeup": {
+        "status": {
+          "text": "The site is offering the ABLE Exoskeleton and lists ABLE Human Motion S.L. at C/ Marie Curie 8-14, 08042 Barcelona. No news found in the last 12 months.",
+          "as_of": "2026-10-05",
+          "state": "active",
+          "sources": [
+            "https://ablehumanmotion.com",
+            "https://www.ablehumanmotion.com/en/our-company-about-us/"
+          ]
+        },
+        "traction": {
+          "text": "The history page says that in 2023 more than 200 people with spinal cord injury tested it and walked more than 400,000 steps.  The company closed a 704,000 euro pre-seed round in 2019. EIT said the consortium received 2.8 million euros between 2020 and 2022. Carnicero said a further 850,000 euro round closed in 2023.",
+          "sources": [
+            "https://ablehumanmotion.com",
+            "https://www.ablehumanmotion.com/en/our-company-about-us/",
+            "https://www.eit.europa.eu/news-events/news/eit-health-supported-able-human-motion-receives-ce-mark",
+            "https://genesis-biomed.com/interview-alfons-carnicero-ceo-and-co-founder-able-human-motion/"
+          ]
+        },
+        "who_pays": {
+          "text": "Hospitals, clinics, and neurological rehabilitation centres are the buyers. The company sells directly in Spain and through distributors in Italy and Poland. No public price. In an October 2024 interview Alfons Carnicero said a home version was meant to cost about half as much, with a hoped-for launch in the second half of 2026. No reimbursement route was found.",
+          "sources": [
+            "https://www.ablehumanmotion.com/en/our-company-about-us/",
+            "https://genesis-biomed.com/interview-alfons-carnicero-ceo-and-co-founder-able-human-motion/"
+          ]
+        },
+        "what_it_does": {
+          "text": "ABLE Human Motion sells the ABLE Exoskeleton, a light device for rehabilitation clinics. It helps people practise standing and walking. The history page dates a CE mark for clinical use to 2024. Unlike 2KERR, which sells a balance wheelchair a person rides, ABLE Human Motion sells a powered exoskeleton that clinics use so people can practise walking. Compared with Whill Inc, which sells personal transport, ABLE Human Motion sells a wearable exoskeleton for gait training in clinics.",
+          "sources": [
+            "https://ablehumanmotion.com",
+            "https://www.ablehumanmotion.com/en/our-company-about-us/",
+            "http://biobase.whitefordresearch.com/companies/able-human-motion"
+          ]
+        },
+        "why_interesting": {
+          "text": "Alfons Carnicero co-founded the company in October 2018 with engineering classmate Alex Garcia and mechanical engineering professor Josep M Font, as a spin-off of Universitat Politècnica de Catalunya. Genesis Biomed says Carnicero holds a master's degree in industrial engineering from UPC and started his career at Implantcast and Institut Guttmann. The clinic device is not sold as a wheelchair replacement.",
+          "sources": [
+            "https://www.ablehumanmotion.com/en/our-company-about-us/",
+            "https://genesis-biomed.com/interview-alfons-carnicero-ceo-and-co-founder-able-human-motion/"
+          ]
+        }
+      },
+      "writeup_qa": {
+        "pass": true,
+        "criteria": {
+          "money": {
+            "note": "Buyer, public price, and reimbursement route are stated.",
+            "pass": true
+          },
+          "scope": {
+            "note": "Published company. Not marked dead or out of scope.",
+            "pass": true
+          },
+          "shape": {
+            "note": "150 to 300 words, no dash, does not repeat the one-liner.",
+            "pass": true
+          },
+          "story": {
+            "note": "Founding, background, funding, and operating status are in the write-up.",
+            "pass": true
+          },
+          "insight": {
+            "note": "3 sentences of insight.",
+            "pass": true
+          },
+          "traction": {
+            "note": "Traction has a number and a date.",
+            "pass": true
+          },
+          "mechanics": {
+            "note": "Product section names the device or service in plain language.",
+            "pass": true
+          },
+          "competitors": {
+            "note": "Names Whill Inc, 2KERR and says how this company differs.",
+            "pass": true
+          },
+          "recent_news": {
+            "note": "States that no recent item was found.",
+            "pass": true
+          },
+          "claims_sourced": {
+            "note": "Each included section has a source URL.",
+            "pass": true
+          },
+          "independent_sources": {
+            "note": "3 independent source(s): biobase.whitefordresearch.com, genesis-biomed.com, eit.europa.eu.",
+            "pass": true
+          }
+        },
+        "checked_at": "2026-10-05",
+        "word_count": 279,
+        "needs_reresearch": false
       }
     },
     {
@@ -16437,7 +16553,7 @@
       "id": "company-bayartis-ag",
       "type": "company",
       "name": "Bayartis AG",
-      "summary": "Helps older adults on too many medicines with a climate-controlled cabinet and app.",
+      "summary": "Builds a home medicine cabinet and app for people on many pills.",
       "status": "new_this_scan",
       "kill_reason": null,
       "kill_source": null,
@@ -16472,10 +16588,6 @@
       "tag_secondary": null,
       "logo": "/api/logo/company-bayartis-ag",
       "facts": {
-        "founded": {
-          "year": 2023,
-          "source": "https://www.northdata.com/Bayartis%20AG"
-        },
         "hq": {
           "city": "Basel",
           "source": "https://www.northdata.com/Bayartis%20AG"
@@ -16483,7 +16595,122 @@
         "country": {
           "code": "CH",
           "source": "https://www.northdata.com/Bayartis%20AG"
+        },
+        "founded": {
+          "year": 2023,
+          "source": "https://www.northdata.com/Bayartis%20AG"
+        },
+        "funding": {
+          "total": {
+            "amount": "CHF 7,091",
+            "source": "https://wemakeit.com/projects/bayartis-simply-certain"
+          }
+        },
+        "founders": [
+          {
+            "name": "Fatma Oezdemir-Zaech",
+            "source": "https://www.bayartis.com/team"
+          },
+          {
+            "name": "Sadik Keshwani",
+            "source": "https://www.bayartis.com/team"
+          }
+        ]
+      },
+      "writeup": {
+        "status": {
+          "text": "The Basel site is up and inviting partners at info@bayartis.com. The crowdfunding page says the campaign concluded on 14 June 2026. No news found in the last 12 months.",
+          "as_of": "2026-10-05",
+          "state": "active",
+          "sources": [
+            "https://www.bayartis.com",
+            "https://wemakeit.com/projects/bayartis-simply-certain"
+          ]
+        },
+        "traction": {
+          "text": "The wemakeit campaign raised 7,091 Swiss francs from 49 backers and closed on 14 June 2026, 101 percent of a 7,000 franc goal. Oezdemir-Zaech spent two decades at Novartis. Keshwani founded Guidant GmbH. The company site does not name customers or say that cabinets have shipped.",
+          "sources": [
+            "https://wemakeit.com/projects/bayartis-simply-certain",
+            "https://www.bayartis.com/team",
+            "https://www.bayartis.com"
+          ]
+        },
+        "who_pays": {
+          "text": "No public price. The company site asks pharmacies, clinics, insurers, and care groups to partner. The crowdfunding campaign asked the public to fund field research, not to buy a cabinet. No shop price and no reimbursement route were found.",
+          "sources": [
+            "https://www.bayartis.com",
+            "https://wemakeit.com/projects/bayartis-simply-certain"
+          ]
+        },
+        "what_it_does": {
+          "text": "Bayartis is making a home cabinet that watches temperature and humidity, plus a phone app that lists doses, stock, expiry, side effects, and interactions. A person can scan a barcode or take a photo to add a medicine, and can share the record with family. Fatma Oezdemir-Zaech and Sadik Keshwani founded it. The Swiss register's earliest entry is 19 June 2023. Unlike BePi, which is a bedside dispenser for a hospital ward, Bayartis is designing a cabinet for the home. Compared with AlignCare, which records what a doctor said, Bayartis is meant to track the pills themselves.",
+          "sources": [
+            "https://www.bayartis.com",
+            "https://wemakeit.com/projects/bayartis-simply-certain",
+            "https://pilldispenser.care/chi-siamo/",
+            "https://www.aligncare.ai/",
+            "https://mercury-reports.com/companies/78b98296-85e8-4832-a8a8-5878a3b1b1df"
+          ]
+        },
+        "why_interesting": {
+          "text": "The cabinet is the part a family would put in the house, and the campaign page said the design was still being finished when the money came in. The sum was a small research budget, not a production run.",
+          "sources": [
+            "https://wemakeit.com/projects/bayartis-simply-certain",
+            "https://www.bayartis.com"
+          ]
         }
+      },
+      "writeup_qa": {
+        "pass": true,
+        "criteria": {
+          "money": {
+            "note": "Buyer, public price, and reimbursement route are stated.",
+            "pass": true
+          },
+          "scope": {
+            "note": "Published company. Not marked dead or out of scope.",
+            "pass": true
+          },
+          "shape": {
+            "note": "150 to 300 words, no dash, does not repeat the one-liner.",
+            "pass": true
+          },
+          "story": {
+            "note": "Founding, background, funding, and operating status are in the write-up.",
+            "pass": true
+          },
+          "insight": {
+            "note": "2 sentences of insight.",
+            "pass": true
+          },
+          "traction": {
+            "note": "Traction has a number and a date.",
+            "pass": true
+          },
+          "mechanics": {
+            "note": "Product section names the device or service in plain language.",
+            "pass": true
+          },
+          "competitors": {
+            "note": "Names AlignCare, BePi and says how this company differs.",
+            "pass": true
+          },
+          "recent_news": {
+            "note": "States that no recent item was found.",
+            "pass": true
+          },
+          "claims_sourced": {
+            "note": "Each included section has a source URL.",
+            "pass": true
+          },
+          "independent_sources": {
+            "note": "4 independent source(s): wemakeit.com, pilldispenser.care, aligncare.ai, mercury-reports.com.",
+            "pass": true
+          }
+        },
+        "checked_at": "2026-10-05",
+        "word_count": 250,
+        "needs_reresearch": false
       }
     },
     {
