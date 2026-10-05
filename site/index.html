@@ -1,40 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="description" content="Who Cares is a live map of ageing tech: companies, ideas, and what we killed.">
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="whocares-base" content="">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Who Cares. Companies, ideas, and kills in ageing tech.">
+<meta name="theme-color" content="#f2f2f7">
 <title>Who Cares</title>
 <link rel="stylesheet" href="css/site.css">
 </head>
 <body>
-<nav class="nav">
-  <a href="index.html">Home</a>
-  <a href="mechanism.html">Filtering mechanism</a>
-  <a href="companies.html">Map and index</a>
-  <a href="sources.html">Sources</a>
-  <a href="README.html">How to add</a>
-</nav>
-<main class="wrap">
-  <p class="meta">Who Cares</p>
-  <h1>Who Cares</h1>
-  <p class="lead">A live map of ageing tech: companies, ideas, and what we killed. The map, table, and entry pages render from one JSON file, so new scans append data without HTML edits.</p>
-  <div class="banner">Entry types: <span class="chip deep">company</span> (sourced) and <span class="chip idea">idea</span> (thesis cards / themes, dashed on the map). Every factual claim cites a source; write not found instead of guessing. Interpreted theses are labelled as such.</div>
-  <div id="home-dynamic"><p class="muted">Loading index…</p></div>
-  <div class="grid" style="margin-top:1rem">
-    <a class="card" href="mechanism.html"><h3>Filtering mechanism</h3><p class="muted">AgeTech as frame/tag, altitude, scene, many what-ifs, kill only on outside record, founder-written scans, stress tests.</p></a>
-    <a class="card" href="companies.html"><h3>Map and index</h3><p class="muted">Filter companies / ideas / both, theme, country, status, new since date.</p></a>
-    <a class="card" href="README.html"><h3>How to add entries</h3><p class="muted">tools/add_entry.py and tools/scan_agetechx.py · schema in README.</p></a>
-  </div>
-  <h2>Standing board (from our files)</h2>
-  <div class="card">
-    <p><span class="chip continue">continue 3</span> T01 · T12 · T14</p>
-    <p><span class="chip kill">kill 13</span> T02 T03 T04 T05 T06 T07 T08 T09 T10 T11 T13 T15 T17</p>
-    <p><span class="chip park">park 2</span> T16 · T18</p>
-    <p class="muted">Source: PICKABLE-MENU.md. Card tallies at continuum-complete: 29 standing, 4 killed by statute, 17 unstressed. AGETech-CONTINUUM-LOG.md.</p>
-  </div>
-</main>
-<footer class="wrap">Static-hostable. Needs only a static file server (or file:// with some browsers blocking fetch - use python -m http.server). No em dashes in copy.</footer>
+<div id="app" class="app">
+  <header class="bar">
+    <div class="bar-top">
+      <button type="button" id="back" class="back" hidden>
+        <svg viewBox="0 0 12 20" width="10" height="18" aria-hidden="true"><path d="M10 2 L2 10 L10 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Back
+      </button>
+      <nav id="crumb" class="crumb" aria-label="Breadcrumb"></nav>
+    </div>
+    <div id="intro"></div>
+    <div id="search-wrap" class="search-wrap">
+      <input id="search" class="search" type="search" placeholder="Filter" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search" aria-label="Filter this list">
+    </div>
+  </header>
+  <main id="main"></main>
+  <footer class="foot">
+    <a href="mechanism.html">Mechanism</a>
+    <a href="sources.html">Sources</a>
+    <a href="README.html">How to add</a>
+  </footer>
+</div>
+<p id="boot" class="boot">Loading index.</p>
 <script src="js/config.js"></script>
 <script src="js/app.js"></script>
-</body></html>
+</body>
+</html>

@@ -1,7 +1,39 @@
-/* AgeTech continuum dynamic site - loads data/index.json at runtime */
+/* Who Cares drill-in index.
+   Hierarchy (shallowest that fits the real index):
+   Root lists life stage (P01-P07) and theme (T01-T18). Those codes are the
+   themes[] tags. Labels come from idea_kind parent_theme / theme cards.
+   Altitude is not a field. A type step (company / idea / kill) is skipped
+   because the largest theme is 15 entries.
+   Tap replaces the list. Back walks up. API_BASE /api/index, then JSON. */
 (function () {
-  const DATA_URL = new URL("../data/index.json", document.currentScript ? document.currentScript.src : window.location.href);
-  // When script is in /js/, data is /data/; when page is /companies/entry.html, fix below
+  const STATUS = {
+    deep_dive_done: "Deep dive",
+    deep_dive_pending: "Pending",
+    new_this_scan: "New",
+    open: "Open",
+    stressed: "Stressed",
+    standing: "Standing",
+    killed: "Killed",
+    parked: "Parked"
+  };
+  const MORE_LABELS = {
+    product: "Product",
+    how_it_works: "How it works",
+    user: "User",
+    buyer: "Buyer",
+    payer: "Payer",
+    business_model: "Business model",
+    traction: "Traction",
+    funding: "Funding",
+    team: "Team",
+    competitors: "Competitors",
+    regulatory: "Regulatory",
+    thesis: "Thesis",
+    risks: "Risks",
+    relevance: "Relevance",
+    open_questions: "Open questions"
+  };
+
   function dataUrl() {
     const path = location.pathname;
     if (path.includes("/companies/") || path.includes("/entry.html")) return "../data/index.json";
@@ -10,38 +42,41 @@
 
   function esc(s) {
     return String(s == null ? "" : s)
-      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;");
   }
   function nd(s) {
-    return String(s == null ? "" : s).replace(/\u2014/g, " - ").replace(/\u2013/g, "-").replace(/—/g, " - ").replace(/–/g, "-");
+    return String(s == null ? "" : s)
+      .replace(/\u2014/g, " - ")
+      .replace(/\u2013/g, "-")
+      .replace(/—/g, " - ")
+      .replace(/–/g, "-");
   }
   function t(s) { return esc(nd(s)); }
-
-  function statusChip(e) {
-    const s = e.status || "";
-    const cls = {
-      deep_dive_done: "deep", deep_dive_pending: "pending", new_this_scan: "continue",
-      open: "pending", stressed: "continue", standing: "continue", killed: "kill", parked: "park"
-    }[s] || "park";
-    return `<span class="chip ${cls}">${esc(s.replace(/_/g, " "))}</span>`;
+  function clip(s, n) {
+    const v = nd(s).replace(/\s+/g, " ").trim();
+    if (v.length <= n) return v;
+    return v.slice(0, n - 1).trim() + "...";
   }
-
-  function typeChip(e) {
-    return e.type === "idea"
-      ? `<span class="chip idea">idea</span>`
-      : `<span class="chip deep">company</span>`;
+  function joinMeta(parts) {
+    return parts.filter(Boolean).join(" · ");
   }
-
-  function entryHref(e) {
-    const base = location.pathname.includes("/companies/") ? "" : "companies/";
-    return `${base}entry.html?id=${encodeURIComponent(e.id)}`;
+  function statusLabel(s) {
+    if (!s) return "";
+    return STATUS[s] || String(s).replace(/_/g, " ");
   }
-
-  function sceneText(scene) {
-    if (!scene) return "";
-    if (typeof scene === "string") return scene;
-    return [scene.job, scene.seller, scene.payer].filter(Boolean).join(" · ");
+  function typeLabel(e) {
+    return e && e.type === "idea" ? "Idea" : "Company";
+  }
+  function safeUrl(u) {
+    const s = String(u || "").trim();
+    if (/^https?:\/\//i.test(s)) return s;
+    return "";
+  }
+  function chevron() {
+    return '<svg class="chev" viewBox="0 0 12 20" width="10" height="18" aria-hidden="true"><path d="M2 2 L10 10 L2 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   }
 
   function apiBase() {
@@ -73,285 +108,510 @@
     return loadStaticIndex();
   }
 
-  function filterEntries(entries, opts) {
-    const type = opts.type || "both"; // companies | ideas | both
-    const since = opts.since || "";
-    const theme = opts.theme || "";
-    const country = opts.country || "";
-    const status = opts.status || "";
-    const q = (opts.q || "").toLowerCase();
-    return entries.filter((e) => {
-      if (type === "companies" && e.type !== "company") return false;
-      if (type === "ideas" && e.type !== "idea") return false;
-      if (since && (e.added_date || "") < since) return false;
-      if (theme && !(e.themes || []).includes(theme)) return false;
-      if (country && !(e.country || "").includes(country)) return false;
-      if (status && e.status !== status) return false;
-      if (q) {
-        const hay = [e.name, e.summary, e.claim, e.country, sceneText(e.scene), ...(e.themes || [])]
-          .join(" ").toLowerCase();
-        if (!hay.includes(q)) return false;
-      }
-      return true;
-    });
-  }
-
-  /* ---- Home: changelog + counts ---- */
-  async function renderHome() {
-    const root = document.getElementById("home-dynamic");
-    if (!root) return;
-    const data = await loadIndex();
-    const c = data.counts || {};
-    root.innerHTML = `
-      <div class="grid">
-        <div class="card"><h3>Index live from data</h3>
-          <p><strong>${c.total || 0}</strong> entries ·
-          <strong>${c.companies || 0}</strong> companies ·
-          <strong>${c.ideas || 0}</strong> ideas</p>
-          <p class="muted">${c.deep_dive_done || 0} deep dive done · ${c.deep_dive_pending || 0} pending ·
-          ideas standing ${c.ideas_standing || 0} / open ${c.ideas_open || 0} / killed ${c.ideas_killed || 0} / parked ${c.ideas_parked || 0}</p>
-          <p><a href="companies.html">Open map and index</a></p>
-        </div>
-        <div class="card" id="changelog-panel"><h3>Changelog / latest additions</h3>
-          <ul class="compact">
-            ${(data.changelog || []).slice().reverse().map(x =>
-              `<li><strong>${t(x.date)}</strong> - ${t(x.text)}</li>`).join("") || "<li class='muted'>none</li>"}
-          </ul>
-        </div>
-      </div>`;
-  }
-
-  /* ---- Map + table ---- */
-  function paintMap(canvas, entries) {
-    if (!canvas) return;
-    const w = canvas.clientWidth || 900;
-    const h = 420;
-    canvas.width = w; canvas.height = h;
-    const ctx = canvas.getContext("2d");
-    ctx.clearRect(0, 0, w, h);
-    ctx.fillStyle = "#fff";
-    ctx.fillRect(0, 0, w, h);
-    ctx.strokeStyle = "#e2ddd4";
-    ctx.strokeRect(0.5, 0.5, w - 1, h - 1);
-
-    // Cluster by primary theme
-    const themes = {};
+  function themeCards(entries) {
+    const map = new Map();
     entries.forEach((e) => {
-      const th = (e.themes && e.themes[0]) || (e.type === "idea" ? "other" : "untagged");
-      (themes[th] = themes[th] || []).push(e);
+      if (e.idea_kind !== "theme" && e.idea_kind !== "parent_theme") return;
+      const code = (e.themes || [])[0];
+      if (code && !map.has(code)) map.set(code, e);
     });
-    const keys = Object.keys(themes).sort();
-    const cols = Math.max(1, Math.ceil(Math.sqrt(keys.length)));
-    const rows = Math.ceil(keys.length / cols);
-    const pad = 16;
-    const cellW = (w - pad * 2) / cols;
-    const cellH = (h - pad * 2) / rows;
-
-    keys.forEach((th, i) => {
-      const col = i % cols, row = Math.floor(i / cols);
-      const x0 = pad + col * cellW, y0 = pad + row * cellH;
-      ctx.fillStyle = "#f7f5f0";
-      ctx.fillRect(x0 + 4, y0 + 4, cellW - 8, cellH - 8);
-      ctx.fillStyle = "#5a5a5a";
-      ctx.font = "600 12px system-ui";
-      ctx.fillText(th, x0 + 12, y0 + 22);
-      const list = themes[th];
-      const maxN = Math.min(list.length, 18);
-      for (let j = 0; j < maxN; j++) {
-        const e = list[j];
-        const nx = x0 + 14 + (j % 6) * ((cellW - 24) / 6);
-        const ny = y0 + 40 + Math.floor(j / 6) * 28;
-        const r = 9;
-        ctx.beginPath();
-        if (e.type === "idea") {
-          ctx.setLineDash([3, 2]);
-          ctx.strokeStyle = "#8b3a2a";
-          ctx.fillStyle = "rgba(139,58,42,0.12)";
-          ctx.rect(nx - r, ny - r, r * 2, r * 2);
-          ctx.fill(); ctx.stroke();
-          ctx.setLineDash([]);
-        } else {
-          ctx.setLineDash([]);
-          ctx.fillStyle = e.status === "deep_dive_done" ? "#0b5f4a" : "#3d8b74";
-          ctx.beginPath();
-          ctx.arc(nx, ny, r, 0, Math.PI * 2);
-          ctx.fill();
-        }
-      }
-      if (list.length > maxN) {
-        ctx.fillStyle = "#5a5a5a";
-        ctx.font = "11px system-ui";
-        ctx.fillText("+" + (list.length - maxN), x0 + 12, y0 + cellH - 12);
-      }
-    });
-
-    // legend
-    ctx.setLineDash([]);
-    ctx.fillStyle = "#0b5f4a"; ctx.beginPath(); ctx.arc(20, h - 18, 6, 0, Math.PI * 2); ctx.fill();
-    ctx.fillStyle = "#1a1a1a"; ctx.font = "12px system-ui"; ctx.fillText("company", 32, h - 14);
-    ctx.setLineDash([3, 2]); ctx.strokeStyle = "#8b3a2a"; ctx.strokeRect(100, h - 24, 12, 12); ctx.setLineDash([]);
-    ctx.fillText("idea (dashed)", 118, h - 14);
+    return map;
   }
 
-  async function renderIndexPage() {
-    const tableBody = document.getElementById("entry-rows");
-    const canvas = document.getElementById("landscape-map");
-    if (!tableBody && !canvas) return;
-    const data = await loadIndex();
-    const all = data.entries || [];
+  function themeTitle(code, card) {
+    if (!card) return code;
+    let title = nd(card.name || code);
+    const prefix = code + ":";
+    if (title.slice(0, prefix.length).toLowerCase() === prefix.toLowerCase()) {
+      title = title.slice(prefix.length).trim();
+    }
+    return title || code;
+  }
 
-    // populate filter options
-    const themes = [...new Set(all.flatMap((e) => e.themes || []))].sort();
-    const countries = [...new Set(all.map((e) => e.country).filter(Boolean))].sort();
-    const statuses = [...new Set(all.map((e) => e.status).filter(Boolean))].sort();
-    const fill = (id, opts) => {
-      const el = document.getElementById(id);
-      if (!el) return;
-      opts.forEach((o) => {
-        const opt = document.createElement("option");
-        opt.value = o; opt.textContent = o;
-        el.appendChild(opt);
-      });
-    };
-    fill("f-theme", themes);
-    fill("f-country", countries);
-    fill("f-status", statuses);
+  function codeRank(code) {
+    const m = /^([A-Za-z]+)(\d+)$/.exec(code || "");
+    if (!m) return [9, 0, code || ""];
+    const letter = m[1].toUpperCase();
+    const group = letter === "P" ? 0 : letter === "T" ? 1 : 2;
+    return [group, Number(m[2]), letter];
+  }
 
-    function apply() {
-      const opts = {
-        type: (document.getElementById("f-type") || {}).value || "both",
-        since: (document.getElementById("f-since") || {}).value || "",
-        theme: (document.getElementById("f-theme") || {}).value || "",
-        country: (document.getElementById("f-country") || {}).value || "",
-        status: (document.getElementById("f-status") || {}).value || "",
-        q: (document.getElementById("f-search") || {}).value || "",
+  function entriesFor(all, code) {
+    const seen = new Set();
+    const out = [];
+    all.forEach((e) => {
+      if (!(e.themes || []).includes(code) || seen.has(e.id)) return;
+      seen.add(e.id);
+      out.push(e);
+    });
+    out.sort((a, b) => {
+      const ta = a.type === "company" ? 0 : 1;
+      const tb = b.type === "company" ? 0 : 1;
+      if (ta !== tb) return ta - tb;
+      return nd(a.name).localeCompare(nd(b.name), undefined, { numeric: true, sensitivity: "base" });
+    });
+    return out;
+  }
+
+  function buildBuckets(entries) {
+    const cards = themeCards(entries);
+    const codes = new Set(cards.keys());
+    entries.forEach((e) => (e.themes || []).forEach((c) => codes.add(c)));
+    const buckets = [...codes].map((code) => {
+      const card = cards.get(code) || null;
+      const kids = entriesFor(entries, code);
+      return {
+        code,
+        title: themeTitle(code, card),
+        summary: card ? (card.summary || "") : "",
+        status: card ? (card.status || "") : "",
+        kind: card ? card.idea_kind : "",
+        count: kids.length,
+        group: /^P\d+$/i.test(code) ? "life" : /^T\d+$/i.test(code) ? "theme" : "other"
       };
-      const filtered = filterEntries(all, opts);
-      const countEl = document.getElementById("filter-count");
-      if (countEl) countEl.textContent = `${filtered.length} shown / ${all.length} total`;
-      paintMap(canvas, filtered);
-      if (tableBody) {
-        tableBody.innerHTML = filtered
-          .slice()
-          .sort((a, b) => (a.type === b.type ? a.name.localeCompare(b.name) : a.type.localeCompare(b.type)))
-          .map((e) => {
-            const rowCls = e.type === "idea" ? "row-idea" : "row-company";
-            return `<tr class="${rowCls}" data-id="${esc(e.id)}">
-              <td><a href="${entryHref(e)}">${t(e.name)}</a><br>${typeChip(e)} ${statusChip(e)}</td>
-              <td>${t(e.country || "")}</td>
-              <td>${(e.themes || []).map((th) => `<span class="chip">${esc(th)}</span>`).join("")}</td>
-              <td>${t(sceneText(e.scene)).slice(0, 140)}</td>
-              <td class="muted">${t(e.added_date)} · ${t(e.source_scan).slice(0, 60)}</td>
-            </tr>`;
-          })
-          .join("");
+    });
+    buckets.sort((a, b) => {
+      const ra = codeRank(a.code);
+      const rb = codeRank(b.code);
+      return ra[0] - rb[0] || ra[1] - rb[1] || String(ra[2]).localeCompare(String(rb[2]));
+    });
+    return buckets;
+  }
+
+  function parseHash() {
+    let raw = (location.hash || "#/").replace(/^#/, "");
+    if (!raw) raw = "/";
+    try { raw = decodeURIComponent(raw); } catch (err) { /* keep raw */ }
+    if (!raw.startsWith("/")) raw = "/" + raw;
+    const bits = raw.split("/").filter(Boolean);
+    if (bits[0] === "t" && bits[1]) {
+      const code = bits[1];
+      if (bits[2] === "e" && bits[3]) return { view: "entry", code, id: bits.slice(3).join("/") };
+      return { view: "theme", code, id: "" };
+    }
+    if (bits[0] === "e" && bits[1]) return { view: "entry", code: "", id: bits.slice(1).join("/") };
+    return { view: "root", code: "", id: "" };
+  }
+
+  function findEntry(entries, id) {
+    return entries.find((e) => e.id === id) || null;
+  }
+
+  function primaryCode(e) {
+    return (e && e.themes && e.themes[0]) || "";
+  }
+
+  function parentPath(route, entries) {
+    if (route.view === "root") return "";
+    if (route.view === "theme") return "/";
+    const entry = findEntry(entries, route.id);
+    const code = route.code || primaryCode(entry);
+    if (code) return "/t/" + encodeURIComponent(code);
+    return "/";
+  }
+
+  function entryHay(e) {
+    return nd([e.name, e.summary, e.claim, e.kill_reason, e.country, e.status, typeLabel(e)].join(" ")).toLowerCase();
+  }
+
+  function bucketHay(b) {
+    return nd([b.code, b.title, b.summary, b.status].join(" ")).toLowerCase();
+  }
+
+  let indexData = null;
+  let depth = 0;
+  let query = "";
+  let moreOpen = false;
+
+  const app = document.getElementById("app");
+  const boot = document.getElementById("boot");
+  const main = document.getElementById("main");
+  const introEl = document.getElementById("intro");
+  const crumbEl = document.getElementById("crumb");
+  const backBtn = document.getElementById("back");
+  const searchWrap = document.getElementById("search-wrap");
+  const searchEl = document.getElementById("search");
+
+  function routeNow() {
+    return parseHash();
+  }
+
+  function go(path) {
+    const next = path.startsWith("#") ? path : "#" + path;
+    if ((location.hash || "#/") === next) return;
+    depth += 1;
+    history.pushState({ wc: 1, depth }, "", next);
+    query = "";
+    if (searchEl) searchEl.value = "";
+    moreOpen = false;
+    render(true);
+  }
+
+  function back() {
+    const route = routeNow();
+    if (route.view === "root") return;
+    if (depth > 0) {
+      history.back();
+      return;
+    }
+    const parent = parentPath(route, (indexData && indexData.entries) || []);
+    history.replaceState({ wc: 1, depth: 0 }, "", "#" + (parent || "/"));
+    query = "";
+    if (searchEl) searchEl.value = "";
+    moreOpen = false;
+    render(true);
+  }
+
+  function countsOf(entries) {
+    let companies = 0;
+    let ideas = 0;
+    let killed = 0;
+    entries.forEach((e) => {
+      if (e.type === "company") companies += 1;
+      else ideas += 1;
+      if (e.status === "killed" || e.kill_reason) killed += 1;
+    });
+    return { total: entries.length, companies, ideas, killed };
+  }
+
+  function rowButton(path, name, meta, kill) {
+    return `<button type="button" class="row" data-go="${esc(path)}">
+      <span class="row-text"><span class="name">${t(name)}</span><span class="meta${kill ? " kill" : ""}">${t(meta)}</span></span>
+      ${chevron()}
+    </button>`;
+  }
+
+  function entryMeta(e) {
+    const killed = e.status === "killed" || !!e.kill_reason;
+    if (killed) {
+      const reason = clip(e.kill_reason || "Killed", 88);
+      return { text: joinMeta([typeLabel(e), "Killed", reason === "Killed" ? "" : reason]), kill: true };
+    }
+    const place = joinMeta([e.country, e.city].filter(Boolean).length ? [e.country] : []);
+    return {
+      text: joinMeta([typeLabel(e), place || "", statusLabel(e.status)]),
+      kill: false
+    };
+  }
+
+  function entryPath(route, e) {
+    if (route.view === "theme" && route.code) {
+      return "/t/" + encodeURIComponent(route.code) + "/e/" + encodeURIComponent(e.id);
+    }
+    return "/e/" + encodeURIComponent(e.id);
+  }
+
+  function renderBuckets(entries, buckets, q) {
+    const nq = q.trim().toLowerCase();
+    let shown = buckets;
+    let entryHits = [];
+    if (nq) {
+      shown = buckets.filter((b) => bucketHay(b).includes(nq));
+      const shownCodes = new Set(shown.map((b) => b.code));
+      entryHits = entries.filter((e) => {
+        if (e.idea_kind === "theme" || e.idea_kind === "parent_theme") {
+          const code = (e.themes || [])[0];
+          if (code && shownCodes.has(code)) return false;
+        }
+        return entryHay(e).includes(nq);
+      });
+    }
+    const groups = [
+      ["life", "Life stage"],
+      ["theme", "Theme"],
+      ["other", "Other"]
+    ];
+    let html = "";
+    groups.forEach(([key, label]) => {
+      const rows = shown.filter((b) => b.group === key);
+      if (!rows.length) return;
+      html += `<h2 class="section-label">${t(label)}</h2><div class="group">`;
+      rows.forEach((b) => {
+        const killed = b.status === "killed";
+        const meta = killed
+          ? joinMeta([b.code, "Killed", clip(b.summary, 72)])
+          : joinMeta([
+            b.code,
+            b.count + (b.count === 1 ? " entry" : " entries"),
+            statusLabel(b.status)
+          ]);
+        html += rowButton("/t/" + encodeURIComponent(b.code), b.title, meta, killed);
+      });
+      html += "</div>";
+    });
+    if (entryHits.length) {
+      html += `<h2 class="section-label">Entries</h2><div class="group">`;
+      entryHits.forEach((e) => {
+        const meta = entryMeta(e);
+        html += rowButton("/e/" + encodeURIComponent(e.id), e.name, meta.text, meta.kill);
+      });
+      html += "</div>";
+    }
+    if (!html) html = `<p class="empty">Nothing matches.</p>`;
+    return html;
+  }
+
+  function renderThemeList(route, entries, bucket) {
+    const kids = entriesFor(entries, route.code);
+    const nq = query.trim().toLowerCase();
+    const rows = nq ? kids.filter((e) => entryHay(e).includes(nq)) : kids;
+    if (!rows.length) return `<p class="empty">Nothing matches.</p>`;
+    let html = `<div class="group">`;
+    rows.forEach((e) => {
+      const meta = entryMeta(e);
+      html += rowButton(entryPath(route, e), e.name, meta.text, meta.kill);
+    });
+    html += "</div>";
+    if (nq) {
+      html = `<p class="screen-meta">${rows.length} of ${kids.length}</p>` + html;
+    }
+    return html;
+  }
+
+  function sceneBlocks(scene) {
+    if (!scene || typeof scene === "string") {
+      return scene ? `<div class="kv"><p class="kicker">Scene</p><p>${t(scene)}</p></div>` : "";
+    }
+    const bits = [
+      ["Job", scene.job],
+      ["Seller", scene.seller],
+      ["Payer", scene.payer]
+    ].filter((pair) => pair[1]);
+    if (!bits.length) return "";
+    return bits.map(([k, v]) => `<div class="kv"><p class="kicker">${t(k)}</p><p>${t(v)}</p></div>`).join("");
+  }
+
+  function sourcesOf(e) {
+    const list = e.deep_dive && Array.isArray(e.deep_dive.sources) ? e.deep_dive.sources : [];
+    return list;
+  }
+
+  function moreHtml(e) {
+    const blocks = [];
+    const dive = e.deep_dive || null;
+    if (dive && typeof dive === "object") {
+      Object.keys(MORE_LABELS).forEach((key) => {
+        const val = dive[key];
+        if (val == null || val === "") return;
+        if (Array.isArray(val)) {
+          if (!val.length) return;
+          blocks.push(`<h2>${t(MORE_LABELS[key])}</h2><ul>${val.map((item) => `<li>${t(item)}</li>`).join("")}</ul>`);
+          return;
+        }
+        let heading = MORE_LABELS[key];
+        if (key === "thesis" && dive.thesis_label) heading += " (" + nd(dive.thesis_label) + ")";
+        blocks.push(`<h2>${t(heading)}</h2><p>${t(val)}</p>`);
+      });
+      if (Array.isArray(dive.thesis_sources) && dive.thesis_sources.length) {
+        blocks.push(`<h2>Thesis sources</h2><ul>${dive.thesis_sources.map((item) => `<li>${t(item)}</li>`).join("")}</ul>`);
+      }
+      const sources = sourcesOf(e);
+      if (sources.length) {
+        blocks.push(`<h2>Sources</h2><ul>${sources.map((s) => {
+          const url = safeUrl(s && s.url);
+          const link = url ? `<a href="${esc(url)}" target="_blank" rel="noopener">${t(url)}</a>` : t(s && s.url);
+          const note = s && s.note ? " - " + t(s.note) : "";
+          const accessed = s && s.accessed ? " (accessed " + t(s.accessed) + ")" : "";
+          return `<li>${link}${note}${accessed}</li>`;
+        }).join("")}</ul>`);
       }
     }
-
-    ["f-type", "f-since", "f-theme", "f-country", "f-status", "f-search"].forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) el.addEventListener("input", apply);
-    });
-    window.addEventListener("resize", () => apply());
-    apply();
+    if (e.claim && e.claim !== e.summary) blocks.push(`<h2>Claim</h2><p>${t(e.claim)}</p>`);
+    if (e.expert_role) blocks.push(`<h2>Expert role</h2><p>${t(e.expert_role)}</p>`);
+    if (e.killer_experiment) blocks.push(`<h2>Killer experiment</h2><p>${t(e.killer_experiment)}</p>`);
+    if (e.menu_disposition) blocks.push(`<h2>Menu</h2><p>${t(e.menu_disposition)}</p>`);
+    if (e.status_raw) blocks.push(`<h2>Status note</h2><p>${t(e.status_raw)}</p>`);
+    if (e.source_scan) blocks.push(`<h2>Source scan</h2><p>${t(e.source_scan)}</p>`);
+    if (e.idea_kind) blocks.push(`<h2>Kind</h2><p>${t(e.idea_kind)}</p>`);
+    const related = (e.related || []).map((id) => findEntry(indexData.entries, id)).filter(Boolean);
+    if (related.length) {
+      blocks.push(`<h2>Related</h2>` + related.map((r) => {
+        const meta = entryMeta(r);
+        return `<p><button type="button" class="row" data-go="${esc("/e/" + encodeURIComponent(r.id))}"><span class="row-text"><span class="name">${t(r.name)}</span><span class="meta${meta.kill ? " kill" : ""}">${t(meta.text)}</span></span>${chevron()}</button></p>`;
+      }).join(""));
+    }
+    return blocks.join("");
   }
 
-  /* ---- Entry deep dive / idea page ---- */
-  async function renderEntryPage() {
-    const root = document.getElementById("entry-root");
-    if (!root) return;
-    const id = new URLSearchParams(location.search).get("id");
-    if (!id) {
-      root.innerHTML = `<p class="muted">Missing ?id=</p>`;
-      return;
+  function renderDetail(route, entries) {
+    const e = findEntry(entries, route.id);
+    if (!e) return `<p class="empty">Not in the index.</p>`;
+    const killed = e.status === "killed" || !!e.kill_reason;
+    const place = [e.country, e.city].filter(Boolean).join(", ");
+    const headMeta = killed
+      ? joinMeta([typeLabel(e), "Killed", place])
+      : joinMeta([typeLabel(e), statusLabel(e.status), place]);
+    const summaryRaw = e.summary || e.claim || "";
+    const summary = (e.kill_reason && nd(summaryRaw).trim() === nd(e.kill_reason).trim()) ? "" : summaryRaw;
+    const scene = sceneBlocks(e.scene);
+    const web = safeUrl(e.website);
+    let host = "";
+    if (web) {
+      try { host = new URL(web).host; } catch (err) { host = web; }
     }
-    const data = await loadIndex();
-    const e = (data.entries || []).find((x) => x.id === id);
-    if (!e) {
-      root.innerHTML = `<p>Entry not found: <code>${t(id)}</code></p>`;
-      return;
-    }
-    document.title = `${nd(e.name)} - AgeTech continuum`;
-    const related = (e.related || [])
-      .map((rid) => (data.entries || []).find((x) => x.id === rid))
-      .filter(Boolean);
-
-    let body = "";
-    if (e.type === "company") {
-      const d = e.deep_dive || {};
-      const sec = (title, html) => `<section class="section card"><h3>${esc(title)}</h3>${html}</section>`;
-      const p = (x) => `<p>${t(x || "not found")}</p>`;
-      const ul = (arr) =>
-        Array.isArray(arr) && arr.length
-          ? `<ul class="compact">${arr.map((i) => `<li>${t(i)}</li>`).join("")}</ul>`
-          : `<p class="muted">not found</p>`;
-      body = `
-        ${e.status === "deep_dive_pending" ? `<div class="banner">Short profile. Full analyst deep dive pending.</div>` : ""}
-        ${sec("One-line summary", p(e.summary))}
-        ${sec("Product and how it works", p(d.product) + "<h4>How it works</h4>" + p(d.how_it_works))}
-        ${sec("Customer / user, buyer, payer (scene)",
-          `<p><strong>User:</strong> ${t(d.user)}</p>
-           <p><strong>Buyer / seller:</strong> ${t(d.buyer || (e.scene && e.scene.seller))}</p>
-           <p><strong>Payer:</strong> ${t(d.payer || (e.scene && e.scene.payer))}</p>
-           <p><strong>Scene job:</strong> ${t(e.scene && e.scene.job)}</p>`)}
-        ${sec("Business model and pricing", p(d.business_model))}
-        ${sec("Traction signals", p(d.traction))}
-        ${sec("Funding, investors, team / founders", p(d.funding) + "<h4>Team</h4>" + p(d.team))}
-        ${sec("Competitors and positioning", p(d.competitors))}
-        ${sec("Regulatory / reimbursement path", p(d.regulatory))}
-        ${sec(`Our product thesis (${d.thesis_label || "interpreted"})`, p(d.thesis) + "<h4>Thesis sources</h4>" + ul(d.thesis_sources))}
-        ${sec("Risks and likely kill points", ul(d.risks))}
-        ${sec("Relevance to standing theses", p(d.relevance))}
-        ${sec("Open questions", ul(d.open_questions))}
-        ${sec("Sources", `<ul class="compact">${(d.sources || []).map((s) => {
-          const u = s.url || "";
-          const link = String(u).startsWith("http")
-            ? `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u)}</a>`
-            : t(u);
-          return `<li>${link} - ${t(s.note)} (accessed ${t(s.accessed)})</li>`;
-        }).join("")}</ul>`)}
-      `;
-    } else {
-      const sec = (title, html) => `<section class="section card"><h3>${esc(title)}</h3>${html}</section>`;
-      body = `
-        <div class="banner idea-banner">Hypothetical idea (thesis card or theme). Not a company. Dashed style on the map.</div>
-        ${sec("Claim / summary", `<p>${t(e.claim || e.summary)}</p>`)}
-        ${sec("Status", `<p>${statusChip(e)}</p>
-          ${e.kill_reason ? `<p><strong>Kill reason:</strong> ${t(e.kill_reason)}</p>` : ""}
-          ${e.kill_source ? `<p><strong>Kill source:</strong> ${t(e.kill_source)}</p>` : ""}
-          ${e.status_raw ? `<p class="muted">Raw: ${t(e.status_raw)}</p>` : ""}
-          ${e.menu_disposition ? `<p class="muted">Menu disposition: ${t(e.menu_disposition)}</p>` : ""}`)}
-        ${sec("Scene", `<p>${t(sceneText(e.scene))}</p>`)}
-        ${e.expert_role ? sec("Expert role to stress", `<p>${t(e.expert_role)}</p>`) : ""}
-        ${e.killer_experiment ? sec("Killer experiment", `<p>${t(e.killer_experiment)}</p>`) : ""}
-        ${sec("Source scan", `<p>${t(e.source_scan)} · added ${t(e.added_date)}</p>`)}
-      `;
-    }
-
-    const relatedHtml = related.length
-      ? `<section class="section card"><h3>Related</h3><ul class="compact">${related
-          .map((r) => `<li>${typeChip(r)} <a href="entry.html?id=${encodeURIComponent(r.id)}">${t(r.name)}</a> ${statusChip(r)}</li>`)
-          .join("")}</ul></section>`
-      : "";
-
-    const web = e.website && String(e.website).startsWith("http")
-      ? `<a href="${esc(e.website)}" target="_blank" rel="noopener">${esc(e.website)}</a>`
-      : t(e.website || "n/a");
-
-    root.innerHTML = `
-      <p class="meta"><a href="../companies.html">Index</a> / ${t(e.name)}</p>
+    const sources = sourcesOf(e);
+    const first = sources[0];
+    const firstUrl = first ? safeUrl(first.url) : "";
+    const extra = moreHtml(e);
+    let html = `<article class="detail">
       <h1>${t(e.name)}</h1>
-      <p>${typeChip(e)} ${statusChip(e)} ${(e.themes || []).map((th) => `<span class="chip">${esc(th)}</span>`).join("")}</p>
-      <p class="muted">${t(e.country)}${e.city ? " · " + t(e.city) : ""} · Website: ${web}<br>
-      Source scan: ${t(e.source_scan)} · Added: ${t(e.added_date)}</p>
-      ${body}
-      ${relatedHtml}
-    `;
+      <p class="screen-meta">${t(headMeta)}</p>
+      ${summary ? `<p class="summary">${t(summary)}</p>` : ""}`;
+    if (scene) html += `<div class="group">${scene}</div>`;
+    if (web) {
+      html += `<div class="group"><a class="row" href="${esc(web)}" target="_blank" rel="noopener">
+        <span class="row-text"><span class="name">Website</span><span class="meta">${t(host)}</span></span>
+        ${chevron()}
+      </a></div>`;
+    }
+    if (killed) {
+      html += `<div class="group killbox"><div class="pad">
+        <p class="kicker">Kill reason</p>
+        <p class="killtext">${t(e.kill_reason || "Killed")}</p>
+        ${e.kill_source ? `<p class="meta">Kill source: ${t(e.kill_source)}</p>` : ""}
+      </div></div>`;
+    }
+    if (sources.length || e.source_scan) {
+      html += `<div class="group"><div class="pad"><p class="kicker">Sources</p>`;
+      if (sources.length) {
+        html += `<p>${sources.length} ${sources.length === 1 ? "source" : "sources"}</p>`;
+        if (firstUrl) html += `<a class="src-link" href="${esc(firstUrl)}" target="_blank" rel="noopener">${t(first.url)}</a>`;
+        else if (first && first.url) html += `<p>${t(first.url)}</p>`;
+        if (first && first.note) html += `<p class="meta">${t(first.note)}</p>`;
+      } else {
+        html += `<p>${t(e.source_scan)}</p>`;
+      }
+      html += `</div></div>`;
+    }
+    if (extra) {
+      html += `<div class="group">
+        <button type="button" class="row more" data-more aria-expanded="${moreOpen ? "true" : "false"}">
+          <span class="row-text"><span class="name">${moreOpen ? "Less" : "More"}</span></span>
+          ${chevron()}
+        </button>
+        ${moreOpen ? `<div class="more-panel">${extra}</div>` : ""}
+      </div>`;
+    }
+    html += `</article>`;
+    return html;
   }
+
+  function crumbHtml(route, entries) {
+    if (route.view === "root") {
+      return `<p class="crumb home"><span class="here">Who Cares</span></p>`;
+    }
+    const parts = [{ label: "Who Cares", path: "/" }];
+    let code = route.code;
+    if (route.view === "entry" && !code) {
+      const entry = findEntry(entries, route.id);
+      code = primaryCode(entry);
+    }
+    if (code) {
+      parts.push({
+        label: code,
+        path: "/t/" + encodeURIComponent(code)
+      });
+    }
+    if (route.view === "entry") {
+      const entry = findEntry(entries, route.id);
+      parts.push({ label: entry ? nd(entry.name) : "Entry", path: "" });
+    }
+    const last = parts.length - 1;
+    return `<p class="crumb">${parts.map((p, i) => {
+      const sep = i === 0 ? "" : `<span class="sep">/</span>`;
+      if (i === last || !p.path) return sep + `<span class="here">${t(p.label)}</span>`;
+      return sep + `<button type="button" data-go="${esc(p.path)}">${t(p.label)}</button>`;
+    }).join("")}</p>`;
+  }
+
+  function render(scroll) {
+    if (!indexData) return;
+    const entries = indexData.entries || [];
+    const route = routeNow();
+    const buckets = buildBuckets(entries);
+    const bucket = buckets.find((b) => b.code === route.code) || null;
+
+    backBtn.hidden = route.view === "root";
+    searchWrap.hidden = route.view === "entry";
+    crumbEl.innerHTML = crumbHtml(route, entries);
+
+    let title = "Who Cares";
+    let intro = "";
+    let body = "";
+    if (route.view === "root") {
+      const c = countsOf(entries);
+      intro = `<div class="intro">
+        <p class="lede">Companies, ideas, and kills in ageing tech.</p>
+        <p class="counts">${c.total} entries · ${c.companies} companies · ${c.ideas} ideas · ${c.killed} killed</p>
+      </div>`;
+      body = renderBuckets(entries, buckets, query);
+    } else if (route.view === "theme") {
+      if (!bucket) {
+        title = "Who Cares";
+        body = `<p class="empty">Not in the index.</p>`;
+      } else {
+        title = bucket.title + " - Who Cares";
+        const killed = bucket.status === "killed";
+        const themeMeta = killed
+          ? joinMeta([bucket.code, bucket.count + (bucket.count === 1 ? " entry" : " entries"), "Killed"])
+          : joinMeta([bucket.code, bucket.count + (bucket.count === 1 ? " entry" : " entries"), statusLabel(bucket.status)]);
+        intro = "";
+        body = `<h1 class="screen-title">${t(bucket.title)}</h1>
+          <p class="screen-meta${killed ? " kill" : ""}">${t(themeMeta)}</p>`
+          + renderThemeList(route, entries);
+      }
+    } else {
+      const entry = findEntry(entries, route.id);
+      title = (entry ? nd(entry.name) : "Entry") + " - Who Cares";
+      body = renderDetail(route, entries);
+    }
+    document.title = title;
+    if (introEl) introEl.innerHTML = intro;
+    main.innerHTML = body;
+    if (scroll) window.scrollTo(0, 0);
+  }
+
+  if (backBtn) backBtn.addEventListener("click", back);
+  if (searchEl) {
+    searchEl.addEventListener("input", () => {
+      query = searchEl.value || "";
+      render(false);
+    });
+  }
+  if (app) {
+    app.addEventListener("click", (ev) => {
+      const more = ev.target.closest("[data-more]");
+      if (more) {
+        moreOpen = !moreOpen;
+        render(false);
+        return;
+      }
+      const dest = ev.target.closest("[data-go]");
+      if (!dest) return;
+      ev.preventDefault();
+      go(dest.getAttribute("data-go"));
+    });
+  }
+  window.addEventListener("popstate", () => {
+    const stateDepth = history.state && typeof history.state.depth === "number" ? history.state.depth : 0;
+    depth = stateDepth;
+    query = "";
+    if (searchEl) searchEl.value = "";
+    moreOpen = false;
+    render(true);
+  });
 
   document.addEventListener("DOMContentLoaded", () => {
-    renderHome().catch(console.error);
-    renderIndexPage().catch(console.error);
-    renderEntryPage().catch(console.error);
+    if (!app) return;
+    const hash = location.hash;
+    if (!hash || hash === "#") history.replaceState({ wc: 1, depth: 0 }, "", "#/");
+    else history.replaceState({ wc: 1, depth: 0 }, "", hash);
+    loadIndex().then((data) => {
+      indexData = data;
+      if (boot) boot.hidden = true;
+      render(false);
+    }).catch(() => {
+      if (boot) boot.textContent = "The index could not be loaded.";
+    });
   });
 })();
