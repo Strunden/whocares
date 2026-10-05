@@ -117,6 +117,33 @@
     if (!raw || /^global$/i.test(raw)) return "";
     return raw;
   }
+  const COUNTRY_NAMES = {
+    AE: "United Arab Emirates", AR: "Argentina", AT: "Austria", AU: "Australia",
+    BE: "Belgium", BG: "Bulgaria", BR: "Brazil", CA: "Canada", CH: "Switzerland",
+    CL: "Chile", CN: "China", CY: "Cyprus", CZ: "Czechia", DE: "Germany",
+    DK: "Denmark", EE: "Estonia", ES: "Spain", FI: "Finland", FR: "France",
+    GB: "United Kingdom", GR: "Greece", HK: "Hong Kong", HR: "Croatia",
+    HU: "Hungary", IE: "Ireland", IL: "Israel", IN: "India", IS: "Iceland",
+    IT: "Italy", JP: "Japan", KR: "South Korea", LT: "Lithuania", LU: "Luxembourg",
+    LV: "Latvia", MT: "Malta", MX: "Mexico", NL: "Netherlands", NO: "Norway",
+    NZ: "New Zealand", PL: "Poland", PT: "Portugal", RO: "Romania", SE: "Sweden",
+    SG: "Singapore", SI: "Slovenia", SK: "Slovakia", US: "United States",
+    ZA: "South Africa"
+  };
+  function countryInfo(e) {
+    if (!e || e.type !== "company" || !e.facts || typeof e.facts !== "object") return null;
+    const fact = e.facts.country;
+    if (!fact || typeof fact !== "object") return null;
+    const code = String(fact.code || "").trim().toUpperCase();
+    const name = COUNTRY_NAMES[code];
+    if (!name || !safeUrl(fact.source)) return null;
+    const emoji = String.fromCodePoint(...code.split("").map((ch) => 0x1F1E6 + ch.charCodeAt(0) - 65));
+    return { code, name, source: safeUrl(fact.source), emoji };
+  }
+  function flagMark(info) {
+    if (!info) return "";
+    return `<span class="flag" role="img" aria-label="${esc(info.name)}">${info.emoji}</span>`;
+  }
   function entryTags(e) {
     return [e.tag, e.tag_secondary].filter(Boolean);
   }
@@ -261,7 +288,7 @@
     const summary = displaySummary(e);
     return `<button type="button" class="row" data-go="/e/${esc(encodeURIComponent(e.id))}">
       ${rowIcon(e)}
-      <span class="row-text"><span class="name">${t(displayTitle(e))}</span>${summary ? `<span class="meta">${t(summary)}</span>` : ""}</span>
+      <span class="row-text"><span class="name">${t(displayTitle(e))}${flagMark(countryInfo(e))}</span>${summary ? `<span class="meta">${t(summary)}</span>` : ""}</span>
       ${chevron()}
     </button>`;
   }
@@ -373,8 +400,14 @@
     }
     const hq = facts.hq;
     const city = hq ? plainFact(hq.city) : "";
+    const origin = countryInfo(e);
+    const flag = flagMark(origin);
     if (city && hq && safeUrl(hq.source)) {
-      rows.push(`<div class="kv"><p class="kicker">Headquarters</p><p>${t(city)}${sourceLink(hq.source)}</p></div>`);
+      const links = [sourceLink(hq.source)];
+      if (origin && origin.source !== safeUrl(hq.source)) links.push(sourceLink(origin.source));
+      rows.push(`<div class="kv"><p class="kicker">Headquarters</p><p>${t(city)}${flag}${links.join("")}</p></div>`);
+    } else if (origin) {
+      rows.push(`<div class="kv"><p class="kicker">Headquarters</p><p>${t(origin.name)}${flag}${sourceLink(origin.source)}</p></div>`);
     }
     const founders = Array.isArray(facts.founders) ? facts.founders.filter((person) => person && plainFact(person.name) && safeUrl(person.source)) : [];
     if (founders.length) {
@@ -470,7 +503,8 @@
     if (!e || !isPublished(e)) return `<p class="empty">That item is not in the list.</p>`;
     const killed = isKilled(e);
     const kind = e.type === "idea" ? "Idea" : "Company";
-    const country = knownCountry(e);
+    const origin = e.type === "company" ? countryInfo(e) : null;
+    const country = origin ? origin.name : (e.type === "idea" ? knownCountry(e) : "");
     const headMeta = country ? kind + ", " + country : kind;
     const summary = displaySummary(e);
     const fields = [

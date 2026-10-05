@@ -26,7 +26,7 @@ Each entry:
 | `added_date` | ISO date | ISO date |
 | `source_scan` | which map/scan found it | e.g. THESIS-CARDS.md |
 | `themes` | string[] e.g. `["T04"]` | string[] |
-| `country` / `city` | strings | strings |
+| `country` / `city` | ISO 3166-1 alpha-2 when verified, otherwise blank. `city` is a string | strings. Ideas have no country flag |
 | `scene` | `{job, seller, payer}` | same |
 | `website` | URL | usually empty |
 | `related` | ids of related entries | ids |
@@ -64,7 +64,7 @@ INSERT INTO entries (
   'new_this_scan',
   '{}',
   '{}',
-  'Germany',
+  'DE',
   'https://example.com',
   (SELECT COALESCE(MAX(position), 0) + 1 FROM entries),
   'Example',
@@ -89,11 +89,12 @@ INSERT INTO entries (
     'published', true,
     'status', 'new_this_scan',
     'website', 'https://example.com',
-    'country', 'Germany',
+    'country', 'DE',
     'themes', '[]'::jsonb,
     'related', '[]'::jsonb,
     'facts', jsonb_build_object(
       'founded', jsonb_build_object('year', 2018, 'source', 'https://example.com/about'),
+      'country', jsonb_build_object('code', 'DE', 'source', 'https://example.com/impressum'),
       'hq', jsonb_build_object('city', 'Berlin', 'source', 'https://example.com/impressum')
     )
   )
@@ -104,6 +105,7 @@ Verified company facts live in `document.facts` (and the `facts` column). The de
 
 `facts` fields, each with its own `source` URL:
 
+- `country`: `{code, source}`. `code` is ISO 3166-1 alpha-2. The list shows that country's flag next to the name, and the detail page shows it beside Headquarters. Leave it out when you cannot point at a public page. A domain such as `.de` is a hint to check the imprint, not proof. Ideas do not get a flag.
 - `founded`: `{year, source}`
 - `hq`: `{city, source}`
 - `founders`: `[{name, linkedin, source}]`. `linkedin` only when that profile URL was found.
