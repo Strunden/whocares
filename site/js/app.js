@@ -14,24 +14,6 @@
     "Money and retirement",
     "End of life and inheritance"
   ];
-  const MORE_LABELS = {
-    product: "Product",
-    how_it_works: "How it works",
-    user: "Who uses it",
-    buyer: "Who buys",
-    payer: "Who pays",
-    business_model: "How it makes money",
-    traction: "Traction",
-    funding: "Funding",
-    team: "Team",
-    competitors: "Competitors",
-    regulatory: "Rules and payment",
-    thesis: "Our read",
-    risks: "Risks",
-    relevance: "Why it matters here",
-    open_questions: "Open questions",
-    note: "Note"
-  };
   const GLYPH = {
     company: '<path d="M4 20V9l8-5 8 5v11"/><path d="M10 20v-5h4v5M9 11h.01M15 11h.01M9 14.5h.01M15 14.5h.01"/>',
     idea: '<path d="M9 18h6M10 21h4"/><path d="M12 3a5.5 5.5 0 0 1 3.6 9.6V16H8.4v-3.4A5.5 5.5 0 0 1 12 3z"/>',
@@ -69,6 +51,8 @@
   function isJunk(s) {
     const v = cleanProse(s).toLowerCase();
     if (!v) return true;
+    if (v.replace(/\.+$/, "").trim() === "used by older adults") return true;
+    if (/^it is a seniors\b/.test(v)) return true;
     return /not found|hypothetical|fetch fail|deep dive pending|http\s*404|domain for sale|see card|see theme|pickable-menu|thesis-cards|stressed, still|europe\/berlin/.test(v);
   }
   function safeUrl(u) {
@@ -103,19 +87,6 @@
     const s = cleanProse(e.summary || "");
     if (!s || isJunk(s)) return "";
     return s;
-  }
-  function knownCountry(e) {
-    const original = nd(e.country || "");
-    if (!original.trim()) return "";
-    if (/index|page says|page shows|not named|not confirmed|not printed|not opened/i.test(original)) return "";
-    let raw = original.split(";")[0].replace(/\s*\([^)]*\)/g, "").trim();
-    raw = raw.replace(/\s*\/\s*EU\b.*/i, "").replace(/\s*\(focus\).*/i, "").trim();
-    if (/global/i.test(raw) && /germany|\bDE\b/i.test(original)) return "Germany";
-    if (/^united states\s*\/\s*canada$/i.test(raw)) return "United States and Canada";
-    if (/^canada\s*\/\s*(us|usa)$/i.test(raw)) return "Canada and the United States";
-    if (/\//.test(raw)) return "";
-    if (!raw || /^global$/i.test(raw)) return "";
-    return raw;
   }
   const COUNTRY_NAMES = {
     AE: "United Arab Emirates", AR: "Argentina", AT: "Austria", AU: "Australia",
@@ -211,7 +182,6 @@
   let query = "";
   let tagFilter = "";
   let listScroll = 0;
-  let moreOpen = false;
 
   const app = document.getElementById("app");
   const boot = document.getElementById("boot");
@@ -244,7 +214,6 @@
     if (routeNow().view === "root") listScroll = scrollPos();
     depth += 1;
     history.pushState({ wc: 1, depth }, "", next);
-    moreOpen = false;
     render(routeNow().view === "entry" ? "top" : "restore");
   }
   function back() {
@@ -254,7 +223,6 @@
       return;
     }
     history.replaceState({ wc: 1, depth: 0 }, "", "#/");
-    moreOpen = false;
     render("restore");
   }
 
@@ -466,37 +434,87 @@
     return `<div class="group">${rows.join("")}</div>`;
   }
 
+  function sectionText(block) {
+    if (!block) return "";
+    if (typeof block === "string") return plainFact(block);
+    return plainFact(block.text || "");
+  }
+  function sectionSources(block) {
+    if (!block || typeof block !== "object" || !Array.isArray(block.sources)) return [];
+    const out = [];
+    block.sources.forEach((item) => {
+      const href = safeUrl(typeof item === "string" ? item : (item && item.url));
+      if (href && out.indexOf(href) === -1) out.push(href);
+    });
+    return out;
+  }
+  function writeupApproved(e) {
+    const qa = e && e.writeup_qa;
+    return !!(qa && qa.pass === true);
+  }
+  function writeupBlocks(e) {
+    if (!writeupApproved(e)) return [];
+    const writeup = e && e.writeup && typeof e.writeup === "object" ? e.writeup : null;
+    if (!writeup) return [];
+    return [
+      ["What it does", writeup.what_it_does],
+      ["Who pays", writeup.who_pays],
+      ["Traction", writeup.traction],
+      ["Why it's interesting", writeup.why_interesting],
+      ["Status", writeup.status]
+    ].map(([label, block]) => {
+      const text = sectionText(block);
+      if (!text) return null;
+      return { label, text, sources: sectionSources(block) };
+    }).filter(Boolean);
+  }
+  function writeupCard(e) {
+    const blocks = writeupBlocks(e);
+    if (!blocks.length) return "";
+    return `<div class="analysis">${blocks.map((block) => `<section><h2>${t(block.label)}</h2><p>${t(block.text)}${block.sources.map(sourceLink).join("")}</p></section>`).join("")}</div>`;
+  }
+
+  function factUrl(fact) {
+    if (!fact) return "";
+    if (typeof fact === "string") return safeUrl(fact);
+    if (typeof fact === "object") return safeUrl(fact.url || "");
+    return "";
+  }
+  function profileHref(fact, hostSuffix, pathPart) {
+    const href = factUrl(fact);
+    if (!href) return "";
+    try {
+      const url = new URL(href);
+      const host = url.hostname.toLowerCase().replace(/^www\./, "");
+      if (host !== hostSuffix && !host.endsWith("." + hostSuffix)) return "";
+      if (url.pathname.toLowerCase().indexOf(pathPart) === -1) return "";
+      return href;
+    } catch (err) {
+      return "";
+    }
+  }
+  function externalRow(href, label) {
+    let host = "";
+    try { host = new URL(href).host.replace(/^www\./, ""); } catch (err) { host = ""; }
+    return `<a class="row" href="${esc(href)}" target="_blank" rel="noopener">${iconTile("link")}<span class="row-text"><span class="name">${t(label)}</span><span class="meta">${t(host)}</span></span>${chevron()}</a>`;
+  }
+  function profileLinks(e) {
+    const rows = [];
+    const web = safeUrl(e.website);
+    if (web) rows.push(externalRow(web, "Website"));
+    const facts = e && e.facts && typeof e.facts === "object" ? e.facts : {};
+    const linkedin = profileHref(facts.linkedin, "linkedin.com", "/company/");
+    if (linkedin) rows.push(externalRow(linkedin, "LinkedIn"));
+    const crunchbase = profileHref(facts.crunchbase, "crunchbase.com", "/organization/");
+    if (crunchbase) rows.push(externalRow(crunchbase, "Crunchbase"));
+    if (!rows.length) return "";
+    return `<div class="group">${rows.join("")}</div>`;
+  }
+
   function similarCard(e) {
     const rows = similarEntries(e);
     if (!rows.length) return "";
     return `<div class="group"><div class="pad"><p class="kicker">Similar in Who Cares</p></div>${rows.map(rowButton).join("")}</div>`;
-  }
-
-  function moreHtml(e) {
-    const blocks = [];
-    const dive = e.deep_dive && typeof e.deep_dive === "object" ? e.deep_dive : null;
-    if (dive) {
-      Object.keys(MORE_LABELS).forEach((key) => {
-        const val = dive[key];
-        if (val == null || val === "" || Array.isArray(val)) return;
-        const text = cleanProse(val);
-        if (isJunk(text)) return;
-        blocks.push(`<h2>${t(MORE_LABELS[key])}</h2><p>${t(text)}</p>`);
-      });
-      if (Array.isArray(dive.risks)) {
-        const risks = dive.risks.map(cleanProse).filter((x) => x && !isJunk(x));
-        if (risks.length) blocks.push(`<h2>Risks</h2><ul>${risks.map((item) => `<li>${t(item)}</li>`).join("")}</ul>`);
-      }
-      if (Array.isArray(dive.open_questions)) {
-        const qs = dive.open_questions.map(cleanProse).filter((x) => x && !isJunk(x));
-        if (qs.length) blocks.push(`<h2>Open questions</h2><ul>${qs.map((item) => `<li>${t(item)}</li>`).join("")}</ul>`);
-      }
-    }
-    const related = (e.related || []).map((id) => findEntry(indexData.entries, id)).filter((r) => r && isPublished(r));
-    if (related.length) {
-      blocks.push(`<h2>Related</h2>` + related.map(rowButton).join(""));
-    }
-    return blocks.join("");
   }
 
   function renderDetail(e) {
@@ -504,23 +522,25 @@
     const killed = isKilled(e);
     const kind = e.type === "idea" ? "Idea" : "Company";
     const origin = e.type === "company" ? countryInfo(e) : null;
-    const country = origin ? origin.name : (e.type === "idea" ? knownCountry(e) : "");
+    const country = origin ? origin.name : "";
     const headMeta = country ? kind + ", " + country : kind;
     const summary = displaySummary(e);
-    const fields = [
-      ["Job", sceneValue(e, "job", "job")],
-      ["Who sells", sceneValue(e, "seller", "who_sells")],
-      ["Who pays", sceneValue(e, "payer", "who_pays")],
-      ["Why we dropped it", killed ? (e.why_dropped || e.kill_reason || "") : ""]
-    ].filter((pair) => pair[1] && !isJunk(pair[1]));
-    const card = fields.map(([k, v]) => `<div class="kv"><p class="kicker">${t(k)}</p><p>${t(cleanProse(v))}</p></div>`).join("");
-    const web = safeUrl(e.website);
-    let host = "";
-    if (web) {
-      try { host = new URL(web).host; } catch (err) { host = web; }
+    const draft = e.writeup && typeof e.writeup === "object";
+    const writeup = writeupBlocks(e);
+    const fields = [];
+    if (!writeup.length && !draft) {
+      fields.push(
+        ["Job", sceneValue(e, "job", "job")],
+        ["Who sells", sceneValue(e, "seller", "who_sells")],
+        ["Who pays", sceneValue(e, "payer", "who_pays")]
+      );
     }
+    const dropped = killed ? (e.why_dropped || e.kill_reason || "") : "";
+    const card = fields.filter((pair) => pair[1] && !isJunk(pair[1])).map(([k, v]) => `<div class="kv"><p class="kicker">${t(k)}</p><p>${t(cleanProse(v))}</p></div>`).join("");
+    const droppedCard = dropped && !isJunk(dropped)
+      ? `<div class="group"><div class="kv"><p class="kicker">Why we dropped it</p><p>${t(cleanProse(dropped))}</p></div></div>`
+      : "";
     const sources = sourcesOf(e);
-    const extra = moreHtml(e);
     let html = `<article class="detail">
       <div class="detail-head">
         ${rowIcon(e)}
@@ -530,32 +550,18 @@
         </div>
       </div>
       ${summary ? `<p class="summary">${t(summary)}</p>` : ""}`;
+    html += writeupCard(e);
     if (card) html += `<div class="group">${card}</div>`;
+    html += droppedCard;
     html += factsCard(e);
     html += similarCard(e);
-    if (web) {
-      html += `<div class="group"><a class="row" href="${esc(web)}" target="_blank" rel="noopener">
-        ${iconTile("link")}
-        <span class="row-text"><span class="name">Website</span><span class="meta">${t(host)}</span></span>
-        ${chevron()}
-      </a></div>`;
-    }
+    html += profileLinks(e);
     if (sources.length) {
       html += `<div class="group"><div class="pad"><p class="kicker">Sources</p><ul class="src-list">`;
       sources.forEach((s) => {
         html += `<li><a class="src-link" href="${esc(s.url)}" target="_blank" rel="noopener">${t(s.label)}</a></li>`;
       });
       html += `</ul></div></div>`;
-    }
-    if (extra) {
-      html += `<div class="group">
-        <button type="button" class="row more" data-more aria-expanded="${moreOpen ? "true" : "false"}">
-          ${iconTile("note")}
-          <span class="row-text"><span class="name">${moreOpen ? "Hide the full note" : "Read the full note"}</span></span>
-          ${chevron()}
-        </button>
-        ${moreOpen ? `<div class="more-panel">${extra}</div>` : ""}
-      </div>`;
     }
     html += `</article>`;
     return html;
@@ -653,14 +659,6 @@
   }
   if (app) {
     app.addEventListener("click", (ev) => {
-      const more = ev.target.closest("[data-more]");
-      if (more) {
-        moreOpen = !moreOpen;
-        const y = scrollPos();
-        render("keep");
-        setScroll(y);
-        return;
-      }
       const dest = ev.target.closest("[data-go]");
       if (!dest) return;
       ev.preventDefault();
@@ -670,7 +668,6 @@
   window.addEventListener("popstate", () => {
     const stateDepth = history.state && typeof history.state.depth === "number" ? history.state.depth : 0;
     depth = stateDepth;
-    moreOpen = false;
     render(routeNow().view === "root" ? "restore" : "top");
   });
 

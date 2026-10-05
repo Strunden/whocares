@@ -103,9 +103,23 @@ INSERT INTO entries (
 
 Verified company facts live in `document.facts` (and the `facts` column). The detail page reads them from `GET /api/index`. Leave out any fact you cannot point at a public page. Do not write "unknown".
 
+A researched write-up lives in `document.writeup`. It is shown only when `document.writeup_qa.pass` is true. The checklist is the pass or fail of eleven checks: three independent sources beyond the company site, every claim sourced, concrete mechanics in plain language, buyer plus public price plus reimbursement route, traction with numbers and dates, founding story and funding, two or three named competitors, a short insight, news from the last 12 months or an explicit statement that none was found, 150 to 300 words with no em dash, and a correct published flag when the company is dead or not about ageing or care. A failed write-up stays in the database for the next research pass and is not rendered. The page then keeps the one-line summary, facts, similar entries, the website, and sources.
+
+When a write-up passes, it is always open, directly under the name and the one-line summary, in this order: What it does, Who pays, Traction, Why it's interesting, Status. Facts, Similar, the website, and sources come after that. There is no show/hide control. The old job card stays hidden once a write-up exists, passed or not, so a draft does not leak out as the job text. Each section is `{text, sources}` with `sources` as an array of URLs you actually opened. Omit a section when you cannot support it. `summary` stays the one-line list text, verb first, at most 90 characters. `writeup.status.text` is the operating status (active, acquired, shut down, or pivoted), not the internal workflow `status`.
+
+```json
+"writeup": {
+  "what_it_does": {"text": "Two to four plain sentences.", "sources": ["https://example.com"]},
+  "who_pays": {"text": "Who buys it, and the price if it is public.", "sources": ["https://example.com/pricing"]},
+  "traction": {"text": "Customers or results, with dates.", "sources": ["https://example.com/news"]},
+  "why_interesting": {"text": "One to three sentences of insight.", "sources": ["https://example.com/news"]},
+  "status": {"text": "Active. Still selling the product as of October 2026.", "state": "active", "as_of": "2026-10-05", "sources": ["https://example.com"]}
+}
+```
+
 `facts` fields, each with its own `source` URL:
 
-- `country`: `{code, source}`. `code` is ISO 3166-1 alpha-2. The list shows that country's flag next to the name, and the detail page shows it beside Headquarters. Leave it out when you cannot point at a public page. A domain such as `.de` is a hint to check the imprint, not proof. Ideas do not get a flag.
+- `country`: `{code, source}`. `code` is ISO 3166-1 alpha-2. The list shows that country's flag next to the name, and the detail page shows it beside Headquarters. The subtitle under the name is "Company, Germany" (or whichever verified country) only when this fact is present. With no verified country the subtitle is "Company", or "Idea" for an idea. The old free-text `country` string from the import is not shown. Leave the fact out when you cannot point at a public page. A domain such as `.de` is a hint to check the imprint, not proof. Ideas do not get a flag.
 - `founded`: `{year, source}`
 - `hq`: `{city, source}`
 - `founders`: `[{name, linkedin, source}]`. `linkedin` only when that profile URL was found.
@@ -114,6 +128,8 @@ Verified company facts live in `document.facts` (and the `facts` column). The de
 - `investors`: `[{name, source}]`
 - `model`: `{text, source}` for pricing or the business model
 - `apps`: `[{name, url}]` for App Store or Google Play listings
+- `linkedin`: `{url, source}` for the LinkedIn company page. Add it only after the profile shows the same company name and the same website domain. Personal `/in/` profiles do not go here.
+- `crunchbase`: `{url, source}` for the Crunchbase organization page, with the same name and website-domain check. Leave either one out when the profile cannot be confirmed. The detail page shows confirmed links as rows beside Website.
 
 "Similar in Who Cares" is not stored. The page picks 3 to 5 other published entries with the same main tag and an overlapping job.
 
