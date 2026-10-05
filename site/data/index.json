@@ -9128,7 +9128,7 @@
           }
         ]
       },
-      "published": false,
+      "published": true,
       "title": "Arquella",
       "research_summary": "future-proof wireless nurse call systems with second-generation technology, empowering care teams and enhancing care delivery for residential and inpatient care settings.",
       "job": "It is a future-proof wireless nurse call systems with second-generation technology, empowering care teams and enhancing care delivery for residential and inpatient care settings.",
@@ -9137,7 +9137,13 @@
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": "/api/logo/company-arquella"
+      "logo": "/api/logo/company-arquella",
+      "closed": {
+        "state": "liquidation",
+        "date": "2026-06-25",
+        "text": "In liquidation 25 Jun 2026, Companies House 11206238",
+        "source": "https://find-and-update.company-information.service.gov.uk/company/11206238/insolvency"
+      }
     },
     {
       "id": "company-alenvi",
@@ -10416,7 +10422,7 @@
           }
         ]
       },
-      "published": false,
+      "published": true,
       "title": "Currant Care",
       "research_summary": "Currant Care brings innovation to healthcare with non-invasive products like Oh Band for hand sanitization and Sensora for digital elderly care.",
       "job": "It is a currant Care brings innovation to healthcare with non-invasive products like Oh Band for hand sanitization and Sensora for digital elderly care.",
@@ -10424,7 +10430,13 @@
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": "/api/logo/company-currant-care"
+      "logo": "/api/logo/company-currant-care",
+      "closed": {
+        "state": "dissolved",
+        "date": "2026-02-10",
+        "text": "Dissolved 10 Feb 2026, Companies House 14453324",
+        "source": "https://find-and-update.company-information.service.gov.uk/company/14453324"
+      }
     },
     {
       "id": "company-appva",
@@ -17230,7 +17242,7 @@
           }
         ]
       },
-      "published": false,
+      "published": true,
       "title": "Causalus",
       "research_summary": "a digital therapeutics company focused on addressing the challenges of polypharmacy by developing software solutions for medication reviews.",
       "job": "It is a digital therapeutics company focused on addressing the challenges of polypharmacy by developing software solutions for medication reviews.",
@@ -17253,6 +17265,12 @@
           "code": "FI",
           "source": "https://www.northdata.com/Causalus%20Oy"
         }
+      },
+      "closed": {
+        "state": "dissolved",
+        "date": "2022-11-03",
+        "text": "Dissolved 3 Nov 2022, Finnish register 2915535-6",
+        "source": "https://avoindata.prh.fi/opendata-ytj-api/v3/companies?businessId=2915535-6"
       }
     },
     {
@@ -18370,7 +18388,7 @@
           }
         ]
       },
-      "published": false,
+      "published": true,
       "title": "Health Invest",
       "research_summary": "Digital healthcare - developer of Myplus.care.",
       "job": "Health Invest Finland sold My+Care, a wristband and wireless beacons that sent a resident's movement, location and body temperature to staff. A 2017 launch note says care homes received the hardware and a login, then got an alert if someone left a set area. The company page says the founders built it with senior houses and healthcare staff in Finland.",
@@ -18522,6 +18540,12 @@
             "note": "Hidden, with an internal reason stored off the page."
           }
         }
+      },
+      "closed": {
+        "state": "shut_down",
+        "date": "2023-03-30",
+        "text": "Bankrupt 30 Mar 2023, Finnish register 2715906-2",
+        "source": "https://avoindata.prh.fi/opendata-ytj-api/v3/companies?businessId=2715906-2"
       }
     },
     {

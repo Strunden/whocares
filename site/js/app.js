@@ -118,6 +118,18 @@
   function entryTags(e) {
     return [e.tag, e.tag_secondary].filter(Boolean);
   }
+  const CLOSED_STATES = { dissolved: 1, liquidation: 1, shut_down: 1, acquired_and_shut: 1 };
+  function closedInfo(e) {
+    const closed = e && e.closed;
+    if (!closed || typeof closed !== "object" || !CLOSED_STATES[closed.state]) return null;
+    const text = cleanProse(closed.text || "");
+    const source = safeUrl(closed.source);
+    if (!text || !source) return null;
+    return { state: closed.state, text, source };
+  }
+  function closedPill() {
+    return `<span class="closed-pill">Closed</span>`;
+  }
   function logoSrc(e) {
     const logo = String(e && e.logo || "");
     if (!logo || isKilled(e) || e.type === "idea") return "";
@@ -249,14 +261,16 @@
   }
   function matchesTag(e) {
     if (!tagFilter) return true;
+    if (tagFilter === "Closed") return !!closedInfo(e);
     return entryTags(e).indexOf(tagFilter) !== -1;
   }
 
   function rowButton(e) {
     const summary = displaySummary(e);
+    const closed = closedInfo(e);
     return `<button type="button" class="row" data-go="/e/${esc(encodeURIComponent(e.id))}">
       ${rowIcon(e)}
-      <span class="row-text"><span class="name">${t(displayTitle(e))}${flagMark(countryInfo(e))}</span>${summary ? `<span class="meta">${t(summary)}</span>` : ""}</span>
+      <span class="row-text"><span class="name">${t(displayTitle(e))}${flagMark(countryInfo(e))}${closed ? closedPill() : ""}</span>${summary ? `<span class="meta">${t(summary)}</span>` : ""}</span>
       ${chevron()}
     </button>`;
   }
@@ -541,12 +555,17 @@
       ? `<div class="group"><div class="kv"><p class="kicker">Why we dropped it</p><p>${t(cleanProse(dropped))}</p></div></div>`
       : "";
     const sources = sourcesOf(e);
+    const closed = closedInfo(e);
+    const closedLine = closed
+      ? `<p class="closed-line">${closedPill()}<span>${t(closed.text)}</span>${sourceLink(closed.source)}</p>`
+      : "";
     let html = `<article class="detail">
       <div class="detail-head">
         ${rowIcon(e)}
         <div>
           <h1>${t(displayTitle(e))}</h1>
           <p class="screen-meta">${t(headMeta)}</p>
+          ${closedLine}
         </div>
       </div>
       ${summary ? `<p class="summary">${t(summary)}</p>` : ""}`;
@@ -599,7 +618,7 @@
     if (tagsEl.dataset.mode === "all") return;
     const left = tagsEl.scrollLeft;
     tagsEl.dataset.mode = "all";
-    tagsEl.innerHTML = TAGS.map((label) => {
+    tagsEl.innerHTML = ["Closed"].concat(TAGS).map((label) => {
       return `<button type="button" class="chip" data-tag="${esc(label)}" aria-pressed="false">${t(label)}</button>`;
     }).join("");
     tagsEl.scrollLeft = left;
