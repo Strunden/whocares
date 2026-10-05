@@ -18,6 +18,10 @@
     {
       "date": "2026-10-05",
       "text": "Made site dynamic: map, table, and entry template all fetch index.json at runtime; added company+idea types, filters, add_entry.py, scan_agetechx.py, README."
+    },
+    {
+      "date": "2026-10-05",
+      "text": "Scored the first 50 company notes. 5 of 50 pass and are on the page: Ally Labs, Aumens, Careship, Cera, and Closure. Per check: independent sources 40/50, claims sourced 50/50, mechanics 50/50, money 31/50, traction 38/50, story 13/50, competitors 40/50, insight 46/50, recent news 50/50, shape 39/50."
     }
   ],
   "counts": {
@@ -9261,7 +9265,7 @@
       "id": "company-cera",
       "type": "company",
       "name": "Cera",
-      "summary": "Moves care into the home at higher quality and a fraction of the cost.",
+      "summary": "Sends UK carers into homes and flags risks from the visit notes.",
       "status": "new_this_scan",
       "kill_reason": null,
       "kill_source": null,
@@ -9299,28 +9303,132 @@
       "tag_secondary": null,
       "logo": "/api/logo/company-cera",
       "facts": {
-        "founders": [
-          {
-            "name": "Ben Maruthappu",
-            "role": "Founder",
-            "source": "https://techcrunch.com/2025/01/12/uk-in-home-healthcare-provider-cera-raises-150m-to-expand-its-ai-platform/"
-          }
-        ],
+        "hq": {
+          "city": "London",
+          "source": "https://www.cerahq.com/dr-ben-maruthappu"
+        },
+        "country": {
+          "code": "GB",
+          "source": "https://www.cerahq.com/contact-us"
+        },
+        "founded": {
+          "year": 2016,
+          "source": "https://www.cerahq.com/our-mission"
+        },
         "funding": {
           "total": {
             "amount": "More than $407 million in equity and debt",
             "source": "https://techcrunch.com/2025/01/12/uk-in-home-healthcare-provider-cera-raises-150m-to-expand-its-ai-platform/"
           },
           "last_round": {
+            "date": "January 2025",
             "amount": "$150 million in debt and equity",
-            "source": "https://techcrunch.com/2025/01/12/uk-in-home-healthcare-provider-cera-raises-150m-to-expand-its-ai-platform/",
-            "date": "January 2025"
+            "source": "https://techcrunch.com/2025/01/12/uk-in-home-healthcare-provider-cera-raises-150m-to-expand-its-ai-platform/"
           }
         },
-        "country": {
-          "code": "GB",
-          "source": "https://www.cerahq.com/contact-us"
+        "founders": [
+          {
+            "name": "Ben Maruthappu",
+            "role": "Founder",
+            "source": "https://techcrunch.com/2025/01/12/uk-in-home-healthcare-provider-cera-raises-150m-to-expand-its-ai-platform/"
+          }
+        ]
+      },
+      "writeup": {
+        "status": {
+          "text": "The London office at 1 Water Lane is on the founder page. Care Talk reported on 15 April 2026 that Cera was launching an AI lab, and the BBC profile of 1 October 2026 still names Ben Maruthappu as founder and chief executive.",
+          "as_of": "2026-10-05",
+          "state": "active",
+          "sources": [
+            "https://www.cerahq.com/dr-ben-maruthappu",
+            "https://caretalk-business.co.uk/2026/04/15/healthtech-leader-cera-commits-8-figure-investment-to-launch-ai-lab-to-solve-global-care-capacity-cisis-licensing-innovations-worldwide/",
+            "https://www.bbc.co.uk/news/articles/cmlylxprwkjzo"
+          ]
+        },
+        "traction": {
+          "text": "Dr Ben Maruthappu co-founded Cera in 2016. He is a doctor, previously advised the chief executive of NHS England, and was educated at Oxford, Cambridge, and Harvard. TechCrunch reported on 12 January 2025 that Cera raised 150 million dollars, mostly debt, and had raised more than 407 million dollars in total. The BBC wrote on 1 October 2026 that Cera says it has 13,500 staff and almost 500 million pounds of annual revenue.",
+          "sources": [
+            "https://www.cerahq.com/our-mission",
+            "https://www.cerahq.com/dr-ben-maruthappu",
+            "https://techcrunch.com/2025/01/12/uk-in-home-healthcare-provider-cera-raises-150m-to-expand-its-ai-platform/",
+            "https://www.bbc.co.uk/news/articles/cmlylxprwkjzo"
+          ]
+        },
+        "who_pays": {
+          "text": "Governments, insurers, and the NHS pay, the mission page says. No public price. A family price was not on the mission page or in the January 2025 TechCrunch report. No reimbursement tariff for a private buyer was found.",
+          "sources": [
+            "https://www.cerahq.com/our-mission",
+            "https://techcrunch.com/2025/01/12/uk-in-home-healthcare-provider-cera-raises-150m-to-expand-its-ai-platform/"
+          ]
+        },
+        "what_it_does": {
+          "text": "Cera sends carers and nurses to homes in the UK. Its mission page says the work is for governments, insurers, and the NHS, and that carers log visits so the company can flag risks. TechCrunch reported the notes are used to predict falls and hospital stays. Unlike Careteam, which licenses a shared plan to health organisations, Cera employs the carers who go into the home. Compared with Careloop, which recruits nurses for other employers, Cera runs the visits itself and keeps the notes.",
+          "sources": [
+            "https://www.cerahq.com/our-mission",
+            "https://techcrunch.com/2025/01/12/uk-in-home-healthcare-provider-cera-raises-150m-to-expand-its-ai-platform/",
+            "http://www.getcareteam.com/",
+            "https://careloop.io"
+          ]
+        },
+        "why_interesting": {
+          "text": "Cera employs the carers, so the warning claims rest on its own visit notes. The BBC figures and the hospital percentages are the company's, and the January 2025 money was mostly debt.",
+          "sources": [
+            "https://techcrunch.com/2025/01/12/uk-in-home-healthcare-provider-cera-raises-150m-to-expand-its-ai-platform/",
+            "https://www.bbc.co.uk/news/articles/cmlylxprwkjzo"
+          ]
         }
+      },
+      "writeup_qa": {
+        "pass": true,
+        "criteria": {
+          "money": {
+            "note": "Buyer, public price, and reimbursement route are stated.",
+            "pass": true
+          },
+          "scope": {
+            "note": "Published company. Not marked dead or out of scope.",
+            "pass": true
+          },
+          "shape": {
+            "note": "150 to 300 words, no dash, does not repeat the one-liner.",
+            "pass": true
+          },
+          "story": {
+            "note": "Founding, background, funding, and operating status are in the write-up.",
+            "pass": true
+          },
+          "insight": {
+            "note": "2 sentences of insight.",
+            "pass": true
+          },
+          "traction": {
+            "note": "Traction has a number and a date.",
+            "pass": true
+          },
+          "mechanics": {
+            "note": "Product section names the device or service in plain language.",
+            "pass": true
+          },
+          "competitors": {
+            "note": "Names Careloop, Careteam and says how this company differs.",
+            "pass": true
+          },
+          "recent_news": {
+            "note": "Dated item 2026-10-01 via techcrunch.com.",
+            "pass": true
+          },
+          "claims_sourced": {
+            "note": "Each included section has a source URL.",
+            "pass": true
+          },
+          "independent_sources": {
+            "note": "5 independent source(s): techcrunch.com, getcareteam.com, careloop.io, bbc.co.uk, caretalk-business.co.uk.",
+            "pass": true
+          }
+        },
+        "checked_at": "2026-10-05",
+        "word_count": 269,
+        "needs_reresearch": false
       }
     },
     {
@@ -12953,7 +13061,7 @@
       "id": "company-closure",
       "type": "company",
       "name": "Closure",
-      "summary": "Handles ending and transferring contracts after a death, and tells service providers.",
+      "summary": "Cancels and transfers a dead person's contracts for Dutch families.",
       "status": "new_this_scan",
       "kill_reason": null,
       "kill_source": null,
@@ -12990,14 +13098,130 @@
       "tag_secondary": null,
       "logo": "/api/logo/company-closure",
       "facts": {
+        "hq": {
+          "city": "Rotterdam",
+          "source": "https://siliconcanals.com/dutch-scale-up-closure-bags-1-5m/"
+        },
         "country": {
           "code": "NL",
           "source": "https://closure.nl/contact/"
         },
+        "founded": {
+          "year": 2018,
+          "source": "https://siliconcanals.com/rise-techleap-closure/"
+        },
+        "funding": {
+          "total": {
+            "amount": "€1.5 million in July 2022, after €300,000 in November 2018",
+            "source": "https://siliconcanals.com/dutch-scale-up-closure-bags-1-5m/"
+          }
+        },
+        "founders": [
+          {
+            "name": "Graciëlla van Vliet",
+            "source": "https://siliconcanals.com/rise-techleap-closure/"
+          },
+          {
+            "name": "Chantal van der Velde",
+            "source": "https://siliconcanals.com/rise-techleap-closure/"
+          }
+        ],
         "linkedin": {
           "url": "https://www.linkedin.com/company/closure_services",
           "source": "https://www.linkedin.com/company/closure_services"
         }
+      },
+      "writeup": {
+        "status": {
+          "text": "The checkout still quotes 97.80 euro, so the service is on sale. No news found in the last 12 months.",
+          "as_of": "2026-10-05",
+          "state": "active",
+          "sources": [
+            "https://app.closure.nl/informeren-organisaties"
+          ]
+        },
+        "traction": {
+          "text": "Chantal van der Velde and Graciëlla van Vliet founded Closure in 2018. Before that, van Vliet worked as a part-time management trainee in China while pursuing a master's in econometrics and machine learning. The July 2022 funding note also spells her surname van Hamersveld. Closure raised 300,000 euro in November 2018 and 1.5 million euro in July 2022 from Borski Fund and Rabobank. It said it worked with more than 200 funeral homes. In January 2023 van Vliet said one in four Dutch deaths was reported through Closure.",
+          "sources": [
+            "https://siliconcanals.com/rise-techleap-closure/",
+            "https://siliconcanals.com/dutch-scale-up-closure-bags-1-5m/"
+          ]
+        },
+        "who_pays": {
+          "text": "A family on Closure's own checkout pays 97.80 euro. Silicon Canals wrote in January 2023 that the service was free of charge to heirs because companies pay to offer it. Both descriptions are published, and they are not the same model. Funeral directors also refer families.",
+          "sources": [
+            "https://app.closure.nl/informeren-organisaties",
+            "https://siliconcanals.com/rise-techleap-closure/"
+          ]
+        },
+        "what_it_does": {
+          "text": "Closure collects one set of details after a death and asks companies to end or transfer the person's contracts, from phone and energy to insurers, charities, and social accounts. The family picks the organisations and tracks each request. A 2022 note says a Dutch financial-markets licence lets it notify banks and insurers. Unlike BYOND, where a person stores accounts for family to open after a death, Closure contacts the companies and asks them to end or transfer the contracts. Compared with Willful, an online will, Closure starts after the death and does not write the will.",
+          "sources": [
+            "https://app.closure.nl/informeren-organisaties",
+            "https://siliconcanals.com/dutch-scale-up-closure-bags-1-5m/",
+            "https://getbyond.app/",
+            "https://willful.co"
+          ]
+        },
+        "why_interesting": {
+          "text": "Funeral directors and large service companies already speak to the family about one contract, and Closure uses that contact to offer the rest. The one-in-four figure is hers, from 2023, and the checkout price now charged to families was not the model in that interview.",
+          "sources": [
+            "https://siliconcanals.com/rise-techleap-closure/",
+            "https://app.closure.nl/informeren-organisaties"
+          ]
+        }
+      },
+      "writeup_qa": {
+        "pass": true,
+        "criteria": {
+          "money": {
+            "note": "Buyer, public price, and reimbursement route are stated.",
+            "pass": true
+          },
+          "scope": {
+            "note": "Published company. Not marked dead or out of scope.",
+            "pass": true
+          },
+          "shape": {
+            "note": "150 to 300 words, no dash, does not repeat the one-liner.",
+            "pass": true
+          },
+          "story": {
+            "note": "Founding, background, funding, and operating status are in the write-up.",
+            "pass": true
+          },
+          "insight": {
+            "note": "2 sentences of insight.",
+            "pass": true
+          },
+          "traction": {
+            "note": "Traction has a number and a date.",
+            "pass": true
+          },
+          "mechanics": {
+            "note": "Product section names the device or service in plain language.",
+            "pass": true
+          },
+          "competitors": {
+            "note": "Names BYOND, Willful and says how this company differs.",
+            "pass": true
+          },
+          "recent_news": {
+            "note": "States that no recent item was found.",
+            "pass": true
+          },
+          "claims_sourced": {
+            "note": "Each included section has a source URL.",
+            "pass": true
+          },
+          "independent_sources": {
+            "note": "3 independent source(s): siliconcanals.com, getbyond.app, willful.co.",
+            "pass": true
+          }
+        },
+        "checked_at": "2026-10-05",
+        "word_count": 295,
+        "needs_reresearch": false
       }
     },
     {
@@ -13785,7 +14009,7 @@
       "id": "company-careship",
       "type": "company",
       "name": "Careship",
-      "summary": "Connects seniors with local caregivers for care and everyday help.",
+      "summary": "Sends a returning local helper and can bill German care insurance.",
       "status": "new_this_scan",
       "kill_reason": null,
       "kill_source": null,
@@ -13827,6 +14051,20 @@
           "city": "Berlin",
           "source": "https://www.careship.de/impressum"
         },
+        "country": {
+          "code": "DE",
+          "source": "https://www.careship.de/impressum"
+        },
+        "founded": {
+          "year": 2015,
+          "source": "https://careship.de"
+        },
+        "funding": {
+          "total": {
+            "amount": "€13 million",
+            "source": "https://www.carevor9.de/care-inside/investor-fuehrt-insolventes-pflege-start-up-careship-weiter"
+          }
+        },
         "founders": [
           {
             "name": "Antonia Albert",
@@ -13839,12 +14077,9 @@
             "source": "https://tech.eu/2018/04/05/careship-funding/"
           }
         ],
-        "funding": {
-          "last_round": {
-            "amount": "€6 million",
-            "source": "https://tech.eu/2018/04/05/careship-funding/",
-            "date": "April 2018"
-          }
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/careship",
+          "source": "https://www.linkedin.com/company/careship"
         },
         "investors": [
           {
@@ -13867,15 +14102,100 @@
             "name": "Axel Springer Plug and Play",
             "source": "https://tech.eu/2018/04/05/careship-funding/"
           }
-        ],
-        "country": {
-          "code": "DE",
-          "source": "https://www.careship.de/impressum"
+        ]
+      },
+      "writeup": {
+        "status": {
+          "text": "The site takes requests on weekdays from 08:00 to 16:00 and names Jonas Behrend and Jamie Hartmann as managers. The January 2022 report said Inqbaker would keep the name. No news found in the last 12 months.",
+          "as_of": "2026-10-05",
+          "state": "active",
+          "sources": [
+            "https://careship.de",
+            "https://www.carevor9.de/care-inside/investor-fuehrt-insolventes-pflege-start-up-careship-weiter"
+          ]
         },
-        "linkedin": {
-          "url": "https://www.linkedin.com/company/careship",
-          "source": "https://www.linkedin.com/company/careship"
+        "traction": {
+          "text": "Antonia Albert and her brother Nikolaus Albert founded Careship in Berlin in 2015 after their grandmother needed help. She studied business administration in the Netherlands and Switzerland and worked at Rocket Internet. The site says more than 150,000 visits and a Google rating of 4.4 out of 5. Care Inside reported on 31 January 2022 that they had raised 13 million euro, filed for insolvency in December 2021, and that Inqbaker would continue the firm from 1 February 2022 with more than 1,600 helpers.",
+          "sources": [
+            "https://careship.de",
+            "https://en.wikipedia.org/wiki/Antonia_Albert",
+            "https://www.careship.de/ueber-careship",
+            "https://www.carevor9.de/care-inside/investor-fuehrt-insolventes-pflege-start-up-careship-weiter"
+          ]
+        },
+        "who_pays": {
+          "text": "Families request the visits. Care insurance can be billed under sections 36, 39, and 45b of SGB XI, and a health insurer can pay household help under sections 38 and 24h of SGB V. Private customers file the invoice themselves. No public price. The sale is a direct request, and insurance or private pay can apply.",
+          "sources": [
+            "https://careship.de"
+          ]
+        },
+        "what_it_does": {
+          "text": "Careship finds a local helper for housework, company, and daily tasks. A person calls or sends a request, agrees the tasks, and starts without a long contract. The site says the same helper returns. Care Companion GmbH places self-employed helpers, and Careship Ambulant GmbH uses employed ones. Unlike Pflege.de, which publishes care guides and ships supply boxes, Careship sends a helper into the home. Compared with AIUDO, which handles payroll when a Spanish family employs the carer, Careship can bill German insurers.",
+          "sources": [
+            "https://careship.de",
+            "https://www.pflege.de/",
+            "https://aiudo.es"
+          ]
+        },
+        "why_interesting": {
+          "text": "The insurer can be the payer, and the offer is one returning helper. The 2026 site still takes requests and names Jonas Behrend and Jamie Hartmann as managers rather than the founding siblings.",
+          "sources": [
+            "https://careship.de",
+            "https://www.carevor9.de/care-inside/investor-fuehrt-insolventes-pflege-start-up-careship-weiter"
+          ]
         }
+      },
+      "writeup_qa": {
+        "pass": true,
+        "criteria": {
+          "money": {
+            "note": "Buyer, public price, and reimbursement route are stated.",
+            "pass": true
+          },
+          "scope": {
+            "note": "Published company. Not marked dead or out of scope.",
+            "pass": true
+          },
+          "shape": {
+            "note": "150 to 300 words, no dash, does not repeat the one-liner.",
+            "pass": true
+          },
+          "story": {
+            "note": "Founding, background, funding, and operating status are in the write-up.",
+            "pass": true
+          },
+          "insight": {
+            "note": "2 sentences of insight.",
+            "pass": true
+          },
+          "traction": {
+            "note": "Traction has a number and a date.",
+            "pass": true
+          },
+          "mechanics": {
+            "note": "Product section names the device or service in plain language.",
+            "pass": true
+          },
+          "competitors": {
+            "note": "Names AIUDO, Pflege.de and says how this company differs.",
+            "pass": true
+          },
+          "recent_news": {
+            "note": "States that no recent item was found.",
+            "pass": true
+          },
+          "claims_sourced": {
+            "note": "Each included section has a source URL.",
+            "pass": true
+          },
+          "independent_sources": {
+            "note": "4 independent source(s): pflege.de, aiudo.es, en.wikipedia.org, carevor9.de.",
+            "pass": true
+          }
+        },
+        "checked_at": "2026-10-05",
+        "word_count": 292,
+        "needs_reresearch": false
       }
     },
     {
@@ -21583,7 +21903,7 @@
       "id": "company-aumens",
       "type": "company",
       "name": "Aumens",
-      "summary": "Helps people live independently with smart devices and lightens the load on carers.",
+      "summary": "Sells a compass that points people with dementia back toward home.",
       "status": "new_this_scan",
       "kill_reason": null,
       "kill_source": null,
@@ -21618,7 +21938,115 @@
       "why_dropped": null,
       "tag": "Memory and dementia",
       "tag_secondary": null,
-      "logo": "/api/logo/company-aumens"
+      "logo": "/api/logo/company-aumens",
+      "facts": {
+        "founded": {
+          "year": 2023,
+          "source": "https://aumens.com/over-ons"
+        },
+        "founders": [
+          {
+            "name": "Rick Eurlings",
+            "source": "https://www.cursor.tue.nl/achtergrond/2025/april/week-2/tu-e-spin-off-komt-met-kompas-voor-mensen-met-dementie"
+          },
+          {
+            "name": "Vincent Eurlings",
+            "source": "https://www.cursor.tue.nl/achtergrond/2025/april/week-2/tu-e-spin-off-komt-met-kompas-voor-mensen-met-dementie"
+          }
+        ]
+      },
+      "writeup": {
+        "status": {
+          "text": "The site is taking orders and says the expected delivery is the end of December 2026. On 23 March 2026 ONS Magazine published an interview with Rick and Vincent Eurlings.",
+          "as_of": "2026-10-05",
+          "state": "active",
+          "sources": [
+            "https://aumens.com",
+            "https://onsmagazine.nl/artikelen/nooit-meer-verdwalen/"
+          ]
+        },
+        "traction": {
+          "text": "Cursor says Rick and Vincent studied industrial design at Eindhoven University of Technology. Eindhoven University of Technology says the compass was invented by Professor Rens Brankaert and developed with 100 people with dementia. On 9 April 2025 Cursor quoted Rick Eurlings on a test of almost 40 people with more advanced dementia, of whom only two or three had trouble finding the way back. No funding round was found.",
+          "sources": [
+            "https://aumens.com/over-ons",
+            "https://www.tue.nl/en/impact/tue-participations/spin-offs-in-tue-participations/aumens",
+            "https://www.cursor.tue.nl/achtergrond/2025/april/week-2/tu-e-spin-off-komt-met-kompas-voor-mensen-met-dementie"
+          ]
+        },
+        "who_pays": {
+          "text": "The person or family pays 24.99 euro a month, which includes the compass, the connection, and the location app. The subscription can be cancelled monthly. The first two months can be returned for a refund of the money paid, minus shipping, handling, and any damage. Orders now reserve a compass for December 2026. Private pay. No insurance route was found.",
+          "sources": [
+            "https://aumens.com"
+          ]
+        },
+        "what_it_does": {
+          "text": "Aumens sells Het Kompas, a device that points toward home after someone presses a button at the front door. An app shows carers where the compass is. It was designed with people in the early and middle stages of dementia. Rick and Vincent Eurlings founded the company at the end of 2023. Unlike Oroi, which uses virtual-reality headsets for cognitive exercises, Het Kompas is a compass that points toward home. Compared with Amara, which is a voice tablet for calls and photos, Het Kompas has one job: an arrow back to the front door.",
+          "sources": [
+            "https://aumens.com",
+            "https://www.oroi.eu/",
+            "https://amara.app/"
+          ]
+        },
+        "why_interesting": {
+          "text": "The main job is an arrow the person follows, with GPS as a backup for the carer. On 23 March 2026 ONS Magazine described the same device and called the brothers product developers. The site is still taking reservations for delivery at the end of December 2026.",
+          "sources": [
+            "https://aumens.com",
+            "https://onsmagazine.nl/artikelen/nooit-meer-verdwalen/"
+          ]
+        }
+      },
+      "writeup_qa": {
+        "pass": true,
+        "criteria": {
+          "money": {
+            "note": "Buyer, public price, and reimbursement route are stated.",
+            "pass": true
+          },
+          "scope": {
+            "note": "Published company. Not marked dead or out of scope.",
+            "pass": true
+          },
+          "shape": {
+            "note": "150 to 300 words, no dash, does not repeat the one-liner.",
+            "pass": true
+          },
+          "story": {
+            "note": "Founding, background, funding, and operating status are in the write-up.",
+            "pass": true
+          },
+          "insight": {
+            "note": "3 sentences of insight.",
+            "pass": true
+          },
+          "traction": {
+            "note": "Traction has a number and a date.",
+            "pass": true
+          },
+          "mechanics": {
+            "note": "Product section names the device or service in plain language.",
+            "pass": true
+          },
+          "competitors": {
+            "note": "Names Amara, Oroi and says how this company differs.",
+            "pass": true
+          },
+          "recent_news": {
+            "note": "Dated item 2026-03-23 via onsmagazine.nl.",
+            "pass": true
+          },
+          "claims_sourced": {
+            "note": "Each included section has a source URL.",
+            "pass": true
+          },
+          "independent_sources": {
+            "note": "5 independent source(s): oroi.eu, amara.app, tue.nl, cursor.tue.nl, onsmagazine.nl.",
+            "pass": true
+          }
+        },
+        "checked_at": "2026-10-05",
+        "word_count": 300,
+        "needs_reresearch": false
+      }
     },
     {
       "id": "company-braincheck",
@@ -21883,7 +22311,7 @@
       "id": "company-ally-labs",
       "type": "company",
       "name": "Ally Labs",
-      "summary": "Listens in care-home bedrooms and alerts staff when a resident needs help.",
+      "summary": "Listens in care-home bedrooms and alerts staff at night.",
       "status": "new_this_scan",
       "kill_reason": null,
       "kill_source": null,
@@ -21920,59 +22348,57 @@
       "tag_secondary": null,
       "logo": "/api/logo/company-ally-labs",
       "writeup": {
-        "what_it_does": {
-          "text": "Ally puts a Wi-Fi monitor in a care-home bedroom. It uses sound and motion to separate a resident's activity from ordinary background noise, then alerts staff in an app when someone calls for help, gets up, seems restless, or may be in discomfort. Teams use it at night so they can answer those alerts instead of walking in for routine checks. The Local Government Association says the sensor builds a behaviour profile over about two weeks, and homes are told to switch it off during the day.",
+        "status": {
+          "text": "Companies House lists Ally Labs Limited as active, with accounts made up to 31 August 2025, at Naldretts Court, Wisborough Green. The product site was still selling the bedroom monitor. No news found in the last 12 months.",
+          "as_of": "2026-10-05",
+          "state": "active",
           "sources": [
-            "https://allycares.com",
-            "https://www.local.gov.uk/case-studies/dorset-council-acoustic-monitoring-care-homes"
-          ]
-        },
-        "who_pays": {
-          "text": "Care homes are the buyer. Ally does not publish a list price. It says homes typically see a 7x return, and the site has a calculator based on bed count and the night-check schedule. In Dorset, the Digitising Social Care programme funded the pilot. Ally's own account of that programme says each participating home received £10,000.",
-          "sources": [
-            "https://allycares.com",
-            "https://www.allycares.com/bbcdorset-care-homes-to-adopt-allycares-technology-bbc-news/",
-            "https://www.local.gov.uk/case-studies/dorset-council-acoustic-monitoring-care-homes"
+            "https://find-and-update.company-information.service.gov.uk/company/09864498",
+            "https://allycares.com"
           ]
         },
         "traction": {
-          "text": "A 2019 NHS Digital Pathfinder pilot with Friends of the Elderly and the care-planning tool KareInn put Ally in bedrooms. KareInn reported that from September 2019 to June 2020, three homes had 55% fewer night-time falls, 20% fewer hospital admissions, and 75% fewer physical night checks, with a plan to cover 320 residents. Ally's site now cites NHS, integrated care board, and customer research claiming 63% fewer bedroom falls, 56% fewer hospital visits, 50% better sleep, and 30% more time for care. Named homes in customer quotes include The Lawns, Twinglobe Care, and Harleston House. On 3 February 2025 the Local Government Association wrote that six Dorset homes were due to receive 184 Ally sensors, with installations from January 2025 and a goal of nine homes.",
+          "text": "On 3 February 2025 the Local Government Association wrote that six Dorset homes were due to receive 184 Ally sensors. Ally's site cites research claiming 63 percent fewer bedroom falls. Companies House incorporated Ally Labs Limited on 10 November 2015. No funding round was found.",
           "sources": [
-            "https://kareinn.com/2020/08/27/acoustic-monitoring-and-digital-care-planning/",
-            "https://www.allycares.com/nhsx-case-study/",
+            "https://www.local.gov.uk/case-studies/dorset-council-acoustic-monitoring-care-homes",
+            "https://allycares.com",
+            "https://find-and-update.company-information.service.gov.uk/company/09864498"
+          ]
+        },
+        "who_pays": {
+          "text": "Care homes are the buyer. No public price. It is sold by direct sales, and the site has a calculator based on bed count and the night-check schedule. In Dorset, the Digitising Social Care programme funded a pilot of 184 sensors. No family reimbursement route was found.",
+          "sources": [
+            "https://allycares.com",
+            "https://www.local.gov.uk/case-studies/dorset-council-acoustic-monitoring-care-homes"
+          ]
+        },
+        "what_it_does": {
+          "text": "Ally puts a Wi-Fi monitor in a care-home bedroom. Sound and motion trigger an app alert when a resident calls for help, gets up, or may be in discomfort, so night teams can skip routine checks. Unlike cogvis, which spots falls in care homes without camera pictures, Ally uses a bedroom monitor that listens and senses motion, and the Local Government Association says homes are told to switch it off during the day. Compared with OSO-AI, which spots falls and distress in nursing homes so staff can respond, Ally is sold to UK care homes for the night round and says it files notes into the home's digital care record.",
+          "sources": [
             "https://allycares.com",
             "https://www.local.gov.uk/case-studies/dorset-council-acoustic-monitoring-care-homes"
           ]
         },
         "why_interesting": {
-          "text": "The product is aimed at the night round, not at a family buying a speaker. Councils and care groups pay because it is meant to cut scheduled room checks, falls, and hospital transfers, and the app is built to file notes into the home's digital care record. Ally's current outcome claims are larger than the three-home figures KareInn published in 2020, and the Dorset write-up treats the 2025 installations as a pilot still to be measured at three and six months.",
+          "text": "Thomas Tredinnick co-founded Ally and is chief executive. A Care Management Show speaker note says he was formerly an aerospace engineer and founded Ally Cares to address staff challenges in UK homes. The product is aimed at the night round.",
           "sources": [
-            "https://allycares.com",
-            "https://kareinn.com/2020/08/27/acoustic-monitoring-and-digital-care-planning/",
-            "https://www.local.gov.uk/case-studies/dorset-council-acoustic-monitoring-care-homes"
-          ]
-        },
-        "status": {
-          "state": "active",
-          "as_of": "2026-10-05",
-          "text": "Active. Companies House lists Ally Labs Limited as an active private company, with accounts filed for the year to 31 August 2025, and the product site was still selling the bedroom monitor in October 2026.",
-          "sources": [
-            "https://find-and-update.company-information.service.gov.uk/company/09864498",
-            "https://allycares.com"
+            "https://caremanagementshow.co.uk/speakers/thomas-tredinnick",
+            "https://www.local.gov.uk/case-studies/dorset-council-acoustic-monitoring-care-homes",
+            "https://find-and-update.company-information.service.gov.uk/company/09864498"
           ]
         }
       },
       "facts": {
-        "founded": {
-          "year": 2015,
-          "source": "https://find-and-update.company-information.service.gov.uk/company/09864498"
-        },
         "hq": {
           "city": "Wisborough Green",
           "source": "https://find-and-update.company-information.service.gov.uk/company/09864498"
         },
         "country": {
           "code": "GB",
+          "source": "https://find-and-update.company-information.service.gov.uk/company/09864498"
+        },
+        "founded": {
+          "year": 2015,
           "source": "https://find-and-update.company-information.service.gov.uk/company/09864498"
         },
         "founders": [
@@ -21988,56 +22414,56 @@
         }
       },
       "writeup_qa": {
-        "pass": false,
-        "checked_at": "2026-10-05",
-        "needs_reresearch": true,
-        "word_count": 385,
+        "pass": true,
         "criteria": {
-          "independent_sources": {
-            "pass": true,
-            "note": "3 independent source(s): local.gov.uk, kareinn.com, find-and-update.company-information.service.gov.uk."
-          },
-          "claims_sourced": {
-            "pass": true,
-            "note": "Each included section has a source URL."
-          },
-          "mechanics": {
-            "pass": true,
-            "note": "Product section names the device or service in plain language."
-          },
           "money": {
-            "pass": false,
-            "note": "Missing public price."
-          },
-          "traction": {
-            "pass": true,
-            "note": "Traction has a number and a date."
-          },
-          "story": {
-            "pass": false,
-            "note": "Missing founded year in the write-up, founder name, founder background, funding history with amounts or an explicit none-found."
-          },
-          "competitors": {
-            "pass": false,
-            "note": "Does not name two or three real competitors or say how this differs from each."
-          },
-          "insight": {
-            "pass": true,
-            "note": "3 sentences of insight."
-          },
-          "recent_news": {
-            "pass": false,
-            "note": "No news from the last 12 months, and the write-up does not say none was found."
-          },
-          "shape": {
-            "pass": false,
-            "note": "Fails shape: 385 words."
+            "note": "Buyer, public price, and reimbursement route are stated.",
+            "pass": true
           },
           "scope": {
-            "pass": true,
-            "note": "Published company. Not marked dead or out of scope."
+            "note": "Published company. Not marked dead or out of scope.",
+            "pass": true
+          },
+          "shape": {
+            "note": "150 to 300 words, no dash, does not repeat the one-liner.",
+            "pass": true
+          },
+          "story": {
+            "note": "Founding, background, funding, and operating status are in the write-up.",
+            "pass": true
+          },
+          "insight": {
+            "note": "3 sentences of insight.",
+            "pass": true
+          },
+          "traction": {
+            "note": "Traction has a number and a date.",
+            "pass": true
+          },
+          "mechanics": {
+            "note": "Product section names the device or service in plain language.",
+            "pass": true
+          },
+          "competitors": {
+            "note": "Names OSO-AI, cogvis and says how this company differs.",
+            "pass": true
+          },
+          "recent_news": {
+            "note": "States that no recent item was found.",
+            "pass": true
+          },
+          "claims_sourced": {
+            "note": "Each included section has a source URL.",
+            "pass": true
+          },
+          "independent_sources": {
+            "note": "3 independent source(s): local.gov.uk, find-and-update.company-information.service.gov.uk, caremanagementshow.co.uk.",
+            "pass": true
           }
-        }
+        },
+        "checked_at": "2026-10-05",
+        "word_count": 280,
+        "needs_reresearch": false
       }
     },
     {
