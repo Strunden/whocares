@@ -97,10 +97,54 @@ a { color: var(--link); }
 .screen-meta { margin: 4px 16px 10px; color: var(--meta); font-size: 13px; }
 
 .section-label {
-  margin: 16px 32px 6px;
+  margin: 18px 32px 0;
   font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.section-hint {
+  margin: 2px 32px 8px;
+  font-size: 13px;
+  line-height: 1.35;
   color: var(--meta);
 }
+.ico {
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #ececf1;
+  color: var(--ink);
+}
+.ico svg, .mark svg { width: 20px; height: 20px; display: block; }
+.ico-life { border-radius: 16px; background: #111; color: #fff; }
+.ico-company { background: #111; color: #fff; }
+.ico-idea { background: #fff; color: #111; border: 1.5px dashed #111; }
+.ico-idea svg { width: 18px; height: 18px; }
+.ico-kill { background: #f8e8e6; color: var(--kill); }
+.ico-theme { background: #e7e7ee; color: #111; }
+.ico-link { background: #ececf1; color: var(--link); }
+.mark {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  color: var(--meta);
+  display: inline-flex;
+}
+.mark svg { width: 18px; height: 18px; }
+.mark-dropped, .mark-killed { color: var(--kill); }
+.screen-head, .detail-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 8px 16px 0;
+}
+.screen-head .screen-title, .detail-head h1 { margin: 0; }
+.screen-head .screen-meta, .detail-head .screen-meta { margin: 4px 0 0; }
+.screen-reason { margin: 8px 16px 12px; color: var(--ink); font-size: 15px; line-height: 1.4; }
 .group {
   background: var(--card);
   border-radius: 12px;
@@ -124,7 +168,15 @@ a { color: var(--link); }
 .group > :first-child { border-top: 0; }
 .row:active { background: #e4e4e9; }
 .row-text { flex: 1; min-width: 0; }
-.name { display: block; font-size: 17px; line-height: 1.25; font-weight: 400; }
+.name {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  font-size: 17px;
+  line-height: 1.25;
+  font-weight: 400;
+}
 .meta {
   display: block;
   margin-top: 2px;
