@@ -459,7 +459,12 @@
     });
     return out;
   }
+  function writeupApproved(e) {
+    const qa = e && e.writeup_qa;
+    return !!(qa && qa.pass === true);
+  }
   function writeupBlocks(e) {
+    if (!writeupApproved(e)) return [];
     const writeup = e && e.writeup && typeof e.writeup === "object" ? e.writeup : null;
     if (!writeup) return [];
     return [
@@ -494,9 +499,10 @@
     const country = origin ? origin.name : (e.type === "idea" ? knownCountry(e) : "");
     const headMeta = country ? kind + ", " + country : kind;
     const summary = displaySummary(e);
+    const draft = e.writeup && typeof e.writeup === "object";
     const writeup = writeupBlocks(e);
     const fields = [];
-    if (!writeup.length) {
+    if (!writeup.length && !draft) {
       fields.push(
         ["Job", sceneValue(e, "job", "job")],
         ["Who sells", sceneValue(e, "seller", "who_sells")],

@@ -2583,6 +2583,58 @@
             "https://federalcorporation.ca/corporation/11222708"
           ]
         }
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": true,
+        "word_count": 312,
+        "criteria": {
+          "independent_sources": {
+            "pass": false,
+            "note": "2 independent source(s): newventuresbc.com, federalcorporation.ca. Need at least 3."
+          },
+          "claims_sourced": {
+            "pass": true,
+            "note": "Each included section has a source URL."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": false,
+            "note": "Missing public price, reimbursement route."
+          },
+          "traction": {
+            "pass": true,
+            "note": "Traction has a number and a date."
+          },
+          "story": {
+            "pass": false,
+            "note": "Missing founder background, funding history with amounts or an explicit none-found."
+          },
+          "competitors": {
+            "pass": false,
+            "note": "Does not name two or three real competitors or say how this differs from each."
+          },
+          "insight": {
+            "pass": true,
+            "note": "2 sentences of insight."
+          },
+          "recent_news": {
+            "pass": false,
+            "note": "No news from the last 12 months, and the write-up does not say none was found."
+          },
+          "shape": {
+            "pass": false,
+            "note": "Fails shape: 312 words."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
+          }
+        }
       }
     },
     {
@@ -2875,6 +2927,58 @@
             "source": "https://www.sagecare.ai/about"
           }
         ]
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": true,
+        "word_count": 227,
+        "criteria": {
+          "independent_sources": {
+            "pass": false,
+            "note": "1 independent source(s): sagecare.ai. Need at least 3."
+          },
+          "claims_sourced": {
+            "pass": true,
+            "note": "Each included section has a source URL."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": false,
+            "note": "Missing public price, reimbursement route."
+          },
+          "traction": {
+            "pass": false,
+            "note": "No dated customer, user, deployment, or revenue figure."
+          },
+          "story": {
+            "pass": false,
+            "note": "Missing founder name."
+          },
+          "competitors": {
+            "pass": false,
+            "note": "Does not name two or three real competitors or say how this differs from each."
+          },
+          "insight": {
+            "pass": false,
+            "note": "4 sentences. Keep it to three."
+          },
+          "recent_news": {
+            "pass": false,
+            "note": "No news from the last 12 months, and the write-up does not say none was found."
+          },
+          "shape": {
+            "pass": true,
+            "note": "150 to 300 words, no dash, does not repeat the one-liner."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
+          }
+        }
       }
     },
     {
@@ -3141,6 +3245,58 @@
             "source": "https://www.ycombinator.com/companies/rhem-labs"
           }
         ]
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": true,
+        "word_count": 229,
+        "criteria": {
+          "independent_sources": {
+            "pass": false,
+            "note": "1 independent source(s): rhem.ai. Need at least 3."
+          },
+          "claims_sourced": {
+            "pass": true,
+            "note": "Each included section has a source URL."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": false,
+            "note": "Missing public price, reimbursement route."
+          },
+          "traction": {
+            "pass": false,
+            "note": "No dated customer, user, deployment, or revenue figure."
+          },
+          "story": {
+            "pass": false,
+            "note": "Missing founder name, funding history with amounts or an explicit none-found."
+          },
+          "competitors": {
+            "pass": false,
+            "note": "Does not name two or three real competitors or say how this differs from each."
+          },
+          "insight": {
+            "pass": true,
+            "note": "3 sentences of insight."
+          },
+          "recent_news": {
+            "pass": false,
+            "note": "No news from the last 12 months, and the write-up does not say none was found."
+          },
+          "shape": {
+            "pass": true,
+            "note": "150 to 300 words, no dash, does not repeat the one-liner."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
+          }
+        }
       }
     },
     {
@@ -3327,6 +3483,58 @@
             "source": "https://a10lab.com/company/"
           }
         ]
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": true,
+        "word_count": 265,
+        "criteria": {
+          "independent_sources": {
+            "pass": false,
+            "note": "No source outside the company site. Need at least 3."
+          },
+          "claims_sourced": {
+            "pass": true,
+            "note": "Each included section has a source URL."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": false,
+            "note": "Missing public price, reimbursement route."
+          },
+          "traction": {
+            "pass": true,
+            "note": "Traction has a number and a date."
+          },
+          "story": {
+            "pass": false,
+            "note": "Missing founded year in the write-up, founder name, founder background, funding history with amounts or an explicit none-found."
+          },
+          "competitors": {
+            "pass": false,
+            "note": "Does not name two or three real competitors or say how this differs from each."
+          },
+          "insight": {
+            "pass": true,
+            "note": "2 sentences of insight."
+          },
+          "recent_news": {
+            "pass": false,
+            "note": "No news from the last 12 months, and the write-up does not say none was found."
+          },
+          "shape": {
+            "pass": true,
+            "note": "150 to 300 words, no dash, does not repeat the one-liner."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
+          }
+        }
       }
     },
     {
@@ -3663,6 +3871,58 @@
             "source": "https://darmiyan.com/team/"
           }
         ]
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": true,
+        "word_count": 292,
+        "criteria": {
+          "independent_sources": {
+            "pass": false,
+            "note": "2 independent source(s): accessdata.fda.gov, prnewswire.com. Need at least 3."
+          },
+          "claims_sourced": {
+            "pass": true,
+            "note": "Each included section has a source URL."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": false,
+            "note": "Missing public price, reimbursement route."
+          },
+          "traction": {
+            "pass": false,
+            "note": "No dated customer, user, deployment, or revenue figure."
+          },
+          "story": {
+            "pass": false,
+            "note": "Missing founded year in the write-up, founder name, founder background, funding history with amounts or an explicit none-found."
+          },
+          "competitors": {
+            "pass": false,
+            "note": "Does not name two or three real competitors or say how this differs from each."
+          },
+          "insight": {
+            "pass": true,
+            "note": "3 sentences of insight."
+          },
+          "recent_news": {
+            "pass": true,
+            "note": "States that no recent item was found."
+          },
+          "shape": {
+            "pass": true,
+            "note": "150 to 300 words, no dash, does not repeat the one-liner."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
+          }
+        }
       }
     },
     {
@@ -3786,6 +4046,58 @@
           "sources": [
             "https://rocketdoctor.ca/"
           ]
+        }
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": false,
+        "word_count": 287,
+        "criteria": {
+          "independent_sources": {
+            "pass": false,
+            "note": "1 independent source(s): prweb.com. Need at least 3."
+          },
+          "claims_sourced": {
+            "pass": true,
+            "note": "Each included section has a source URL."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": false,
+            "note": "Missing reimbursement route."
+          },
+          "traction": {
+            "pass": true,
+            "note": "Traction has a number and a date."
+          },
+          "story": {
+            "pass": false,
+            "note": "Missing founder background."
+          },
+          "competitors": {
+            "pass": false,
+            "note": "Does not name two or three real competitors or say how this differs from each."
+          },
+          "insight": {
+            "pass": true,
+            "note": "2 sentences of insight."
+          },
+          "recent_news": {
+            "pass": false,
+            "note": "No news from the last 12 months, and the write-up does not say none was found."
+          },
+          "shape": {
+            "pass": true,
+            "note": "150 to 300 words, no dash, does not repeat the one-liner."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Hidden, with an internal reason stored off the page."
+          }
         }
       }
     },
@@ -3981,6 +4293,58 @@
             "source": "https://www.arjo.com/int/about-us/"
           }
         ]
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": true,
+        "word_count": 236,
+        "criteria": {
+          "independent_sources": {
+            "pass": false,
+            "note": "1 independent source(s): arjo.com. Need at least 3."
+          },
+          "claims_sourced": {
+            "pass": true,
+            "note": "Each included section has a source URL."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": false,
+            "note": "Missing public price, reimbursement route."
+          },
+          "traction": {
+            "pass": true,
+            "note": "Traction has a number and a date."
+          },
+          "story": {
+            "pass": false,
+            "note": "Missing founder name, founder background, funding history with amounts or an explicit none-found."
+          },
+          "competitors": {
+            "pass": false,
+            "note": "Does not name two or three real competitors or say how this differs from each."
+          },
+          "insight": {
+            "pass": true,
+            "note": "3 sentences of insight."
+          },
+          "recent_news": {
+            "pass": false,
+            "note": "No news from the last 12 months, and the write-up does not say none was found."
+          },
+          "shape": {
+            "pass": true,
+            "note": "150 to 300 words, no dash, does not repeat the one-liner."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
+          }
+        }
       }
     },
     {
@@ -4312,6 +4676,58 @@
             "https://www.apetito.de/ueber-apetito",
             "https://www.apetito.de/senioreneinrichtungen"
           ]
+        }
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": true,
+        "word_count": 241,
+        "criteria": {
+          "independent_sources": {
+            "pass": false,
+            "note": "No source outside the company site. Need at least 3."
+          },
+          "claims_sourced": {
+            "pass": true,
+            "note": "Each included section has a source URL."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": false,
+            "note": "Missing buyer, public price, reimbursement route."
+          },
+          "traction": {
+            "pass": true,
+            "note": "Traction has a number and a date."
+          },
+          "story": {
+            "pass": false,
+            "note": "Missing founded year in the write-up, founder background, funding history with amounts or an explicit none-found."
+          },
+          "competitors": {
+            "pass": false,
+            "note": "Does not name two or three real competitors or say how this differs from each."
+          },
+          "insight": {
+            "pass": true,
+            "note": "3 sentences of insight."
+          },
+          "recent_news": {
+            "pass": false,
+            "note": "No news from the last 12 months, and the write-up does not say none was found."
+          },
+          "shape": {
+            "pass": true,
+            "note": "150 to 300 words, no dash, does not repeat the one-liner."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
+          }
         }
       }
     },
@@ -9415,6 +9831,58 @@
             "https://efe.com/comunidad-valenciana/2023-11-19/una-app-para-vigilar-a-ancianos-y-menores-a-traves-del-movil/"
           ]
         }
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": true,
+        "word_count": 307,
+        "criteria": {
+          "independent_sources": {
+            "pass": false,
+            "note": "2 independent source(s): play.google.com, efe.com. Need at least 3."
+          },
+          "claims_sourced": {
+            "pass": true,
+            "note": "Each included section has a source URL."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": false,
+            "note": "Missing public price, reimbursement route."
+          },
+          "traction": {
+            "pass": true,
+            "note": "Traction has a number and a date."
+          },
+          "story": {
+            "pass": false,
+            "note": "Missing founded year in the write-up, founder name, founder background, funding history with amounts or an explicit none-found."
+          },
+          "competitors": {
+            "pass": false,
+            "note": "Does not name two or three real competitors or say how this differs from each."
+          },
+          "insight": {
+            "pass": true,
+            "note": "3 sentences of insight."
+          },
+          "recent_news": {
+            "pass": false,
+            "note": "No news from the last 12 months, and the write-up does not say none was found."
+          },
+          "shape": {
+            "pass": false,
+            "note": "Fails shape: 307 words."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
+          }
+        }
       }
     },
     {
@@ -9589,6 +10057,58 @@
             "source": "https://redbus.uk/nila-raises-2-4m-pre-seed-round-to-simplify-cross-border-senior-care-for-immigrants/"
           }
         ]
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": true,
+        "word_count": 297,
+        "criteria": {
+          "independent_sources": {
+            "pass": false,
+            "note": "2 independent source(s): find-and-update.company-information.service.gov.uk, redbus.uk. Need at least 3."
+          },
+          "claims_sourced": {
+            "pass": true,
+            "note": "Each included section has a source URL."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": false,
+            "note": "Missing public price."
+          },
+          "traction": {
+            "pass": true,
+            "note": "Traction has a number and a date."
+          },
+          "story": {
+            "pass": false,
+            "note": "Missing founder background."
+          },
+          "competitors": {
+            "pass": false,
+            "note": "Does not name two or three real competitors or say how this differs from each."
+          },
+          "insight": {
+            "pass": false,
+            "note": "4 sentences. Keep it to three."
+          },
+          "recent_news": {
+            "pass": false,
+            "note": "16 January 2026 is a confirmation statement. The funding reprint has no date."
+          },
+          "shape": {
+            "pass": true,
+            "note": "150 to 300 words, no dash, does not repeat the one-liner."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
+          }
+        }
       }
     },
     {
@@ -10586,6 +11106,58 @@
         "country": {
           "code": "DE",
           "source": "https://www.fortea.de/policies/legal-notice"
+        }
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": false,
+        "word_count": 189,
+        "criteria": {
+          "independent_sources": {
+            "pass": false,
+            "note": "1 independent source(s): northdata.de. Need at least 3."
+          },
+          "claims_sourced": {
+            "pass": true,
+            "note": "Each included section has a source URL."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": false,
+            "note": "Missing buyer, public price, reimbursement route."
+          },
+          "traction": {
+            "pass": true,
+            "note": "Traction has a number and a date."
+          },
+          "story": {
+            "pass": false,
+            "note": "Missing founded year in the write-up, founder name, founder background, funding history with amounts or an explicit none-found."
+          },
+          "competitors": {
+            "pass": false,
+            "note": "Does not name two or three real competitors or say how this differs from each."
+          },
+          "insight": {
+            "pass": true,
+            "note": "2 sentences of insight."
+          },
+          "recent_news": {
+            "pass": false,
+            "note": "No news from the last 12 months, and the write-up does not say none was found."
+          },
+          "shape": {
+            "pass": true,
+            "note": "150 to 300 words, no dash, does not repeat the one-liner."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Hidden, with an internal reason stored off the page."
+          }
         }
       }
     },
@@ -12838,6 +13410,58 @@
             "https://www.eterny.io/terms-of-use"
           ]
         }
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": true,
+        "word_count": 264,
+        "criteria": {
+          "independent_sources": {
+            "pass": false,
+            "note": "1 independent source(s): apps.apple.com. Need at least 3."
+          },
+          "claims_sourced": {
+            "pass": true,
+            "note": "Each included section has a source URL."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": false,
+            "note": "Missing buyer, reimbursement route."
+          },
+          "traction": {
+            "pass": true,
+            "note": "Traction has a number and a date."
+          },
+          "story": {
+            "pass": false,
+            "note": "Missing founded year in the write-up, founder name, founder background, funding history with amounts or an explicit none-found."
+          },
+          "competitors": {
+            "pass": false,
+            "note": "Does not name two or three real competitors or say how this differs from each."
+          },
+          "insight": {
+            "pass": false,
+            "note": "4 sentences. Keep it to three."
+          },
+          "recent_news": {
+            "pass": false,
+            "note": "The 29 January 2026 App Store review is not a news story, and the write-up does not say none was found."
+          },
+          "shape": {
+            "pass": true,
+            "note": "150 to 300 words, no dash, does not repeat the one-liner."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
+          }
+        }
       }
     },
     {
@@ -13673,6 +14297,58 @@
             "https://www.pflege.de/",
             "https://www.pflege.de/impressum/"
           ]
+        }
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": true,
+        "word_count": 275,
+        "criteria": {
+          "independent_sources": {
+            "pass": false,
+            "note": "No source outside the company site. Need at least 3."
+          },
+          "claims_sourced": {
+            "pass": true,
+            "note": "Each included section has a source URL."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": false,
+            "note": "Missing public price."
+          },
+          "traction": {
+            "pass": false,
+            "note": "No dated customer, user, deployment, or revenue figure."
+          },
+          "story": {
+            "pass": false,
+            "note": "Missing founded year in the write-up, founder background, funding history with amounts or an explicit none-found."
+          },
+          "competitors": {
+            "pass": false,
+            "note": "Does not name two or three real competitors or say how this differs from each."
+          },
+          "insight": {
+            "pass": true,
+            "note": "3 sentences of insight."
+          },
+          "recent_news": {
+            "pass": false,
+            "note": "No news from the last 12 months, and the write-up does not say none was found."
+          },
+          "shape": {
+            "pass": true,
+            "note": "150 to 300 words, no dash, does not repeat the one-liner."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
+          }
         }
       }
     },
@@ -15641,6 +16317,58 @@
             "https://www.companyweb.be/en/0673790011/helpper"
           ]
         }
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": true,
+        "word_count": 303,
+        "criteria": {
+          "independent_sources": {
+            "pass": false,
+            "note": "1 independent source(s): companyweb.be. Need at least 3."
+          },
+          "claims_sourced": {
+            "pass": true,
+            "note": "Each included section has a source URL."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": false,
+            "note": "Missing buyer, reimbursement route."
+          },
+          "traction": {
+            "pass": true,
+            "note": "Traction has a number and a date."
+          },
+          "story": {
+            "pass": false,
+            "note": "Missing founded year in the write-up, founder name, founder background, funding history with amounts or an explicit none-found."
+          },
+          "competitors": {
+            "pass": false,
+            "note": "Does not name two or three real competitors or say how this differs from each."
+          },
+          "insight": {
+            "pass": true,
+            "note": "3 sentences of insight."
+          },
+          "recent_news": {
+            "pass": false,
+            "note": "No news from the last 12 months, and the write-up does not say none was found."
+          },
+          "shape": {
+            "pass": false,
+            "note": "Fails shape: 303 words."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
+          }
+        }
       }
     },
     {
@@ -15774,6 +16502,58 @@
             "source": "https://siliconcanals.com/dutch-momo-medical-raises-6-5m/"
           }
         ]
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": true,
+        "word_count": 299,
+        "criteria": {
+          "independent_sources": {
+            "pass": true,
+            "note": "3 independent source(s): npex.nl, ycombinator.com, siliconcanals.com."
+          },
+          "claims_sourced": {
+            "pass": true,
+            "note": "Each included section has a source URL."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": false,
+            "note": "Missing public price, reimbursement route."
+          },
+          "traction": {
+            "pass": true,
+            "note": "Traction has a number and a date."
+          },
+          "story": {
+            "pass": false,
+            "note": "Missing founder background."
+          },
+          "competitors": {
+            "pass": false,
+            "note": "Does not name two or three real competitors or say how this differs from each."
+          },
+          "insight": {
+            "pass": true,
+            "note": "2 sentences of insight."
+          },
+          "recent_news": {
+            "pass": false,
+            "note": "No news from the last 12 months, and the write-up does not say none was found."
+          },
+          "shape": {
+            "pass": true,
+            "note": "150 to 300 words, no dash, does not repeat the one-liner."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
+          }
+        }
       }
     },
     {
@@ -15920,6 +16700,58 @@
             "https://www.rummelsberger-diakonie.de/pflege-entlasten-zeit-gewinnen",
             "https://www.northdata.de/dexter%20health%20GmbH,%20K%C3%B6ln/HRB%20112599"
           ]
+        }
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": true,
+        "word_count": 268,
+        "criteria": {
+          "independent_sources": {
+            "pass": false,
+            "note": "2 independent source(s): rummelsberger-diakonie.de, northdata.de. Need at least 3."
+          },
+          "claims_sourced": {
+            "pass": true,
+            "note": "Each included section has a source URL."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": false,
+            "note": "Missing public price, reimbursement route."
+          },
+          "traction": {
+            "pass": true,
+            "note": "Traction has a number and a date."
+          },
+          "story": {
+            "pass": false,
+            "note": "Missing founder background."
+          },
+          "competitors": {
+            "pass": false,
+            "note": "Does not name two or three real competitors or say how this differs from each."
+          },
+          "insight": {
+            "pass": false,
+            "note": "4 sentences. Keep it to three."
+          },
+          "recent_news": {
+            "pass": false,
+            "note": "The customer post is 6 August 2025, outside the last 12 months. 10 April 2026 is a shareholder list."
+          },
+          "shape": {
+            "pass": true,
+            "note": "150 to 300 words, no dash, does not repeat the one-liner."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
+          }
         }
       }
     },
@@ -17001,6 +17833,58 @@
             "https://emfit.care/en/"
           ]
         }
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": true,
+        "word_count": 248,
+        "criteria": {
+          "independent_sources": {
+            "pass": false,
+            "note": "No source outside the company site. Need at least 3."
+          },
+          "claims_sourced": {
+            "pass": true,
+            "note": "Each included section has a source URL."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": false,
+            "note": "Missing public price, reimbursement route."
+          },
+          "traction": {
+            "pass": false,
+            "note": "No dated customer, user, deployment, or revenue figure."
+          },
+          "story": {
+            "pass": false,
+            "note": "Missing founder name, founder background, funding history with amounts or an explicit none-found."
+          },
+          "competitors": {
+            "pass": false,
+            "note": "Does not name two or three real competitors or say how this differs from each."
+          },
+          "insight": {
+            "pass": true,
+            "note": "2 sentences of insight."
+          },
+          "recent_news": {
+            "pass": false,
+            "note": "No news from the last 12 months, and the write-up does not say none was found."
+          },
+          "shape": {
+            "pass": true,
+            "note": "150 to 300 words, no dash, does not repeat the one-liner."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
+          }
+        }
       }
     },
     {
@@ -17133,6 +18017,58 @@
             "source": "https://healthinvest.fi/health-invest-finland-announces-new-investment/"
           }
         ]
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": false,
+        "word_count": 218,
+        "criteria": {
+          "independent_sources": {
+            "pass": false,
+            "note": "2 independent source(s): avoindata.prh.fi, kauppalehti.fi. Need at least 3."
+          },
+          "claims_sourced": {
+            "pass": true,
+            "note": "Each included section has a source URL."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": false,
+            "note": "Missing public price, reimbursement route."
+          },
+          "traction": {
+            "pass": true,
+            "note": "Traction has a number and a date."
+          },
+          "story": {
+            "pass": false,
+            "note": "Missing founded year in the write-up, founder name, founder background, funding history with amounts or an explicit none-found."
+          },
+          "competitors": {
+            "pass": false,
+            "note": "Does not name two or three real competitors or say how this differs from each."
+          },
+          "insight": {
+            "pass": true,
+            "note": "2 sentences of insight."
+          },
+          "recent_news": {
+            "pass": false,
+            "note": "No news from the last 12 months, and the write-up does not say none was found."
+          },
+          "shape": {
+            "pass": true,
+            "note": "150 to 300 words, no dash, does not repeat the one-liner."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Hidden, with an internal reason stored off the page."
+          }
+        }
       }
     },
     {
@@ -17344,6 +18280,58 @@
             "https://livy-care.com/de/about-us"
           ]
         }
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": true,
+        "word_count": 322,
+        "criteria": {
+          "independent_sources": {
+            "pass": false,
+            "note": "No source outside the company site. Need at least 3."
+          },
+          "claims_sourced": {
+            "pass": true,
+            "note": "Each included section has a source URL."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": false,
+            "note": "Missing public price, reimbursement route."
+          },
+          "traction": {
+            "pass": false,
+            "note": "No dated customer, user, deployment, or revenue figure."
+          },
+          "story": {
+            "pass": false,
+            "note": "Missing founded year in the write-up, founder name, funding history with amounts or an explicit none-found."
+          },
+          "competitors": {
+            "pass": false,
+            "note": "Does not name two or three real competitors or say how this differs from each."
+          },
+          "insight": {
+            "pass": false,
+            "note": "4 sentences. Keep it to three."
+          },
+          "recent_news": {
+            "pass": false,
+            "note": "No news from the last 12 months, and the write-up does not say none was found."
+          },
+          "shape": {
+            "pass": false,
+            "note": "Fails shape: 322 words."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
+          }
+        }
       }
     },
     {
@@ -17440,6 +18428,58 @@
         "country": {
           "code": "NL",
           "source": "https://www.sigra.nl/ict-diensten/datasharehouse"
+        }
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": true,
+        "word_count": 242,
+        "criteria": {
+          "independent_sources": {
+            "pass": false,
+            "note": "1 independent source(s): sigra.nl. Need at least 3."
+          },
+          "claims_sourced": {
+            "pass": true,
+            "note": "Each included section has a source URL."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": false,
+            "note": "Missing public price, reimbursement route."
+          },
+          "traction": {
+            "pass": false,
+            "note": "No dated customer, user, deployment, or revenue figure."
+          },
+          "story": {
+            "pass": false,
+            "note": "Missing founder name, founder background, funding history with amounts or an explicit none-found."
+          },
+          "competitors": {
+            "pass": false,
+            "note": "Does not name two or three real competitors or say how this differs from each."
+          },
+          "insight": {
+            "pass": false,
+            "note": "4 sentences. Keep it to three."
+          },
+          "recent_news": {
+            "pass": false,
+            "note": "No news from the last 12 months, and the write-up does not say none was found."
+          },
+          "shape": {
+            "pass": true,
+            "note": "150 to 300 words, no dash, does not repeat the one-liner."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
+          }
         }
       }
     },
@@ -17757,6 +18797,58 @@
             "source": "https://elreferente.es/startup/jubenial/"
           }
         }
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": true,
+        "word_count": 340,
+        "criteria": {
+          "independent_sources": {
+            "pass": false,
+            "note": "2 independent source(s): elreferente.es, entremayores.es. Need at least 3."
+          },
+          "claims_sourced": {
+            "pass": true,
+            "note": "Each included section has a source URL."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": false,
+            "note": "Missing buyer, public price, reimbursement route."
+          },
+          "traction": {
+            "pass": true,
+            "note": "Traction has a number and a date."
+          },
+          "story": {
+            "pass": false,
+            "note": "Missing founder background."
+          },
+          "competitors": {
+            "pass": false,
+            "note": "Does not name two or three real competitors or say how this differs from each."
+          },
+          "insight": {
+            "pass": false,
+            "note": "4 sentences. Keep it to three."
+          },
+          "recent_news": {
+            "pass": false,
+            "note": "No news from the last 12 months, and the write-up does not say none was found."
+          },
+          "shape": {
+            "pass": false,
+            "note": "Fails shape: 340 words."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
+          }
+        }
       }
     },
     {
@@ -17892,6 +18984,58 @@
             "https://iocare.de",
             "https://www.northdata.com/IoCare%20GmbH"
           ]
+        }
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": true,
+        "word_count": 193,
+        "criteria": {
+          "independent_sources": {
+            "pass": false,
+            "note": "1 independent source(s): northdata.com. Need at least 3."
+          },
+          "claims_sourced": {
+            "pass": true,
+            "note": "Each included section has a source URL."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": false,
+            "note": "Missing public price, reimbursement route."
+          },
+          "traction": {
+            "pass": false,
+            "note": "No dated customer, user, deployment, or revenue figure."
+          },
+          "story": {
+            "pass": false,
+            "note": "Missing founder background, funding history with amounts or an explicit none-found."
+          },
+          "competitors": {
+            "pass": false,
+            "note": "Does not name two or three real competitors or say how this differs from each."
+          },
+          "insight": {
+            "pass": true,
+            "note": "3 sentences of insight."
+          },
+          "recent_news": {
+            "pass": false,
+            "note": "No news from the last 12 months, and the write-up does not say none was found."
+          },
+          "shape": {
+            "pass": true,
+            "note": "150 to 300 words, no dash, does not repeat the one-liner."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
+          }
         }
       }
     },
@@ -20090,6 +21234,58 @@
           "code": "IT",
           "source": "https://innereo.ai/about-us/"
         }
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": false,
+        "word_count": 163,
+        "criteria": {
+          "independent_sources": {
+            "pass": false,
+            "note": "1 independent source(s): ilmattino.it. Need at least 3."
+          },
+          "claims_sourced": {
+            "pass": true,
+            "note": "Each included section has a source URL."
+          },
+          "mechanics": {
+            "pass": false,
+            "note": "What it does is too short to cover how the product works and who operates it."
+          },
+          "money": {
+            "pass": false,
+            "note": "Missing buyer, public price, reimbursement route."
+          },
+          "traction": {
+            "pass": true,
+            "note": "Traction has a number and a date."
+          },
+          "story": {
+            "pass": false,
+            "note": "Missing founded year in the write-up, founder name, founder background, funding history with amounts or an explicit none-found."
+          },
+          "competitors": {
+            "pass": false,
+            "note": "Does not name two or three real competitors or say how this differs from each."
+          },
+          "insight": {
+            "pass": true,
+            "note": "2 sentences of insight."
+          },
+          "recent_news": {
+            "pass": false,
+            "note": "No news from the last 12 months, and the write-up does not say none was found."
+          },
+          "shape": {
+            "pass": true,
+            "note": "150 to 300 words, no dash, does not repeat the one-liner."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Hidden, with an internal reason stored off the page."
+          }
+        }
       }
     },
     {
@@ -20195,6 +21391,58 @@
             "source": "https://www.allycares.com/bbcdorset-care-homes-to-adopt-allycares-technology-bbc-news/"
           }
         ]
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": true,
+        "word_count": 385,
+        "criteria": {
+          "independent_sources": {
+            "pass": true,
+            "note": "3 independent source(s): local.gov.uk, kareinn.com, find-and-update.company-information.service.gov.uk."
+          },
+          "claims_sourced": {
+            "pass": true,
+            "note": "Each included section has a source URL."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": false,
+            "note": "Missing public price."
+          },
+          "traction": {
+            "pass": true,
+            "note": "Traction has a number and a date."
+          },
+          "story": {
+            "pass": false,
+            "note": "Missing founded year in the write-up, founder name, founder background, funding history with amounts or an explicit none-found."
+          },
+          "competitors": {
+            "pass": false,
+            "note": "Does not name two or three real competitors or say how this differs from each."
+          },
+          "insight": {
+            "pass": true,
+            "note": "3 sentences of insight."
+          },
+          "recent_news": {
+            "pass": false,
+            "note": "No news from the last 12 months, and the write-up does not say none was found."
+          },
+          "shape": {
+            "pass": false,
+            "note": "Fails shape: 385 words."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
+          }
+        }
       }
     },
     {
@@ -21093,6 +22341,58 @@
             "source": "https://www.kale.insure/about"
           }
         ]
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": false,
+        "word_count": 219,
+        "criteria": {
+          "independent_sources": {
+            "pass": false,
+            "note": "1 independent source(s): find-and-update.company-information.service.gov.uk. Need at least 3."
+          },
+          "claims_sourced": {
+            "pass": true,
+            "note": "Each included section has a source URL."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": false,
+            "note": "Missing buyer, reimbursement route."
+          },
+          "traction": {
+            "pass": false,
+            "note": "No dated customer, user, deployment, or revenue figure."
+          },
+          "story": {
+            "pass": false,
+            "note": "Missing founder background, funding history with amounts or an explicit none-found."
+          },
+          "competitors": {
+            "pass": false,
+            "note": "Does not name two or three real competitors or say how this differs from each."
+          },
+          "insight": {
+            "pass": true,
+            "note": "3 sentences of insight."
+          },
+          "recent_news": {
+            "pass": false,
+            "note": "No news from the last 12 months, and the write-up does not say none was found."
+          },
+          "shape": {
+            "pass": true,
+            "note": "150 to 300 words, no dash, does not repeat the one-liner."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Hidden, with an internal reason stored off the page."
+          }
+        }
       }
     },
     {
@@ -21203,6 +22503,58 @@
             "https://merciprosper.com",
             "https://entreprises.lefigaro.fr/silveria-75/entreprise-899841290"
           ]
+        }
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": true,
+        "word_count": 273,
+        "criteria": {
+          "independent_sources": {
+            "pass": false,
+            "note": "1 independent source(s): entreprises.lefigaro.fr. Need at least 3."
+          },
+          "claims_sourced": {
+            "pass": true,
+            "note": "Each included section has a source URL."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": false,
+            "note": "Missing buyer, public price, reimbursement route."
+          },
+          "traction": {
+            "pass": false,
+            "note": "No dated customer, user, deployment, or revenue figure."
+          },
+          "story": {
+            "pass": false,
+            "note": "Missing founder name, founder background, funding history with amounts or an explicit none-found."
+          },
+          "competitors": {
+            "pass": false,
+            "note": "Does not name two or three real competitors or say how this differs from each."
+          },
+          "insight": {
+            "pass": true,
+            "note": "3 sentences of insight."
+          },
+          "recent_news": {
+            "pass": false,
+            "note": "The 22 August 2026 M6 date is taken from the company site. The Figaro page is a registry notice."
+          },
+          "shape": {
+            "pass": true,
+            "note": "150 to 300 words, no dash, does not repeat the one-liner."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
+          }
         }
       }
     },
@@ -22156,6 +23508,58 @@
             "https://www.northdata.com/CARU%20AG,%20Z%C3%BCrich/CHE-327.800.638"
           ]
         }
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": true,
+        "word_count": 258,
+        "criteria": {
+          "independent_sources": {
+            "pass": false,
+            "note": "2 independent source(s): gkv-spitzenverband.de, northdata.com. Need at least 3."
+          },
+          "claims_sourced": {
+            "pass": true,
+            "note": "Each included section has a source URL."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": true,
+            "note": "Buyer, public price, and reimbursement route are stated."
+          },
+          "traction": {
+            "pass": true,
+            "note": "Traction has a number and a date."
+          },
+          "story": {
+            "pass": false,
+            "note": "Missing founded year in the write-up, founder name, founder background, funding history with amounts or an explicit none-found."
+          },
+          "competitors": {
+            "pass": false,
+            "note": "Does not name two or three real competitors or say how this differs from each."
+          },
+          "insight": {
+            "pass": true,
+            "note": "3 sentences of insight."
+          },
+          "recent_news": {
+            "pass": false,
+            "note": "No news from the last 12 months, and the write-up does not say none was found."
+          },
+          "shape": {
+            "pass": true,
+            "note": "150 to 300 words, no dash, does not repeat the one-liner."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
+          }
+        }
       }
     },
     {
@@ -22300,6 +23704,58 @@
             "source": "https://www.prnewswire.com/news-releases/essence-smartcare-launches-mdsense-to-enable-complete-senior-fall-protection-301128217.html"
           }
         ]
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": true,
+        "word_count": 288,
+        "criteria": {
+          "independent_sources": {
+            "pass": false,
+            "note": "1 independent source(s): prnewswire.com. Need at least 3."
+          },
+          "claims_sourced": {
+            "pass": true,
+            "note": "Each included section has a source URL."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": false,
+            "note": "Missing public price, reimbursement route."
+          },
+          "traction": {
+            "pass": true,
+            "note": "Traction has a number and a date."
+          },
+          "story": {
+            "pass": false,
+            "note": "Missing founded year in the write-up, founder name, founder background, funding history with amounts or an explicit none-found."
+          },
+          "competitors": {
+            "pass": false,
+            "note": "Does not name two or three real competitors or say how this differs from each."
+          },
+          "insight": {
+            "pass": true,
+            "note": "3 sentences of insight."
+          },
+          "recent_news": {
+            "pass": false,
+            "note": "No news from the last 12 months, and the write-up does not say none was found."
+          },
+          "shape": {
+            "pass": true,
+            "note": "150 to 300 words, no dash, does not repeat the one-liner."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
+          }
+        }
       }
     },
     {
@@ -23112,6 +24568,58 @@
             "source": "https://www.uoc.edu/es/news/2019/208-seniordomo-teleasistencia"
           }
         ]
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": true,
+        "word_count": 319,
+        "criteria": {
+          "independent_sources": {
+            "pass": false,
+            "note": "1 independent source(s): uoc.edu. Need at least 3."
+          },
+          "claims_sourced": {
+            "pass": true,
+            "note": "Each included section has a source URL."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": false,
+            "note": "Missing public price, reimbursement route."
+          },
+          "traction": {
+            "pass": true,
+            "note": "Traction has a number and a date."
+          },
+          "story": {
+            "pass": false,
+            "note": "Missing founded year in the write-up, founder name, funding history with amounts or an explicit none-found."
+          },
+          "competitors": {
+            "pass": false,
+            "note": "Does not name two or three real competitors or say how this differs from each."
+          },
+          "insight": {
+            "pass": false,
+            "note": "4 sentences. Keep it to three."
+          },
+          "recent_news": {
+            "pass": false,
+            "note": "4 August 2026 and 29 September 2026 are posts on the company blog. The university article is from 2019."
+          },
+          "shape": {
+            "pass": false,
+            "note": "Fails shape: 319 words."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
+          }
+        }
       }
     },
     {
@@ -23260,6 +24768,58 @@
         "country": {
           "code": "GB",
           "source": "https://find-and-update.company-information.service.gov.uk/company/08724082"
+        }
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": true,
+        "word_count": 249,
+        "criteria": {
+          "independent_sources": {
+            "pass": false,
+            "note": "1 independent source(s): find-and-update.company-information.service.gov.uk. Need at least 3."
+          },
+          "claims_sourced": {
+            "pass": true,
+            "note": "Each included section has a source URL."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": false,
+            "note": "Missing reimbursement route."
+          },
+          "traction": {
+            "pass": true,
+            "note": "Traction has a number and a date."
+          },
+          "story": {
+            "pass": false,
+            "note": "Missing founder name, founder background, funding history with amounts or an explicit none-found."
+          },
+          "competitors": {
+            "pass": false,
+            "note": "Does not name two or three real competitors or say how this differs from each."
+          },
+          "insight": {
+            "pass": true,
+            "note": "3 sentences of insight."
+          },
+          "recent_news": {
+            "pass": false,
+            "note": "No news from the last 12 months, and the write-up does not say none was found."
+          },
+          "shape": {
+            "pass": true,
+            "note": "150 to 300 words, no dash, does not repeat the one-liner."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
+          }
         }
       }
     },
@@ -23465,6 +25025,58 @@
             "https://www.easierlife.de/impressum/",
             "https://www.northdata.de/easierLife%20GmbH,%20Karlsruhe/HRB%20720260"
           ]
+        }
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": true,
+        "word_count": 312,
+        "criteria": {
+          "independent_sources": {
+            "pass": false,
+            "note": "1 independent source(s): northdata.de. Need at least 3."
+          },
+          "claims_sourced": {
+            "pass": true,
+            "note": "Each included section has a source URL."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": false,
+            "note": "Missing buyer."
+          },
+          "traction": {
+            "pass": true,
+            "note": "Traction has a number and a date."
+          },
+          "story": {
+            "pass": false,
+            "note": "Missing founder background, funding history with amounts or an explicit none-found."
+          },
+          "competitors": {
+            "pass": false,
+            "note": "Does not name two or three real competitors or say how this differs from each."
+          },
+          "insight": {
+            "pass": true,
+            "note": "2 sentences of insight."
+          },
+          "recent_news": {
+            "pass": false,
+            "note": "No news from the last 12 months, and the write-up does not say none was found."
+          },
+          "shape": {
+            "pass": false,
+            "note": "Fails shape: 312 words."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
+          }
         }
       }
     },
@@ -23937,6 +25549,58 @@
             "https://hipguard.eu/mentions-legales-ceinture-airbag-hip-guard/",
             "https://www.helite.com/histoire-protection-airbag-helite/"
           ]
+        }
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": true,
+        "word_count": 347,
+        "criteria": {
+          "independent_sources": {
+            "pass": false,
+            "note": "2 independent source(s): helite.de, helite.com. Need at least 3."
+          },
+          "claims_sourced": {
+            "pass": true,
+            "note": "Each included section has a source URL."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": false,
+            "note": "Missing buyer, reimbursement route."
+          },
+          "traction": {
+            "pass": false,
+            "note": "No dated customer, user, deployment, or revenue figure."
+          },
+          "story": {
+            "pass": false,
+            "note": "Missing founder background, funding history with amounts or an explicit none-found."
+          },
+          "competitors": {
+            "pass": false,
+            "note": "Does not name two or three real competitors or say how this differs from each."
+          },
+          "insight": {
+            "pass": false,
+            "note": "4 sentences. Keep it to three."
+          },
+          "recent_news": {
+            "pass": false,
+            "note": "No news from the last 12 months, and the write-up does not say none was found."
+          },
+          "shape": {
+            "pass": false,
+            "note": "Fails shape: 347 words."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
+          }
         }
       }
     },
