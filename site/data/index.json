@@ -123,7 +123,29 @@
       "why_dropped": null,
       "tag": "Loneliness and connection",
       "tag_secondary": null,
-      "logo": "/api/logo/company-amara"
+      "logo": "/api/logo/company-amara",
+      "facts": {
+        "apps": [
+          {
+            "name": "App Store",
+            "url": "https://apps.apple.com/app/id6756392739",
+            "source": "https://amara.app"
+          },
+          {
+            "name": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=com.h2technologies.amara",
+            "source": "https://amara.app"
+          }
+        ],
+        "model": {
+          "text": "A 30-day membership can be tried free.",
+          "source": "https://amara.app"
+        },
+        "hq": {
+          "city": "Berlin",
+          "source": "https://amara.app/impressum"
+        }
+      }
     },
     {
       "id": "company-assistme",
@@ -385,7 +407,13 @@
       "why_dropped": null,
       "tag": "Safety and falls",
       "tag_secondary": null,
-      "logo": "/api/logo/company-auditect"
+      "logo": "/api/logo/company-auditect",
+      "facts": {
+        "hq": {
+          "city": "Stuttgart",
+          "source": "https://www.auditect.de/impressum.html"
+        }
+      }
     },
     {
       "id": "company-gardia",
@@ -558,7 +586,13 @@
       "why_dropped": null,
       "tag": "Safety and falls",
       "tag_secondary": "Home and housing",
-      "logo": "/api/logo/company-veli"
+      "logo": "/api/logo/company-veli",
+      "facts": {
+        "hq": {
+          "city": "Kassel",
+          "source": "https://www.veli-care.de/impressum"
+        }
+      }
     },
     {
       "id": "company-harmonica-olympia",
@@ -705,7 +739,13 @@
       "why_dropped": null,
       "tag": "Loneliness and connection",
       "tag_secondary": null,
-      "logo": "/api/logo/company-intouch"
+      "logo": "/api/logo/company-intouch",
+      "facts": {
+        "model": {
+          "text": "€29.90 per month.",
+          "source": "https://intouch.family/en"
+        }
+      }
     },
     {
       "id": "company-navel-robotics",
@@ -796,7 +836,13 @@
       "why_dropped": null,
       "tag": "Loneliness and connection",
       "tag_secondary": "Memory and dementia",
-      "logo": "/api/logo/company-navel-robotics"
+      "logo": "/api/logo/company-navel-robotics",
+      "facts": {
+        "hq": {
+          "city": "München",
+          "source": "https://navelrobotics.com/impressum/"
+        }
+      }
     },
     {
       "id": "company-zenaris",
@@ -873,7 +919,13 @@
       "why_dropped": null,
       "tag": "Loneliness and connection",
       "tag_secondary": null,
-      "logo": "/api/logo/company-zenaris"
+      "logo": "/api/logo/company-zenaris",
+      "facts": {
+        "hq": {
+          "city": "Darmstadt",
+          "source": "https://www.zenaris.com/impressum"
+        }
+      }
     },
     {
       "id": "company-teiacare",
@@ -948,7 +1000,13 @@
       "why_dropped": null,
       "tag": "Safety and falls",
       "tag_secondary": "Care staff and services",
-      "logo": "/api/logo/company-teiacare"
+      "logo": "/api/logo/company-teiacare",
+      "facts": {
+        "founded": {
+          "year": 2018,
+          "source": "https://teiacare.com/en/about-us/"
+        }
+      }
     },
     {
       "id": "company-livil",
@@ -1092,7 +1150,21 @@
       "why_dropped": null,
       "tag": "Family caregivers",
       "tag_secondary": null,
-      "logo": "/api/logo/company-maurice-nora"
+      "logo": "/api/logo/company-maurice-nora",
+      "facts": {
+        "apps": [
+          {
+            "name": "App Store",
+            "url": "https://apps.apple.com/be/app/maurice-nora/id6757604915",
+            "source": "https://mauricenora.be"
+          },
+          {
+            "name": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=be.mauricenora.student",
+            "source": "https://mauricenora.be"
+          }
+        ]
+      }
     },
     {
       "id": "company-dala-care",
@@ -1321,7 +1393,13 @@
       "why_dropped": null,
       "tag": "Money and retirement",
       "tag_secondary": null,
-      "logo": "/api/logo/company-lateral"
+      "logo": "/api/logo/company-lateral",
+      "facts": {
+        "model": {
+          "text": "£150 per month.",
+          "source": "https://www.lateral.uk/"
+        }
+      }
     },
     {
       "id": "company-lindera",
@@ -1403,7 +1481,13 @@
       "why_dropped": null,
       "tag": "Safety and falls",
       "tag_secondary": null,
-      "logo": "/api/logo/company-lindera"
+      "logo": "/api/logo/company-lindera",
+      "facts": {
+        "hq": {
+          "city": "Berlin",
+          "source": "https://lindera.de/de/impressum"
+        }
+      }
     },
     {
       "id": "company-lifta",
@@ -2133,7 +2217,21 @@
       "why_dropped": null,
       "tag": "Family caregivers",
       "tag_secondary": null,
-      "logo": "/api/logo/company-tuktu"
+      "logo": "/api/logo/company-tuktu",
+      "facts": {
+        "apps": [
+          {
+            "name": "App Store",
+            "url": "https://apps.apple.com/us/app/tuktu/id1588765065",
+            "source": "https://tuktu.ca/"
+          },
+          {
+            "name": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=com.tuktu",
+            "source": "https://tuktu.ca/"
+          }
+        ]
+      }
     },
     {
       "id": "company-welbi",
@@ -2180,7 +2278,13 @@
       "why_dropped": null,
       "tag": "Loneliness and connection",
       "tag_secondary": null,
-      "logo": "/api/logo/company-welbi"
+      "logo": "/api/logo/company-welbi",
+      "facts": {
+        "founded": {
+          "year": 2016,
+          "source": "https://www.welbi.com/about-welbi"
+        }
+      }
     },
     {
       "id": "company-zinnia-tv",
@@ -2227,7 +2331,29 @@
       "why_dropped": null,
       "tag": "Memory and dementia",
       "tag_secondary": null,
-      "logo": "/api/logo/company-zinnia-tv"
+      "logo": "/api/logo/company-zinnia-tv",
+      "facts": {
+        "model": {
+          "text": "$9.99 per month.",
+          "source": "https://www.zinniatv.com/"
+        },
+        "founders": [
+          {
+            "name": "Frank Lee",
+            "source": "https://www.zinniatv.com/about",
+            "linkedin": "https://www.linkedin.com/in/frank-lee-canada/"
+          },
+          {
+            "name": "Berenice Freedome",
+            "source": "https://www.zinniatv.com/about"
+          },
+          {
+            "name": "Bill Uniowski",
+            "source": "https://www.zinniatv.com/about",
+            "linkedin": "https://www.linkedin.com/in/william-a-uniowski/"
+          }
+        ]
+      }
     },
     {
       "id": "company-careteam",
@@ -2371,7 +2497,13 @@
       "why_dropped": null,
       "tag": "End of life and inheritance",
       "tag_secondary": null,
-      "logo": "/api/logo/company-willful"
+      "logo": "/api/logo/company-willful",
+      "facts": {
+        "founded": {
+          "year": 2019,
+          "source": "https://www.willful.co/about"
+        }
+      }
     },
     {
       "id": "company-moneta-health",
@@ -2418,7 +2550,15 @@
       "why_dropped": null,
       "tag": "Memory and dementia",
       "tag_secondary": null,
-      "logo": "/api/logo/company-moneta-health"
+      "logo": "/api/logo/company-moneta-health",
+      "facts": {
+        "funding": {
+          "total": {
+            "amount": "$4.5M",
+            "source": "https://www.moneta.health/press"
+          }
+        }
+      }
     },
     {
       "id": "company-imaginable",
@@ -2700,7 +2840,19 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": "/api/logo/company-quantune"
+      "logo": "/api/logo/company-quantune",
+      "facts": {
+        "investors": [
+          {
+            "name": "Point72 Ventures",
+            "source": "https://quantune.com"
+          },
+          {
+            "name": "Vsquared Ventures",
+            "source": "https://quantune.com"
+          }
+        ]
+      }
     },
     {
       "id": "company-deep-longevity",
@@ -2888,7 +3040,15 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": "/api/logo/company-rocket-doctor"
+      "logo": "/api/logo/company-rocket-doctor",
+      "facts": {
+        "founders": [
+          {
+            "name": "William Cherniak",
+            "source": "https://rocketdoctor.ca/about/"
+          }
+        ]
+      }
     },
     {
       "id": "company-media4care",
@@ -3072,7 +3232,13 @@
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": "/api/logo/company-tena-identifi"
+      "logo": "/api/logo/company-tena-identifi",
+      "facts": {
+        "hq": {
+          "city": "Stockholm",
+          "source": "https://www.tena.de/imprint"
+        }
+      }
     },
     {
       "id": "company-hartmann-hilmas",
@@ -3166,7 +3332,13 @@
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": "/api/logo/company-medifox"
+      "logo": "/api/logo/company-medifox",
+      "facts": {
+        "hq": {
+          "city": "Hildesheim",
+          "source": "https://www.medifoxdan.de/impressum"
+        }
+      }
     },
     {
       "id": "company-silbernetz",
@@ -3258,7 +3430,13 @@
       "why_dropped": null,
       "tag": "Daily life and getting around",
       "tag_secondary": null,
-      "logo": "/api/logo/company-apetito"
+      "logo": "/api/logo/company-apetito",
+      "facts": {
+        "hq": {
+          "city": "Rheine",
+          "source": "https://www.apetito.de/ueber-apetito"
+        }
+      }
     },
     {
       "id": "company-caery",
@@ -6473,7 +6651,16 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": "Family caregivers",
-      "logo": "/api/logo/company-arcticflow"
+      "logo": "/api/logo/company-arcticflow",
+      "facts": {
+        "apps": [
+          {
+            "name": "App Store",
+            "url": "https://apps.apple.com/gb/app/arcticflow/id6759160301",
+            "source": "https://arcticflow.ai/"
+          }
+        ]
+      }
     },
     {
       "id": "company-meda",
@@ -6517,7 +6704,17 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": "Family caregivers",
-      "logo": "/api/logo/company-meda"
+      "logo": "/api/logo/company-meda",
+      "facts": {
+        "model": {
+          "text": "Free plan at $0 per month.",
+          "source": "https://www.mymeda.ai/patients"
+        },
+        "hq": {
+          "city": "Munich",
+          "source": "https://www.mymeda.ai/impressum"
+        }
+      }
     },
     {
       "id": "company-remiminderai",
@@ -6615,7 +6812,21 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": "Family caregivers",
-      "logo": "/api/logo/company-aligncare"
+      "logo": "/api/logo/company-aligncare",
+      "facts": {
+        "apps": [
+          {
+            "name": "App Store",
+            "url": "https://apps.apple.com/us/app/aligncare-doctor-visit-notes/id6755509152",
+            "source": "https://www.aligncare.ai/"
+          },
+          {
+            "name": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=com.aligncareai.aligncare",
+            "source": "https://www.aligncare.ai/"
+          }
+        ]
+      }
     },
     {
       "id": "company-wave",
@@ -6669,7 +6880,23 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": "Family caregivers",
-      "logo": "/api/logo/company-wave"
+      "logo": "/api/logo/company-wave",
+      "facts": {
+        "founded": {
+          "year": 2024,
+          "source": "https://wave.co/contact"
+        },
+        "model": {
+          "text": "Pro plan at $6.67 per month, billed annually.",
+          "source": "https://wave.co/pricing"
+        },
+        "founders": [
+          {
+            "name": "Josh Mohrer",
+            "source": "https://wave.co/about"
+          }
+        ]
+      }
     },
     {
       "id": "company-mirror-by-aide-health",
@@ -6718,7 +6945,41 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": "Family caregivers",
-      "logo": "/api/logo/company-mirror-by-aide-health"
+      "logo": "/api/logo/company-mirror-by-aide-health",
+      "facts": {
+        "apps": [
+          {
+            "name": "App Store",
+            "url": "https://apps.apple.com/gb/app/mirror-by-aide-health/id6747351561",
+            "source": "https://aide.health/products/mirror"
+          },
+          {
+            "name": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=health.aide.mirror",
+            "source": "https://aide.health/products/mirror"
+          }
+        ],
+        "model": {
+          "text": "£9.99 per year.",
+          "source": "https://aide.health/products/mirror"
+        },
+        "funding": {
+          "last_round": {
+            "amount": "£1.2m",
+            "source": "https://aide.health/about-us"
+          }
+        },
+        "investors": [
+          {
+            "name": "Salica Investments",
+            "source": "https://aide.health/about-us"
+          },
+          {
+            "name": "Fuel Ventures",
+            "source": "https://aide.health/about-us"
+          }
+        ]
+      }
     },
     {
       "id": "company-enna",
@@ -6760,7 +7021,17 @@
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": "/api/logo/company-enna"
+      "logo": "/api/logo/company-enna",
+      "facts": {
+        "model": {
+          "text": "A 30-day membership can be tried free.",
+          "source": "https://enna.care"
+        },
+        "hq": {
+          "city": "München",
+          "source": "https://enna.care/impressum"
+        }
+      }
     },
     {
       "id": "company-neela",
@@ -6809,7 +7080,13 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": "Family caregivers",
-      "logo": "/api/logo/company-neela"
+      "logo": "/api/logo/company-neela",
+      "facts": {
+        "model": {
+          "text": "$12 per month.",
+          "source": "https://www.neelacares.com/pricing"
+        }
+      }
     },
     {
       "id": "company-kin",
@@ -6858,7 +7135,21 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": "Family caregivers",
-      "logo": "/api/logo/company-kin"
+      "logo": "/api/logo/company-kin",
+      "facts": {
+        "apps": [
+          {
+            "name": "App Store",
+            "url": "https://apps.apple.com/us/app/kin-record-doctor-visits/id6756894542",
+            "source": "https://www.meetkin.com/"
+          },
+          {
+            "name": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=com.meetkin.android",
+            "source": "https://www.meetkin.com/"
+          }
+        ]
+      }
     },
     {
       "id": "company-cliniserve",
@@ -6900,7 +7191,16 @@
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": "/api/logo/company-cliniserve"
+      "logo": "/api/logo/company-cliniserve",
+      "facts": {
+        "apps": [
+          {
+            "name": "App Store",
+            "url": "https://apps.apple.com/de/developer/cliniserve-gmbh/id1324681785",
+            "source": "https://www.cliniserve.de/"
+          }
+        ]
+      }
     },
     {
       "id": "company-hemby",
@@ -6984,7 +7284,13 @@
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": "/api/logo/company-myosotis-gmbh"
+      "logo": "/api/logo/company-myosotis-gmbh",
+      "facts": {
+        "hq": {
+          "city": "Berlin",
+          "source": "https://myo-formfix.de/impressum"
+        }
+      }
     },
     {
       "id": "company-cue",
@@ -7028,7 +7334,16 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": "/api/logo/company-cue"
+      "logo": "/api/logo/company-cue",
+      "facts": {
+        "apps": [
+          {
+            "name": "App Store",
+            "url": "https://apps.apple.com/de/app/cue-meeting-notizen-ki/id6741517781",
+            "source": "https://apps.apple.com/de/app/cue-meeting-notizen-ki/id6741517781"
+          }
+        ]
+      }
     },
     {
       "id": "company-emilia",
@@ -7077,7 +7392,21 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": "Family caregivers",
-      "logo": "/api/logo/company-emilia"
+      "logo": "/api/logo/company-emilia",
+      "facts": {
+        "apps": [
+          {
+            "name": "App Store",
+            "url": "https://apps.apple.com/ca/app/emilia-patient-notes/id6749698419",
+            "source": "https://emilianotes.com/en/"
+          },
+          {
+            "name": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=health.lime.emilia",
+            "source": "https://emilianotes.com/en/"
+          }
+        ]
+      }
     },
     {
       "id": "company-hedy-ai",
@@ -7131,7 +7460,19 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": "Family caregivers",
-      "logo": "/api/logo/company-hedy-ai"
+      "logo": "/api/logo/company-hedy-ai",
+      "facts": {
+        "hq": {
+          "city": "Portland",
+          "source": "https://www.hedy.ai/de/about/"
+        },
+        "founders": [
+          {
+            "name": "Julian Pscheid",
+            "source": "https://www.hedy.ai/de/about/"
+          }
+        ]
+      }
     },
     {
       "id": "company-ohana",
@@ -7256,7 +7597,13 @@
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": "/api/logo/company-eli-die-fee"
+      "logo": "/api/logo/company-eli-die-fee",
+      "facts": {
+        "hq": {
+          "city": "Bochum",
+          "source": "https://www.elidiefee.de/impressum"
+        }
+      }
     },
     {
       "id": "company-arquella",
@@ -7339,7 +7686,13 @@
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": "/api/logo/company-alenvi"
+      "logo": "/api/logo/company-alenvi",
+      "facts": {
+        "hq": {
+          "city": "Paris",
+          "source": "https://www.alenvi.io/mentions-legales"
+        }
+      }
     },
     {
       "id": "company-arke",
@@ -7469,7 +7822,25 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": "/api/logo/company-meinpflegetagebuch"
+      "logo": "/api/logo/company-meinpflegetagebuch",
+      "facts": {
+        "apps": [
+          {
+            "name": "App Store",
+            "url": "https://apps.apple.com/de/app/meinpflegetagebuch/id6758504241",
+            "source": "https://meinpflegetagebuch.de/"
+          },
+          {
+            "name": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=de.meinpflegefinder.pflegetagebuch",
+            "source": "https://meinpflegetagebuch.de/"
+          }
+        ],
+        "hq": {
+          "city": "Duisburg",
+          "source": "https://meinpflegetagebuch.de/impressum"
+        }
+      }
     },
     {
       "id": "company-movacare",
@@ -7594,7 +7965,36 @@
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": "/api/logo/company-birdie"
+      "logo": "/api/logo/company-birdie",
+      "facts": {
+        "apps": [
+          {
+            "name": "App Store",
+            "url": "https://apps.apple.com/gb/app/birdie-care/id1254394392",
+            "source": "https://www.birdie.care/"
+          }
+        ],
+        "model": {
+          "text": "Plans start at £200 per month.",
+          "source": "https://www.birdie.care/pricing"
+        },
+        "hq": {
+          "city": "London",
+          "source": "https://www.birdie.care/about-us"
+        },
+        "founders": [
+          {
+            "name": "Abeed Mohamed",
+            "source": "https://www.birdie.care/about-us",
+            "linkedin": "https://www.linkedin.com/in/abeed-mohamed/"
+          },
+          {
+            "name": "Rajiv Tanna",
+            "source": "https://www.birdie.care/about-us",
+            "linkedin": "https://www.linkedin.com/in/rajivtanna/"
+          }
+        ]
+      }
     },
     {
       "id": "company-cubigo",
@@ -7720,7 +8120,13 @@
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": "/api/logo/company-healthx-future"
+      "logo": "/api/logo/company-healthx-future",
+      "facts": {
+        "hq": {
+          "city": "Berlin",
+          "source": "https://www.healthx-future.de/impressum"
+        }
+      }
     },
     {
       "id": "company-nox-aal-technologies",
@@ -7844,7 +8250,16 @@
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": "/api/logo/company-confidant"
+      "logo": "/api/logo/company-confidant",
+      "facts": {
+        "apps": [
+          {
+            "name": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=com.confidant.confidant",
+            "source": "https://confidant.app"
+          }
+        ]
+      }
     },
     {
       "id": "company-inspiren",
@@ -7885,7 +8300,21 @@
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": "/api/logo/company-inspiren"
+      "logo": "/api/logo/company-inspiren",
+      "facts": {
+        "funding": {
+          "last_round": {
+            "amount": "$70 million",
+            "source": "https://www.inspiren.com/"
+          }
+        },
+        "investors": [
+          {
+            "name": "NewView Capital",
+            "source": "https://www.inspiren.com/"
+          }
+        ]
+      }
     },
     {
       "id": "company-nila-elder-care",
@@ -8213,7 +8642,25 @@
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": "/api/logo/company-mercury-alert-ai"
+      "logo": "/api/logo/company-mercury-alert-ai",
+      "facts": {
+        "apps": [
+          {
+            "name": "App Store",
+            "url": "https://apps.apple.com/ae/app/mercury-health-home-monitor/id1556886030",
+            "source": "https://www.mercuryalert.ai/"
+          },
+          {
+            "name": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=com.mercuryhealth.mercuryhealth",
+            "source": "https://www.mercuryalert.ai/"
+          }
+        ],
+        "founded": {
+          "year": 2023,
+          "source": "https://www.mercuryalert.ai/pages/our-team"
+        }
+      }
     },
     {
       "id": "company-oso-ai",
@@ -8295,7 +8742,19 @@
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": "/api/logo/company-tombot"
+      "logo": "/api/logo/company-tombot",
+      "facts": {
+        "founders": [
+          {
+            "name": "Hank Schorz",
+            "source": "https://tombot.com/pages/story"
+          },
+          {
+            "name": "Jesse Schorz",
+            "source": "https://tombot.com/pages/story"
+          }
+        ]
+      }
     },
     {
       "id": "company-german-bionic",
@@ -8418,7 +8877,13 @@
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": "/api/logo/company-careloop"
+      "logo": "/api/logo/company-careloop",
+      "facts": {
+        "hq": {
+          "city": "Berlin",
+          "source": "https://careloop.io/impressum/"
+        }
+      }
     },
     {
       "id": "company-carepool",
@@ -8459,7 +8924,21 @@
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": "/api/logo/company-carepool"
+      "logo": "/api/logo/company-carepool",
+      "facts": {
+        "apps": [
+          {
+            "name": "App Store",
+            "url": "https://apps.apple.com/nl/app/carepool/id6743806695",
+            "source": "https://www.carepool.nl/"
+          },
+          {
+            "name": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=nl.carepool.carepoolapp",
+            "source": "https://www.carepool.nl/"
+          }
+        ]
+      }
     },
     {
       "id": "company-domalys",
@@ -8501,7 +8980,13 @@
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": "/api/logo/company-domalys"
+      "logo": "/api/logo/company-domalys",
+      "facts": {
+        "hq": {
+          "city": "Chambray",
+          "source": "https://www.domalys.com/mentions-legales"
+        }
+      }
     },
     {
       "id": "company-habric",
@@ -8542,7 +9027,13 @@
       "why_dropped": null,
       "tag": "Daily life and getting around",
       "tag_secondary": null,
-      "logo": "/api/logo/company-habric"
+      "logo": "/api/logo/company-habric",
+      "facts": {
+        "hq": {
+          "city": "Garching",
+          "source": "https://www.habric.com/imprint"
+        }
+      }
     },
     {
       "id": "company-rentennavi",
@@ -8583,7 +9074,13 @@
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": "/api/logo/company-rentennavi"
+      "logo": "/api/logo/company-rentennavi",
+      "facts": {
+        "hq": {
+          "city": "Stuttgart",
+          "source": "https://www.rentennavi.de/impressum/"
+        }
+      }
     },
     {
       "id": "company-dayclocks",
@@ -8748,7 +9245,19 @@
       "why_dropped": null,
       "tag": "Daily life and getting around",
       "tag_secondary": null,
-      "logo": "/api/logo/company-somana"
+      "logo": "/api/logo/company-somana",
+      "facts": {
+        "hq": {
+          "city": "Berlin",
+          "source": "https://somana.com/imprint"
+        },
+        "founders": [
+          {
+            "name": "Jesaja Brinkmann",
+            "source": "https://somana.com/about-us"
+          }
+        ]
+      }
     },
     {
       "id": "company-daluma",
@@ -8789,7 +9298,23 @@
       "why_dropped": null,
       "tag": "Daily life and getting around",
       "tag_secondary": null,
-      "logo": "/api/logo/company-daluma"
+      "logo": "/api/logo/company-daluma",
+      "facts": {
+        "hq": {
+          "city": "Berlin",
+          "source": "https://daluma.de/pages/impressum"
+        },
+        "founders": [
+          {
+            "name": "David Kugler",
+            "source": "https://daluma.de/pages/ueber-uns"
+          },
+          {
+            "name": "Lukas Bossert",
+            "source": "https://daluma.de/pages/ueber-uns"
+          }
+        ]
+      }
     },
     {
       "id": "company-conpanio",
@@ -8914,7 +9439,13 @@
       "why_dropped": null,
       "tag": "Daily life and getting around",
       "tag_secondary": null,
-      "logo": "/api/logo/company-motus-stroke-recovery-app"
+      "logo": "/api/logo/company-motus-stroke-recovery-app",
+      "facts": {
+        "hq": {
+          "city": "Köln",
+          "source": "https://motus.health/impressum/"
+        }
+      }
     },
     {
       "id": "company-myricals",
@@ -8997,7 +9528,25 @@
       "why_dropped": null,
       "tag": "Daily life and getting around",
       "tag_secondary": null,
-      "logo": "/api/logo/company-asweshare-sas"
+      "logo": "/api/logo/company-asweshare-sas",
+      "facts": {
+        "apps": [
+          {
+            "name": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=io.familink.pegase",
+            "source": "https://www.familink.io/en/"
+          },
+          {
+            "name": "App Store",
+            "url": "https://apps.apple.com/fr/app/familink/id997515608",
+            "source": "https://www.familink.io/en/"
+          }
+        ],
+        "model": {
+          "text": "$6.90 per month.",
+          "source": "https://www.familink.io/en/pricing/"
+        }
+      }
     },
     {
       "id": "company-c-s",
@@ -9039,7 +9588,13 @@
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": "/api/logo/company-c-s"
+      "logo": "/api/logo/company-c-s",
+      "facts": {
+        "hq": {
+          "city": "Augsburg",
+          "source": "https://www.managingcare.de/impressum/"
+        }
+      }
     },
     {
       "id": "company-pfleglisoft",
@@ -9246,7 +9801,13 @@
       "why_dropped": null,
       "tag": "Daily life and getting around",
       "tag_secondary": null,
-      "logo": "/api/logo/company-ezygain"
+      "logo": "/api/logo/company-ezygain",
+      "facts": {
+        "founded": {
+          "year": 2016,
+          "source": "https://www.ezygain.com/"
+        }
+      }
     },
     {
       "id": "company-paravan",
@@ -9287,7 +9848,13 @@
       "why_dropped": null,
       "tag": "Daily life and getting around",
       "tag_secondary": null,
-      "logo": "/api/logo/company-paravan"
+      "logo": "/api/logo/company-paravan",
+      "facts": {
+        "hq": {
+          "city": "Aichelau",
+          "source": "https://www.paravan.de/beratung-service/uebersicht-beratung-service"
+        }
+      }
     },
     {
       "id": "company-envision",
@@ -9369,7 +9936,13 @@
       "why_dropped": null,
       "tag": "Daily life and getting around",
       "tag_secondary": null,
-      "logo": "/api/logo/company-biomes"
+      "logo": "/api/logo/company-biomes",
+      "facts": {
+        "model": {
+          "text": "Prices start at 99€.",
+          "source": "https://biomes.world/de/"
+        }
+      }
     },
     {
       "id": "company-plim",
@@ -9452,7 +10025,13 @@
       "why_dropped": null,
       "tag": "Daily life and getting around",
       "tag_secondary": null,
-      "logo": "/api/logo/company-hypershell"
+      "logo": "/api/logo/company-hypershell",
+      "facts": {
+        "founded": {
+          "year": 2021,
+          "source": "https://hypershell.tech/pages/about-us"
+        }
+      }
     },
     {
       "id": "company-cue2walk-international",
@@ -9534,7 +10113,25 @@
       "why_dropped": null,
       "tag": "Daily life and getting around",
       "tag_secondary": null,
-      "logo": "/api/logo/company-supportpay"
+      "logo": "/api/logo/company-supportpay",
+      "facts": {
+        "apps": [
+          {
+            "name": "App Store",
+            "url": "https://apps.apple.com/us/app/supportpay-child-support/id808332758",
+            "source": "https://supportpay.com"
+          },
+          {
+            "name": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=com.supportpay",
+            "source": "https://supportpay.com"
+          }
+        ],
+        "model": {
+          "text": "$14.99 per month.",
+          "source": "https://supportpay.com/pricing/"
+        }
+      }
     },
     {
       "id": "company-fitnessgenes",
@@ -9616,7 +10213,13 @@
       "why_dropped": null,
       "tag": "Daily life and getting around",
       "tag_secondary": null,
-      "logo": "/api/logo/company-hyli"
+      "logo": "/api/logo/company-hyli",
+      "facts": {
+        "hq": {
+          "city": "Hamburg",
+          "source": "https://www.hyli.de/impressum/"
+        }
+      }
     },
     {
       "id": "company-sign-speak",
@@ -9698,7 +10301,21 @@
       "why_dropped": null,
       "tag": "Daily life and getting around",
       "tag_secondary": null,
-      "logo": "/api/logo/company-zoe"
+      "logo": "/api/logo/company-zoe",
+      "facts": {
+        "apps": [
+          {
+            "name": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=com.joinzoe.results",
+            "source": "https://zoe.com/en-us?lead_id=af6b4cda-1dc3-4b1c-a79d-054c37b3c6aa"
+          },
+          {
+            "name": "App Store",
+            "url": "https://apps.apple.com/gb/app/zoe-personalized-nutrition/id1471632228",
+            "source": "https://zoe.com/en-us?lead_id=af6b4cda-1dc3-4b1c-a79d-054c37b3c6aa"
+          }
+        ]
+      }
     },
     {
       "id": "company-goov",
@@ -10070,7 +10687,16 @@
       "why_dropped": null,
       "tag": "Daily life and getting around",
       "tag_secondary": null,
-      "logo": "/api/logo/company-big-launcher"
+      "logo": "/api/logo/company-big-launcher",
+      "facts": {
+        "apps": [
+          {
+            "name": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=name.kunes.android.launcher.demo",
+            "source": "https://biglauncher.com/home/en/"
+          }
+        ]
+      }
     },
     {
       "id": "company-scewo",
@@ -10195,7 +10821,13 @@
       "why_dropped": null,
       "tag": "End of life and inheritance",
       "tag_secondary": null,
-      "logo": "/api/logo/company-eritaj"
+      "logo": "/api/logo/company-eritaj",
+      "facts": {
+        "hq": {
+          "city": "Kirchweiler",
+          "source": "https://eritaj.de/impressum"
+        }
+      }
     },
     {
       "id": "company-goodbye-cz",
@@ -10359,7 +10991,21 @@
       "why_dropped": null,
       "tag": "End of life and inheritance",
       "tag_secondary": null,
-      "logo": "/api/logo/company-trust-will"
+      "logo": "/api/logo/company-trust-will",
+      "facts": {
+        "apps": [
+          {
+            "name": "App Store",
+            "url": "https://apps.apple.com/us/app/trust-will-plan-your-legacy/id6745030762",
+            "source": "https://trustandwill.com"
+          },
+          {
+            "name": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=com.trustandwill.mobile",
+            "source": "https://trustandwill.com"
+          }
+        ]
+      }
     },
     {
       "id": "company-farewill",
@@ -10400,7 +11046,13 @@
       "why_dropped": null,
       "tag": "End of life and inheritance",
       "tag_secondary": null,
-      "logo": "/api/logo/company-farewill"
+      "logo": "/api/logo/company-farewill",
+      "facts": {
+        "model": {
+          "text": "£10 per year.",
+          "source": "https://farewill.com/wills/pricing"
+        }
+      }
     },
     {
       "id": "company-with-perpetua",
@@ -10480,7 +11132,21 @@
       "why_dropped": null,
       "tag": "End of life and inheritance",
       "tag_secondary": null,
-      "logo": "/api/logo/company-eterny"
+      "logo": "/api/logo/company-eterny",
+      "facts": {
+        "apps": [
+          {
+            "name": "App Store",
+            "url": "https://apps.apple.com/app/id6752241962",
+            "source": "https://www.eterny.io/"
+          },
+          {
+            "name": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=io.eterny.app",
+            "source": "https://www.eterny.io/"
+          }
+        ]
+      }
     },
     {
       "id": "company-mywishes",
@@ -10563,7 +11229,13 @@
       "why_dropped": null,
       "tag": "Family caregivers",
       "tag_secondary": null,
-      "logo": "/api/logo/company-careship"
+      "logo": "/api/logo/company-careship",
+      "facts": {
+        "hq": {
+          "city": "Berlin",
+          "source": "https://www.careship.de/impressum"
+        }
+      }
     },
     {
       "id": "company-byond",
@@ -10605,7 +11277,24 @@
       "why_dropped": null,
       "tag": "End of life and inheritance",
       "tag_secondary": null,
-      "logo": "/api/logo/company-byond"
+      "logo": "/api/logo/company-byond",
+      "facts": {
+        "apps": [
+          {
+            "name": "App Store",
+            "url": "https://apps.apple.com/de/app/byond-die-vorsorge-app/id6773625466",
+            "source": "https://getbyond.app/"
+          }
+        ],
+        "model": {
+          "text": "Prices start at 2,51€.",
+          "source": "https://getbyond.app/"
+        },
+        "hq": {
+          "city": "Isernhagen",
+          "source": "https://getbyond.app/impressum"
+        }
+      }
     },
     {
       "id": "company-erbio",
@@ -10648,7 +11337,13 @@
       "why_dropped": null,
       "tag": "End of life and inheritance",
       "tag_secondary": null,
-      "logo": "/api/logo/company-erbio"
+      "logo": "/api/logo/company-erbio",
+      "facts": {
+        "hq": {
+          "city": "Berlin",
+          "source": "https://erbio.de/impressum/"
+        }
+      }
     },
     {
       "id": "company-careli",
@@ -10689,7 +11384,13 @@
       "why_dropped": null,
       "tag": "Family caregivers",
       "tag_secondary": null,
-      "logo": "/api/logo/company-careli"
+      "logo": "/api/logo/company-careli",
+      "facts": {
+        "hq": {
+          "city": "Berlin",
+          "source": "https://careli.de/impressum"
+        }
+      }
     },
     {
       "id": "company-able-human-motion",
@@ -10771,7 +11472,25 @@
       "why_dropped": null,
       "tag": "End of life and inheritance",
       "tag_secondary": "Loneliness and connection",
-      "logo": "/api/logo/company-meminto-stories"
+      "logo": "/api/logo/company-meminto-stories",
+      "facts": {
+        "apps": [
+          {
+            "name": "App Store",
+            "url": "https://apps.apple.com/us/app/meminto-stories-write-books/id1572421075",
+            "source": "https://meminto.com/"
+          },
+          {
+            "name": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=com.meminto.stories.android",
+            "source": "https://meminto.com/"
+          }
+        ],
+        "hq": {
+          "city": "Mosbach",
+          "source": "https://meminto.com/imprint/"
+        }
+      }
     },
     {
       "id": "company-marta",
@@ -10813,7 +11532,13 @@
       "why_dropped": null,
       "tag": "Family caregivers",
       "tag_secondary": null,
-      "logo": "/api/logo/company-marta"
+      "logo": "/api/logo/company-marta",
+      "facts": {
+        "hq": {
+          "city": "Berlin",
+          "source": "https://www.marta.de/impressum"
+        }
+      }
     },
     {
       "id": "company-funeral-zone",
@@ -10937,7 +11662,16 @@
       "why_dropped": null,
       "tag": "Daily life and getting around",
       "tag_secondary": null,
-      "logo": "/api/logo/company-atenea"
+      "logo": "/api/logo/company-atenea",
+      "facts": {
+        "founders": [
+          {
+            "name": "Albert Isern",
+            "source": "https://atenealife.com/about-us/",
+            "linkedin": "https://www.linkedin.com/in/albert-isern/"
+          }
+        ]
+      }
     },
     {
       "id": "company-nui-care-gmbh",
@@ -10979,7 +11713,13 @@
       "why_dropped": null,
       "tag": "Family caregivers",
       "tag_secondary": null,
-      "logo": "/api/logo/company-nui-care-gmbh"
+      "logo": "/api/logo/company-nui-care-gmbh",
+      "facts": {
+        "hq": {
+          "city": "München",
+          "source": "https://www.nui.care/impressum"
+        }
+      }
     },
     {
       "id": "company-pflege-de",
@@ -11021,7 +11761,19 @@
       "why_dropped": null,
       "tag": "Family caregivers",
       "tag_secondary": null,
-      "logo": "/api/logo/company-pflege-de"
+      "logo": "/api/logo/company-pflege-de",
+      "facts": {
+        "hq": {
+          "city": "Hamburg",
+          "source": "https://www.pflege.de/impressum/"
+        },
+        "founders": [
+          {
+            "name": "Lars Kilchert",
+            "source": "https://www.pflege.de/ueber-pflege-de/"
+          }
+        ]
+      }
     },
     {
       "id": "company-grandpal",
@@ -11186,7 +11938,13 @@
       "why_dropped": null,
       "tag": "Family caregivers",
       "tag_secondary": null,
-      "logo": "/api/logo/company-famplus"
+      "logo": "/api/logo/company-famplus",
+      "facts": {
+        "hq": {
+          "city": "München",
+          "source": "https://famplus.de/impressum"
+        }
+      }
     },
     {
       "id": "company-cuideo",
@@ -11269,7 +12027,20 @@
       "why_dropped": null,
       "tag": "Family caregivers",
       "tag_secondary": null,
-      "logo": "/api/logo/company-meet5-meet-new-people"
+      "logo": "/api/logo/company-meet5-meet-new-people",
+      "facts": {
+        "hq": {
+          "city": "Frankfurt",
+          "source": "https://www.meet5.de/impressum"
+        },
+        "funding": {
+          "last_round": {
+            "amount": "€8 million",
+            "source": "https://www.meet5.de/presse",
+            "date": "2025"
+          }
+        }
+      }
     },
     {
       "id": "company-aiudo",
@@ -11311,7 +12082,13 @@
       "why_dropped": null,
       "tag": "Family caregivers",
       "tag_secondary": null,
-      "logo": "/api/logo/company-aiudo"
+      "logo": "/api/logo/company-aiudo",
+      "facts": {
+        "hq": {
+          "city": "Valencia",
+          "source": "https://aiudo.es/aviso-legal/"
+        }
+      }
     },
     {
       "id": "company-callpanion",
@@ -11353,7 +12130,13 @@
       "why_dropped": null,
       "tag": "Family caregivers",
       "tag_secondary": null,
-      "logo": "/api/logo/company-callpanion"
+      "logo": "/api/logo/company-callpanion",
+      "facts": {
+        "model": {
+          "text": "£29.99 per month.",
+          "source": "https://www.callpanion.co.uk/"
+        }
+      }
     },
     {
       "id": "company-fabel",
@@ -11394,7 +12177,25 @@
       "why_dropped": null,
       "tag": "Family caregivers",
       "tag_secondary": null,
-      "logo": "/api/logo/company-fabel"
+      "logo": "/api/logo/company-fabel",
+      "facts": {
+        "apps": [
+          {
+            "name": "App Store",
+            "url": "https://apps.apple.com/app/fabel/id1637888434",
+            "source": "https://fabel.care/de"
+          },
+          {
+            "name": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=tech.fabel.production",
+            "source": "https://fabel.care/de"
+          }
+        ],
+        "hq": {
+          "city": "Hamburg",
+          "source": "https://fabel.care/de/imprint"
+        }
+      }
     },
     {
       "id": "company-elder",
@@ -11477,7 +12278,15 @@
       "why_dropped": null,
       "tag": "Family caregivers",
       "tag_secondary": null,
-      "logo": "/api/logo/company-good-life-sorted"
+      "logo": "/api/logo/company-good-life-sorted",
+      "facts": {
+        "founders": [
+          {
+            "name": "Verity Batchelder",
+            "source": "https://goodlifesorted.com/about/"
+          }
+        ]
+      }
     },
     {
       "id": "company-familiara",
@@ -11681,7 +12490,21 @@
       "why_dropped": null,
       "tag": "Family caregivers",
       "tag_secondary": null,
-      "logo": "/api/logo/company-aidaly"
+      "logo": "/api/logo/company-aidaly",
+      "facts": {
+        "apps": [
+          {
+            "name": "App Store",
+            "url": "https://apps.apple.com/us/app/aidaly/id6502757047",
+            "source": "https://aidaly.com"
+          },
+          {
+            "name": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=com.aidalyapp",
+            "source": "https://aidaly.com"
+          }
+        ]
+      }
     },
     {
       "id": "company-careflick",
@@ -11763,7 +12586,13 @@
       "why_dropped": null,
       "tag": "Family caregivers",
       "tag_secondary": null,
-      "logo": "/api/logo/company-entyre-care"
+      "logo": "/api/logo/company-entyre-care",
+      "facts": {
+        "model": {
+          "text": "$1,500 per month.",
+          "source": "https://entyrecare.com"
+        }
+      }
     },
     {
       "id": "company-call-knut",
@@ -11846,7 +12675,21 @@
       "why_dropped": null,
       "tag": "Family caregivers",
       "tag_secondary": null,
-      "logo": "/api/logo/company-maphabit"
+      "logo": "/api/logo/company-maphabit",
+      "facts": {
+        "founders": [
+          {
+            "name": "Peter De Kok",
+            "source": "https://maphabit.com/pages/about-us"
+          }
+        ],
+        "funding": {
+          "total": {
+            "amount": "$11 million in NIH grants",
+            "source": "https://maphabit.com"
+          }
+        }
+      }
     },
     {
       "id": "company-hello247",
@@ -11887,7 +12730,16 @@
       "why_dropped": null,
       "tag": "Family caregivers",
       "tag_secondary": null,
-      "logo": "/api/logo/company-hello247"
+      "logo": "/api/logo/company-hello247",
+      "facts": {
+        "apps": [
+          {
+            "name": "App Store",
+            "url": "https://apps.apple.com/us/app/hello-24-7/id1547226419",
+            "source": "https://www.hello247.nl/contact"
+          }
+        ]
+      }
     },
     {
       "id": "company-familiados",
@@ -12425,7 +13277,34 @@
       "why_dropped": null,
       "tag": "Family caregivers",
       "tag_secondary": null,
-      "logo": "/api/logo/company-lottie-organisation"
+      "logo": "/api/logo/company-lottie-organisation",
+      "facts": {
+        "funding": {
+          "total": {
+            "amount": "£20 million",
+            "source": "https://lottie.org/about/"
+          },
+          "last_round": {
+            "amount": "£2.5m",
+            "source": "https://lottie.org/about/",
+            "date": "October 2021"
+          }
+        },
+        "investors": [
+          {
+            "name": "Accel",
+            "source": "https://lottie.org/about/"
+          },
+          {
+            "name": "General Catalyst",
+            "source": "https://lottie.org/about/"
+          },
+          {
+            "name": "Kindred",
+            "source": "https://lottie.org/about/"
+          }
+        ]
+      }
     },
     {
       "id": "company-flowbone-sa",
@@ -12508,7 +13387,13 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": "/api/logo/company-hellomed"
+      "logo": "/api/logo/company-hellomed",
+      "facts": {
+        "hq": {
+          "city": "Berlin",
+          "source": "https://hellomed.com/legal/impressum"
+        }
+      }
     },
     {
       "id": "company-aniva",
@@ -12549,7 +13434,17 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": "/api/logo/company-aniva"
+      "logo": "/api/logo/company-aniva",
+      "facts": {
+        "model": {
+          "text": "€199 per year.",
+          "source": "https://anivahealth.com/"
+        },
+        "hq": {
+          "city": "Berlin",
+          "source": "https://anivahealth.com/imprint"
+        }
+      }
     },
     {
       "id": "company-helpper",
@@ -12590,7 +13485,21 @@
       "why_dropped": null,
       "tag": "Family caregivers",
       "tag_secondary": null,
-      "logo": "/api/logo/company-helpper"
+      "logo": "/api/logo/company-helpper",
+      "facts": {
+        "apps": [
+          {
+            "name": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=be.helpper.app.production",
+            "source": "https://www.helpper.be/nl/home"
+          },
+          {
+            "name": "App Store",
+            "url": "https://apps.apple.com/app/id6499267581",
+            "source": "https://www.helpper.be/nl/home"
+          }
+        ]
+      }
     },
     {
       "id": "company-momo-medical",
@@ -12713,7 +13622,13 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": "/api/logo/company-dexter-health"
+      "logo": "/api/logo/company-dexter-health",
+      "facts": {
+        "hq": {
+          "city": "Köln",
+          "source": "https://www.dexter-health.com/impressum"
+        }
+      }
     },
     {
       "id": "company-ahead-health",
@@ -12836,7 +13751,37 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": "/api/logo/company-albert-health"
+      "logo": "/api/logo/company-albert-health",
+      "facts": {
+        "apps": [
+          {
+            "name": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=v2.albert.health",
+            "source": "https://www.albert.health/"
+          },
+          {
+            "name": "App Store",
+            "url": "https://apps.apple.com/tr/app/albert-health/id6741836685",
+            "source": "https://www.albert.health/"
+          }
+        ],
+        "founders": [
+          {
+            "name": "Recai Serdar Gemici",
+            "source": "https://www.albert.health/about"
+          },
+          {
+            "name": "Serhat Uzun",
+            "source": "https://www.albert.health/about"
+          }
+        ],
+        "funding": {
+          "total": {
+            "amount": "$3 million",
+            "source": "https://www.albert.health/about"
+          }
+        }
+      }
     },
     {
       "id": "company-diawiser",
@@ -12918,7 +13863,21 @@
       "why_dropped": null,
       "tag": "Family caregivers",
       "tag_secondary": null,
-      "logo": "/api/logo/company-amintro"
+      "logo": "/api/logo/company-amintro",
+      "facts": {
+        "apps": [
+          {
+            "name": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=com.amintro.app",
+            "source": "https://amintro.com"
+          },
+          {
+            "name": "App Store",
+            "url": "https://apps.apple.com/ca/app/amintro-family/id6596763821",
+            "source": "https://amintro.com"
+          }
+        ]
+      }
     },
     {
       "id": "company-cilcare",
@@ -12959,7 +13918,13 @@
       "why_dropped": null,
       "tag": "Daily life and getting around",
       "tag_secondary": null,
-      "logo": "/api/logo/company-cilcare"
+      "logo": "/api/logo/company-cilcare",
+      "facts": {
+        "founded": {
+          "year": 2014,
+          "source": "https://www.cilcare.com/who-we-are/"
+        }
+      }
     },
     {
       "id": "company-helvetic-care",
@@ -13166,7 +14131,13 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": "/api/logo/company-liv-longevity-labs"
+      "logo": "/api/logo/company-liv-longevity-labs",
+      "facts": {
+        "hq": {
+          "city": "Berlin",
+          "source": "https://www.liv.health/en/legal/imprint"
+        }
+      }
     },
     {
       "id": "company-binah-ai",
@@ -13249,7 +14220,13 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": "/api/logo/company-frieda"
+      "logo": "/api/logo/company-frieda",
+      "facts": {
+        "hq": {
+          "city": "Hamburg",
+          "source": "https://frieda.health/impressum"
+        }
+      }
     },
     {
       "id": "company-lares-online",
@@ -13414,7 +14391,19 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": "/api/logo/company-exer"
+      "logo": "/api/logo/company-exer",
+      "facts": {
+        "founders": [
+          {
+            "name": "Zaw Thet",
+            "source": "https://www.exer.ai/team"
+          },
+          {
+            "name": "Sean Cook",
+            "source": "https://www.exer.ai/team"
+          }
+        ]
+      }
     },
     {
       "id": "company-hero",
@@ -13496,7 +14485,19 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": "/api/logo/company-independa"
+      "logo": "/api/logo/company-independa",
+      "facts": {
+        "founded": {
+          "year": 2009,
+          "source": "https://independa.com"
+        },
+        "funding": {
+          "total": {
+            "amount": "$25M",
+            "source": "https://independa.com/about/investors/"
+          }
+        }
+      }
     },
     {
       "id": "company-emfit",
@@ -13701,7 +14702,13 @@
       "why_dropped": null,
       "tag": "Home and housing",
       "tag_secondary": null,
-      "logo": "/api/logo/company-livy-care-hum-systems"
+      "logo": "/api/logo/company-livy-care-hum-systems",
+      "facts": {
+        "hq": {
+          "city": "Chorin",
+          "source": "https://livy-care.com/impressum"
+        }
+      }
     },
     {
       "id": "company-6gorilla-s",
@@ -13783,7 +14790,19 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": "/api/logo/company-juni"
+      "logo": "/api/logo/company-juni",
+      "facts": {
+        "founders": [
+          {
+            "name": "Laura Möller",
+            "source": "https://juni.science/about-us/"
+          },
+          {
+            "name": "Christoph Krüger",
+            "source": "https://juni.science/about-us/"
+          }
+        ]
+      }
     },
     {
       "id": "company-mobilise",
@@ -13824,7 +14843,21 @@
       "why_dropped": null,
       "tag": "Family caregivers",
       "tag_secondary": null,
-      "logo": "/api/logo/company-mobilise"
+      "logo": "/api/logo/company-mobilise",
+      "facts": {
+        "apps": [
+          {
+            "name": "App Store",
+            "url": "https://apps.apple.com/gb/app/mobilise/id6504262356",
+            "source": "https://www.mobiliseonline.co.uk/team"
+          },
+          {
+            "name": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=mobilise.online.community",
+            "source": "https://www.mobiliseonline.co.uk/team"
+          }
+        ]
+      }
     },
     {
       "id": "company-mobility-mojo",
@@ -14030,7 +15063,13 @@
       "why_dropped": null,
       "tag": "Daily life and getting around",
       "tag_secondary": null,
-      "logo": "/api/logo/company-iocare"
+      "logo": "/api/logo/company-iocare",
+      "facts": {
+        "hq": {
+          "city": "Stuttgart",
+          "source": "https://iocare.de/de/impressum/"
+        }
+      }
     },
     {
       "id": "company-kuvu",
@@ -14112,7 +15151,20 @@
       "why_dropped": null,
       "tag": "Home and housing",
       "tag_secondary": null,
-      "logo": "/api/logo/company-second-read"
+      "logo": "/api/logo/company-second-read",
+      "facts": {
+        "apps": [
+          {
+            "name": "App Store",
+            "url": "https://apps.apple.com/de/app/second-read-understand-docs/id6758051218",
+            "source": "https://secondread.eu"
+          }
+        ],
+        "hq": {
+          "city": "Berlin",
+          "source": "https://secondread.eu/impressum"
+        }
+      }
     },
     {
       "id": "company-toi-labs",
@@ -14276,7 +15328,13 @@
       "why_dropped": null,
       "tag": "Home and housing",
       "tag_secondary": null,
-      "logo": "/api/logo/company-pointr"
+      "logo": "/api/logo/company-pointr",
+      "facts": {
+        "hq": {
+          "city": "London",
+          "source": "https://www.pointr.tech/company"
+        }
+      }
     },
     {
       "id": "company-healthier",
@@ -14850,7 +15908,21 @@
       "why_dropped": null,
       "tag": "Loneliness and connection",
       "tag_secondary": null,
-      "logo": "/api/logo/company-colette-club"
+      "logo": "/api/logo/company-colette-club",
+      "facts": {
+        "apps": [
+          {
+            "name": "App Store",
+            "url": "https://apps.apple.com/app/id6443635924",
+            "source": "https://www.colette.club/"
+          },
+          {
+            "name": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=club.colette.club",
+            "source": "https://www.colette.club/"
+          }
+        ]
+      }
     },
     {
       "id": "company-adopta-un-abuelo",
@@ -14892,7 +15964,21 @@
       "why_dropped": null,
       "tag": "Loneliness and connection",
       "tag_secondary": null,
-      "logo": "/api/logo/company-adopta-un-abuelo"
+      "logo": "/api/logo/company-adopta-un-abuelo",
+      "facts": {
+        "apps": [
+          {
+            "name": "App Store",
+            "url": "https://apps.apple.com/es/app/adopta-un-abuelo/id1559513523",
+            "source": "https://www.adoptaunabuelo.org/"
+          },
+          {
+            "name": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=com.adoptaunabuelo.app",
+            "source": "https://www.adoptaunabuelo.org/"
+          }
+        ]
+      }
     },
     {
       "id": "company-vermut",
@@ -15060,7 +16146,13 @@
       "why_dropped": null,
       "tag": "Loneliness and connection",
       "tag_secondary": null,
-      "logo": "/api/logo/company-teresa-ai"
+      "logo": "/api/logo/company-teresa-ai",
+      "facts": {
+        "hq": {
+          "city": "Düsseldorf",
+          "source": "https://teresa.ai/impressum"
+        }
+      }
     },
     {
       "id": "company-kissux",
@@ -15308,7 +16400,21 @@
       "why_dropped": null,
       "tag": "Memory and dementia",
       "tag_secondary": null,
-      "logo": "/api/logo/company-memorado"
+      "logo": "/api/logo/company-memorado",
+      "facts": {
+        "apps": [
+          {
+            "name": "App Store",
+            "url": "https://apps.apple.com/us/app/id897062509",
+            "source": "https://memorado.com"
+          },
+          {
+            "name": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=com.memorado.brain.games",
+            "source": "https://memorado.com"
+          }
+        ]
+      }
     },
     {
       "id": "company-mindahead",
@@ -15471,7 +16577,13 @@
       "why_dropped": null,
       "tag": "Loneliness and connection",
       "tag_secondary": null,
-      "logo": "/api/logo/company-wohnen-im-alter-internet"
+      "logo": "/api/logo/company-wohnen-im-alter-internet",
+      "facts": {
+        "hq": {
+          "city": "Karlsruhe",
+          "source": "https://www.wohnen-im-alter.de/impressum"
+        }
+      }
     },
     {
       "id": "company-vitablick",
@@ -15636,7 +16748,21 @@
       "why_dropped": null,
       "tag": "Memory and dementia",
       "tag_secondary": null,
-      "logo": "/api/logo/company-five-lives"
+      "logo": "/api/logo/company-five-lives",
+      "facts": {
+        "apps": [
+          {
+            "name": "App Store",
+            "url": "https://apps.apple.com/gb/app/five-lives-care/id6756554977",
+            "source": "https://www.fivelives.health/"
+          },
+          {
+            "name": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=life.sharptx.care.production",
+            "source": "https://www.fivelives.health/"
+          }
+        ]
+      }
     },
     {
       "id": "company-pieni-piiri",
@@ -15884,7 +17010,13 @@
       "why_dropped": null,
       "tag": "Memory and dementia",
       "tag_secondary": null,
-      "logo": "/api/logo/company-memodio"
+      "logo": "/api/logo/company-memodio",
+      "facts": {
+        "hq": {
+          "city": "Potsdam",
+          "source": "https://memodio-app.com/impressum/"
+        }
+      }
     },
     {
       "id": "company-innereo",
@@ -16008,7 +17140,13 @@
       "why_dropped": null,
       "tag": "Loneliness and connection",
       "tag_secondary": null,
-      "logo": "/api/logo/company-tom-josette"
+      "logo": "/api/logo/company-tom-josette",
+      "facts": {
+        "hq": {
+          "city": "Paris",
+          "source": "https://tometjosette.fr/mentions-legales/"
+        }
+      }
     },
     {
       "id": "company-unicorn-labs",
@@ -16091,7 +17229,13 @@
       "why_dropped": null,
       "tag": "Memory and dementia",
       "tag_secondary": null,
-      "logo": "/api/logo/company-family-cards"
+      "logo": "/api/logo/company-family-cards",
+      "facts": {
+        "hq": {
+          "city": "Berlin",
+          "source": "https://family.cards/policies/legal-notice"
+        }
+      }
     },
     {
       "id": "company-joy-for-all",
@@ -16175,7 +17319,25 @@
       "why_dropped": null,
       "tag": "Memory and dementia",
       "tag_secondary": null,
-      "logo": "/api/logo/company-motitech"
+      "logo": "/api/logo/company-motitech",
+      "facts": {
+        "apps": [
+          {
+            "name": "App Store",
+            "url": "https://apps.apple.com/no/app/motiview/id1594622773",
+            "source": "https://motiview.no/om-oss"
+          },
+          {
+            "name": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=com.motiview.app",
+            "source": "https://motiview.no/om-oss"
+          }
+        ],
+        "founded": {
+          "year": 2013,
+          "source": "https://motiview.no/en/about-us"
+        }
+      }
     },
     {
       "id": "company-kalkura",
@@ -16258,7 +17420,13 @@
       "why_dropped": null,
       "tag": "Money and retirement",
       "tag_secondary": null,
-      "logo": "/api/logo/company-parto-group"
+      "logo": "/api/logo/company-parto-group",
+      "facts": {
+        "hq": {
+          "city": "Hamburg",
+          "source": "https://www.goparto.com/impressum"
+        }
+      }
     },
     {
       "id": "company-halo",
@@ -16549,7 +17717,21 @@
       "why_dropped": null,
       "tag": "Money and retirement",
       "tag_secondary": null,
-      "logo": "/api/logo/company-kota"
+      "logo": "/api/logo/company-kota",
+      "facts": {
+        "apps": [
+          {
+            "name": "App Store",
+            "url": "https://apps.apple.com/us/app/kota-formerly-yonder/id1618209461",
+            "source": "https://www.kota.io/"
+          },
+          {
+            "name": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=app.yonder.mobile",
+            "source": "https://www.kota.io/"
+          }
+        ]
+      }
     },
     {
       "id": "company-nutual",
@@ -16714,7 +17896,13 @@
       "why_dropped": null,
       "tag": "Money and retirement",
       "tag_secondary": null,
-      "logo": "/api/logo/company-ergofox-gmbh"
+      "logo": "/api/logo/company-ergofox-gmbh",
+      "facts": {
+        "hq": {
+          "city": "Hamburg",
+          "source": "https://ergofox.me/de/impressum.html"
+        }
+      }
     },
     {
       "id": "company-happitech",
@@ -16755,7 +17943,15 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": "/api/logo/company-happitech"
+      "logo": "/api/logo/company-happitech",
+      "facts": {
+        "founders": [
+          {
+            "name": "Yosef Safi Harb",
+            "source": "https://happitech.com/about-us/"
+          }
+        ]
+      }
     },
     {
       "id": "company-carefull",
@@ -16920,7 +18116,21 @@
       "why_dropped": null,
       "tag": "Money and retirement",
       "tag_secondary": null,
-      "logo": "/api/logo/company-true-link"
+      "logo": "/api/logo/company-true-link",
+      "facts": {
+        "apps": [
+          {
+            "name": "App Store",
+            "url": "https://apps.apple.com/us/app/true-link-financial/id1607869476",
+            "source": "https://www.truelinkfinancial.com/"
+          },
+          {
+            "name": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=com.truelinkfinancial.cardapp",
+            "source": "https://www.truelinkfinancial.com/"
+          }
+        ]
+      }
     },
     {
       "id": "company-vivi365",
@@ -17125,7 +18335,25 @@
       "why_dropped": null,
       "tag": "Money and retirement",
       "tag_secondary": null,
-      "logo": "/api/logo/company-luci"
+      "logo": "/api/logo/company-luci",
+      "facts": {
+        "apps": [
+          {
+            "name": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=com.likwidcare.luci",
+            "source": "https://luciapp.de/kontakt/"
+          },
+          {
+            "name": "App Store",
+            "url": "https://apps.apple.com/de/app/luci-mitarbeiter-app/id1557046065",
+            "source": "https://luciapp.de/kontakt/"
+          }
+        ],
+        "hq": {
+          "city": "Bonn",
+          "source": "https://luciapp.de/impressum/"
+        }
+      }
     },
     {
       "id": "company-tontine-trust",
@@ -17166,7 +18394,21 @@
       "why_dropped": null,
       "tag": "Money and retirement",
       "tag_secondary": null,
-      "logo": "/api/logo/company-tontine-trust"
+      "logo": "/api/logo/company-tontine-trust",
+      "facts": {
+        "apps": [
+          {
+            "name": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=com.tontine",
+            "source": "https://tontine.com"
+          },
+          {
+            "name": "App Store",
+            "url": "https://apps.apple.com/us/app/tontine/id6758043895",
+            "source": "https://tontine.com"
+          }
+        ]
+      }
     },
     {
       "id": "company-durcal",
@@ -17333,7 +18575,27 @@
       "why_dropped": null,
       "tag": "Memory and dementia",
       "tag_secondary": null,
-      "logo": "/api/logo/company-effectivate"
+      "logo": "/api/logo/company-effectivate",
+      "facts": {
+        "apps": [
+          {
+            "name": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=com.effectivate.android_main",
+            "source": "https://effectivate.com"
+          },
+          {
+            "name": "App Store",
+            "url": "https://apps.apple.com/il/app/effectivate-brain-training/id6471501161",
+            "source": "https://effectivate.com"
+          }
+        ],
+        "founders": [
+          {
+            "name": "Anna Izotcheev",
+            "source": "https://effectivate.com/about/"
+          }
+        ]
+      }
     },
     {
       "id": "company-jubile",
@@ -17375,7 +18637,13 @@
       "why_dropped": null,
       "tag": "Money and retirement",
       "tag_secondary": null,
-      "logo": "/api/logo/company-jubile"
+      "logo": "/api/logo/company-jubile",
+      "facts": {
+        "hq": {
+          "city": "Paris",
+          "source": "https://www.jubile.fr/mentions-legales-jubile/"
+        }
+      }
     },
     {
       "id": "company-caru",
@@ -17871,7 +19139,13 @@
       "why_dropped": null,
       "tag": "Safety and falls",
       "tag_secondary": null,
-      "logo": "/api/logo/company-puresec-gmbh"
+      "logo": "/api/logo/company-puresec-gmbh",
+      "facts": {
+        "hq": {
+          "city": "Idstein",
+          "source": "https://smart-altern.de/impressum/"
+        }
+      }
     },
     {
       "id": "company-next-step-dynamics",
@@ -18036,7 +19310,21 @@
       "why_dropped": null,
       "tag": "Loneliness and connection",
       "tag_secondary": null,
-      "logo": "/api/logo/company-coti"
+      "logo": "/api/logo/company-coti",
+      "facts": {
+        "apps": [
+          {
+            "name": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=es.micoti.dev",
+            "source": "https://www.micoti.es/"
+          },
+          {
+            "name": "App Store",
+            "url": "https://apps.apple.com/es/app/coti/id6736633124",
+            "source": "https://www.micoti.es/"
+          }
+        ]
+      }
     },
     {
       "id": "company-life-plus",
@@ -18077,7 +19365,13 @@
       "why_dropped": null,
       "tag": "Safety and falls",
       "tag_secondary": null,
-      "logo": "/api/logo/company-life-plus"
+      "logo": "/api/logo/company-life-plus",
+      "facts": {
+        "hq": {
+          "city": "Versailles",
+          "source": "https://www.lifeplus.io/pages-legales/mentions-legales"
+        }
+      }
     },
     {
       "id": "company-ihelp",
@@ -18118,7 +19412,16 @@
       "why_dropped": null,
       "tag": "Safety and falls",
       "tag_secondary": null,
-      "logo": "/api/logo/company-ihelp"
+      "logo": "/api/logo/company-ihelp",
+      "facts": {
+        "apps": [
+          {
+            "name": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=si.ihelp.safety.android",
+            "source": "https://ihelp-world.com"
+          }
+        ]
+      }
     },
     {
       "id": "company-seniordomo",
@@ -18530,7 +19833,13 @@
       "why_dropped": null,
       "tag": "Safety and falls",
       "tag_secondary": null,
-      "logo": "/api/logo/company-chrood"
+      "logo": "/api/logo/company-chrood",
+      "facts": {
+        "hq": {
+          "city": "Darmstadt",
+          "source": "https://chrood.com/legal/imprint"
+        }
+      }
     },
     {
       "id": "company-versovision",
@@ -18737,7 +20046,13 @@
       "why_dropped": null,
       "tag": "Safety and falls",
       "tag_secondary": null,
-      "logo": "/api/logo/company-hip-guard"
+      "logo": "/api/logo/company-hip-guard",
+      "facts": {
+        "hq": {
+          "city": "Fontaine",
+          "source": "https://hipguard.eu/mentions-legales-ceinture-airbag-hip-guard/"
+        }
+      }
     },
     {
       "id": "company-dynseo",
@@ -18779,7 +20094,20 @@
       "why_dropped": null,
       "tag": "Memory and dementia",
       "tag_secondary": null,
-      "logo": "/api/logo/company-dynseo"
+      "logo": "/api/logo/company-dynseo",
+      "facts": {
+        "apps": [
+          {
+            "name": "App Store",
+            "url": "https://apps.apple.com/fr/developer/dynseo/id1000639418",
+            "source": "https://www.dynseo.com/"
+          }
+        ],
+        "hq": {
+          "city": "Paris",
+          "source": "https://www.dynseo.com/mentions-legales/"
+        }
+      }
     },
     {
       "id": "company-kaleido",
@@ -18861,7 +20189,13 @@
       "why_dropped": null,
       "tag": "Safety and falls",
       "tag_secondary": null,
-      "logo": "/api/logo/company-telegrafik"
+      "logo": "/api/logo/company-telegrafik",
+      "facts": {
+        "hq": {
+          "city": "Roubaix",
+          "source": "https://www.telegrafik.fr/mentions-legales/"
+        }
+      }
     },
     {
       "id": "company-nobi-lamps",

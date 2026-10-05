@@ -91,10 +91,29 @@ INSERT INTO entries (
     'website', 'https://example.com',
     'country', 'Germany',
     'themes', '[]'::jsonb,
-    'related', '[]'::jsonb
+    'related', '[]'::jsonb,
+    'facts', jsonb_build_object(
+      'founded', jsonb_build_object('year', 2018, 'source', 'https://example.com/about'),
+      'hq', jsonb_build_object('city', 'Berlin', 'source', 'https://example.com/impressum')
+    )
   )
 );
 ```
+
+Verified company facts live in `document.facts` (and the `facts` column). The detail page reads them from `GET /api/index`. Leave out any fact you cannot point at a public page. Do not write "unknown".
+
+`facts` fields, each with its own `source` URL:
+
+- `founded`: `{year, source}`
+- `hq`: `{city, source}`
+- `founders`: `[{name, linkedin, source}]`. `linkedin` only when that profile URL was found.
+- `funding.total`: `{amount, source}`
+- `funding.last_round`: `{amount, date, source}`
+- `investors`: `[{name, source}]`
+- `model`: `{text, source}` for pricing or the business model
+- `apps`: `[{name, url}]` for App Store or Google Play listings
+
+"Similar in Who Cares" is not stored. The page picks 3 to 5 other published entries with the same main tag and an overlapping job.
 
 `logo_bytes` is a PNG. The sample above is a 1 pixel image. Replace the base64 with the real logo (app icon, apple-touch-icon, or favicon). Leave `logo_bytes` null to show the generic company icon. Tags are plain names: Health and medicines, Safety and falls, Memory and dementia, Loneliness and connection, Daily life and getting around, Home and housing, Family caregivers, Care staff and services, Money and retirement, End of life and inheritance. `tag_secondary` is optional.
 
