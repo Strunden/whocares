@@ -28,22 +28,28 @@ a { color: var(--link); }
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  background: var(--bg);
 }
 
 .bar {
   position: relative;
   flex: 0 0 auto;
-  z-index: 5;
+  z-index: 20;
+  isolation: isolate;
   background: var(--bg);
   padding: calc(8px + env(safe-area-inset-top)) 16px 8px;
   border-bottom: 0.5px solid var(--line);
 }
 .scroller {
+  position: relative;
+  z-index: 0;
   flex: 1 1 auto;
   min-height: 0;
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  background: var(--bg);
 }
 .bar-top { display: flex; align-items: center; gap: 8px; min-height: 44px; }
 .bar-top[hidden] { display: none; }
@@ -104,21 +110,25 @@ a { color: var(--link); }
 }
 .search::placeholder { color: #555; }
 .tags {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  gap: 6px;
-  overflow-x: auto;
+  display: block;
+  width: auto;
+  max-width: none;
+  min-width: 0;
+  margin: 0 -16px;
+  padding: 2px 16px 4px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
   overscroll-behavior-x: contain;
   scrollbar-width: none;
-  margin: 0 -16px;
-  padding: 2px 16px 0;
+  touch-action: pan-x;
 }
 .tags::-webkit-scrollbar { display: none; }
 .tags[hidden] { display: none; }
 .tags .chip {
-  flex: 0 0 auto;
   display: inline-flex;
+  vertical-align: middle;
   align-items: center;
   gap: 6px;
   white-space: nowrap;
@@ -126,7 +136,7 @@ a { color: var(--link); }
   background: var(--fill);
   color: var(--ink);
   border-radius: 999px;
-  margin: 0;
+  margin: 0 6px 0 0;
   padding: 6px 10px;
   min-height: 32px;
   font-size: 13px;
@@ -137,7 +147,8 @@ a { color: var(--link); }
 .tags .chip-on { background: #111; color: #fff; }
 .tags .chip-x { font-size: 16px; line-height: 1; }
 .tags .tag-count {
-  flex: 0 0 auto;
+  display: inline-block;
+  vertical-align: middle;
   color: var(--meta);
   font-size: 13px;
   white-space: nowrap;
@@ -300,6 +311,36 @@ a { color: var(--link); }
 }
 .foot a { color: var(--meta); text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; }
 .foot a:active { color: var(--ink); }
+
+@media (max-width: 760px) {
+  html, body {
+    height: 100%;
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+  body {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+  }
+  .app {
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    max-height: 100%;
+    min-height: 0;
+  }
+  .bar {
+    position: relative;
+    top: auto;
+  }
+  .tags {
+    display: block;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+  }
+}
 
 @media (min-width: 800px) {
   body { background: #e7e7ee; }
