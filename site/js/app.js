@@ -140,12 +140,59 @@
     }
     return "";
   }
+  function initialsOf(e) {
+    const parts = displayTitle(e).replace(/&/g, " and ").split(/[^A-Za-z0-9]+/).filter(Boolean);
+    if (!parts.length) return "";
+    if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+    return (parts[0].charAt(0) + parts[1].charAt(0)).toUpperCase();
+  }
+  function initialsTile(e) {
+    return `<span class="ico ico-initials">${t(initialsOf(e))}</span>`;
+  }
   function rowIcon(e) {
     if (isKilled(e)) return iconTile("kill");
     if (e.type === "idea") return iconTile("idea");
     const src = logoSrc(e);
-    if (src) return `<span class="ico ico-logo"><img src="${esc(src)}" alt=""></span>`;
+    if (src) return `<span class="ico ico-logo" data-initials="${esc(initialsOf(e))}"><img src="${esc(src)}" alt="" crossorigin="anonymous"></span>`;
     return iconTile("company");
+  }
+  function logoIsBlank(img) {
+    try {
+      const canvas = document.createElement("canvas");
+      const size = 16;
+      canvas.width = size;
+      canvas.height = size;
+      const ctx = canvas.getContext("2d", { willReadFrequently: true });
+      ctx.drawImage(img, 0, 0, size, size);
+      const data = ctx.getImageData(0, 0, size, size).data;
+      let n = 0;
+      let sum = 0;
+      let sum2 = 0;
+      let white = 0;
+      for (let i = 0; i < data.length; i += 4) {
+        if (data[i + 3] < 20) continue;
+        const lum = (data[i] + data[i + 1] + data[i + 2]) / 3;
+        n += 1;
+        sum += lum;
+        sum2 += lum * lum;
+        if (data[i] > 245 && data[i + 1] > 245 && data[i + 2] > 245) white += 1;
+      }
+      if (!n) return true;
+      const mean = sum / n;
+      const sd = Math.sqrt(Math.max(0, sum2 / n - mean * mean));
+      return sd < 12 || white / n > 0.9;
+    } catch (err) {
+      return false;
+    }
+  }
+  function useInitials(img) {
+    const slot = img.closest(".ico-logo");
+    if (!slot || slot.dataset.replaced === "1") return;
+    slot.dataset.replaced = "1";
+    const tile = document.createElement("span");
+    tile.className = "ico ico-initials";
+    tile.textContent = slot.getAttribute("data-initials") || "";
+    slot.replaceWith(tile);
   }
 
   function apiBase() {
@@ -470,8 +517,18 @@
     if (!writeupApproved(e)) return [];
     const writeup = e && e.writeup && typeof e.writeup === "object" ? e.writeup : null;
     if (!writeup) return [];
+    const comps = Array.isArray(writeup.competitors) ? writeup.competitors : [];
+    const compText = comps.map((item) => sectionText(item && item.difference ? { text: item.difference } : item)).filter(Boolean).slice(0, 3).join(" ");
+    const compSources = [];
+    comps.forEach((item) => {
+      sectionSources(item).forEach((url) => {
+        if (compSources.indexOf(url) === -1) compSources.push(url);
+      });
+    });
+    const competitorBlock = compText ? { text: compText, sources: compSources } : null;
     return [
       ["What it does", writeup.what_it_does],
+      ["Competitors", competitorBlock],
       ["Who pays", writeup.who_pays],
       ["Traction", writeup.traction],
       ["Why it's interesting", writeup.why_interesting],
@@ -677,6 +734,16 @@
     });
   }
   if (app) {
+    app.addEventListener("load", (ev) => {
+      const img = ev.target;
+      if (!img || img.tagName !== "IMG" || !img.closest(".ico-logo")) return;
+      if (logoIsBlank(img)) useInitials(img);
+    }, true);
+    app.addEventListener("error", (ev) => {
+      const img = ev.target;
+      if (!img || img.tagName !== "IMG" || !img.closest(".ico-logo")) return;
+      useInitials(img);
+    }, true);
     app.addEventListener("click", (ev) => {
       const dest = ev.target.closest("[data-go]");
       if (!dest) return;
