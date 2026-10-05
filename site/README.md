@@ -48,7 +48,7 @@ python3 -m http.server 8877
 
 ## Add one entry
 
-One SQL insert on the Neon project `proud-sea-34268045`, database `neondb`. The site reads `document` from `GET /api/index`. If `logo_bytes` is set, the API sets `logo` to `/api/logo/<id>` and `GET /api/logo/<id>` returns the PNG. Set `published` to false to keep a row out of the public list without deleting it.
+One SQL insert on the Neon project `proud-sea-34268045`, database `neondb`. The site reads `document` from `GET /api/index`. If `logo_bytes` is set, the API sets `logo` to `/api/logo/<id>` and `GET /api/logo/<id>` returns the PNG. Set `published` to false only when the company is not about ageing or care. A closed company stays in the public list.
 
 ```sql
 INSERT INTO entries (
@@ -103,9 +103,22 @@ INSERT INTO entries (
 
 Verified company facts live in `document.facts` (and the `facts` column). The detail page reads them from `GET /api/index`. Leave out any fact you cannot point at a public page. Do not write "unknown".
 
-A researched write-up lives in `document.writeup`. It is shown only when `document.writeup_qa.pass` is true. The checklist is the pass or fail of eleven checks: three independent sources beyond the company site, every claim sourced, concrete mechanics in plain language, the buyer plus either a public price or a sourced "No public price" after the pricing page was checked, and the reimbursement or direct-sales route, traction with numbers and dates, founding story and funding, two or three named competitors and how this company differs, a short insight, news from the last 12 months or the sentence "No news found in the last 12 months" after a search, 150 to 300 words with no em dash, and a correct published flag when the company is dead or not about ageing or care. A failed write-up stays in the database for the next research pass and is not rendered. The page then keeps the one-line summary, facts, similar entries, the website, and sources.
+A researched write-up lives in `document.writeup`. It is shown only when `document.writeup_qa.pass` is true. The checklist is the pass or fail of eleven checks: three independent sources beyond the company site, every claim sourced, concrete mechanics in plain language, the buyer plus either a public price or a sourced "No public price" after the pricing page was checked, and the reimbursement or direct-sales route, traction with numbers and dates, founding story and funding, two or three named competitors and how this company differs, a short insight, news from the last 12 months or the sentence "No news found in the last 12 months" after a search, 150 to 300 words with no em dash, and the right public flag. A company that is not about ageing or care stays unpublished. A closed company stays published. A failed write-up stays in the database for the next research pass and is not rendered. The page then keeps the one-line summary, facts, similar entries, the website, and sources. Write in plain sentences. Leave out commentary about the research itself.
 
-When a write-up passes, it is always open, directly under the name and the one-line summary, in this order: What it does, Who pays, Traction, Why it's interesting, Status. Facts, Similar, the website, and sources come after that. There is no show/hide control. The old job card stays hidden once a write-up exists, passed or not, so a draft does not leak out as the job text. Each section is `{text, sources}` with `sources` as an array of URLs you actually opened. Omit a section when you cannot support it. `summary` stays the one-line list text, verb first, at most 90 characters. `writeup.status.text` is the operating status (active, acquired, shut down, or pivoted), not the internal workflow `status`.
+A closed company (dissolved, in liquidation, shut down, or acquired and then shut) stays published and gets `document.closed`:
+
+```json
+"closed": {
+  "state": "dissolved",
+  "date": "2026-02-10",
+  "text": "Dissolved 10 Feb 2026, Companies House 14453324",
+  "source": "https://find-and-update.company-information.service.gov.uk/company/14453324"
+}
+```
+
+`state` is `dissolved`, `liquidation`, `shut_down`, or `acquired_and_shut`. `text` is the short sourced reason, with the date and the register or filing. `source` is the https page you opened. The list has a Closed chip, and each closed row shows a small Closed label. The detail page shows that label with the reason and a source link. The label appears only when both `text` and `source` are present. For a closed company, the write-up also says what happened, and any lesson that a public source states. Leave the lesson out when no public source gives one. The Closed label still shows when the write-up has not passed. Do not store this in the workflow `status` field.
+
+When a write-up passes, it is always open, directly under the name and the one-line summary, in this order: What it does, Competitors, Who pays, Traction, Why it's interesting, Status. What it does is the product only. Competitors is two or three named companies and how this one differs, stored as `writeup.competitors`. Facts, Similar, the website, and sources come after that. There is no show/hide control. The old job card stays hidden once a write-up exists, passed or not, so a draft does not leak out as the job text. Each section is `{text, sources}` with `sources` as an array of URLs you actually opened. Omit a section when you cannot support it. `summary` stays the one-line list text, verb first, at most 90 characters. `writeup.status.text` is the operating status (active, acquired, shut down, or pivoted), not the internal workflow `status`. A logo that is missing, broken, or a blank tile shows the company initials.
 
 ```json
 "writeup": {

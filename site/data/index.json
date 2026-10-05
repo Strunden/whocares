@@ -9132,7 +9132,7 @@
           }
         ]
       },
-      "published": false,
+      "published": true,
       "title": "Arquella",
       "research_summary": "future-proof wireless nurse call systems with second-generation technology, empowering care teams and enhancing care delivery for residential and inpatient care settings.",
       "job": "It is a future-proof wireless nurse call systems with second-generation technology, empowering care teams and enhancing care delivery for residential and inpatient care settings.",
@@ -9141,7 +9141,13 @@
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": "/api/logo/company-arquella"
+      "logo": "/api/logo/company-arquella",
+      "closed": {
+        "state": "liquidation",
+        "date": "2026-06-25",
+        "text": "In liquidation 25 Jun 2026, Companies House 11206238",
+        "source": "https://find-and-update.company-information.service.gov.uk/company/11206238/insolvency"
+      }
     },
     {
       "id": "company-alenvi",
@@ -9362,7 +9368,7 @@
           ]
         },
         "what_it_does": {
-          "text": "Cera sends carers and nurses to homes in the UK. Its mission page says the work is for governments, insurers, and the NHS, and that carers log visits so the company can flag risks. TechCrunch reported the notes are used to predict falls and hospital stays. Unlike Careteam, which licenses a shared plan to health organisations, Cera employs the carers who go into the home. Compared with Careloop, which recruits nurses for other employers, Cera runs the visits itself and keeps the notes.",
+          "text": "Cera sends carers and nurses to homes in the UK. Its mission page says the work is for governments, insurers, and the NHS, and that carers log visits so the company can flag risks. TechCrunch reported the notes are used to predict falls and hospital stays.",
           "sources": [
             "https://www.cerahq.com/our-mission",
             "https://techcrunch.com/2025/01/12/uk-in-home-healthcare-provider-cera-raises-150m-to-expand-its-ai-platform/",
@@ -9376,59 +9382,81 @@
             "https://techcrunch.com/2025/01/12/uk-in-home-healthcare-provider-cera-raises-150m-to-expand-its-ai-platform/",
             "https://www.bbc.co.uk/news/articles/cmlylxprwkjzo"
           ]
-        }
+        },
+        "competitors": [
+          {
+            "name": "Careteam",
+            "difference": "Unlike Careteam, which licenses a shared plan to health organisations, Cera employs the carers who go into the home.",
+            "sources": [
+              "https://www.cerahq.com/our-mission",
+              "https://techcrunch.com/2025/01/12/uk-in-home-healthcare-provider-cera-raises-150m-to-expand-its-ai-platform/",
+              "http://www.getcareteam.com/",
+              "https://careloop.io"
+            ]
+          },
+          {
+            "name": "Careloop",
+            "difference": "Compared with Careloop, which recruits nurses for other employers, Cera runs the visits itself and keeps the notes.",
+            "sources": [
+              "https://www.cerahq.com/our-mission",
+              "https://techcrunch.com/2025/01/12/uk-in-home-healthcare-provider-cera-raises-150m-to-expand-its-ai-platform/",
+              "http://www.getcareteam.com/",
+              "https://careloop.io"
+            ]
+          }
+        ]
       },
       "writeup_qa": {
         "pass": true,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": false,
+        "word_count": 269,
         "criteria": {
-          "money": {
-            "note": "Buyer, public price, and reimbursement route are stated.",
-            "pass": true
-          },
-          "scope": {
-            "note": "Published company. Not marked dead or out of scope.",
-            "pass": true
-          },
-          "shape": {
-            "note": "150 to 300 words, no dash, does not repeat the one-liner.",
-            "pass": true
-          },
-          "story": {
-            "note": "Founding, background, funding, and operating status are in the write-up.",
-            "pass": true
-          },
-          "insight": {
-            "note": "2 sentences of insight.",
-            "pass": true
-          },
-          "traction": {
-            "note": "Traction has a number and a date.",
-            "pass": true
-          },
-          "mechanics": {
-            "note": "Product section names the device or service in plain language.",
-            "pass": true
-          },
-          "competitors": {
-            "note": "Names Careloop, Careteam and says how this company differs.",
-            "pass": true
-          },
-          "recent_news": {
-            "note": "Dated item 2026-10-01 via techcrunch.com.",
-            "pass": true
+          "independent_sources": {
+            "pass": true,
+            "note": "5 independent source(s): techcrunch.com, getcareteam.com, careloop.io, bbc.co.uk, caretalk-business.co.uk."
           },
           "claims_sourced": {
-            "note": "Each included section has a source URL.",
-            "pass": true
+            "pass": true,
+            "note": "Each included section has a source URL."
           },
-          "independent_sources": {
-            "note": "5 independent source(s): techcrunch.com, getcareteam.com, careloop.io, bbc.co.uk, caretalk-business.co.uk.",
-            "pass": true
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": true,
+            "note": "Buyer, public price, and reimbursement route are stated."
+          },
+          "traction": {
+            "pass": true,
+            "note": "Traction has a number and a date."
+          },
+          "story": {
+            "pass": true,
+            "note": "Founding, background, funding, and operating status are in the write-up."
+          },
+          "competitors": {
+            "pass": true,
+            "note": "Names Careloop, Careteam and says how this company differs."
+          },
+          "insight": {
+            "pass": true,
+            "note": "2 sentences of insight."
+          },
+          "recent_news": {
+            "pass": true,
+            "note": "Dated item 2026-10-01 via techcrunch.com."
+          },
+          "shape": {
+            "pass": true,
+            "note": "150 to 300 words, no dash, does not repeat the one-liner."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
           }
-        },
-        "checked_at": "2026-10-05",
-        "word_count": 269,
-        "needs_reresearch": false
+        }
       }
     },
     {
@@ -10524,7 +10552,7 @@
           }
         ]
       },
-      "published": false,
+      "published": true,
       "title": "Currant Care",
       "research_summary": "Currant Care brings innovation to healthcare with non-invasive products like Oh Band for hand sanitization and Sensora for digital elderly care.",
       "job": "It is a currant Care brings innovation to healthcare with non-invasive products like Oh Band for hand sanitization and Sensora for digital elderly care.",
@@ -10532,7 +10560,13 @@
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": "/api/logo/company-currant-care"
+      "logo": "/api/logo/company-currant-care",
+      "closed": {
+        "state": "dissolved",
+        "date": "2026-02-10",
+        "text": "Dissolved 10 Feb 2026, Companies House 14453324",
+        "source": "https://find-and-update.company-information.service.gov.uk/company/14453324"
+      }
     },
     {
       "id": "company-appva",
@@ -13155,7 +13189,7 @@
           ]
         },
         "what_it_does": {
-          "text": "Closure collects one set of details after a death and asks companies to end or transfer the person's contracts, from phone and energy to insurers, charities, and social accounts. The family picks the organisations and tracks each request. A 2022 note says a Dutch financial-markets licence lets it notify banks and insurers. Unlike BYOND, where a person stores accounts for family to open after a death, Closure contacts the companies and asks them to end or transfer the contracts. Compared with Willful, an online will, Closure starts after the death and does not write the will.",
+          "text": "Closure collects one set of details after a death and asks companies to end or transfer the person's contracts, from phone and energy to insurers, charities, and social accounts. The family picks the organisations and tracks each request. A 2022 note says a Dutch financial-markets licence lets it notify banks and insurers.",
           "sources": [
             "https://app.closure.nl/informeren-organisaties",
             "https://siliconcanals.com/dutch-scale-up-closure-bags-1-5m/",
@@ -13169,59 +13203,81 @@
             "https://siliconcanals.com/rise-techleap-closure/",
             "https://app.closure.nl/informeren-organisaties"
           ]
-        }
+        },
+        "competitors": [
+          {
+            "name": "BYOND",
+            "difference": "Unlike BYOND, where a person stores accounts for family to open after a death, Closure contacts the companies and asks them to end or transfer the contracts.",
+            "sources": [
+              "https://app.closure.nl/informeren-organisaties",
+              "https://siliconcanals.com/dutch-scale-up-closure-bags-1-5m/",
+              "https://getbyond.app/",
+              "https://willful.co"
+            ]
+          },
+          {
+            "name": "Willful",
+            "difference": "Compared with Willful, an online will, Closure starts after the death and does not write the will.",
+            "sources": [
+              "https://app.closure.nl/informeren-organisaties",
+              "https://siliconcanals.com/dutch-scale-up-closure-bags-1-5m/",
+              "https://getbyond.app/",
+              "https://willful.co"
+            ]
+          }
+        ]
       },
       "writeup_qa": {
         "pass": true,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": false,
+        "word_count": 295,
         "criteria": {
-          "money": {
-            "note": "Buyer, public price, and reimbursement route are stated.",
-            "pass": true
-          },
-          "scope": {
-            "note": "Published company. Not marked dead or out of scope.",
-            "pass": true
-          },
-          "shape": {
-            "note": "150 to 300 words, no dash, does not repeat the one-liner.",
-            "pass": true
-          },
-          "story": {
-            "note": "Founding, background, funding, and operating status are in the write-up.",
-            "pass": true
-          },
-          "insight": {
-            "note": "2 sentences of insight.",
-            "pass": true
-          },
-          "traction": {
-            "note": "Traction has a number and a date.",
-            "pass": true
-          },
-          "mechanics": {
-            "note": "Product section names the device or service in plain language.",
-            "pass": true
-          },
-          "competitors": {
-            "note": "Names BYOND, Willful and says how this company differs.",
-            "pass": true
-          },
-          "recent_news": {
-            "note": "States that no recent item was found.",
-            "pass": true
+          "independent_sources": {
+            "pass": true,
+            "note": "3 independent source(s): siliconcanals.com, getbyond.app, willful.co."
           },
           "claims_sourced": {
-            "note": "Each included section has a source URL.",
-            "pass": true
+            "pass": true,
+            "note": "Each included section has a source URL."
           },
-          "independent_sources": {
-            "note": "3 independent source(s): siliconcanals.com, getbyond.app, willful.co.",
-            "pass": true
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": true,
+            "note": "Buyer, public price, and reimbursement route are stated."
+          },
+          "traction": {
+            "pass": true,
+            "note": "Traction has a number and a date."
+          },
+          "story": {
+            "pass": true,
+            "note": "Founding, background, funding, and operating status are in the write-up."
+          },
+          "competitors": {
+            "pass": true,
+            "note": "Names BYOND, Willful and says how this company differs."
+          },
+          "insight": {
+            "pass": true,
+            "note": "2 sentences of insight."
+          },
+          "recent_news": {
+            "pass": true,
+            "note": "States that no recent item was found."
+          },
+          "shape": {
+            "pass": true,
+            "note": "150 to 300 words, no dash, does not repeat the one-liner."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
           }
-        },
-        "checked_at": "2026-10-05",
-        "word_count": 295,
-        "needs_reresearch": false
+        }
       }
     },
     {
@@ -14130,7 +14186,7 @@
           ]
         },
         "what_it_does": {
-          "text": "Careship finds a local helper for housework, company, and daily tasks. A person calls or sends a request, agrees the tasks, and starts without a long contract. The site says the same helper returns. Care Companion GmbH places self-employed helpers, and Careship Ambulant GmbH uses employed ones. Unlike Pflege.de, which publishes care guides and ships supply boxes, Careship sends a helper into the home. Compared with AIUDO, which handles payroll when a Spanish family employs the carer, Careship can bill German insurers.",
+          "text": "Careship finds a local helper for housework, company, and daily tasks. A person calls or sends a request, agrees the tasks, and starts without a long contract. The site says the same helper returns. Care Companion GmbH places self-employed helpers, and Careship Ambulant GmbH uses employed ones.",
           "sources": [
             "https://careship.de",
             "https://www.pflege.de/",
@@ -14143,59 +14199,79 @@
             "https://careship.de",
             "https://www.carevor9.de/care-inside/investor-fuehrt-insolventes-pflege-start-up-careship-weiter"
           ]
-        }
+        },
+        "competitors": [
+          {
+            "name": "Pflege.de",
+            "difference": "Unlike Pflege.de, which publishes care guides and ships supply boxes, Careship sends a helper into the home.",
+            "sources": [
+              "https://careship.de",
+              "https://www.pflege.de/",
+              "https://aiudo.es"
+            ]
+          },
+          {
+            "name": "AIUDO",
+            "difference": "Compared with AIUDO, which handles payroll when a Spanish family employs the carer, Careship can bill German insurers.",
+            "sources": [
+              "https://careship.de",
+              "https://www.pflege.de/",
+              "https://aiudo.es"
+            ]
+          }
+        ]
       },
       "writeup_qa": {
         "pass": true,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": false,
+        "word_count": 292,
         "criteria": {
-          "money": {
-            "note": "Buyer, public price, and reimbursement route are stated.",
-            "pass": true
-          },
-          "scope": {
-            "note": "Published company. Not marked dead or out of scope.",
-            "pass": true
-          },
-          "shape": {
-            "note": "150 to 300 words, no dash, does not repeat the one-liner.",
-            "pass": true
-          },
-          "story": {
-            "note": "Founding, background, funding, and operating status are in the write-up.",
-            "pass": true
-          },
-          "insight": {
-            "note": "2 sentences of insight.",
-            "pass": true
-          },
-          "traction": {
-            "note": "Traction has a number and a date.",
-            "pass": true
-          },
-          "mechanics": {
-            "note": "Product section names the device or service in plain language.",
-            "pass": true
-          },
-          "competitors": {
-            "note": "Names AIUDO, Pflege.de and says how this company differs.",
-            "pass": true
-          },
-          "recent_news": {
-            "note": "States that no recent item was found.",
-            "pass": true
+          "independent_sources": {
+            "pass": true,
+            "note": "4 independent source(s): pflege.de, aiudo.es, en.wikipedia.org, carevor9.de."
           },
           "claims_sourced": {
-            "note": "Each included section has a source URL.",
-            "pass": true
+            "pass": true,
+            "note": "Each included section has a source URL."
           },
-          "independent_sources": {
-            "note": "4 independent source(s): pflege.de, aiudo.es, en.wikipedia.org, carevor9.de.",
-            "pass": true
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": true,
+            "note": "Buyer, public price, and reimbursement route are stated."
+          },
+          "traction": {
+            "pass": true,
+            "note": "Traction has a number and a date."
+          },
+          "story": {
+            "pass": true,
+            "note": "Founding, background, funding, and operating status are in the write-up."
+          },
+          "competitors": {
+            "pass": true,
+            "note": "Names AIUDO, Pflege.de and says how this company differs."
+          },
+          "insight": {
+            "pass": true,
+            "note": "2 sentences of insight."
+          },
+          "recent_news": {
+            "pass": true,
+            "note": "States that no recent item was found."
+          },
+          "shape": {
+            "pass": true,
+            "note": "150 to 300 words, no dash, does not repeat the one-liner."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
           }
-        },
-        "checked_at": "2026-10-05",
-        "word_count": 292,
-        "needs_reresearch": false
+        }
       }
     },
     {
@@ -14476,7 +14552,7 @@
           ]
         },
         "what_it_does": {
-          "text": "ABLE Human Motion sells the ABLE Exoskeleton, a light device for rehabilitation clinics. It helps people practise standing and walking. The history page dates a CE mark for clinical use to 2024. Unlike 2KERR, which sells a balance wheelchair a person rides, ABLE Human Motion sells a powered exoskeleton that clinics use so people can practise walking. Compared with Whill Inc, which sells personal transport, ABLE Human Motion sells a wearable exoskeleton for gait training in clinics.",
+          "text": "ABLE Human Motion sells the ABLE Exoskeleton, a light device for rehabilitation clinics. It helps people practise standing and walking. The history page dates a CE mark for clinical use to 2024. Clinics use the wearable device for gait training.",
           "sources": [
             "https://ablehumanmotion.com",
             "https://www.ablehumanmotion.com/en/our-company-about-us/",
@@ -14489,59 +14565,79 @@
             "https://www.ablehumanmotion.com/en/our-company-about-us/",
             "https://genesis-biomed.com/interview-alfons-carnicero-ceo-and-co-founder-able-human-motion/"
           ]
-        }
+        },
+        "competitors": [
+          {
+            "name": "2KERR",
+            "difference": "Unlike 2KERR, which sells a balance wheelchair a person rides, ABLE Human Motion sells a powered exoskeleton that clinics use so people can practise walking.",
+            "sources": [
+              "https://ablehumanmotion.com",
+              "https://www.ablehumanmotion.com/en/our-company-about-us/",
+              "http://biobase.whitefordresearch.com/companies/able-human-motion"
+            ]
+          },
+          {
+            "name": "Whill Inc",
+            "difference": "Compared with Whill Inc, which sells personal transport, ABLE Human Motion sells a wearable exoskeleton for gait training in clinics.",
+            "sources": [
+              "https://ablehumanmotion.com",
+              "https://www.ablehumanmotion.com/en/our-company-about-us/",
+              "http://biobase.whitefordresearch.com/companies/able-human-motion"
+            ]
+          }
+        ]
       },
       "writeup_qa": {
         "pass": true,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": false,
+        "word_count": 287,
         "criteria": {
-          "money": {
-            "note": "Buyer, public price, and reimbursement route are stated.",
-            "pass": true
-          },
-          "scope": {
-            "note": "Published company. Not marked dead or out of scope.",
-            "pass": true
-          },
-          "shape": {
-            "note": "150 to 300 words, no dash, does not repeat the one-liner.",
-            "pass": true
-          },
-          "story": {
-            "note": "Founding, background, funding, and operating status are in the write-up.",
-            "pass": true
-          },
-          "insight": {
-            "note": "3 sentences of insight.",
-            "pass": true
-          },
-          "traction": {
-            "note": "Traction has a number and a date.",
-            "pass": true
-          },
-          "mechanics": {
-            "note": "Product section names the device or service in plain language.",
-            "pass": true
-          },
-          "competitors": {
-            "note": "Names Whill Inc, 2KERR and says how this company differs.",
-            "pass": true
-          },
-          "recent_news": {
-            "note": "States that no recent item was found.",
-            "pass": true
+          "independent_sources": {
+            "pass": true,
+            "note": "3 independent source(s): biobase.whitefordresearch.com, genesis-biomed.com, eit.europa.eu."
           },
           "claims_sourced": {
-            "note": "Each included section has a source URL.",
-            "pass": true
+            "pass": true,
+            "note": "Each included section has a source URL."
           },
-          "independent_sources": {
-            "note": "3 independent source(s): biobase.whitefordresearch.com, genesis-biomed.com, eit.europa.eu.",
-            "pass": true
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": true,
+            "note": "Buyer, public price, and reimbursement route are stated."
+          },
+          "traction": {
+            "pass": true,
+            "note": "Traction has a number and a date."
+          },
+          "story": {
+            "pass": true,
+            "note": "Founding, background, funding, and operating status are in the write-up."
+          },
+          "competitors": {
+            "pass": true,
+            "note": "Names Whill Inc, 2KERR and says how this company differs."
+          },
+          "insight": {
+            "pass": true,
+            "note": "3 sentences of insight."
+          },
+          "recent_news": {
+            "pass": true,
+            "note": "States that no recent item was found."
+          },
+          "shape": {
+            "pass": true,
+            "note": "150 to 300 words, no dash, does not repeat the one-liner."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
           }
-        },
-        "checked_at": "2026-10-05",
-        "word_count": 279,
-        "needs_reresearch": false
+        }
       }
     },
     {
@@ -16649,7 +16745,7 @@
           ]
         },
         "what_it_does": {
-          "text": "Bayartis is making a home cabinet that watches temperature and humidity, plus a phone app that lists doses, stock, expiry, side effects, and interactions. A person can scan a barcode or take a photo to add a medicine, and can share the record with family. Fatma Oezdemir-Zaech and Sadik Keshwani founded it. The Swiss register's earliest entry is 19 June 2023. Unlike BePi, which is a bedside dispenser for a hospital ward, Bayartis is designing a cabinet for the home. Compared with AlignCare, which records what a doctor said, Bayartis is meant to track the pills themselves.",
+          "text": "Bayartis is making a home cabinet that watches temperature and humidity, plus a phone app that lists doses, stock, expiry, side effects, and interactions. A person can scan a barcode or take a photo to add a medicine, and can share the record with family. Fatma Oezdemir-Zaech and Sadik Keshwani founded it. The Swiss register's earliest entry is 19 June 2023.",
           "sources": [
             "https://www.bayartis.com",
             "https://wemakeit.com/projects/bayartis-simply-certain",
@@ -16664,59 +16760,83 @@
             "https://wemakeit.com/projects/bayartis-simply-certain",
             "https://www.bayartis.com"
           ]
-        }
+        },
+        "competitors": [
+          {
+            "name": "BePi",
+            "difference": "Unlike BePi, which is a bedside dispenser for a hospital ward, Bayartis is designing a cabinet for the home.",
+            "sources": [
+              "https://www.bayartis.com",
+              "https://wemakeit.com/projects/bayartis-simply-certain",
+              "https://pilldispenser.care/chi-siamo/",
+              "https://www.aligncare.ai/",
+              "https://mercury-reports.com/companies/78b98296-85e8-4832-a8a8-5878a3b1b1df"
+            ]
+          },
+          {
+            "name": "AlignCare",
+            "difference": "Compared with AlignCare, which records what a doctor said, Bayartis is meant to track the pills themselves.",
+            "sources": [
+              "https://www.bayartis.com",
+              "https://wemakeit.com/projects/bayartis-simply-certain",
+              "https://pilldispenser.care/chi-siamo/",
+              "https://www.aligncare.ai/",
+              "https://mercury-reports.com/companies/78b98296-85e8-4832-a8a8-5878a3b1b1df"
+            ]
+          }
+        ]
       },
       "writeup_qa": {
         "pass": true,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": false,
+        "word_count": 250,
         "criteria": {
-          "money": {
-            "note": "Buyer, public price, and reimbursement route are stated.",
-            "pass": true
-          },
-          "scope": {
-            "note": "Published company. Not marked dead or out of scope.",
-            "pass": true
-          },
-          "shape": {
-            "note": "150 to 300 words, no dash, does not repeat the one-liner.",
-            "pass": true
-          },
-          "story": {
-            "note": "Founding, background, funding, and operating status are in the write-up.",
-            "pass": true
-          },
-          "insight": {
-            "note": "2 sentences of insight.",
-            "pass": true
-          },
-          "traction": {
-            "note": "Traction has a number and a date.",
-            "pass": true
-          },
-          "mechanics": {
-            "note": "Product section names the device or service in plain language.",
-            "pass": true
-          },
-          "competitors": {
-            "note": "Names AlignCare, BePi and says how this company differs.",
-            "pass": true
-          },
-          "recent_news": {
-            "note": "States that no recent item was found.",
-            "pass": true
+          "independent_sources": {
+            "pass": true,
+            "note": "4 independent source(s): wemakeit.com, pilldispenser.care, aligncare.ai, mercury-reports.com."
           },
           "claims_sourced": {
-            "note": "Each included section has a source URL.",
-            "pass": true
+            "pass": true,
+            "note": "Each included section has a source URL."
           },
-          "independent_sources": {
-            "note": "4 independent source(s): wemakeit.com, pilldispenser.care, aligncare.ai, mercury-reports.com.",
-            "pass": true
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": true,
+            "note": "Buyer, public price, and reimbursement route are stated."
+          },
+          "traction": {
+            "pass": true,
+            "note": "Traction has a number and a date."
+          },
+          "story": {
+            "pass": true,
+            "note": "Founding, background, funding, and operating status are in the write-up."
+          },
+          "competitors": {
+            "pass": true,
+            "note": "Names AlignCare, BePi and says how this company differs."
+          },
+          "insight": {
+            "pass": true,
+            "note": "2 sentences of insight."
+          },
+          "recent_news": {
+            "pass": true,
+            "note": "States that no recent item was found."
+          },
+          "shape": {
+            "pass": true,
+            "note": "150 to 300 words, no dash, does not repeat the one-liner."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
           }
-        },
-        "checked_at": "2026-10-05",
-        "word_count": 250,
-        "needs_reresearch": false
+        }
       }
     },
     {
@@ -17783,7 +17903,7 @@
           }
         ]
       },
-      "published": false,
+      "published": true,
       "title": "Causalus",
       "research_summary": "a digital therapeutics company focused on addressing the challenges of polypharmacy by developing software solutions for medication reviews.",
       "job": "It is a digital therapeutics company focused on addressing the challenges of polypharmacy by developing software solutions for medication reviews.",
@@ -17806,6 +17926,12 @@
           "code": "FI",
           "source": "https://www.northdata.com/Causalus%20Oy"
         }
+      },
+      "closed": {
+        "state": "dissolved",
+        "date": "2022-11-03",
+        "text": "Dissolved 3 Nov 2022, Finnish register 2915535-6",
+        "source": "https://avoindata.prh.fi/opendata-ytj-api/v3/companies?businessId=2915535-6"
       }
     },
     {
@@ -18923,7 +19049,7 @@
           }
         ]
       },
-      "published": false,
+      "published": true,
       "title": "Health Invest",
       "research_summary": "Digital healthcare - developer of Myplus.care.",
       "job": "Health Invest Finland sold My+Care, a wristband and wireless beacons that sent a resident's movement, location and body temperature to staff. A 2017 launch note says care homes received the hardware and a login, then got an alert if someone left a set area. The company page says the founders built it with senior houses and healthcare staff in Finland.",
@@ -19075,6 +19201,12 @@
             "note": "Hidden, with an internal reason stored off the page."
           }
         }
+      },
+      "closed": {
+        "state": "shut_down",
+        "date": "2023-03-30",
+        "text": "Bankrupt 30 Mar 2023, Finnish register 2715906-2",
+        "source": "https://avoindata.prh.fi/opendata-ytj-api/v3/companies?businessId=2715906-2"
       }
     },
     {
@@ -22213,7 +22345,7 @@
           ]
         },
         "what_it_does": {
-          "text": "Aumens sells Het Kompas, a device that points toward home after someone presses a button at the front door. An app shows carers where the compass is. It was designed with people in the early and middle stages of dementia. Rick and Vincent Eurlings founded the company at the end of 2023. Unlike Oroi, which uses virtual-reality headsets for cognitive exercises, Het Kompas is a compass that points toward home. Compared with Amara, which is a voice tablet for calls and photos, Het Kompas has one job: an arrow back to the front door.",
+          "text": "Aumens sells Het Kompas, a device that points toward home after someone presses a button at the front door. An app shows carers where the compass is. It was designed with people in the early and middle stages of dementia. Rick and Vincent Eurlings founded the company at the end of 2023.",
           "sources": [
             "https://aumens.com",
             "https://www.oroi.eu/",
@@ -22226,59 +22358,79 @@
             "https://aumens.com",
             "https://onsmagazine.nl/artikelen/nooit-meer-verdwalen/"
           ]
-        }
+        },
+        "competitors": [
+          {
+            "name": "Oroi",
+            "difference": "Unlike Oroi, which uses virtual-reality headsets for cognitive exercises, Het Kompas is a compass that points toward home.",
+            "sources": [
+              "https://aumens.com",
+              "https://www.oroi.eu/",
+              "https://amara.app/"
+            ]
+          },
+          {
+            "name": "Amara",
+            "difference": "Compared with Amara, which is a voice tablet for calls and photos, Het Kompas has one job: an arrow back to the front door.",
+            "sources": [
+              "https://aumens.com",
+              "https://www.oroi.eu/",
+              "https://amara.app/"
+            ]
+          }
+        ]
       },
       "writeup_qa": {
         "pass": true,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": false,
+        "word_count": 300,
         "criteria": {
-          "money": {
-            "note": "Buyer, public price, and reimbursement route are stated.",
-            "pass": true
-          },
-          "scope": {
-            "note": "Published company. Not marked dead or out of scope.",
-            "pass": true
-          },
-          "shape": {
-            "note": "150 to 300 words, no dash, does not repeat the one-liner.",
-            "pass": true
-          },
-          "story": {
-            "note": "Founding, background, funding, and operating status are in the write-up.",
-            "pass": true
-          },
-          "insight": {
-            "note": "3 sentences of insight.",
-            "pass": true
-          },
-          "traction": {
-            "note": "Traction has a number and a date.",
-            "pass": true
-          },
-          "mechanics": {
-            "note": "Product section names the device or service in plain language.",
-            "pass": true
-          },
-          "competitors": {
-            "note": "Names Amara, Oroi and says how this company differs.",
-            "pass": true
-          },
-          "recent_news": {
-            "note": "Dated item 2026-03-23 via onsmagazine.nl.",
-            "pass": true
+          "independent_sources": {
+            "pass": true,
+            "note": "5 independent source(s): oroi.eu, amara.app, tue.nl, cursor.tue.nl, onsmagazine.nl."
           },
           "claims_sourced": {
-            "note": "Each included section has a source URL.",
-            "pass": true
+            "pass": true,
+            "note": "Each included section has a source URL."
           },
-          "independent_sources": {
-            "note": "5 independent source(s): oroi.eu, amara.app, tue.nl, cursor.tue.nl, onsmagazine.nl.",
-            "pass": true
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": true,
+            "note": "Buyer, public price, and reimbursement route are stated."
+          },
+          "traction": {
+            "pass": true,
+            "note": "Traction has a number and a date."
+          },
+          "story": {
+            "pass": true,
+            "note": "Founding, background, funding, and operating status are in the write-up."
+          },
+          "competitors": {
+            "pass": true,
+            "note": "Names Amara, Oroi and says how this company differs."
+          },
+          "insight": {
+            "pass": true,
+            "note": "3 sentences of insight."
+          },
+          "recent_news": {
+            "pass": true,
+            "note": "Dated item 2026-03-23 via onsmagazine.nl."
+          },
+          "shape": {
+            "pass": true,
+            "note": "150 to 300 words, no dash, does not repeat the one-liner."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
           }
-        },
-        "checked_at": "2026-10-05",
-        "word_count": 300,
-        "needs_reresearch": false
+        }
       }
     },
     {
@@ -22353,19 +22505,13 @@
         }
       },
       "writeup": {
-        "what_it_does": {
-          "text": "BrainCheck sells clinics cognitive tests and a care plan. BrainCheck Assess is an FDA Class II digital test a clinician can run in the visit or by sending a link. Business Insider described it as software that turns usual paper checks into a score, then shares a management plan with the doctor. Unlike Five Lives, which offers a consumer app for memory coaching, BrainCheck is sold to clinics as a clinical test. Compared with BrainTrip, which scores an 8-minute resting brain-wave recording, BrainCheck uses tasks a patient completes on a phone, tablet, or computer.",
+        "status": {
+          "text": "The about page lists the office at 5209 Burnet Road, Austin. Becker's Hospital Review dated 27 February 2026 reported the new 13 million dollar round.",
+          "as_of": "2026-10-05",
+          "state": "active",
           "sources": [
-            "https://www.businessinsider.com/see-cognitive-testing-startups-10-million-series-b-pitch-deck-2021-11",
-            "https://fivelives.health/",
-            "https://braintrip.net/cogniscore"
-          ]
-        },
-        "who_pays": {
-          "text": "Clinics, health systems, and research sites are the buyers. No public price. It is sold by direct sales to those organisations. In 2021 Yael Katz told Business Insider the company worked with Medicare and many private plans to cover roughly 90 percent of costs. That was a coverage claim, not a fee list.",
-          "sources": [
-            "https://www.businessinsider.com/see-cognitive-testing-startups-10-million-series-b-pitch-deck-2021-11",
-            "https://braincheck.com/about"
+            "https://braincheck.com/about",
+            "https://www.beckershospitalreview.com/healthcare-information-technology/ai/upmc-backs-ai-startup-in-13m-investment/"
           ]
         },
         "traction": {
@@ -22375,6 +22521,21 @@
             "https://www.beckershospitalreview.com/healthcare-information-technology/ai/upmc-backs-ai-startup-in-13m-investment/"
           ]
         },
+        "who_pays": {
+          "text": "Clinics, health systems, and research sites buy it. No public price. The company sells it directly to those buyers. In 2021 Yael Katz told Business Insider that Medicare and many private plans covered about 90 percent of the cost.",
+          "sources": [
+            "https://www.businessinsider.com/see-cognitive-testing-startups-10-million-series-b-pitch-deck-2021-11",
+            "https://braincheck.com/about"
+          ]
+        },
+        "what_it_does": {
+          "text": "BrainCheck sells clinics a cognitive test and a care plan. BrainCheck Assess is an FDA Class II digital test. A clinician runs it during the visit or sends the patient a link. The patient completes tasks on a phone, tablet, or computer. The software scores the tasks and shares a plan with the doctor.",
+          "sources": [
+            "https://www.businessinsider.com/see-cognitive-testing-startups-10-million-series-b-pitch-deck-2021-11",
+            "https://fivelives.health/",
+            "https://braintrip.net/cogniscore"
+          ]
+        },
         "why_interesting": {
           "text": "Yael Katz, who has a PhD and studied at the University of Pennsylvania, Northwestern, and Princeton, started BrainCheck in 2015 with David Eagleman, then a neuroscientist at Baylor College of Medicine. She had worked as a neuroscience researcher at Northwestern and Princeton. She told S3 Ventures the first customers were not the ones the company expected.",
           "sources": [
@@ -22382,21 +22543,32 @@
             "https://www.businessinsider.com/see-cognitive-testing-startups-10-million-series-b-pitch-deck-2021-11"
           ]
         },
-        "status": {
-          "text": "The about page lists the office at 5209 Burnet Road, Austin. Becker's Hospital Review dated 27 February 2026 reported the new 13 million dollar round.",
-          "state": "active",
-          "as_of": "2026-10-05",
-          "sources": [
-            "https://braincheck.com/about",
-            "https://www.beckershospitalreview.com/healthcare-information-technology/ai/upmc-backs-ai-startup-in-13m-investment/"
-          ]
-        }
+        "competitors": [
+          {
+            "name": "Five Lives",
+            "difference": "Unlike Five Lives, which offers a consumer app for memory coaching, BrainCheck is sold to clinics as a clinical test.",
+            "sources": [
+              "https://www.businessinsider.com/see-cognitive-testing-startups-10-million-series-b-pitch-deck-2021-11",
+              "https://fivelives.health/",
+              "https://braintrip.net/cogniscore"
+            ]
+          },
+          {
+            "name": "BrainTrip",
+            "difference": "Compared with BrainTrip, which scores an 8-minute resting brain-wave recording, BrainCheck uses tasks a patient completes on a phone, tablet, or computer.",
+            "sources": [
+              "https://www.businessinsider.com/see-cognitive-testing-startups-10-million-series-b-pitch-deck-2021-11",
+              "https://fivelives.health/",
+              "https://braintrip.net/cogniscore"
+            ]
+          }
+        ]
       },
       "writeup_qa": {
         "pass": true,
         "checked_at": "2026-10-05",
         "needs_reresearch": false,
-        "word_count": 277,
+        "word_count": 265,
         "criteria": {
           "independent_sources": {
             "pass": true,
@@ -22719,7 +22891,7 @@
           ]
         },
         "what_it_does": {
-          "text": "Ally puts a Wi-Fi monitor in a care-home bedroom. Sound and motion trigger an app alert when a resident calls for help, gets up, or may be in discomfort, so night teams can skip routine checks. Unlike cogvis, which spots falls in care homes without camera pictures, Ally uses a bedroom monitor that listens and senses motion, and the Local Government Association says homes are told to switch it off during the day. Compared with OSO-AI, which spots falls and distress in nursing homes so staff can respond, Ally is sold to UK care homes for the night round and says it files notes into the home's digital care record.",
+          "text": "Ally puts a Wi-Fi monitor in a care-home bedroom. Sound and motion trigger an app alert when a resident calls for help, gets up, or may be in discomfort, so night teams can skip routine checks. Homes are told to switch it off during the day.",
           "sources": [
             "https://allycares.com",
             "https://www.local.gov.uk/case-studies/dorset-council-acoustic-monitoring-care-homes"
@@ -22732,7 +22904,25 @@
             "https://www.local.gov.uk/case-studies/dorset-council-acoustic-monitoring-care-homes",
             "https://find-and-update.company-information.service.gov.uk/company/09864498"
           ]
-        }
+        },
+        "competitors": [
+          {
+            "name": "cogvis",
+            "difference": "Unlike cogvis, which spots falls in care homes without camera pictures, Ally uses a bedroom monitor that listens and senses motion, and the Local Government Association says homes are told to switch it off during the day.",
+            "sources": [
+              "https://allycares.com",
+              "https://www.local.gov.uk/case-studies/dorset-council-acoustic-monitoring-care-homes"
+            ]
+          },
+          {
+            "name": "OSO-AI",
+            "difference": "Compared with OSO-AI, which spots falls and distress in nursing homes so staff can respond, Ally is sold to UK care homes for the night round and says it files notes into the home's digital care record.",
+            "sources": [
+              "https://allycares.com",
+              "https://www.local.gov.uk/case-studies/dorset-council-acoustic-monitoring-care-homes"
+            ]
+          }
+        ]
       },
       "facts": {
         "hq": {
@@ -22761,55 +22951,55 @@
       },
       "writeup_qa": {
         "pass": true,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": false,
+        "word_count": 290,
         "criteria": {
-          "money": {
-            "note": "Buyer, public price, and reimbursement route are stated.",
-            "pass": true
-          },
-          "scope": {
-            "note": "Published company. Not marked dead or out of scope.",
-            "pass": true
-          },
-          "shape": {
-            "note": "150 to 300 words, no dash, does not repeat the one-liner.",
-            "pass": true
-          },
-          "story": {
-            "note": "Founding, background, funding, and operating status are in the write-up.",
-            "pass": true
-          },
-          "insight": {
-            "note": "3 sentences of insight.",
-            "pass": true
-          },
-          "traction": {
-            "note": "Traction has a number and a date.",
-            "pass": true
-          },
-          "mechanics": {
-            "note": "Product section names the device or service in plain language.",
-            "pass": true
-          },
-          "competitors": {
-            "note": "Names OSO-AI, cogvis and says how this company differs.",
-            "pass": true
-          },
-          "recent_news": {
-            "note": "States that no recent item was found.",
-            "pass": true
+          "independent_sources": {
+            "pass": true,
+            "note": "3 independent source(s): local.gov.uk, find-and-update.company-information.service.gov.uk, caremanagementshow.co.uk."
           },
           "claims_sourced": {
-            "note": "Each included section has a source URL.",
-            "pass": true
+            "pass": true,
+            "note": "Each included section has a source URL."
           },
-          "independent_sources": {
-            "note": "3 independent source(s): local.gov.uk, find-and-update.company-information.service.gov.uk, caremanagementshow.co.uk.",
-            "pass": true
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": true,
+            "note": "Buyer, public price, and reimbursement route are stated."
+          },
+          "traction": {
+            "pass": true,
+            "note": "Traction has a number and a date."
+          },
+          "story": {
+            "pass": true,
+            "note": "Founding, background, funding, and operating status are in the write-up."
+          },
+          "competitors": {
+            "pass": true,
+            "note": "Names OSO-AI, cogvis and says how this company differs."
+          },
+          "insight": {
+            "pass": true,
+            "note": "3 sentences of insight."
+          },
+          "recent_news": {
+            "pass": true,
+            "note": "States that no recent item was found."
+          },
+          "shape": {
+            "pass": true,
+            "note": "150 to 300 words, no dash, does not repeat the one-liner."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
           }
-        },
-        "checked_at": "2026-10-05",
-        "word_count": 280,
-        "needs_reresearch": false
+        }
       }
     },
     {
@@ -24126,19 +24316,13 @@
         }
       },
       "writeup": {
-        "what_it_does": {
-          "text": "Carefull watches checking, savings, credit card, and investment accounts for duplicate charges, odd fees, scam withdrawals, and spending that does not match a person's usual pattern. It can share view-only alerts with a trusted contact. The site says one membership covers two people. Unlike True Link, which issues a prepaid card that families can control, Carefull connects to accounts the person already has. Compared with Pflege.de, which guides families through care benefits, Carefull stays on the money: fraud, mistakes, and spending that does not look like the person's own.",
+        "status": {
+          "text": "The site lists Carefull Corporation at 132 West 31st Street, 9th floor, New York, and a phone number. Yahoo Finance dated 27 October 2025 reported the GreyMatter launch.",
+          "as_of": "2026-10-05",
+          "state": "active",
           "sources": [
-            "https://getcarefull.com",
-            "https://www.truelinkfinancial.com/",
-            "https://www.pflege.de/"
-          ]
-        },
-        "who_pays": {
-          "text": "A help page updated on 1 August 2025 says a 30-day trial is free, then families pay $29.99 a month or $299.99 a year. Banks, credit unions, and wealth firms also give it to customers. A household can pay out of pocket, or an institution can include it.",
-          "sources": [
-            "https://carefullsupport.zendesk.com/hc/en-us/articles/33704017001115-How-much-does-Carefull-cost",
-            "https://getcarefull.com"
+            "https://getcarefull.com/about",
+            "https://finance.yahoo.com/news/financial-monitoring-application-carefull-announces-184228506.html"
           ]
         },
         "traction": {
@@ -24148,6 +24332,21 @@
             "https://getcarefull.com/about"
           ]
         },
+        "who_pays": {
+          "text": "A help page updated on 1 August 2025 says a 30-day trial is free, then families pay $29.99 a month or $299.99 a year. Banks, credit unions, and wealth firms also give it to customers. A household can pay out of pocket, or an institution can include it.",
+          "sources": [
+            "https://carefullsupport.zendesk.com/hc/en-us/articles/33704017001115-How-much-does-Carefull-cost",
+            "https://getcarefull.com"
+          ]
+        },
+        "what_it_does": {
+          "text": "Carefull watches checking, savings, credit card, and investment accounts for duplicate charges, odd fees, scam withdrawals, and spending that does not match a person's usual pattern. It can share view-only alerts with a trusted contact. The site says one membership covers two people.",
+          "sources": [
+            "https://getcarefull.com",
+            "https://www.truelinkfinancial.com/",
+            "https://www.pflege.de/"
+          ]
+        },
         "why_interesting": {
           "text": "Max Goldman and Todd Rovak founded Carefull in 2019. Goldman previously managed products at Google, and Directr, a company he started, was acquired by YouTube, while Rovak was previously chief executive of Fahrenheit 212, which Capgemini acquired. The 2025 article says the new engine looks for fraud and for signs of cognitive decline in how money moves.",
           "sources": [
@@ -24155,15 +24354,26 @@
             "https://finance.yahoo.com/news/financial-monitoring-application-carefull-announces-184228506.html"
           ]
         },
-        "status": {
-          "text": "The site lists Carefull Corporation at 132 West 31st Street, 9th floor, New York, and a phone number. Yahoo Finance dated 27 October 2025 reported the GreyMatter launch.",
-          "state": "active",
-          "as_of": "2026-10-05",
-          "sources": [
-            "https://getcarefull.com/about",
-            "https://finance.yahoo.com/news/financial-monitoring-application-carefull-announces-184228506.html"
-          ]
-        }
+        "competitors": [
+          {
+            "name": "True Link",
+            "difference": "Unlike True Link, which issues a prepaid card that families can control, Carefull connects to accounts the person already has.",
+            "sources": [
+              "https://getcarefull.com",
+              "https://www.truelinkfinancial.com/",
+              "https://www.pflege.de/"
+            ]
+          },
+          {
+            "name": "Pflege.de",
+            "difference": "Compared with Pflege.de, which guides families through care benefits, Carefull stays on the money: fraud, mistakes, and spending that does not look like the person's own.",
+            "sources": [
+              "https://getcarefull.com",
+              "https://www.truelinkfinancial.com/",
+              "https://www.pflege.de/"
+            ]
+          }
+        ]
       },
       "writeup_qa": {
         "pass": true,
@@ -25605,18 +25815,13 @@
         }
       },
       "writeup": {
-        "what_it_does": {
-          "text": "CarePredict sells senior-living communities a wrist device. A resident can press a button for help. The company says the platform can flag a fall and slower changes in daily activity, then alert staff. The about page says it began as a way to watch parents from afar and is used in senior living. Unlike cogvis, which watches a room with a 3D sensor and says it stores no camera pictures, CarePredict uses a wrist device the resident wears. Compared with CallPanion, which plans phone chats for a family, CarePredict alerts staff inside a senior-living community.",
+        "status": {
+          "text": "The site lists headquarters at 600 North Pine Island Road, Suite 370, Plantation, Florida. The filing names CarePredict, Inc., a Delaware corporation, and Satish Movva as chief executive. No news found in the last 12 months.",
+          "as_of": "2026-10-05",
+          "state": "active",
           "sources": [
             "https://www.carepredict.com/about",
-            "https://www.cogvis.ai/",
-            "https://callpanion.co.uk"
-          ]
-        },
-        "who_pays": {
-          "text": "Senior-living operators buy it for their communities. No public price. It is sold by direct sales and a request for a demo. No family reimbursement route was found on the pages reviewed.",
-          "sources": [
-            "https://www.carepredict.com/about"
+            "https://www.sec.gov/Archives/edgar/data/1641753/000164175326000003/primary_doc.xml"
           ]
         },
         "traction": {
@@ -25627,6 +25832,20 @@
             "https://www.sec.gov/Archives/edgar/data/1641753/000164175326000003/primary_doc.xml"
           ]
         },
+        "who_pays": {
+          "text": "Senior-living operators buy it for their communities. No public price. It is sold by direct sales and a request for a demo. No family reimbursement route was found on the pages reviewed.",
+          "sources": [
+            "https://www.carepredict.com/about"
+          ]
+        },
+        "what_it_does": {
+          "text": "CarePredict sells senior-living communities a wrist device. A resident can press a button for help. The company says the platform can flag a fall and slower changes in daily activity, then alert staff. The about page says it began as a way to watch parents from afar and is used in senior living.",
+          "sources": [
+            "https://www.carepredict.com/about",
+            "https://www.cogvis.ai/",
+            "https://callpanion.co.uk"
+          ]
+        },
         "why_interesting": {
           "text": "Movva founded CarePredict in 2013 while caring for his parents from afar. He previously served as chief information officer at Interim HealthCare, and this was his second startup. The June 2026 filing shows a share sale still mostly unsold.",
           "sources": [
@@ -25634,15 +25853,26 @@
             "https://www.sec.gov/Archives/edgar/data/1641753/000164175326000003/primary_doc.xml"
           ]
         },
-        "status": {
-          "text": "The site lists headquarters at 600 North Pine Island Road, Suite 370, Plantation, Florida. The filing names CarePredict, Inc., a Delaware corporation, and Satish Movva as chief executive. No news found in the last 12 months.",
-          "state": "active",
-          "as_of": "2026-10-05",
-          "sources": [
-            "https://www.carepredict.com/about",
-            "https://www.sec.gov/Archives/edgar/data/1641753/000164175326000003/primary_doc.xml"
-          ]
-        }
+        "competitors": [
+          {
+            "name": "cogvis",
+            "difference": "Unlike cogvis, which watches a room with a 3D sensor and says it stores no camera pictures, CarePredict uses a wrist device the resident wears.",
+            "sources": [
+              "https://www.carepredict.com/about",
+              "https://www.cogvis.ai/",
+              "https://callpanion.co.uk"
+            ]
+          },
+          {
+            "name": "CallPanion",
+            "difference": "Compared with CallPanion, which plans phone chats for a family, CarePredict alerts staff inside a senior-living community.",
+            "sources": [
+              "https://www.carepredict.com/about",
+              "https://www.cogvis.ai/",
+              "https://callpanion.co.uk"
+            ]
+          }
+        ]
       },
       "writeup_qa": {
         "pass": true,
