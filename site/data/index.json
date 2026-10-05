@@ -1627,7 +1627,59 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": "/api/logo/company-ditto"
+      "logo": "/api/logo/company-ditto",
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": true,
+        "word_count": 278,
+        "criteria": {
+          "independent_sources": {
+            "pass": false,
+            "note": "1 independent source(s): startbase.com. Need at least 3."
+          },
+          "claims_sourced": {
+            "pass": false,
+            "note": "Section without a source: competitors."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": true,
+            "note": "Buyer, public price, and reimbursement route are stated."
+          },
+          "traction": {
+            "pass": true,
+            "note": "Traction has a number and a date."
+          },
+          "story": {
+            "pass": false,
+            "note": "Missing founded year in the write-up, founder background."
+          },
+          "competitors": {
+            "pass": true,
+            "note": "Names Confidant, ERITAJ and says how this company differs."
+          },
+          "insight": {
+            "pass": true,
+            "note": "2 sentences of insight."
+          },
+          "recent_news": {
+            "pass": true,
+            "note": "Dated item 2026-05-12 via startbase.com."
+          },
+          "shape": {
+            "pass": true,
+            "note": "150 to 300 words, no dash, does not repeat the one-liner."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
+          }
+        }
+      }
     },
     {
       "id": "company-lateral",
@@ -3672,7 +3724,59 @@
       "why_dropped": null,
       "tag": "Loneliness and connection",
       "tag_secondary": null,
-      "logo": "/api/logo/company-dignity-charm"
+      "logo": "/api/logo/company-dignity-charm",
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": true,
+        "word_count": 341,
+        "criteria": {
+          "independent_sources": {
+            "pass": false,
+            "note": "2 independent source(s): charmful.jp, wantedly.com. Need at least 3."
+          },
+          "claims_sourced": {
+            "pass": false,
+            "note": "Section without a source: competitors."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": false,
+            "note": "Missing public price."
+          },
+          "traction": {
+            "pass": true,
+            "note": "Traction has a number and a date."
+          },
+          "story": {
+            "pass": true,
+            "note": "Founding, background, funding, and operating status are in the write-up."
+          },
+          "competitors": {
+            "pass": true,
+            "note": "Names Domalys, DayClocks and says how this company differs."
+          },
+          "insight": {
+            "pass": true,
+            "note": "2 sentences of insight."
+          },
+          "recent_news": {
+            "pass": true,
+            "note": "States that no recent item was found."
+          },
+          "shape": {
+            "pass": false,
+            "note": "Fails shape: 341 words."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
+          }
+        }
+      }
     },
     {
       "id": "company-quantune",
@@ -3787,6 +3891,58 @@
         "linkedin": {
           "url": "https://www.linkedin.com/company/deeplongevity",
           "source": "https://www.linkedin.com/company/deeplongevity"
+        }
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": true,
+        "word_count": 334,
+        "criteria": {
+          "independent_sources": {
+            "pass": false,
+            "note": "1 independent source(s): prnewswire.com. Need at least 3."
+          },
+          "claims_sourced": {
+            "pass": false,
+            "note": "Section without a source: competitors."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": true,
+            "note": "Buyer, public price, and reimbursement route are stated."
+          },
+          "traction": {
+            "pass": false,
+            "note": "No dated customer, user, deployment, or revenue figure."
+          },
+          "story": {
+            "pass": true,
+            "note": "Founding, background, funding, and operating status are in the write-up."
+          },
+          "competitors": {
+            "pass": true,
+            "note": "Names Five Lives, BrainCheck and says how this company differs."
+          },
+          "insight": {
+            "pass": true,
+            "note": "2 sentences of insight."
+          },
+          "recent_news": {
+            "pass": true,
+            "note": "Dated item 2026-09-28 via prnewswire.com."
+          },
+          "shape": {
+            "pass": false,
+            "note": "Fails shape: 334 words."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
+          }
         }
       }
     },
@@ -3986,47 +4142,47 @@
         "pass": false,
         "checked_at": "2026-10-05",
         "needs_reresearch": true,
-        "word_count": 292,
+        "word_count": 342,
         "criteria": {
           "independent_sources": {
-            "pass": false,
-            "note": "2 independent source(s): accessdata.fda.gov, prnewswire.com. Need at least 3."
+            "pass": true,
+            "note": "3 independent source(s): prnewswire.com, accessdata.fda.gov, ycombinator.com."
           },
           "claims_sourced": {
-            "pass": true,
-            "note": "Each included section has a source URL."
+            "pass": false,
+            "note": "Section without a source: competitors."
           },
           "mechanics": {
             "pass": true,
             "note": "Product section names the device or service in plain language."
           },
           "money": {
-            "pass": false,
-            "note": "Missing public price, reimbursement route."
+            "pass": true,
+            "note": "Buyer, public price, and reimbursement route are stated."
           },
           "traction": {
             "pass": false,
             "note": "No dated customer, user, deployment, or revenue figure."
           },
           "story": {
-            "pass": false,
-            "note": "Missing founded year in the write-up, founder name, founder background, funding history with amounts or an explicit none-found."
+            "pass": true,
+            "note": "Founding, background, funding, and operating status are in the write-up."
           },
           "competitors": {
-            "pass": false,
-            "note": "Does not name two or three real competitors or say how this differs from each."
+            "pass": true,
+            "note": "Names Five Lives, BrainCheck and says how this company differs."
           },
           "insight": {
             "pass": true,
-            "note": "3 sentences of insight."
+            "note": "2 sentences of insight."
           },
           "recent_news": {
             "pass": true,
             "note": "States that no recent item was found."
           },
           "shape": {
-            "pass": true,
-            "note": "150 to 300 words, no dash, does not repeat the one-liner."
+            "pass": false,
+            "note": "Fails shape: 342 words."
           },
           "scope": {
             "pass": true,
@@ -10117,47 +10273,47 @@
         "pass": false,
         "checked_at": "2026-10-05",
         "needs_reresearch": true,
-        "word_count": 307,
+        "word_count": 321,
         "criteria": {
           "independent_sources": {
-            "pass": false,
-            "note": "2 independent source(s): play.google.com, efe.com. Need at least 3."
+            "pass": true,
+            "note": "4 independent source(s): play.google.com, viaempresa.cat, datoscif.es, europapress.es."
           },
           "claims_sourced": {
-            "pass": true,
-            "note": "Each included section has a source URL."
+            "pass": false,
+            "note": "Section without a source: competitors."
           },
           "mechanics": {
             "pass": true,
             "note": "Product section names the device or service in plain language."
           },
           "money": {
-            "pass": false,
-            "note": "Missing public price, reimbursement route."
+            "pass": true,
+            "note": "Buyer, public price, and reimbursement route are stated."
           },
           "traction": {
-            "pass": true,
-            "note": "Traction has a number and a date."
+            "pass": false,
+            "note": "No dated customer, user, deployment, or revenue figure."
           },
           "story": {
             "pass": false,
-            "note": "Missing founded year in the write-up, founder name, founder background, funding history with amounts or an explicit none-found."
+            "note": "Missing founder background."
           },
           "competitors": {
-            "pass": false,
-            "note": "Does not name two or three real competitors or say how this differs from each."
+            "pass": true,
+            "note": "Names DayClocks, Durcal and says how this company differs."
           },
           "insight": {
             "pass": true,
             "note": "3 sentences of insight."
           },
           "recent_news": {
-            "pass": false,
-            "note": "No news from the last 12 months, and the write-up does not say none was found."
+            "pass": true,
+            "note": "States that no recent item was found."
           },
           "shape": {
             "pass": false,
-            "note": "Fails shape: 307 words."
+            "note": "Fails shape: 321 words."
           },
           "scope": {
             "pass": true,
@@ -11120,6 +11276,58 @@
           "url": "https://www.linkedin.com/company/domalys",
           "source": "https://www.linkedin.com/company/domalys"
         }
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": true,
+        "word_count": 328,
+        "criteria": {
+          "independent_sources": {
+            "pass": false,
+            "note": "1 independent source(s): entreprises.nouvelle-aquitaine.fr. Need at least 3."
+          },
+          "claims_sourced": {
+            "pass": false,
+            "note": "Section without a source: competitors."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": true,
+            "note": "Buyer, public price, and reimbursement route are stated."
+          },
+          "traction": {
+            "pass": true,
+            "note": "Traction has a number and a date."
+          },
+          "story": {
+            "pass": false,
+            "note": "Missing founder background."
+          },
+          "competitors": {
+            "pass": true,
+            "note": "Names DayClocks, Durcal and says how this company differs."
+          },
+          "insight": {
+            "pass": true,
+            "note": "2 sentences of insight."
+          },
+          "recent_news": {
+            "pass": true,
+            "note": "States that no recent item was found."
+          },
+          "shape": {
+            "pass": false,
+            "note": "Fails shape: 328 words."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
+          }
+        }
       }
     },
     {
@@ -11270,6 +11478,58 @@
         "country": {
           "code": "NL",
           "source": "https://www.dayclocks.nl/contact/"
+        }
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": true,
+        "word_count": 340,
+        "criteria": {
+          "independent_sources": {
+            "pass": true,
+            "note": "3 independent source(s): the-dayclock.com, ionic.io, persportaal.anp.nl."
+          },
+          "claims_sourced": {
+            "pass": false,
+            "note": "Section without a source: competitors."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": true,
+            "note": "Buyer, public price, and reimbursement route are stated."
+          },
+          "traction": {
+            "pass": false,
+            "note": "No dated customer, user, deployment, or revenue figure."
+          },
+          "story": {
+            "pass": false,
+            "note": "Missing funding history with amounts or an explicit none-found."
+          },
+          "competitors": {
+            "pass": true,
+            "note": "Names Confidant, Compaan and says how this company differs."
+          },
+          "insight": {
+            "pass": true,
+            "note": "3 sentences of insight."
+          },
+          "recent_news": {
+            "pass": true,
+            "note": "States that no recent item was found."
+          },
+          "shape": {
+            "pass": false,
+            "note": "Fails shape: 340 words."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
+          }
         }
       }
     },
@@ -13489,6 +13749,58 @@
           "code": "DE",
           "source": "https://eritaj.de/impressum"
         }
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": true,
+        "word_count": 280,
+        "criteria": {
+          "independent_sources": {
+            "pass": false,
+            "note": "1 independent source(s): apps.apple.com. Need at least 3."
+          },
+          "claims_sourced": {
+            "pass": false,
+            "note": "Section without a source: competitors."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": true,
+            "note": "Buyer, public price, and reimbursement route are stated."
+          },
+          "traction": {
+            "pass": false,
+            "note": "No dated customer, user, deployment, or revenue figure."
+          },
+          "story": {
+            "pass": false,
+            "note": "Missing founded year in the write-up, founder background."
+          },
+          "competitors": {
+            "pass": true,
+            "note": "Names Farewill, ETERNY and says how this company differs."
+          },
+          "insight": {
+            "pass": true,
+            "note": "2 sentences of insight."
+          },
+          "recent_news": {
+            "pass": true,
+            "note": "States that no recent item was found."
+          },
+          "shape": {
+            "pass": true,
+            "note": "150 to 300 words, no dash, does not repeat the one-liner."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
+          }
+        }
       }
     },
     {
@@ -13961,47 +14273,47 @@
         "pass": false,
         "checked_at": "2026-10-05",
         "needs_reresearch": true,
-        "word_count": 264,
+        "word_count": 320,
         "criteria": {
           "independent_sources": {
-            "pass": false,
-            "note": "1 independent source(s): apps.apple.com. Need at least 3."
+            "pass": true,
+            "note": "3 independent source(s): tech.eu, apps.apple.com, cc.cz."
           },
           "claims_sourced": {
-            "pass": true,
-            "note": "Each included section has a source URL."
+            "pass": false,
+            "note": "Section without a source: competitors."
           },
           "mechanics": {
             "pass": true,
             "note": "Product section names the device or service in plain language."
           },
           "money": {
-            "pass": false,
-            "note": "Missing buyer, reimbursement route."
+            "pass": true,
+            "note": "Buyer, public price, and reimbursement route are stated."
           },
           "traction": {
             "pass": true,
             "note": "Traction has a number and a date."
           },
           "story": {
-            "pass": false,
-            "note": "Missing founded year in the write-up, founder name, founder background, funding history with amounts or an explicit none-found."
+            "pass": true,
+            "note": "Founding, background, funding, and operating status are in the write-up."
           },
           "competitors": {
-            "pass": false,
-            "note": "Does not name two or three real competitors or say how this differs from each."
+            "pass": true,
+            "note": "Names Farewill, ERITAJ and says how this company differs."
           },
           "insight": {
-            "pass": false,
-            "note": "4 sentences. Keep it to three."
+            "pass": true,
+            "note": "2 sentences of insight."
           },
           "recent_news": {
             "pass": false,
             "note": "The 29 January 2026 App Store review is not a news story, and the write-up does not say none was found."
           },
           "shape": {
-            "pass": true,
-            "note": "150 to 300 words, no dash, does not repeat the one-liner."
+            "pass": false,
+            "note": "Fails shape: 320 words."
           },
           "scope": {
             "pass": true,
@@ -15930,6 +16242,58 @@
           "url": "https://www.linkedin.com/company/domicilix",
           "source": "https://www.linkedin.com/company/domicilix"
         }
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": true,
+        "word_count": 296,
+        "criteria": {
+          "independent_sources": {
+            "pass": false,
+            "note": "2 independent source(s): dhnet.be, kbopub.economie.fgov.be. Need at least 3."
+          },
+          "claims_sourced": {
+            "pass": false,
+            "note": "Section without a source: competitors."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": true,
+            "note": "Buyer, public price, and reimbursement route are stated."
+          },
+          "traction": {
+            "pass": false,
+            "note": "No dated customer, user, deployment, or revenue figure."
+          },
+          "story": {
+            "pass": false,
+            "note": "Missing founder background."
+          },
+          "competitors": {
+            "pass": true,
+            "note": "Names Compaan, Durcal and says how this company differs."
+          },
+          "insight": {
+            "pass": true,
+            "note": "2 sentences of insight."
+          },
+          "recent_news": {
+            "pass": true,
+            "note": "States that no recent item was found."
+          },
+          "shape": {
+            "pass": true,
+            "note": "150 to 300 words, no dash, does not repeat the one-liner."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
+          }
+        }
       }
     },
     {
@@ -16869,7 +17233,7 @@
           }
         ]
       },
-      "published": true,
+      "published": false,
       "title": "DeepSpin",
       "research_summary": "developing a next-gen, AI-powered MRI machine that is portable, affordable, and revolutionizing medical imaging globally.",
       "job": "It is a developing a next-gen, AI-powered MRI machine that is portable, affordable, and revolutionizing medical imaging globally.",
@@ -16907,6 +17271,58 @@
         "linkedin": {
           "url": "https://www.linkedin.com/company/deepspin",
           "source": "https://www.linkedin.com/company/deepspin"
+        }
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": false,
+        "word_count": 308,
+        "criteria": {
+          "independent_sources": {
+            "pass": true,
+            "note": "3 independent source(s): techcrunch.com, northdata.com, apex.ventures."
+          },
+          "claims_sourced": {
+            "pass": false,
+            "note": "Section without a source: competitors."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": true,
+            "note": "Buyer, public price, and reimbursement route are stated."
+          },
+          "traction": {
+            "pass": false,
+            "note": "No dated customer, user, deployment, or revenue figure."
+          },
+          "story": {
+            "pass": true,
+            "note": "Founding, background, funding, and operating status are in the write-up."
+          },
+          "competitors": {
+            "pass": true,
+            "note": "Names EXER, Darmiyan and says how this company differs."
+          },
+          "insight": {
+            "pass": true,
+            "note": "2 sentences of insight."
+          },
+          "recent_news": {
+            "pass": true,
+            "note": "States that no recent item was found."
+          },
+          "shape": {
+            "pass": false,
+            "note": "Fails shape: 308 words."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Hidden, with an internal reason stored off the page."
+          }
         }
       }
     },
@@ -18054,6 +18470,58 @@
           "url": "https://www.linkedin.com/company/diawiser",
           "source": "https://www.linkedin.com/company/diawiser"
         }
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": true,
+        "word_count": 297,
+        "criteria": {
+          "independent_sources": {
+            "pass": true,
+            "note": "3 independent source(s): aiforgood.itu.int, okredo.com, lovejob.lt."
+          },
+          "claims_sourced": {
+            "pass": false,
+            "note": "Section without a source: competitors."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": true,
+            "note": "Buyer, public price, and reimbursement route are stated."
+          },
+          "traction": {
+            "pass": false,
+            "note": "No dated customer, user, deployment, or revenue figure."
+          },
+          "story": {
+            "pass": false,
+            "note": "Missing founder background."
+          },
+          "competitors": {
+            "pass": true,
+            "note": "Names EXER, Wave, E-Med4All and says how this company differs."
+          },
+          "insight": {
+            "pass": true,
+            "note": "2 sentences of insight."
+          },
+          "recent_news": {
+            "pass": true,
+            "note": "States that no recent item was found."
+          },
+          "shape": {
+            "pass": true,
+            "note": "150 to 300 words, no dash, does not repeat the one-liner."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
+          }
+        }
       }
     },
     {
@@ -18757,6 +19225,58 @@
         "linkedin": {
           "url": "https://www.linkedin.com/company/exerai",
           "source": "https://www.linkedin.com/company/exerai"
+        }
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": true,
+        "word_count": 282,
+        "criteria": {
+          "independent_sources": {
+            "pass": false,
+            "note": "2 independent source(s): builtincolorado.com, prnewswire.com. Need at least 3."
+          },
+          "claims_sourced": {
+            "pass": false,
+            "note": "Section without a source: competitors."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": true,
+            "note": "Buyer, public price, and reimbursement route are stated."
+          },
+          "traction": {
+            "pass": false,
+            "note": "No dated customer, user, deployment, or revenue figure."
+          },
+          "story": {
+            "pass": false,
+            "note": "Missing founder background."
+          },
+          "competitors": {
+            "pass": true,
+            "note": "Names Wave, E-Med4All, Dynseo and says how this company differs."
+          },
+          "insight": {
+            "pass": true,
+            "note": "2 sentences of insight."
+          },
+          "recent_news": {
+            "pass": true,
+            "note": "States that no recent item was found."
+          },
+          "shape": {
+            "pass": true,
+            "note": "150 to 300 words, no dash, does not repeat the one-liner."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
+          }
         }
       }
     },
@@ -20069,6 +20589,58 @@
         "linkedin": {
           "url": "https://www.linkedin.com/company/emed4all",
           "source": "https://www.linkedin.com/company/emed4all"
+        }
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": true,
+        "word_count": 320,
+        "criteria": {
+          "independent_sources": {
+            "pass": false,
+            "note": "1 independent source(s): vg.hu. Need at least 3."
+          },
+          "claims_sourced": {
+            "pass": false,
+            "note": "Section without a source: competitors."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": true,
+            "note": "Buyer, public price, and reimbursement route are stated."
+          },
+          "traction": {
+            "pass": true,
+            "note": "Traction has a number and a date."
+          },
+          "story": {
+            "pass": false,
+            "note": "Missing funding history with amounts or an explicit none-found."
+          },
+          "competitors": {
+            "pass": true,
+            "note": "Names Diawiser, EXER, Wave and says how this company differs."
+          },
+          "insight": {
+            "pass": true,
+            "note": "2 sentences of insight."
+          },
+          "recent_news": {
+            "pass": true,
+            "note": "States that no recent item was found."
+          },
+          "shape": {
+            "pass": false,
+            "note": "Fails shape: 320 words."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
+          }
         }
       }
     },
@@ -24956,6 +25528,58 @@
           "url": "https://www.linkedin.com/company/durcal",
           "source": "https://www.linkedin.com/company/durcal"
         }
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": true,
+        "word_count": 324,
+        "criteria": {
+          "independent_sources": {
+            "pass": false,
+            "note": "2 independent source(s): es.ara.cat, lavanguardia.com. Need at least 3."
+          },
+          "claims_sourced": {
+            "pass": false,
+            "note": "Section without a source: competitors."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": true,
+            "note": "Buyer, public price, and reimbursement route are stated."
+          },
+          "traction": {
+            "pass": true,
+            "note": "Traction has a number and a date."
+          },
+          "story": {
+            "pass": true,
+            "note": "Founding, background, funding, and operating status are in the write-up."
+          },
+          "competitors": {
+            "pass": true,
+            "note": "Names Confidant, DayClocks, Elder and says how this company differs."
+          },
+          "insight": {
+            "pass": true,
+            "note": "2 sentences of insight."
+          },
+          "recent_news": {
+            "pass": true,
+            "note": "States that no recent item was found."
+          },
+          "shape": {
+            "pass": false,
+            "note": "Fails shape: 324 words."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
+          }
+        }
       }
     },
     {
@@ -27652,6 +28276,58 @@
         "linkedin": {
           "url": "https://www.linkedin.com/company/dynseo",
           "source": "https://www.linkedin.com/company/dynseo"
+        }
+      },
+      "writeup_qa": {
+        "pass": false,
+        "checked_at": "2026-10-05",
+        "needs_reresearch": true,
+        "word_count": 304,
+        "criteria": {
+          "independent_sources": {
+            "pass": false,
+            "note": "2 independent source(s): apps.apple.com, maddyness.com. Need at least 3."
+          },
+          "claims_sourced": {
+            "pass": false,
+            "note": "Section without a source: competitors."
+          },
+          "mechanics": {
+            "pass": true,
+            "note": "Product section names the device or service in plain language."
+          },
+          "money": {
+            "pass": true,
+            "note": "Buyer, public price, and reimbursement route are stated."
+          },
+          "traction": {
+            "pass": false,
+            "note": "No dated customer, user, deployment, or revenue figure."
+          },
+          "story": {
+            "pass": false,
+            "note": "Missing founder background."
+          },
+          "competitors": {
+            "pass": true,
+            "note": "Names Five Lives, BrainCheck and says how this company differs."
+          },
+          "insight": {
+            "pass": true,
+            "note": "2 sentences of insight."
+          },
+          "recent_news": {
+            "pass": true,
+            "note": "States that no recent item was found."
+          },
+          "shape": {
+            "pass": false,
+            "note": "Fails shape: 304 words."
+          },
+          "scope": {
+            "pass": true,
+            "note": "Published company. Not marked dead or out of scope."
+          }
         }
       }
     },
