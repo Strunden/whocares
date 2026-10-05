@@ -4,6 +4,8 @@
 **Audience for this file:** Claude Design first, then Grok Bot / Cursor for wire-only implementation. Not a Figma-to-human handoff checklist. Not permission for the coding agent to redesign.  
 **Product:** Who Cares is a research tool and conversation starter for AgeTechX, care operators, founders, and payers. Live map of ageing tech: companies, ideas, and what we killed. It is not the venture.
 
+**Glossary:** **Kill** = an idea we researched and deliberately dropped, with a short reason still shown so people learn what failed and why. Kills stay in the index (muted status), not deleted.
+
 No em dashes in copy or UI strings.
 
 ---
