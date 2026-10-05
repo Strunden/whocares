@@ -20,17 +20,33 @@ body {
 button, input { font: inherit; color: inherit; }
 button { cursor: pointer; }
 a { color: var(--link); }
-.app { max-width: 480px; margin: 0 auto; min-height: 100vh; }
+.app {
+  max-width: 480px;
+  margin: 0 auto;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
 
 .bar {
-  position: sticky;
-  top: 0;
+  position: relative;
+  flex: 0 0 auto;
   z-index: 5;
   background: var(--bg);
   padding: calc(8px + env(safe-area-inset-top)) 16px 8px;
-  border-bottom: 0.5px solid transparent;
+  border-bottom: 0.5px solid var(--line);
+}
+.scroller {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 .bar-top { display: flex; align-items: center; gap: 8px; min-height: 44px; }
+.bar-top[hidden] { display: none; }
 .back {
   display: inline-flex;
   align-items: center;
@@ -87,21 +103,65 @@ a { color: var(--link); }
   font-size: 16px;
 }
 .search::placeholder { color: #555; }
-.tags { display: flex; flex-wrap: wrap; gap: 6px; padding: 2px 0 8px; }
+.tags {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 6px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  margin: 0 -16px;
+  padding: 2px 16px 0;
+}
+.tags::-webkit-scrollbar { display: none; }
 .tags[hidden] { display: none; }
-.chip {
+.tags .chip {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
   border: 0;
   background: var(--fill);
   color: var(--ink);
   border-radius: 999px;
+  margin: 0;
   padding: 6px 10px;
   min-height: 32px;
   font-size: 13px;
+  font-weight: 400;
   line-height: 1.2;
 }
-.chip[aria-pressed="true"] { background: #111; color: #fff; }
+.tags .chip[aria-pressed="true"],
+.tags .chip-on { background: #111; color: #fff; }
+.tags .chip-x { font-size: 16px; line-height: 1; }
+.tags .tag-count {
+  flex: 0 0 auto;
+  color: var(--meta);
+  font-size: 13px;
+  white-space: nowrap;
+}
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
 
-.intro { padding: 2px 0 8px; }
+.intro { padding: 8px 16px 10px; }
+.intro:empty { display: none; padding: 0; }
+.home-title {
+  margin: 0 0 4px;
+  font-size: 34px;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+  font-weight: 700;
+}
 .bar .screen-title { margin: 2px 0 2px; }
 .bar .screen-meta { margin: 0 0 8px; }
 .lede, .counts { margin: 0; color: var(--meta); font-size: 15px; line-height: 1.35; }
@@ -241,7 +301,7 @@ a { color: var(--link); }
 
 @media (min-width: 800px) {
   body { background: #e7e7ee; }
-  .app { background: var(--bg); min-height: 100vh; box-shadow: 0 0 0 0.5px var(--line); }
+  .app { background: var(--bg); height: 100vh; height: 100dvh; box-shadow: 0 0 0 0.5px var(--line); }
 }
 
 /* Secondary pages (mechanism, sources, how to add, archived company files). */
