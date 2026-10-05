@@ -32,9 +32,9 @@ Overview first, zoom and filter, then details on demand (Shneiderman; OWID topic
 - Wide multi-column tables on phone: unusable; use stacked cards.
 - Tiny map dots: need real hit targets.
 
-## Agent tool note (autonomous, not Figma handoff)
+## Agent tool note (locked ownership)
 
-Best loop today: coding agent + Mobbin/Refero references + local screenshots. Optional Figma MCP later for token round-trip. Image-gen is mood-only.
+Fabian locked this split on 5 Oct 2026. **Claude Design** is the primary design agent: visual system, screens, and polish, exported as zip/HTML to `design/handoff/YYYY-MM-DD/`. **Grok Bot / Cursor** implement that handoff into `site/` exactly and wire real `index.json` / Neon / Workers. Forbidden there: redesign, a new palette, or "improving" visuals. Ranked tools: Claude Design, then Mobbin/Refero for references, then the coding agent for wire-only work after handoff. Image-gen is banned as source of truth. Figma is optional later. Lovable is an optional parallel for React exploration on Free + GitHub sync, not the primary path for static Pages. Patterns, tokens, anti-goals, and the success checklist in the design brief stay binding.
 
 ## Sources touched
 

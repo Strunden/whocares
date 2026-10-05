@@ -1,40 +1,52 @@
 # Who Cares design brief
 
-**Status:** Revised 5 Oct 2026 Europe/Berlin after research-map UX review and rejection of image-gen mockups as source of truth.  
-**Audience for this file:** An autonomous design agent that edits `site/` directly. Not a Figma-to-human handoff checklist.  
+**Status:** Ownership locked 5 Oct 2026 Europe/Berlin (Fabian). Claude Design owns the visual system, screens, and polish. Grok Bot / Cursor implement the dated handoff into `site/` exactly. Research-map UX patterns, tokens, anti-goals, and the success checklist from the same-day revision stay in force. Image-gen stays banned as source of truth.  
+**Audience for this file:** Claude Design first, then Grok Bot / Cursor for wire-only implementation. Not a Figma-to-human handoff checklist. Not permission for the coding agent to redesign.  
 **Product:** Who Cares is a research tool and conversation starter for AgeTechX, care operators, founders, and payers. Live map of ageing tech: companies, ideas, and what we killed. It is not the venture.
 
 No em dashes in copy or UI strings.
 
 ---
 
-## 1. Job of the design agent
+## 1. Ownership (locked)
 
-Ship a calm, trustworthy research-map product UI in code (`site/css`, `site/js`, HTML). Iterate against live screenshots (desktop + phone 393) until the success criteria pass. Do not wait for a human Figma pass. Do not treat AI image mockups as the visual source of truth.
+Fabian locked this split. Do not reopen it inside a design or implementation pass.
 
-### Preferred agent loop
+1. **Claude Design** owns the visual system, screens, and polish. It is the primary design agent.
+2. **Handoff:** export zip/HTML into `design/handoff/YYYY-MM-DD/`. That dated export is the visual source of truth for implementation.
+3. **Grok Bot / Cursor** implement the handoff into `site/` exactly and wire real `index.json` / Neon / Workers. Forbidden: redesign, a new palette, or "improving" the visuals.
+4. **Lovable** is optional and parallel: React exploration on the Free plan with GitHub sync. It is not primary for the static Pages site.
 
-1. Lock references (this brief + 3 to 5 real shipped screens from Mobbin or Refero).
-2. Implement tokens, chrome, map, cards, detail, empty/loading in `site/`.
-3. Serve locally; capture desktop and phone screenshots of home, map/index, one company deep dive.
-4. Score against the checklist in section 9. Fix the top failures. Repeat (max 3 loops per run unless told otherwise).
+Patterns, tokens, anti-goals, and the success checklist in this brief stay binding for every agent. Claude Design designs them. Grok Bot / Cursor do not reinterpret them.
+
+### Preferred loop
+
+1. Claude Design locks references: this brief, `docs/research-map-ux-patterns.md`, and 3 to 5 real shipped screens from Mobbin or Refero.
+2. Claude Design produces the visual system, screens, and polish, then exports zip/HTML into `design/handoff/YYYY-MM-DD/`.
+3. Grok Bot / Cursor implement that export into `site/` exactly (`site/css`, `site/js`, HTML). Wire real `site/data/index.json`. When live, wire Neon and Workers (`GET /api/index`, same schema). Do not redesign, invent a palette, or "improve" visuals.
+4. Serve locally. Capture desktop and phone (393) screenshots of home, map/index, and one company deep dive. Score against section 9 for fidelity to the handoff and for data truth. Visual misses go back to Claude Design. Wiring bugs stay with Grok Bot / Cursor. Repeat the handoff cycle as needed (max 3 visual loops per run unless told otherwise).
 5. Keep `site/data/index.json` real. Never invent companies or figures.
+6. If Lovable is used, keep it beside this loop for React exploration on Free + GitHub sync. It does not replace Claude Design and it does not own the static Pages tree.
 
-### Best tools for this loop (ranked)
+### Best tools (ranked)
 
 | Rank | Tool | Use for |
 | --- | --- | --- |
-| 1 | Cursor (or equivalent) coding agent with browser / screenshot feedback | Implement CSS/HTML/JS; see the real UI; fix drift |
-| 2 | Mobbin MCP and/or Refero MCP (or skill) | Real shipped screens and flows before inventing chrome |
-| 3 | Local static server + phone viewport (393) captures | Acceptance evidence |
-| 4 | This brief + `docs/research-map-ux-patterns.md` | Constraints and patterns |
-| 5 | Optional later: Figma MCP | Only if Fabian wants round-trip tokens or documentation. Not required to ship. Not a gate. |
+| 1 | Claude Design | Primary design agent. Visual system, screens, polish. Export zip/HTML to `design/handoff/YYYY-MM-DD/`. |
+| 2 | Mobbin and/or Refero | Real shipped screens and flows. References before chrome is invented. |
+| 3 | Grok Bot / Cursor | Wire-only after handoff. Implement the export into `site/` exactly. Wire real `index.json`, Neon, and Workers. |
+| 4 | This brief + `docs/research-map-ux-patterns.md` | Constraints: patterns, tokens, anti-goals, success checklist. |
+| 5 | Figma (optional, later) | Only if Fabian wants round-trip tokens or documentation. Not required to ship. Not a gate. |
+
+Lovable is not in this ranking. It stays an optional parallel for React exploration, not a substitute for rank 1 or rank 3 on static Pages.
 
 ### Explicitly weak / banned as source of truth
 
-- **Image-gen mockups** (Midjourney, DALL-E, Ideogram, "make it look like the PNG"): rejected once already. They lack real components, states, responsive behavior, accessibility, and readable UI text. Mood exploration only, never acceptance criteria.
+- **Image-gen mockups** (Midjourney, DALL-E, Ideogram, "make it look like the PNG"): banned as source of truth. Rejected once already. They lack real components, states, responsive behavior, accessibility, and readable UI text. Mood exploration only, never acceptance criteria.
 - **Cream paper + Source Serif research-docs skin** currently on Pages: wrong for product UI.
-- **Waiting for a designer to draw Figma first**: wrong operating model. Agent ships code.
+- **Coding-agent restyle:** Grok Bot / Cursor must not redesign, pick a new palette, or "improve" visuals while wiring `site/`.
+- **Lovable as the primary path for static Pages:** optional React exploration only.
+- **Waiting for a designer to draw Figma first:** still the wrong gate. Claude Design is the primary design agent. Figma is optional later.
 
 ---
 
@@ -208,6 +220,8 @@ Type or dictate a problem or idea. Browse shelf of matches from the index. If em
 
 ## 9. Deliverables and success checklist
 
+Claude Design owns how these look. Grok Bot / Cursor ship them in `site/` by implementing `design/handoff/YYYY-MM-DD/` exactly, then wiring real data. The checklist is the product bar. It is not permission to redesign.
+
 ### Ship in code
 
 - [ ] Design tokens (dark + light) in CSS variables
@@ -232,18 +246,20 @@ Type or dictate a problem or idea. Browse shelf of matches from the index. If em
 
 ---
 
-## 10. How to feed this agent (setup that works)
+## 10. How this work is split
 
-Successful autonomous design setups share the same spine:
+1. **Written brief with hard anti-goals** (this file) plus `docs/research-map-ux-patterns.md`. Patterns, tokens, anti-goals, and the success checklist stay binding.
+2. **Real UI references** via Mobbin / Refero, not invented aesthetics.
+3. **Claude Design** owns the visual system, screens, and polish. Primary design agent.
+4. **Handoff folder:** export zip/HTML into `design/handoff/YYYY-MM-DD/`. That export is what implementation must match.
+5. **Grok Bot / Cursor** implement the handoff into `site/` exactly and wire real `index.json` / Neon / Workers. No redesign, no new palette, no visual "improvements".
+6. **Eyes in the loop:** screenshots after implementation check fidelity to the handoff and to section 9. They are not a license to restyle.
+7. **Data truth wall:** real `index.json`; refuse to invent rows to make the map look full.
+8. **Image-gen banned as source of truth.** Mood exploration only, never the acceptance artifact.
+9. **Lovable** is optional and parallel: React exploration on Free + GitHub sync. Not primary for static Pages.
+10. **Figma** is optional later, for token round-trip or documentation, if Fabian asks. Not required to ship. Not a gate.
 
-1. **Written brief with hard anti-goals** (this file).
-2. **Real UI references** via Mobbin MCP / Refero (research-first skill), not invented aesthetics.
-3. **Code as canvas:** agent edits the live `site/` tree.
-4. **Eyes in the loop:** browser screenshots or structured UI diffs after each pass.
-5. **Data truth wall:** real `index.json`; refuse to invent rows to make the map look full.
-6. **Reject image-gen-as-truth:** optional mood only; never the acceptance artifact.
-
-Figma MCP is useful when a design system already lives in Figma and you want Code Connect / variables round-trip. It is **not** the required path for Who Cares today. Prefer: brief → refs → code → screenshot critique → code.
+Prefer: brief → Mobbin/Refero refs → Claude Design → `design/handoff/YYYY-MM-DD/` → Grok Bot / Cursor wire-only into `site/`.
 
 ---
 
