@@ -485,6 +485,43 @@
     return `<div class="analysis">${blocks.map((block) => `<section><h2>${t(block.label)}</h2><p>${t(block.text)}${block.sources.map(sourceLink).join("")}</p></section>`).join("")}</div>`;
   }
 
+  function factUrl(fact) {
+    if (!fact) return "";
+    if (typeof fact === "string") return safeUrl(fact);
+    if (typeof fact === "object") return safeUrl(fact.url || "");
+    return "";
+  }
+  function profileHref(fact, hostSuffix, pathPart) {
+    const href = factUrl(fact);
+    if (!href) return "";
+    try {
+      const url = new URL(href);
+      const host = url.hostname.toLowerCase().replace(/^www\./, "");
+      if (host !== hostSuffix && !host.endsWith("." + hostSuffix)) return "";
+      if (url.pathname.toLowerCase().indexOf(pathPart) === -1) return "";
+      return href;
+    } catch (err) {
+      return "";
+    }
+  }
+  function externalRow(href, label) {
+    let host = "";
+    try { host = new URL(href).host.replace(/^www\./, ""); } catch (err) { host = ""; }
+    return `<a class="row" href="${esc(href)}" target="_blank" rel="noopener">${iconTile("link")}<span class="row-text"><span class="name">${t(label)}</span><span class="meta">${t(host)}</span></span>${chevron()}</a>`;
+  }
+  function profileLinks(e) {
+    const rows = [];
+    const web = safeUrl(e.website);
+    if (web) rows.push(externalRow(web, "Website"));
+    const facts = e && e.facts && typeof e.facts === "object" ? e.facts : {};
+    const linkedin = profileHref(facts.linkedin, "linkedin.com", "/company/");
+    if (linkedin) rows.push(externalRow(linkedin, "LinkedIn"));
+    const crunchbase = profileHref(facts.crunchbase, "crunchbase.com", "/organization/");
+    if (crunchbase) rows.push(externalRow(crunchbase, "Crunchbase"));
+    if (!rows.length) return "";
+    return `<div class="group">${rows.join("")}</div>`;
+  }
+
   function similarCard(e) {
     const rows = similarEntries(e);
     if (!rows.length) return "";
@@ -514,11 +551,6 @@
     const droppedCard = dropped && !isJunk(dropped)
       ? `<div class="group"><div class="kv"><p class="kicker">Why we dropped it</p><p>${t(cleanProse(dropped))}</p></div></div>`
       : "";
-    const web = safeUrl(e.website);
-    let host = "";
-    if (web) {
-      try { host = new URL(web).host; } catch (err) { host = web; }
-    }
     const sources = sourcesOf(e);
     let html = `<article class="detail">
       <div class="detail-head">
@@ -534,13 +566,7 @@
     html += droppedCard;
     html += factsCard(e);
     html += similarCard(e);
-    if (web) {
-      html += `<div class="group"><a class="row" href="${esc(web)}" target="_blank" rel="noopener">
-        ${iconTile("link")}
-        <span class="row-text"><span class="name">Website</span><span class="meta">${t(host)}</span></span>
-        ${chevron()}
-      </a></div>`;
-    }
+    html += profileLinks(e);
     if (sources.length) {
       html += `<div class="group"><div class="pad"><p class="kicker">Sources</p><ul class="src-list">`;
       sources.forEach((s) => {

@@ -128,6 +128,8 @@ When a write-up passes, it is always open, directly under the name and the one-l
 - `investors`: `[{name, source}]`
 - `model`: `{text, source}` for pricing or the business model
 - `apps`: `[{name, url}]` for App Store or Google Play listings
+- `linkedin`: `{url, source}` for the LinkedIn company page. Add it only after the profile shows the same company name and the same website domain. Personal `/in/` profiles do not go here.
+- `crunchbase`: `{url, source}` for the Crunchbase organization page, with the same name and website-domain check. Leave either one out when the profile cannot be confirmed. The detail page shows confirmed links as rows beside Website.
 
 "Similar in Who Cares" is not stored. The page picks 3 to 5 other published entries with the same main tag and an overlapping job.
 

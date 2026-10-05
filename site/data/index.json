@@ -185,6 +185,10 @@
         "country": {
           "code": "DE",
           "source": "https://amara.app/impressum"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/amara-connects",
+          "source": "https://www.linkedin.com/company/amara-connects"
         }
       }
     },
@@ -336,6 +340,10 @@
         "country": {
           "code": "DE",
           "source": "https://invest-in.berlin/n/berlin-care-tech-startup-assistme-bags-eur65m/"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/assistmeio",
+          "source": "https://www.linkedin.com/company/assistmeio"
         }
       }
     },
@@ -442,6 +450,10 @@
         "country": {
           "code": "AT",
           "source": "https://www.ots.at/presseaussendung/OTS_20250312_OTS0020/cogvis-sichert-sich-siebenstelliges-investment-der-raiffeisen-landesbank-steiermark"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/cogvis-gmbh",
+          "source": "https://www.linkedin.com/company/cogvis-gmbh"
         }
       }
     },
@@ -825,6 +837,10 @@
         "country": {
           "code": "DE",
           "source": "https://www.veli-care.de/impressum"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/veli-care",
+          "source": "https://www.linkedin.com/company/veli-care"
         }
       }
     },
@@ -1090,6 +1106,10 @@
         "country": {
           "code": "DE",
           "source": "https://navelrobotics.com/impressum/"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/navel-robotics-gmbh",
+          "source": "https://www.linkedin.com/company/navel-robotics-gmbh"
         }
       }
     },
@@ -1274,6 +1294,10 @@
         "founded": {
           "year": 2018,
           "source": "https://teiacare.com/en/about-us/"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/teiacare",
+          "source": "https://www.linkedin.com/company/teiacare"
         }
       }
     },
@@ -1436,6 +1460,10 @@
         "country": {
           "code": "BE",
           "source": "https://mauricenora.be/contact"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/mauricenora",
+          "source": "https://www.linkedin.com/company/mauricenora"
         }
       }
     },
@@ -1517,7 +1545,13 @@
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": "/api/logo/company-dala-care"
+      "logo": "/api/logo/company-dala-care",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/dala-care",
+          "source": "https://www.linkedin.com/company/dala-care"
+        }
+      }
     },
     {
       "id": "company-ditto",
@@ -1774,6 +1808,10 @@
         "country": {
           "code": "DE",
           "source": "https://lindera.de/de/impressum"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/lindera",
+          "source": "https://www.linkedin.com/company/lindera"
         }
       }
     },
@@ -1924,7 +1962,13 @@
       "why_dropped": null,
       "tag": "Loneliness and connection",
       "tag_secondary": "Safety and falls",
-      "logo": "/api/logo/company-good-boost"
+      "logo": "/api/logo/company-good-boost",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/good-boost",
+          "source": "https://www.linkedin.com/company/good-boost"
+        }
+      }
     },
     {
       "id": "company-lendocare",
@@ -2067,7 +2111,13 @@
       "why_dropped": null,
       "tag": "Home and housing",
       "tag_secondary": null,
-      "logo": "/api/logo/company-nestflow"
+      "logo": "/api/logo/company-nestflow",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/nestflow",
+          "source": "https://www.linkedin.com/company/nestflow"
+        }
+      }
     },
     {
       "id": "company-oroi",
@@ -2544,6 +2594,10 @@
             "date": "2022",
             "source": "https://www.newventuresbc.com/top-25-spotlight-tuktu/"
           }
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/tuktu-care-inc",
+          "source": "https://www.linkedin.com/company/tuktu-care-inc"
         }
       },
       "writeup": {
@@ -2687,6 +2741,10 @@
         "founded": {
           "year": 2016,
           "source": "https://www.welbi.com/about-welbi"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/welbi",
+          "source": "https://www.linkedin.com/company/welbi"
         }
       }
     },
@@ -2756,7 +2814,11 @@
             "source": "https://www.zinniatv.com/about",
             "linkedin": "https://www.linkedin.com/in/william-a-uniowski/"
           }
-        ]
+        ],
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/zinnia-technologies-inc",
+          "source": "https://www.linkedin.com/company/zinnia-technologies-inc"
+        }
       }
     },
     {
@@ -2804,7 +2866,13 @@
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": "Family caregivers",
-      "logo": "/api/logo/company-careteam"
+      "logo": "/api/logo/company-careteam",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/careteam-technologies",
+          "source": "https://www.linkedin.com/company/careteam-technologies"
+        }
+      }
     },
     {
       "id": "company-sagecare",
@@ -2926,7 +2994,11 @@
             "name": "AARP's Agetech Collaborative",
             "source": "https://www.sagecare.ai/about"
           }
-        ]
+        ],
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/sagecare-ai",
+          "source": "https://www.linkedin.com/company/sagecare-ai"
+        }
       },
       "writeup_qa": {
         "pass": false,
@@ -3034,6 +3106,10 @@
         "founded": {
           "year": 2019,
           "source": "https://www.willful.co/about"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/willful",
+          "source": "https://www.linkedin.com/company/willful"
         }
       }
     },
@@ -3137,7 +3213,13 @@
       "why_dropped": null,
       "tag": "Daily life and getting around",
       "tag_secondary": null,
-      "logo": "/api/logo/company-imaginable"
+      "logo": "/api/logo/company-imaginable",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/imaginable-solutions",
+          "source": "https://www.linkedin.com/company/imaginable-solutions"
+        }
+      }
     },
     {
       "id": "company-rhem-labs",
@@ -3244,7 +3326,11 @@
             "role": "Founder and CEO",
             "source": "https://www.ycombinator.com/companies/rhem-labs"
           }
-        ]
+        ],
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/rhem-labs",
+          "source": "https://www.linkedin.com/company/rhem-labs"
+        }
       },
       "writeup_qa": {
         "pass": false,
@@ -3640,7 +3726,11 @@
             "name": "Vsquared Ventures",
             "source": "https://quantune.com"
           }
-        ]
+        ],
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/quantune",
+          "source": "https://www.linkedin.com/company/quantune"
+        }
       }
     },
     {
@@ -3688,7 +3778,13 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": "/api/logo/company-deep-longevity"
+      "logo": "/api/logo/company-deep-longevity",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/deeplongevity",
+          "source": "https://www.linkedin.com/company/deeplongevity"
+        }
+      }
     },
     {
       "id": "company-ekei-labs",
@@ -3735,7 +3831,13 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": "/api/logo/company-ekei-labs"
+      "logo": "/api/logo/company-ekei-labs",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/ekei-labs",
+          "source": "https://www.linkedin.com/company/ekei-labs"
+        }
+      }
     },
     {
       "id": "company-darmiyan",
@@ -3870,7 +3972,11 @@
             "name": "Pavan Krishnamurthy",
             "source": "https://darmiyan.com/team/"
           }
-        ]
+        ],
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/darmiyan",
+          "source": "https://www.linkedin.com/company/darmiyan"
+        }
       },
       "writeup_qa": {
         "pass": false,
@@ -4449,7 +4555,13 @@
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": "/api/logo/company-hartmann-hilmas"
+      "logo": "/api/logo/company-hartmann-hilmas",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/hartmann-group",
+          "source": "https://www.linkedin.com/company/hartmann-group"
+        }
+      }
     },
     {
       "id": "company-medifox",
@@ -4521,6 +4633,10 @@
         "country": {
           "code": "DE",
           "source": "https://www.medifoxdan.de/impressum"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/medifox-dan-gmbh",
+          "source": "https://www.linkedin.com/company/medifox-dan-gmbh"
         }
       }
     },
@@ -4634,7 +4750,11 @@
             "role": "Founder",
             "source": "https://www.apetito.de/-/media/ApetitoDe/Presse/Jahresupdate/05_apetito-in-Daten-und-Fakten.pdf"
           }
-        ]
+        ],
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/apetito",
+          "source": "https://www.linkedin.com/company/apetito"
+        }
       },
       "writeup": {
         "what_it_does": {
@@ -8192,7 +8312,11 @@
             "name": "Josh Mohrer",
             "source": "https://wave.co/about"
           }
-        ]
+        ],
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/waveapp-ai",
+          "source": "https://www.linkedin.com/company/waveapp-ai"
+        }
       }
     },
     {
@@ -8275,7 +8399,11 @@
             "name": "Fuel Ventures",
             "source": "https://aide.health/about-us"
           }
-        ]
+        ],
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/aide-health-co",
+          "source": "https://www.linkedin.com/company/aide-health-co"
+        }
       }
     },
     {
@@ -8386,6 +8514,10 @@
         "model": {
           "text": "$12 per month.",
           "source": "https://www.neelacares.com/pricing"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/neela-cares",
+          "source": "https://www.linkedin.com/company/neela-cares"
         }
       }
     },
@@ -8524,6 +8656,10 @@
         "country": {
           "code": "DE",
           "source": "https://www.northdata.com/Cliniserve%20GmbH"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/cliniserve",
+          "source": "https://www.linkedin.com/company/cliniserve"
         }
       }
     },
@@ -8587,6 +8723,10 @@
         "country": {
           "code": "DE",
           "source": "https://www.northdata.com/Hemby%20GmbH"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/hemby",
+          "source": "https://www.linkedin.com/company/hemby"
         }
       }
     },
@@ -8825,6 +8965,10 @@
         "country": {
           "code": "US",
           "source": "https://www.hedy.ai/de/about/"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/hedy-ai",
+          "source": "https://www.linkedin.com/company/hedy-ai"
         }
       }
     },
@@ -8909,7 +9053,13 @@
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": "/api/logo/company-altra"
+      "logo": "/api/logo/company-altra",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/altra-ie",
+          "source": "https://www.linkedin.com/company/altra-ie"
+        }
+      }
     },
     {
       "id": "company-eli-die-fee",
@@ -9074,6 +9224,10 @@
         "country": {
           "code": "FR",
           "source": "https://www.alenvi.io/mentions-legales"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/alenvi",
+          "source": "https://www.linkedin.com/company/alenvi"
         }
       }
     },
@@ -9313,6 +9467,10 @@
         "country": {
           "code": "DE",
           "source": "https://www.northdata.com/Movacare%20GmbH"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/movacare",
+          "source": "https://www.linkedin.com/company/movacare"
         }
       }
     },
@@ -9356,7 +9514,13 @@
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": "/api/logo/company-personalcare-systems"
+      "logo": "/api/logo/company-personalcare-systems",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/personalcare-systems",
+          "source": "https://www.linkedin.com/company/personalcare-systems"
+        }
+      }
     },
     {
       "id": "company-birdie",
@@ -9459,7 +9623,11 @@
             "name": "Index Ventures",
             "source": "https://techcrunch.com/2022/06/28/birdie-series-b/"
           }
-        ]
+        ],
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/birdiecare",
+          "source": "https://www.linkedin.com/company/birdiecare"
+        }
       }
     },
     {
@@ -9502,7 +9670,13 @@
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": "/api/logo/company-cubigo"
+      "logo": "/api/logo/company-cubigo",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/cubigo",
+          "source": "https://www.linkedin.com/company/cubigo"
+        }
+      }
     },
     {
       "id": "company-caresma",
@@ -9611,6 +9785,10 @@
         "country": {
           "code": "DE",
           "source": "https://www.healthx-future.de/impressum"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/healthx-future",
+          "source": "https://www.linkedin.com/company/healthx-future"
         }
       }
     },
@@ -9937,7 +10115,11 @@
             "name": "NewView Capital",
             "source": "https://www.inspiren.com/"
           }
-        ]
+        ],
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/inspirenhealth",
+          "source": "https://www.linkedin.com/company/inspirenhealth"
+        }
       }
     },
     {
@@ -10191,7 +10373,13 @@
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": "/api/logo/company-roobrik"
+      "logo": "/api/logo/company-roobrik",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/roobrik",
+          "source": "https://www.linkedin.com/company/roobrik"
+        }
+      }
     },
     {
       "id": "company-alcove",
@@ -10313,7 +10501,13 @@
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": "/api/logo/company-appva"
+      "logo": "/api/logo/company-appva",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/appva",
+          "source": "https://www.linkedin.com/company/appva"
+        }
+      }
     },
     {
       "id": "company-compaan",
@@ -10419,6 +10613,10 @@
         "founded": {
           "year": 2023,
           "source": "https://www.mercuryalert.ai/pages/our-team"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/mercury-alert",
+          "source": "https://www.linkedin.com/company/mercury-alert"
         }
       }
     },
@@ -10513,7 +10711,11 @@
             "name": "Jesse Schorz",
             "source": "https://tombot.com/pages/story"
           }
-        ]
+        ],
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/tombot",
+          "source": "https://www.linkedin.com/company/tombot"
+        }
       }
     },
     {
@@ -10593,6 +10795,10 @@
         "country": {
           "code": "DE",
           "source": "https://techcrunch.com/2020/12/14/german-bionic-raises-20m-led-by-samsung-for-exoskeleton-tech-to-supercharge-human-labor/"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/germanbionic",
+          "source": "https://www.linkedin.com/company/germanbionic"
         }
       }
     },
@@ -10702,6 +10908,10 @@
         "country": {
           "code": "DE",
           "source": "https://careloop.io/impressum/"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/careloopklett",
+          "source": "https://www.linkedin.com/company/careloopklett"
         }
       }
     },
@@ -10805,6 +11015,10 @@
         "hq": {
           "city": "Chambray",
           "source": "https://www.domalys.com/mentions-legales"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/domalys",
+          "source": "https://www.linkedin.com/company/domalys"
         }
       }
     },
@@ -10907,6 +11121,10 @@
         "country": {
           "code": "DE",
           "source": "https://www.rentennavi.de/impressum/"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/rentennavi",
+          "source": "https://www.linkedin.com/company/rentennavi"
         }
       }
     },
@@ -11017,6 +11235,10 @@
         "country": {
           "code": "DE",
           "source": "https://www.northdata.com/Cerascreen%20GmbH"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/cerascreen",
+          "source": "https://www.linkedin.com/company/cerascreen"
         }
       }
     },
@@ -11215,6 +11437,10 @@
         "country": {
           "code": "DE",
           "source": "https://somana.com/imprint"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/somana-health",
+          "source": "https://www.linkedin.com/company/somana-health"
         }
       }
     },
@@ -11365,7 +11591,13 @@
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": "/api/logo/company-avanto-care"
+      "logo": "/api/logo/company-avanto-care",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/avantocare",
+          "source": "https://www.linkedin.com/company/avantocare"
+        }
+      }
     },
     {
       "id": "company-motus-stroke-recovery-app",
@@ -11689,7 +11921,13 @@
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": "/api/logo/company-oscar-senior"
+      "logo": "/api/logo/company-oscar-senior",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/oscar-senior",
+          "source": "https://www.linkedin.com/company/oscar-senior"
+        }
+      }
     },
     {
       "id": "company-aidam",
@@ -11777,6 +12015,10 @@
         "country": {
           "code": "GB",
           "source": "https://calyo.com/contact/"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/calyo",
+          "source": "https://www.linkedin.com/company/calyo"
         }
       }
     },
@@ -11884,6 +12126,10 @@
         "country": {
           "code": "DE",
           "source": "https://www.paravan.de/beratung-service/uebersicht-beratung-service"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/paravan-mobility",
+          "source": "https://www.linkedin.com/company/paravan-mobility"
         }
       }
     },
@@ -11926,7 +12172,13 @@
       "why_dropped": null,
       "tag": "Daily life and getting around",
       "tag_secondary": null,
-      "logo": "/api/logo/company-envision"
+      "logo": "/api/logo/company-envision",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/letsenvision",
+          "source": "https://www.linkedin.com/company/letsenvision"
+        }
+      }
     },
     {
       "id": "company-biomes",
@@ -12122,6 +12374,10 @@
         "country": {
           "code": "NL",
           "source": "https://cue2walk.nl/contact/"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/cue2walk-international",
+          "source": "https://www.linkedin.com/company/cue2walk-international"
         }
       }
     },
@@ -12181,6 +12437,10 @@
         "model": {
           "text": "$14.99 per month.",
           "source": "https://supportpay.com/pricing/"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/supportpay",
+          "source": "https://www.linkedin.com/company/supportpay"
         }
       }
     },
@@ -12228,6 +12488,10 @@
         "country": {
           "code": "GB",
           "source": "https://www.fitnessgenes.com/contact"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/fitnessgenes",
+          "source": "https://www.linkedin.com/company/fitnessgenes"
         }
       }
     },
@@ -12279,6 +12543,10 @@
         "country": {
           "code": "DE",
           "source": "https://www.hyli.de/impressum/"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/hyli",
+          "source": "https://www.linkedin.com/company/hyli"
         }
       }
     },
@@ -12326,6 +12594,10 @@
         "country": {
           "code": "US",
           "source": "https://sign-speak.com/contact-us"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/signspeak",
+          "source": "https://www.linkedin.com/company/signspeak"
         }
       }
     },
@@ -12381,7 +12653,11 @@
             "url": "https://apps.apple.com/gb/app/zoe-personalized-nutrition/id1471632228",
             "source": "https://zoe.com/en-us?lead_id=af6b4cda-1dc3-4b1c-a79d-054c37b3c6aa"
           }
-        ]
+        ],
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/joinzoe",
+          "source": "https://www.linkedin.com/company/joinzoe"
+        }
       }
     },
     {
@@ -12428,6 +12704,10 @@
         "country": {
           "code": "NL",
           "source": "https://go-ov.nl/contact-2/"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/goov",
+          "source": "https://www.linkedin.com/company/goov"
         }
       }
     },
@@ -12490,6 +12770,10 @@
         "country": {
           "code": "DE",
           "source": "https://www.northdata.com/Sphaira%20Medical%20GmbH"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/sphaira",
+          "source": "https://www.linkedin.com/company/sphaira"
         }
       }
     },
@@ -12580,7 +12864,13 @@
       "why_dropped": null,
       "tag": "Daily life and getting around",
       "tag_secondary": null,
-      "logo": "/api/logo/company-invictus-active"
+      "logo": "/api/logo/company-invictus-active",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/invictus-active",
+          "source": "https://www.linkedin.com/company/invictus-active"
+        }
+      }
     },
     {
       "id": "company-gaitq",
@@ -12626,6 +12916,10 @@
         "country": {
           "code": "GB",
           "source": "https://www.gaitq.com/contact/"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/gaitq",
+          "source": "https://www.linkedin.com/company/gaitq"
         }
       }
     },
@@ -12668,7 +12962,13 @@
       "why_dropped": null,
       "tag": "Daily life and getting around",
       "tag_secondary": null,
-      "logo": "/api/logo/company-holifya"
+      "logo": "/api/logo/company-holifya",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/holifya",
+          "source": "https://www.linkedin.com/company/holifya"
+        }
+      }
     },
     {
       "id": "company-hipper-therapeutics",
@@ -12710,7 +13010,13 @@
       "why_dropped": null,
       "tag": "Daily life and getting around",
       "tag_secondary": null,
-      "logo": "/api/logo/company-hipper-therapeutics"
+      "logo": "/api/logo/company-hipper-therapeutics",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/hippertx",
+          "source": "https://www.linkedin.com/company/hippertx"
+        }
+      }
     },
     {
       "id": "company-closure",
@@ -12756,6 +13062,10 @@
         "country": {
           "code": "NL",
           "source": "https://closure.nl/contact/"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/closure_services",
+          "source": "https://www.linkedin.com/company/closure_services"
         }
       }
     },
@@ -12807,7 +13117,11 @@
             "url": "https://play.google.com/store/apps/details?id=name.kunes.android.launcher.demo",
             "source": "https://biglauncher.com/home/en/"
           }
-        ]
+        ],
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/big-launcher",
+          "source": "https://www.linkedin.com/company/big-launcher"
+        }
       }
     },
     {
@@ -12862,6 +13176,10 @@
         "country": {
           "code": "CH",
           "source": "https://www.northdata.com/Scewo%20AG"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/scewo",
+          "source": "https://www.linkedin.com/company/scewo"
         }
       }
     },
@@ -12904,7 +13222,13 @@
       "why_dropped": null,
       "tag": "Daily life and getting around",
       "tag_secondary": null,
-      "logo": "/api/logo/company-whill-inc"
+      "logo": "/api/logo/company-whill-inc",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/whill",
+          "source": "https://www.linkedin.com/company/whill"
+        }
+      }
     },
     {
       "id": "company-eritaj",
@@ -12998,7 +13322,13 @@
       "why_dropped": null,
       "tag": "End of life and inheritance",
       "tag_secondary": null,
-      "logo": "/api/logo/company-goodbye-cz"
+      "logo": "/api/logo/company-goodbye-cz",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/goodbye-cz",
+          "source": "https://www.linkedin.com/company/goodbye-cz"
+        }
+      }
     },
     {
       "id": "company-exizent",
@@ -13044,6 +13374,10 @@
         "country": {
           "code": "GB",
           "source": "https://www.exizent.com/contact"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/exizent",
+          "source": "https://www.linkedin.com/company/exizent"
         }
       }
     },
@@ -13251,6 +13585,10 @@
         "country": {
           "code": "GB",
           "source": "https://farewill.com/about"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/farewill",
+          "source": "https://www.linkedin.com/company/farewill"
         }
       }
     },
@@ -13508,6 +13846,10 @@
         "country": {
           "code": "GB",
           "source": "https://www.mywishes.co.uk/contact-us"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/mywishes",
+          "source": "https://www.linkedin.com/company/mywishes"
         }
       }
     },
@@ -13601,6 +13943,10 @@
         "country": {
           "code": "DE",
           "source": "https://www.careship.de/impressum"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/careship",
+          "source": "https://www.linkedin.com/company/careship"
         }
       }
     },
@@ -13826,7 +14172,13 @@
       "why_dropped": null,
       "tag": "Daily life and getting around",
       "tag_secondary": null,
-      "logo": "/api/logo/company-able-human-motion"
+      "logo": "/api/logo/company-able-human-motion",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/ablehumanmotion",
+          "source": "https://www.linkedin.com/company/ablehumanmotion"
+        }
+      }
     },
     {
       "id": "company-meminto-stories",
@@ -13888,6 +14240,10 @@
         "country": {
           "code": "DE",
           "source": "https://meminto.com/imprint/"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/meminto",
+          "source": "https://www.linkedin.com/company/meminto"
         }
       }
     },
@@ -14032,6 +14388,10 @@
         "country": {
           "code": "GB",
           "source": "https://www.funeralguide.co.uk/contact"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/funeralzone",
+          "source": "https://www.linkedin.com/company/funeralzone"
         }
       }
     },
@@ -14193,6 +14553,10 @@
         "country": {
           "code": "DE",
           "source": "https://www.nui.care/impressum"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/nui-care",
+          "source": "https://www.linkedin.com/company/nui-care"
         }
       }
     },
@@ -14257,7 +14621,11 @@
             "name": "KfW",
             "source": "https://www.pflege.de/ueber-pflege-de/"
           }
-        ]
+        ],
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/pflege-de",
+          "source": "https://www.linkedin.com/company/pflege-de"
+        }
       },
       "writeup": {
         "what_it_does": {
@@ -14474,7 +14842,13 @@
       "why_dropped": null,
       "tag": "Family caregivers",
       "tag_secondary": null,
-      "logo": "/api/logo/company-miina"
+      "logo": "/api/logo/company-miina",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/miina",
+          "source": "https://www.linkedin.com/company/miina"
+        }
+      }
     },
     {
       "id": "company-famplus",
@@ -14535,6 +14909,10 @@
         "country": {
           "code": "DE",
           "source": "https://famplus.de/impressum"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/famplus-gmbh",
+          "source": "https://www.linkedin.com/company/famplus-gmbh"
         }
       }
     },
@@ -14583,6 +14961,10 @@
         "country": {
           "code": "ES",
           "source": "https://cuideo.com/aviso-legal/"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/cuideo",
+          "source": "https://www.linkedin.com/company/cuideo"
         }
       }
     },
@@ -14641,6 +15023,10 @@
         "country": {
           "code": "DE",
           "source": "https://www.meet5.de/impressum"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/meet5",
+          "source": "https://www.linkedin.com/company/meet5"
         }
       }
     },
@@ -14689,6 +15075,10 @@
         "hq": {
           "city": "Valencia",
           "source": "https://aiudo.es/aviso-legal/"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/aiudo",
+          "source": "https://www.linkedin.com/company/aiudo"
         }
       }
     },
@@ -14737,6 +15127,10 @@
         "model": {
           "text": "£29.99 per month.",
           "source": "https://www.callpanion.co.uk/"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/callpanion",
+          "source": "https://www.linkedin.com/company/callpanion"
         }
       }
     },
@@ -14800,6 +15194,10 @@
         "country": {
           "code": "DE",
           "source": "https://fabel.care/de/imprint"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/fabellive",
+          "source": "https://www.linkedin.com/company/fabellive"
         }
       }
     },
@@ -14843,7 +15241,13 @@
       "why_dropped": null,
       "tag": "Family caregivers",
       "tag_secondary": null,
-      "logo": "/api/logo/company-elder"
+      "logo": "/api/logo/company-elder",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/elder-hq",
+          "source": "https://www.linkedin.com/company/elder-hq"
+        }
+      }
     },
     {
       "id": "company-good-life-sorted",
@@ -14895,6 +15299,10 @@
         "country": {
           "code": "GB",
           "source": "https://goodlifesorted.com/contact-us/"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/good-life-sorted",
+          "source": "https://www.linkedin.com/company/good-life-sorted"
         }
       }
     },
@@ -15080,7 +15488,13 @@
       "why_dropped": null,
       "tag": "Family caregivers",
       "tag_secondary": null,
-      "logo": "/api/logo/company-domicilix"
+      "logo": "/api/logo/company-domicilix",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/domicilix",
+          "source": "https://www.linkedin.com/company/domicilix"
+        }
+      }
     },
     {
       "id": "company-aidaly",
@@ -15222,6 +15636,10 @@
         "model": {
           "text": "$1,500 per month.",
           "source": "https://entyrecare.com"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/entyrecare",
+          "source": "https://www.linkedin.com/company/entyrecare"
         }
       }
     },
@@ -15278,6 +15696,10 @@
         "country": {
           "code": "SE",
           "source": "https://www.northdata.com/Call%20Knut%20AB"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/callknut",
+          "source": "https://www.linkedin.com/company/callknut"
         }
       }
     },
@@ -15337,6 +15759,10 @@
         "country": {
           "code": "US",
           "source": "https://maphabit.com/pages/contact"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/maphabit",
+          "source": "https://www.linkedin.com/company/maphabit"
         }
       }
     },
@@ -15429,7 +15855,13 @@
       "why_dropped": null,
       "tag": "Family caregivers",
       "tag_secondary": null,
-      "logo": "/api/logo/company-familiados"
+      "logo": "/api/logo/company-familiados",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/familiados",
+          "source": "https://www.linkedin.com/company/familiados"
+        }
+      }
     },
     {
       "id": "company-actif",
@@ -15512,7 +15944,13 @@
       "why_dropped": null,
       "tag": "Family caregivers",
       "tag_secondary": null,
-      "logo": "/api/logo/company-fello"
+      "logo": "/api/logo/company-fello",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/fello",
+          "source": "https://www.linkedin.com/company/fello"
+        }
+      }
     },
     {
       "id": "company-kinumi",
@@ -15553,7 +15991,13 @@
       "why_dropped": null,
       "tag": "Family caregivers",
       "tag_secondary": null,
-      "logo": "/api/logo/company-kinumi"
+      "logo": "/api/logo/company-kinumi",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/kinumi",
+          "source": "https://www.linkedin.com/company/kinumi"
+        }
+      }
     },
     {
       "id": "company-care-sourcer",
@@ -15689,7 +16133,13 @@
       "why_dropped": null,
       "tag": "Family caregivers",
       "tag_secondary": null,
-      "logo": "/api/logo/company-eldersvr"
+      "logo": "/api/logo/company-eldersvr",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/eldersvr",
+          "source": "https://www.linkedin.com/company/eldersvr"
+        }
+      }
     },
     {
       "id": "company-advosense",
@@ -15755,6 +16205,10 @@
         "country": {
           "code": "DE",
           "source": "https://www.northdata.com/Advosense%20GmbH"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/advosense",
+          "source": "https://www.linkedin.com/company/advosense"
         }
       }
     },
@@ -15878,6 +16332,10 @@
         "country": {
           "code": "DE",
           "source": "https://www.northdata.com/DeepSpin%20GmbH"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/deepspin",
+          "source": "https://www.linkedin.com/company/deepspin"
         }
       }
     },
@@ -15933,6 +16391,10 @@
         "country": {
           "code": "SE",
           "source": "https://www.northdata.com/Minnity%20AB"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/minnity",
+          "source": "https://www.linkedin.com/company/minnity"
         }
       }
     },
@@ -15976,7 +16438,13 @@
       "why_dropped": null,
       "tag": "Family caregivers",
       "tag_secondary": null,
-      "logo": "/api/logo/company-cuidum"
+      "logo": "/api/logo/company-cuidum",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/cuidum",
+          "source": "https://www.linkedin.com/company/cuidum"
+        }
+      }
     },
     {
       "id": "company-lottie-organisation",
@@ -16091,6 +16559,10 @@
         "country": {
           "code": "CH",
           "source": "https://www.flowbone.com/"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/flowbone",
+          "source": "https://www.linkedin.com/company/flowbone"
         }
       }
     },
@@ -16143,6 +16615,10 @@
         "country": {
           "code": "DE",
           "source": "https://hellomed.com/legal/impressum"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/hellomed-com",
+          "source": "https://www.linkedin.com/company/hellomed-com"
         }
       }
     },
@@ -16198,6 +16674,10 @@
         "country": {
           "code": "DE",
           "source": "https://anivahealth.com/imprint"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/anivahealth",
+          "source": "https://www.linkedin.com/company/anivahealth"
         }
       }
     },
@@ -16501,7 +16981,11 @@
             "name": "Centre for Aging + Brain Health Innovation",
             "source": "https://siliconcanals.com/dutch-momo-medical-raises-6-5m/"
           }
-        ]
+        ],
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/momo-medical",
+          "source": "https://www.linkedin.com/company/momo-medical"
+        }
       },
       "writeup_qa": {
         "pass": false,
@@ -16595,7 +17079,13 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": "/api/logo/company-aeon"
+      "logo": "/api/logo/company-aeon",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/aeon-life",
+          "source": "https://www.linkedin.com/company/aeon-life"
+        }
+      }
     },
     {
       "id": "company-dexter-health",
@@ -16661,6 +17151,10 @@
         "country": {
           "code": "DE",
           "source": "https://www.dexter-health.com/impressum"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/dexter-health",
+          "source": "https://www.linkedin.com/company/dexter-health"
         }
       },
       "writeup": {
@@ -16807,6 +17301,10 @@
         "country": {
           "code": "CH",
           "source": "https://www.northdata.com/Ahead%20Health%20AG"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/ahead-health",
+          "source": "https://www.linkedin.com/company/ahead-health"
         }
       }
     },
@@ -16933,6 +17431,10 @@
             "amount": "$3 million",
             "source": "https://www.albert.health/about"
           }
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/albert-health",
+          "source": "https://www.linkedin.com/company/albert-health"
         }
       }
     },
@@ -16975,7 +17477,13 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": null
+      "logo": null,
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/diawiser",
+          "source": "https://www.linkedin.com/company/diawiser"
+        }
+      }
     },
     {
       "id": "company-amintro",
@@ -17029,7 +17537,11 @@
             "url": "https://apps.apple.com/ca/app/amintro-family/id6596763821",
             "source": "https://amintro.com"
           }
-        ]
+        ],
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/amintro",
+          "source": "https://www.linkedin.com/company/amintro"
+        }
       }
     },
     {
@@ -17084,6 +17596,10 @@
         "country": {
           "code": "FR",
           "source": "https://www.northdata.com/Cilcare%20SAS"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/cilcare",
+          "source": "https://www.linkedin.com/company/cilcare"
         }
       }
     },
@@ -17247,6 +17763,10 @@
         "hq": {
           "city": "Bergen",
           "source": "https://www.northdata.com/Eupnea%20AS"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/eupnea-as",
+          "source": "https://www.linkedin.com/company/eupnea-as"
         }
       }
     },
@@ -17289,7 +17809,13 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": "/api/logo/company-domma"
+      "logo": "/api/logo/company-domma",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/wearedomma",
+          "source": "https://www.linkedin.com/company/wearedomma"
+        }
+      }
     },
     {
       "id": "company-liv-longevity-labs",
@@ -17339,6 +17865,10 @@
         "country": {
           "code": "DE",
           "source": "https://www.liv.health/en/legal/imprint"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/livlongevitylabs",
+          "source": "https://www.linkedin.com/company/livlongevitylabs"
         }
       }
     },
@@ -17381,7 +17911,13 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": "/api/logo/company-binah-ai"
+      "logo": "/api/logo/company-binah-ai",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/binah-ai",
+          "source": "https://www.linkedin.com/company/binah-ai"
+        }
+      }
     },
     {
       "id": "company-frieda",
@@ -17432,6 +17968,10 @@
         "country": {
           "code": "DE",
           "source": "https://frieda.health/impressum"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/frieda-health",
+          "source": "https://www.linkedin.com/company/frieda-health"
         }
       }
     },
@@ -17475,7 +18015,13 @@
       "why_dropped": null,
       "tag": "Family caregivers",
       "tag_secondary": null,
-      "logo": "/api/logo/company-lares-online"
+      "logo": "/api/logo/company-lares-online",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/lares-online",
+          "source": "https://www.linkedin.com/company/lares-online"
+        }
+      }
     },
     {
       "id": "company-circadia",
@@ -17516,7 +18062,13 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": "/api/logo/company-circadia"
+      "logo": "/api/logo/company-circadia",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/circadia",
+          "source": "https://www.linkedin.com/company/circadia"
+        }
+      }
     },
     {
       "id": "company-evondos",
@@ -17582,6 +18134,10 @@
         "country": {
           "code": "FI",
           "source": "https://www.evondos.com/about-us"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/evondos",
+          "source": "https://www.linkedin.com/company/evondos"
         }
       }
     },
@@ -17635,7 +18191,11 @@
             "name": "Sean Cook",
             "source": "https://www.exer.ai/team"
           }
-        ]
+        ],
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/exerai",
+          "source": "https://www.linkedin.com/company/exerai"
+        }
       }
     },
     {
@@ -17677,7 +18237,13 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": "/api/logo/company-hero"
+      "logo": "/api/logo/company-hero",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/hero",
+          "source": "https://www.linkedin.com/company/hero"
+        }
+      }
     },
     {
       "id": "company-independa",
@@ -17733,6 +18299,10 @@
         "country": {
           "code": "US",
           "source": "https://independa.com/about/team/"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/independa-inc-",
+          "source": "https://www.linkedin.com/company/independa-inc-"
         }
       }
     },
@@ -18151,7 +18721,13 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": "/api/logo/company-continyou"
+      "logo": "/api/logo/company-continyou",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/continyou-care",
+          "source": "https://www.linkedin.com/company/continyou-care"
+        }
+      }
     },
     {
       "id": "company-livy-care-hum-systems",
@@ -18243,7 +18819,11 @@
             "name": "High Rise Ventures",
             "source": "https://www.prnews24.com/296430/brandenburg-kapital-und-companisto-investieren-in-smarte-pflege-fuer-die-zukunft/"
           }
-        ]
+        ],
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/livy-care",
+          "source": "https://www.linkedin.com/company/livy-care"
+        }
       },
       "writeup": {
         "what_it_does": {
@@ -18428,6 +19008,10 @@
         "country": {
           "code": "NL",
           "source": "https://www.sigra.nl/ict-diensten/datasharehouse"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/6gorilla-s",
+          "source": "https://www.linkedin.com/company/6gorilla-s"
         }
       },
       "writeup_qa": {
@@ -18537,6 +19121,10 @@
         "country": {
           "code": "DE",
           "source": "https://juni.science/imprint/"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/juni-science",
+          "source": "https://www.linkedin.com/company/juni-science"
         }
       }
     },
@@ -18592,7 +19180,11 @@
             "url": "https://play.google.com/store/apps/details?id=mobilise.online.community",
             "source": "https://www.mobiliseonline.co.uk/team"
           }
-        ]
+        ],
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/mobiliseonline",
+          "source": "https://www.linkedin.com/company/mobiliseonline"
+        }
       }
     },
     {
@@ -18634,7 +19226,13 @@
       "why_dropped": null,
       "tag": "Home and housing",
       "tag_secondary": null,
-      "logo": "/api/logo/company-mobility-mojo"
+      "logo": "/api/logo/company-mobility-mojo",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/mobility-mojo",
+          "source": "https://www.linkedin.com/company/mobility-mojo"
+        }
+      }
     },
     {
       "id": "company-latitudo-40",
@@ -18680,6 +19278,10 @@
         "country": {
           "code": "IT",
           "source": "https://www.latitudo40.com/contact-us"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/latitudo-40",
+          "source": "https://www.linkedin.com/company/latitudo-40"
         }
       }
     },
@@ -18890,7 +19492,13 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": "/api/logo/company-e-med4all"
+      "logo": "/api/logo/company-e-med4all",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/emed4all",
+          "source": "https://www.linkedin.com/company/emed4all"
+        }
+      }
     },
     {
       "id": "company-iocare",
@@ -18952,6 +19560,10 @@
         "country": {
           "code": "DE",
           "source": "https://iocare.de/de/impressum/"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/iocare",
+          "source": "https://www.linkedin.com/company/iocare"
         }
       },
       "writeup": {
@@ -19078,7 +19690,13 @@
       "why_dropped": null,
       "tag": "Home and housing",
       "tag_secondary": null,
-      "logo": "/api/logo/company-kuvu"
+      "logo": "/api/logo/company-kuvu",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/kuvu",
+          "source": "https://www.linkedin.com/company/kuvu"
+        }
+      }
     },
     {
       "id": "company-second-read",
@@ -19182,6 +19800,10 @@
         "country": {
           "code": "US",
           "source": "https://toilabs.com/contact-us/"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/toi-labs",
+          "source": "https://www.linkedin.com/company/toi-labs"
         }
       }
     },
@@ -19224,7 +19846,13 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": "/api/logo/company-genesys-bio"
+      "logo": "/api/logo/company-genesys-bio",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/genesysbio",
+          "source": "https://www.linkedin.com/company/genesysbio"
+        }
+      }
     },
     {
       "id": "company-omniflow",
@@ -19270,6 +19898,10 @@
         "country": {
           "code": "PT",
           "source": "https://www.omniflow.io/contacts"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/omniflow-sa",
+          "source": "https://www.linkedin.com/company/omniflow-sa"
         }
       }
     },
@@ -19317,6 +19949,10 @@
         "hq": {
           "city": "London",
           "source": "https://www.pointr.tech/company"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/pointr-tech-indoor-location-data-analytics-platform",
+          "source": "https://www.linkedin.com/company/pointr-tech-indoor-location-data-analytics-platform"
         }
       }
     },
@@ -19359,7 +19995,13 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": "/api/logo/company-healthier"
+      "logo": "/api/logo/company-healthier",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/techapps-healthier",
+          "source": "https://www.linkedin.com/company/techapps-healthier"
+        }
+      }
     },
     {
       "id": "company-butlr",
@@ -19401,7 +20043,13 @@
       "why_dropped": null,
       "tag": "Home and housing",
       "tag_secondary": null,
-      "logo": "/api/logo/company-butlr"
+      "logo": "/api/logo/company-butlr",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/butlr-io",
+          "source": "https://www.linkedin.com/company/butlr-io"
+        }
+      }
     },
     {
       "id": "company-telraam",
@@ -19570,7 +20218,13 @@
       "why_dropped": null,
       "tag": "Home and housing",
       "tag_secondary": null,
-      "logo": "/api/logo/company-the-embassies"
+      "logo": "/api/logo/company-the-embassies",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/theembassies",
+          "source": "https://www.linkedin.com/company/theembassies"
+        }
+      }
     },
     {
       "id": "company-mcs-data-labs",
@@ -19631,6 +20285,10 @@
         "country": {
           "code": "DE",
           "source": "https://www.northdata.com/MCS%20Data%20Labs%20GmbH"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/mcs-data-labs-gmbh",
+          "source": "https://www.linkedin.com/company/mcs-data-labs-gmbh"
         }
       }
     },
@@ -19760,6 +20418,10 @@
         "country": {
           "code": "US",
           "source": "https://lutsohealth.com/about-us"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/lutso",
+          "source": "https://www.linkedin.com/company/lutso"
         }
       }
     },
@@ -19802,7 +20464,13 @@
       "why_dropped": null,
       "tag": "Loneliness and connection",
       "tag_secondary": null,
-      "logo": "/api/logo/company-buddyhub"
+      "logo": "/api/logo/company-buddyhub",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/buddyhub",
+          "source": "https://www.linkedin.com/company/buddyhub"
+        }
+      }
     },
     {
       "id": "company-no-isolation",
@@ -19843,7 +20511,13 @@
       "why_dropped": null,
       "tag": "Loneliness and connection",
       "tag_secondary": "Daily life and getting around",
-      "logo": "/api/logo/company-no-isolation"
+      "logo": "/api/logo/company-no-isolation",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/noisolation",
+          "source": "https://www.linkedin.com/company/noisolation"
+        }
+      }
     },
     {
       "id": "company-the-joy-club",
@@ -19884,7 +20558,13 @@
       "why_dropped": null,
       "tag": "Loneliness and connection",
       "tag_secondary": null,
-      "logo": "/api/logo/company-the-joy-club"
+      "logo": "/api/logo/company-the-joy-club",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/the-joy-club",
+          "source": "https://www.linkedin.com/company/the-joy-club"
+        }
+      }
     },
     {
       "id": "company-colette-club",
@@ -19938,7 +20618,11 @@
             "url": "https://play.google.com/store/apps/details?id=club.colette.club",
             "source": "https://www.colette.club/"
           }
-        ]
+        ],
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/coletteclub",
+          "source": "https://www.linkedin.com/company/coletteclub"
+        }
       }
     },
     {
@@ -19994,7 +20678,11 @@
             "url": "https://play.google.com/store/apps/details?id=com.adoptaunabuelo.app",
             "source": "https://www.adoptaunabuelo.org/"
           }
-        ]
+        ],
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/adoptaunabuelo",
+          "source": "https://www.linkedin.com/company/adoptaunabuelo"
+        }
       }
     },
     {
@@ -20183,6 +20871,10 @@
         "country": {
           "code": "DE",
           "source": "https://teresa.ai/impressum"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/teresa-ai",
+          "source": "https://www.linkedin.com/company/teresa-ai"
         }
       }
     },
@@ -20309,7 +21001,13 @@
       "why_dropped": null,
       "tag": "Family caregivers",
       "tag_secondary": null,
-      "logo": "/api/logo/company-hilfemed"
+      "logo": "/api/logo/company-hilfemed",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/hilfemed",
+          "source": "https://www.linkedin.com/company/hilfemed"
+        }
+      }
     },
     {
       "id": "company-kin-2",
@@ -20350,7 +21048,13 @@
       "why_dropped": null,
       "tag": "Loneliness and connection",
       "tag_secondary": null,
-      "logo": "/api/logo/company-kin-2"
+      "logo": "/api/logo/company-kin-2",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/getkinonline",
+          "source": "https://www.linkedin.com/company/getkinonline"
+        }
+      }
     },
     {
       "id": "company-orbito-travel",
@@ -20464,6 +21168,10 @@
         "country": {
           "code": "DE",
           "source": "https://www.northdata.com/Memorado%20GmbH"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/memorado",
+          "source": "https://www.linkedin.com/company/memorado"
         }
       }
     },
@@ -20654,6 +21362,10 @@
         "country": {
           "code": "DE",
           "source": "https://www.wohnen-im-alter.de/impressum"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/wohnen-im-alter-internet-gmbh",
+          "source": "https://www.linkedin.com/company/wohnen-im-alter-internet-gmbh"
         }
       }
     },
@@ -20717,6 +21429,10 @@
         "country": {
           "code": "AT",
           "source": "https://www.northdata.com/VitaBlick%20GmbH"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/vitablick",
+          "source": "https://www.linkedin.com/company/vitablick"
         }
       }
     },
@@ -20800,7 +21516,13 @@
       "why_dropped": null,
       "tag": "Memory and dementia",
       "tag_secondary": null,
-      "logo": "/api/logo/company-braintrip"
+      "logo": "/api/logo/company-braintrip",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/braintrip",
+          "source": "https://www.linkedin.com/company/braintrip"
+        }
+      }
     },
     {
       "id": "company-five-lives",
@@ -20854,7 +21576,11 @@
             "url": "https://play.google.com/store/apps/details?id=life.sharptx.care.production",
             "source": "https://www.fivelives.health/"
           }
-        ]
+        ],
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/fivelives",
+          "source": "https://www.linkedin.com/company/fivelives"
+        }
       }
     },
     {
@@ -20952,7 +21678,13 @@
       "why_dropped": null,
       "tag": "Memory and dementia",
       "tag_secondary": null,
-      "logo": "/api/logo/company-virtuleap"
+      "logo": "/api/logo/company-virtuleap",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/virtuleap",
+          "source": "https://www.linkedin.com/company/virtuleap"
+        }
+      }
     },
     {
       "id": "company-munai",
@@ -21081,6 +21813,10 @@
         "country": {
           "code": "US",
           "source": "https://braincheck.com/about"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/braincheck",
+          "source": "https://www.linkedin.com/company/braincheck"
         }
       }
     },
@@ -21143,6 +21879,10 @@
         "country": {
           "code": "DE",
           "source": "https://memodio-app.com/impressum/"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/memodio-app",
+          "source": "https://www.linkedin.com/company/memodio-app"
         }
       }
     },
@@ -21390,7 +22130,11 @@
             "role": "CEO and co-founder",
             "source": "https://www.allycares.com/bbcdorset-care-homes-to-adopt-allycares-technology-bbc-news/"
           }
-        ]
+        ],
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/ally-smart-care",
+          "source": "https://www.linkedin.com/company/ally-smart-care"
+        }
       },
       "writeup_qa": {
         "pass": false,
@@ -21494,6 +22238,10 @@
         "country": {
           "code": "FR",
           "source": "https://tometjosette.fr/mentions-legales/"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/tom-josette",
+          "source": "https://www.linkedin.com/company/tom-josette"
         }
       }
     },
@@ -21587,6 +22335,10 @@
         "country": {
           "code": "DE",
           "source": "https://family.cards/policies/legal-notice"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/family-cards-de",
+          "source": "https://www.linkedin.com/company/family-cards-de"
         }
       }
     },
@@ -21753,7 +22505,13 @@
       "why_dropped": null,
       "tag": "Money and retirement",
       "tag_secondary": null,
-      "logo": "/api/logo/company-kalkura"
+      "logo": "/api/logo/company-kalkura",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/kalkura",
+          "source": "https://www.linkedin.com/company/kalkura"
+        }
+      }
     },
     {
       "id": "company-parto-group",
@@ -21824,6 +22582,10 @@
         "country": {
           "code": "DE",
           "source": "https://www.goparto.com/impressum"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/goparto",
+          "source": "https://www.linkedin.com/company/goparto"
         }
       }
     },
@@ -21913,6 +22675,10 @@
         "country": {
           "code": "CH",
           "source": "https://mindmazetherapeutics.com/about/contact/"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/mindmaze",
+          "source": "https://www.linkedin.com/company/mindmaze"
         }
       }
     },
@@ -22024,6 +22790,10 @@
         "country": {
           "code": "FR",
           "source": "https://www.northdata.com/Wivy%20SAS"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/wivy",
+          "source": "https://www.linkedin.com/company/wivy"
         }
       }
     },
@@ -22072,6 +22842,10 @@
         "country": {
           "code": "FR",
           "source": "https://grannycharly.fr/nous-contacter-granny-et-charly/"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/granny-charly",
+          "source": "https://www.linkedin.com/company/granny-charly"
         }
       }
     },
@@ -22140,6 +22914,10 @@
         "country": {
           "code": "DE",
           "source": "https://www.northdata.com/Senior%20Connect%20GmbH"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/senior-connect-de",
+          "source": "https://www.linkedin.com/company/senior-connect-de"
         }
       }
     },
@@ -22195,7 +22973,11 @@
             "url": "https://play.google.com/store/apps/details?id=app.yonder.mobile",
             "source": "https://www.kota.io/"
           }
-        ]
+        ],
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/kotabenefits",
+          "source": "https://www.linkedin.com/company/kotabenefits"
+        }
       }
     },
     {
@@ -22617,6 +23399,10 @@
         "country": {
           "code": "DE",
           "source": "https://ergofox.me/de/impressum.html"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/ergofox-gmbh",
+          "source": "https://www.linkedin.com/company/ergofox-gmbh"
         }
       }
     },
@@ -22666,7 +23452,11 @@
             "name": "Yosef Safi Harb",
             "source": "https://happitech.com/about-us/"
           }
-        ]
+        ],
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/happitech",
+          "source": "https://www.linkedin.com/company/happitech"
+        }
       }
     },
     {
@@ -22713,6 +23503,10 @@
         "country": {
           "code": "US",
           "source": "https://getcarefull.com/about"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/getcarefull",
+          "source": "https://www.linkedin.com/company/getcarefull"
         }
       }
     },
@@ -22755,7 +23549,13 @@
       "why_dropped": null,
       "tag": "Money and retirement",
       "tag_secondary": null,
-      "logo": "/api/logo/company-hanzeland-personeelsdiensten"
+      "logo": "/api/logo/company-hanzeland-personeelsdiensten",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/hanzeland-personeelsdiensten",
+          "source": "https://www.linkedin.com/company/hanzeland-personeelsdiensten"
+        }
+      }
     },
     {
       "id": "company-omcare",
@@ -22801,6 +23601,10 @@
         "country": {
           "code": "US",
           "source": "https://omcare.com/contact/"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/omcareinc",
+          "source": "https://www.linkedin.com/company/omcareinc"
         }
       }
     },
@@ -22861,6 +23665,10 @@
         "country": {
           "code": "US",
           "source": "https://www.truelinkfinancial.com/contact-us"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/true-link-financial",
+          "source": "https://www.linkedin.com/company/true-link-financial"
         }
       }
     },
@@ -23047,7 +23855,13 @@
       "why_dropped": null,
       "tag": "Money and retirement",
       "tag_secondary": null,
-      "logo": "/api/logo/company-skarlett"
+      "logo": "/api/logo/company-skarlett",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/skarlett-fr",
+          "source": "https://www.linkedin.com/company/skarlett-fr"
+        }
+      }
     },
     {
       "id": "company-luci",
@@ -23175,7 +23989,11 @@
             "url": "https://apps.apple.com/us/app/tontine/id6758043895",
             "source": "https://tontine.com"
           }
-        ]
+        ],
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/tontinetrust",
+          "source": "https://www.linkedin.com/company/tontinetrust"
+        }
       }
     },
     {
@@ -23217,7 +24035,13 @@
       "why_dropped": null,
       "tag": "Safety and falls",
       "tag_secondary": null,
-      "logo": "/api/logo/company-durcal"
+      "logo": "/api/logo/company-durcal",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/durcal",
+          "source": "https://www.linkedin.com/company/durcal"
+        }
+      }
     },
     {
       "id": "company-pensium",
@@ -23259,7 +24083,13 @@
       "why_dropped": null,
       "tag": "Money and retirement",
       "tag_secondary": null,
-      "logo": "/api/logo/company-pensium"
+      "logo": "/api/logo/company-pensium",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/pensium",
+          "source": "https://www.linkedin.com/company/pensium"
+        }
+      }
     },
     {
       "id": "company-everon",
@@ -23301,7 +24131,13 @@
       "why_dropped": null,
       "tag": "Safety and falls",
       "tag_secondary": null,
-      "logo": "/api/logo/company-everon"
+      "logo": "/api/logo/company-everon",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/everon-oy-ab",
+          "source": "https://www.linkedin.com/company/everon-oy-ab"
+        }
+      }
     },
     {
       "id": "company-effectivate",
@@ -23362,7 +24198,11 @@
             "name": "Anna Izotcheev",
             "source": "https://effectivate.com/about/"
           }
-        ]
+        ],
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/effectivate",
+          "source": "https://www.linkedin.com/company/effectivate"
+        }
       }
     },
     {
@@ -23602,7 +24442,13 @@
       "why_dropped": null,
       "tag": "Safety and falls",
       "tag_secondary": null,
-      "logo": "/api/logo/company-sensfloor"
+      "logo": "/api/logo/company-sensfloor",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/future-shape",
+          "source": "https://www.linkedin.com/company/future-shape"
+        }
+      }
     },
     {
       "id": "company-essence-smartcare",
@@ -23703,7 +24549,11 @@
             "role": "Founder and CEO of Essence Group, the parent of Essence SmartCare",
             "source": "https://www.prnewswire.com/news-releases/essence-smartcare-launches-mdsense-to-enable-complete-senior-fall-protection-301128217.html"
           }
-        ]
+        ],
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/essence-smartcare",
+          "source": "https://www.linkedin.com/company/essence-smartcare"
+        }
       },
       "writeup_qa": {
         "pass": false,
@@ -23839,7 +24689,13 @@
       "why_dropped": null,
       "tag": "Safety and falls",
       "tag_secondary": null,
-      "logo": "/api/logo/company-kaspard"
+      "logo": "/api/logo/company-kaspard",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/kaspard",
+          "source": "https://www.linkedin.com/company/kaspard"
+        }
+      }
     },
     {
       "id": "company-gripwise-tech",
@@ -23880,7 +24736,13 @@
       "why_dropped": null,
       "tag": "Safety and falls",
       "tag_secondary": null,
-      "logo": "/api/logo/company-gripwise-tech"
+      "logo": "/api/logo/company-gripwise-tech",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/gripwise",
+          "source": "https://www.linkedin.com/company/gripwise"
+        }
+      }
     },
     {
       "id": "company-timewise",
@@ -23926,6 +24788,10 @@
         "country": {
           "code": "GB",
           "source": "https://timewise.co.uk/about-us/contact-us/"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/timewise-healthier-working-lives",
+          "source": "https://www.linkedin.com/company/timewise-healthier-working-lives"
         }
       }
     },
@@ -23968,7 +24834,13 @@
       "why_dropped": null,
       "tag": "Safety and falls",
       "tag_secondary": "Home and housing",
-      "logo": "/api/logo/company-freesense-solutions"
+      "logo": "/api/logo/company-freesense-solutions",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/freesense-solutions",
+          "source": "https://www.linkedin.com/company/freesense-solutions"
+        }
+      }
     },
     {
       "id": "company-carepredict",
@@ -24010,7 +24882,13 @@
       "why_dropped": null,
       "tag": "Safety and falls",
       "tag_secondary": null,
-      "logo": "/api/logo/company-carepredict"
+      "logo": "/api/logo/company-carepredict",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/carepredict",
+          "source": "https://www.linkedin.com/company/carepredict"
+        }
+      }
     },
     {
       "id": "company-mintt",
@@ -24056,6 +24934,10 @@
         "country": {
           "code": "BE",
           "source": "https://mintt.care/mentions-legales"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/mintt-care",
+          "source": "https://www.linkedin.com/company/mintt-care"
         }
       }
     },
@@ -24098,7 +24980,13 @@
       "why_dropped": null,
       "tag": "Safety and falls",
       "tag_secondary": null,
-      "logo": "/api/logo/company-kinetikos-health"
+      "logo": "/api/logo/company-kinetikos-health",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/kinetikoshealth",
+          "source": "https://www.linkedin.com/company/kinetikoshealth"
+        }
+      }
     },
     {
       "id": "company-puresec-gmbh",
@@ -24159,6 +25047,10 @@
         "country": {
           "code": "DE",
           "source": "https://smart-altern.de/impressum/"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/puresec-gmbh",
+          "source": "https://www.linkedin.com/company/puresec-gmbh"
         }
       }
     },
@@ -24214,6 +25106,10 @@
         "country": {
           "code": "SE",
           "source": "https://www.northdata.com/Next%20Step%20Dynamics%20AB"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/nextstep-dynamics",
+          "source": "https://www.linkedin.com/company/nextstep-dynamics"
         }
       }
     },
@@ -24297,7 +25193,13 @@
       "why_dropped": null,
       "tag": "Safety and falls",
       "tag_secondary": null,
-      "logo": "/api/logo/company-parrots"
+      "logo": "/api/logo/company-parrots",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/parrots-medical",
+          "source": "https://www.linkedin.com/company/parrots-medical"
+        }
+      }
     },
     {
       "id": "company-coti",
@@ -24352,7 +25254,11 @@
             "url": "https://apps.apple.com/es/app/coti/id6736633124",
             "source": "https://www.micoti.es/"
           }
-        ]
+        ],
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/cotinclusiva",
+          "source": "https://www.linkedin.com/company/cotinclusiva"
+        }
       }
     },
     {
@@ -24407,6 +25313,10 @@
         "country": {
           "code": "FR",
           "source": "https://www.lifeplus.io/pages-legales/mentions-legales"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/life-plus-io",
+          "source": "https://www.linkedin.com/company/life-plus-io"
         }
       }
     },
@@ -24674,6 +25584,10 @@
         "country": {
           "code": "FR",
           "source": "https://www.northdata.com/Age%20Impulse%20SAS"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/age-impulse",
+          "source": "https://www.linkedin.com/company/age-impulse"
         }
       }
     },
@@ -24768,6 +25682,10 @@
         "country": {
           "code": "GB",
           "source": "https://find-and-update.company-information.service.gov.uk/company/08724082"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/suresafe-personal-alarms",
+          "source": "https://www.linkedin.com/company/suresafe-personal-alarms"
         }
       },
       "writeup_qa": {
@@ -24867,6 +25785,10 @@
         "country": {
           "code": "NO",
           "source": "https://novelda.com/contact/"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/noveldaas",
+          "source": "https://www.linkedin.com/company/noveldaas"
         }
       }
     },
@@ -24909,7 +25831,13 @@
       "why_dropped": null,
       "tag": "Safety and falls",
       "tag_secondary": null,
-      "logo": "/api/logo/company-sensotiss"
+      "logo": "/api/logo/company-sensotiss",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/sensotiss",
+          "source": "https://www.linkedin.com/company/sensotiss"
+        }
+      }
     },
     {
       "id": "company-easierlife",
@@ -24986,7 +25914,11 @@
             "name": "ESWE Versorgungs AG",
             "source": "https://www.northdata.de/easierLife%20GmbH,%20Karlsruhe/HRB%20720260"
           }
-        ]
+        ],
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/easierlife-gmbh",
+          "source": "https://www.linkedin.com/company/easierlife-gmbh"
+        }
       },
       "writeup": {
         "what_it_does": {
@@ -25179,6 +26111,10 @@
         "country": {
           "code": "CH",
           "source": "https://www.northdata.com/QUMEA%20AG"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/qumea",
+          "source": "https://www.linkedin.com/company/qumea"
         }
       }
     },
@@ -25272,6 +26208,10 @@
         "country": {
           "code": "DE",
           "source": "https://chrood.com/legal/imprint"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/chrood",
+          "source": "https://www.linkedin.com/company/chrood"
         }
       }
     },
@@ -25314,7 +26254,13 @@
       "why_dropped": null,
       "tag": "Safety and falls",
       "tag_secondary": null,
-      "logo": "/api/logo/company-versovision"
+      "logo": "/api/logo/company-versovision",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/verso-vision",
+          "source": "https://www.linkedin.com/company/verso-vision"
+        }
+      }
     },
     {
       "id": "company-true-kare",
@@ -25355,7 +26301,13 @@
       "why_dropped": null,
       "tag": "Safety and falls",
       "tag_secondary": null,
-      "logo": "/api/logo/company-true-kare"
+      "logo": "/api/logo/company-true-kare",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/true-kare",
+          "source": "https://www.linkedin.com/company/true-kare"
+        }
+      }
     },
     {
       "id": "company-wolk-airbag",
@@ -25397,7 +26349,13 @@
       "why_dropped": null,
       "tag": "Safety and falls",
       "tag_secondary": null,
-      "logo": "/api/logo/company-wolk-airbag"
+      "logo": "/api/logo/company-wolk-airbag",
+      "facts": {
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/wolkairbag",
+          "source": "https://www.linkedin.com/company/wolkairbag"
+        }
+      }
     },
     {
       "id": "company-maturious",
@@ -25443,6 +26401,10 @@
         "country": {
           "code": "AU",
           "source": "https://www.maturious.com/contact-us/"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/maturious",
+          "source": "https://www.linkedin.com/company/maturious"
         }
       }
     },
@@ -25506,7 +26468,11 @@
             "role": "Founder of Helite, the company that makes Hip'Guard",
             "source": "https://www.helite.com/histoire-protection-airbag-helite/"
           }
-        ]
+        ],
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/hip-guard",
+          "source": "https://www.linkedin.com/company/hip-guard"
+        }
       },
       "writeup": {
         "what_it_does": {
@@ -25660,6 +26626,10 @@
         "country": {
           "code": "FR",
           "source": "https://www.dynseo.com/mentions-legales/"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/dynseo",
+          "source": "https://www.linkedin.com/company/dynseo"
         }
       }
     },
@@ -25756,6 +26726,10 @@
         "country": {
           "code": "FR",
           "source": "https://www.telegrafik.fr/mentions-legales/"
+        },
+        "linkedin": {
+          "url": "https://www.linkedin.com/company/telegrafik",
+          "source": "https://www.linkedin.com/company/telegrafik"
         }
       }
     },
