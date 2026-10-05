@@ -466,6 +466,41 @@
     return `<div class="group">${rows.join("")}</div>`;
   }
 
+  function sectionText(block) {
+    if (!block) return "";
+    if (typeof block === "string") return plainFact(block);
+    return plainFact(block.text || "");
+  }
+  function sectionSources(block) {
+    if (!block || typeof block !== "object" || !Array.isArray(block.sources)) return [];
+    const out = [];
+    block.sources.forEach((item) => {
+      const href = safeUrl(typeof item === "string" ? item : (item && item.url));
+      if (href && out.indexOf(href) === -1) out.push(href);
+    });
+    return out;
+  }
+  function writeupBlocks(e) {
+    const writeup = e && e.writeup && typeof e.writeup === "object" ? e.writeup : null;
+    if (!writeup) return [];
+    return [
+      ["What it does", writeup.what_it_does],
+      ["Who pays", writeup.who_pays],
+      ["Traction", writeup.traction],
+      ["Why it's interesting", writeup.why_interesting],
+      ["Status", writeup.status]
+    ].map(([label, block]) => {
+      const text = sectionText(block);
+      if (!text) return null;
+      return { label, text, sources: sectionSources(block) };
+    }).filter(Boolean);
+  }
+  function writeupCard(e) {
+    const blocks = writeupBlocks(e);
+    if (!blocks.length) return "";
+    return `<div class="group">${blocks.map((block) => `<div class="kv"><p class="kicker">${t(block.label)}</p><p>${t(block.text)}${block.sources.map(sourceLink).join("")}</p></div>`).join("")}</div>`;
+  }
+
   function similarCard(e) {
     const rows = similarEntries(e);
     if (!rows.length) return "";
@@ -507,20 +542,23 @@
     const country = origin ? origin.name : (e.type === "idea" ? knownCountry(e) : "");
     const headMeta = country ? kind + ", " + country : kind;
     const summary = displaySummary(e);
-    const fields = [
-      ["Job", sceneValue(e, "job", "job")],
-      ["Who sells", sceneValue(e, "seller", "who_sells")],
-      ["Who pays", sceneValue(e, "payer", "who_pays")],
-      ["Why we dropped it", killed ? (e.why_dropped || e.kill_reason || "") : ""]
-    ].filter((pair) => pair[1] && !isJunk(pair[1]));
-    const card = fields.map(([k, v]) => `<div class="kv"><p class="kicker">${t(k)}</p><p>${t(cleanProse(v))}</p></div>`).join("");
+    const writeup = writeupBlocks(e);
+    const fields = [];
+    if (!writeup.length) {
+      fields.push(
+        ["Job", sceneValue(e, "job", "job")],
+        ["Who sells", sceneValue(e, "seller", "who_sells")],
+        ["Who pays", sceneValue(e, "payer", "who_pays")]
+      );
+    }
+    if (killed) fields.push(["Why we dropped it", e.why_dropped || e.kill_reason || ""]);
+    const card = fields.filter((pair) => pair[1] && !isJunk(pair[1])).map(([k, v]) => `<div class="kv"><p class="kicker">${t(k)}</p><p>${t(cleanProse(v))}</p></div>`).join("");
     const web = safeUrl(e.website);
     let host = "";
     if (web) {
       try { host = new URL(web).host; } catch (err) { host = web; }
     }
     const sources = sourcesOf(e);
-    const extra = moreHtml(e);
     let html = `<article class="detail">
       <div class="detail-head">
         ${rowIcon(e)}
@@ -531,6 +569,7 @@
       </div>
       ${summary ? `<p class="summary">${t(summary)}</p>` : ""}`;
     if (card) html += `<div class="group">${card}</div>`;
+    html += writeupCard(e);
     html += factsCard(e);
     html += similarCard(e);
     if (web) {
@@ -546,16 +585,6 @@
         html += `<li><a class="src-link" href="${esc(s.url)}" target="_blank" rel="noopener">${t(s.label)}</a></li>`;
       });
       html += `</ul></div></div>`;
-    }
-    if (extra) {
-      html += `<div class="group">
-        <button type="button" class="row more" data-more aria-expanded="${moreOpen ? "true" : "false"}">
-          ${iconTile("note")}
-          <span class="row-text"><span class="name">${moreOpen ? "Hide the full note" : "Read the full note"}</span></span>
-          ${chevron()}
-        </button>
-        ${moreOpen ? `<div class="more-panel">${extra}</div>` : ""}
-      </div>`;
     }
     html += `</article>`;
     return html;

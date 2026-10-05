@@ -2464,7 +2464,7 @@
       "id": "company-tuktu",
       "type": "company",
       "name": "Tuktu",
-      "summary": "Matches people in Vancouver for everyday help.",
+      "summary": "Matches Canadian families with checked local helpers, booked by the hour.",
       "status": "deep_dive_pending",
       "kill_reason": null,
       "kill_source": null,
@@ -2499,9 +2499,9 @@
       "research_summary": "Matched everyday help (Vancouver).",
       "published": true,
       "title": "Tuktu",
-      "job": "It matches people in Vancouver for everyday help.",
+      "job": "Tuktu matches families with local helpers for companionship, rides, housework, shopping, dementia care, and overnight care. The company says helpers are background-checked through Certn, and that a booking can start at one hour with no long contract, on the site, by phone, or in an app. The head office is in Vancouver, and the helper list includes Vancouver, Victoria, Kelowna, Edmonton, and Markham.",
       "who_sells": null,
-      "who_pays": null,
+      "who_pays": "Families pay by the hour. The site lists companionship at 22 to 30 dollars an hour, help at home at 30 to 40 dollars, and mobility help or dementia and overnight care at 35 to 45 dollars. A question on the same site says services start at 25 dollars an hour. Care homes, non-profits, and retiree groups are offered discounts, with no public rate.",
       "why_dropped": null,
       "tag": "Family caregivers",
       "tag_secondary": null,
@@ -2522,6 +2522,66 @@
         "country": {
           "code": "CA",
           "source": "https://tuktu.ca/contact-us"
+        },
+        "founded": {
+          "year": 2019,
+          "source": "https://federalcorporation.ca/corporation/11222708"
+        },
+        "hq": {
+          "city": "Vancouver",
+          "source": "http://www.tuktu.ca/"
+        },
+        "founders": [
+          {
+            "name": "Rustam Sengupta",
+            "role": "CEO and founder",
+            "source": "https://www.newventuresbc.com/top-25-spotlight-tuktu/"
+          }
+        ],
+        "funding": {
+          "last_round": {
+            "amount": "$750,000",
+            "date": "2022",
+            "source": "https://www.newventuresbc.com/top-25-spotlight-tuktu/"
+          }
+        }
+      },
+      "writeup": {
+        "what_it_does": {
+          "text": "Tuktu matches families with local helpers for companionship, rides, housework, shopping, dementia care, and overnight care. The company says helpers are background-checked through Certn, and that a booking can start at one hour with no long contract, on the site, by phone, or in an app. The head office is in Vancouver, and the helper list includes Vancouver, Victoria, Kelowna, Edmonton, and Markham.",
+          "sources": [
+            "http://www.tuktu.ca/"
+          ]
+        },
+        "who_pays": {
+          "text": "Families pay by the hour. The site lists companionship at 22 to 30 dollars an hour, help at home at 30 to 40 dollars, and mobility help or dementia and overnight care at 35 to 45 dollars. A question on the same site says services start at 25 dollars an hour. Care homes, non-profits, and retiree groups are offered discounts, with no public rate.",
+          "sources": [
+            "http://www.tuktu.ca/"
+          ]
+        },
+        "traction": {
+          "text": "The company site states 5,000 or more families and caregivers supported, 50,000 or more hours of care, and 600 or more certified caregivers. Those figures are not dated. A New Ventures BC profile from July 2022, after a launch earlier that year, reported over 230 customers and providers, about 150 companions in the Lower Mainland, 60 percent monthly user growth, and a 750,000 dollar pre-seed round. Tuktu Care Inc. was incorporated on 29 January 2019, and the corporation record shows a 2026 annual return.",
+          "sources": [
+            "http://www.tuktu.ca/",
+            "https://www.newventuresbc.com/top-25-spotlight-tuktu/",
+            "https://federalcorporation.ca/corporation/11222708"
+          ]
+        },
+        "why_interesting": {
+          "text": "The offer is hourly help without an agency contract, which suits a family that needs a ride or a few hours of company rather than a full care shift. The jump from the July 2022 counts to the much larger figures on the current homepage is wide, and the larger figures are the company's own, with no outside check found.",
+          "sources": [
+            "http://www.tuktu.ca/",
+            "https://www.newventuresbc.com/top-25-spotlight-tuktu/"
+          ]
+        },
+        "status": {
+          "state": "active",
+          "as_of": "2026-10-05",
+          "text": "The site is taking bookings at a Vancouver head office and a toll-free number. A federal corporation record for Tuktu Care Inc. shows a 2026 annual return with a meeting date of 6 November 2025, and lists Rustam Sengupta as director.",
+          "sources": [
+            "http://www.tuktu.ca/",
+            "https://federalcorporation.ca/corporation/11222708"
+          ]
         }
       }
     },
@@ -2698,7 +2758,7 @@
       "id": "company-sagecare",
       "type": "company",
       "name": "Sage Care",
-      "summary": "Handles client intake for care agencies.",
+      "summary": "Turns home-care intake calls into care plans for agencies.",
       "status": "deep_dive_pending",
       "kill_reason": null,
       "kill_source": null,
@@ -2707,7 +2767,7 @@
       "themes": [
         "T14"
       ],
-      "country": "United States",
+      "country": "US",
       "city": "",
       "scene": {
         "job": "It handles client intake for care agencies."
@@ -2733,13 +2793,89 @@
       "research_summary": "YC Summer 2024; agency client-intake (Clara section on same page).",
       "published": true,
       "title": "Sage Care",
-      "job": "It handles client intake for care agencies.",
+      "job": "Sage Care records intake calls, home assessments and later visits for home-care agencies, then drafts the care plan and the follow-up for a person to check. It writes the result into WellSky or AxisCare. The site says this is for small and mid-sized agencies in the United States and that it meets US health-privacy rules. It says teams save 100 minutes of work per new client.",
       "who_sells": null,
-      "who_pays": null,
+      "who_pays": "Home-care agencies pay. Sage Care says to book a demo for a price and does not publish one.",
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": null
+      "logo": null,
+      "writeup": {
+        "what_it_does": {
+          "text": "Sage Care records intake calls, home assessments and later visits for home-care agencies, then drafts the care plan and the follow-up for a person to check. It writes the result into WellSky or AxisCare. The site says this is for small and mid-sized agencies in the United States and that it meets US health-privacy rules. It says teams save 100 minutes of work per new client.",
+          "sources": [
+            "https://www.sagecare.ai/",
+            "https://www.ycombinator.com/companies/sagecare"
+          ]
+        },
+        "who_pays": {
+          "text": "Home-care agencies pay. Sage Care says to book a demo for a price and does not publish one.",
+          "sources": [
+            "https://www.sagecare.ai/"
+          ]
+        },
+        "traction": {
+          "text": "The homepage quotes Ashley Min, chief operating officer of Lifespan Care. The about page says the same team previously built Clara Home Care to more than 3,000 caregivers in California. Y Combinator lists Sage Care as active, founded in 2024, in the Summer 2024 batch, with a team of 3, in San Francisco. The site says agencies across the United States use it, without a count.",
+          "sources": [
+            "https://www.sagecare.ai/",
+            "https://www.sagecare.ai/about",
+            "https://www.ycombinator.com/companies/sagecare"
+          ]
+        },
+        "why_interesting": {
+          "text": "The Y Combinator page still carries the Clara launch story, a service that helped families in the San Francisco Bay Area hire a caregiver. The live site sells software to agencies instead, attached to the phone and to WellSky or AxisCare. The about page says the backers include Y Combinator and AARP's Agetech Collaborative. No round size is published.",
+          "sources": [
+            "https://www.ycombinator.com/companies/sagecare",
+            "https://www.sagecare.ai/",
+            "https://www.sagecare.ai/about"
+          ]
+        },
+        "status": {
+          "state": "active",
+          "as_of": "2026-10-05",
+          "text": "As of 5 October 2026 sagecare.ai is taking demo requests, and Y Combinator lists Sage Care as active.",
+          "sources": [
+            "https://www.sagecare.ai/",
+            "https://www.ycombinator.com/companies/sagecare"
+          ]
+        }
+      },
+      "facts": {
+        "founded": {
+          "year": 2024,
+          "source": "https://www.ycombinator.com/companies/sagecare"
+        },
+        "hq": {
+          "city": "San Francisco",
+          "source": "https://www.ycombinator.com/companies/sagecare"
+        },
+        "country": {
+          "code": "US",
+          "source": "https://www.ycombinator.com/companies/sagecare"
+        },
+        "founders": [
+          {
+            "name": "Jon Levinson",
+            "role": "founder and CEO",
+            "source": "https://www.ycombinator.com/companies/sagecare"
+          },
+          {
+            "name": "Ian Gillis",
+            "role": "founder and CTO",
+            "source": "https://www.ycombinator.com/companies/sagecare"
+          }
+        ],
+        "investors": [
+          {
+            "name": "Y Combinator",
+            "source": "https://www.sagecare.ai/about"
+          },
+          {
+            "name": "AARP's Agetech Collaborative",
+            "source": "https://www.sagecare.ai/about"
+          }
+        ]
+      }
     },
     {
       "id": "company-willful",
@@ -2903,7 +3039,7 @@
       "id": "company-rhem-labs",
       "type": "company",
       "name": "Rhem Labs",
-      "summary": "Connects hardware and data for care at home.",
+      "summary": "Builds a home robot that spots falls and handles chores for ageing parents.",
       "status": "deep_dive_pending",
       "kill_reason": null,
       "kill_source": null,
@@ -2912,7 +3048,7 @@
       "themes": [
         "T08"
       ],
-      "country": "United States",
+      "country": "US",
       "city": "",
       "scene": {
         "job": "It is building connected hardware and data for care at home."
@@ -2938,13 +3074,74 @@
       "research_summary": "YC Fall 2026; connected hardware/data for care at home.",
       "published": true,
       "title": "Rhem Labs",
-      "job": "It is building connected hardware and data for care at home.",
+      "job": "Rhem Labs is building a robot for a parent's home. The company site says it can order groceries, refill a prescription, book a doctor visit or a ride, read a letter aloud, check blood pressure, heart rate, and blood oxygen, and call the family after a fall or a long silence, with no pendant to press. Y Combinator lists the company as home care technology for ageing parents and their families.",
       "who_sells": null,
-      "who_pays": null,
+      "who_pays": "The site is written for adult children arranging help for a parent at home. Neither the product site nor the Y Combinator page lists a price.",
       "why_dropped": null,
       "tag": "Safety and falls",
       "tag_secondary": "Home and housing",
-      "logo": null
+      "logo": null,
+      "writeup": {
+        "what_it_does": {
+          "text": "Rhem Labs is building a robot for a parent's home. The company site says it can order groceries, refill a prescription, book a doctor visit or a ride, read a letter aloud, check blood pressure, heart rate, and blood oxygen, and call the family after a fall or a long silence, with no pendant to press. Y Combinator lists the company as home care technology for ageing parents and their families.",
+          "sources": [
+            "https://www.rhem.ai/",
+            "https://www.ycombinator.com/companies/rhem-labs"
+          ]
+        },
+        "who_pays": {
+          "text": "The site is written for adult children arranging help for a parent at home. Neither the product site nor the Y Combinator page lists a price.",
+          "sources": [
+            "https://www.rhem.ai/",
+            "https://www.ycombinator.com/companies/rhem-labs"
+          ]
+        },
+        "traction": {
+          "text": "Y Combinator lists Rhem Labs as active in its Fall 2026 batch, founded in 2025, with a team of two, in San Francisco. No customers, users, or shipments are named on the company site or the Y Combinator page.",
+          "sources": [
+            "https://www.ycombinator.com/companies/rhem-labs",
+            "https://www.rhem.ai/"
+          ]
+        },
+        "why_interesting": {
+          "text": "The product page already promises pharmacy calls, grocery orders, vital signs, and fall alerts in one device. The accelerator page, for a company started in 2025, still shows a team of two. The about page says the founders started the company after nearly two decades of family care for a grandmother who had a stroke and an aunt who had a brain tumor.",
+          "sources": [
+            "https://www.rhem.ai/",
+            "https://www.ycombinator.com/companies/rhem-labs",
+            "https://www.rhem.ai/aboutus"
+          ]
+        },
+        "status": {
+          "state": "active",
+          "as_of": "2026-10-05",
+          "text": "Y Combinator marks Rhem Labs active in the Fall 2026 batch, and rhem.ai is live with a support email. No customer launch, shutdown, or acquisition was stated on those pages.",
+          "sources": [
+            "https://www.ycombinator.com/companies/rhem-labs",
+            "https://www.rhem.ai/"
+          ]
+        }
+      },
+      "facts": {
+        "founded": {
+          "year": 2025,
+          "source": "https://www.ycombinator.com/companies/rhem-labs"
+        },
+        "hq": {
+          "city": "San Francisco",
+          "source": "https://www.ycombinator.com/companies/rhem-labs"
+        },
+        "country": {
+          "code": "US",
+          "source": "https://www.ycombinator.com/companies/rhem-labs"
+        },
+        "founders": [
+          {
+            "name": "Jacob Shen",
+            "role": "Founder and CEO",
+            "source": "https://www.ycombinator.com/companies/rhem-labs"
+          }
+        ]
+      }
     },
     {
       "id": "company-revercare",
@@ -2997,7 +3194,7 @@
       "id": "company-a10-lab",
       "type": "company",
       "name": "A10 Lab",
-      "summary": "Runs a habit app and municipal health programmes.",
+      "summary": "Runs a five-person habit app that Japanese cities use to prevent frailty.",
       "status": "deep_dive_pending",
       "kill_reason": null,
       "kill_source": null,
@@ -3006,7 +3203,7 @@
       "themes": [
         "T05"
       ],
-      "country": "Japan",
+      "country": "JP",
       "city": "",
       "scene": {
         "job": "It offers a habit app and runs municipal health programmes."
@@ -3032,13 +3229,105 @@
       "research_summary": "Habit app and municipal health programmes.",
       "published": true,
       "title": "A10 Lab",
-      "job": "It offers a habit app and runs municipal health programmes.",
+      "job": "A10 Lab makes Minchalle, an app where five people with the same goal chat and encourage each other to keep a habit such as walking. Cities buy a local page inside the app for residents. In Shinagawa, Tokyo, people aged 65 and over join teams to keep moving and stay connected, and the ward runs classes on how to use the phone.",
       "who_sells": null,
-      "who_pays": null,
+      "who_pays": "The public app is listed at 500 yen a month or 4,700 yen a year. In Shinagawa the classes are free for residents aged 65 and over, and the company provides the ward with its own page in the app.",
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": "/api/logo/company-a10-lab"
+      "logo": "/api/logo/company-a10-lab",
+      "writeup": {
+        "what_it_does": {
+          "text": "A10 Lab makes Minchalle, an app where five people with the same goal chat and encourage each other to keep a habit such as walking. Cities buy a local page inside the app for residents. In Shinagawa, Tokyo, people aged 65 and over join teams to keep moving and stay connected, and the ward runs classes on how to use the phone.",
+          "sources": [
+            "https://a10lab.com/",
+            "https://a10lab.com/company/",
+            "https://a10lab.com/press-20250501/"
+          ]
+        },
+        "who_pays": {
+          "text": "The public app is listed at 500 yen a month or 4,700 yen a year. In Shinagawa the classes are free for residents aged 65 and over, and the company provides the ward with its own page in the app.",
+          "sources": [
+            "https://a10lab.com/press-20250501/",
+            "https://a10lab.com/company/"
+          ]
+        },
+        "traction": {
+          "text": "As of May 2025, A10 Lab said it had 46 municipal projects, covering frailty prevention, phone skills for older people, and adult health programmes. Minchalle launched on 6 November 2015 and has been named a Google Play best app three times. A frailty project with Fuchu city won a Ministry of Health, Labour and Welfare award. The company homepage also reported an August 2026 start with Oda city in Shimane, called the first municipality in that prefecture to use the app this way.",
+          "sources": [
+            "https://a10lab.com/press-20250501/",
+            "https://a10lab.com/"
+          ]
+        },
+        "why_interesting": {
+          "text": "The same five-person habit app is sold to anyone trying to stick with a routine and to city offices that want older residents to keep walking after a short class ends. Shinagawa pairs the app with in-person lessons and a phone support line, because many of the people it wants to reach are uneasy with smartphones.",
+          "sources": [
+            "https://a10lab.com/press-20250501/"
+          ]
+        },
+        "status": {
+          "state": "active",
+          "as_of": "2026-10-05",
+          "text": "The company site is publishing news into September 2026, and its company page says its security certificate runs through 2026 for a seventh year.",
+          "sources": [
+            "https://a10lab.com/",
+            "https://a10lab.com/company/"
+          ]
+        }
+      },
+      "facts": {
+        "founded": {
+          "year": 2016,
+          "source": "https://a10lab.com/company/"
+        },
+        "hq": {
+          "city": "Tokyo",
+          "source": "https://a10lab.com/company/"
+        },
+        "country": {
+          "code": "JP",
+          "source": "https://a10lab.com/company/"
+        },
+        "founders": [
+          {
+            "name": "長坂剛",
+            "role": "Founder and CEO",
+            "source": "https://a10lab.com/company/"
+          },
+          {
+            "name": "山口信行",
+            "role": "Co-founder and CTO",
+            "source": "https://a10lab.com/company/"
+          },
+          {
+            "name": "木下謙一",
+            "role": "Co-founder and CDO",
+            "source": "https://a10lab.com/company/"
+          }
+        ],
+        "investors": [
+          {
+            "name": "株式会社ファストトラックイニシアティブ",
+            "source": "https://a10lab.com/company/"
+          },
+          {
+            "name": "株式会社みらい創造インベストメンツ",
+            "source": "https://a10lab.com/company/"
+          },
+          {
+            "name": "鎌倉投信株式会社",
+            "source": "https://a10lab.com/company/"
+          },
+          {
+            "name": "住友生命保険相互会社",
+            "source": "https://a10lab.com/company/"
+          },
+          {
+            "name": "一般財団法人社会変革推進財団",
+            "source": "https://a10lab.com/company/"
+          }
+        ]
+      }
     },
     {
       "id": "company-dignity-charm",
@@ -3244,7 +3533,7 @@
       "id": "company-darmiyan",
       "type": "company",
       "name": "Darmiyan",
-      "summary": "Checks for Alzheimer disease early with an MRI test.",
+      "summary": "Scores a brain MRI for the chance of Alzheimer's within five years.",
       "status": "deep_dive_pending",
       "kill_reason": null,
       "kill_source": null,
@@ -3253,7 +3542,7 @@
       "themes": [
         "T06"
       ],
-      "country": "Canada / US",
+      "country": "US",
       "city": "",
       "scene": {
         "job": "It offers an MRI test aimed at finding Alzheimer disease early."
@@ -3279,19 +3568,108 @@
       "research_summary": "Early Alzheimer MRI test. Diagnostics.",
       "published": true,
       "title": "Darmiyan",
-      "job": "It offers an MRI test aimed at finding Alzheimer disease early.",
+      "job": "Darmiyan's BrainSee is prescription software for doctors. For a person aged 55 to 95 who already has amnestic mild cognitive impairment, it reads a standard brain MRI, age, sex and memory-test scores and returns a score from 0 to 100. A score above 50 looks more like people who developed Alzheimer's dementia within five years, and a score below 50 looks more like people who did not. The FDA says a doctor must not diagnose or decide treatment from this score alone, and the scan needs no contrast dye.",
       "who_sells": null,
-      "who_pays": null,
+      "who_pays": "Doctors order it. The FDA limits sale and use to prescription, and clinicians upload the MRI through a web portal. No public price is listed.",
       "why_dropped": null,
       "tag": "Memory and dementia",
       "tag_secondary": null,
-      "logo": "/api/logo/company-darmiyan"
+      "logo": "/api/logo/company-darmiyan",
+      "writeup": {
+        "what_it_does": {
+          "text": "Darmiyan's BrainSee is prescription software for doctors. For a person aged 55 to 95 who already has amnestic mild cognitive impairment, it reads a standard brain MRI, age, sex and memory-test scores and returns a score from 0 to 100. A score above 50 looks more like people who developed Alzheimer's dementia within five years, and a score below 50 looks more like people who did not. The FDA says a doctor must not diagnose or decide treatment from this score alone, and the scan needs no contrast dye.",
+          "sources": [
+            "https://darmiyan.com/products/",
+            "https://www.accessdata.fda.gov/cdrh_docs/reviews/DEN220066.pdf"
+          ]
+        },
+        "who_pays": {
+          "text": "Doctors order it. The FDA limits sale and use to prescription, and clinicians upload the MRI through a web portal. No public price is listed.",
+          "sources": [
+            "https://www.accessdata.fda.gov/cdrh_docs/reviews/DEN220066.pdf",
+            "https://www.prnewswire.com/news-releases/darmiyan-receives-fda-approval-for-brainsee-the-first-prognostic-test-for-predicting-likelihood-of-progression-to-alzheimers-dementia-302033616.html"
+          ]
+        },
+        "traction": {
+          "text": "The FDA granted De Novo clearance DEN220066 on 11 January 2024, after a breakthrough designation the company dates to May 2021. In the clearance study, 198 people at 27 North American hospitals were scored against five years of follow-up: specificity was 96.3% and sensitivity was 72.9%. The company said in January 2024 that doctors could use it through a secure web portal. No sales or user count is published.",
+          "sources": [
+            "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/denovo.cfm?ID=DEN220066",
+            "https://www.accessdata.fda.gov/cdrh_docs/reviews/DEN220066.pdf",
+            "https://darmiyan.com/products/",
+            "https://www.prnewswire.com/news-releases/darmiyan-receives-fda-approval-for-brainsee-the-first-prognostic-test-for-predicting-likelihood-of-progression-to-alzheimers-dementia-302033616.html"
+          ]
+        },
+        "why_interesting": {
+          "text": "It uses an ordinary MRI a memory clinic may already have, instead of a spinal tap or a PET scan, and it forecasts five years ahead rather than claiming to diagnose Alzheimer's on the spot. The FDA created a new device category for it. The same review notes that the study group was mostly white, that the low end of the sensitivity range sat under the 70% bar the company had set, and that a follow-up study in a wider group of patients was required.",
+          "sources": [
+            "https://www.accessdata.fda.gov/cdrh_docs/reviews/DEN220066.pdf"
+          ]
+        },
+        "status": {
+          "state": "active",
+          "as_of": "2026-10-05",
+          "text": "The company website still presents BrainSee as its first product, with FDA clearance in January 2024. No 2025 or 2026 sales update was found.",
+          "sources": [
+            "https://darmiyan.com/",
+            "https://darmiyan.com/products/"
+          ]
+        }
+      },
+      "facts": {
+        "founded": {
+          "year": 2014,
+          "source": "https://darmiyan.com/padideh-kamali-zare/"
+        },
+        "hq": {
+          "city": "San Francisco",
+          "source": "https://www.prnewswire.com/news-releases/darmiyan-receives-fda-approval-for-brainsee-the-first-prognostic-test-for-predicting-likelihood-of-progression-to-alzheimers-dementia-302033616.html"
+        },
+        "country": {
+          "code": "US",
+          "source": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/denovo.cfm?ID=DEN220066"
+        },
+        "founders": [
+          {
+            "name": "Padideh Kamali-Zare",
+            "role": "CEO and founder",
+            "source": "https://darmiyan.com/team/"
+          },
+          {
+            "name": "Kaveh Vejdani",
+            "role": "Chief medical and technology officer and co-founder",
+            "source": "https://darmiyan.com/team/"
+          },
+          {
+            "name": "Thomas Liebmann",
+            "role": "Co-founder and product consultant",
+            "source": "https://darmiyan.com/team/"
+          }
+        ],
+        "investors": [
+          {
+            "name": "Eisai",
+            "source": "https://darmiyan.com/padideh-kamali-zare/"
+          },
+          {
+            "name": "IT-Farm",
+            "source": "https://darmiyan.com/padideh-kamali-zare/"
+          },
+          {
+            "name": "Y-Combinator",
+            "source": "https://darmiyan.com/padideh-kamali-zare/"
+          },
+          {
+            "name": "Pavan Krishnamurthy",
+            "source": "https://darmiyan.com/team/"
+          }
+        ]
+      }
     },
     {
       "id": "company-rocket-doctor",
       "type": "company",
       "name": "Rocket Doctor",
-      "summary": "Gives virtual visits with physicians.",
+      "summary": "Books video visits with licensed doctors in four Canadian regions.",
       "status": "deep_dive_pending",
       "kill_reason": null,
       "kill_source": null,
@@ -3300,7 +3678,7 @@
       "themes": [
         "T16"
       ],
-      "country": "Canada",
+      "country": "CA",
       "city": "",
       "scene": {
         "job": "It provides virtual visits with physicians."
@@ -3324,11 +3702,11 @@
         "note": "deep dive pending"
       },
       "research_summary": "Virtual physicians. T16 park theme.",
-      "published": true,
+      "published": false,
       "title": "Rocket Doctor",
-      "job": "It provides virtual visits with physicians.",
+      "job": "Rocket Doctor matches a patient with a licensed doctor in their province for a video visit, or a text chat in Ontario. The doctor can send a prescription to a chosen pharmacy and refer the patient to specialists on the service. The site says this is available in Ontario, Alberta, British Columbia and Atlantic Canada. Dr William Cherniak, an emergency doctor, is the founder, and the Ontario company is at 180 John Street, Toronto.",
       "who_sells": null,
-      "who_pays": null,
+      "who_pays": "In Alberta and British Columbia the provincial health plan covers the visit and the patient pays nothing. In Ontario, specialist care and the substance-use clinic are still covered by OHIP, but primary and urgent visits are not. The site lists those Ontario visits at $65 to $74.",
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
@@ -3339,7 +3717,76 @@
             "name": "William Cherniak",
             "source": "https://rocketdoctor.ca/about/"
           }
+        ],
+        "founded": {
+          "year": 2020,
+          "source": "https://www.prweb.com/releases/Rocket_Doctor_Inc_Secures_3_8M_USD_to_support_accelerated_patient_growth_across_the_US_Canada/prweb17967342.htm"
+        },
+        "hq": {
+          "city": "Toronto",
+          "source": "https://rocketdoctor.ca/"
+        },
+        "country": {
+          "code": "CA",
+          "source": "https://rocketdoctor.ca/"
+        },
+        "funding": {
+          "total": {
+            "amount": "$3.8 million",
+            "source": "https://www.prweb.com/releases/Rocket_Doctor_Inc_Secures_3_8M_USD_to_support_accelerated_patient_growth_across_the_US_Canada/prweb17967342.htm"
+          },
+          "last_round": {
+            "amount": "$2.7 million",
+            "date": "2021-05-28",
+            "source": "https://www.prweb.com/releases/Rocket_Doctor_Inc_Secures_3_8M_USD_to_support_accelerated_patient_growth_across_the_US_Canada/prweb17967342.htm"
+          }
+        },
+        "investors": [
+          {
+            "name": "f7 Ventures",
+            "source": "https://www.prweb.com/releases/Rocket_Doctor_Inc_Secures_3_8M_USD_to_support_accelerated_patient_growth_across_the_US_Canada/prweb17967342.htm"
+          },
+          {
+            "name": "Emergent Medical Associates",
+            "source": "https://www.prweb.com/releases/Rocket_Doctor_Inc_Secures_3_8M_USD_to_support_accelerated_patient_growth_across_the_US_Canada/prweb17967342.htm"
+          }
         ]
+      },
+      "writeup": {
+        "what_it_does": {
+          "text": "Rocket Doctor matches a patient with a licensed doctor in their province for a video visit, or a text chat in Ontario. The doctor can send a prescription to a chosen pharmacy and refer the patient to specialists on the service. The site says this is available in Ontario, Alberta, British Columbia and Atlantic Canada. Dr William Cherniak, an emergency doctor, is the founder, and the Ontario company is at 180 John Street, Toronto.",
+          "sources": [
+            "https://rocketdoctor.ca/",
+            "https://rocketdoctor.ca/rural-care/"
+          ]
+        },
+        "who_pays": {
+          "text": "In Alberta and British Columbia the provincial health plan covers the visit and the patient pays nothing. In Ontario, specialist care and the substance-use clinic are still covered by OHIP, but primary and urgent visits are not. The site lists those Ontario visits at $65 to $74.",
+          "sources": [
+            "https://rocketdoctor.ca/"
+          ]
+        },
+        "traction": {
+          "text": "The rural-care page says that since launching in 2020, doctors on Rocket Doctor have provided more than a quarter of a million virtual appointments, and that half of patients in Alberta and British Columbia are in rural or northern communities. A 28 May 2021 press release said a $2.7 million seed round, on top of $1.1 million of pre-seed funding, was led by f7 Ventures and Dr Irv Edwards with Emergent Medical Associates, and that the service then had more than 130 doctors and nearly 40,000 patients, with 90 percent of patients giving five stars.",
+          "sources": [
+            "https://rocketdoctor.ca/rural-care/",
+            "https://www.prweb.com/releases/Rocket_Doctor_Inc_Secures_3_8M_USD_to_support_accelerated_patient_growth_across_the_US_Canada/prweb17967342.htm"
+          ]
+        },
+        "why_interesting": {
+          "text": "Ontario stopped paying for primary virtual visits, so Rocket Doctor now charges $65 to $74 for those while specialist and addiction visits stay on OHIP. The service is a general clinic for any adult concern the doctor can handle on video, from colds to psychiatry, not a service built for older people.",
+          "sources": [
+            "https://rocketdoctor.ca/"
+          ]
+        },
+        "status": {
+          "state": "active",
+          "as_of": "2026-10-05",
+          "text": "As of 5 October 2026 the site is booking virtual visits and lists companies in Toronto, Calgary and Vancouver.",
+          "sources": [
+            "https://rocketdoctor.ca/"
+          ]
+        }
       }
     },
     {
@@ -3436,7 +3883,7 @@
       "id": "company-arjo",
       "type": "company",
       "name": "Arjo",
-      "summary": "Lets one carer move a person with a ceiling lift.",
+      "summary": "Sells a ceiling lift so one carer can move a person without lifting.",
       "status": "deep_dive_pending",
       "kill_reason": null,
       "kill_source": null,
@@ -3445,7 +3892,7 @@
       "themes": [
         "T01"
       ],
-      "country": "Global / DE",
+      "country": "SE",
       "city": "",
       "scene": {
         "job": "It sells the Maxi Sky 2, a ceiling lift designed so one carer can move a person."
@@ -3471,13 +3918,70 @@
       "research_summary": "Maxi Sky 2 single-carer ceiling lift; occupied T01 shelf.",
       "published": true,
       "title": "Arjo",
-      "job": "It sells the Maxi Sky 2, a ceiling lift designed so one carer can move a person.",
+      "job": "Arjo's Maxi Sky 2 is a lift hung from a ceiling track in a care home or hospital. One carer attaches a sling and moves the person along the track without lifting them by hand. The safe working load can be set at 120 kg, 200 kg or 272 kg. A hand control drives it, and a small screen on the unit shows the battery.",
       "who_sells": null,
-      "who_pays": null,
+      "who_pays": "Hospitals and care homes buy it from Arjo. The product page does not list a price and tells buyers to ask the local sales team whether it is sold in their country.",
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": "/api/logo/company-arjo"
+      "logo": "/api/logo/company-arjo",
+      "writeup": {
+        "what_it_does": {
+          "text": "Arjo's Maxi Sky 2 is a lift hung from a ceiling track in a care home or hospital. One carer attaches a sling and moves the person along the track without lifting them by hand. The safe working load can be set at 120 kg, 200 kg or 272 kg. A hand control drives it, and a small screen on the unit shows the battery.",
+          "sources": [
+            "https://prod.arjo.com/de-de/products/safe-patient-handling/ceiling-lift-solutions/ceiling-lifts/maxi-sky-2/"
+          ]
+        },
+        "who_pays": {
+          "text": "Hospitals and care homes buy it from Arjo. The product page does not list a price and tells buyers to ask the local sales team whether it is sold in their country.",
+          "sources": [
+            "https://prod.arjo.com/de-de/products/safe-patient-handling/ceiling-lift-solutions/ceiling-lifts/maxi-sky-2/"
+          ]
+        },
+        "traction": {
+          "text": "Arjo says it has about 7,000 employees, sells in more than 100 countries, and had net sales of SEK 11 billion in 2025. Those figures are for the whole company, which also sells beds, hygiene equipment and other mobility products, not for this lift alone.",
+          "sources": [
+            "https://www.arjo.com/int/about-us/"
+          ]
+        },
+        "why_interesting": {
+          "text": "Lifting people by hand is a common way carers get hurt. Maxi Sky 2 is built so one carer can do the move, including people who weigh up to 272 kg, instead of waiting for a second person. Arjo was founded in 1957 to work on mobility in care, and this lift is one piece of that range.",
+          "sources": [
+            "https://prod.arjo.com/de-de/products/safe-patient-handling/ceiling-lift-solutions/ceiling-lifts/maxi-sky-2/",
+            "https://www.arjo.com/int/about-us/"
+          ]
+        },
+        "status": {
+          "state": "active",
+          "as_of": "2026-10-05",
+          "text": "The Maxi Sky 2 page is on sale through Arjo's country sites, and the company about page reports 2025 sales from a head office in Malmö. The German product page lists Arjo Deutschland GmbH in Mainz-Kastel.",
+          "sources": [
+            "https://prod.arjo.com/de-de/products/safe-patient-handling/ceiling-lift-solutions/ceiling-lifts/maxi-sky-2/",
+            "https://www.arjo.com/int/about-us/"
+          ]
+        }
+      },
+      "facts": {
+        "founded": {
+          "year": 1957,
+          "source": "https://www.arjo.com/int/about-us/"
+        },
+        "hq": {
+          "city": "Malmö",
+          "source": "https://www.arjo.com/int/about-us/"
+        },
+        "country": {
+          "code": "SE",
+          "source": "https://www.arjo.com/int/about-us/"
+        },
+        "founders": [
+          {
+            "name": "Arne Johansson",
+            "role": "Founder",
+            "source": "https://www.arjo.com/int/about-us/"
+          }
+        ]
+      }
     },
     {
       "id": "company-tena-identifi",
@@ -3705,7 +4209,7 @@
       "id": "company-apetito",
       "type": "company",
       "name": "apetito",
-      "summary": "Cooks and delivers meals for senior homes.",
+      "summary": "Cooks frozen meals that care homes reheat and serve to residents.",
       "status": "deep_dive_pending",
       "kill_reason": null,
       "kill_source": null,
@@ -3740,9 +4244,9 @@
       "research_summary": "Heim catering; T10 kill.",
       "published": true,
       "title": "apetito",
-      "job": "It provides catering for senior care homes.",
+      "job": "apetito cooks meal components, freezes them, and delivers them to senior homes. Staff order lunch dishes in the mein.apetito portal, then finish the frozen food as a buffet or on plates in the home kitchen, including in the kitchen of a living area. The same group also cooks for nurseries, schools, workplaces, clinics, and people at home.",
       "who_sells": null,
-      "who_pays": null,
+      "who_pays": "Senior homes buy the frozen meals. apetito also offers those homes a free kitchen review. No public price per meal is listed.",
       "why_dropped": null,
       "tag": "Daily life and getting around",
       "tag_secondary": null,
@@ -3759,6 +4263,55 @@
         "country": {
           "code": "DE",
           "source": "https://www.apetito.de/ueber-apetito"
+        },
+        "founders": [
+          {
+            "name": "Karl Düsterberg",
+            "role": "Founder",
+            "source": "https://www.apetito.de/-/media/ApetitoDe/Presse/Jahresupdate/05_apetito-in-Daten-und-Fakten.pdf"
+          }
+        ]
+      },
+      "writeup": {
+        "what_it_does": {
+          "text": "apetito cooks meal components, freezes them, and delivers them to senior homes. Staff order lunch dishes in the mein.apetito portal, then finish the frozen food as a buffet or on plates in the home kitchen, including in the kitchen of a living area. The same group also cooks for nurseries, schools, workplaces, clinics, and people at home.",
+          "sources": [
+            "https://www.apetito.de/senioreneinrichtungen/konzepte",
+            "https://www.apetito.de/ueber-apetito",
+            "https://www.apetito.de/-/media/ApetitoDe/Presse/Jahresupdate/05_apetito-in-Daten-und-Fakten.pdf"
+          ]
+        },
+        "who_pays": {
+          "text": "Senior homes buy the frozen meals. apetito also offers those homes a free kitchen review. No public price per meal is listed.",
+          "sources": [
+            "https://www.apetito.de/senioreneinrichtungen/konzepte"
+          ]
+        },
+        "traction": {
+          "text": "A company fact sheet dated 21 May 2026 says the group served 1.5 million diners a day, employed 12,769 people, and recorded 1.404 billion euros of revenue in the 2025 financial year, up from 1.342 billion the year before. Senior homes are one customer group inside a business that also covers nurseries, schools, workplaces, clinics, home meals, a retail brand, and catering. The DRK Seniorenzentrum Neckarstift says it has switched its kitchen to apetito's frozen meals.",
+          "sources": [
+            "https://www.apetito.de/-/media/ApetitoDe/Presse/Jahresupdate/05_apetito-in-Daten-und-Fakten.pdf",
+            "https://www.apetito.de/ueber-apetito",
+            "https://www.apetito.de/senioreneinrichtungen/referenz-residenz-neckarstift"
+          ]
+        },
+        "why_interesting": {
+          "text": "A care home can keep lunch in its own kitchen without cooking every dish from scratch, because trained staff finish food that was cooked and frozen elsewhere. Neckarstift says colleagues can cover a shift when someone is off. The 1.5 million daily diners are for the whole group, not senior homes alone.",
+          "sources": [
+            "https://www.apetito.de/senioreneinrichtungen/konzepte",
+            "https://www.apetito.de/senioreneinrichtungen/referenz-residenz-neckarstift",
+            "https://www.apetito.de/-/media/ApetitoDe/Presse/Jahresupdate/05_apetito-in-Daten-und-Fakten.pdf"
+          ]
+        },
+        "status": {
+          "state": "active",
+          "as_of": "2026-10-05",
+          "text": "The May 2026 fact sheet and the senior-home pages are current, and the group reported higher revenue for 2025. It is still the family company Karl Düsterberg started in Rheine on 1 April 1958.",
+          "sources": [
+            "https://www.apetito.de/-/media/ApetitoDe/Presse/Jahresupdate/05_apetito-in-Daten-und-Fakten.pdf",
+            "https://www.apetito.de/ueber-apetito",
+            "https://www.apetito.de/senioreneinrichtungen"
+          ]
         }
       }
     },
@@ -8758,14 +9311,14 @@
       "id": "company-confidant",
       "type": "company",
       "name": "Confidant",
-      "summary": "Handles parental control and care of older people.",
+      "summary": "Lets a family locate an older person and open a live video call.",
       "status": "new_this_scan",
       "kill_reason": null,
       "kill_source": null,
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Spain",
+      "country": "ES",
       "city": null,
       "scene": {
         "job": "It is an app for parental control and care of the elderly.",
@@ -8788,9 +9341,9 @@
       "published": true,
       "title": "Confidant",
       "research_summary": "an app for parental control and care of the elderly.",
-      "job": "It is an app for parental control and care of the elderly.",
+      "job": "Confidant is a phone app from Confidant Technologies in Valencia. A family member can see where an older person's Android phone or watch is, get an alert when they leave or arrive at set places, and start a video call that opens on the other device so they can see and hear what is happening. The same app can lock apps and is also sold for watching children. The older person can wear a watch and does not have to tap the screen.",
       "who_sells": "Used by older adults.",
-      "who_pays": null,
+      "who_pays": "Families pay. In November 2023, founder Jose Rogero told the EFE news agency that one device cost €9.99 a month and five devices cost €19.99 a month, with a free version for basic safety. The live website does not list a price, so those figures may have changed.",
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
@@ -8802,7 +9355,66 @@
             "url": "https://play.google.com/store/apps/details?id=com.confidant.confidant",
             "source": "https://confidant.app"
           }
+        ],
+        "founded": {
+          "year": 2017,
+          "source": "https://www.datoscif.es/empresa/confidant-technologies-sl"
+        },
+        "hq": {
+          "city": "Valencia",
+          "source": "https://www.datoscif.es/empresa/confidant-technologies-sl"
+        },
+        "country": {
+          "code": "ES",
+          "source": "https://play.google.com/store/apps/details?id=com.confidant.confidant&hl=en"
+        },
+        "founders": [
+          {
+            "name": "Jose Javier Rogero Martinez",
+            "role": "Sole director",
+            "source": "https://www.datoscif.es/empresa/confidant-technologies-sl"
+          }
         ]
+      },
+      "writeup": {
+        "what_it_does": {
+          "text": "Confidant is a phone app from Confidant Technologies in Valencia. A family member can see where an older person's Android phone or watch is, get an alert when they leave or arrive at set places, and start a video call that opens on the other device so they can see and hear what is happening. The same app can lock apps and is also sold for watching children. The older person can wear a watch and does not have to tap the screen.",
+          "sources": [
+            "https://confidant.app",
+            "https://play.google.com/store/apps/details?id=com.confidant.confidant&hl=en"
+          ]
+        },
+        "who_pays": {
+          "text": "Families pay. In November 2023, founder Jose Rogero told the EFE news agency that one device cost €9.99 a month and five devices cost €19.99 a month, with a free version for basic safety. The live website does not list a price, so those figures may have changed.",
+          "sources": [
+            "https://efe.com/comunidad-valenciana/2023-11-19/una-app-para-vigilar-a-ancianos-y-menores-a-traves-del-movil/",
+            "https://confidant.app"
+          ]
+        },
+        "traction": {
+          "text": "EFE reported in November 2023 that the app had thousands of users, mainly in Spain, and also in Mexico and Switzerland. The first paid version launched at Christmas 2018 through the Lanzadera accelerator in Valencia. Google Play still lists the app under Confidant Technologies S.L. in Valencia, last updated on 3 March 2025.",
+          "sources": [
+            "https://efe.com/comunidad-valenciana/2023-11-19/una-app-para-vigilar-a-ancianos-y-menores-a-traves-del-movil/",
+            "https://play.google.com/store/apps/details?id=com.confidant.confidant&hl=en"
+          ]
+        },
+        "why_interesting": {
+          "text": "Rogero built it after his mother-in-law, who later developed Alzheimer's, stopped answering the phone and the family had to drive over to check she was safe. The check is a video call that opens by itself, and the app can also stop the phone being switched off or put into flight mode. That is a different bargain from a button alarm: the family can look in, and the older person does not have to do anything.",
+          "sources": [
+            "https://efe.com/comunidad-valenciana/2023-11-19/una-app-para-vigilar-a-ancianos-y-menores-a-traves-del-movil/",
+            "https://confidant.app"
+          ]
+        },
+        "status": {
+          "state": "active",
+          "as_of": "2026-10-05",
+          "text": "The website is live and Google Play still distributes the app, with an update dated 3 March 2025. In November 2023 the founder said dedicated phones and a watch, with fall detection, were planned for early 2024. No later page confirmed that those devices went on sale.",
+          "sources": [
+            "https://confidant.app",
+            "https://play.google.com/store/apps/details?id=com.confidant.confidant&hl=en",
+            "https://efe.com/comunidad-valenciana/2023-11-19/una-app-para-vigilar-a-ancianos-y-menores-a-traves-del-movil/"
+          ]
+        }
       }
     },
     {
@@ -8864,14 +9476,14 @@
       "id": "company-nila-elder-care",
       "type": "company",
       "name": "Nila Elder Care",
-      "summary": "Runs an AI operating system for homecare.",
+      "summary": "Buys UK homecare agencies and runs the visits on its software.",
       "status": "new_this_scan",
       "kill_reason": null,
       "kill_source": null,
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "United States",
+      "country": "GB",
       "city": null,
       "scene": {
         "job": "It is a building the AI operating system for homecare."
@@ -8893,13 +9505,91 @@
       "published": true,
       "title": "Nila Elder Care",
       "research_summary": "Building the AI operating system for homecare.",
-      "job": "It is a building the AI operating system for homecare.",
+      "job": "The Nila site says it buys independent homecare agencies in England, Scotland and Wales and moves them onto software that builds rotas, writes up a carer's spoken visit note, and sends the family a short update after each visit. Carers stay employed by the local agency and are DBS checked. The site says every service it runs is regulated by the Care Quality Commission. Visits can be half an hour or live-in care.",
       "who_sells": null,
-      "who_pays": null,
+      "who_pays": "Families are told the price in writing before care starts. The site also says it buys agencies that are paid privately or by a local authority. It does not publish an hourly rate.",
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": "/api/logo/company-nila-elder-care"
+      "logo": "/api/logo/company-nila-elder-care",
+      "writeup": {
+        "what_it_does": {
+          "text": "The Nila site says it buys independent homecare agencies in England, Scotland and Wales and moves them onto software that builds rotas, writes up a carer's spoken visit note, and sends the family a short update after each visit. Carers stay employed by the local agency and are DBS checked. The site says every service it runs is regulated by the Care Quality Commission. Visits can be half an hour or live-in care.",
+          "sources": [
+            "https://nilacares.com"
+          ]
+        },
+        "who_pays": {
+          "text": "Families are told the price in writing before care starts. The site also says it buys agencies that are paid privately or by a local authority. It does not publish an hourly rate.",
+          "sources": [
+            "https://nilacares.com"
+          ]
+        },
+        "traction": {
+          "text": "Companies House lists Nila Care Group Limited, number 15419828, as active. It was incorporated on 17 January 2024 as Carestay Limited, with a registered office at 2 Arundel Street, London, and its last confirmation statement is dated 16 January 2026. Director Shanthan Anthony Jacob was appointed on 17 January 2024. A Tech Funding News article reprinted by Redbus, with no date on that page, said the earlier business had handled more than 3,000 care requests in more than 10 Indian cities and had raised $2.4 million. The current site names no acquired agency.",
+          "sources": [
+            "https://find-and-update.company-information.service.gov.uk/company/15419828",
+            "https://find-and-update.company-information.service.gov.uk/company/15419828/officers",
+            "https://redbus.uk/nila-raises-2-4m-pre-seed-round-to-simplify-cross-border-senior-care-for-immigrants/",
+            "https://nilacares.com"
+          ]
+        },
+        "why_interesting": {
+          "text": "The funded product was different. The Redbus reprint says families in the UK and US paid about $100 a month for care arranged in India, in a round led by LocalGlobe with Redbus Ventures. The live site now asks agency owners to sell. Companies House classifies the company under other information technology service activities.",
+          "sources": [
+            "https://redbus.uk/nila-raises-2-4m-pre-seed-round-to-simplify-cross-border-senior-care-for-immigrants/",
+            "https://nilacares.com",
+            "https://find-and-update.company-information.service.gov.uk/company/15419828"
+          ]
+        },
+        "status": {
+          "state": "active",
+          "as_of": "2026-10-05",
+          "text": "As of 5 October 2026 Companies House lists Nila Care Group Limited as active, and nilacares.com says it buys UK homecare agencies. The Redbus reprint of a Tech Funding News article describes an earlier business that arranged care in India for families living abroad.",
+          "sources": [
+            "https://find-and-update.company-information.service.gov.uk/company/15419828",
+            "https://nilacares.com",
+            "https://redbus.uk/nila-raises-2-4m-pre-seed-round-to-simplify-cross-border-senior-care-for-immigrants/"
+          ]
+        }
+      },
+      "facts": {
+        "founded": {
+          "year": 2024,
+          "source": "https://find-and-update.company-information.service.gov.uk/company/15419828"
+        },
+        "hq": {
+          "city": "London",
+          "source": "https://find-and-update.company-information.service.gov.uk/company/15419828"
+        },
+        "country": {
+          "code": "GB",
+          "source": "https://find-and-update.company-information.service.gov.uk/company/15419828"
+        },
+        "founders": [
+          {
+            "name": "Anthony Jacob",
+            "role": "founder and CEO",
+            "source": "https://redbus.uk/nila-raises-2-4m-pre-seed-round-to-simplify-cross-border-senior-care-for-immigrants/"
+          }
+        ],
+        "funding": {
+          "total": {
+            "amount": "$2.4 million",
+            "source": "https://redbus.uk/nila-raises-2-4m-pre-seed-round-to-simplify-cross-border-senior-care-for-immigrants/"
+          }
+        },
+        "investors": [
+          {
+            "name": "LocalGlobe",
+            "source": "https://redbus.uk/nila-raises-2-4m-pre-seed-round-to-simplify-cross-border-senior-care-for-immigrants/"
+          },
+          {
+            "name": "Redbus Ventures",
+            "source": "https://redbus.uk/nila-raises-2-4m-pre-seed-round-to-simplify-cross-border-senior-care-for-immigrants/"
+          }
+        ]
+      }
     },
     {
       "id": "company-mecasa-pflege",
@@ -9814,14 +10504,14 @@
       "id": "company-forward-health-gmbh",
       "type": "company",
       "name": "Forward Health GmbH",
-      "summary": "Helps make your health simple.",
+      "summary": "Sells Fortea supplement capsules from a shop in Cologne.",
       "status": "new_this_scan",
       "kill_reason": null,
       "kill_source": null,
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Germany",
+      "country": "DE",
       "city": null,
       "scene": {
         "job": "It is an ihre Gesundheit, einfach gemacht."
@@ -9840,16 +10530,64 @@
           }
         ]
       },
-      "published": true,
+      "published": false,
       "title": "Forward Health GmbH",
       "research_summary": "Ihre Gesundheit, einfach gemacht.",
-      "job": "It is an ihre Gesundheit, einfach gemacht.",
+      "job": "Forward Health GmbH runs fortea.de, an online shop for Fortea capsules aimed at joints, bladder, memory, heart and similar complaints. The site says pharmacists developed the formulas, the capsules are made in Germany, and buyers can get their money back within 90 days. Northdata records the company's purpose as developing and selling food supplements and over-the-counter health products, mainly online.",
       "who_sells": null,
-      "who_pays": null,
+      "who_pays": "Shoppers pay Forward Health GmbH on fortea.de. The imprint names that company as the seller. The pages fetched do not show a price.",
       "why_dropped": null,
       "tag": "Daily life and getting around",
       "tag_secondary": null,
-      "logo": "/api/logo/company-forward-health-gmbh"
+      "logo": "/api/logo/company-forward-health-gmbh",
+      "writeup": {
+        "what_it_does": {
+          "text": "Forward Health GmbH runs fortea.de, an online shop for Fortea capsules aimed at joints, bladder, memory, heart and similar complaints. The site says pharmacists developed the formulas, the capsules are made in Germany, and buyers can get their money back within 90 days. Northdata records the company's purpose as developing and selling food supplements and over-the-counter health products, mainly online.",
+          "sources": [
+            "https://fortea.de",
+            "https://www.northdata.de/Forward%20Health%20GmbH,%20K%C3%B6ln/HRB%20124043"
+          ]
+        },
+        "who_pays": {
+          "text": "Shoppers pay Forward Health GmbH on fortea.de. The imprint names that company as the seller. The pages fetched do not show a price.",
+          "sources": [
+            "https://fortea.de",
+            "https://www.fortea.de/policies/legal-notice"
+          ]
+        },
+        "traction": {
+          "text": "The shop says its overall rating is 4.6 out of 5 from 4,177 reviews. Individual products show their own counts, including 671 reviews for the joint capsules, and the page shows reviews dated into October 2026.",
+          "sources": [
+            "https://fortea.de"
+          ]
+        },
+        "why_interesting": {
+          "text": "The imprint names Forward Health GmbH of Elisabeth-Treskow-Platz 1, Cologne, as the seller, with managing directors Alexander Thelen and Justus Sander. The register purpose is supplements, and the shop is a consumer capsule brand rather than a care service.",
+          "sources": [
+            "https://www.fortea.de/policies/legal-notice",
+            "https://www.northdata.de/Forward%20Health%20GmbH,%20K%C3%B6ln/HRB%20124043"
+          ]
+        },
+        "status": {
+          "state": "active",
+          "as_of": "2026-10-05",
+          "text": "As of 5 October 2026 the Fortea shop is publishing customer reviews, including some dated 3 October 2026. Northdata shows a shareholder list for Forward Health GmbH dated 14 September 2026.",
+          "sources": [
+            "https://fortea.de",
+            "https://www.northdata.de/Forward%20Health%20GmbH,%20K%C3%B6ln/HRB%20124043"
+          ]
+        }
+      },
+      "facts": {
+        "hq": {
+          "city": "Cologne",
+          "source": "https://www.fortea.de/policies/legal-notice"
+        },
+        "country": {
+          "code": "DE",
+          "source": "https://www.fortea.de/policies/legal-notice"
+        }
+      }
     },
     {
       "id": "company-somana",
@@ -11987,7 +12725,7 @@
       "id": "company-eterny",
       "type": "company",
       "name": "ETERNY",
-      "summary": "Records wishes and assets for heirs.",
+      "summary": "Keeps accounts, papers and family access, from 199 koruna a month.",
       "status": "new_this_scan",
       "kill_reason": null,
       "kill_source": null,
@@ -12016,9 +12754,9 @@
       "published": true,
       "title": "ETERNY",
       "research_summary": "Digital legacy and estate-planning product for documenting wishes and assets for heirs.",
-      "job": "It is a digital legacy and estate-planning product for documenting wishes and assets for heirs.",
+      "job": "Eterny keeps a household's bank accounts, insurance, home, crypto and papers in one private place, and warns about renewals, a blank beneficiary or cover that no longer matches the home. You choose who can open it, and when. The terms, from Eterny Legacy s.r.o. in Bystřice pod Hostýnem, describe it as a place for assets, wills and the people allowed to receive them. The site says files are encrypted on the phone before they are uploaded.",
       "who_sells": null,
-      "who_pays": null,
+      "who_pays": "The household pays. The site says documents, trusted contacts and one connected bank stay free, including if you stop paying, and that you pay for the gap-checking and for extra banks. Apple lists Eterny Premium at 199 Czech koruna a month or 1,990 Czech koruna a year.",
       "why_dropped": null,
       "tag": "End of life and inheritance",
       "tag_secondary": null,
@@ -12039,6 +12777,66 @@
         "country": {
           "code": "CZ",
           "source": "https://www.eterny.io/about"
+        },
+        "founded": {
+          "year": 2024,
+          "source": "https://www.eterny.io/about"
+        },
+        "hq": {
+          "city": "Prague",
+          "source": "https://www.eterny.io/about"
+        },
+        "founders": [
+          {
+            "name": "Jitka Paterová",
+            "role": "founder and CEO",
+            "source": "https://www.eterny.io/about"
+          },
+          {
+            "name": "Dan Máslo",
+            "role": "co-founder and CPTO",
+            "source": "https://www.eterny.io/about"
+          }
+        ]
+      },
+      "writeup": {
+        "what_it_does": {
+          "text": "Eterny keeps a household's bank accounts, insurance, home, crypto and papers in one private place, and warns about renewals, a blank beneficiary or cover that no longer matches the home. You choose who can open it, and when. The terms, from Eterny Legacy s.r.o. in Bystřice pod Hostýnem, describe it as a place for assets, wills and the people allowed to receive them. The site says files are encrypted on the phone before they are uploaded.",
+          "sources": [
+            "https://eterny.io",
+            "https://www.eterny.io/terms-of-use"
+          ]
+        },
+        "who_pays": {
+          "text": "The household pays. The site says documents, trusted contacts and one connected bank stay free, including if you stop paying, and that you pay for the gap-checking and for extra banks. Apple lists Eterny Premium at 199 Czech koruna a month or 1,990 Czech koruna a year.",
+          "sources": [
+            "https://eterny.io",
+            "https://apps.apple.com/cz/app/eterny/id6752241962"
+          ]
+        },
+        "traction": {
+          "text": "The about page says 17,000 households in the EU and the US use Eterny, and that the checking has looked at more than 100,000 assets. Apple shows 4.6 out of 5 from 9 ratings. A review dated 29 January 2026 called the app early, and the developer replied on 5 February 2026 that it was still in beta.",
+          "sources": [
+            "https://www.eterny.io/about",
+            "https://apps.apple.com/cz/app/eterny/id6752241962"
+          ]
+        },
+        "why_interesting": {
+          "text": "The free record and the family's access stay open if you cancel. You lose the warnings, not the papers. That is a different bet from a storage app that locks heirs out when the subscription ends. The 17,000 household figure is the company's own, next to nine public app ratings.",
+          "sources": [
+            "https://eterny.io",
+            "https://www.eterny.io/about",
+            "https://apps.apple.com/cz/app/eterny/id6752241962"
+          ]
+        },
+        "status": {
+          "state": "active",
+          "as_of": "2026-10-05",
+          "text": "As of 5 October 2026 Eterny is on the Apple App Store, with version 2.15.0 listed on 25 September, after a 31 December 2025 build. The terms took effect on 1 December 2025.",
+          "sources": [
+            "https://apps.apple.com/cz/app/eterny/id6752241962",
+            "https://www.eterny.io/terms-of-use"
+          ]
         }
       }
     },
@@ -12778,7 +13576,7 @@
       "id": "company-pflege-de",
       "type": "company",
       "name": "Pflege.de",
-      "summary": "Shares guidance on living and aging in Germany.",
+      "summary": "Publishes German care guides and ships insurer-paid supplies to homes.",
       "status": "new_this_scan",
       "kill_reason": null,
       "kill_source": null,
@@ -12808,9 +13606,9 @@
       "published": true,
       "title": "Pflege.de",
       "research_summary": "Germany's leading portal for living and aging.",
-      "job": "It is a germany's leading portal for living and aging.",
+      "job": "pflege.de publishes German guides and tools for care at home, and it is run by web care LBJ GmbH in Hamburg. The site explains care grades, benefits, housing changes, and illness, and it offers a free care-grade calculator plus comparisons for home alarms, stair lifts, and bathroom rebuilding. Its curabox service lets someone with a recognised care grade, cared for at home by a private person, order a monthly box of care supplies. The company handles the paperwork and delivers the box.",
       "who_sells": "Used by older adults.",
-      "who_pays": null,
+      "who_pays": "The guides are free to read. The about page says the company later paid for itself mainly through services whose costs the care insurance funds reimburse, and the homepage says it also introduces people to trades and alarm providers. No subscription price for the website is listed.",
       "why_dropped": null,
       "tag": "Family caregivers",
       "tag_secondary": null,
@@ -12829,6 +13627,52 @@
         "country": {
           "code": "DE",
           "source": "https://www.pflege.de/impressum/"
+        },
+        "investors": [
+          {
+            "name": "KfW",
+            "source": "https://www.pflege.de/ueber-pflege-de/"
+          }
+        ]
+      },
+      "writeup": {
+        "what_it_does": {
+          "text": "pflege.de publishes German guides and tools for care at home, and it is run by web care LBJ GmbH in Hamburg. The site explains care grades, benefits, housing changes, and illness, and it offers a free care-grade calculator plus comparisons for home alarms, stair lifts, and bathroom rebuilding. Its curabox service lets someone with a recognised care grade, cared for at home by a private person, order a monthly box of care supplies. The company handles the paperwork and delivers the box.",
+          "sources": [
+            "https://www.pflege.de/",
+            "https://www.pflege.de/ueber-pflege-de/",
+            "https://www.pflege.de/impressum/"
+          ]
+        },
+        "who_pays": {
+          "text": "The guides are free to read. The about page says the company later paid for itself mainly through services whose costs the care insurance funds reimburse, and the homepage says it also introduces people to trades and alarm providers. No subscription price for the website is listed.",
+          "sources": [
+            "https://www.pflege.de/ueber-pflege-de/",
+            "https://www.pflege.de/"
+          ]
+        },
+        "traction": {
+          "text": "The about page says more than 100 employees, more than 400 guides and magazine pieces, and more than 30,000 readers a day. It says state bank KfW and several large publishers backed the company early, without giving amounts. Co-founder Lars Kilchert has moved on after about 15 years. The imprint lists Nils Tholen and Manuela Hoffmann-Lücke as managing directors.",
+          "sources": [
+            "https://www.pflege.de/ueber-pflege-de/",
+            "https://www.pflege.de/impressum/"
+          ]
+        },
+        "why_interesting": {
+          "text": "The free guides are the front door. The reimbursed supply box and the introductions to builders and alarm firms are how the site makes money, and the about page says that shift let the company rely less on outside backers. The history page dates the company to 2011, while the homepage says Lars Kilchert and Benedikt Zacher founded it in 2012.",
+          "sources": [
+            "https://www.pflege.de/ueber-pflege-de/",
+            "https://www.pflege.de/"
+          ]
+        },
+        "status": {
+          "state": "active",
+          "as_of": "2026-10-05",
+          "text": "The site, imprint, and about page are live. pflege.de is a service of web care LBJ GmbH, Großer Grasbrook 9, 20457 Hamburg, commercial register HRB 117601.",
+          "sources": [
+            "https://www.pflege.de/",
+            "https://www.pflege.de/impressum/"
+          ]
         }
       }
     },
@@ -14685,14 +15529,14 @@
       "id": "company-helpper",
       "type": "company",
       "name": "Helpper",
-      "summary": "Connects neighbors for flexible home assistance.",
+      "summary": "Matches neighbours in Flanders for paid home help, including older people.",
       "status": "new_this_scan",
       "kill_reason": null,
       "kill_source": null,
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Belgium",
+      "country": "BE",
       "city": null,
       "scene": {
         "job": "It is an online platform connecting neighbors for home assistance services in a flexible and easy way."
@@ -14714,9 +15558,9 @@
       "published": true,
       "title": "Helpper",
       "research_summary": "an online platform connecting neighbors for home assistance services in a flexible and easy way.",
-      "job": "It is an online platform connecting neighbors for home assistance services in a flexible and easy way.",
+      "job": "Helpper connects people in Flanders and Brussels who need a hand at home with neighbours who have been screened. The tasks are ordinary, not medical: cooking, shopping, small jobs, a lift to an appointment, company, or keeping an eye on someone. Older people use it to stay in their own home, and a family can also pay a relative who already helps. Helpers are at least 16, and the visits are insured with AG Insurance.",
       "who_sells": null,
-      "who_pays": null,
+      "who_pays": "The person asking for help pays the helper's hourly rate. On the page for older people, a 3-month membership is €14.99 a month and a 12-month membership is €9.99 a month, with no service fee. Without a membership that page adds a 20% service fee, plus 21% VAT on the fee. People with a Flemish disability budget (PVB or PAB) can set the hourly rate up to €50 and pay a 12% service fee plus 21% VAT. A worked example is 10 hours at €15, which comes to €171.78.",
       "why_dropped": null,
       "tag": "Family caregivers",
       "tag_secondary": null,
@@ -14733,21 +15577,84 @@
             "url": "https://apps.apple.com/app/id6499267581",
             "source": "https://www.helpper.be/nl/home"
           }
+        ],
+        "founded": {
+          "year": 2017,
+          "source": "https://www.companyweb.be/en/0673790011/helpper"
+        },
+        "hq": {
+          "city": "Antwerp",
+          "source": "https://www.companyweb.be/en/0673790011/helpper"
+        },
+        "country": {
+          "code": "BE",
+          "source": "https://www.northdata.com/Helpper%20N%C2%B7V%C2%B7,%20Antwerpen/KBO%200673.790.011"
+        },
+        "investors": [
+          {
+            "name": "Carevolution B.V.",
+            "source": "https://www.northdata.com/Helpper%20N%C2%B7V%C2%B7,%20Antwerpen/KBO%200673.790.011"
+          },
+          {
+            "name": "SI² Fund B.V.",
+            "source": "https://www.northdata.com/Helpper%20N%C2%B7V%C2%B7,%20Antwerpen/KBO%200673.790.011"
+          }
         ]
+      },
+      "writeup": {
+        "what_it_does": {
+          "text": "Helpper connects people in Flanders and Brussels who need a hand at home with neighbours who have been screened. The tasks are ordinary, not medical: cooking, shopping, small jobs, a lift to an appointment, company, or keeping an eye on someone. Older people use it to stay in their own home, and a family can also pay a relative who already helps. Helpers are at least 16, and the visits are insured with AG Insurance.",
+          "sources": [
+            "https://helpper.be",
+            "https://www.helpper.be/nl/vind-hulp-in-de-buurt",
+            "https://www.helpper.be/nl/ouderen",
+            "https://www.helpper.be/nl/kenniscentrum/veelgestelde-vragen"
+          ]
+        },
+        "who_pays": {
+          "text": "The person asking for help pays the helper's hourly rate. On the page for older people, a 3-month membership is €14.99 a month and a 12-month membership is €9.99 a month, with no service fee. Without a membership that page adds a 20% service fee, plus 21% VAT on the fee. People with a Flemish disability budget (PVB or PAB) can set the hourly rate up to €50 and pay a 12% service fee plus 21% VAT. A worked example is 10 hours at €15, which comes to €171.78.",
+          "sources": [
+            "https://www.helpper.be/nl/ouderen",
+            "https://www.helpper.be/nl/kenniscentrum/veelgestelde-vragen"
+          ]
+        },
+        "traction": {
+          "text": "Helpper says it has more than 7,000 screened helpers in Flanders and Brussels. Belgian filings for 2025 show 14.6 full-time staff, a gross margin of €2,603,104 and a profit of €1,408,987. Those accounts were filed on 17 June 2026, and the registry lists the company as active.",
+          "sources": [
+            "https://helpper.be",
+            "https://www.companyweb.be/en/0673790011/helpper"
+          ]
+        },
+        "why_interesting": {
+          "text": "A family can pay a neighbour, or a relative they already know, for ordinary help, and people with a Flemish disability budget can use that budget for the same thing. The Belgian state recognises Helpper for its sharing-economy tax rules, so the pay is declared rather than handed over in cash. The helper can earn up to €7,890 gross this way in 2026 before a higher tax rate applies.",
+          "sources": [
+            "https://helpper.be",
+            "https://www.helpper.be/nl/kenniscentrum/veelgestelde-vragen"
+          ]
+        },
+        "status": {
+          "state": "active",
+          "as_of": "2026-10-05",
+          "text": "The website is taking registrations, and the Belgian registry lists Helpper as active with a 2025 balance sheet filed on 17 June 2026.",
+          "sources": [
+            "https://helpper.be",
+            "https://www.companyweb.be/en/0673790011/helpper"
+          ]
+        }
       }
     },
     {
       "id": "company-momo-medical",
       "type": "company",
       "name": "Momo Medical",
-      "summary": "Shows how technology can help in healthcare.",
+      "summary": "Puts a sensor under nursing-home mattresses so night staff see who needs help.",
       "status": "new_this_scan",
       "kill_reason": null,
       "kill_source": null,
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Netherlands",
+      "country": "NL",
       "city": null,
       "scene": {
         "job": "It is a healthcare company that believes in the important role of technology in the healthcare sector."
@@ -14769,13 +15676,105 @@
       "published": true,
       "title": "Momo Medical",
       "research_summary": "a healthcare company that believes in the important role of technology in the healthcare sector.",
-      "job": "It is a healthcare company that believes in the important role of technology in the healthcare sector.",
+      "job": "Momo Medical puts a sensor under a nursing-home mattress and links it to an app on the night shift. Staff can see who is restless, who is still showing signs of life, and who is about to get out of bed. The company says a personal alert can come up to 70 seconds before a resident leaves the bed. Homes use it so staff skip rounds for people who are sleeping safely.",
       "who_sells": null,
-      "who_pays": null,
+      "who_pays": "Nursing homes pay a subscription that covers the app, the bed sensors, and the network linking them. No monthly price is published. The company offers a care location three months of the app at no charge.",
       "why_dropped": null,
       "tag": "Family caregivers",
       "tag_secondary": null,
-      "logo": "/api/logo/company-momo-medical"
+      "logo": "/api/logo/company-momo-medical",
+      "writeup": {
+        "what_it_does": {
+          "text": "Momo Medical puts a sensor under a nursing-home mattress and links it to an app on the night shift. Staff can see who is restless, who is still showing signs of life, and who is about to get out of bed. The company says a personal alert can come up to 70 seconds before a resident leaves the bed. Homes use it so staff skip rounds for people who are sleeping safely.",
+          "sources": [
+            "https://momomedical.com",
+            "https://www.npex.nl/en/effectenbeurs/momomedical/",
+            "https://www.ycombinator.com/companies/momo-medical"
+          ]
+        },
+        "who_pays": {
+          "text": "Nursing homes pay a subscription that covers the app, the bed sensors, and the network linking them. No monthly price is published. The company offers a care location three months of the app at no charge.",
+          "sources": [
+            "https://www.npex.nl/en/effectenbeurs/momomedical/",
+            "https://momomedical.com"
+          ]
+        },
+        "traction": {
+          "text": "The company's NPEX page says more than 300 Dutch nursing homes use BedSense, plus dozens of homes in North America, Germany, and Belgium, and more than 20,000 residents. Subscriptions passed 14,000 by the end of 2024. Net sales were 2,070,105 euros in 2023, 3,990,659 euros in 2024, and 3,008,600 euros in the first half of 2025. Named users include tanteLouise, which has used it for six years, plus Laurens, Surplus, Allevo, Attent, and UMC Pitman. The NPEX page says falls fell by 28 percent. That figure is the company's own.",
+          "sources": [
+            "https://www.npex.nl/en/effectenbeurs/momomedical/",
+            "https://momomedical.com"
+          ]
+        },
+        "why_interesting": {
+          "text": "Sales almost doubled from 2023 to 2024, but the company was still losing money: 1,502,726 euros after tax in 2024 and 699,623 euros in the first half of 2025. In September 2024 it raised 6.5 million euros from PGGM, NextGen Venture, Jay Searson, UNETI Ventures, and the Centre for Aging + Brain Health Innovation, and said it wanted to reach 30,000 beds in Dutch nursing care.",
+          "sources": [
+            "https://www.npex.nl/en/effectenbeurs/momomedical/",
+            "https://siliconcanals.com/dutch-momo-medical-raises-6-5m/"
+          ]
+        },
+        "status": {
+          "state": "active",
+          "as_of": "2026-10-05",
+          "text": "The product site is taking trial requests, Y Combinator marks the company active, and the NPEX page still publishes results through 30 June 2025. Momo Medical was founded in Delft in 2017 by Menno Gravemaker.",
+          "sources": [
+            "https://momomedical.com",
+            "https://www.ycombinator.com/companies/momo-medical",
+            "https://www.npex.nl/en/effectenbeurs/momomedical/",
+            "https://siliconcanals.com/dutch-momo-medical-raises-6-5m/"
+          ]
+        }
+      },
+      "facts": {
+        "founded": {
+          "year": 2017,
+          "source": "https://www.ycombinator.com/companies/momo-medical"
+        },
+        "hq": {
+          "city": "Delft",
+          "source": "https://www.ycombinator.com/companies/momo-medical"
+        },
+        "country": {
+          "code": "NL",
+          "source": "https://www.ycombinator.com/companies/momo-medical"
+        },
+        "founders": [
+          {
+            "name": "Menno Gravemaker",
+            "role": "Founder",
+            "source": "https://www.ycombinator.com/companies/momo-medical"
+          }
+        ],
+        "funding": {
+          "last_round": {
+            "amount": "6500000 EUR",
+            "date": "2024-09-12",
+            "source": "https://siliconcanals.com/dutch-momo-medical-raises-6-5m/"
+          }
+        },
+        "investors": [
+          {
+            "name": "PGGM",
+            "source": "https://siliconcanals.com/dutch-momo-medical-raises-6-5m/"
+          },
+          {
+            "name": "NextGen Venture",
+            "source": "https://siliconcanals.com/dutch-momo-medical-raises-6-5m/"
+          },
+          {
+            "name": "Jay Searson",
+            "source": "https://siliconcanals.com/dutch-momo-medical-raises-6-5m/"
+          },
+          {
+            "name": "UNETI Ventures",
+            "source": "https://siliconcanals.com/dutch-momo-medical-raises-6-5m/"
+          },
+          {
+            "name": "Centre for Aging + Brain Health Innovation",
+            "source": "https://siliconcanals.com/dutch-momo-medical-raises-6-5m/"
+          }
+        ]
+      }
     },
     {
       "id": "company-aeon",
@@ -14822,7 +15821,7 @@
       "id": "company-dexter-health",
       "type": "company",
       "name": "dexter health",
-      "summary": "Helps nurses automate their workflows.",
+      "summary": "Turns a nurse's spoken notes into the care-home record.",
       "status": "new_this_scan",
       "kill_reason": null,
       "kill_source": null,
@@ -14851,9 +15850,9 @@
       "published": true,
       "title": "dexter health",
       "research_summary": "AI-Powered Workflow Automation for Nurses.",
-      "job": "It is an AI-Powered Workflow Automation for Nurses.",
+      "job": "A nurse speaks a note at the bedside. dexter drafts the care report, vital signs or wound note, and the nurse checks it before it is written into the home's existing care software, including Connext Vivendi, Senso, C&S and CareCloud. A second product drafts the admission assessment. A third shows a manager which residents are missing a weight, a turning plan or a pain record. The company is at Bonner Wall 126, Cologne, and says church, independent and private providers use it.",
       "who_sells": null,
-      "who_pays": null,
+      "who_pays": "Care homes pay per resident per month. The price is in the quote, and a four-week pilot is offered. No rate is published.",
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
@@ -14882,6 +15881,45 @@
         "country": {
           "code": "DE",
           "source": "https://www.dexter-health.com/impressum"
+        }
+      },
+      "writeup": {
+        "what_it_does": {
+          "text": "A nurse speaks a note at the bedside. dexter drafts the care report, vital signs or wound note, and the nurse checks it before it is written into the home's existing care software, including Connext Vivendi, Senso, C&S and CareCloud. A second product drafts the admission assessment. A third shows a manager which residents are missing a weight, a turning plan or a pain record. The company is at Bonner Wall 126, Cologne, and says church, independent and private providers use it.",
+          "sources": [
+            "https://dexter-health.com"
+          ]
+        },
+        "who_pays": {
+          "text": "Care homes pay per resident per month. The price is in the quote, and a four-week pilot is offered. No rate is published.",
+          "sources": [
+            "https://dexter-health.com"
+          ]
+        },
+        "traction": {
+          "text": "The dexter site says more than 10,000 nurses use it, and that Rummelsberger Diakonie's own count is about 20 minutes less documentation per nurse per day. Rummelsberger's news, dated 6 August 2025, says dexter has been in all 14 of its residential elder-care homes since that day. That news post does not repeat the 20-minute figure. It names Marc Margulan as founder and managing director.",
+          "sources": [
+            "https://dexter-health.com",
+            "https://www.rummelsberger-diakonie.de/pflege-entlasten-zeit-gewinnen"
+          ]
+        },
+        "why_interesting": {
+          "text": "The nurse has to approve every line, and the record stays in the software the home already uses. dexter says it is owner-run and has no financial investors. Northdata lists public money, including 370,000 euro on 1 September 2021 for the speech assistant and 284,000 euro from NRW.SeedCon on 6 May 2024. Rummelsberger says the federal research ministry also funds the company.",
+          "sources": [
+            "https://dexter-health.com",
+            "https://www.northdata.de/dexter%20health%20GmbH,%20K%C3%B6ln/HRB%20112599",
+            "https://www.rummelsberger-diakonie.de/pflege-entlasten-zeit-gewinnen"
+          ]
+        },
+        "status": {
+          "state": "active",
+          "as_of": "2026-10-05",
+          "text": "As of 5 October 2026 dexter is selling to care homes, and Rummelsberger has used it in 14 homes since 6 August 2025. Northdata shows a shareholder list for dexter health GmbH dated 10 April 2026.",
+          "sources": [
+            "https://dexter-health.com",
+            "https://www.rummelsberger-diakonie.de/pflege-entlasten-zeit-gewinnen",
+            "https://www.northdata.de/dexter%20health%20GmbH,%20K%C3%B6ln/HRB%20112599"
+          ]
         }
       }
     },
@@ -15870,7 +16908,7 @@
       "id": "company-emfit",
       "type": "company",
       "name": "Emfit",
-      "summary": "Tracks sleep, stress, and recovery without contact.",
+      "summary": "Slips a sensor under the mattress to warn carers when someone rises.",
       "status": "new_this_scan",
       "kill_reason": null,
       "kill_source": null,
@@ -15899,9 +16937,9 @@
       "published": true,
       "title": "Emfit",
       "research_summary": "non-contact health monitoring technology for sleep, stress, and recovery.",
-      "job": "It is a non-contact health monitoring technology for sleep, stress, and recovery.",
+      "job": "Emfit makes a sensor that sits under a mattress and reads heart and body movement without touching the skin. Emfit Care sends a phone alert when a resident gets out of bed, stays away too long, or has not turned. A related product, Emfit QS, uses the same kind of sensor to track personal sleep and recovery from heart rate and heart-rate variation.",
       "who_sells": null,
-      "who_pays": null,
+      "who_pays": "Nursing homes and home-care teams buy Emfit Care. Named users include Villa Tapiola, Graham Care Group in the UK, and Holbæk Municipality. No public price is listed. Graham Care said it looked at camera and radar systems and kept Emfit because those others cost more for little extra benefit.",
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
@@ -15926,20 +16964,57 @@
           "code": "FI",
           "source": "https://www.northdata.com/Emfit%20Oy"
         }
+      },
+      "writeup": {
+        "what_it_does": {
+          "text": "Emfit makes a sensor that sits under a mattress and reads heart and body movement without touching the skin. Emfit Care sends a phone alert when a resident gets out of bed, stays away too long, or has not turned. A related product, Emfit QS, uses the same kind of sensor to track personal sleep and recovery from heart rate and heart-rate variation.",
+          "sources": [
+            "https://emfit.com",
+            "https://emfit.care/en/"
+          ]
+        },
+        "who_pays": {
+          "text": "Nursing homes and home-care teams buy Emfit Care. Named users include Villa Tapiola, Graham Care Group in the UK, and Holbæk Municipality. No public price is listed. Graham Care said it looked at camera and radar systems and kept Emfit because those others cost more for little extra benefit.",
+          "sources": [
+            "https://emfit.care/en/"
+          ]
+        },
+        "traction": {
+          "text": "The care site quotes Tuula Laulaja, chief executive of Villa Tapiola, Will Graham of Graham Care Group in the UK, and Lasse Nørgaard Badstue of Holbæk Municipality. Emfit says the company was founded in 1990, has 30 years of sensors for elder care, and has more than 100 scientific papers, the first from the early 1990s. No user count or star rating is published.",
+          "sources": [
+            "https://emfit.care/en/",
+            "https://emfit.care/en/technology/"
+          ]
+        },
+        "why_interesting": {
+          "text": "The care alert fires when the person leaves the bed, so a night nurse can arrive before a fall, not only after one. Homes that compared it with cameras and radar kept the mattress sensor because it was enough for that night routine and cost less.",
+          "sources": [
+            "https://emfit.care/en/"
+          ]
+        },
+        "status": {
+          "state": "active",
+          "as_of": "2026-10-05",
+          "text": "Both emfit.com and emfit.care are live. The company gives its address as Konttisentie 8, 40800 Vaajakoski, Finland, and says Emfit Care is developed and made there.",
+          "sources": [
+            "https://emfit.com",
+            "https://emfit.care/en/"
+          ]
+        }
       }
     },
     {
       "id": "company-health-invest",
       "type": "company",
       "name": "Health Invest",
-      "summary": "Runs digital healthcare.",
+      "summary": "Sold wristband monitoring for elder-care homes. Now bankrupt.",
       "status": "new_this_scan",
       "kill_reason": null,
       "kill_source": null,
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Finland",
+      "country": "FI",
       "city": null,
       "scene": {
         "job": "It is a digital healthcare - developer of Myplus.care."
@@ -15958,16 +17033,107 @@
           }
         ]
       },
-      "published": true,
+      "published": false,
       "title": "Health Invest",
       "research_summary": "Digital healthcare - developer of Myplus.care.",
-      "job": "It is a digital healthcare - developer of Myplus.care.",
+      "job": "Health Invest Finland sold My+Care, a wristband and wireless beacons that sent a resident's movement, location and body temperature to staff. A 2017 launch note says care homes received the hardware and a login, then got an alert if someone left a set area. The company page says the founders built it with senior houses and healthcare staff in Finland.",
       "who_sells": null,
-      "who_pays": null,
+      "who_pays": "Care homes and other healthcare providers were the buyers. The 2017 note describes a customer agreement for the hardware and the login, but neither that note nor the current site gives a price.",
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": "/api/logo/company-health-invest"
+      "logo": "/api/logo/company-health-invest",
+      "writeup": {
+        "what_it_does": {
+          "text": "Health Invest Finland sold My+Care, a wristband and wireless beacons that sent a resident's movement, location and body temperature to staff. A 2017 launch note says care homes received the hardware and a login, then got an alert if someone left a set area. The company page says the founders built it with senior houses and healthcare staff in Finland.",
+          "sources": [
+            "https://healthinvest.fi/health-invest-finland-announces-new-investment/",
+            "https://healthinvest.fi/company/"
+          ]
+        },
+        "who_pays": {
+          "text": "Care homes and other healthcare providers were the buyers. The 2017 note describes a customer agreement for the hardware and the login, but neither that note nor the current site gives a price.",
+          "sources": [
+            "https://healthinvest.fi/health-invest-finland-announces-new-investment/",
+            "https://healthinvest.fi/"
+          ]
+        },
+        "traction": {
+          "text": "On 14 August 2017 the company said it had closed a $1.5 million round led by Kuus Invest Oü and Viavan Oy, and that My+Care was in two living labs in Europe and Asia. Those figures are the company's own, from that post.",
+          "sources": [
+            "https://healthinvest.fi/health-invest-finland-announces-new-investment/"
+          ]
+        },
+        "why_interesting": {
+          "text": "The Finnish Patent and Registration Office open data shows the company ceased on 14 March 2022 and was marked bankrupt on 30 March 2023. Kauppalehti still lists Health Invest Finland Oy as bankrupt, while healthinvest.fi still invites people to invest in My+Care.",
+          "sources": [
+            "https://avoindata.prh.fi/opendata-ytj-api/v3/companies?businessId=2715906-2",
+            "https://www.kauppalehti.fi/yritykset/yritys/27159062",
+            "https://healthinvest.fi/"
+          ]
+        },
+        "status": {
+          "state": "shut_down",
+          "as_of": "2026-10-05",
+          "text": "As of 5 October 2026 the Finnish business register records that Health Invest Finland Oy ceased on 14 March 2022 and was marked bankrupt on 30 March 2023. Kauppalehti lists the same company, business ID 2715906-2, as bankrupt in Helsinki.",
+          "sources": [
+            "https://avoindata.prh.fi/opendata-ytj-api/v3/companies?businessId=2715906-2",
+            "https://www.kauppalehti.fi/yritykset/yritys/27159062"
+          ]
+        }
+      },
+      "facts": {
+        "founded": {
+          "year": 2015,
+          "source": "https://avoindata.prh.fi/opendata-ytj-api/v3/companies?businessId=2715906-2"
+        },
+        "hq": {
+          "city": "Helsinki",
+          "source": "https://www.kauppalehti.fi/yritykset/yritys/27159062"
+        },
+        "country": {
+          "code": "FI",
+          "source": "https://healthinvest.fi/contact/"
+        },
+        "founders": [
+          {
+            "name": "P. Kuusinen",
+            "role": "founder",
+            "source": "https://healthinvest.fi/company/"
+          },
+          {
+            "name": "T. Häkämies",
+            "role": "founder",
+            "source": "https://healthinvest.fi/company/"
+          },
+          {
+            "name": "Mostafa Hanifi",
+            "role": "founder and CTO",
+            "source": "https://healthinvest.fi/company/"
+          }
+        ],
+        "funding": {
+          "total": {
+            "amount": "$1.5 million",
+            "source": "https://healthinvest.fi/health-invest-finland-announces-new-investment/"
+          },
+          "last_round": {
+            "amount": "$1.5 million",
+            "date": "2017-08-14",
+            "source": "https://healthinvest.fi/health-invest-finland-announces-new-investment/"
+          }
+        },
+        "investors": [
+          {
+            "name": "Kuus Invest Oü",
+            "source": "https://healthinvest.fi/health-invest-finland-announces-new-investment/"
+          },
+          {
+            "name": "Viavan Oy",
+            "source": "https://healthinvest.fi/health-invest-finland-announces-new-investment/"
+          }
+        ]
+      }
     },
     {
       "id": "company-bepi",
@@ -16055,7 +17221,7 @@
       "id": "company-livy-care-hum-systems",
       "type": "company",
       "name": "Livy Care - HUM Systems",
-      "summary": "Runs an operating system for patient monitoring.",
+      "summary": "Fits a ceiling sensor that spots falls in a care room and alerts staff.",
       "status": "new_this_scan",
       "kill_reason": null,
       "kill_source": null,
@@ -16084,9 +17250,9 @@
       "published": true,
       "title": "Livy Care - HUM Systems",
       "research_summary": "The Operating System for Patient Monitoring.",
-      "job": "It is the Operating System for Patient Monitoring.",
+      "job": "Livy Care, made by HUM Systems, is a sensor fixed to the ceiling of a room in a care home or hospital. It notices a fall, a spoken call for help, and warning signs such as sitting on the edge of the bed or getting up, then alerts the nurse. The person does not wear a device or press a button. It can also file blood pressure, pulse, oxygen, weight, blood sugar and detected falls into the care record.",
       "who_sells": null,
-      "who_pays": null,
+      "who_pays": "Care home groups and hospitals pay. The price is hardware per room, a software licence per sensor, plus setup, training and support, and it depends on how many rooms are fitted and which functions are switched on. No public unit price is listed.",
       "why_dropped": null,
       "tag": "Home and housing",
       "tag_secondary": null,
@@ -16099,6 +17265,84 @@
         "country": {
           "code": "DE",
           "source": "https://livy-care.com/impressum"
+        },
+        "founded": {
+          "year": 2017,
+          "source": "https://livy-care.com/de/about-us"
+        },
+        "founders": [
+          {
+            "name": "Reza Humanfar",
+            "role": "CEO and founder",
+            "source": "https://livy-care.com/de/about-us"
+          },
+          {
+            "name": "Amir Humanfar",
+            "role": "CMO and co-founder",
+            "source": "https://livy-care.com/de/about-us"
+          },
+          {
+            "name": "Philipp Gsching",
+            "role": "CTO and co-founder",
+            "source": "https://livy-care.com/de/about-us"
+          }
+        ],
+        "funding": {
+          "last_round": {
+            "amount": "€2.3 million seed",
+            "date": "2022-05-17",
+            "source": "https://www.prnews24.com/296430/brandenburg-kapital-und-companisto-investieren-in-smarte-pflege-fuer-die-zukunft/"
+          }
+        },
+        "investors": [
+          {
+            "name": "Companisto",
+            "source": "https://www.prnews24.com/296430/brandenburg-kapital-und-companisto-investieren-in-smarte-pflege-fuer-die-zukunft/"
+          },
+          {
+            "name": "Brandenburg Kapital",
+            "source": "https://www.prnews24.com/296430/brandenburg-kapital-und-companisto-investieren-in-smarte-pflege-fuer-die-zukunft/"
+          },
+          {
+            "name": "High Rise Ventures",
+            "source": "https://www.prnews24.com/296430/brandenburg-kapital-und-companisto-investieren-in-smarte-pflege-fuer-die-zukunft/"
+          }
+        ]
+      },
+      "writeup": {
+        "what_it_does": {
+          "text": "Livy Care, made by HUM Systems, is a sensor fixed to the ceiling of a room in a care home or hospital. It notices a fall, a spoken call for help, and warning signs such as sitting on the edge of the bed or getting up, then alerts the nurse. The person does not wear a device or press a button. It can also file blood pressure, pulse, oxygen, weight, blood sugar and detected falls into the care record.",
+          "sources": [
+            "https://livy-care.com"
+          ]
+        },
+        "who_pays": {
+          "text": "Care home groups and hospitals pay. The price is hardware per room, a software licence per sensor, plus setup, training and support, and it depends on how many rooms are fitted and which functions are switched on. No public unit price is listed.",
+          "sources": [
+            "https://livy-care.com"
+          ]
+        },
+        "traction": {
+          "text": "The company names users including Johannesstift Diakonie, ProCurand, Johanniter senior houses, AWO NOW, Stiftung Kreuznacher Diakonie, Seniorenzentren Linz, Asklepios, MEDICLIN, Klinikum Frankfurt (Oder), GPR Klinikum, St. Marienstift Friesoythe and the von Bodelschwingh foundations Bethel. A study by FH Oberösterreich reported routine checks falling from about 44 hours a week to 19. A University of Bielefeld study reported about 30% less felt workload for staff. Seniorenzentren Linz reported 34% less time on vital signs and 93.63 staff hours saved in a month.",
+          "sources": [
+            "https://livy-care.com"
+          ]
+        },
+        "why_interesting": {
+          "text": "A button alarm fails when the person cannot press it, which is common after a fall or in dementia. Livy watches the room instead. The company also says it does not meet the German nurse-call standard DIN VDE 0834, so where that standard is required the sensor sits beside the existing call system rather than replacing it. HUM Systems started with a ceiling smoke alarm sold with Vattenfall, more than 70,000 units, and later turned the same idea toward care.",
+          "sources": [
+            "https://livy-care.com",
+            "https://livy-care.com/de/about-us"
+          ]
+        },
+        "status": {
+          "state": "active",
+          "as_of": "2026-10-05",
+          "text": "The product site is live and lists trade events in October and November 2026, including IFAS in Zurich and the German nursing congress in Berlin. HUM Systems describes itself as based in Berlin, with development in Berlin and Brandenburg.",
+          "sources": [
+            "https://livy-care.com",
+            "https://livy-care.com/de/about-us"
+          ]
         }
       }
     },
@@ -16106,14 +17350,14 @@
       "id": "company-6gorilla-s",
       "type": "company",
       "name": "6Gorilla's",
-      "summary": "Runs a data platform for healthcare.",
+      "summary": "Links care-home software so managers can see staff and quality.",
       "status": "new_this_scan",
       "kill_reason": null,
       "kill_source": null,
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Netherlands",
+      "country": "NL",
       "city": null,
       "scene": {
         "job": "It is a data platform for healthcare."
@@ -16135,13 +17379,69 @@
       "published": true,
       "title": "6Gorilla's",
       "research_summary": "a data platform for healthcare.",
-      "job": "It is a data platform for healthcare.",
+      "job": "6Gorilla's links the software Dutch care organisations already use, including ONS, Nedap and AFAS, so managers can see clients, staff and money together. It also offers Koko, an assistant that reads what is on a staff member's screen in the care record and points out what needs action. The about page says the team started in 2020 inside Tenzinger, and the long-term care page covers nursing homes, disability care and home care.",
       "who_sells": null,
-      "who_pays": null,
+      "who_pays": "Care organisations pay 6Gorilla's for the data work. The site does not list a price.",
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": "/api/logo/company-6gorilla-s"
+      "logo": "/api/logo/company-6gorilla-s",
+      "writeup": {
+        "what_it_does": {
+          "text": "6Gorilla's links the software Dutch care organisations already use, including ONS, Nedap and AFAS, so managers can see clients, staff and money together. It also offers Koko, an assistant that reads what is on a staff member's screen in the care record and points out what needs action. The about page says the team started in 2020 inside Tenzinger, and the long-term care page covers nursing homes, disability care and home care.",
+          "sources": [
+            "https://6gorillas.nl",
+            "https://6gorillas.nl/over/",
+            "https://6gorillas.nl/langdurige-zorg/"
+          ]
+        },
+        "who_pays": {
+          "text": "Care organisations pay 6Gorilla's for the data work. The site does not list a price.",
+          "sources": [
+            "https://6gorillas.nl",
+            "https://6gorillas.nl/langdurige-zorg/"
+          ]
+        },
+        "traction": {
+          "text": "The about page says more than 50 clients, more than 120 projects and a team of more than 25. The long-term care page says ten nursing and home-care organisations around Amsterdam, including Cordaan, Amstelring, Evean and Zonnehuisgroep Amstelland, are in a shared-data trial with Sigra. Sigra's own page says it runs that data store with 6Gorilla's. Beweging 3.0's strategic adviser Dick van Mourik is quoted as a customer.",
+          "sources": [
+            "https://6gorillas.nl/over/",
+            "https://6gorillas.nl/langdurige-zorg/",
+            "https://www.sigra.nl/ict-diensten/datasharehouse"
+          ]
+        },
+        "why_interesting": {
+          "text": "Families do not buy this. Care organisations do, and Sigra, the Amsterdam regional care association, already operates a shared store that 6Gorilla's helps run. The same company also sells the tools outside care, so elder care is where it started, not the whole business. The address on the site is Nijverheidsweg 16A, Utrecht.",
+          "sources": [
+            "https://6gorillas.nl",
+            "https://www.sigra.nl/ict-diensten/datasharehouse",
+            "https://6gorillas.nl/over/"
+          ]
+        },
+        "status": {
+          "state": "active",
+          "as_of": "2026-10-05",
+          "text": "As of 5 October 2026 the site is live and says 6Gorilla's and ZHGA are nominated for the Computable Awards 2026. Sigra's site still names 6Gorilla's as its partner for the regional data store.",
+          "sources": [
+            "https://6gorillas.nl",
+            "https://www.sigra.nl/ict-diensten/datasharehouse"
+          ]
+        }
+      },
+      "facts": {
+        "founded": {
+          "year": 2020,
+          "source": "https://6gorillas.nl/over/"
+        },
+        "hq": {
+          "city": "Utrecht",
+          "source": "https://6gorillas.nl/over/"
+        },
+        "country": {
+          "code": "NL",
+          "source": "https://www.sigra.nl/ict-diensten/datasharehouse"
+        }
+      }
     },
     {
       "id": "company-juni",
@@ -16347,14 +17647,14 @@
       "id": "company-jubenial",
       "type": "company",
       "name": "Jubenial",
-      "summary": "Runs a specialized marketplace for real estate.",
+      "summary": "Lists bare-ownership home sales so people over 65 can raise cash and stay.",
       "status": "new_this_scan",
       "kill_reason": null,
       "kill_source": null,
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Spain",
+      "country": "ES",
       "city": null,
       "scene": {
         "job": "It is a pioneering startup in the real estate sector that has developed the first specialized marketplace in the industry."
@@ -16376,13 +17676,88 @@
       "published": true,
       "title": "Jubenial",
       "research_summary": "a pioneering startup in the real estate sector that has developed the first specialized marketplace in the industry.",
-      "job": "It is a pioneering startup in the real estate sector that has developed the first specialized marketplace in the industry.",
+      "job": "Jubenial lists Spanish homes for owners over 65 who want cash without moving out. In a bare-ownership sale, the owner sells the title and keeps the right to live in the home for life, with no loan and no monthly repayments. The site also lists lifetime-rent deals and small co-investment stakes in housing for older people, and it shows buyers an expected return on each listing. A valuation is free, and nothing is signed until the owner accepts an offer.",
       "who_sells": null,
-      "who_pays": null,
+      "who_pays": "The older owner is the seller. The buyer is an investor who waits to take full ownership when the lifetime right to live there ends. Jubenial does not publish a fee. A homepage listing showed a flat in Gijón at 157,500 euros against a stated market value of 260,000 euros. The cash the owner receives depends on the home's value and on age.",
       "why_dropped": null,
       "tag": "Home and housing",
       "tag_secondary": null,
-      "logo": "/api/logo/company-jubenial"
+      "logo": "/api/logo/company-jubenial",
+      "writeup": {
+        "what_it_does": {
+          "text": "Jubenial lists Spanish homes for owners over 65 who want cash without moving out. In a bare-ownership sale, the owner sells the title and keeps the right to live in the home for life, with no loan and no monthly repayments. The site also lists lifetime-rent deals and small co-investment stakes in housing for older people, and it shows buyers an expected return on each listing. A valuation is free, and nothing is signed until the owner accepts an offer.",
+          "sources": [
+            "https://jubenial.com",
+            "https://jubenial.com/nuda-propiedad",
+            "https://jubenial.com/quienes-somos",
+            "https://elreferente.es/startup/jubenial/"
+          ]
+        },
+        "who_pays": {
+          "text": "The older owner is the seller. The buyer is an investor who waits to take full ownership when the lifetime right to live there ends. Jubenial does not publish a fee. A homepage listing showed a flat in Gijón at 157,500 euros against a stated market value of 260,000 euros. The cash the owner receives depends on the home's value and on age.",
+          "sources": [
+            "https://jubenial.com",
+            "https://jubenial.com/nuda-propiedad"
+          ]
+        },
+        "traction": {
+          "text": "El Referente, updated 11 September 2025, says the project started in August 2023, put out a first version in January 2024, and raised a 100,000 euro pre-seed round in March 2024, after time in La Finca Ventures Camp. The same profile says 2024 revenue beat the first-year plan by more than 76 percent, and it reports a positive result above 40,000 euros on the profit measure it labels EBITDA, and it lists a 2025 company value of 2 million euros. Those figures are from that startup profile, not from accounts I could read. EntreMayores named Rodolfo Nevado and Víctor Tostado as the founders in an 18 October 2024 article.",
+          "sources": [
+            "https://elreferente.es/startup/jubenial/",
+            "https://entremayores.es/empresa/los-productos-de-licuacion-patrimonial-una-tendencia-en-el-mercado-inmobiliario-segun-jubenial/"
+          ]
+        },
+        "why_interesting": {
+          "text": "The older the resident, the less the lifetime right to stay is valued, and the more cash the sale pays now. Heirs do not receive the home. They receive whatever money is left. EntreMayores, quoting Nevado, still called lifetime rent and reverse mortgages a small share of Spanish home sales, even as the company builds a list around them.",
+          "sources": [
+            "https://jubenial.com/nuda-propiedad",
+            "https://entremayores.es/empresa/los-productos-de-licuacion-patrimonial-una-tendencia-en-el-mercado-inmobiliario-segun-jubenial/"
+          ]
+        },
+        "status": {
+          "state": "active",
+          "as_of": "2026-10-05",
+          "text": "The site is listing homes and inviting free valuations. El Referente marked the company open in its 11 September 2025 update, with an address in Pozuelo de Alarcón, Madrid.",
+          "sources": [
+            "https://jubenial.com",
+            "https://elreferente.es/startup/jubenial/",
+            "https://jubenial.com/quienes-somos"
+          ]
+        }
+      },
+      "facts": {
+        "founded": {
+          "year": 2023,
+          "source": "https://elreferente.es/startup/jubenial/"
+        },
+        "hq": {
+          "city": "Pozuelo de Alarcón",
+          "source": "https://jubenial.com/quienes-somos"
+        },
+        "country": {
+          "code": "ES",
+          "source": "https://elreferente.es/startup/jubenial/"
+        },
+        "founders": [
+          {
+            "name": "Rodolfo Nevado",
+            "role": "Co-founder",
+            "source": "https://entremayores.es/empresa/los-productos-de-licuacion-patrimonial-una-tendencia-en-el-mercado-inmobiliario-segun-jubenial/"
+          },
+          {
+            "name": "Víctor Tostado",
+            "role": "Co-founder",
+            "source": "https://entremayores.es/empresa/los-productos-de-licuacion-patrimonial-una-tendencia-en-el-mercado-inmobiliario-segun-jubenial/"
+          }
+        ],
+        "funding": {
+          "last_round": {
+            "amount": "100000 EUR",
+            "date": "2024-03",
+            "source": "https://elreferente.es/startup/jubenial/"
+          }
+        }
+      }
     },
     {
       "id": "company-e-med4all",
@@ -16429,7 +17804,7 @@
       "id": "company-iocare",
       "type": "company",
       "name": "IoCare",
-      "summary": "Helps older people live independently.",
+      "summary": "Lights a relative's lamp when an older person's routine changes.",
       "status": "new_this_scan",
       "kill_reason": null,
       "kill_source": null,
@@ -16459,9 +17834,9 @@
       "published": true,
       "title": "IoCare",
       "research_summary": "a wellness startup that brings independent living of elderly people.",
-      "job": "It is a wellness startup that brings independent living of elderly people.",
+      "job": "IoCare sells RICA, a motion sensor in an older person's home and a lamp in a relative's home. The sensor learns usual movement over three to four weeks, then the lamp shows green, yellow or red. There is no camera, no microphone and nothing to wear, and neither person needs a smartphone for the lamp to work. Northdata says IoCare GmbH, Zavelsteinstrasse 29 B, Stuttgart, develops assistance systems for living in older age.",
       "who_sells": "Used by older adults.",
-      "who_pays": null,
+      "who_pays": "A family orders RICA from IoCare by phone or email. The FAQ says extra lamps have a cost and tells you to ask. No price is published.",
       "why_dropped": null,
       "tag": "Daily life and getting around",
       "tag_secondary": null,
@@ -16485,6 +17860,38 @@
         "country": {
           "code": "DE",
           "source": "https://iocare.de/de/impressum/"
+        }
+      },
+      "writeup": {
+        "what_it_does": {
+          "text": "IoCare sells RICA, a motion sensor in an older person's home and a lamp in a relative's home. The sensor learns usual movement over three to four weeks, then the lamp shows green, yellow or red. There is no camera, no microphone and nothing to wear, and neither person needs a smartphone for the lamp to work. Northdata says IoCare GmbH, Zavelsteinstrasse 29 B, Stuttgart, develops assistance systems for living in older age.",
+          "sources": [
+            "https://iocare.de",
+            "https://iocare.de/de/fragen/",
+            "https://www.northdata.com/IoCare%20GmbH"
+          ]
+        },
+        "who_pays": {
+          "text": "A family orders RICA from IoCare by phone or email. The FAQ says extra lamps have a cost and tells you to ask. No price is published.",
+          "sources": [
+            "https://iocare.de/de/fragen/"
+          ]
+        },
+        "why_interesting": {
+          "text": "The relative sees a colour, not a camera feed, and the FAQ says the movement record stays on the sensor. The same FAQ still says a phone view for when you are away is in development, so the product on offer is the lamp in the relative's home. The register lists managing director Matthias Riedel at the 12 September 2017 registration and shows no closure.",
+          "sources": [
+            "https://iocare.de/de/fragen/",
+            "https://www.northdata.com/IoCare%20GmbH"
+          ]
+        },
+        "status": {
+          "state": "active",
+          "as_of": "2026-10-05",
+          "text": "As of 5 October 2026 the RICA order page is live. Northdata still lists IoCare GmbH, with a patent note dated 30 April 2024 and no closure entry.",
+          "sources": [
+            "https://iocare.de",
+            "https://www.northdata.com/IoCare%20GmbH"
+          ]
         }
       }
     },
@@ -18599,14 +20006,14 @@
       "id": "company-innereo",
       "type": "company",
       "name": "Innereo",
-      "summary": "Gives personalised music to improve quality of life.",
+      "summary": "Turns wearable signals into music for offices, museums, and spas.",
       "status": "new_this_scan",
       "kill_reason": null,
       "kill_source": null,
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Italy",
+      "country": "IT",
       "city": null,
       "scene": {
         "job": "It is a service that provides personalised music to enhance life quality."
@@ -18625,29 +20032,78 @@
           }
         ]
       },
-      "published": true,
+      "published": false,
       "title": "Innereo",
       "research_summary": "Service that provides personalised music to enhance life quality.",
-      "job": "It is a service that provides personalised music to enhance life quality.",
+      "job": "Innereo uses a watch or ring to read heart and stress signals, then plays sound meant to help someone relax or concentrate. It sells that to companies, museums and wellness centres. The site gives an address in Naples.",
       "who_sells": null,
-      "who_pays": null,
+      "who_pays": "Companies, museums and spas are the buyers named on the site. No public price is listed. Visitors are told to contact the team.",
       "why_dropped": null,
       "tag": "Memory and dementia",
       "tag_secondary": null,
-      "logo": "/api/logo/company-innereo"
+      "logo": "/api/logo/company-innereo",
+      "writeup": {
+        "what_it_does": {
+          "text": "Innereo uses a watch or ring to read heart and stress signals, then plays sound meant to help someone relax or concentrate. It sells that to companies, museums and wellness centres. The site gives an address in Naples.",
+          "sources": [
+            "https://innereo.ai/",
+            "https://innereo.ai/about-us/",
+            "https://www.ilmattino.it/tecnologia/news/napoli_startup_napoletana_innereo_finale_sanremo-8650426.html"
+          ]
+        },
+        "who_pays": {
+          "text": "Companies, museums and spas are the buyers named on the site. No public price is listed. Visitors are told to contact the team.",
+          "sources": [
+            "https://innereo.ai/"
+          ]
+        },
+        "traction": {
+          "text": "Il Mattino reported on 11 February 2025 that Innereo was a finalist in the Future of Music call at Sanremo, and that the technology was already used in companies, museums and wellness centres. The site quotes a visitor and a director at the Museo di Gibellina. The homepage counters for experiences and years in business displayed as zero.",
+          "sources": [
+            "https://www.ilmattino.it/tecnologia/news/napoli_startup_napoletana_innereo_finale_sanremo-8650426.html",
+            "https://innereo.ai/"
+          ]
+        },
+        "why_interesting": {
+          "text": "The public pages describe workplace stress, museum visits and spas. They do not describe a product for older people, dementia or care homes.",
+          "sources": [
+            "https://innereo.ai/",
+            "https://innereo.ai/about-us/"
+          ]
+        },
+        "status": {
+          "state": "active",
+          "as_of": "2026-10-05",
+          "text": "innereo.ai is live and gives a Naples address. A February 2025 news story treated the company as an active music-tech startup.",
+          "sources": [
+            "https://innereo.ai/",
+            "https://www.ilmattino.it/tecnologia/news/napoli_startup_napoletana_innereo_finale_sanremo-8650426.html"
+          ]
+        }
+      },
+      "facts": {
+        "hq": {
+          "city": "Naples",
+          "source": "https://innereo.ai/about-us/"
+        },
+        "country": {
+          "code": "IT",
+          "source": "https://innereo.ai/about-us/"
+        }
+      }
     },
     {
       "id": "company-ally-labs",
       "type": "company",
       "name": "Ally Labs",
-      "summary": "Runs a smart home.",
+      "summary": "Listens in care-home bedrooms and alerts staff when a resident needs help.",
       "status": "new_this_scan",
       "kill_reason": null,
       "kill_source": null,
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "United Kingdom",
+      "country": "GB",
       "city": null,
       "scene": {
         "job": "It is a smart home."
@@ -18669,13 +20125,77 @@
       "published": true,
       "title": "Ally Labs",
       "research_summary": "a smart home.",
-      "job": "It is a smart home.",
+      "job": "Ally puts a Wi-Fi monitor in a care-home bedroom. It uses sound and motion to separate a resident's activity from ordinary background noise, then alerts staff in an app when someone calls for help, gets up, seems restless, or may be in discomfort. Teams use it at night so they can answer those alerts instead of walking in for routine checks. The Local Government Association says the sensor builds a behaviour profile over about two weeks, and homes are told to switch it off during the day.",
       "who_sells": null,
-      "who_pays": null,
+      "who_pays": "Care homes are the buyer. Ally does not publish a list price. It says homes typically see a 7x return, and the site has a calculator based on bed count and the night-check schedule. In Dorset, the Digitising Social Care programme funded the pilot. Ally's own account of that programme says each participating home received £10,000.",
       "why_dropped": null,
       "tag": "Home and housing",
       "tag_secondary": null,
-      "logo": "/api/logo/company-ally-labs"
+      "logo": "/api/logo/company-ally-labs",
+      "writeup": {
+        "what_it_does": {
+          "text": "Ally puts a Wi-Fi monitor in a care-home bedroom. It uses sound and motion to separate a resident's activity from ordinary background noise, then alerts staff in an app when someone calls for help, gets up, seems restless, or may be in discomfort. Teams use it at night so they can answer those alerts instead of walking in for routine checks. The Local Government Association says the sensor builds a behaviour profile over about two weeks, and homes are told to switch it off during the day.",
+          "sources": [
+            "https://allycares.com",
+            "https://www.local.gov.uk/case-studies/dorset-council-acoustic-monitoring-care-homes"
+          ]
+        },
+        "who_pays": {
+          "text": "Care homes are the buyer. Ally does not publish a list price. It says homes typically see a 7x return, and the site has a calculator based on bed count and the night-check schedule. In Dorset, the Digitising Social Care programme funded the pilot. Ally's own account of that programme says each participating home received £10,000.",
+          "sources": [
+            "https://allycares.com",
+            "https://www.allycares.com/bbcdorset-care-homes-to-adopt-allycares-technology-bbc-news/",
+            "https://www.local.gov.uk/case-studies/dorset-council-acoustic-monitoring-care-homes"
+          ]
+        },
+        "traction": {
+          "text": "A 2019 NHS Digital Pathfinder pilot with Friends of the Elderly and the care-planning tool KareInn put Ally in bedrooms. KareInn reported that from September 2019 to June 2020, three homes had 55% fewer night-time falls, 20% fewer hospital admissions, and 75% fewer physical night checks, with a plan to cover 320 residents. Ally's site now cites NHS, integrated care board, and customer research claiming 63% fewer bedroom falls, 56% fewer hospital visits, 50% better sleep, and 30% more time for care. Named homes in customer quotes include The Lawns, Twinglobe Care, and Harleston House. On 3 February 2025 the Local Government Association wrote that six Dorset homes were due to receive 184 Ally sensors, with installations from January 2025 and a goal of nine homes.",
+          "sources": [
+            "https://kareinn.com/2020/08/27/acoustic-monitoring-and-digital-care-planning/",
+            "https://www.allycares.com/nhsx-case-study/",
+            "https://allycares.com",
+            "https://www.local.gov.uk/case-studies/dorset-council-acoustic-monitoring-care-homes"
+          ]
+        },
+        "why_interesting": {
+          "text": "The product is aimed at the night round, not at a family buying a speaker. Councils and care groups pay because it is meant to cut scheduled room checks, falls, and hospital transfers, and the app is built to file notes into the home's digital care record. Ally's current outcome claims are larger than the three-home figures KareInn published in 2020, and the Dorset write-up treats the 2025 installations as a pilot still to be measured at three and six months.",
+          "sources": [
+            "https://allycares.com",
+            "https://kareinn.com/2020/08/27/acoustic-monitoring-and-digital-care-planning/",
+            "https://www.local.gov.uk/case-studies/dorset-council-acoustic-monitoring-care-homes"
+          ]
+        },
+        "status": {
+          "state": "active",
+          "as_of": "2026-10-05",
+          "text": "Active. Companies House lists Ally Labs Limited as an active private company, with accounts filed for the year to 31 August 2025, and the product site was still selling the bedroom monitor in October 2026.",
+          "sources": [
+            "https://find-and-update.company-information.service.gov.uk/company/09864498",
+            "https://allycares.com"
+          ]
+        }
+      },
+      "facts": {
+        "founded": {
+          "year": 2015,
+          "source": "https://find-and-update.company-information.service.gov.uk/company/09864498"
+        },
+        "hq": {
+          "city": "Wisborough Green",
+          "source": "https://find-and-update.company-information.service.gov.uk/company/09864498"
+        },
+        "country": {
+          "code": "GB",
+          "source": "https://find-and-update.company-information.service.gov.uk/company/09864498"
+        },
+        "founders": [
+          {
+            "name": "Thomas Tredinnick",
+            "role": "CEO and co-founder",
+            "source": "https://www.allycares.com/bbcdorset-care-homes-to-adopt-allycares-technology-bbc-news/"
+          }
+        ]
+      }
     },
     {
       "id": "company-tom-josette",
@@ -19475,14 +20995,14 @@
       "id": "company-kale",
       "type": "company",
       "name": "Kale",
-      "summary": "Covers longevity through insurance.",
+      "summary": "Prices income protection from fitness data, from £14.50 a month.",
       "status": "new_this_scan",
       "kill_reason": null,
       "kill_source": null,
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "United Kingdom",
+      "country": "GB",
       "city": null,
       "scene": {
         "job": "It is a longevity insurance.",
@@ -19502,22 +21022,84 @@
           }
         ]
       },
-      "published": true,
+      "published": false,
       "title": "Kale",
       "research_summary": "Longevity insurance.",
-      "job": "It is a longevity insurance.",
+      "job": "Kale sells income protection that pays a monthly income if illness or injury stops you working. You connect Garmin or Strava, it turns the exercise data into a fitness score, and a higher score lowers the price, which is reset every quarter. Athlete Life Ltd, at 104 West End Avenue, Harrogate, runs Kale. Best Insurance arranges the policy and Great American underwrites it.",
       "who_sells": null,
-      "who_pays": "Insurance / reimbursed path claimed on page description.",
+      "who_pays": "The person buying cover pays the premium. The quote page shows an indicative standard price of £14.50 a month for age 35 and a £1,000 monthly payout. It says serious training can cut the price by about 20 percent, and that the quarterly reset does not rise above the standard price for your age.",
       "why_dropped": null,
       "tag": "Money and retirement",
       "tag_secondary": null,
-      "logo": "/api/logo/company-kale"
+      "logo": "/api/logo/company-kale",
+      "writeup": {
+        "what_it_does": {
+          "text": "Kale sells income protection that pays a monthly income if illness or injury stops you working. You connect Garmin or Strava, it turns the exercise data into a fitness score, and a higher score lowers the price, which is reset every quarter. Athlete Life Ltd, at 104 West End Avenue, Harrogate, runs Kale. Best Insurance arranges the policy and Great American underwrites it.",
+          "sources": [
+            "https://www.kale.insure",
+            "https://www.kale.insure/privacy",
+            "https://www.kale.insure/about"
+          ]
+        },
+        "who_pays": {
+          "text": "The person buying cover pays the premium. The quote page shows an indicative standard price of £14.50 a month for age 35 and a £1,000 monthly payout. It says serious training can cut the price by about 20 percent, and that the quarterly reset does not rise above the standard price for your age.",
+          "sources": [
+            "https://www.kale.insure"
+          ]
+        },
+        "why_interesting": {
+          "text": "The price moves with a watch reading rather than staying fixed on the day you apply, and the app company does not underwrite the policy. Companies House shows Athlete Life Limited, the name on the privacy page, incorporated on 7 August 2024 and still active, with directors Alexander Paul Heaton and Benedict Thomas Boswell Wachtel Mason. The about page names co-founders only as Ben and Alex.",
+          "sources": [
+            "https://www.kale.insure",
+            "https://www.kale.insure/about",
+            "https://www.kale.insure/privacy",
+            "https://find-and-update.company-information.service.gov.uk/company/15884396",
+            "https://find-and-update.company-information.service.gov.uk/company/15884396/officers"
+          ]
+        },
+        "status": {
+          "state": "active",
+          "as_of": "2026-10-05",
+          "text": "As of 5 October 2026 the Kale quote page is live and the privacy statement is dated 4 June 2026. Companies House lists Athlete Life Limited as active, with accounts made up to 31 August 2025.",
+          "sources": [
+            "https://www.kale.insure",
+            "https://www.kale.insure/privacy",
+            "https://find-and-update.company-information.service.gov.uk/company/15884396"
+          ]
+        }
+      },
+      "facts": {
+        "founded": {
+          "year": 2024,
+          "source": "https://find-and-update.company-information.service.gov.uk/company/15884396"
+        },
+        "hq": {
+          "city": "Harrogate",
+          "source": "https://www.kale.insure/privacy"
+        },
+        "country": {
+          "code": "GB",
+          "source": "https://find-and-update.company-information.service.gov.uk/company/15884396"
+        },
+        "founders": [
+          {
+            "name": "Ben",
+            "role": "co-founder",
+            "source": "https://www.kale.insure/about"
+          },
+          {
+            "name": "Alex",
+            "role": "co-founder",
+            "source": "https://www.kale.insure/about"
+          }
+        ]
+      }
     },
     {
       "id": "company-merci-prosper",
       "type": "company",
       "name": "Merci Prosper",
-      "summary": "Turns home equity into cash for homeowners over 70.",
+      "summary": "Buys part of a home so owners over 60 can stay put and get cash.",
       "status": "new_this_scan",
       "kill_reason": null,
       "kill_source": null,
@@ -19546,9 +21128,9 @@
       "published": true,
       "title": "Merci Prosper",
       "research_summary": "financial services for homeowners over 70 to convert home equity into cash.",
-      "job": "It is a financial services for homeowners over 70 to convert home equity into cash.",
+      "job": "Merci Prosper arranges a partial sale for homeowners over 60. Its property company, Foncière Prosper, buys between 10% and 50% of the home in front of a notary. The owner keeps living there and receives the money as a lump sum or a monthly payment, while an occupation fee is paid as extra shares in the home. It is not a life annuity and not a loan.",
       "who_sells": null,
-      "who_pays": null,
+      "who_pays": "The homeowner sells a share to Foncière Prosper. There is no fixed public price: the cash depends on the value of the home and the share sold, between 10% and 50%. The owner can later buy that share back, sell the whole home, or pay an occupation fee for staying on.",
       "why_dropped": null,
       "tag": "Money and retirement",
       "tag_secondary": null,
@@ -19565,6 +21147,62 @@
         "country": {
           "code": "FR",
           "source": "https://www.northdata.com/Merci%20Prosper%20SAS"
+        },
+        "founders": [
+          {
+            "name": "Thibault Corvaisier",
+            "role": "Co-founder and president",
+            "source": "https://www.merciprosper.com/a-propos"
+          },
+          {
+            "name": "Anthony Piquet",
+            "role": "Co-founder and managing director",
+            "source": "https://www.merciprosper.com/a-propos"
+          },
+          {
+            "name": "Victor Perrazi",
+            "role": "Co-founder and marketing director",
+            "source": "https://www.merciprosper.com/a-propos"
+          }
+        ]
+      },
+      "writeup": {
+        "what_it_does": {
+          "text": "Merci Prosper arranges a partial sale for homeowners over 60. Its property company, Foncière Prosper, buys between 10% and 50% of the home in front of a notary. The owner keeps living there and receives the money as a lump sum or a monthly payment, while an occupation fee is paid as extra shares in the home. It is not a life annuity and not a loan.",
+          "sources": [
+            "https://merciprosper.com",
+            "https://www.merciprosper.com/a-propos"
+          ]
+        },
+        "who_pays": {
+          "text": "The homeowner sells a share to Foncière Prosper. There is no fixed public price: the cash depends on the value of the home and the share sold, between 10% and 50%. The owner can later buy that share back, sell the whole home, or pay an occupation fee for staying on.",
+          "sources": [
+            "https://merciprosper.com"
+          ]
+        },
+        "traction": {
+          "text": "On 22 August 2026, M6's midday news followed customers Corinne and Charles-André, owners of their house for 28 years, who sold 30% to pay off a loan and help their daughter. Merci Prosper is registered in Paris as RCS 899 841 290, with activity from 18 May 2021, and says Foncière Prosper holds French ESUS social-utility approval. No count of signed contracts is published.",
+          "sources": [
+            "https://merciprosper.com",
+            "https://www.merciprosper.com/a-propos",
+            "https://entreprises.lefigaro.fr/silveria-75/entreprise-899841290"
+          ]
+        },
+        "why_interesting": {
+          "text": "Many older owners have a valuable home and little spare cash, and a classic life annuity means giving up the whole house and the chance to leave it to children. Here the owner sells only a slice, stays, and can buy the slice back later. The company says the property fund's social purpose is checked each year under French ESUS rules.",
+          "sources": [
+            "https://merciprosper.com",
+            "https://www.merciprosper.com/a-propos"
+          ]
+        },
+        "status": {
+          "state": "active",
+          "as_of": "2026-10-05",
+          "text": "The site is taking appointments, and it published an M6 customer story dated 22 August 2026. A Paris registry notice shows a share-capital increase taking effect on 16 February 2026.",
+          "sources": [
+            "https://merciprosper.com",
+            "https://entreprises.lefigaro.fr/silveria-75/entreprise-899841290"
+          ]
         }
       }
     },
@@ -20431,7 +22069,7 @@
       "id": "company-caru",
       "type": "company",
       "name": "CARU",
-      "summary": "Runs the operating system for a virtual care home.",
+      "summary": "Sells a home alarm that calls for help by voice, button, or a fall.",
       "status": "new_this_scan",
       "kill_reason": null,
       "kill_source": null,
@@ -20460,9 +22098,9 @@
       "published": true,
       "title": "CARU",
       "research_summary": "the operating system for the virtual care home.",
-      "job": "It is the operating system for the virtual care home.",
+      "job": "CARU care is a home emergency alarm from CARU AG in Zurich. A person can call for help with a wrist or neck button, with a fall sensor in that button, or by saying help. The base unit can also remind someone to drink and to open a window when the air is stuffy. It connects over the mobile network or Wi-Fi to an alarm centre.",
       "who_sells": null,
-      "who_pays": null,
+      "who_pays": "Care organisations install it and connect it to their own alarm centre. CARU says people with a recognised care grade in Germany get the same care-fund subsidy as a standard home alarm, €27 including VAT. The device is listed in the German care-aid directory as number 52.40.01.1116.",
       "why_dropped": null,
       "tag": "Safety and falls",
       "tag_secondary": null,
@@ -20479,6 +22117,44 @@
         "country": {
           "code": "CH",
           "source": "https://www.northdata.com/CARU%20AG"
+        }
+      },
+      "writeup": {
+        "what_it_does": {
+          "text": "CARU care is a home emergency alarm from CARU AG in Zurich. A person can call for help with a wrist or neck button, with a fall sensor in that button, or by saying help. The base unit can also remind someone to drink and to open a window when the air is stuffy. It connects over the mobile network or Wi-Fi to an alarm centre.",
+          "sources": [
+            "https://caruhome.com"
+          ]
+        },
+        "who_pays": {
+          "text": "Care organisations install it and connect it to their own alarm centre. CARU says people with a recognised care grade in Germany get the same care-fund subsidy as a standard home alarm, €27 including VAT. The device is listed in the German care-aid directory as number 52.40.01.1116.",
+          "sources": [
+            "https://caruhome.com",
+            "https://www.gkv-spitzenverband.de/media/dokumente/krankenversicherung_1/hilfsmittel/neue_produkte/2022_07_26/20220726_Veroeffentlichung_Neuaufnahme_Pflegehilfsmittel.pdf"
+          ]
+        },
+        "traction": {
+          "text": "CARU names deployments with Volkssolidarität Chemnitz, the German Red Cross in Paderborn, and the Bavarian Red Cross in Erding and Würzburg. The company says 90% of users turn on fall detection and 80% use a health reminder. The Swiss register still shows the company at Weberstrasse 3 in Zurich, with a capital update on 9 December 2025.",
+          "sources": [
+            "https://caruhome.com",
+            "https://www.northdata.com/CARU%20AG,%20Z%C3%BCrich/CHE-327.800.638"
+          ]
+        },
+        "why_interesting": {
+          "text": "A classic home alarm does nothing if the person cannot reach the button. CARU adds a fall sensor and a spoken call, and the German care-aid list accepted the device in July 2022 as a home alarm that works over a mobile SIM or a home router. It is a box in the house, not software for running a care home.",
+          "sources": [
+            "https://caruhome.com",
+            "https://www.gkv-spitzenverband.de/media/dokumente/krankenversicherung_1/hilfsmittel/neue_produkte/2022_07_26/20220726_Veroeffentlichung_Neuaufnahme_Pflegehilfsmittel.pdf"
+          ]
+        },
+        "status": {
+          "state": "active",
+          "as_of": "2026-10-05",
+          "text": "The product site is live, and the Swiss commercial register shows CARU AG still seated in Zurich, with a statute and capital filing on 9 December 2025.",
+          "sources": [
+            "https://caruhome.com",
+            "https://www.northdata.com/CARU%20AG,%20Z%C3%BCrich/CHE-327.800.638"
+          ]
         }
       }
     },
@@ -20528,14 +22204,14 @@
       "id": "company-essence-smartcare",
       "type": "company",
       "name": "Essence SmartCare",
-      "summary": "Spots indoor falls by radar without a wearable.",
+      "summary": "Sells a wall radar that spots indoor falls without a pendant or camera.",
       "status": "new_this_scan",
       "kill_reason": null,
       "kill_source": null,
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "Israel",
+      "country": "IL",
       "city": null,
       "scene": {
         "job": "It is a radar-based indoor fall detector that works without a wearable, sold with Care@Home PERS systems.",
@@ -20558,13 +22234,73 @@
       "published": true,
       "title": "Essence SmartCare",
       "research_summary": "Radar-based indoor fall detector (MDsense) that works without a wearable, sold with Care@Home PERS systems.",
-      "job": "It is a radar-based indoor fall detector that works without a wearable, sold with Care@Home PERS systems.",
+      "job": "Essence SmartCare sells MDsense, a wall-mounted radar that looks for a fall indoors and does not need the person to wear a pendant. The product page says it works in the dark, can be used near bathing areas, tells people from pets up to 30 kilograms, and covers a room of up to 4 by 4 metres. It is meant to connect to the company's Care@Home alarm service for homes and senior residences. A 2020 launch notice says the sensor has no video and no sound.",
       "who_sells": "Used by seniors at home and retirement facilities.",
-      "who_pays": null,
+      "who_pays": "The pages describe MDsense for independent living and for senior care facilities, sold with Care@Home to care providers. No public unit price was found.",
       "why_dropped": null,
       "tag": "Safety and falls",
       "tag_secondary": null,
-      "logo": "/api/logo/company-essence-smartcare"
+      "logo": "/api/logo/company-essence-smartcare",
+      "writeup": {
+        "what_it_does": {
+          "text": "Essence SmartCare sells MDsense, a wall-mounted radar that looks for a fall indoors and does not need the person to wear a pendant. The product page says it works in the dark, can be used near bathing areas, tells people from pets up to 30 kilograms, and covers a room of up to 4 by 4 metres. It is meant to connect to the company's Care@Home alarm service for homes and senior residences. A 2020 launch notice says the sensor has no video and no sound.",
+          "sources": [
+            "https://www.essencesmartcare.com/products/mdsense-fall-detector/",
+            "https://www.prnewswire.com/news-releases/essence-smartcare-launches-mdsense-to-enable-complete-senior-fall-protection-301128217.html"
+          ]
+        },
+        "who_pays": {
+          "text": "The pages describe MDsense for independent living and for senior care facilities, sold with Care@Home to care providers. No public unit price was found.",
+          "sources": [
+            "https://www.essencesmartcare.com/products/mdsense-fall-detector/",
+            "https://www.prnewswire.com/news-releases/essence-smartcare-launches-mdsense-to-enable-complete-senior-fall-protection-301128217.html",
+            "https://www.essence-grp.com/press-releases/essence-smartcares-breakthrough-mdsense-fall-detection-system-wins-2021-iot-innovations-award/"
+          ]
+        },
+        "traction": {
+          "text": "Essence SmartCare announced MDsense on 11 September 2020 and said its own research found that less than half of people in residential care wear a fall detector. In June 2021 the product won Connected World's IoT Innovations Award. A later product page says the fall model was trained on more than 20,000 body positions. The parent, Essence Group, said in 2020 that it had 50 million devices deployed. That is a group figure, not a count of MDsense units. The head office is in Herzliya, Israel, with offices in London, Hoboken, and Madrid.",
+          "sources": [
+            "https://www.prnewswire.com/news-releases/essence-smartcare-launches-mdsense-to-enable-complete-senior-fall-protection-301128217.html",
+            "https://www.essence-grp.com/press-releases/essence-smartcares-breakthrough-mdsense-fall-detection-system-wins-2021-iot-innovations-award/",
+            "https://www.essencesmartcare.com/solutions/ai-powered-telecare-solutions/",
+            "https://www.essencesmartcare.com/contact-us/"
+          ]
+        },
+        "why_interesting": {
+          "text": "A pendant only helps if the person is wearing it, and Essence says fewer than half of residential-care residents do. The radar watches the room instead, without a camera. The published coverage is only 4 by 4 metres, so each room that should be watched, including the bathroom, needs its own sensor.",
+          "sources": [
+            "https://www.prnewswire.com/news-releases/essence-smartcare-launches-mdsense-to-enable-complete-senior-fall-protection-301128217.html",
+            "https://www.essencesmartcare.com/products/mdsense-fall-detector/"
+          ]
+        },
+        "status": {
+          "state": "active",
+          "as_of": "2026-10-05",
+          "text": "The MDsense product page is still published, and the contact page lists a head office in Herzliya plus offices in the UK, the US, and Spain. Essence SmartCare is part of Essence Group.",
+          "sources": [
+            "https://www.essencesmartcare.com/products/mdsense-fall-detector/",
+            "https://www.essencesmartcare.com/contact-us/",
+            "https://www.prnewswire.com/news-releases/essence-smartcare-launches-mdsense-to-enable-complete-senior-fall-protection-301128217.html"
+          ]
+        }
+      },
+      "facts": {
+        "hq": {
+          "city": "Herzliya",
+          "source": "https://www.essencesmartcare.com/contact-us/"
+        },
+        "country": {
+          "code": "IL",
+          "source": "https://www.essencesmartcare.com/contact-us/"
+        },
+        "founders": [
+          {
+            "name": "Haim Amir",
+            "role": "Founder and CEO of Essence Group, the parent of Essence SmartCare",
+            "source": "https://www.prnewswire.com/news-releases/essence-smartcare-launches-mdsense-to-enable-complete-senior-fall-protection-301128217.html"
+          }
+        ]
+      }
     },
     {
       "id": "company-howz",
@@ -21369,14 +23105,14 @@
       "id": "company-suresafe-alarms",
       "type": "company",
       "name": "SureSafe Alarms",
-      "summary": "Handles remote care and assistive technology.",
+      "summary": "Sells pendant and watch alarms that call a UK centre or the family.",
       "status": "new_this_scan",
       "kill_reason": null,
       "kill_source": null,
       "added_date": "2026-10-05",
       "source_scan": "Coverage import 2026-10-05",
       "themes": [],
-      "country": "United Kingdom",
+      "country": "GB",
       "city": null,
       "scene": {
         "job": "It is a telecare and assistive technology company."
@@ -21398,13 +23134,66 @@
       "published": true,
       "title": "SureSafe Alarms",
       "research_summary": "a telecare and assistive technology company.",
-      "job": "It is a telecare and assistive technology company.",
+      "job": "SureSafe sells personal alarms for older people, worn as a pendant or a watch. Pressing the button, or an automatic fall alert on some models, calls a 24-hour response centre or a chosen relative. Some models add GPS and a speaker in the pendant or watch. The seller is Bora Health Limited, which trades as SureSafe Alarms from Liverpool.",
       "who_sells": null,
-      "who_pays": null,
+      "who_pays": "Older people and their families buy or rent the alarms from SureSafe. A watch with 24-hour centre monitoring is listed at 139 pounds plus 19.99 pounds a month. A family-monitored pendant is listed at 194.95 pounds plus 9 pounds a month. The in-home Digital Connect 24/7 alarm is listed at 49 pounds.",
       "why_dropped": null,
       "tag": "Safety and falls",
       "tag_secondary": null,
-      "logo": "/api/logo/company-suresafe-alarms"
+      "logo": "/api/logo/company-suresafe-alarms",
+      "writeup": {
+        "what_it_does": {
+          "text": "SureSafe sells personal alarms for older people, worn as a pendant or a watch. Pressing the button, or an automatic fall alert on some models, calls a 24-hour response centre or a chosen relative. Some models add GPS and a speaker in the pendant or watch. The seller is Bora Health Limited, which trades as SureSafe Alarms from Liverpool.",
+          "sources": [
+            "https://personalalarms.org",
+            "https://personalalarms.org/terms"
+          ]
+        },
+        "who_pays": {
+          "text": "Older people and their families buy or rent the alarms from SureSafe. A watch with 24-hour centre monitoring is listed at 139 pounds plus 19.99 pounds a month. A family-monitored pendant is listed at 194.95 pounds plus 9 pounds a month. The in-home Digital Connect 24/7 alarm is listed at 49 pounds.",
+          "sources": [
+            "https://personalalarms.org",
+            "https://personalalarms.org/terms"
+          ]
+        },
+        "traction": {
+          "text": "The site says tens of thousands of alarms have been sold since 2015, that customers score SureSafe 4.8 out of 5, and that 98 percent would recommend it. It also says the UK monitoring centres it uses help keep more than 170,000 people living independently. That 170,000 figure describes the centres, not a confirmed count of SureSafe subscribers alone.",
+          "sources": [
+            "https://personalalarms.org"
+          ]
+        },
+        "why_interesting": {
+          "text": "A household can pay a centre to answer, or pay less per month and have the alarm call family instead. The same shop covers a pendant for use anywhere and a cheaper alarm meant for the home. Companies House shows the legal company still active, with accounts made up to 31 December 2025.",
+          "sources": [
+            "https://personalalarms.org",
+            "https://find-and-update.company-information.service.gov.uk/company/08724082"
+          ]
+        },
+        "status": {
+          "state": "active",
+          "as_of": "2026-10-05",
+          "text": "The shop is taking orders. Companies House lists Bora Health Limited, number 08724082, as active, incorporated on 8 October 2013, with a registered office in Liverpool.",
+          "sources": [
+            "https://personalalarms.org",
+            "https://personalalarms.org/terms",
+            "https://find-and-update.company-information.service.gov.uk/company/08724082"
+          ]
+        }
+      },
+      "facts": {
+        "founded": {
+          "year": 2013,
+          "source": "https://find-and-update.company-information.service.gov.uk/company/08724082"
+        },
+        "hq": {
+          "city": "Liverpool",
+          "source": "https://personalalarms.org/terms"
+        },
+        "country": {
+          "code": "GB",
+          "source": "https://find-and-update.company-information.service.gov.uk/company/08724082"
+        }
+      }
     },
     {
       "id": "company-novelda",
@@ -21498,7 +23287,7 @@
       "id": "company-easierlife",
       "type": "company",
       "name": "easierLife",
-      "summary": "Gives older people security in their own homes.",
+      "summary": "Rents German home and mobile alarms that call a centre or the family.",
       "status": "new_this_scan",
       "kill_reason": null,
       "kill_source": null,
@@ -21527,9 +23316,9 @@
       "published": true,
       "title": "easierLife",
       "research_summary": "easierLife provide older people security in their own homes.",
-      "job": "It is an easierLife provide older people security in their own homes.",
+      "job": "easierLife rents alarms for people who want help at the press of a button, at home or outside. A home base, a mobile unit, or a watch can call a professional response centre or the family, and some models add automatic fall detection and GPS. A free app tells relatives when an alarm goes off. The company says the home unit plugs in with no technician, no Wi-Fi, and no home phone, arrives in three to five days, and can be cancelled each month.",
       "who_sells": null,
-      "who_pays": null,
+      "who_pays": "Private customers pay a monthly fee. The home unit with a response centre is 29.95 euros a month, plus a one-time setup fee of 49.90 euros. With a care grade, the company says the care fund pays 23 euros and easierLife discounts the rest by 6.95 euros, so that home unit costs nothing. The home-and-mobile unit is 44.95 euros a month with a centre, or 19.45 euros after a 25.50 euro care-fund payment. Once a care fund approves the watch, the monthly price falls to 9.45 euros.",
       "why_dropped": null,
       "tag": "Safety and falls",
       "tag_secondary": null,
@@ -21563,6 +23352,51 @@
         "country": {
           "code": "DE",
           "source": "https://www.northdata.com/easierLife%20GmbH"
+        },
+        "investors": [
+          {
+            "name": "ESWE Versorgungs AG",
+            "source": "https://www.northdata.de/easierLife%20GmbH,%20Karlsruhe/HRB%20720260"
+          }
+        ]
+      },
+      "writeup": {
+        "what_it_does": {
+          "text": "easierLife rents alarms for people who want help at the press of a button, at home or outside. A home base, a mobile unit, or a watch can call a professional response centre or the family, and some models add automatic fall detection and GPS. A free app tells relatives when an alarm goes off. The company says the home unit plugs in with no technician, no Wi-Fi, and no home phone, arrives in three to five days, and can be cancelled each month.",
+          "sources": [
+            "https://www.easierlife.de/"
+          ]
+        },
+        "who_pays": {
+          "text": "Private customers pay a monthly fee. The home unit with a response centre is 29.95 euros a month, plus a one-time setup fee of 49.90 euros. With a care grade, the company says the care fund pays 23 euros and easierLife discounts the rest by 6.95 euros, so that home unit costs nothing. The home-and-mobile unit is 44.95 euros a month with a centre, or 19.45 euros after a 25.50 euro care-fund payment. Once a care fund approves the watch, the monthly price falls to 9.45 euros.",
+          "sources": [
+            "https://www.easierlife.de/faq_themen/vertrag-und-kuendigung/",
+            "https://www.easierlife.de/"
+          ]
+        },
+        "traction": {
+          "text": "No public customer count was found. Northdata shows easierLife GmbH, Karlsruhe, register HRB 720260, first entered on 28 August 2014, with 2024 annual accounts published in June 2026. It records ESWE Versorgungs AG as a shareholder from 4 February 2022, and lists public project grants, including 399,493 euros recorded on 20 January 2024. The homepage quotes three named Reviews.io customers and does not give a rating total.",
+          "sources": [
+            "https://www.northdata.de/easierLife%20GmbH,%20Karlsruhe/HRB%20720260",
+            "https://www.easierlife.de/"
+          ]
+        },
+        "why_interesting": {
+          "text": "For a person with a care grade, the basic home alarm can cost nothing after the care-fund payment and the company's own discount, so the insurer is as important a payer as the household. Beside that simple monthly alarm, the register shows repeated public grants for assisted-living research.",
+          "sources": [
+            "https://www.easierlife.de/faq_themen/vertrag-und-kuendigung/",
+            "https://www.northdata.de/easierLife%20GmbH,%20Karlsruhe/HRB%20720260"
+          ]
+        },
+        "status": {
+          "state": "active",
+          "as_of": "2026-10-05",
+          "text": "The shop and imprint are live. Managing directors are Dr. Sebastian Chiriac, Klaus Bscheid, and Dr. Jochen Zimmermann. Northdata shows trademark and account filings into 2026.",
+          "sources": [
+            "https://www.easierlife.de/",
+            "https://www.easierlife.de/impressum/",
+            "https://www.northdata.de/easierLife%20GmbH,%20Karlsruhe/HRB%20720260"
+          ]
         }
       }
     },
@@ -21936,7 +23770,7 @@
       "id": "company-hip-guard",
       "type": "company",
       "name": "hip'guard",
-      "summary": "Covers older people's hips with an airbag belt.",
+      "summary": "Sells a belt that inflates airbags at the hips when an older person falls.",
       "status": "new_this_scan",
       "kill_reason": null,
       "kill_source": null,
@@ -21966,9 +23800,9 @@
       "published": true,
       "title": "hip'guard",
       "research_summary": "Hip Guard is a company that specializes in the development and production of an airbag belt designed to protect the hips of seniors.",
-      "job": "It is a hip Guard is a company that specializes in the development and production of an airbag belt designed to protect the hips of seniors.",
+      "job": "Hip'Guard is a belt with two side airbags for older people at risk of a fall. Sensors watch movement, and the company says a side fall is detected in 0.2 seconds and the airbag on that side inflates in 0.08 seconds, before the person hits the ground. The user guide says it is for daily use at home, in a nursing home, or in a rehab centre, and that it is a poor fit for people who move quickly, because a sudden movement can set it off. Helite, a French airbag maker, builds it. After an inflation, the used gas cartridge has to be replaced.",
       "who_sells": "Used by older adults.",
-      "who_pays": null,
+      "who_pays": "The belt is sold online for 755.24 euros including tax, in five sizes. That price covers the belt, a washable cover, two airbags, two gas generators, and the sensor. A price for the replacement gas cartridge was not listed on the shop page.",
       "why_dropped": null,
       "tag": "Safety and falls",
       "tag_secondary": null,
@@ -21981,6 +23815,60 @@
         "country": {
           "code": "FR",
           "source": "https://hipguard.eu/mentions-legales-ceinture-airbag-hip-guard/"
+        },
+        "founded": {
+          "year": 2002,
+          "source": "https://www.helite.com/histoire-protection-airbag-helite/"
+        },
+        "founders": [
+          {
+            "name": "Gérard Thévenot",
+            "role": "Founder of Helite, the company that makes Hip'Guard",
+            "source": "https://www.helite.com/histoire-protection-airbag-helite/"
+          }
+        ]
+      },
+      "writeup": {
+        "what_it_does": {
+          "text": "Hip'Guard is a belt with two side airbags for older people at risk of a fall. Sensors watch movement, and the company says a side fall is detected in 0.2 seconds and the airbag on that side inflates in 0.08 seconds, before the person hits the ground. The user guide says it is for daily use at home, in a nursing home, or in a rehab centre, and that it is a poor fit for people who move quickly, because a sudden movement can set it off. Helite, a French airbag maker, builds it. After an inflation, the used gas cartridge has to be replaced.",
+          "sources": [
+            "https://hipguard.eu",
+            "https://hipguard.eu/produit/shop-ceinture-airbag-hip-guard/",
+            "https://www.helite.de/mediafiles/Sonstiges/Bedienungsanleitung%20HIP-GUARD.pdf",
+            "https://hipguard.eu/a-propos-de-notre-expertise-en-protection-airbag/"
+          ]
+        },
+        "who_pays": {
+          "text": "The belt is sold online for 755.24 euros including tax, in five sizes. That price covers the belt, a washable cover, two airbags, two gas generators, and the sensor. A price for the replacement gas cartridge was not listed on the shop page.",
+          "sources": [
+            "https://hipguard.eu/produit/shop-ceinture-airbag-hip-guard/"
+          ]
+        },
+        "traction": {
+          "text": "The shop page shows no customer reviews. Hip'Guard says the French lab CRITT found that the belt cuts impact force by 90 percent and absorbs nine times more shock than a standard hip pad, and that UGA tested 828 falls and everyday situations, with the belt firing in 9 of 10 side-fall cases and unwanted firing in 1 percent. Those are the company's reports of the tests. Helite says it now has 45 people and distributors in 50 countries. That is the whole airbag business, not a Hip'Guard sales count.",
+          "sources": [
+            "https://hipguard.eu/produit/shop-ceinture-airbag-hip-guard/",
+            "https://hipguard.eu/certification-ceinture/",
+            "https://www.helite.com/histoire-protection-airbag-helite/"
+          ]
+        },
+        "why_interesting": {
+          "text": "A pendant calls for help after a fall. This belt is meant to soften the blow to the hip. The 90 percent impact claim is large, and it is stated on the maker's own certification page rather than in a paper I could read. The user guide also warns that brisk movement can trigger the airbag, so the people who walk most freely may be the worst fit.",
+          "sources": [
+            "https://hipguard.eu",
+            "https://hipguard.eu/certification-ceinture/",
+            "https://www.helite.de/mediafiles/Sonstiges/Bedienungsanleitung%20HIP-GUARD.pdf"
+          ]
+        },
+        "status": {
+          "state": "active",
+          "as_of": "2026-10-05",
+          "text": "The belt is for sale on hipguard.eu. The legal notice names HELITE SAS, 1 rue de la petite fin, 21121 Fontaine-lès-Dijon, RCS Dijon 883 586 869, with Gérard Thévenot as publication director. Helite dates its own start to 2002 in Dijon.",
+          "sources": [
+            "https://hipguard.eu/produit/shop-ceinture-airbag-hip-guard/",
+            "https://hipguard.eu/mentions-legales-ceinture-airbag-hip-guard/",
+            "https://www.helite.com/histoire-protection-airbag-helite/"
+          ]
         }
       }
     },

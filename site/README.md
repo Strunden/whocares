@@ -103,6 +103,18 @@ INSERT INTO entries (
 
 Verified company facts live in `document.facts` (and the `facts` column). The detail page reads them from `GET /api/index`. Leave out any fact you cannot point at a public page. Do not write "unknown".
 
+A researched write-up lives in `document.writeup`. The detail page shows any of these sections that are present, and hides the old job card once a write-up exists. Each section is `{text, sources}` with `sources` as an array of URLs you actually opened. Omit a section when you cannot support it. `summary` stays the one-line list text, verb first, at most 90 characters. `writeup.status.text` is the operating status (active, acquired, shut down, or pivoted), not the internal workflow `status`.
+
+```json
+"writeup": {
+  "what_it_does": {"text": "Two to four plain sentences.", "sources": ["https://example.com"]},
+  "who_pays": {"text": "Who buys it, and the price if it is public.", "sources": ["https://example.com/pricing"]},
+  "traction": {"text": "Customers or results, with dates.", "sources": ["https://example.com/news"]},
+  "why_interesting": {"text": "One to three sentences of insight.", "sources": ["https://example.com/news"]},
+  "status": {"text": "Active. Still selling the product as of October 2026.", "state": "active", "as_of": "2026-10-05", "sources": ["https://example.com"]}
+}
+```
+
 `facts` fields, each with its own `source` URL:
 
 - `country`: `{code, source}`. `code` is ISO 3166-1 alpha-2. The list shows that country's flag next to the name, and the detail page shows it beside Headquarters. Leave it out when you cannot point at a public page. A domain such as `.de` is a hint to check the imprint, not proof. Ideas do not get a flag.
