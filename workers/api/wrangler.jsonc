@@ -1,0 +1,23 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "whocares-api",
+  "main": "src/index.js",
+  "compatibility_date": "2026-10-05",
+  "compatibility_flags": ["nodejs_compat"],
+  "account_id": "7900f10c4e99776ebbab5e336b8bfa98",
+  "observability": {
+    "enabled": true,
+    "traces": {
+      "enabled": true
+    }
+  },
+  "placement": {
+    "mode": "smart"
+  },
+  "hyperdrive": [
+    {
+      "binding": "HYPERDRIVE",
+      "id": "96e289c9bf5641f99c47a570a9b94617"
+    }
+  ]
+}

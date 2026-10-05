@@ -10,7 +10,10 @@ __pycache__/
 .env
 .env.*
 !.env.example
+.dev.vars
+.wrangler/
 node_modules/
+workers/api/dist/
 .venv/
 venv/
 *.log

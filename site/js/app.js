@@ -44,10 +44,33 @@
     return [scene.job, scene.seller, scene.payer].filter(Boolean).join(" · ");
   }
 
-  async function loadIndex() {
+  function apiBase() {
+    const cfg = window.WHOCARES_CONFIG || {};
+    const raw = cfg.API_BASE != null ? cfg.API_BASE : cfg.apiBase;
+    if (typeof raw !== "string") return "";
+    return raw.trim().replace(/\/+$/, "");
+  }
+
+  async function loadStaticIndex() {
     const res = await fetch(dataUrl(), { cache: "no-store" });
     if (!res.ok) throw new Error("Could not load data/index.json");
     return res.json();
+  }
+
+  async function loadIndex() {
+    const base = apiBase();
+    if (base) {
+      try {
+        const res = await fetch(`${base}/api/index`, { cache: "no-store" });
+        if (res.ok) {
+          const data = await res.json();
+          if (data && Array.isArray(data.entries)) return data;
+        }
+      } catch (err) {
+        console.warn("Live index unavailable, using data/index.json");
+      }
+    }
+    return loadStaticIndex();
   }
 
   function filterEntries(entries, opts) {
