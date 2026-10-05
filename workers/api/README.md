@@ -6,7 +6,7 @@ The Worker reads whatever is in the database. An empty database returns meta plu
 
 ## Connection
 
-Prefer the `HYPERDRIVE` binding (direct Neon host, not the pooler). If that binding is absent, the Worker uses the `DATABASE_URL` secret.
+Prefer the `HYPERDRIVE` binding (direct Neon host, not the pooler). If that binding is absent, the Worker uses the `DATABASE_URL` secret. Queries use the Postgres wire protocol over `cloudflare:sockets`.
 
 `DATABASE_URL` must be a Postgres URI for Neon project `proud-sea-34268045`, branch `br-silent-mouse-b2g45sar`, database `neondb`, with `sslmode=require`. Set it with Wrangler. Do not commit the value.
 

@@ -52,7 +52,9 @@ export function buildIndex(meta, changelog, documents) {
   const entries = (documents || []).map(asEntry).filter(Boolean);
   const row = meta || {};
   return {
-    schema_version: row.schema_version ?? 1,
+    schema_version: row.schema_version == null || row.schema_version === ""
+      ? 1
+      : Number(row.schema_version),
     generated: row.generated == null ? null : isoDate(row.generated),
     title: row.title || "Who Cares",
     changelog: (changelog || []).map((item) => ({

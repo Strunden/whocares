@@ -1,5 +1,5 @@
-import postgres from "postgres";
 import { buildIndex } from "./index-shape.js";
+import { withSql } from "./pg-wire.js";
 
 const ALLOW_ORIGIN = "https://strunden.github.io";
 
@@ -23,58 +23,25 @@ function json(body, status = 200) {
   });
 }
 
-function connectionOf(env) {
-  const hyperdrive = env.HYPERDRIVE && env.HYPERDRIVE.connectionString;
-  if (hyperdrive) return { url: hyperdrive, viaHyperdrive: true };
-  if (env.DATABASE_URL) return { url: env.DATABASE_URL, viaHyperdrive: false };
-  return null;
-}
-
-function openSql(conn) {
-  const options = {
-    max: conn.viaHyperdrive ? 5 : 1,
-    fetch_types: false,
-    prepare: conn.viaHyperdrive,
-    connect_timeout: 15,
-  };
-  if (!conn.viaHyperdrive) options.ssl = "require";
-  return postgres(conn.url, options);
-}
-
-async function withSql(env, fn) {
-  const conn = connectionOf(env);
-  if (!conn) {
-    const error = new Error("database unconfigured");
-    error.code = "UNCONFIGURED";
-    throw error;
-  }
-  const sql = openSql(conn);
-  try {
-    return await fn(sql);
-  } finally {
-    await sql.end({ timeout: 5 });
-  }
-}
-
 async function readIndex(env) {
   return withSql(env, async (sql) => {
-    const metaRows = await sql`
+    const metaRows = await sql.simpleQuery(`
       SELECT schema_version,
              to_char(generated, 'YYYY-MM-DD') AS generated,
              title
       FROM atlas_meta
       LIMIT 1
-    `;
-    const changelog = await sql`
+    `);
+    const changelog = await sql.simpleQuery(`
       SELECT to_char(entry_date, 'YYYY-MM-DD') AS date, text
       FROM changelog
       ORDER BY position ASC, id ASC
-    `;
-    const entryRows = await sql`
+    `);
+    const entryRows = await sql.simpleQuery(`
       SELECT document
       FROM entries
       ORDER BY position ASC, id ASC
-    `;
+    `);
     return buildIndex(
       metaRows[0] || null,
       changelog,
@@ -83,12 +50,19 @@ async function readIndex(env) {
   });
 }
 
+function safeError(error) {
+  return String(error instanceof Error ? error.message : error).replace(
+    /postgres(?:ql)?:\/\/\S+/gi,
+    "postgresql://redacted",
+  );
+}
+
 function dbError(error) {
   console.error(
     JSON.stringify({
       message: "database query failed",
       code: error && error.code ? error.code : "unknown",
-      error: error instanceof Error ? error.message : String(error),
+      error: safeError(error),
     }),
   );
   if (error && error.code === "UNCONFIGURED") {
@@ -112,10 +86,11 @@ export default {
 
     if (path === "/api/health") {
       try {
-        const countRows = await withSql(env, (sql) => sql`
-          SELECT count(*)::int AS entries FROM entries
-        `);
-        const entries = countRows[0] ? countRows[0].entries : 0;
+        const countRows = await withSql(
+          env,
+          (sql) => sql.simpleQuery("SELECT count(*)::int AS entries FROM entries"),
+        );
+        const entries = countRows[0] ? Number(countRows[0].entries) : 0;
         return json({ ok: true, database: "up", entries });
       } catch (error) {
         return dbError(error);
