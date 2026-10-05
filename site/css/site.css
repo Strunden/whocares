@@ -278,6 +278,8 @@ a { color: var(--link); }
 .kv { padding: 10px 14px; border-top: 0.5px solid var(--line); }
 .kv .kicker { margin: 0; }
 .kv p { margin: 2px 0 0; font-size: 17px; line-height: 1.35; }
+.kv p a { color: var(--link); }
+.fact-src { font-size: 13px; margin-left: 8px; white-space: nowrap; }
 .killtext { margin: 0; font-size: 17px; line-height: 1.4; color: var(--ink); }
 .killbox { box-shadow: inset 3px 0 0 var(--kill); }
 .src-link { display: inline-block; margin-top: 6px; font-size: 15px; word-break: break-word; }

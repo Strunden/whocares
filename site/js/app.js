@@ -291,6 +291,130 @@
     });
     return urls;
   }
+  const JOB_STOP = new Set("a an the and or of to for with in on at by from that this it its is are be as their them they who into over per via your our can help helps people older care aging ageing".split(" "));
+
+  function jobTokens(s) {
+    return new Set(
+      nd(s || "")
+        .toLowerCase()
+        .replace(/[^a-z0-9\s]/g, " ")
+        .split(/\s+/)
+        .filter((w) => w.length > 3 && !JOB_STOP.has(w))
+    );
+  }
+
+  function similarEntries(e) {
+    if (!e || e.type !== "company" || !e.tag) return [];
+    const mine = jobTokens(e.job || e.summary || "");
+    if (!mine.size) return [];
+    const scored = publishedEntries()
+      .filter((other) => other && other.id !== e.id && other.tag === e.tag)
+      .map((other) => {
+        const theirs = jobTokens(other.job || other.summary || "");
+        let overlap = 0;
+        mine.forEach((word) => {
+          if (theirs.has(word)) overlap += 1;
+        });
+        return { other, overlap };
+      })
+      .filter((item) => item.overlap >= 2);
+    scored.sort((a, b) => b.overlap - a.overlap || displayTitle(a.other).localeCompare(displayTitle(b.other)));
+    const picked = scored.slice(0, 5).map((item) => item.other);
+    return picked.length >= 3 ? picked : [];
+  }
+
+  function factLink(url, label) {
+    const href = safeUrl(url);
+    if (!href) return "";
+    return `<a href="${esc(href)}" target="_blank" rel="noopener">${t(label)}</a>`;
+  }
+
+  function sourceLink(url) {
+    const href = safeUrl(url);
+    if (!href) return "";
+    return ` <a class="fact-src" href="${esc(href)}" target="_blank" rel="noopener">Source</a>`;
+  }
+
+  function plainFact(value) {
+    const text = cleanProse(value);
+    if (!text || isJunk(text) || /unknown/i.test(text)) return "";
+    return text;
+  }
+
+  function factsCard(e) {
+    if (!e || e.type !== "company" || !e.facts || typeof e.facts !== "object") return "";
+    const facts = e.facts;
+    const rows = [];
+    const founded = facts.founded;
+    if (founded && /^(19|20)\d{2}$/.test(String(founded.year || "")) && safeUrl(founded.source)) {
+      rows.push(`<div class="kv"><p class="kicker">Founded</p><p>${t(String(founded.year))}${sourceLink(founded.source)}</p></div>`);
+    }
+    const hq = facts.hq;
+    const city = hq ? plainFact(hq.city) : "";
+    if (city && hq && safeUrl(hq.source)) {
+      rows.push(`<div class="kv"><p class="kicker">Headquarters</p><p>${t(city)}${sourceLink(hq.source)}</p></div>`);
+    }
+    const founders = Array.isArray(facts.founders) ? facts.founders.filter((person) => person && plainFact(person.name) && safeUrl(person.source)) : [];
+    if (founders.length) {
+      const names = founders.map((person) => {
+        const name = plainFact(person.name);
+        const linkedin = safeUrl(person.linkedin);
+        return linkedin ? factLink(linkedin, name) : t(name);
+      }).join(", ");
+      const sources = [];
+      founders.forEach((person) => {
+        const href = safeUrl(person.source);
+        if (href && sources.indexOf(href) === -1) sources.push(href);
+      });
+      rows.push(`<div class="kv"><p class="kicker">Founders</p><p>${names}${sources.map(sourceLink).join("")}</p></div>`);
+    }
+    const funding = facts.funding && typeof facts.funding === "object" ? facts.funding : null;
+    if (funding) {
+      const bits = [];
+      const total = funding.total;
+      const totalAmount = total ? plainFact(total.amount) : "";
+      if (totalAmount && safeUrl(total.source)) {
+        const stated = /grant|round|series/i.test(totalAmount) ? t(totalAmount) : t(totalAmount) + " total";
+        bits.push(stated + sourceLink(total.source));
+      }
+      const round = funding.last_round;
+      const roundAmount = round ? plainFact(round.amount) : "";
+      if (roundAmount && safeUrl(round.source)) {
+        const when = plainFact(round.date);
+        bits.push(`Last round ${t(roundAmount)}${when ? " in " + t(when) : ""}${sourceLink(round.source)}`);
+      }
+      if (bits.length) rows.push(`<div class="kv"><p class="kicker">Funding</p><p>${bits.join(". ")}</p></div>`);
+    }
+    const investors = Array.isArray(facts.investors) ? facts.investors.filter((item) => item && plainFact(item.name) && safeUrl(item.source)) : [];
+    if (investors.length) {
+      const names = investors.map((item) => t(plainFact(item.name))).join(", ");
+      const sources = [];
+      investors.forEach((item) => {
+        const href = safeUrl(item.source);
+        if (href && sources.indexOf(href) === -1) sources.push(href);
+      });
+      rows.push(`<div class="kv"><p class="kicker">Investors</p><p>${names}${sources.map(sourceLink).join("")}</p></div>`);
+    }
+    const model = facts.model;
+    const modelText = model ? plainFact(model.text) : "";
+    if (modelText && model && safeUrl(model.source)) {
+      rows.push(`<div class="kv"><p class="kicker">Pricing</p><p>${t(modelText)}${sourceLink(model.source)}</p></div>`);
+    }
+    const apps = Array.isArray(facts.apps) ? facts.apps.filter((app) => app && plainFact(app.name) && safeUrl(app.url)) : [];
+    if (apps.length) {
+      const links = apps.map((app) => factLink(app.url, plainFact(app.name))).join(", ");
+      rows.push(`<div class="kv"><p class="kicker">Apps</p><p>${links}</p></div>`);
+    }
+    if (!rows.length) return "";
+    return `<div class="group">${rows.join("")}</div>`;
+  }
+
+  function similarCard(e) {
+    const rows = similarEntries(e);
+    if (!rows.length) return "";
+    return `<div class="group"><div class="pad"><p class="kicker">Similar in Who Cares</p></div>${rows.map(rowButton).join("")}</div>`;
+  }
+
   function moreHtml(e) {
     const blocks = [];
     const dive = e.deep_dive && typeof e.deep_dive === "object" ? e.deep_dive : null;
@@ -349,6 +473,8 @@
       </div>
       ${summary ? `<p class="summary">${t(summary)}</p>` : ""}`;
     if (card) html += `<div class="group">${card}</div>`;
+    html += factsCard(e);
+    html += similarCard(e);
     if (web) {
       html += `<div class="group"><a class="row" href="${esc(web)}" target="_blank" rel="noopener">
         ${iconTile("link")}
