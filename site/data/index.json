@@ -125,15 +125,19 @@
       "tag_secondary": null,
       "logo": "/api/logo/company-amara",
       "facts": {
+        "hq": {
+          "city": "Berlin",
+          "source": "https://amara.app/impressum"
+        },
         "apps": [
           {
-            "name": "App Store",
             "url": "https://apps.apple.com/app/id6756392739",
+            "name": "App Store",
             "source": "https://amara.app"
           },
           {
-            "name": "Google Play",
             "url": "https://play.google.com/store/apps/details?id=com.h2technologies.amara",
+            "name": "Google Play",
             "source": "https://amara.app"
           }
         ],
@@ -141,10 +145,43 @@
           "text": "A 30-day membership can be tried free.",
           "source": "https://amara.app"
         },
-        "hq": {
-          "city": "Berlin",
-          "source": "https://amara.app/impressum"
-        }
+        "founded": {
+          "year": 2025,
+          "source": "https://www.ibbventures.de/de/news/amara-sammelt-3-7-millionen-euro-ein"
+        },
+        "founders": [
+          {
+            "name": "Philipp Hartz",
+            "role": "Founder",
+            "source": "https://www.ibbventures.de/de/news/amara-sammelt-3-7-millionen-euro-ein"
+          },
+          {
+            "name": "Richard Hector",
+            "role": "Founder",
+            "source": "https://www.ibbventures.de/de/news/amara-sammelt-3-7-millionen-euro-ein"
+          }
+        ],
+        "funding": {
+          "last_round": {
+            "amount": "€3.7 million pre-seed",
+            "source": "https://www.ibbventures.de/de/news/amara-sammelt-3-7-millionen-euro-ein",
+            "date": "September 2026"
+          }
+        },
+        "investors": [
+          {
+            "name": "Econa",
+            "source": "https://www.ibbventures.de/de/news/amara-sammelt-3-7-millionen-euro-ein"
+          },
+          {
+            "name": "Caesar VC",
+            "source": "https://www.ibbventures.de/de/news/amara-sammelt-3-7-millionen-euro-ein"
+          },
+          {
+            "name": "IBB Ventures",
+            "source": "https://www.ibbventures.de/de/news/amara-sammelt-3-7-millionen-euro-ein"
+          }
+        ]
       }
     },
     {
@@ -238,7 +275,61 @@
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": "/api/logo/company-assistme"
+      "logo": "/api/logo/company-assistme",
+      "facts": {
+        "founded": {
+          "year": 2017,
+          "source": "https://invest-in.berlin/n/berlin-care-tech-startup-assistme-bags-eur65m/"
+        },
+        "hq": {
+          "city": "Berlin",
+          "source": "https://invest-in.berlin/n/berlin-care-tech-startup-assistme-bags-eur65m/"
+        },
+        "founders": [
+          {
+            "name": "Julio Brandl",
+            "role": "Founder",
+            "source": "https://www.berlin-partner.de/en/news/detail/berlin-gets-it-right-assistme-gmbh"
+          }
+        ],
+        "funding": {
+          "last_round": {
+            "amount": "€6.5 million",
+            "source": "https://www.heuking.de/en/news-events/latest-news/article/heuking-advises-assistme-gmbh-on-its-65-million-euro-financing-round.html",
+            "date": "August 2026"
+          }
+        },
+        "investors": [
+          {
+            "name": "CRB Health Tech",
+            "source": "https://www.heuking.de/en/news-events/latest-news/article/heuking-advises-assistme-gmbh-on-its-65-million-euro-financing-round.html"
+          },
+          {
+            "name": "Vorwerk Ventures",
+            "source": "https://www.heuking.de/en/news-events/latest-news/article/heuking-advises-assistme-gmbh-on-its-65-million-euro-financing-round.html"
+          },
+          {
+            "name": "SUM Ventures",
+            "source": "https://www.heuking.de/en/news-events/latest-news/article/heuking-advises-assistme-gmbh-on-its-65-million-euro-financing-round.html"
+          },
+          {
+            "name": "Brandenburg Kapital",
+            "source": "https://www.heuking.de/en/news-events/latest-news/article/heuking-advises-assistme-gmbh-on-its-65-million-euro-financing-round.html"
+          },
+          {
+            "name": "Conle Family Office",
+            "source": "https://www.heuking.de/en/news-events/latest-news/article/heuking-advises-assistme-gmbh-on-its-65-million-euro-financing-round.html"
+          },
+          {
+            "name": "Next Big Thing",
+            "source": "https://www.heuking.de/en/news-events/latest-news/article/heuking-advises-assistme-gmbh-on-its-65-million-euro-financing-round.html"
+          },
+          {
+            "name": "IBB Capital",
+            "source": "https://www.heuking.de/en/news-events/latest-news/article/heuking-advises-assistme-gmbh-on-its-65-million-euro-financing-round.html"
+          }
+        ]
+      }
     },
     {
       "id": "company-cogvis",
@@ -328,7 +419,19 @@
       "why_dropped": null,
       "tag": "Safety and falls",
       "tag_secondary": null,
-      "logo": "/api/logo/company-cogvis"
+      "logo": "/api/logo/company-cogvis",
+      "facts": {
+        "hq": {
+          "city": "Wien",
+          "source": "https://www.ots.at/presseaussendung/OTS_20250312_OTS0020/cogvis-sichert-sich-siebenstelliges-investment-der-raiffeisen-landesbank-steiermark"
+        },
+        "investors": [
+          {
+            "name": "Raiffeisen-Landesbank Steiermark",
+            "source": "https://www.ots.at/presseaussendung/OTS_20250312_OTS0020/cogvis-sichert-sich-siebenstelliges-investment-der-raiffeisen-landesbank-steiermark"
+          }
+        ]
+      }
     },
     {
       "id": "company-auditect",
@@ -412,7 +515,18 @@
         "hq": {
           "city": "Stuttgart",
           "source": "https://www.auditect.de/impressum.html"
-        }
+        },
+        "founded": {
+          "year": 2023,
+          "source": "https://www.northdata.com/auditect%20GmbH"
+        },
+        "founders": [
+          {
+            "name": "Sebastian Christopher Most",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/auditect%20GmbH"
+          }
+        ]
       }
     },
     {
@@ -498,7 +612,62 @@
       "why_dropped": null,
       "tag": "Safety and falls",
       "tag_secondary": null,
-      "logo": "/api/logo/company-gardia"
+      "logo": "/api/logo/company-gardia",
+      "facts": {
+        "founded": {
+          "year": 2019,
+          "source": "https://dvhventures.de/updates-insights/8-5-million-series-a-funding-for-gardias-mobile-emergency-call-system-for-seniors/"
+        },
+        "hq": {
+          "city": "Soest",
+          "source": "https://dvhventures.de/updates-insights/8-5-million-series-a-funding-for-gardias-mobile-emergency-call-system-for-seniors/"
+        },
+        "founders": [
+          {
+            "name": "Marlon Besuch",
+            "role": "Founder",
+            "source": "https://dvhventures.de/updates-insights/8-5-million-series-a-funding-for-gardias-mobile-emergency-call-system-for-seniors/"
+          },
+          {
+            "name": "Michael Hummels",
+            "role": "Founder",
+            "source": "https://dvhventures.de/updates-insights/8-5-million-series-a-funding-for-gardias-mobile-emergency-call-system-for-seniors/"
+          }
+        ],
+        "funding": {
+          "last_round": {
+            "amount": "€8.5 million Series A",
+            "source": "https://tech.eu/2026/02/05/gardia-secures-eur85m-to-scale-its-mobile-emergency-system-for-seniors/",
+            "date": "February 2026"
+          }
+        },
+        "investors": [
+          {
+            "name": "Peak",
+            "source": "https://tech.eu/2026/02/05/gardia-secures-eur85m-to-scale-its-mobile-emergency-system-for-seniors/"
+          },
+          {
+            "name": "amberra",
+            "source": "https://tech.eu/2026/02/05/gardia-secures-eur85m-to-scale-its-mobile-emergency-system-for-seniors/"
+          },
+          {
+            "name": "butterfly & elephant",
+            "source": "https://tech.eu/2026/02/05/gardia-secures-eur85m-to-scale-its-mobile-emergency-system-for-seniors/"
+          },
+          {
+            "name": "BONVENTURE",
+            "source": "https://tech.eu/2026/02/05/gardia-secures-eur85m-to-scale-its-mobile-emergency-system-for-seniors/"
+          },
+          {
+            "name": "Dieter von Holtzbrinck Ventures",
+            "source": "https://tech.eu/2026/02/05/gardia-secures-eur85m-to-scale-its-mobile-emergency-system-for-seniors/"
+          },
+          {
+            "name": "Beurer",
+            "source": "https://tech.eu/2026/02/05/gardia-secures-eur85m-to-scale-its-mobile-emergency-system-for-seniors/"
+          }
+        ]
+      }
     },
     {
       "id": "company-veli",
@@ -591,7 +760,52 @@
         "hq": {
           "city": "Kassel",
           "source": "https://www.veli-care.de/impressum"
-        }
+        },
+        "founded": {
+          "year": 2023,
+          "source": "https://hessian.ai/de/aisr-startup-alumni-veli-sichert-sich-800-000-e-investition-um-ki-gestutzte-hausliche-altenpflege-voranzutreiben/"
+        },
+        "founders": [
+          {
+            "name": "Jan-Peter Seevers",
+            "role": "Founder",
+            "source": "https://hessian.ai/de/aisr-startup-alumni-veli-sichert-sich-800-000-e-investition-um-ki-gestutzte-hausliche-altenpflege-voranzutreiben/"
+          },
+          {
+            "name": "Maximilian Schnettler",
+            "role": "Founder",
+            "source": "https://hessian.ai/de/aisr-startup-alumni-veli-sichert-sich-800-000-e-investition-um-ki-gestutzte-hausliche-altenpflege-voranzutreiben/"
+          },
+          {
+            "name": "Tim Weiß",
+            "role": "Founder",
+            "source": "https://hessian.ai/de/aisr-startup-alumni-veli-sichert-sich-800-000-e-investition-um-ki-gestutzte-hausliche-altenpflege-voranzutreiben/"
+          }
+        ],
+        "funding": {
+          "last_round": {
+            "amount": "€800,000",
+            "source": "https://hessian.ai/de/aisr-startup-alumni-veli-sichert-sich-800-000-e-investition-um-ki-gestutzte-hausliche-altenpflege-voranzutreiben/"
+          }
+        },
+        "investors": [
+          {
+            "name": "BMH Beteiligungs-Managementgesellschaft Hessen",
+            "source": "https://hessian.ai/de/aisr-startup-alumni-veli-sichert-sich-800-000-e-investition-um-ki-gestutzte-hausliche-altenpflege-voranzutreiben/"
+          },
+          {
+            "name": "Martina Pfeifer",
+            "source": "https://hessian.ai/de/aisr-startup-alumni-veli-sichert-sich-800-000-e-investition-um-ki-gestutzte-hausliche-altenpflege-voranzutreiben/"
+          },
+          {
+            "name": "Olav Sehlbach",
+            "source": "https://hessian.ai/de/aisr-startup-alumni-veli-sichert-sich-800-000-e-investition-um-ki-gestutzte-hausliche-altenpflege-voranzutreiben/"
+          },
+          {
+            "name": "Matthias Sandrock",
+            "source": "https://hessian.ai/de/aisr-startup-alumni-veli-sichert-sich-800-000-e-investition-um-ki-gestutzte-hausliche-altenpflege-voranzutreiben/"
+          }
+        ]
       }
     },
     {
@@ -841,7 +1055,18 @@
         "hq": {
           "city": "München",
           "source": "https://navelrobotics.com/impressum/"
-        }
+        },
+        "founded": {
+          "year": 2017,
+          "source": "https://www.northdata.com/navel%20robotics%20GmbH"
+        },
+        "founders": [
+          {
+            "name": "Claude Toussaint",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/navel%20robotics%20GmbH"
+          }
+        ]
       }
     },
     {
@@ -924,6 +1149,22 @@
         "hq": {
           "city": "Darmstadt",
           "source": "https://www.zenaris.com/impressum"
+        },
+        "founders": [
+          {
+            "name": "Hakan Evcek",
+            "role": "Founder",
+            "source": "https://www.hessenschau.de/wirtschaft/start-up-zenaris-aus-darmstadt-baut-fernbedienung-gegen-einsamkeit-v1,start-ups-hessen-zenaris-100.html"
+          },
+          {
+            "name": "Tim Jefferys",
+            "role": "Founder",
+            "source": "https://www.hessenschau.de/wirtschaft/start-up-zenaris-aus-darmstadt-baut-fernbedienung-gegen-einsamkeit-v1,start-ups-hessen-zenaris-100.html"
+          }
+        ],
+        "founded": {
+          "year": 2025,
+          "source": "https://www.northdata.com/Zenaris%20GmbH"
         }
       }
     },
@@ -1486,7 +1727,18 @@
         "hq": {
           "city": "Berlin",
           "source": "https://lindera.de/de/impressum"
-        }
+        },
+        "founded": {
+          "year": 2017,
+          "source": "https://www.northdata.com/LINDERA%20GmbH"
+        },
+        "founders": [
+          {
+            "name": "Diana Heinrichs",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/LINDERA%20GmbH"
+          }
+        ]
       }
     },
     {
@@ -3337,7 +3589,23 @@
         "hq": {
           "city": "Hildesheim",
           "source": "https://www.medifoxdan.de/impressum"
-        }
+        },
+        "founded": {
+          "year": 2010,
+          "source": "https://www.northdata.com/MEDIFOX%20DAN%20GmbH"
+        },
+        "founders": [
+          {
+            "name": "Arne Burandt",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/MEDIFOX%20DAN%20GmbH"
+          },
+          {
+            "name": "Stefanie Duchet",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/MEDIFOX%20DAN%20GmbH"
+          }
+        ]
       }
     },
     {
@@ -3435,6 +3703,10 @@
         "hq": {
           "city": "Rheine",
           "source": "https://www.apetito.de/ueber-apetito"
+        },
+        "founded": {
+          "year": 1991,
+          "source": "https://www.northdata.com/apetito%20AG"
         }
       }
     },
@@ -7195,9 +7467,29 @@
       "facts": {
         "apps": [
           {
-            "name": "App Store",
             "url": "https://apps.apple.com/de/developer/cliniserve-gmbh/id1324681785",
+            "name": "App Store",
             "source": "https://www.cliniserve.de/"
+          }
+        ],
+        "founded": {
+          "year": 2018,
+          "source": "https://www.northdata.com/Cliniserve%20GmbH"
+        },
+        "hq": {
+          "city": "München",
+          "source": "https://www.northdata.com/Cliniserve%20GmbH"
+        },
+        "founders": [
+          {
+            "name": "Quirin Maria Korbinian Körner",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/Cliniserve%20GmbH"
+          },
+          {
+            "name": "Julian Ricky Nast-Kolb",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/Cliniserve%20GmbH"
           }
         ]
       }
@@ -7242,7 +7534,24 @@
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": "/api/logo/company-hemby"
+      "logo": "/api/logo/company-hemby",
+      "facts": {
+        "founded": {
+          "year": 2022,
+          "source": "https://www.northdata.com/Hemby%20GmbH"
+        },
+        "hq": {
+          "city": "Berlin",
+          "source": "https://www.northdata.com/Hemby%20GmbH"
+        },
+        "founders": [
+          {
+            "name": "Richard Erik August Nordström",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/Hemby%20GmbH"
+          }
+        ]
+      }
     },
     {
       "id": "company-myosotis-gmbh",
@@ -7691,7 +8000,28 @@
         "hq": {
           "city": "Paris",
           "source": "https://www.alenvi.io/mentions-legales"
-        }
+        },
+        "founded": {
+          "year": 2016,
+          "source": "https://www.silvereco.fr/la-startup-sociale-alenvi-leve-11-million-deuros-pour-humaniser-laide-a-domicile-des-personnes-agees-a-grande-echelle/"
+        },
+        "founders": [
+          {
+            "name": "Clément Saint Olive",
+            "role": "Founder",
+            "source": "https://www.silvereco.fr/la-startup-sociale-alenvi-leve-11-million-deuros-pour-humaniser-laide-a-domicile-des-personnes-agees-a-grande-echelle/"
+          },
+          {
+            "name": "Guillaume Desnoës",
+            "role": "Founder",
+            "source": "https://www.silvereco.fr/la-startup-sociale-alenvi-leve-11-million-deuros-pour-humaniser-laide-a-domicile-des-personnes-agees-a-grande-echelle/"
+          },
+          {
+            "name": "Thibault de Saint Blancard",
+            "role": "Founder",
+            "source": "https://www.silvereco.fr/la-startup-sociale-alenvi-leve-11-million-deuros-pour-humaniser-laide-a-domicile-des-personnes-agees-a-grande-echelle/"
+          }
+        ]
       }
     },
     {
@@ -7778,7 +8108,27 @@
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": "/api/logo/company-cera"
+      "logo": "/api/logo/company-cera",
+      "facts": {
+        "founders": [
+          {
+            "name": "Ben Maruthappu",
+            "role": "Founder",
+            "source": "https://techcrunch.com/2025/01/12/uk-in-home-healthcare-provider-cera-raises-150m-to-expand-its-ai-platform/"
+          }
+        ],
+        "funding": {
+          "total": {
+            "amount": "More than $407 million in equity and debt",
+            "source": "https://techcrunch.com/2025/01/12/uk-in-home-healthcare-provider-cera-raises-150m-to-expand-its-ai-platform/"
+          },
+          "last_round": {
+            "amount": "$150 million in debt and equity",
+            "source": "https://techcrunch.com/2025/01/12/uk-in-home-healthcare-provider-cera-raises-150m-to-expand-its-ai-platform/",
+            "date": "January 2025"
+          }
+        }
+      }
     },
     {
       "id": "company-meinpflegetagebuch",
@@ -7882,7 +8232,24 @@
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": null
+      "logo": null,
+      "facts": {
+        "founded": {
+          "year": 2017,
+          "source": "https://www.northdata.com/Movacare%20GmbH"
+        },
+        "hq": {
+          "city": "Ramstein-Miesenbach",
+          "source": "https://www.northdata.com/Movacare%20GmbH"
+        },
+        "founders": [
+          {
+            "name": "Christian Carl Helmut Stolle",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/Movacare%20GmbH"
+          }
+        ]
+      }
     },
     {
       "id": "company-personalcare-systems",
@@ -7967,20 +8334,20 @@
       "tag_secondary": null,
       "logo": "/api/logo/company-birdie",
       "facts": {
+        "hq": {
+          "city": "London",
+          "source": "https://www.birdie.care/about-us"
+        },
         "apps": [
           {
-            "name": "App Store",
             "url": "https://apps.apple.com/gb/app/birdie-care/id1254394392",
+            "name": "App Store",
             "source": "https://www.birdie.care/"
           }
         ],
         "model": {
           "text": "Plans start at £200 per month.",
           "source": "https://www.birdie.care/pricing"
-        },
-        "hq": {
-          "city": "London",
-          "source": "https://www.birdie.care/about-us"
         },
         "founders": [
           {
@@ -7992,6 +8359,40 @@
             "name": "Rajiv Tanna",
             "source": "https://www.birdie.care/about-us",
             "linkedin": "https://www.linkedin.com/in/rajivtanna/"
+          },
+          {
+            "name": "Max Parmentier",
+            "role": "Founder",
+            "source": "https://techcrunch.com/2022/06/28/birdie-series-b/"
+          }
+        ],
+        "founded": {
+          "year": 2017,
+          "source": "https://techcrunch.com/2022/06/28/birdie-series-b/"
+        },
+        "funding": {
+          "total": {
+            "amount": "$52 million",
+            "source": "https://techcrunch.com/2022/06/28/birdie-series-b/"
+          },
+          "last_round": {
+            "amount": "$30 million Series B",
+            "source": "https://techcrunch.com/2022/06/28/birdie-series-b/",
+            "date": "June 2022"
+          }
+        },
+        "investors": [
+          {
+            "name": "Sofina",
+            "source": "https://techcrunch.com/2022/06/28/birdie-series-b/"
+          },
+          {
+            "name": "Omers Ventures",
+            "source": "https://techcrunch.com/2022/06/28/birdie-series-b/"
+          },
+          {
+            "name": "Index Ventures",
+            "source": "https://techcrunch.com/2022/06/28/birdie-series-b/"
           }
         ]
       }
@@ -8125,7 +8526,23 @@
         "hq": {
           "city": "Berlin",
           "source": "https://www.healthx-future.de/impressum"
-        }
+        },
+        "founded": {
+          "year": 2018,
+          "source": "https://www.northdata.com/HealthX%20Future%20GmbH"
+        },
+        "founders": [
+          {
+            "name": "Hendrik Hasler",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/HealthX%20Future%20GmbH"
+          },
+          {
+            "name": "Felix Landmesser",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/HealthX%20Future%20GmbH"
+          }
+        ]
       }
     },
     {
@@ -8167,7 +8584,24 @@
       "why_dropped": null,
       "tag": "Care staff and services",
       "tag_secondary": null,
-      "logo": "/api/logo/company-nox-aal-technologies"
+      "logo": "/api/logo/company-nox-aal-technologies",
+      "facts": {
+        "founded": {
+          "year": 2023,
+          "source": "https://www.northdata.com/NOX%20AAL%20Technologies%20GmbH"
+        },
+        "hq": {
+          "city": "Bergen auf Rügen",
+          "source": "https://www.northdata.com/NOX%20AAL%20Technologies%20GmbH"
+        },
+        "founders": [
+          {
+            "name": "Johannes Mai",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/NOX%20AAL%20Technologies%20GmbH"
+          }
+        ]
+      }
     },
     {
       "id": "company-blooming-health",
@@ -8795,7 +9229,42 @@
       "why_dropped": null,
       "tag": "Daily life and getting around",
       "tag_secondary": null,
-      "logo": "/api/logo/company-german-bionic"
+      "logo": "/api/logo/company-german-bionic",
+      "facts": {
+        "hq": {
+          "city": "Augsburg",
+          "source": "https://techcrunch.com/2020/12/14/german-bionic-raises-20m-led-by-samsung-for-exoskeleton-tech-to-supercharge-human-labor/"
+        },
+        "funding": {
+          "last_round": {
+            "amount": "$20 million Series A",
+            "source": "https://techcrunch.com/2020/12/14/german-bionic-raises-20m-led-by-samsung-for-exoskeleton-tech-to-supercharge-human-labor/",
+            "date": "December 2020"
+          }
+        },
+        "investors": [
+          {
+            "name": "Samsung Catalyst Fund",
+            "source": "https://techcrunch.com/2020/12/14/german-bionic-raises-20m-led-by-samsung-for-exoskeleton-tech-to-supercharge-human-labor/"
+          },
+          {
+            "name": "MIG AG",
+            "source": "https://techcrunch.com/2020/12/14/german-bionic-raises-20m-led-by-samsung-for-exoskeleton-tech-to-supercharge-human-labor/"
+          },
+          {
+            "name": "Storm Ventures",
+            "source": "https://techcrunch.com/2020/12/14/german-bionic-raises-20m-led-by-samsung-for-exoskeleton-tech-to-supercharge-human-labor/"
+          },
+          {
+            "name": "Benhamou Global Ventures",
+            "source": "https://techcrunch.com/2020/12/14/german-bionic-raises-20m-led-by-samsung-for-exoskeleton-tech-to-supercharge-human-labor/"
+          },
+          {
+            "name": "IT Farm",
+            "source": "https://techcrunch.com/2020/12/14/german-bionic-raises-20m-led-by-samsung-for-exoskeleton-tech-to-supercharge-human-labor/"
+          }
+        ]
+      }
     },
     {
       "id": "company-sedimentum-ag",
@@ -8882,7 +9351,18 @@
         "hq": {
           "city": "Berlin",
           "source": "https://careloop.io/impressum/"
-        }
+        },
+        "founded": {
+          "year": 2019,
+          "source": "https://www.northdata.com/Careloop%20GmbH"
+        },
+        "founders": [
+          {
+            "name": "Petra Lütkewitte",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/Careloop%20GmbH"
+          }
+        ]
       }
     },
     {
@@ -9163,7 +9643,24 @@
       "why_dropped": null,
       "tag": "Daily life and getting around",
       "tag_secondary": null,
-      "logo": "/api/logo/company-cerascreen"
+      "logo": "/api/logo/company-cerascreen",
+      "facts": {
+        "founded": {
+          "year": 2012,
+          "source": "https://www.northdata.com/Cerascreen%20GmbH"
+        },
+        "hq": {
+          "city": "Schwerin",
+          "source": "https://www.northdata.com/Cerascreen%20GmbH"
+        },
+        "founders": [
+          {
+            "name": "Olaf Roman Schneider",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/Cerascreen%20GmbH"
+          }
+        ]
+      }
     },
     {
       "id": "company-forward-health-gmbh",
@@ -9313,7 +9810,11 @@
             "name": "Lukas Bossert",
             "source": "https://daluma.de/pages/ueber-uns"
           }
-        ]
+        ],
+        "founded": {
+          "year": 2014,
+          "source": "https://www.northdata.com/DALUMA%20GmbH"
+        }
       }
     },
     {
@@ -9486,7 +9987,29 @@
       "why_dropped": null,
       "tag": "Daily life and getting around",
       "tag_secondary": null,
-      "logo": "/api/logo/company-myricals"
+      "logo": "/api/logo/company-myricals",
+      "facts": {
+        "founded": {
+          "year": 2022,
+          "source": "https://www.northdata.com/Myricals%20GmbH"
+        },
+        "hq": {
+          "city": "Hamburg",
+          "source": "https://www.northdata.com/Myricals%20GmbH"
+        },
+        "founders": [
+          {
+            "name": "Sanja Bonelli",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/Myricals%20GmbH"
+          },
+          {
+            "name": "Maximilian Walter Lang",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/Myricals%20GmbH"
+          }
+        ]
+      }
     },
     {
       "id": "company-asweshare-sas",
@@ -9532,19 +10055,27 @@
       "facts": {
         "apps": [
           {
-            "name": "Google Play",
             "url": "https://play.google.com/store/apps/details?id=io.familink.pegase",
+            "name": "Google Play",
             "source": "https://www.familink.io/en/"
           },
           {
-            "name": "App Store",
             "url": "https://apps.apple.com/fr/app/familink/id997515608",
+            "name": "App Store",
             "source": "https://www.familink.io/en/"
           }
         ],
         "model": {
           "text": "$6.90 per month.",
           "source": "https://www.familink.io/en/pricing/"
+        },
+        "founded": {
+          "year": 2016,
+          "source": "https://www.northdata.com/AsWeShare%20SAS"
+        },
+        "hq": {
+          "city": "Rouen",
+          "source": "https://www.northdata.com/AsWeShare%20SAS"
         }
       }
     },
@@ -9806,6 +10337,10 @@
         "founded": {
           "year": 2016,
           "source": "https://www.ezygain.com/"
+        },
+        "hq": {
+          "city": "Boulogne-Billancourt",
+          "source": "https://www.northdata.com/EzyGain%20SAS"
         }
       }
     },
@@ -10397,7 +10932,24 @@
       "why_dropped": null,
       "tag": "Daily life and getting around",
       "tag_secondary": null,
-      "logo": "/api/logo/company-sphaira-medical"
+      "logo": "/api/logo/company-sphaira-medical",
+      "facts": {
+        "founded": {
+          "year": 2020,
+          "source": "https://www.northdata.com/Sphaira%20Medical%20GmbH"
+        },
+        "hq": {
+          "city": "Berlin",
+          "source": "https://www.northdata.com/Sphaira%20Medical%20GmbH"
+        },
+        "founders": [
+          {
+            "name": "Janis Daniel Maximilian Münch",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/Sphaira%20Medical%20GmbH"
+          }
+        ]
+      }
     },
     {
       "id": "company-hip-impact-protection",
@@ -10737,7 +11289,17 @@
       "why_dropped": null,
       "tag": "Daily life and getting around",
       "tag_secondary": null,
-      "logo": "/api/logo/company-scewo"
+      "logo": "/api/logo/company-scewo",
+      "facts": {
+        "founded": {
+          "year": 2017,
+          "source": "https://www.northdata.com/Scewo%20AG"
+        },
+        "hq": {
+          "city": "Winterthur",
+          "source": "https://www.northdata.com/Scewo%20AG"
+        }
+      }
     },
     {
       "id": "company-whill-inc",
@@ -11051,7 +11613,61 @@
         "model": {
           "text": "£10 per year.",
           "source": "https://farewill.com/wills/pricing"
-        }
+        },
+        "founded": {
+          "year": 2015,
+          "source": "https://tech.eu/2020/07/07/farewill-funding/"
+        },
+        "hq": {
+          "city": "London",
+          "source": "https://tech.eu/2020/07/07/farewill-funding/"
+        },
+        "founders": [
+          {
+            "name": "Antton Peña",
+            "role": "Founder",
+            "source": "https://tech.eu/2020/07/07/farewill-funding/"
+          },
+          {
+            "name": "Dan Garrett",
+            "role": "Founder",
+            "source": "https://tech.eu/2020/07/07/farewill-funding/"
+          },
+          {
+            "name": "Tom Rogers",
+            "role": "Founder",
+            "source": "https://tech.eu/2020/07/07/farewill-funding/"
+          }
+        ],
+        "funding": {
+          "total": {
+            "amount": "£30 million",
+            "source": "https://techcrunch.com/2020/07/08/uks-farewill-raises-25m-for-its-new-approach-online-will-writing-funerals-and-other-death-services/"
+          },
+          "last_round": {
+            "amount": "£20 million",
+            "source": "https://techcrunch.com/2020/07/08/uks-farewill-raises-25m-for-its-new-approach-online-will-writing-funerals-and-other-death-services/",
+            "date": "July 2020"
+          }
+        },
+        "investors": [
+          {
+            "name": "Highland Europe",
+            "source": "https://techcrunch.com/2020/07/08/uks-farewill-raises-25m-for-its-new-approach-online-will-writing-funerals-and-other-death-services/"
+          },
+          {
+            "name": "Keen Venture Partners",
+            "source": "https://techcrunch.com/2020/07/08/uks-farewill-raises-25m-for-its-new-approach-online-will-writing-funerals-and-other-death-services/"
+          },
+          {
+            "name": "Augmentum Fintech",
+            "source": "https://techcrunch.com/2020/07/08/uks-farewill-raises-25m-for-its-new-approach-online-will-writing-funerals-and-other-death-services/"
+          },
+          {
+            "name": "Kindred Capital",
+            "source": "https://techcrunch.com/2020/07/08/uks-farewill-raises-25m-for-its-new-approach-online-will-writing-funerals-and-other-death-services/"
+          }
+        ]
       }
     },
     {
@@ -11234,7 +11850,48 @@
         "hq": {
           "city": "Berlin",
           "source": "https://www.careship.de/impressum"
-        }
+        },
+        "founders": [
+          {
+            "name": "Antonia Albert",
+            "role": "Founder",
+            "source": "https://tech.eu/2018/04/05/careship-funding/"
+          },
+          {
+            "name": "Nikolaus Albert",
+            "role": "Founder",
+            "source": "https://tech.eu/2018/04/05/careship-funding/"
+          }
+        ],
+        "funding": {
+          "last_round": {
+            "amount": "€6 million",
+            "source": "https://tech.eu/2018/04/05/careship-funding/",
+            "date": "April 2018"
+          }
+        },
+        "investors": [
+          {
+            "name": "Creandum",
+            "source": "https://tech.eu/2018/04/05/careship-funding/"
+          },
+          {
+            "name": "Ananda Ventures",
+            "source": "https://tech.eu/2018/04/05/careship-funding/"
+          },
+          {
+            "name": "Spark Capital",
+            "source": "https://tech.eu/2018/04/05/careship-funding/"
+          },
+          {
+            "name": "Atlantic Labs",
+            "source": "https://tech.eu/2018/04/05/careship-funding/"
+          },
+          {
+            "name": "Axel Springer Plug and Play",
+            "source": "https://tech.eu/2018/04/05/careship-funding/"
+          }
+        ]
       }
     },
     {
@@ -11389,7 +12046,23 @@
         "hq": {
           "city": "Berlin",
           "source": "https://careli.de/impressum"
-        }
+        },
+        "founded": {
+          "year": 2025,
+          "source": "https://www.northdata.com/Careli%20GmbH"
+        },
+        "founders": [
+          {
+            "name": "Sascha Andreas Zöller",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/Careli%20GmbH"
+          },
+          {
+            "name": "Clemens Otto Konstantin Koepke",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/Careli%20GmbH"
+          }
+        ]
       }
     },
     {
@@ -11537,7 +12210,52 @@
         "hq": {
           "city": "Berlin",
           "source": "https://www.marta.de/impressum"
-        }
+        },
+        "founded": {
+          "year": 2020,
+          "source": "https://www.startbase.de/news/66-millionen-euro-fuer-marta/"
+        },
+        "founders": [
+          {
+            "name": "Jan Hoffmann",
+            "role": "Founder",
+            "source": "https://www.startbase.de/news/66-millionen-euro-fuer-marta/"
+          },
+          {
+            "name": "Philipp Buhr",
+            "role": "Founder",
+            "source": "https://www.startbase.de/news/66-millionen-euro-fuer-marta/"
+          }
+        ],
+        "funding": {
+          "last_round": {
+            "amount": "€6.6 million seed",
+            "source": "https://www.startbase.de/news/66-millionen-euro-fuer-marta/",
+            "date": "August 2022"
+          }
+        },
+        "investors": [
+          {
+            "name": "Capnamic",
+            "source": "https://www.startbase.de/news/66-millionen-euro-fuer-marta/"
+          },
+          {
+            "name": "Almaz Capital",
+            "source": "https://www.startbase.de/news/66-millionen-euro-fuer-marta/"
+          },
+          {
+            "name": "Ithaca",
+            "source": "https://www.startbase.de/news/66-millionen-euro-fuer-marta/"
+          },
+          {
+            "name": "Sumup Impact Fund",
+            "source": "https://www.startbase.de/news/66-millionen-euro-fuer-marta/"
+          },
+          {
+            "name": "Verve Ventures",
+            "source": "https://www.startbase.de/news/66-millionen-euro-fuer-marta/"
+          }
+        ]
       }
     },
     {
@@ -11718,7 +12436,24 @@
         "hq": {
           "city": "München",
           "source": "https://www.nui.care/impressum"
-        }
+        },
+        "founded": {
+          "year": 2018,
+          "source": "https://www.presseportal.de/pm/122834/5429390"
+        },
+        "investors": [
+          {
+            "name": "ADAC SE",
+            "source": "https://www.presseportal.de/pm/122834/5429390"
+          }
+        ],
+        "founders": [
+          {
+            "name": "Markus Christian Müller",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/Nui%20Care%20GmbH"
+          }
+        ]
       }
     },
     {
@@ -11943,7 +12678,18 @@
         "hq": {
           "city": "München",
           "source": "https://famplus.de/impressum"
-        }
+        },
+        "founded": {
+          "year": 2010,
+          "source": "https://www.northdata.com/famPlus%20GmbH"
+        },
+        "founders": [
+          {
+            "name": "Markus Solf",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/famPlus%20GmbH"
+          }
+        ]
       }
     },
     {
@@ -12327,7 +13073,24 @@
       "why_dropped": null,
       "tag": "Family caregivers",
       "tag_secondary": null,
-      "logo": "/api/logo/company-familiara"
+      "logo": "/api/logo/company-familiara",
+      "facts": {
+        "founded": {
+          "year": 2017,
+          "source": "https://www.northdata.com/FAMILIARA%20GmbH"
+        },
+        "hq": {
+          "city": "Berlin",
+          "source": "https://www.northdata.com/FAMILIARA%20GmbH"
+        },
+        "founders": [
+          {
+            "name": "Jörg Albrecht Zimmermann",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/FAMILIARA%20GmbH"
+          }
+        ]
+      }
     },
     {
       "id": "company-artiness-reality",
@@ -12634,7 +13397,17 @@
       "why_dropped": null,
       "tag": "Family caregivers",
       "tag_secondary": null,
-      "logo": "/api/logo/company-call-knut"
+      "logo": "/api/logo/company-call-knut",
+      "facts": {
+        "founded": {
+          "year": 2020,
+          "source": "https://www.northdata.com/Call%20Knut%20AB"
+        },
+        "hq": {
+          "city": "Helsingborg",
+          "source": "https://www.northdata.com/Call%20Knut%20AB"
+        }
+      }
     },
     {
       "id": "company-maphabit",
@@ -13069,7 +13842,29 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": "/api/logo/company-advosense"
+      "logo": "/api/logo/company-advosense",
+      "facts": {
+        "founded": {
+          "year": 2020,
+          "source": "https://www.northdata.com/Advosense%20GmbH"
+        },
+        "hq": {
+          "city": "Berlin",
+          "source": "https://www.northdata.com/Advosense%20GmbH"
+        },
+        "founders": [
+          {
+            "name": "Martina Viduka",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/Advosense%20GmbH"
+          },
+          {
+            "name": "Erin Webb",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/Advosense%20GmbH"
+          }
+        ]
+      }
     },
     {
       "id": "company-bayartis-ag",
@@ -13111,7 +13906,17 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": "/api/logo/company-bayartis-ag"
+      "logo": "/api/logo/company-bayartis-ag",
+      "facts": {
+        "founded": {
+          "year": 2023,
+          "source": "https://www.northdata.com/Bayartis%20AG"
+        },
+        "hq": {
+          "city": "Basel",
+          "source": "https://www.northdata.com/Bayartis%20AG"
+        }
+      }
     },
     {
       "id": "company-deepspin",
@@ -13152,7 +13957,29 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": "/api/logo/company-deepspin"
+      "logo": "/api/logo/company-deepspin",
+      "facts": {
+        "founded": {
+          "year": 2020,
+          "source": "https://www.northdata.com/DeepSpin%20GmbH"
+        },
+        "hq": {
+          "city": "Berlin",
+          "source": "https://www.northdata.com/DeepSpin%20GmbH"
+        },
+        "founders": [
+          {
+            "name": "Pedro Luis de Oliveira Rosado Freire da Silva",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/DeepSpin%20GmbH"
+          },
+          {
+            "name": "Clemens Moritz Tepel",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/DeepSpin%20GmbH"
+          }
+        ]
+      }
     },
     {
       "id": "company-minnity",
@@ -13193,7 +14020,17 @@
       "why_dropped": null,
       "tag": "Family caregivers",
       "tag_secondary": null,
-      "logo": "/api/logo/company-minnity"
+      "logo": "/api/logo/company-minnity",
+      "facts": {
+        "founded": {
+          "year": 2018,
+          "source": "https://www.northdata.com/Minnity%20AB"
+        },
+        "hq": {
+          "city": "Stockholm",
+          "source": "https://www.northdata.com/Minnity%20AB"
+        }
+      }
     },
     {
       "id": "company-cuidum",
@@ -13627,7 +14464,23 @@
         "hq": {
           "city": "Köln",
           "source": "https://www.dexter-health.com/impressum"
-        }
+        },
+        "founded": {
+          "year": 2021,
+          "source": "https://www.northdata.com/dexter%20health%20GmbH"
+        },
+        "founders": [
+          {
+            "name": "Eren Sacit Cirit",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/dexter%20health%20GmbH"
+          },
+          {
+            "name": "Marc Margulan",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/dexter%20health%20GmbH"
+          }
+        ]
       }
     },
     {
@@ -13669,7 +14522,17 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": "/api/logo/company-ahead-health"
+      "logo": "/api/logo/company-ahead-health",
+      "facts": {
+        "founded": {
+          "year": 2024,
+          "source": "https://www.northdata.com/Ahead%20Health%20AG"
+        },
+        "hq": {
+          "city": "Zürich",
+          "source": "https://www.northdata.com/Ahead%20Health%20AG"
+        }
+      }
     },
     {
       "id": "company-causalus",
@@ -13710,7 +14573,17 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": "/api/logo/company-causalus"
+      "logo": "/api/logo/company-causalus",
+      "facts": {
+        "founded": {
+          "year": 2018,
+          "source": "https://www.northdata.com/Causalus%20Oy"
+        },
+        "hq": {
+          "city": "Helsinki",
+          "source": "https://www.northdata.com/Causalus%20Oy"
+        }
+      }
     },
     {
       "id": "company-albert-health",
@@ -13923,6 +14796,10 @@
         "founded": {
           "year": 2014,
           "source": "https://www.cilcare.com/who-we-are/"
+        },
+        "hq": {
+          "city": "Montpellier",
+          "source": "https://www.northdata.com/Cilcare%20SAS"
         }
       }
     },
@@ -13966,7 +14843,17 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": "/api/logo/company-helvetic-care"
+      "logo": "/api/logo/company-helvetic-care",
+      "facts": {
+        "founded": {
+          "year": 2018,
+          "source": "https://www.northdata.com/Helvetic%20Care%20AG"
+        },
+        "hq": {
+          "city": "Pfäffikon",
+          "source": "https://www.northdata.com/Helvetic%20Care%20AG"
+        }
+      }
     },
     {
       "id": "company-auxivia",
@@ -14008,7 +14895,17 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": "/api/logo/company-auxivia"
+      "logo": "/api/logo/company-auxivia",
+      "facts": {
+        "founded": {
+          "year": 2015,
+          "source": "https://www.northdata.com/Auxivia%20SAS"
+        },
+        "hq": {
+          "city": "Paris",
+          "source": "https://www.northdata.com/Auxivia%20SAS"
+        }
+      }
     },
     {
       "id": "company-eupnea-as",
@@ -14049,7 +14946,17 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": "/api/logo/company-eupnea-as"
+      "logo": "/api/logo/company-eupnea-as",
+      "facts": {
+        "founded": {
+          "year": 2016,
+          "source": "https://www.northdata.com/Eupnea%20AS"
+        },
+        "hq": {
+          "city": "Bergen",
+          "source": "https://www.northdata.com/Eupnea%20AS"
+        }
+      }
     },
     {
       "id": "company-domma",
@@ -14350,7 +15257,29 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": "/api/logo/company-evondos"
+      "logo": "/api/logo/company-evondos",
+      "facts": {
+        "founded": {
+          "year": 2008,
+          "source": "https://www.northdata.com/Evondos%20Oy"
+        },
+        "hq": {
+          "city": "Salo",
+          "source": "https://www.northdata.com/Evondos%20Oy"
+        },
+        "founders": [
+          {
+            "name": "Frans Vincent Cromme",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/Evondos%20Oy"
+          },
+          {
+            "name": "Eetu Juhani Koski",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/Evondos%20Oy"
+          }
+        ]
+      }
     },
     {
       "id": "company-exer",
@@ -14538,7 +15467,24 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": "/api/logo/company-emfit"
+      "logo": "/api/logo/company-emfit",
+      "facts": {
+        "founded": {
+          "year": 1990,
+          "source": "https://www.northdata.com/Emfit%20Oy"
+        },
+        "hq": {
+          "city": "Vaajakoski",
+          "source": "https://www.northdata.com/Emfit%20Oy"
+        },
+        "founders": [
+          {
+            "name": "Eero Heikki Räisänen",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/Emfit%20Oy"
+          }
+        ]
+      }
     },
     {
       "id": "company-health-invest",
@@ -15068,7 +16014,18 @@
         "hq": {
           "city": "Stuttgart",
           "source": "https://iocare.de/de/impressum/"
-        }
+        },
+        "founded": {
+          "year": 2017,
+          "source": "https://www.northdata.com/IoCare%20GmbH"
+        },
+        "founders": [
+          {
+            "name": "Matthias Riedel",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/IoCare%20GmbH"
+          }
+        ]
       }
     },
     {
@@ -15621,7 +16578,24 @@
       "why_dropped": null,
       "tag": "Health and medicines",
       "tag_secondary": null,
-      "logo": "/api/logo/company-mcs-data-labs"
+      "logo": "/api/logo/company-mcs-data-labs",
+      "facts": {
+        "founded": {
+          "year": 2013,
+          "source": "https://www.northdata.com/MCS%20Data%20Labs%20GmbH"
+        },
+        "hq": {
+          "city": "Berlin",
+          "source": "https://www.northdata.com/MCS%20Data%20Labs%20GmbH"
+        },
+        "founders": [
+          {
+            "name": "Suheib Mousa",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/MCS%20Data%20Labs%20GmbH"
+          }
+        ]
+      }
     },
     {
       "id": "company-liacare",
@@ -16151,7 +17125,18 @@
         "hq": {
           "city": "Düsseldorf",
           "source": "https://teresa.ai/impressum"
-        }
+        },
+        "founded": {
+          "year": 2020,
+          "source": "https://www.northdata.com/Teresa%20AI%20GmbH"
+        },
+        "founders": [
+          {
+            "name": "Zerrin Börcek",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/Teresa%20AI%20GmbH"
+          }
+        ]
       }
     },
     {
@@ -16404,14 +17389,29 @@
       "facts": {
         "apps": [
           {
-            "name": "App Store",
             "url": "https://apps.apple.com/us/app/id897062509",
+            "name": "App Store",
             "source": "https://memorado.com"
           },
           {
-            "name": "Google Play",
             "url": "https://play.google.com/store/apps/details?id=com.memorado.brain.games",
+            "name": "Google Play",
             "source": "https://memorado.com"
+          }
+        ],
+        "founded": {
+          "year": 2013,
+          "source": "https://www.northdata.com/Memorado%20GmbH"
+        },
+        "hq": {
+          "city": "Berlin",
+          "source": "https://www.northdata.com/Memorado%20GmbH"
+        },
+        "founders": [
+          {
+            "name": "Moritz Alexander Hohl",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/Memorado%20GmbH"
           }
         ]
       }
@@ -16582,7 +17582,18 @@
         "hq": {
           "city": "Karlsruhe",
           "source": "https://www.wohnen-im-alter.de/impressum"
-        }
+        },
+        "founded": {
+          "year": 2008,
+          "source": "https://www.northdata.com/Wohnen%20Im%20Alter%20Internet%20GmbH"
+        },
+        "founders": [
+          {
+            "name": "Felix Simon Baumann",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/Wohnen%20Im%20Alter%20Internet%20GmbH"
+          }
+        ]
       }
     },
     {
@@ -16625,7 +17636,24 @@
       "why_dropped": null,
       "tag": "Loneliness and connection",
       "tag_secondary": null,
-      "logo": "/api/logo/company-vitablick"
+      "logo": "/api/logo/company-vitablick",
+      "facts": {
+        "founded": {
+          "year": 2022,
+          "source": "https://www.northdata.com/VitaBlick%20GmbH"
+        },
+        "hq": {
+          "city": "Oberwart",
+          "source": "https://www.northdata.com/VitaBlick%20GmbH"
+        },
+        "founders": [
+          {
+            "name": "Master Of Science Amadeus Linzer",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/VitaBlick%20GmbH"
+          }
+        ]
+      }
     },
     {
       "id": "company-55-redefined",
@@ -16804,7 +17832,17 @@
       "why_dropped": null,
       "tag": "Loneliness and connection",
       "tag_secondary": "Daily life and getting around",
-      "logo": "/api/logo/company-pieni-piiri"
+      "logo": "/api/logo/company-pieni-piiri",
+      "facts": {
+        "founded": {
+          "year": 2011,
+          "source": "https://www.northdata.com/Pieni%20piiri%20Oy"
+        },
+        "hq": {
+          "city": "Helsinki",
+          "source": "https://www.northdata.com/Pieni%20piiri%20Oy"
+        }
+      }
     },
     {
       "id": "company-virtuleap",
@@ -17015,7 +18053,18 @@
         "hq": {
           "city": "Potsdam",
           "source": "https://memodio-app.com/impressum/"
-        }
+        },
+        "founded": {
+          "year": 2021,
+          "source": "https://www.northdata.com/memodio%20GmbH"
+        },
+        "founders": [
+          {
+            "name": "Doron Benjamin Stein",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/memodio%20GmbH"
+          }
+        ]
       }
     },
     {
@@ -17323,20 +18372,31 @@
       "facts": {
         "apps": [
           {
-            "name": "App Store",
             "url": "https://apps.apple.com/no/app/motiview/id1594622773",
+            "name": "App Store",
             "source": "https://motiview.no/om-oss"
           },
           {
-            "name": "Google Play",
             "url": "https://play.google.com/store/apps/details?id=com.motiview.app",
+            "name": "Google Play",
             "source": "https://motiview.no/om-oss"
           }
         ],
         "founded": {
           "year": 2013,
           "source": "https://motiview.no/en/about-us"
-        }
+        },
+        "hq": {
+          "city": "Frekhaug",
+          "source": "https://www.northdata.com/Motitech%20AS"
+        },
+        "founders": [
+          {
+            "name": "Torbjørn Langeland",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/Motitech%20AS"
+          }
+        ]
       }
     },
     {
@@ -17425,7 +18485,28 @@
         "hq": {
           "city": "Hamburg",
           "source": "https://www.goparto.com/impressum"
-        }
+        },
+        "founded": {
+          "year": 2023,
+          "source": "https://www.northdata.com/Parto%20Group%20GmbH"
+        },
+        "founders": [
+          {
+            "name": "Jes Erik Hennig",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/Parto%20Group%20GmbH"
+          },
+          {
+            "name": "Thomas Heuck",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/Parto%20Group%20GmbH"
+          },
+          {
+            "name": "Christoph Heinrich Roling",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/Parto%20Group%20GmbH"
+          }
+        ]
       }
     },
     {
@@ -17551,7 +18632,17 @@
       "why_dropped": null,
       "tag": "Loneliness and connection",
       "tag_secondary": null,
-      "logo": "/api/logo/company-silber-salon"
+      "logo": "/api/logo/company-silber-salon",
+      "facts": {
+        "founded": {
+          "year": 2022,
+          "source": "https://www.northdata.com/Silber%20Salon%20GmbH"
+        },
+        "hq": {
+          "city": "Berlin",
+          "source": "https://www.northdata.com/Silber%20Salon%20GmbH"
+        }
+      }
     },
     {
       "id": "company-wivy",
@@ -17592,7 +18683,17 @@
       "why_dropped": null,
       "tag": "Memory and dementia",
       "tag_secondary": null,
-      "logo": "/api/logo/company-wivy"
+      "logo": "/api/logo/company-wivy",
+      "facts": {
+        "founded": {
+          "year": 2017,
+          "source": "https://www.northdata.com/Wivy%20SAS"
+        },
+        "hq": {
+          "city": "Lille",
+          "source": "https://www.northdata.com/Wivy%20SAS"
+        }
+      }
     },
     {
       "id": "company-granny-charly",
@@ -17676,7 +18777,29 @@
       "why_dropped": null,
       "tag": "Money and retirement",
       "tag_secondary": null,
-      "logo": "/api/logo/company-senior-connect"
+      "logo": "/api/logo/company-senior-connect",
+      "facts": {
+        "founded": {
+          "year": 2024,
+          "source": "https://www.northdata.com/Senior%20Connect%20GmbH"
+        },
+        "hq": {
+          "city": "Schrozberg",
+          "source": "https://www.northdata.com/Senior%20Connect%20GmbH"
+        },
+        "founders": [
+          {
+            "name": "Samuel Ruben Keitel",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/Senior%20Connect%20GmbH"
+          },
+          {
+            "name": "Tim Findeiß",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/Senior%20Connect%20GmbH"
+          }
+        ]
+      }
     },
     {
       "id": "company-kota",
@@ -17855,7 +18978,17 @@
       "why_dropped": null,
       "tag": "Money and retirement",
       "tag_secondary": null,
-      "logo": "/api/logo/company-merci-prosper"
+      "logo": "/api/logo/company-merci-prosper",
+      "facts": {
+        "founded": {
+          "year": 2021,
+          "source": "https://www.northdata.com/Merci%20Prosper%20SAS"
+        },
+        "hq": {
+          "city": "Paris",
+          "source": "https://www.northdata.com/Merci%20Prosper%20SAS"
+        }
+      }
     },
     {
       "id": "company-ergofox-gmbh",
@@ -17901,7 +19034,18 @@
         "hq": {
           "city": "Hamburg",
           "source": "https://ergofox.me/de/impressum.html"
-        }
+        },
+        "founded": {
+          "year": 2020,
+          "source": "https://www.northdata.com/ergofox%20GmbH"
+        },
+        "founders": [
+          {
+            "name": "Johannes Heering",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/ergofox%20GmbH"
+          }
+        ]
       }
     },
     {
@@ -18212,7 +19356,24 @@
       "why_dropped": null,
       "tag": "Safety and falls",
       "tag_secondary": null,
-      "logo": "/api/logo/company-nevisq"
+      "logo": "/api/logo/company-nevisq",
+      "facts": {
+        "founded": {
+          "year": 2016,
+          "source": "https://www.northdata.com/nevisQ%20GmbH"
+        },
+        "hq": {
+          "city": "Aachen",
+          "source": "https://www.northdata.com/nevisQ%20GmbH"
+        },
+        "founders": [
+          {
+            "name": "Christian Kind",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/nevisQ%20GmbH"
+          }
+        ]
+      }
     },
     {
       "id": "company-united-seeds-of-europe",
@@ -18337,22 +19498,33 @@
       "tag_secondary": null,
       "logo": "/api/logo/company-luci",
       "facts": {
-        "apps": [
-          {
-            "name": "Google Play",
-            "url": "https://play.google.com/store/apps/details?id=com.likwidcare.luci",
-            "source": "https://luciapp.de/kontakt/"
-          },
-          {
-            "name": "App Store",
-            "url": "https://apps.apple.com/de/app/luci-mitarbeiter-app/id1557046065",
-            "source": "https://luciapp.de/kontakt/"
-          }
-        ],
         "hq": {
           "city": "Bonn",
           "source": "https://luciapp.de/impressum/"
-        }
+        },
+        "apps": [
+          {
+            "url": "https://play.google.com/store/apps/details?id=com.likwidcare.luci",
+            "name": "Google Play",
+            "source": "https://luciapp.de/kontakt/"
+          },
+          {
+            "url": "https://apps.apple.com/de/app/luci-mitarbeiter-app/id1557046065",
+            "name": "App Store",
+            "source": "https://luciapp.de/kontakt/"
+          }
+        ],
+        "founded": {
+          "year": 2021,
+          "source": "https://www.northdata.com/LUCI%20GmbH"
+        },
+        "founders": [
+          {
+            "name": "Mike Kaiser",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/LUCI%20GmbH"
+          }
+        ]
       }
     },
     {
@@ -18684,7 +19856,17 @@
       "why_dropped": null,
       "tag": "Safety and falls",
       "tag_secondary": null,
-      "logo": "/api/logo/company-caru"
+      "logo": "/api/logo/company-caru",
+      "facts": {
+        "founded": {
+          "year": 2017,
+          "source": "https://www.northdata.com/CARU%20AG"
+        },
+        "hq": {
+          "city": "Zürich",
+          "source": "https://www.northdata.com/CARU%20AG"
+        }
+      }
     },
     {
       "id": "company-sensfloor",
@@ -19144,7 +20326,18 @@
         "hq": {
           "city": "Idstein",
           "source": "https://smart-altern.de/impressum/"
-        }
+        },
+        "founded": {
+          "year": 2017,
+          "source": "https://www.northdata.com/Puresec%20Gmbh"
+        },
+        "founders": [
+          {
+            "name": "Helmut Honermann",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/Puresec%20Gmbh"
+          }
+        ]
       }
     },
     {
@@ -19186,7 +20379,17 @@
       "why_dropped": null,
       "tag": "Safety and falls",
       "tag_secondary": null,
-      "logo": "/api/logo/company-next-step-dynamics"
+      "logo": "/api/logo/company-next-step-dynamics",
+      "facts": {
+        "founded": {
+          "year": 2016,
+          "source": "https://www.northdata.com/Next%20Step%20Dynamics%20AB"
+        },
+        "hq": {
+          "city": "Trelleborg",
+          "source": "https://www.northdata.com/Next%20Step%20Dynamics%20AB"
+        }
+      }
     },
     {
       "id": "company-kami-vision",
@@ -19370,6 +20573,10 @@
         "hq": {
           "city": "Versailles",
           "source": "https://www.lifeplus.io/pages-legales/mentions-legales"
+        },
+        "founded": {
+          "year": 2015,
+          "source": "https://www.northdata.com/Life%20Plus%20SAS"
         }
       }
     },
@@ -19504,7 +20711,17 @@
       "why_dropped": null,
       "tag": "Safety and falls",
       "tag_secondary": null,
-      "logo": "/api/logo/company-age-impulse"
+      "logo": "/api/logo/company-age-impulse",
+      "facts": {
+        "founded": {
+          "year": 2020,
+          "source": "https://www.northdata.com/Age%20Impulse%20SAS"
+        },
+        "hq": {
+          "city": "Ivry-sur-Seine",
+          "source": "https://www.northdata.com/Age%20Impulse%20SAS"
+        }
+      }
     },
     {
       "id": "company-suresafe-alarms",
@@ -19668,7 +20885,34 @@
       "why_dropped": null,
       "tag": "Safety and falls",
       "tag_secondary": null,
-      "logo": "/api/logo/company-easierlife"
+      "logo": "/api/logo/company-easierlife",
+      "facts": {
+        "founded": {
+          "year": 2014,
+          "source": "https://www.northdata.com/easierLife%20GmbH"
+        },
+        "hq": {
+          "city": "Karlsruhe",
+          "source": "https://www.northdata.com/easierLife%20GmbH"
+        },
+        "founders": [
+          {
+            "name": "Klaus Bscheid",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/easierLife%20GmbH"
+          },
+          {
+            "name": "Sebastian Chiriac",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/easierLife%20GmbH"
+          },
+          {
+            "name": "Jochen Paul Zimmermann",
+            "role": "Managing director",
+            "source": "https://www.northdata.com/easierLife%20GmbH"
+          }
+        ]
+      }
     },
     {
       "id": "company-watcherr",
@@ -19750,7 +20994,17 @@
       "why_dropped": null,
       "tag": "Safety and falls",
       "tag_secondary": null,
-      "logo": "/api/logo/company-qumea"
+      "logo": "/api/logo/company-qumea",
+      "facts": {
+        "founded": {
+          "year": 2019,
+          "source": "https://www.northdata.com/QUMEA%20AG"
+        },
+        "hq": {
+          "city": "Solothurn",
+          "source": "https://www.northdata.com/QUMEA%20AG"
+        }
+      }
     },
     {
       "id": "company-future-care",
@@ -20194,6 +21448,10 @@
         "hq": {
           "city": "Roubaix",
           "source": "https://www.telegrafik.fr/mentions-legales/"
+        },
+        "founded": {
+          "year": 2013,
+          "source": "https://www.northdata.com/TELEGRAFIK%20SAS"
         }
       }
     },
