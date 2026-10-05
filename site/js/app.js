@@ -195,13 +195,26 @@
   const searchWrap = document.getElementById("search-wrap");
   const searchEl = document.getElementById("search");
   const tagsEl = document.getElementById("tags");
+  const scroller = document.getElementById("scroller");
+  const barTop = document.querySelector(".bar-top");
+
+  function scrollPos() {
+    return scroller ? scroller.scrollTop : window.scrollY;
+  }
+  function setScroll(y) {
+    if (scroller) scroller.scrollTop = y || 0;
+    else window.scrollTo(0, y || 0);
+  }
+  function countLabel(n) {
+    return n === 1 ? "1 result" : n + " results";
+  }
 
   function routeNow() { return parseHash(); }
 
   function go(path) {
     const next = path.startsWith("#") ? path : "#" + path;
     if ((location.hash || "#/") === next) return;
-    if (routeNow().view === "root") listScroll = window.scrollY;
+    if (routeNow().view === "root") listScroll = scrollPos();
     depth += 1;
     history.pushState({ wc: 1, depth }, "", next);
     moreOpen = false;
@@ -364,22 +377,42 @@
     return html;
   }
 
-  function renderList() {
+  function visibleRows() {
     const q = query.trim().toLowerCase();
-    const rows = sortEntries(publishedEntries().filter((e) => matchesTag(e) && matchesQuery(e, q)));
+    return sortEntries(publishedEntries().filter((e) => matchesTag(e) && matchesQuery(e, q)));
+  }
+  function renderList() {
+    const rows = visibleRows();
     if (!rows.length) return `<p class="empty">Nothing in this list matches.</p>`;
     return `<div class="group">${rows.map(rowButton).join("")}</div>`;
   }
 
-  function renderTags() {
+  function renderTags(count) {
     if (!tagsEl) return;
     const root = routeNow().view === "root";
     tagsEl.hidden = !root;
-    if (!root) return;
+    if (!root) {
+      tagsEl.dataset.mode = "";
+      return;
+    }
+    if (tagFilter) {
+      const mode = "picked:" + tagFilter;
+      if (tagsEl.dataset.mode === mode) {
+        const node = tagsEl.querySelector(".tag-count");
+        if (node) node.textContent = countLabel(count);
+        return;
+      }
+      tagsEl.dataset.mode = mode;
+      tagsEl.innerHTML = `<button type="button" class="chip chip-on" data-clear-tag>${t(tagFilter)}<span class="chip-x" aria-hidden="true">\u00d7</span><span class="sr">Clear filter</span></button><span class="tag-count">${t(countLabel(count))}</span>`;
+      return;
+    }
+    if (tagsEl.dataset.mode === "all") return;
+    const left = tagsEl.scrollLeft;
+    tagsEl.dataset.mode = "all";
     tagsEl.innerHTML = TAGS.map((label) => {
-      const on = tagFilter === label;
-      return `<button type="button" class="chip" data-tag="${esc(label)}" aria-pressed="${on ? "true" : "false"}">${t(label)}</button>`;
+      return `<button type="button" class="chip" data-tag="${esc(label)}" aria-pressed="false">${t(label)}</button>`;
     }).join("");
+    tagsEl.scrollLeft = left;
   }
 
   function render(scrollMode) {
@@ -387,18 +420,20 @@
     const route = routeNow();
     const onRoot = route.view === "root";
     backBtn.hidden = onRoot;
+    if (barTop) barTop.hidden = onRoot;
     searchWrap.hidden = !onRoot;
     if (searchEl && searchEl.value !== query) searchEl.value = query;
     crumbEl.innerHTML = onRoot
-      ? `<p class="crumb home"><span class="here">Who Cares</span></p>`
+      ? ""
       : `<p class="crumb"><button type="button" data-go="/">Who Cares</button><span class="sep">/</span><span class="here">${t(displayTitle(findEntry(indexData.entries, route.id) || { title: "Entry" }))}</span></p>`;
-    renderTags();
+    const rows = onRoot ? visibleRows() : [];
+    renderTags(rows.length);
     let title = "Who Cares";
     let intro = "";
     let body = "";
     if (onRoot) {
-      intro = `<div class="intro"><p class="lede">A public list of companies and ideas in ageing and care, including the ones we researched and dropped.</p></div>`;
-      body = renderList();
+      intro = `<h1 class="home-title">Who Cares</h1><p class="lede">A public list of companies and ideas in ageing and care, including the ones we researched and dropped.</p>`;
+      body = rows.length ? `<div class="group">${rows.map(rowButton).join("")}</div>` : `<p class="empty">Nothing in this list matches.</p>`;
     } else {
       const entry = findEntry(indexData.entries, route.id);
       title = (entry ? displayTitle(entry) : "Entry") + " - Who Cares";
@@ -407,8 +442,8 @@
     document.title = title;
     if (introEl) introEl.innerHTML = intro;
     main.innerHTML = body;
-    if (scrollMode === "top") window.scrollTo(0, 0);
-    if (scrollMode === "restore") requestAnimationFrame(() => window.scrollTo(0, listScroll || 0));
+    if (scrollMode === "top") setScroll(0);
+    if (scrollMode === "restore") requestAnimationFrame(() => setScroll(listScroll || 0));
   }
 
   if (backBtn) backBtn.addEventListener("click", back);
@@ -420,10 +455,15 @@
   }
   if (tagsEl) {
     tagsEl.addEventListener("click", (ev) => {
+      if (ev.target.closest("[data-clear-tag]")) {
+        tagFilter = "";
+        render("top");
+        return;
+      }
       const chip = ev.target.closest("[data-tag]");
       if (!chip) return;
       const next = chip.getAttribute("data-tag");
-      tagFilter = tagFilter === next ? "" : next;
+      tagFilter = next;
       render("top");
     });
   }
@@ -432,9 +472,9 @@
       const more = ev.target.closest("[data-more]");
       if (more) {
         moreOpen = !moreOpen;
-        const y = window.scrollY;
+        const y = scrollPos();
         render("keep");
-        window.scrollTo(0, y);
+        setScroll(y);
         return;
       }
       const dest = ev.target.closest("[data-go]");

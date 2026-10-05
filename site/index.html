@@ -18,18 +18,20 @@
       </button>
       <nav id="crumb" class="crumb" aria-label="Breadcrumb"></nav>
     </div>
-    <div id="intro"></div>
     <div id="search-wrap" class="search-wrap">
       <input id="search" class="search" type="search" placeholder="Search this list" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search" aria-label="Search this list">
     </div>
     <div id="tags" class="tags" hidden></div>
   </header>
-  <main id="main"></main>
-  <footer class="foot">
-    <a href="mechanism.html">How we filter</a>
-    <a href="sources.html">Sources</a>
-    <a href="README.html">Add an entry</a>
-  </footer>
+  <div id="scroller" class="scroller">
+    <div id="intro" class="intro"></div>
+    <main id="main"></main>
+    <footer class="foot">
+      <a href="mechanism.html">How we filter</a>
+      <a href="sources.html">Sources</a>
+      <a href="README.html">Add an entry</a>
+    </footer>
+  </div>
 </div>
 <p id="boot" class="boot">Loading the list.</p>
 <script src="js/config.js"></script>
