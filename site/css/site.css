@@ -355,6 +355,21 @@ a { color: var(--link); }
   line-height: 1.35;
   white-space: normal;
 }
+.analysis .claim + .claim { margin-top: 12px; }
+.analysis .co-list { list-style: none; margin: 0; padding: 0; }
+.analysis .co-list li { margin: 0 0 10px; }
+.analysis .co-list li:last-child { margin-bottom: 0; }
+.analysis .co-link {
+  display: inline;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--link);
+  font: inherit;
+  line-height: 1.35;
+  text-align: left;
+}
+.analysis .co-list p { margin-top: 2px; }
 .pad { padding: 12px 14px; }
 .kicker { margin: 0 0 4px; font-size: 13px; color: var(--meta); }
 .kv { padding: 10px 14px; border-top: 0.5px solid var(--line); }
