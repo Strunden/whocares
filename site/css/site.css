@@ -332,11 +332,11 @@ a { color: var(--link); }
 }
 .analysis p { margin: 0; font-size: 17px; line-height: 1.45; }
 .analysis .fact-src { font-size: 13px; }
-.analysis .src-row { margin-top: 4px; font-size: 13px; line-height: 1.4; }
-.analysis .src-pair { display: inline; white-space: nowrap; }
-.analysis .src-pair:has(.src-quote[open]) { display: block; white-space: normal; margin-top: 4px; }
-.analysis .src-quote { display: inline; }
-.analysis .src-quote summary {
+.analysis .src-row, .detail .src-row { margin-top: 4px; font-size: 13px; line-height: 1.4; }
+.analysis .src-pair, .detail .src-pair { display: inline; white-space: nowrap; }
+.analysis .src-pair:has(.src-quote[open]), .detail .src-pair:has(.src-quote[open]) { display: block; white-space: normal; margin-top: 4px; }
+.analysis .src-quote, .detail .src-quote { display: inline; }
+.analysis .src-quote summary, .detail .src-quote summary {
   display: inline-block;
   padding: 6px 2px;
   margin: -6px 0;
@@ -345,8 +345,8 @@ a { color: var(--link); }
   cursor: pointer;
   list-style: none;
 }
-.analysis .src-quote summary::-webkit-details-marker { display: none; }
-.analysis .src-quote q {
+.analysis .src-quote summary::-webkit-details-marker, .detail .src-quote summary::-webkit-details-marker { display: none; }
+.analysis .src-quote q, .detail .src-quote q {
   display: block;
   margin: 4px 0 8px;
   color: var(--meta);
@@ -359,7 +359,7 @@ a { color: var(--link); }
 .analysis .co-list { list-style: none; margin: 0; padding: 0; }
 .analysis .co-list li { margin: 0 0 10px; }
 .analysis .co-list li:last-child { margin-bottom: 0; }
-.analysis .co-link {
+.co-link {
   display: inline;
   padding: 0;
   border: 0;

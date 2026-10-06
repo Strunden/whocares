@@ -1,3 +1,4 @@
+import { attachFunding, funderDetail, funderSummary } from "./funders-shape.js";
 import { buildIndex } from "./index-shape.js";
 import { withSql } from "./pg-wire.js";
 
@@ -43,13 +44,96 @@ async function readIndex(env) {
       FROM entries
       ORDER BY position ASC, id ASC
     `);
-    return buildIndex(
+    const linkRows = await sql.simpleQuery(`
+      SELECT l.entry_id,
+             f.id AS funder_id,
+             f.name AS funder_name,
+             l.relation,
+             l.round_label,
+             l.amount_eur::text AS amount_eur,
+             to_char(l.date, 'YYYY-MM-DD') AS date,
+             l.sources::text AS sources
+      FROM funding_links l
+      JOIN funders f ON f.id = l.funder_id AND f.published
+      JOIN entries e ON e.id = l.entry_id AND e.published
+      WHERE l.verified
+      ORDER BY l.date DESC NULLS LAST, f.name ASC
+    `);
+    return attachFunding(buildIndex(
       metaRows[0] || null,
       changelog,
       entryRows.map((row) => row.document),
       entryRows.map((row) => row.has_logo),
-    );
+    ), linkRows);
   });
+}
+
+const FUNDER_ID = /^[A-Za-z0-9][A-Za-z0-9_-]{0,80}$/;
+
+async function readFunders(env) {
+  return withSql(env, async (sql) => {
+    const rows = await sql.simpleQuery(`
+      SELECT f.id,
+             f.name,
+             f.kind,
+             f.country,
+             (
+               SELECT count(DISTINCT l.entry_id)::int
+               FROM funding_links l
+               JOIN entries e ON e.id = l.entry_id AND e.published
+               WHERE l.funder_id = f.id
+                 AND l.verified
+             ) AS backed
+      FROM funders f
+      WHERE f.published
+      ORDER BY backed DESC, f.name ASC
+    `);
+    return { funders: rows.map(funderSummary) };
+  });
+}
+
+async function readFunder(env, id) {
+  return withSql(env, async (sql) => {
+    const rows = await sql.simpleQuery(`
+      SELECT f.id,
+             f.name,
+             f.kind,
+             f.country,
+             f.website,
+             f.description,
+             f.aum_or_programme_size,
+             f.care_focus,
+             f.sources::text AS sources
+      FROM funders f
+      WHERE f.published
+        AND f.id = '${id}'
+      LIMIT 1
+    `);
+    if (!rows[0]) return null;
+    const links = await sql.simpleQuery(`
+      SELECT e.id AS entry_id,
+             COALESCE(NULLIF(e.title, ''), NULLIF(e.name, ''), e.id) AS entry_name,
+             l.relation,
+             l.round_label,
+             l.amount_eur::text AS amount_eur,
+             to_char(l.date, 'YYYY-MM-DD') AS date,
+             l.sources::text AS sources
+      FROM funding_links l
+      JOIN entries e ON e.id = l.entry_id AND e.published
+      WHERE l.funder_id = '${id}'
+        AND l.verified
+      ORDER BY l.date DESC NULLS LAST, entry_name ASC
+    `);
+    return funderDetail(rows[0], links);
+  });
+}
+
+function isApiPath(path) {
+  return path === "/api/index"
+    || path === "/api/health"
+    || path === "/api/funders"
+    || path.startsWith("/api/funders/")
+    || path.startsWith("/api/logo/");
 }
 
 function safeError(error) {
@@ -78,7 +162,7 @@ export default {
     const url = new URL(request.url);
     const path = url.pathname.replace(/\/+$/, "") || "/";
 
-    if (request.method === "OPTIONS" && (path === "/api/index" || path === "/api/health" || path.startsWith("/api/logo/"))) {
+    if (request.method === "OPTIONS" && isApiPath(path)) {
       return new Response(null, { status: 204, headers: corsHeaders() });
     }
 
@@ -102,6 +186,28 @@ export default {
     if (path === "/api/index") {
       try {
         return json(await readIndex(env));
+      } catch (error) {
+        return dbError(error);
+      }
+    }
+
+    if (path === "/api/funders") {
+      try {
+        return json(await readFunders(env));
+      } catch (error) {
+        return dbError(error);
+      }
+    }
+
+    if (path.startsWith("/api/funders/")) {
+      const funderId = decodeURIComponent(path.slice("/api/funders/".length));
+      if (!FUNDER_ID.test(funderId) || funderId.includes("/")) {
+        return json({ ok: false, error: "not found" }, 404);
+      }
+      try {
+        const funder = await readFunder(env, funderId);
+        if (!funder) return json({ ok: false, error: "not found" }, 404);
+        return json(funder);
       } catch (error) {
         return dbError(error);
       }
