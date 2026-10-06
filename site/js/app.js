@@ -523,30 +523,112 @@
     if (!text) return null;
     return { label, text, sources: sourceItems(block && block.sources) };
   }
-  function namedSection(label, items) {
-    if (!Array.isArray(items)) return writeupSection(label, items);
-    const text = items.map((item) => {
-      if (!item || typeof item !== "object") return sectionText(item);
-      return sectionText({ text: item.text || item.difference || "" });
-    }).filter(Boolean).slice(0, 3).join(" ");
-    const sources = items.reduce((all, item) => all.concat((item && item.sources) || []), []);
-    return writeupSection(label, text ? { text, sources } : null);
-  }
   function writeupApproved(e) {
     const qa = e && e.writeup_qa;
     return !!(qa && qa.pass === true);
   }
+  function sectionHeading(key) {
+    const known = {
+      problem: "Problem",
+      evidence: "Evidence",
+      who_would_pay: "Who would pay",
+      who_pays: "Who would pay",
+      closest_companies: "Closest companies",
+      closest_existing_companies: "Closest companies",
+      closest: "Closest companies"
+    };
+    if (known[key]) return known[key];
+    const words = String(key || "").replace(/[_-]+/g, " ").trim();
+    if (!words) return "";
+    return words.charAt(0).toUpperCase() + words.slice(1);
+  }
+  function claimText(item) {
+    if (item == null) return "";
+    if (typeof item === "string") return plainFact(item);
+    if (typeof item !== "object") return "";
+    return plainFact(item.claim || item.text || item.difference || "");
+  }
+  function claimBlocks(value) {
+    const list = Array.isArray(value) ? value : [value];
+    return list.map((item) => {
+      const text = claimText(item);
+      if (!text) return null;
+      const sources = sourceItems(item && typeof item === "object" ? item.sources : []);
+      return { text, sources };
+    }).filter(Boolean);
+  }
+  function proseOrItems(label, value) {
+    const items = claimBlocks(value);
+    if (!items.length || !label) return null;
+    if (!Array.isArray(value) && items.length === 1) {
+      return { kind: "prose", label, text: items[0].text, sources: items[0].sources };
+    }
+    return { kind: "items", label, items };
+  }
+  function publishedById(id) {
+    const want = String(id || "").trim();
+    if (!want) return null;
+    return publishedEntries().find((entry) => entry.id === want || entry.id === "company-" + want) || null;
+  }
+  function publishedByName(name) {
+    const want = nd(name || "").trim().toLowerCase();
+    if (!want) return null;
+    return publishedEntries().find((entry) => {
+      return nd(entry.name || "").trim().toLowerCase() === want || nd(entry.title || "").trim().toLowerCase() === want;
+    }) || null;
+  }
+  function closestCompany(item) {
+    if (!item || typeof item !== "object") return null;
+    const name = plainFact(item.name || item.title || "");
+    if (!name) return null;
+    const entry = publishedById(item.id || item.entry_id) || publishedByName(name);
+    const note = plainFact(item.text || item.difference || item.claim || "");
+    const shown = note && note.toLowerCase() !== name.toLowerCase() ? note : "";
+    if (entry) {
+      return { name, internal: "/e/" + encodeURIComponent(entry.id), note: shown };
+    }
+    const href = safeUrl(item.website || item.url);
+    if (!href) return null;
+    return { name, external: href, note: shown };
+  }
+  function closestBlock(value) {
+    const list = Array.isArray(value) ? value : (value && typeof value === "object" ? [value] : []);
+    const companies = list.map(closestCompany).filter(Boolean);
+    if (!companies.length) return null;
+    return { kind: "companies", label: "Closest companies", companies };
+  }
   function ideaBlocks(writeup) {
-    const pay = writeup.who_would_pay && typeof writeup.who_would_pay === "object"
-      ? writeup.who_would_pay
-      : (writeup.who_pays && typeof writeup.who_pays === "object" ? writeup.who_pays : null);
-    const closest = writeup.closest_existing_companies || writeup.closest || null;
-    return [
-      writeupSection("Problem", writeup.problem),
-      writeupSection("Evidence", writeup.evidence),
-      writeupSection("Who would pay", pay),
-      namedSection("Closest existing companies", closest)
-    ].filter(Boolean);
+    const blocks = [];
+    const used = {};
+    function mark(key) { used[key] = true; }
+    ["problem", "evidence", "who_would_pay"].forEach((key) => {
+      if (!Object.prototype.hasOwnProperty.call(writeup, key)) return;
+      mark(key);
+      const block = proseOrItems(sectionHeading(key), writeup[key]);
+      if (block) blocks.push(block);
+    });
+    if (!used.who_would_pay && Object.prototype.hasOwnProperty.call(writeup, "who_pays")) {
+      mark("who_pays");
+      const block = proseOrItems("Who would pay", writeup.who_pays);
+      if (block) blocks.push(block);
+    }
+    ["closest_companies", "closest_existing_companies", "closest"].forEach((key) => {
+      if (used.closest || !Object.prototype.hasOwnProperty.call(writeup, key)) return;
+      const block = closestBlock(writeup[key]);
+      if (!block) return;
+      mark(key);
+      mark("closest");
+      blocks.push(block);
+    });
+    Object.keys(writeup).forEach((key) => {
+      if (used[key]) return;
+      mark(key);
+      const value = writeup[key];
+      if (value == null || typeof value === "boolean" || typeof value === "number") return;
+      const block = proseOrItems(sectionHeading(key), value);
+      if (block) blocks.push(block);
+    });
+    return blocks;
   }
   function writeupBlocks(e) {
     if (!writeupApproved(e)) return [];
@@ -575,13 +657,30 @@
     const lines = quotes.map((quote) => `<q>${esc(quote)}</q>`).join("");
     return `<span class="src-pair">${link} <details class="src-quote"><summary>quote</summary>${lines}</details></span>`;
   }
+  function sourceRow(sources) {
+    const cites = (sources || []).map(sourceCite).filter(Boolean).join(" ");
+    return cites ? `<div class="src-row">${cites}</div>` : "";
+  }
   function writeupCard(e) {
     const blocks = writeupBlocks(e);
     if (!blocks.length) return "";
     return `<div class="analysis">${blocks.map((block) => {
-      const cites = block.sources.map(sourceCite).filter(Boolean).join(" ");
-      const row = cites ? `<div class="src-row">${cites}</div>` : "";
-      return `<section><h2>${t(block.label)}</h2><p>${t(block.text)}</p>${row}</section>`;
+      if (block.kind === "items") {
+        const body = block.items.map((item) => `<div class="claim"><p>${t(item.text)}</p>${sourceRow(item.sources)}</div>`).join("");
+        return `<section><h2>${t(block.label)}</h2>${body}</section>`;
+      }
+      if (block.kind === "companies") {
+        const body = block.companies.map((company) => {
+          const name = t(company.name);
+          const link = company.internal
+            ? `<button type="button" class="co-link" data-go="${esc(company.internal)}">${name}</button>`
+            : `<a class="co-link" href="${esc(company.external)}" target="_blank" rel="noopener">${name}</a>`;
+          const note = company.note ? `<p>${t(company.note)}</p>` : "";
+          return `<li>${link}${note}</li>`;
+        }).join("");
+        return `<section><h2>${t(block.label)}</h2><ul class="co-list">${body}</ul></section>`;
+      }
+      return `<section><h2>${t(block.label)}</h2><p>${t(block.text)}</p>${sourceRow(block.sources)}</section>`;
     }).join("")}</div>`;
   }
 

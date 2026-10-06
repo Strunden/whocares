@@ -120,7 +120,23 @@ A closed company (dissolved, in liquidation, shut down, or acquired and then shu
 
 When a write-up passes, it is always open, directly under the name and the one-line summary, in this order: What it does, Competitors, Who pays, Traction, Why it's interesting, Status. What it does is the product only. Competitors is two or three named companies and how this one differs, stored as `writeup.competitors`. Facts, Similar, the website, and sources come after that. There is no show/hide control. The old job card stays hidden once a company write-up exists, passed or not, so a draft does not leak out as the job text. Each section is `{text, sources}`. A source is a URL you opened, or `{url, quote}` where `quote` is a short line from that page. The page shows the quote only after a tap on "quote" next to the source link. Omit a section when you cannot support it. `summary` stays the one-line list text, verb first, at most 90 characters. `writeup.status.text` is the operating status (active, acquired, shut down, or pivoted), not the internal workflow `status`. A logo that is missing, broken, or a blank tile shows the company initials.
 
-An idea uses the same `document.writeup` and `document.writeup_qa.pass` gate. A passing idea note is open under the summary, in this order: Problem, Evidence, Who would pay, Closest existing companies. The keys are `problem`, `evidence`, `who_would_pay`, and `closest_existing_companies`, each `{text, sources}`. `closest_existing_companies` may instead be a list of `{text, sources}` or `{difference, sources}`. An idea without a passing note keeps the job card.
+An idea uses the same `document.writeup` and `document.writeup_qa.pass` gate. A passing note is open under the summary. An idea without a passing note keeps the job card. Empty sections are left out.
+
+```json
+"writeup": {
+  "problem": {"text": "The situation, in plain sentences.", "sources": [{"url": "https://example.com/a", "quote": "a line from that page"}]},
+  "evidence": [
+    {"claim": "One sourced claim.", "sources": ["https://example.com/b"]}
+  ],
+  "who_would_pay": {"text": "Who would pay, when that is known.", "sources": ["https://example.com/c"]},
+  "closest_companies": [
+    {"name": "Cera", "id": "company-cera"},
+    {"name": "Example Care", "website": "https://example.com"}
+  ]
+}
+```
+
+`problem` is one `{text, sources}` section. `evidence` is a list of `{claim, sources}` and each claim is its own paragraph. `who_would_pay` is optional; `who_pays` is used when `who_would_pay` is absent. `closest_companies` is a list of `{name, id, website}`. `id` is the entry id in this index. The name links to that published entry, otherwise to `website`. An item with no published entry and no website is left out. `closest_existing_companies` and `closest` are read the same way. Any other key is a section too: `{text, sources}` is one paragraph, and a list of `{claim, sources}` or `{text, sources}` is one paragraph per item. The heading is the key in sentence case. A source is a URL or `{url, quote}`.
 
 ```json
 "writeup": {
