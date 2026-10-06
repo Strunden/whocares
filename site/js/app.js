@@ -500,49 +500,89 @@
     if (typeof block === "string") return plainFact(block);
     return plainFact(block.text || "");
   }
-  function sectionSources(block) {
-    if (!block || typeof block !== "object" || !Array.isArray(block.sources)) return [];
-    const out = [];
-    block.sources.forEach((item) => {
+  function quoteText(value) {
+    return String(value == null ? "" : value).replace(/\s+/g, " ").trim();
+  }
+  function sourceItems(raw) {
+    const list = Array.isArray(raw) ? raw : [];
+    const byUrl = new Map();
+    list.forEach((item) => {
       const href = safeUrl(typeof item === "string" ? item : (item && item.url));
-      if (href && out.indexOf(href) === -1) out.push(href);
+      if (!href) return;
+      if (!byUrl.has(href)) byUrl.set(href, []);
+      const quote = item && typeof item === "object" ? quoteText(item.quote) : "";
+      const quotes = byUrl.get(href);
+      if (quote && quotes.indexOf(quote) === -1) quotes.push(quote);
     });
+    const out = [];
+    byUrl.forEach((quotes, url) => out.push({ url, quotes }));
     return out;
+  }
+  function writeupSection(label, block) {
+    const text = sectionText(block);
+    if (!text) return null;
+    return { label, text, sources: sourceItems(block && block.sources) };
+  }
+  function namedSection(label, items) {
+    if (!Array.isArray(items)) return writeupSection(label, items);
+    const text = items.map((item) => {
+      if (!item || typeof item !== "object") return sectionText(item);
+      return sectionText({ text: item.text || item.difference || "" });
+    }).filter(Boolean).slice(0, 3).join(" ");
+    const sources = items.reduce((all, item) => all.concat((item && item.sources) || []), []);
+    return writeupSection(label, text ? { text, sources } : null);
   }
   function writeupApproved(e) {
     const qa = e && e.writeup_qa;
     return !!(qa && qa.pass === true);
   }
+  function ideaBlocks(writeup) {
+    const pay = writeup.who_would_pay && typeof writeup.who_would_pay === "object"
+      ? writeup.who_would_pay
+      : (writeup.who_pays && typeof writeup.who_pays === "object" ? writeup.who_pays : null);
+    const closest = writeup.closest_existing_companies || writeup.closest || null;
+    return [
+      writeupSection("Problem", writeup.problem),
+      writeupSection("Evidence", writeup.evidence),
+      writeupSection("Who would pay", pay),
+      namedSection("Closest existing companies", closest)
+    ].filter(Boolean);
+  }
   function writeupBlocks(e) {
     if (!writeupApproved(e)) return [];
     const writeup = e && e.writeup && typeof e.writeup === "object" ? e.writeup : null;
     if (!writeup) return [];
+    if (e.type === "idea") return ideaBlocks(writeup);
     const comps = Array.isArray(writeup.competitors) ? writeup.competitors : [];
     const compText = comps.map((item) => sectionText(item && item.difference ? { text: item.difference } : item)).filter(Boolean).slice(0, 3).join(" ");
-    const compSources = [];
-    comps.forEach((item) => {
-      sectionSources(item).forEach((url) => {
-        if (compSources.indexOf(url) === -1) compSources.push(url);
-      });
-    });
+    const compSources = comps.reduce((all, item) => all.concat((item && item.sources) || []), []);
     const competitorBlock = compText ? { text: compText, sources: compSources } : null;
     return [
-      ["What it does", writeup.what_it_does],
-      ["Competitors", competitorBlock],
-      ["Who pays", writeup.who_pays],
-      ["Traction", writeup.traction],
-      ["Why it's interesting", writeup.why_interesting],
-      ["Status", writeup.status]
-    ].map(([label, block]) => {
-      const text = sectionText(block);
-      if (!text) return null;
-      return { label, text, sources: sectionSources(block) };
-    }).filter(Boolean);
+      writeupSection("What it does", writeup.what_it_does),
+      writeupSection("Competitors", competitorBlock),
+      writeupSection("Who pays", writeup.who_pays),
+      writeupSection("Traction", writeup.traction),
+      writeupSection("Why it's interesting", writeup.why_interesting),
+      writeupSection("Status", writeup.status)
+    ].filter(Boolean);
+  }
+  function sourceCite(source) {
+    const href = safeUrl(source && source.url);
+    if (!href) return "";
+    const link = `<a class="fact-src" href="${esc(href)}" target="_blank" rel="noopener">Source</a>`;
+    const quotes = source.quotes || [];
+    if (!quotes.length) return link;
+    const lines = quotes.map((quote) => `<q>${esc(quote)}</q>`).join("");
+    return `<span class="src-pair">${link} <details class="src-quote"><summary>quote</summary>${lines}</details></span>`;
   }
   function writeupCard(e) {
     const blocks = writeupBlocks(e);
     if (!blocks.length) return "";
-    return `<div class="analysis">${blocks.map((block) => `<section><h2>${t(block.label)}</h2><p>${t(block.text)}${block.sources.map(sourceLink).join("")}</p></section>`).join("")}</div>`;
+    return `<div class="analysis">${blocks.map((block) => {
+      const cites = block.sources.map(sourceCite).filter(Boolean).join(" ");
+      const row = cites ? `<div class="src-row">${cites}</div>` : "";
+      return `<section><h2>${t(block.label)}</h2><p>${t(block.text)}</p>${row}</section>`;
+    }).join("")}</div>`;
   }
 
   function factUrl(fact) {
@@ -596,7 +636,7 @@
     const country = origin ? origin.name : "";
     const headMeta = country ? kind + ", " + country : kind;
     const summary = displaySummary(e);
-    const draft = e.writeup && typeof e.writeup === "object";
+    const draft = e.type !== "idea" && e.writeup && typeof e.writeup === "object";
     const writeup = writeupBlocks(e);
     const fields = [];
     if (!writeup.length && !draft) {

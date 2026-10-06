@@ -332,6 +332,29 @@ a { color: var(--link); }
 }
 .analysis p { margin: 0; font-size: 17px; line-height: 1.45; }
 .analysis .fact-src { font-size: 13px; }
+.analysis .src-row { margin-top: 4px; font-size: 13px; line-height: 1.4; }
+.analysis .src-pair { display: inline; white-space: nowrap; }
+.analysis .src-pair:has(.src-quote[open]) { display: block; white-space: normal; margin-top: 4px; }
+.analysis .src-quote { display: inline; }
+.analysis .src-quote summary {
+  display: inline-block;
+  padding: 6px 2px;
+  margin: -6px 0;
+  color: var(--meta);
+  font-size: 13px;
+  cursor: pointer;
+  list-style: none;
+}
+.analysis .src-quote summary::-webkit-details-marker { display: none; }
+.analysis .src-quote q {
+  display: block;
+  margin: 4px 0 8px;
+  color: var(--meta);
+  font-size: 13px;
+  font-style: italic;
+  line-height: 1.35;
+  white-space: normal;
+}
 .pad { padding: 12px 14px; }
 .kicker { margin: 0 0 4px; font-size: 13px; color: var(--meta); }
 .kv { padding: 10px 14px; border-top: 0.5px solid var(--line); }
