@@ -1387,6 +1387,22 @@
     return `<div class="group">${rows.map(rowButton).join("")}</div>`;
   }
 
+  function categoryLabels() {
+    const known = { Closed: 1, Funders: 1 };
+    TAGS.forEach((label) => { known[label] = 1; });
+    const extra = [];
+    publishedEntries().forEach((entry) => {
+      entryTags(entry).forEach((tag) => {
+        const label = String(tag || "").trim();
+        if (!label || known[label]) return;
+        known[label] = 1;
+        extra.push(label);
+      });
+    });
+    extra.sort((a, b) => a.localeCompare(b, undefined, { sensitivity: "base" }));
+    return ["Closed", "Funders"].concat(TAGS, extra);
+  }
+
   function renderTags(count) {
     if (!tagsEl) return;
     const root = routeNow().view === "root";
@@ -1409,7 +1425,7 @@
     if (tagsEl.dataset.mode === "all") return;
     const left = tagsEl.scrollLeft;
     tagsEl.dataset.mode = "all";
-    tagsEl.innerHTML = ["Closed", "Funders"].concat(TAGS).map((label) => {
+    tagsEl.innerHTML = categoryLabels().map((label) => {
       return `<button type="button" class="chip" data-tag="${esc(label)}" aria-pressed="false">${t(label)}</button>`;
     }).join("");
     tagsEl.scrollLeft = left;
