@@ -354,6 +354,23 @@ a { color: var(--link); }
 .type-line { margin: 6px 0 0; }
 .type-line .type-pill { margin-left: 0; }
 .depth-row { display: block; margin-top: 4px; }
+.market-line {
+  display: block;
+  margin-top: 2px;
+  color: var(--meta);
+  font-size: 13px;
+  line-height: 1.35;
+}
+.market-kicker {
+  flex: 0 0 auto;
+  align-self: center;
+  margin-right: 6px;
+  color: var(--meta);
+  font-size: 13px;
+  line-height: 1.2;
+}
+.market-fact { margin-top: 6px; font-size: 17px; line-height: 1.35; }
+.market-fact .flag { margin-left: 0; }
 .depth {
   display: inline-block;
   padding: 0 6px;
