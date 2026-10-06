@@ -189,6 +189,33 @@
   function closedPill() {
     return `<span class="closed-pill">Closed</span>`;
   }
+  const PRODUCT_LABELS = {
+    hardware: "Hardware",
+    software: "Software",
+    hybrid: "Hybrid",
+    service: "Service"
+  };
+  const KIND_FILTERS = [
+    ["all", "All"],
+    ["hardware", "Hardware"],
+    ["software", "Software"],
+    ["hybrid", "Hybrid"]
+  ];
+  function productType(e) {
+    const value = String(e && e.product_type || "").trim().toLowerCase();
+    return PRODUCT_LABELS[value] ? value : "";
+  }
+  function productPill(e) {
+    const value = productType(e);
+    if (!value) return "";
+    return `<span class="type-pill">${t(PRODUCT_LABELS[value])}</span>`;
+  }
+  function matchesKind(e) {
+    if (!kindFilter) return true;
+    const value = productType(e);
+    if (kindFilter === "hardware") return value === "hardware" || value === "hybrid";
+    return value === kindFilter;
+  }
   function logoSrc(e) {
     const logo = String(e && e.logo || "");
     if (!logo || isKilled(e) || e.type === "idea") return "";
@@ -348,6 +375,7 @@
   let depth = 0;
   let query = "";
   let tagFilter = "";
+  let kindFilter = "";
   let listScroll = 0;
 
   const app = document.getElementById("app");
@@ -359,6 +387,7 @@
   const searchWrap = document.getElementById("search-wrap");
   const searchEl = document.getElementById("search");
   const tagsEl = document.getElementById("tags");
+  const kindsEl = document.getElementById("kinds");
   const scroller = document.getElementById("scroller");
   const barTop = document.querySelector(".bar-top");
 
@@ -426,7 +455,7 @@
     const closed = closedInfo(e);
     return `<button type="button" class="row" data-go="/e/${esc(encodeURIComponent(e.id))}">
       ${rowIcon(e)}
-      <span class="row-text"><span class="name">${t(displayTitle(e))}${flagMark(countryInfo(e))}${closed ? closedPill() : ""}</span>${summary ? `<span class="meta">${t(summary)}</span>` : ""}</span>
+      <span class="row-text"><span class="name">${t(displayTitle(e))}${flagMark(countryInfo(e))}${closed ? closedPill() : ""}${productPill(e)}</span>${summary ? `<span class="meta">${t(summary)}</span>` : ""}</span>
       ${chevron()}
     </button>`;
   }
@@ -870,6 +899,7 @@
         <div>
           <h1>${t(displayTitle(e))}</h1>
           <p class="screen-meta">${t(headMeta)}</p>
+          ${productPill(e) ? `<p class="type-line">${productPill(e)}</p>` : ""}
           ${closedLine}
         </div>
       </div>
@@ -971,7 +1001,7 @@
   }
   function visibleRows() {
     const q = query.trim().toLowerCase();
-    return sortEntries(publishedEntries().filter((e) => matchesTag(e) && matchesQuery(e, q)));
+    return sortEntries(publishedEntries().filter((e) => matchesTag(e) && matchesKind(e) && matchesQuery(e, q)));
   }
   function renderList() {
     const rows = visibleRows();
@@ -1007,6 +1037,24 @@
     tagsEl.scrollLeft = left;
   }
 
+  function renderKinds() {
+    if (!kindsEl) return;
+    const root = routeNow().view === "root" && tagFilter !== "Funders";
+    kindsEl.hidden = !root;
+    if (!root) {
+      kindsEl.dataset.mode = "";
+      return;
+    }
+    const mode = kindFilter || "all";
+    if (kindsEl.dataset.mode === mode) return;
+    kindsEl.dataset.mode = mode;
+    const chips = KIND_FILTERS.map(([value, label]) => {
+      const on = mode === value;
+      return `<button type="button" class="chip${on ? " chip-on" : ""}" data-kind="${esc(value)}" aria-pressed="${on ? "true" : "false"}">${t(label)}</button>`;
+    }).join("");
+    kindsEl.innerHTML = `<div class="kinds-row" role="group" aria-label="Product type">${chips}</div><p class="kind-note">Hybrid means a device plus software, and those also show under Hardware.</p>`;
+  }
+
   function render(scrollMode) {
     if (!indexData) return;
     const route = routeNow();
@@ -1028,6 +1076,7 @@
       ? (fundersState === "ready" ? funderRows.length : -1)
       : rows.length;
     renderTags(shownCount);
+    renderKinds();
     let title = "Who Cares";
     let intro = "";
     let body = "";
@@ -1059,6 +1108,17 @@
     searchEl.addEventListener("input", () => {
       query = searchEl.value || "";
       render("keep");
+    });
+  }
+  if (kindsEl) {
+    kindsEl.addEventListener("click", (ev) => {
+      const chip = ev.target.closest("[data-kind]");
+      if (!chip) return;
+      const next = chip.getAttribute("data-kind") || "all";
+      const value = next === "all" ? "" : next;
+      if (value === kindFilter) return;
+      kindFilter = value;
+      render("top");
     });
   }
   if (tagsEl) {

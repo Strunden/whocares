@@ -41,7 +41,8 @@ async function readIndex(env) {
     `);
     const entryRows = await sql.simpleQuery(`
       SELECT document,
-             (logo_bytes IS NOT NULL) AS has_logo
+             (logo_bytes IS NOT NULL) AS has_logo,
+             product_type
       FROM entries
       ORDER BY position ASC, id ASC
     `);
@@ -60,10 +61,23 @@ async function readIndex(env) {
       WHERE l.verified
       ORDER BY l.date DESC NULLS LAST, f.name ASC
     `);
+    const documents = entryRows.map((row) => {
+      const doc = row.document;
+      let entry = doc;
+      if (typeof doc === "string") {
+        try { entry = JSON.parse(doc); } catch { entry = null; }
+      }
+      if (!entry || typeof entry !== "object") return doc;
+      const pt = row.product_type;
+      if (pt) return { ...entry, product_type: pt };
+      const next = { ...entry };
+      delete next.product_type;
+      return next;
+    });
     return attachFunding(buildIndex(
       metaRows[0] || null,
       changelog,
-      entryRows.map((row) => row.document),
+      documents,
       entryRows.map((row) => row.has_logo),
     ), linkRows);
   });
