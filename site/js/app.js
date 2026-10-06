@@ -299,6 +299,99 @@
     if (kindFilter === "hardware") return value === "hardware" || value === "hybrid";
     return value === kindFilter;
   }
+  function depthValue(e) {
+    if (!e || e.type !== "company") return null;
+    const raw = e.research_depth;
+    if (raw == null || raw === "") return null;
+    const n = Number(raw);
+    if (!Number.isFinite(n) || n < 0 || n > 1) return null;
+    return n;
+  }
+  function depthBand(n) {
+    if (n < 0.2) return { id: "0", label: "Name only" };
+    if (n < 0.5) return { id: "1", label: "Website level" };
+    if (n < 0.8) return { id: "2", label: "Research with gaps" };
+    if (n < 0.95) return { id: "3", label: "Well researched" };
+    return { id: "4", label: "Well researched with primary evidence" };
+  }
+  function depthBadge(e) {
+    const n = depthValue(e);
+    if (n == null) return `<span class="depth depth-none">Not scored yet</span>`;
+    const band = depthBand(n);
+    return `<span class="depth depth-${band.id}">Depth ${n.toFixed(2)}</span>`;
+  }
+  function depthWhen(e) {
+    const raw = String(e && e.research_depth_scored_at || "").trim();
+    return formatDate(raw.slice(0, 10));
+  }
+  const VERDICT_LABELS = { met: "Met", partly_met: "Partly met", not_met: "Not met" };
+  function breakdownObject(e) {
+    let raw = e && e.research_depth_breakdown;
+    if (typeof raw === "string") {
+      try { raw = JSON.parse(raw); } catch (err) { return null; }
+    }
+    if (!raw || typeof raw !== "object" || Array.isArray(raw)) return null;
+    return raw;
+  }
+  function criteriaRows(e) {
+    const raw = breakdownObject(e);
+    if (!raw) return [];
+    const bag = raw.criteria && typeof raw.criteria === "object" && !Array.isArray(raw.criteria) ? raw.criteria : raw;
+    return Object.keys(bag).filter((key) => /^C\d+$/i.test(key)).sort((a, b) => Number(a.slice(1)) - Number(b.slice(1))).map((key) => {
+      const item = bag[key];
+      if (!item || typeof item !== "object") return null;
+      return { key: key.toUpperCase(), item };
+    }).filter(Boolean);
+  }
+  function verdictLabel(item) {
+    return VERDICT_LABELS[String(item && item.verdict || "").trim()] || "";
+  }
+  function evidenceLine(item) {
+    const list = item && (item.evidence || item.evidence_refs);
+    if (!Array.isArray(list)) return "";
+    return list.map((ref) => {
+      if (typeof ref === "string") return ref.trim();
+      if (ref && typeof ref === "object") return String(ref.id || ref.ref || ref.url || "").trim();
+      return "";
+    }).filter(Boolean).slice(0, 8).join(", ");
+  }
+  function claimLine(item) {
+    const counts = item && item.claim_counts;
+    if (!counts || typeof counts !== "object") return "";
+    const labels = { supported: "supported", unsupported: "unsupported", not_checkable: "not checkable" };
+    const bits = [];
+    Object.keys(labels).forEach((key) => {
+      if (counts[key] == null || counts[key] === "") return;
+      const n = Number(counts[key]);
+      if (!Number.isFinite(n)) return;
+      bits.push(n + " " + labels[key]);
+    });
+    return bits.join(", ");
+  }
+  function depthCriteria(e) {
+    const rows = criteriaRows(e);
+    if (!rows.length) return "";
+    const items = rows.map(({ key, item }) => {
+      const verdict = verdictLabel(item);
+      const reason = cleanProse(item.reason || "");
+      const evidence = evidenceLine(item);
+      const claims = claimLine(item);
+      const title = [key, verdict].filter(Boolean).join(", ");
+      return `<li><p class="depth-criterion">${t(title)}</p>${reason ? `<p>${t(reason)}</p>` : ""}${claims ? `<p class="meta">${t(claims)}</p>` : ""}${evidence ? `<p class="meta">${t(evidence)}</p>` : ""}</li>`;
+    }).join("");
+    return `<details class="depth-break"><summary>Criteria</summary><ul class="depth-list">${items}</ul></details>`;
+  }
+  function depthCard(e) {
+    if (!e || e.type !== "company") return "";
+    const score = depthValue(e);
+    const band = score == null ? null : depthBand(score);
+    const head = score == null
+      ? `<p class="depth depth-none">Not scored yet</p>`
+      : `<p class="depth-score"><span class="depth depth-${band.id}">Depth ${score.toFixed(2)}</span><span>${t(band.label)}</span></p>`;
+    const when = score == null ? "" : depthWhen(e);
+    const dated = when ? `<p class="meta">Scored ${t(when)}</p>` : "";
+    return `<div class="group"><div class="kv"><p class="kicker">Research depth</p>${head}${dated}<p>How well researched and sourced this entry is, scored 0 to 1 by a separate reviewer that only scores.</p>${depthCriteria(e)}</div></div>`;
+  }
   function logoSrc(e) {
     const logo = String(e && e.logo || "");
     if (!logo || isKilled(e) || e.type === "idea") return "";
@@ -459,6 +552,7 @@
   let query = "";
   let tagFilter = "";
   let kindFilter = "";
+  let depthSort = false;
   let funderGroup = "";
   let dilutionFilter = "";
   let listScroll = 0;
@@ -521,6 +615,15 @@
       const ra = sortRank(a);
       const rb = sortRank(b);
       if (ra !== rb) return ra - rb;
+      if (depthSort) {
+        const da = depthValue(a);
+        const db = depthValue(b);
+        if (da != null || db != null) {
+          if (da == null) return 1;
+          if (db == null) return -1;
+          if (da !== db) return db - da;
+        }
+      }
       return displayTitle(a).localeCompare(displayTitle(b), undefined, { numeric: true, sensitivity: "base" });
     });
   }
@@ -540,7 +643,7 @@
     const closed = closedInfo(e);
     return `<button type="button" class="row" data-go="/e/${esc(encodeURIComponent(e.id))}">
       ${rowIcon(e)}
-      <span class="row-text"><span class="name">${t(displayTitle(e))}${flagMark(countryInfo(e))}${closed ? closedPill() : ""}${productPill(e)}</span>${summary ? `<span class="meta">${t(summary)}</span>` : ""}</span>
+      <span class="row-text"><span class="name">${t(displayTitle(e))}${flagMark(countryInfo(e))}${closed ? closedPill() : ""}${productPill(e)}</span>${summary ? `<span class="meta">${t(summary)}</span>` : ""}${e.type === "company" ? `<span class="depth-row">${depthBadge(e)}</span>` : ""}</span>
       ${chevron()}
     </button>`;
   }
@@ -989,6 +1092,7 @@
         </div>
       </div>
       ${summary ? `<p class="summary">${t(summary)}</p>` : ""}`;
+    html += depthCard(e);
     html += writeupCard(e);
     if (card) html += `<div class="group">${card}</div>`;
     html += fundedByCard(e);
@@ -1177,14 +1281,15 @@
       return;
     }
     kindsEl.hidden = false;
-    const mode = "product:" + (kindFilter || "all");
+    const mode = "product:" + (kindFilter || "all") + ":" + (depthSort ? "depth" : "name");
     if (kindsEl.dataset.mode === mode) return;
     kindsEl.dataset.mode = mode;
     const chips = KIND_FILTERS.map(([value, label]) => {
       const on = (kindFilter || "all") === value;
       return `<button type="button" class="chip${on ? " chip-on" : ""}" data-kind="${esc(value)}" aria-pressed="${on ? "true" : "false"}">${t(label)}</button>`;
     }).join("");
-    kindsEl.innerHTML = `<div class="kinds-row" role="group" aria-label="Product type">${chips}</div><p class="kind-note">Hybrid means a device plus software, and those also show under Hardware.</p>`;
+    const depthChip = `<button type="button" class="chip${depthSort ? " chip-on" : ""}" data-depth-sort aria-pressed="${depthSort ? "true" : "false"}">By depth</button>`;
+    kindsEl.innerHTML = `<div class="kinds-row" role="group" aria-label="Product type">${chips}${depthChip}</div><p class="kind-note">Hybrid means a device plus software, and those also show under Hardware.</p>`;
   }
 
   function render(scrollMode) {
@@ -1244,6 +1349,11 @@
   }
   if (kindsEl) {
     kindsEl.addEventListener("click", (ev) => {
+      if (ev.target.closest("[data-depth-sort]")) {
+        depthSort = !depthSort;
+        render("top");
+        return;
+      }
       const kindChip = ev.target.closest("[data-kind]");
       if (kindChip) {
         const next = kindChip.getAttribute("data-kind") || "all";
