@@ -148,6 +148,7 @@ a { color: var(--link); }
   padding: 0 16px 2px;
 }
 .kinds[hidden] { display: none; }
+.kinds-row + .kinds-row { margin-top: 6px; }
 .kinds-row {
   display: flex;
   gap: 6px;
@@ -364,6 +365,11 @@ a { color: var(--link); }
   overflow: hidden;
 }
 .meta.kill, .screen-meta.kill { color: var(--kill); }
+.meta.funder-meta {
+  display: block;
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
 .crumb p { margin: 0; }
 .chev { flex: 0 0 auto; color: var(--chev); }
 .row:focus-visible, .back:focus-visible, .crumb button:focus-visible, .search:focus-visible, .more:focus-visible {

@@ -45,6 +45,11 @@ export function funderSummary(row) {
     name: row.name,
     kind: row.kind,
     country: textOrNull(row.country),
+    operator: textOrNull(row.operator),
+    amount_range: textOrNull(row.amount_range),
+    eligibility_stage: textOrNull(row.eligibility_stage),
+    next_deadline: textOrNull(row.next_deadline),
+    dilution: textOrNull(row.dilution),
     backed: Number.isFinite(backed) ? backed : 0,
   };
 }
@@ -73,6 +78,12 @@ export function funderDetail(row, links) {
     description: textOrNull(row.description),
     aum_or_programme_size: textOrNull(row.aum_or_programme_size),
     care_focus: textOrNull(row.care_focus),
+    operator: textOrNull(row.operator),
+    amount_range: textOrNull(row.amount_range),
+    eligibility: textOrNull(row.eligibility),
+    eligibility_stage: textOrNull(row.eligibility_stage),
+    next_deadline: textOrNull(row.next_deadline),
+    dilution: textOrNull(row.dilution),
     sources: parseSources(row.sources),
     backed: (links || []).map((link) => linkFields(link, "entry_id", "entry_name")),
   };

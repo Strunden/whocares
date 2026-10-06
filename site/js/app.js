@@ -111,9 +111,37 @@
     public_fund_of_funds: "Public fund of funds",
     public_direct: "Public fund",
     grant_programme: "Grant programme",
+    prize: "Prize",
+    public_loan: "Public loan",
     payer_insurer: "Payer or insurer",
     foundation: "Foundation",
     other: "Other"
+  };
+  const FUNDER_GROUPS = [
+    ["all", "All"],
+    ["vc", "VC funds"],
+    ["grant", "Grant programmes"],
+    ["prize", "Prizes"],
+    ["loan", "Loans"],
+    ["advice", "Public advice"]
+  ];
+  const DILUTION_FILTERS = [
+    ["all", "All"],
+    ["equity", "Takes equity"],
+    ["none", "No equity"]
+  ];
+  const DILUTION_LABELS = {
+    dilutive: "Takes equity",
+    non_dilutive: "No equity",
+    mixed: "Grant plus equity",
+    indirect: "Invests in funds"
+  };
+  const STAGE_LABELS = {
+    "pre-company": "Before a company exists",
+    "pre-seed": "Pre-seed",
+    company: "An existing company",
+    mixed: "More than one stage",
+    research: "Research"
   };
   const RELATIONS = {
     equity_round: "Equity round",
@@ -147,6 +175,61 @@
   }
   function relationLabel(relation) {
     return RELATIONS[relation] || "";
+  }
+  function dilutionLabel(value) {
+    return DILUTION_LABELS[String(value || "").trim()] || "";
+  }
+  function stageLabel(value) {
+    const key = String(value || "").trim().toLowerCase();
+    return STAGE_LABELS[key] || "";
+  }
+  function deadlineLabel(value) {
+    const raw = String(value || "").trim();
+    if (!raw) return "";
+    if (raw.toLowerCase() === "rolling") return "Rolling";
+    const dated = /^(\d{4}-\d{2}-\d{2})([\s\S]*)$/.exec(raw);
+    if (!dated) return raw;
+    const formatted = formatDate(dated[1]);
+    if (!formatted) return raw;
+    const rest = dated[2].trim();
+    return rest ? formatted + " " + rest : formatted;
+  }
+  function isPublicAdvice(funder) {
+    return !!(funder && funder.kind === "other" && funder.dilution === "not_applicable");
+  }
+  function funderKindText(funder) {
+    if (isPublicAdvice(funder)) return "Public advice";
+    return kindLabel(funder && funder.kind);
+  }
+  function funderGroupOf(funder) {
+    if (isPublicAdvice(funder)) return "advice";
+    const kind = funder && funder.kind;
+    if (kind === "vc" || kind === "corporate_vc" || kind === "angel_network" || kind === "evergreen_or_listed" || kind === "public_direct") return "vc";
+    if (kind === "grant_programme") return "grant";
+    if (kind === "prize") return "prize";
+    if (kind === "public_loan") return "loan";
+    return "";
+  }
+  function matchesFunderGroup(funder) {
+    if (!funderGroup) return true;
+    return funderGroupOf(funder) === funderGroup;
+  }
+  function matchesDilution(funder) {
+    if (!dilutionFilter) return true;
+    const value = String(funder && funder.dilution || "");
+    if (dilutionFilter === "equity") return value === "dilutive" || value === "mixed";
+    if (dilutionFilter === "none") return value === "non_dilutive";
+    return true;
+  }
+  function dilutionPill(funder) {
+    const label = dilutionLabel(funder && funder.dilution);
+    if (!label) return "";
+    return `<span class="type-pill">${t(label)}</span>`;
+  }
+  function factLine(kicker, value) {
+    const text = cleanProse(value || "");
+    if (!text) return "";
+    return `<div class="kv"><p class="kicker">${t(kicker)}</p><p>${t(text)}</p></div>`;
   }
   function formatDate(iso) {
     const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(iso || ""));
@@ -376,6 +459,8 @@
   let query = "";
   let tagFilter = "";
   let kindFilter = "";
+  let funderGroup = "";
+  let dilutionFilter = "";
   let listScroll = 0;
 
   const app = document.getElementById("app");
@@ -939,15 +1024,39 @@
   function visibleFunders() {
     const q = query.trim().toLowerCase();
     return funders.filter((funder) => {
+      if (!matchesFunderGroup(funder) || !matchesDilution(funder)) return false;
       if (!q) return true;
-      const hay = [funder.name, kindLabel(funder.kind), countryLabel(funder.country)].join(" ").toLowerCase();
+      const hay = [
+        funder.name,
+        funderKindText(funder),
+        dilutionLabel(funder.dilution),
+        countryLabel(funder.country),
+        funder.operator,
+        funder.amount_range,
+        stageLabel(funder.eligibility_stage),
+        deadlineLabel(funder.next_deadline)
+      ].join(" ").toLowerCase();
       return hay.includes(q);
     });
   }
+  function funderFacts(funder) {
+    const stage = stageLabel(funder.eligibility_stage);
+    const deadline = deadlineLabel(funder.next_deadline);
+    const operator = cleanProse(funder.operator || "");
+    return [
+      funderKindText(funder),
+      countryLabel(funder.country),
+      cleanProse(funder.amount_range || ""),
+      stage ? "Stage: " + stage : "",
+      deadline ? "Next deadline: " + deadline : "",
+      operator ? "Run by " + operator : "",
+      backedLabel(funder.backed)
+    ].filter(Boolean);
+  }
   function funderButton(funder) {
-    const bits = [kindLabel(funder.kind), countryLabel(funder.country), backedLabel(funder.backed)].filter(Boolean);
+    const bits = funderFacts(funder);
     return `<button type="button" class="row" data-go="/f/${esc(encodeURIComponent(funder.id))}">
-      <span class="row-text"><span class="name">${t(funder.name)}</span>${bits.length ? `<span class="meta">${t(bits.join(", "))}</span>` : ""}</span>
+      <span class="row-text"><span class="name">${t(funder.name)}${dilutionPill(funder)}</span>${bits.length ? `<span class="meta funder-meta">${t(bits.join(", "))}</span>` : ""}</span>
       ${chevron()}
     </button>`;
   }
@@ -964,16 +1073,23 @@
     const detail = funderDetails[id];
     if (!detail) return `<p class="empty">That funder is not in the list.</p>`;
     if (detail.error) return `<p class="empty">The funder page could not be loaded.</p>`;
-    const kind = kindLabel(detail.kind);
+    const kind = funderKindText(detail);
     const country = countryLabel(detail.country);
     const meta = [kind, country].filter(Boolean).join(", ");
     const size = detail.aum_or_programme_size
       ? `<div class="kv"><p class="kicker">Size</p><p>${t(detail.aum_or_programme_size)}</p>${sourceRow(detail.sources)}</div>`
       : "";
-    const focus = detail.care_focus
-      ? `<div class="kv"><p class="kicker">Care focus</p><p>${t(detail.care_focus)}</p></div>`
-      : "";
-    const facts = (size || focus) ? `<div class="group">${size}${focus}</div>` : "";
+    const focus = factLine("Care focus", detail.care_focus);
+    const programme = [
+      factLine("Run by", detail.operator),
+      factLine("Amount", detail.amount_range),
+      size,
+      factLine("Who can apply", detail.eligibility),
+      factLine("Stage", stageLabel(detail.eligibility_stage)),
+      factLine("Next deadline", deadlineLabel(detail.next_deadline)),
+      focus
+    ].join("");
+    const facts = programme ? `<div class="group">${programme}</div>` : "";
     const site = safeUrl(detail.website)
       ? `<div class="group">${externalRow(detail.website, "Website")}</div>`
       : "";
@@ -991,6 +1107,7 @@
       <div class="detail-head"><div>
         <h1>${t(detail.name)}</h1>
         ${meta ? `<p class="screen-meta">${t(meta)}</p>` : ""}
+        ${dilutionPill(detail) ? `<p class="type-line">${dilutionPill(detail)}</p>` : ""}
       </div></div>
       ${detail.description ? `<p class="summary">${t(detail.description)}</p>` : ""}
       ${facts}
@@ -1037,19 +1154,34 @@
     tagsEl.scrollLeft = left;
   }
 
+  function choiceChips(items, attr, current) {
+    return items.map(([value, label]) => {
+      const on = (current || "all") === value;
+      return `<button type="button" class="chip${on ? " chip-on" : ""}" ${attr}="${esc(value)}" aria-pressed="${on ? "true" : "false"}">${t(label)}</button>`;
+    }).join("");
+  }
   function renderKinds() {
     if (!kindsEl) return;
-    const root = routeNow().view === "root" && tagFilter !== "Funders";
-    kindsEl.hidden = !root;
+    const root = routeNow().view === "root";
     if (!root) {
+      kindsEl.hidden = true;
       kindsEl.dataset.mode = "";
       return;
     }
-    const mode = kindFilter || "all";
+    if (tagFilter === "Funders") {
+      const mode = "funders:" + (funderGroup || "all") + ":" + (dilutionFilter || "all");
+      kindsEl.hidden = false;
+      if (kindsEl.dataset.mode === mode) return;
+      kindsEl.dataset.mode = mode;
+      kindsEl.innerHTML = `<div class="kinds-row" role="group" aria-label="Funder type">${choiceChips(FUNDER_GROUPS, "data-funder-group", funderGroup || "all")}</div><div class="kinds-row" role="group" aria-label="Equity">${choiceChips(DILUTION_FILTERS, "data-dilution", dilutionFilter || "all")}</div><p class="kind-note">Grant plus equity is included in Takes equity.</p>`;
+      return;
+    }
+    kindsEl.hidden = false;
+    const mode = "product:" + (kindFilter || "all");
     if (kindsEl.dataset.mode === mode) return;
     kindsEl.dataset.mode = mode;
     const chips = KIND_FILTERS.map(([value, label]) => {
-      const on = mode === value;
+      const on = (kindFilter || "all") === value;
       return `<button type="button" class="chip${on ? " chip-on" : ""}" data-kind="${esc(value)}" aria-pressed="${on ? "true" : "false"}">${t(label)}</button>`;
     }).join("");
     kindsEl.innerHTML = `<div class="kinds-row" role="group" aria-label="Product type">${chips}</div><p class="kind-note">Hybrid means a device plus software, and those also show under Hardware.</p>`;
@@ -1112,12 +1244,30 @@
   }
   if (kindsEl) {
     kindsEl.addEventListener("click", (ev) => {
-      const chip = ev.target.closest("[data-kind]");
-      if (!chip) return;
-      const next = chip.getAttribute("data-kind") || "all";
-      const value = next === "all" ? "" : next;
-      if (value === kindFilter) return;
-      kindFilter = value;
+      const kindChip = ev.target.closest("[data-kind]");
+      if (kindChip) {
+        const next = kindChip.getAttribute("data-kind") || "all";
+        const value = next === "all" ? "" : next;
+        if (value === kindFilter) return;
+        kindFilter = value;
+        render("top");
+        return;
+      }
+      const groupChip = ev.target.closest("[data-funder-group]");
+      if (groupChip) {
+        const next = groupChip.getAttribute("data-funder-group") || "all";
+        const value = next === "all" ? "" : next;
+        if (value === funderGroup) return;
+        funderGroup = value;
+        render("top");
+        return;
+      }
+      const dilutionChip = ev.target.closest("[data-dilution]");
+      if (!dilutionChip) return;
+      const nextDilution = dilutionChip.getAttribute("data-dilution") || "all";
+      const dilutionValue = nextDilution === "all" ? "" : nextDilution;
+      if (dilutionValue === dilutionFilter) return;
+      dilutionFilter = dilutionValue;
       render("top");
     });
   }
