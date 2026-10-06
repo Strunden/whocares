@@ -1,5 +1,6 @@
 import { attachFunding, funderDetail, funderSummary } from "./funders-shape.js";
 import { buildIndex } from "./index-shape.js";
+import { decodeSlug } from "./path-slug.js";
 import { withSql } from "./pg-wire.js";
 
 const ALLOW_ORIGIN = "https://strunden.github.io";
@@ -200,8 +201,8 @@ export default {
     }
 
     if (path.startsWith("/api/funders/")) {
-      const funderId = decodeURIComponent(path.slice("/api/funders/".length));
-      if (!FUNDER_ID.test(funderId) || funderId.includes("/")) {
+      const funderId = decodeSlug(path.slice("/api/funders/".length));
+      if (funderId === null || !FUNDER_ID.test(funderId) || funderId.includes("/")) {
         return json({ ok: false, error: "not found" }, 404);
       }
       try {
@@ -214,8 +215,8 @@ export default {
     }
 
     if (path.startsWith("/api/logo/")) {
-      const slug = decodeURIComponent(path.slice("/api/logo/".length));
-      if (!/^[A-Za-z0-9][A-Za-z0-9_-]{0,80}$/.test(slug)) {
+      const slug = decodeSlug(path.slice("/api/logo/".length));
+      if (slug === null || !/^[A-Za-z0-9][A-Za-z0-9_-]{0,80}$/.test(slug)) {
         return json({ ok: false, error: "not found" }, 404);
       }
       try {
