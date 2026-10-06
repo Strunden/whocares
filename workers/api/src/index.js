@@ -92,6 +92,11 @@ async function readFunders(env) {
              f.name,
              f.kind,
              f.country,
+             f.operator,
+             f.amount_range,
+             f.eligibility_stage,
+             f.next_deadline,
+             f.dilution,
              (
                SELECT count(DISTINCT l.entry_id)::int
                FROM funding_links l
@@ -118,6 +123,12 @@ async function readFunder(env, id) {
              f.description,
              f.aum_or_programme_size,
              f.care_focus,
+             f.operator,
+             f.amount_range,
+             f.eligibility,
+             f.eligibility_stage,
+             f.next_deadline,
+             f.dilution,
              f.sources::text AS sources
       FROM funders f
       WHERE f.published

@@ -32,8 +32,51 @@ test("funder list row keeps the published company count", () => {
     name: "Heliad",
     kind: "evergreen_or_listed",
     country: "DE",
+    operator: null,
+    amount_range: null,
+    eligibility_stage: null,
+    next_deadline: null,
+    dilution: null,
     backed: 0,
   });
+});
+
+test("funder facts stay text and blank fields stay null", () => {
+  const summary = funderSummary({
+    id: "exist-gruenderstipendium",
+    name: "EXIST Gründerstipendium",
+    kind: "grant_programme",
+    country: "DE",
+    operator: " BMWE ",
+    amount_range: "1,000-3,000 EUR/month",
+    eligibility_stage: "pre-company",
+    next_deadline: "rolling",
+    dilution: "non_dilutive",
+    backed: 0,
+  });
+  assert.equal(summary.operator, "BMWE");
+  assert.equal(summary.dilution, "non_dilutive");
+  assert.equal(summary.next_deadline, "rolling");
+  const detail = funderDetail({
+    id: "exist-gruenderstipendium",
+    name: "EXIST Gründerstipendium",
+    kind: "grant_programme",
+    country: "DE",
+    website: "https://example.com",
+    description: "Grant.",
+    aum_or_programme_size: null,
+    care_focus: "",
+    operator: "BMWE",
+    amount_range: "",
+    eligibility: " Students ",
+    eligibility_stage: "pre-company",
+    next_deadline: "rolling",
+    dilution: "non_dilutive",
+    sources: "[]",
+  }, []);
+  assert.equal(detail.eligibility, "Students");
+  assert.equal(detail.amount_range, null);
+  assert.equal(detail.dilution, "non_dilutive");
 });
 
 test("funder detail lists only the backed rows it is given", () => {
