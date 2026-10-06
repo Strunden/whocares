@@ -99,8 +99,31 @@
     LV: "Latvia", MT: "Malta", MX: "Mexico", NL: "Netherlands", NO: "Norway",
     NZ: "New Zealand", PL: "Poland", PT: "Portugal", RO: "Romania", SE: "Sweden",
     SG: "Singapore", SI: "Slovenia", SK: "Slovakia", US: "United States",
-    ZA: "South Africa"
+    ZA: "South Africa",
+    UK: "United Kingdom",
+    EU: "Europe"
   };
+  const FUNDER_KINDS = {
+    vc: "Venture fund",
+    evergreen_or_listed: "Evergreen or listed",
+    corporate_vc: "Corporate venture fund",
+    angel_network: "Angel network",
+    public_fund_of_funds: "Public fund of funds",
+    public_direct: "Public fund",
+    grant_programme: "Grant programme",
+    payer_insurer: "Payer or insurer",
+    foundation: "Foundation",
+    other: "Other"
+  };
+  const RELATIONS = {
+    equity_round: "Equity round",
+    lead_investor: "Lead investor",
+    grant: "Grant",
+    reimbursement_listing: "Reimbursement listing",
+    debt: "Debt",
+    acquisition: "Acquisition"
+  };
+  const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   function countryInfo(e) {
     if (!e || e.type !== "company" || !e.facts || typeof e.facts !== "object") return null;
     const fact = e.facts.country;
@@ -110,6 +133,41 @@
     if (!name || !safeUrl(fact.source)) return null;
     const emoji = String.fromCodePoint(...code.split("").map((ch) => 0x1F1E6 + ch.charCodeAt(0) - 65));
     return { code, name, source: safeUrl(fact.source), emoji };
+  }
+  function kindLabel(kind) {
+    if (FUNDER_KINDS[kind]) return FUNDER_KINDS[kind];
+    const words = String(kind || "").replace(/[_-]+/g, " ").trim();
+    if (!words) return "";
+    return words.charAt(0).toUpperCase() + words.slice(1);
+  }
+  function countryLabel(code) {
+    const key = String(code || "").trim().toUpperCase();
+    if (!key) return "";
+    return COUNTRY_NAMES[key] || key;
+  }
+  function relationLabel(relation) {
+    return RELATIONS[relation] || "";
+  }
+  function formatDate(iso) {
+    const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(iso || ""));
+    if (!match) return "";
+    const month = MONTHS[Number(match[2]) - 1];
+    if (!month) return "";
+    return Number(match[3]) + " " + month + " " + match[1];
+  }
+  function formatEur(amount) {
+    const n = Number(amount);
+    if (!Number.isFinite(n)) return "";
+    const whole = Math.round(n * 100) === n * 100 && Math.round(n) === n;
+    const formatted = whole
+      ? Math.round(n).toLocaleString("en-GB")
+      : n.toLocaleString("en-GB", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    return "€" + formatted;
+  }
+  function backedLabel(n) {
+    const count = Number(n);
+    const value = Number.isFinite(count) ? count : 0;
+    return value === 1 ? "1 company" : value + " companies";
   }
   function flagMark(info) {
     if (!info) return "";
@@ -221,6 +279,50 @@
     }
     return loadStaticIndex();
   }
+  async function loadFunders() {
+    const base = apiBase();
+    if (!base) {
+      fundersState = "error";
+      return;
+    }
+    try {
+      const res = await fetch(`${base}/api/funders`, { cache: "no-store" });
+      if (!res.ok) throw new Error("funders");
+      const data = await res.json();
+      funders = Array.isArray(data.funders) ? data.funders : [];
+      fundersState = "ready";
+    } catch (err) {
+      funders = [];
+      fundersState = "error";
+    }
+    if (routeNow().view === "root") render("keep");
+  }
+  function ensureFunder(id) {
+    if (Object.prototype.hasOwnProperty.call(funderDetails, id) || funderLoads[id]) return;
+    funderLoads[id] = true;
+    const base = apiBase();
+    if (!base) {
+      funderDetails[id] = { error: true };
+      funderLoads[id] = false;
+      return;
+    }
+    fetch(`${base}/api/funders/${encodeURIComponent(id)}`, { cache: "no-store" })
+      .then((res) => {
+        if (res.status === 404) return null;
+        if (!res.ok) throw new Error("funder");
+        return res.json();
+      })
+      .then((detail) => {
+        funderDetails[id] = detail;
+        funderLoads[id] = false;
+        if (routeNow().view === "funder" && routeNow().id === id) render("keep");
+      })
+      .catch(() => {
+        funderDetails[id] = { error: true };
+        funderLoads[id] = false;
+        if (routeNow().view === "funder" && routeNow().id === id) render("keep");
+      });
+  }
 
   function parseHash() {
     let raw = (location.hash || "#/").replace(/^#/, "");
@@ -228,6 +330,7 @@
     try { raw = decodeURIComponent(raw); } catch (err) { /* keep raw */ }
     if (!raw.startsWith("/")) raw = "/" + raw;
     const bits = raw.split("/").filter(Boolean);
+    if (bits[0] === "f" && bits[1]) return { view: "funder", id: bits.slice(1).join("/") };
     const at = bits.indexOf("e");
     if (at >= 0 && bits[at + 1]) return { view: "entry", id: bits.slice(at + 1).join("/") };
     return { view: "root", id: "" };
@@ -237,6 +340,10 @@
   }
 
   let indexData = null;
+  let funders = [];
+  let fundersState = "loading";
+  const funderDetails = {};
+  const funderLoads = {};
   let depth = 0;
   let query = "";
   let tagFilter = "";
@@ -262,6 +369,7 @@
     else window.scrollTo(0, y || 0);
   }
   function countLabel(n) {
+    if (n < 0) return "";
     return n === 1 ? "1 result" : n + " results";
   }
 
@@ -767,6 +875,7 @@
       ${summary ? `<p class="summary">${t(summary)}</p>` : ""}`;
     html += writeupCard(e);
     if (card) html += `<div class="group">${card}</div>`;
+    html += fundedByCard(e);
     html += droppedCard;
     html += factsCard(e);
     html += similarCard(e);
@@ -782,6 +891,83 @@
     return html;
   }
 
+  function fundedByCard(e) {
+    const links = e && Array.isArray(e.funded_by) ? e.funded_by : [];
+    const rows = links.filter((link) => link && link.id && link.name);
+    if (!rows.length) return "";
+    const lines = rows.map((link) => {
+      const bits = [`<button type="button" class="co-link" data-go="/f/${esc(encodeURIComponent(link.id))}">${t(link.name)}</button>`];
+      const round = cleanProse(link.round_label || "");
+      const date = formatDate(link.date);
+      if (round) bits.push(t(round));
+      if (date) bits.push(t(date));
+      return `<p>${bits.join(", ")}</p>`;
+    }).join("");
+    return `<div class="group"><div class="kv"><p class="kicker">Funded by</p>${lines}</div></div>`;
+  }
+  function visibleFunders() {
+    const q = query.trim().toLowerCase();
+    return funders.filter((funder) => {
+      if (!q) return true;
+      const hay = [funder.name, kindLabel(funder.kind), countryLabel(funder.country)].join(" ").toLowerCase();
+      return hay.includes(q);
+    });
+  }
+  function funderButton(funder) {
+    const bits = [kindLabel(funder.kind), countryLabel(funder.country), backedLabel(funder.backed)].filter(Boolean);
+    return `<button type="button" class="row" data-go="/f/${esc(encodeURIComponent(funder.id))}">
+      <span class="row-text"><span class="name">${t(funder.name)}</span>${bits.length ? `<span class="meta">${t(bits.join(", "))}</span>` : ""}</span>
+      ${chevron()}
+    </button>`;
+  }
+  function funderMeta(item) {
+    return [relationLabel(item.relation), cleanProse(item.round_label || ""), formatDate(item.date), formatEur(item.amount_eur)].filter(Boolean).join(", ");
+  }
+  function renderFunder(id) {
+    if (!Object.prototype.hasOwnProperty.call(funderDetails, id)) {
+      ensureFunder(id);
+      const known = funders.find((funder) => funder.id === id);
+      const name = known ? known.name : "";
+      return `<article class="detail"><div class="detail-head"><div><h1>${name ? t(name) : "Funder"}</h1></div></div></article>`;
+    }
+    const detail = funderDetails[id];
+    if (!detail) return `<p class="empty">That funder is not in the list.</p>`;
+    if (detail.error) return `<p class="empty">The funder page could not be loaded.</p>`;
+    const kind = kindLabel(detail.kind);
+    const country = countryLabel(detail.country);
+    const meta = [kind, country].filter(Boolean).join(", ");
+    const size = detail.aum_or_programme_size
+      ? `<div class="kv"><p class="kicker">Size</p><p>${t(detail.aum_or_programme_size)}</p>${sourceRow(detail.sources)}</div>`
+      : "";
+    const focus = detail.care_focus
+      ? `<div class="kv"><p class="kicker">Care focus</p><p>${t(detail.care_focus)}</p></div>`
+      : "";
+    const facts = (size || focus) ? `<div class="group">${size}${focus}</div>` : "";
+    const site = safeUrl(detail.website)
+      ? `<div class="group">${externalRow(detail.website, "Website")}</div>`
+      : "";
+    const backed = Array.isArray(detail.backed) ? detail.backed : [];
+    const companies = backed.length
+      ? `<div class="group"><div class="pad"><p class="kicker">Companies</p></div>${backed.map((item) => {
+          const metaLine = funderMeta(item);
+          return `<div class="kv"><p><button type="button" class="co-link" data-go="/e/${esc(encodeURIComponent(item.id))}">${t(item.name)}</button></p>${metaLine ? `<p class="meta">${t(metaLine)}</p>` : ""}${sourceRow(item.sources)}</div>`;
+        }).join("")}</div>`
+      : "";
+    const looseSources = !detail.aum_or_programme_size && detail.sources && detail.sources.length
+      ? `<div class="group"><div class="kv"><p class="kicker">Sources</p>${sourceRow(detail.sources)}</div></div>`
+      : "";
+    return `<article class="detail">
+      <div class="detail-head"><div>
+        <h1>${t(detail.name)}</h1>
+        ${meta ? `<p class="screen-meta">${t(meta)}</p>` : ""}
+      </div></div>
+      ${detail.description ? `<p class="summary">${t(detail.description)}</p>` : ""}
+      ${facts}
+      ${looseSources}
+      ${site}
+      ${companies}
+    </article>`;
+  }
   function visibleRows() {
     const q = query.trim().toLowerCase();
     return sortEntries(publishedEntries().filter((e) => matchesTag(e) && matchesQuery(e, q)));
@@ -814,7 +1000,7 @@
     if (tagsEl.dataset.mode === "all") return;
     const left = tagsEl.scrollLeft;
     tagsEl.dataset.mode = "all";
-    tagsEl.innerHTML = ["Closed"].concat(TAGS).map((label) => {
+    tagsEl.innerHTML = ["Closed", "Funders"].concat(TAGS).map((label) => {
       return `<button type="button" class="chip" data-tag="${esc(label)}" aria-pressed="false">${t(label)}</button>`;
     }).join("");
     tagsEl.scrollLeft = left;
@@ -828,17 +1014,33 @@
     if (barTop) barTop.hidden = onRoot;
     searchWrap.hidden = !onRoot;
     if (searchEl && searchEl.value !== query) searchEl.value = query;
+    const onFunder = route.view === "funder";
+    const funderName = onFunder
+      ? ((funderDetails[route.id] && funderDetails[route.id].name) || (funders.find((funder) => funder.id === route.id) || {}).name || "Funder")
+      : "";
     crumbEl.innerHTML = onRoot
       ? ""
-      : `<p class="crumb"><button type="button" data-go="/">Who Cares</button><span class="sep">/</span><span class="here">${t(displayTitle(findEntry(indexData.entries, route.id) || { title: "Entry" }))}</span></p>`;
-    const rows = onRoot ? visibleRows() : [];
-    renderTags(rows.length);
+      : `<p class="crumb"><button type="button" data-go="/">Who Cares</button><span class="sep">/</span><span class="here">${t(onFunder ? funderName : displayTitle(findEntry(indexData.entries, route.id) || { title: "Entry" }))}</span></p>`;
+    const funderRows = onRoot && tagFilter === "Funders" ? visibleFunders() : [];
+    const rows = onRoot && tagFilter !== "Funders" ? visibleRows() : [];
+    const shownCount = tagFilter === "Funders"
+      ? (fundersState === "ready" ? funderRows.length : -1)
+      : rows.length;
+    renderTags(shownCount);
     let title = "Who Cares";
     let intro = "";
     let body = "";
-    if (onRoot) {
+    if (onRoot && tagFilter === "Funders") {
+      intro = `<h1 class="home-title">Who Cares</h1><p class="lede">A public list of companies and ideas in ageing and care, including the ones we researched and dropped.</p>`;
+      if (fundersState === "loading") body = `<p class="empty">Loading the list.</p>`;
+      else if (fundersState === "error") body = `<p class="empty">The funder list could not be loaded.</p>`;
+      else body = funderRows.length ? `<div class="group">${funderRows.map(funderButton).join("")}</div>` : `<p class="empty">Nothing in this list matches.</p>`;
+    } else if (onRoot) {
       intro = `<h1 class="home-title">Who Cares</h1><p class="lede">A public list of companies and ideas in ageing and care, including the ones we researched and dropped.</p>`;
       body = rows.length ? `<div class="group">${rows.map(rowButton).join("")}</div>` : `<p class="empty">Nothing in this list matches.</p>`;
+    } else if (onFunder) {
+      title = funderName + " - Who Cares";
+      body = renderFunder(route.id);
     } else {
       const entry = findEntry(indexData.entries, route.id);
       title = (entry ? displayTitle(entry) : "Entry") + " - Who Cares";
@@ -905,6 +1107,7 @@
       indexData = data;
       if (boot) boot.hidden = true;
       render("keep");
+      loadFunders();
     }).catch(() => {
       if (boot) boot.textContent = "We could not load the list. Try again in a moment.";
     });

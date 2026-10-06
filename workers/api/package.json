@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
-    "test": "node --test src/index-shape.test.mjs"
+    "test": "node --test src/*.test.mjs"
   },
   "engines": {
     "node": ">=20"
