@@ -314,11 +314,14 @@
     if (n < 0.95) return { id: "3", label: "Well researched" };
     return { id: "4", label: "Well researched with primary evidence" };
   }
+  function depthText(n) {
+    return (Math.round(n * 100 + 1e-8) / 100).toFixed(2);
+  }
   function depthBadge(e) {
     const n = depthValue(e);
     if (n == null) return `<span class="depth depth-none">Not scored yet</span>`;
     const band = depthBand(n);
-    return `<span class="depth depth-${band.id}">Depth ${n.toFixed(2)}</span>`;
+    return `<span class="depth depth-${band.id}">Depth ${depthText(n)}</span>`;
   }
   function depthWhen(e) {
     const raw = String(e && e.research_depth_scored_at || "").trim();
@@ -387,7 +390,7 @@
     const band = score == null ? null : depthBand(score);
     const head = score == null
       ? `<p class="depth depth-none">Not scored yet</p>`
-      : `<p class="depth-score"><span class="depth depth-${band.id}">Depth ${score.toFixed(2)}</span><span>${t(band.label)}</span></p>`;
+      : `<p class="depth-score"><span class="depth depth-${band.id}">Depth ${depthText(score)}</span><span>${t(band.label)}</span></p>`;
     const when = score == null ? "" : depthWhen(e);
     const dated = when ? `<p class="meta">Scored ${t(when)}</p>` : "";
     return `<div class="group"><div class="kv"><p class="kicker">Research depth</p>${head}${dated}<p>How well researched and sourced this entry is, scored 0 to 1 by a separate reviewer that only scores.</p>${depthCriteria(e)}</div></div>`;
