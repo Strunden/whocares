@@ -98,11 +98,22 @@
     IT: "Italy", JP: "Japan", KR: "South Korea", LT: "Lithuania", LU: "Luxembourg",
     LV: "Latvia", MT: "Malta", MX: "Mexico", NL: "Netherlands", NO: "Norway",
     NZ: "New Zealand", PL: "Poland", PT: "Portugal", RO: "Romania", SE: "Sweden",
-    SG: "Singapore", SI: "Slovenia", SK: "Slovakia", US: "United States",
+    SG: "Singapore", SI: "Slovenia", SK: "Slovakia", TR: "Turkey", US: "United States",
     ZA: "South Africa",
     UK: "United Kingdom",
     EU: "Europe"
   };
+  const MARKET_ALIASES = [];
+  Object.keys(COUNTRY_NAMES).forEach((code) => {
+    const canon = code === "UK" ? "GB" : code;
+    const name = COUNTRY_NAMES[code].toLowerCase();
+    MARKET_ALIASES.push({ text: name, code: canon });
+    if (/^[A-Z]{2}$/.test(canon)) MARKET_ALIASES.push({ text: canon.toLowerCase(), code: canon });
+  });
+  [["uk", "GB"], ["u.k.", "GB"], ["usa", "US"], ["u.s.", "US"], ["u.s.a.", "US"], ["czech republic", "CZ"], ["worldwide", "GLOBAL"], ["global", "GLOBAL"]].forEach((pair) => {
+    MARKET_ALIASES.push({ text: pair[0], code: pair[1] });
+  });
+  MARKET_ALIASES.sort((a, b) => b.text.length - a.text.length);
   const FUNDER_KINDS = {
     vc: "Venture fund",
     evergreen_or_listed: "Evergreen or listed",
@@ -172,6 +183,147 @@
     const key = String(code || "").trim().toUpperCase();
     if (!key) return "";
     return COUNTRY_NAMES[key] || key;
+  }
+  function normaliseMarket(value) {
+    const raw = String(value || "").trim();
+    if (!raw) return "";
+    const upper = raw.toUpperCase();
+    if (upper === "UK") return "GB";
+    if (upper === "GLOBAL" || upper === "EU") return upper;
+    if (/^[A-Z]{2}$/.test(upper)) return upper;
+    return "";
+  }
+  function marketName(code) {
+    if (code === "GLOBAL") return "Worldwide";
+    if (code === "EU") return "Europe";
+    if (code === "GB" || code === "UK") return "United Kingdom";
+    return COUNTRY_NAMES[code] || code;
+  }
+  function flagEmoji(code) {
+    if (code === "EU") return "🇪🇺";
+    if (!/^[A-Z]{2}$/.test(code || "")) return "";
+    return String.fromCodePoint(...code.split("").map((ch) => 0x1F1E6 + ch.charCodeAt(0) - 65));
+  }
+  function originCode(e) {
+    const raw = String(e && e.country || "").trim();
+    if (!raw) return "";
+    const direct = normaliseMarket(raw);
+    if (direct && (direct === "EU" || direct === "GLOBAL" || COUNTRY_NAMES[direct])) return direct;
+    const lower = raw.toLowerCase();
+    let best = "";
+    let bestAt = 1e9;
+    MARKET_ALIASES.forEach((alias) => {
+      const at = lower.indexOf(alias.text);
+      if (at === -1 || at > bestAt) return;
+      if (alias.text.length <= 3) {
+        const before = at === 0 || /[^a-z0-9]/i.test(lower.charAt(at - 1));
+        const after = at + alias.text.length >= lower.length || /[^a-z0-9]/i.test(lower.charAt(at + alias.text.length));
+        if (!before || !after) return;
+      }
+      bestAt = at;
+      best = alias.code;
+    });
+    return best;
+  }
+  function marketCodes(e) {
+    const list = e && Array.isArray(e.target_markets) ? e.target_markets : [];
+    const out = [];
+    const seen = {};
+    list.forEach((item) => {
+      const code = normaliseMarket(item);
+      if (!code || seen[code]) return;
+      seen[code] = 1;
+      out.push(code);
+    });
+    return out;
+  }
+  function compactMarket(code) {
+    const flag = flagEmoji(code);
+    const label = code === "GLOBAL" ? "Worldwide" : code;
+    return flag ? flag + " " + label : label;
+  }
+  function marketLine(e) {
+    if (!e || e.type !== "company") return "";
+    const origin = originCode(e);
+    const sells = marketCodes(e);
+    const parts = [];
+    if (origin) parts.push("From " + compactMarket(origin));
+    if (sells.length) parts.push("Sells in " + sells.map(compactMarket).join(", "));
+    if (!parts.length) return "";
+    return `<span class="market-line">${parts.map((part) => t(part)).join(" \u00b7 ")}</span>`;
+  }
+  function evidenceBag(e) {
+    const raw = e && e.target_markets_evidence;
+    if (!raw || typeof raw !== "object" || Array.isArray(raw)) return null;
+    return raw;
+  }
+  function marketEvidence(e, code) {
+    const bag = evidenceBag(e);
+    if (!bag) return null;
+    const item = bag[code] || bag[code.toLowerCase()] || (code === "GB" ? bag.UK || bag.uk : null);
+    if (!item || typeof item !== "object" || Array.isArray(item)) return null;
+    const url = safeUrl(item.url);
+    const quote = typeof item.quote === "string" ? item.quote.trim() : "";
+    if (!url) return null;
+    return { url, quote };
+  }
+  function plannedGroups(e) {
+    const bag = evidenceBag(e);
+    const list = bag && Array.isArray(bag.planned) ? bag.planned : [];
+    const order = [];
+    const grouped = {};
+    list.forEach((item) => {
+      if (!item || typeof item !== "object") return;
+      const code = normaliseMarket(item.market);
+      if (!code) return;
+      if (!grouped[code]) {
+        grouped[code] = [];
+        order.push(code);
+      }
+      const url = safeUrl(item.url);
+      if (!url) return;
+      const quote = typeof item.quote === "string" ? item.quote.trim() : "";
+      grouped[code].push({ url, quotes: quote ? [quote] : [] });
+    });
+    return order.map((code) => ({ code, sources: grouped[code] }));
+  }
+  function marketFact(code, sources) {
+    const name = marketName(code);
+    const flag = flagEmoji(code);
+    const mark = flag ? `<span class="flag" role="img" aria-label="${esc(name)}">${flag}</span> ` : "";
+    return `<div class="market-fact">${mark}${t(name)}${sourceRow(sources || [])}</div>`;
+  }
+  function marketsCard(e) {
+    if (!e || e.type !== "company") return "";
+    const origin = originCode(e);
+    const sells = marketCodes(e);
+    const planned = plannedGroups(e);
+    if (!origin && !sells.length && !planned.length) return "";
+    const from = origin ? `<div class="kv"><p class="kicker">From</p>${marketFact(origin, [])}</div>` : "";
+    const sold = sells.length
+      ? `<div class="kv"><p class="kicker">Sells in</p>${sells.map((code) => {
+          const evidence = marketEvidence(e, code);
+          const sources = evidence ? [{ url: evidence.url, quotes: evidence.quote ? [evidence.quote] : [] }] : [];
+          return marketFact(code, sources);
+        }).join("")}</div>`
+      : "";
+    const later = planned.length
+      ? `<div class="kv"><p class="kicker">Planned</p>${planned.map((item) => marketFact(item.code, item.sources)).join("")}</div>`
+      : "";
+    return `<div class="group">${from}${sold}${later}</div>`;
+  }
+  function matchesMarket(e) {
+    if (!marketFilter) return true;
+    return marketCodes(e).indexOf(marketFilter) !== -1;
+  }
+  function marketChoices() {
+    const counts = {};
+    publishedEntries().forEach((entry) => {
+      marketCodes(entry).forEach((code) => {
+        counts[code] = (counts[code] || 0) + 1;
+      });
+    });
+    return Object.keys(counts).sort((a, b) => counts[b] - counts[a] || marketName(a).localeCompare(marketName(b)));
   }
   function relationLabel(relation) {
     return RELATIONS[relation] || "";
@@ -556,6 +708,7 @@
   let tagFilter = "";
   let kindFilter = "";
   let depthSort = false;
+  let marketFilter = "";
   let funderGroup = "";
   let dilutionFilter = "";
   let listScroll = 0;
@@ -646,7 +799,7 @@
     const closed = closedInfo(e);
     return `<button type="button" class="row" data-go="/e/${esc(encodeURIComponent(e.id))}">
       ${rowIcon(e)}
-      <span class="row-text"><span class="name">${t(displayTitle(e))}${flagMark(countryInfo(e))}${closed ? closedPill() : ""}${productPill(e)}</span>${summary ? `<span class="meta">${t(summary)}</span>` : ""}${e.type === "company" ? `<span class="depth-row">${depthBadge(e)}</span>` : ""}</span>
+      <span class="row-text"><span class="name">${t(displayTitle(e))}${flagMark(countryInfo(e))}${closed ? closedPill() : ""}${productPill(e)}</span>${summary ? `<span class="meta">${t(summary)}</span>` : ""}${marketLine(e)}${e.type === "company" ? `<span class="depth-row">${depthBadge(e)}</span>` : ""}</span>
       ${chevron()}
     </button>`;
   }
@@ -1095,6 +1248,7 @@
         </div>
       </div>
       ${summary ? `<p class="summary">${t(summary)}</p>` : ""}`;
+    html += marketsCard(e);
     html += depthCard(e);
     html += writeupCard(e);
     if (card) html += `<div class="group">${card}</div>`;
@@ -1225,7 +1379,7 @@
   }
   function visibleRows() {
     const q = query.trim().toLowerCase();
-    return sortEntries(publishedEntries().filter((e) => matchesTag(e) && matchesKind(e) && matchesQuery(e, q)));
+    return sortEntries(publishedEntries().filter((e) => matchesTag(e) && matchesKind(e) && matchesMarket(e) && matchesQuery(e, q)));
   }
   function renderList() {
     const rows = visibleRows();
@@ -1284,7 +1438,7 @@
       return;
     }
     kindsEl.hidden = false;
-    const mode = "product:" + (kindFilter || "all") + ":" + (depthSort ? "depth" : "name");
+    const mode = "product:" + (kindFilter || "all") + ":" + (depthSort ? "depth" : "name") + ":" + (marketFilter || "all");
     if (kindsEl.dataset.mode === mode) return;
     kindsEl.dataset.mode = mode;
     const chips = KIND_FILTERS.map(([value, label]) => {
@@ -1292,7 +1446,9 @@
       return `<button type="button" class="chip${on ? " chip-on" : ""}" data-kind="${esc(value)}" aria-pressed="${on ? "true" : "false"}">${t(label)}</button>`;
     }).join("");
     const depthChip = `<button type="button" class="chip${depthSort ? " chip-on" : ""}" data-depth-sort aria-pressed="${depthSort ? "true" : "false"}">By depth</button>`;
-    kindsEl.innerHTML = `<div class="kinds-row" role="group" aria-label="Product type">${chips}${depthChip}</div><p class="kind-note">Hybrid means a device plus software, and those also show under Hardware.</p>`;
+    const markets = [["all", "All"]].concat(marketChoices().map((code) => [code, (flagEmoji(code) ? flagEmoji(code) + " " : "") + marketName(code)]));
+    const marketChips = choiceChips(markets, "data-market", marketFilter || "all");
+    kindsEl.innerHTML = `<div class="kinds-row" role="group" aria-label="Product type">${chips}${depthChip}</div><div class="kinds-row" role="group" aria-label="Sells in"><span class="market-kicker">Sells in</span>${marketChips}</div><p class="kind-note">Hybrid means a device plus software, and those also show under Hardware.</p>`;
   }
 
   function render(scrollMode) {
@@ -1352,6 +1508,15 @@
   }
   if (kindsEl) {
     kindsEl.addEventListener("click", (ev) => {
+      const marketChip = ev.target.closest("[data-market]");
+      if (marketChip) {
+        const next = marketChip.getAttribute("data-market") || "all";
+        const value = next === "all" ? "" : next;
+        if (value === marketFilter) return;
+        marketFilter = value;
+        render("top");
+        return;
+      }
       if (ev.target.closest("[data-depth-sort]")) {
         depthSort = !depthSort;
         render("top");
