@@ -156,6 +156,7 @@
     return Number(match[3]) + " " + month + " " + match[1];
   }
   function formatEur(amount) {
+    if (amount == null || amount === "") return "";
     const n = Number(amount);
     if (!Number.isFinite(n)) return "";
     const whole = Math.round(n * 100) === n * 100 && Math.round(n) === n;
