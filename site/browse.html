@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Who Cares is a public list of companies and ideas in ageing and care, including the ones we researched and dropped.">
+<meta name="theme-color" content="#f2f2f7">
+<title>Who Cares</title>
+<link rel="stylesheet" href="css/site.css?v=20261006j">
+</head>
+<body>
+<div id="app" class="app">
+  <header class="bar">
+    <div class="bar-top">
+      <button type="button" id="back" class="back" hidden>
+        <svg viewBox="0 0 12 20" width="10" height="18" aria-hidden="true"><path d="M10 2 L2 10 L10 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Back
+      </button>
+      <nav id="crumb" class="crumb" aria-label="Breadcrumb"></nav>
+    </div>
+    <div id="search-wrap" class="search-wrap">
+      <input id="search" class="search" type="search" placeholder="Search this list" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search" aria-label="Search this list">
+    </div>
+    <div id="tags" class="tags" hidden></div>
+    <div id="kinds" class="kinds" hidden></div>
+  </header>
+  <div id="scroller" class="scroller">
+    <div id="intro" class="intro"></div>
+    <main id="main"></main>
+    <footer class="foot">
+      <a href="mechanism.html">How we filter</a>
+      <a href="sources.html">Sources</a>
+      <a href="README.html">Add an entry</a>
+    </footer>
+  </div>
+</div>
+<p id="boot" class="boot">Loading the list.</p>
+<script src="js/config.js?v=20261006j"></script>
+<script src="js/app.js?v=20261006j"></script>
+</body>
+</html>
