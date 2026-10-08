@@ -8,6 +8,7 @@
   <link rel="icon" href="data:,">
   <title>Who Cares · Research atlas</title>
   <link rel="stylesheet" href="css/atlas.css">
+  <link rel="stylesheet" href="css/atlas-records.css">
 </head>
 <body>
   <a class="skip" href="#map">Skip to map</a>
@@ -26,7 +27,7 @@
   </section>
   <main id="workspace" hidden>
     <div class="map-column">
-      <nav id="map-breadcrumbs" aria-label="Map location"><button id="persona-change" class="persona-change" aria-label="Choose whose world to explore"></button><span aria-hidden="true">/</span><div id="map-breadcrumb-trail"></div></nav><section id="map" tabindex="0" aria-label="Interactive care atlas" aria-describedby="map-help">
+      <nav id="map-breadcrumbs" aria-label="Map location"><button id="persona-change" class="persona-change" aria-label="Choose whose world to explore"></button><span aria-hidden="true">/</span><div id="map-breadcrumb-trail"></div></nav><div id="collection-tools" hidden><label><span class="sr-only">Search this collection</span><input id="collection-search" type="search" placeholder="Search this collection…"></label><select id="collection-type" aria-label="Record type"><option value="all">All records</option><option value="company">Companies</option><option value="research">Research</option></select><span id="collection-count" role="status"></span><button id="collection-prev" aria-label="Previous records">←</button><button id="collection-next" aria-label="Next records">→</button></div><section id="map" tabindex="0" aria-label="Interactive care atlas" aria-describedby="map-help">
         <svg id="landscape" aria-hidden="true"><defs><filter id="soft"><feGaussianBlur stdDeviation=".6"/></filter></defs><g id="territories"></g><g id="connections"></g></svg>
         <section id="level-context" hidden aria-label="Current research group"></section><div id="labels"></div><button id="minimap-home" hidden aria-label="Return to the whole map"><svg id="map-minimap" aria-hidden="true"></svg><span>Whole map ↗</span></button><span id="level-range" aria-live="polite"></span><button id="map-up" hidden aria-label="Back to the enclosing group"></button>
         <div id="loading" role="status">Loading the research atlas…</div>
@@ -44,6 +45,7 @@
   </main>
   <footer class="atlas-footer" hidden><div class="depth" aria-label="Visible map detail"><span data-level="0" class="current">Territories</span><i>›</i><span data-level="1">Collections</span><i>›</i><span data-level="2">Records</span></div><p id="map-help">Drag or scroll to pan · Click a group to enter</p><button id="list-open">Browse as a list</button></footer>
   <p class="sr-only" id="announcement" role="status" aria-live="polite"></p>
+  <script src="js/config.js"></script>
   <script type="module" src="js/atlas.js"></script>
 </body>
 </html>

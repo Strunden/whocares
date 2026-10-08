@@ -11,23 +11,30 @@ export const isTopic=e=>['theme','parent_theme'].includes(e.idea_kind);
 const intersects=(a,b)=>a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y;
 function arrange(children,box,columns){
  if(!children.length)return;
- const cols=columns||Math.ceil(Math.sqrt(children.length*box.w/box.h));const rows=Math.ceil(children.length/cols);
+ const paged=children.some(n=>n.page!==undefined),count=paged?Math.min(6,children.length):children.length;
+ const cols=columns||Math.min(3,count);const rows=Math.ceil(count/cols);
  const gap=Math.min(box.w/cols,box.h/rows)*.055;
- const w=box.w/cols,h=box.h/rows;
- children.forEach((n,i)=>{n.box={x:box.x+(i%cols)*w+gap,y:box.y+Math.floor(i/cols)*h+gap,w:w-gap*2,h:h-gap*2};
- if(n.children?.length)arrange(n.children,{x:n.box.x+n.box.w*.035,y:n.box.y+n.box.h*.19,w:n.box.w*.93,h:n.box.h*.77});});
+ const w=Math.min(box.w/cols,box.h/rows*1.18),h=w/1.18;
+ children.forEach((n,index)=>{const i=paged?index%6:index;n.box={x:box.x+(i%cols)*w+gap,y:box.y+Math.floor(i/cols)*h+gap,w:w-gap*2,h:h-gap*2};
+ if(n.children?.length)arrange(n.children,{x:n.box.x+n.box.w*.035,y:n.box.y+n.box.h*.16,w:n.box.w*.93,h:n.box.h*.80});});
 }
+export const PAGE_SIZE=6;
 function collection(records,id,label,kind='collection',entry=null){
- const node={id,title:label,kind,entry,count:records.length,children:[]};
- if(records.length<=6)node.children=records.map(e=>({id:id+'/'+e.id,title:title(e),kind:'record',entry:e,count:1}));
- else {
-  const sorted=[...records].sort((a,b)=>title(a).localeCompare(title(b))||a.id.localeCompare(b.id));
-  const size=Math.ceil(sorted.length/Math.min(6,Math.ceil(sorted.length/6)));
-  for(let i=0;i<sorted.length;i+=size){const part=sorted.slice(i,i+size);node.children.push(collection(part,id+'/range-'+i,`${title(part[0])} — ${title(part.at(-1))}`,'range'));}
- }
- return node;
+ const sorted=[...records].sort((a,b)=>title(a).localeCompare(title(b))||a.id.localeCompare(b.id));
+ return {id,title:label,kind,entry,count:records.length,paged:true,children:sorted.map((e,i)=>({id:id+'/'+e.id,title:title(e),kind:'record',entry:e,count:1,page:Math.floor(i/PAGE_SIZE)}))};
 }
-export function buildHierarchy(entries,definitions,{portrait=false}={}){
+const matchCache=new WeakMap();
+export function collectionPage(group,{page=0,query='',type='all'}={}){
+ const all=group?.children||[];
+ const key=JSON.stringify([query,type]);let cache=matchCache.get(group);
+ if(!cache||cache.key!==key||cache.children!==all){
+ const matched=all.filter(n=>(type==='all'||(type==='company'?n.entry?.type==='company':n.entry?.type!=='company'))&&(!query||[n.title,n.entry?.summary,n.entry?.country,n.entry?.buyer].join(' ').toLowerCase().includes(query.toLowerCase())));
+ cache={key,children:all,matched};matchCache.set(group,cache);}
+ const matched=cache.matched;
+ const pages=Math.max(1,Math.ceil(matched.length/PAGE_SIZE));page=Math.max(0,Math.min(pages-1,page));
+ return {nodes:matched.slice(page*PAGE_SIZE,(page+1)*PAGE_SIZE),total:matched.length,page,pages};
+}
+export function buildHierarchy(entries,definitions,{portrait=false,extraRoots=[]}={}){
  const byTheme=new Map(),byTag=new Map();
  for(const e of entries){for(const t of e.themes||[]){if(!byTheme.has(t))byTheme.set(t,[]);byTheme.get(t).push(e);}if(!e.themes?.length){const tag=e.tag||'Uncategorised';if(!byTag.has(tag))byTag.set(tag,[]);byTag.get(tag).push(e);}}
  const mapped=new Set();let serial=0;
@@ -43,6 +50,7 @@ export function buildHierarchy(entries,definitions,{portrait=false}={}){
  });
  const remainder=entries.filter(e=>!mapped.has(e.id));
  if(remainder.length)roots.push({...collection(remainder,'wider-research','The wider research','territory'),description:'Records beyond these editorial territories.',question:'What connection should be investigated next?',color:'#dce3eb',themes:[]});
+ roots.unshift(...extraRoots);
  const cols=portrait?2:Math.ceil(Math.sqrt(roots.length*1.7)),rows=Math.ceil(roots.length/cols),bounds={x:0,y:0,width:cols*1050,height:rows*860};
  arrange(roots,{x:0,y:0,w:bounds.width,h:bounds.height},cols);
  const all=new Map();let maxDepth=0;
@@ -51,18 +59,20 @@ export function buildHierarchy(entries,definitions,{portrait=false}={}){
  return {roots,all,bounds,maxDepth};
 }
 // Explicit reading levels: panning never changes the visible information layer.
-export function readingLevel(tree,groupId,camera,width,height){
+export function readingLevel(tree,groupId,camera,width,height,options={}){
  const group=groupId?tree.all.get(groupId):null;
- const nodes=group?(group.children?.length?group.children:[group]):tree.roots;
+ const page=group?.paged?collectionPage(group,options):null;
+ const nodes=page?page.nodes:group?(group.children?.length?group.children:[group]):tree.roots;
  const viewport={x:-80,y:-80,w:width+160,h:height+160};
- const project=(node,mode)=>({node,box:{x:node.box.x*camera.s+camera.x,y:node.box.y*camera.s+camera.y,w:node.box.w*camera.s,h:node.box.h*camera.s},mode});
- const result=nodes.map(node=>project(node,group?'summary':'compact')).filter(v=>intersects(v.box,viewport));
+ const project=(node,mode,index)=>{const b=page&&mode==='summary'?group.children[index].box:node.box;return {node,box:{x:b.x*camera.s+camera.x,y:b.y*camera.s+camera.y,w:b.w*camera.s,h:b.h*camera.s},mode};};
+ const result=nodes.map((node,i)=>project(node,group?'summary':'compact',i)).filter(v=>intersects(v.box,viewport));
  // Neighbouring regions remain part of the same world at every reading level.
  // Their context is navigable but never silently opens while panning.
  if(group){
   const path=ancestry(tree,groupId);
   for(const ancestor of path){
-   const siblings=ancestor.parent?tree.all.get(ancestor.parent).children:tree.roots;
+   const parent=tree.all.get(ancestor.parent);
+   const siblings=parent?.paged?parent.children.filter(n=>n.page===ancestor.page):parent?.children||tree.roots;
    for(const node of siblings)if(node.id!==ancestor.id){const v=project(node,'context');if(intersects(v.box,viewport))result.push(v);}
   }
  }
