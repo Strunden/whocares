@@ -1,1 +1,49 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Explore the relationships, unanswered questions and existing responses in ageing and care."><title>Who Cares · Atlas</title><link rel="stylesheet" href="css/atlas.css"></head><body><header><a class="brand" href="index.html">Who Cares<span>A living atlas of ageing & care</span></a><nav><a href="browse.html">Research index ↗</a><a href="sources.html">Sources</a></nav></header><main><section class="intro"><p class="eyebrow">THE CARE LANDSCAPE · GERMANY / EU FOCUS</p><h1>See the whole.<br><em>Find the question.</em></h1><p>Explore the everyday needs, systems and existing responses that shape later life.</p></section><div class="lens"><label for="lens">Through whose eyes?</label><select id="lens"><option value="all">Everyone</option><option value="adult">Older adult</option><option value="worker">Care worker</option><option value="family">Family caregiver</option><option value="provider">Provider</option></select><label class="territory-label" for="territory-jump">Explore a territory</label><select id="territory-jump" aria-label="Explore a territory"><option value="">Choose a territory…</option></select><span id="lens-note">One landscape. Many perspectives.</span></div><section id="map" tabindex="0" aria-label="Care atlas. Drag to pan, scroll to zoom. Arrow keys pan, plus and minus zoom, Home resets."><svg id="atlas" aria-label="Research territories"><g id="world"></g></svg><p id="loading" role="status">Loading research landscape…</p></section><aside class="map-caption">Territories are editorial groupings.<br>Position and area do not indicate market size.</aside><div class="controls"><button id="out" aria-label="Zoom out">−</button><output id="scale">100%</output><button id="in" aria-label="Zoom in">+</button><button id="reset">Overview</button><button id="story">A care workday ↗</button></div><p class="hint">Drag to explore · Scroll or pinch to look closer · Select a territory</p><aside id="detail" hidden aria-label="Research detail"><button id="close" aria-label="Close detail">✕</button><div id="detail-body"></div></aside><dialog id="story-dialog"><button id="story-close" aria-label="Close story">✕</button><p class="eyebrow">FIELD GUIDE / 01</p><h2>Before the morning begins.</h2><p class="notice">Illustrative care-home workflow, not an observed shift or a clinical protocol. Times and people are fictional. Product examples come from the research index, dated 5 October 2026.</p><div id="story-body"></div></dialog></main><script src="js/atlas.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A research atlas of ageing and care. Explore human needs, existing responses and questions worth investigating.">
+  <meta name="theme-color" content="#f6f8f5">
+  <title>Who Cares · Research atlas</title>
+  <link rel="stylesheet" href="css/atlas.css">
+</head>
+<body>
+  <a class="skip" href="#map">Skip to map</a>
+  <header class="masthead">
+    <button class="brand" id="home" aria-label="Who Cares, return to atlas overview">Who Cares<span>RESEARCH ATLAS</span></button>
+    <div class="edition">Ageing & care<span>Germany / EU focus</span></div>
+    <nav aria-label="Research tools"><button id="search-open"><span aria-hidden="true">⌕</span> Search research</button><button id="about-open">About the atlas</button></nav>
+  </header>
+  <section class="orientation" hidden aria-label="Atlas orientation">
+    <div><h1>The landscape of ageing & care</h1><p id="perspective-note">Start with a territory. Follow a problem. Find a better question.</p></div>
+    <button id="persona-change" class="persona-change" aria-label="Choose whose world to explore"></button>
+  </section>
+  <section id="persona-picker" aria-labelledby="picker-heading">
+    <div class="picker-intro"><p class="kicker">DIFFERENT LIVES. CONNECTED WORLDS.</p><h2 id="picker-heading">Whose world do you want to understand?</h2><p>Start with a person. Explore the problems, people and systems around them.</p></div>
+    <div id="persona-cards"></div>
+    <p class="picker-note">Roles can overlap. Organising care and giving hands-on care are distinct experiences. Change perspective at any time.</p>
+  </section>
+  <main id="workspace" hidden>
+    <div class="map-column">
+      <section id="map" tabindex="0" aria-label="Interactive care atlas" aria-describedby="map-help">
+        <svg id="landscape" aria-hidden="true"><defs><filter id="soft"><feGaussianBlur stdDeviation=".6"/></filter></defs><g id="territories"></g><g id="connections"></g></svg>
+        <div id="labels"></div>
+        <div id="loading" role="status">Loading the research atlas…</div>
+        <div id="map-empty" hidden>No labels in view.<button id="recover">Return to overview</button></div>
+      </section>
+      <div class="map-bottom">
+        <button class="story-entry" id="story-open"><span class="story-time">05:45</span><span>A morning in care<small>Follow the work, then the evidence</small></span><span aria-hidden="true">↗</span></button>
+        <div class="map-controls" aria-label="Map controls"><button id="zoom-out" aria-label="Zoom out">−</button><output id="zoom-value">100%</output><button id="zoom-in" aria-label="Zoom in">+</button><button id="overview">Overview</button></div>
+      </div>
+    </div>
+    <aside id="inspector" hidden aria-label="Research reading panel">
+      <div class="panel-nav"><button id="panel-back" aria-label="Back within research">← Back</button><button id="panel-close" aria-label="Close research panel">✕</button></div>
+      <div id="panel-content" tabindex="-1"></div>
+    </aside>
+  </main>
+  <footer class="atlas-footer" hidden><div class="depth" aria-label="Visible map detail"><span data-level="0" class="current">Territories</span><i>›</i><span data-level="1">Problems</span><i>›</i><span data-level="2">Responses</span></div><p id="map-help">Drag to pan · Scroll to zoom · Text stays the same size</p><button id="list-open">Browse as a list</button></footer>
+  <p class="sr-only" id="announcement" role="status" aria-live="polite"></p>
+  <script type="module" src="js/atlas.js"></script>
+</body>
+</html>

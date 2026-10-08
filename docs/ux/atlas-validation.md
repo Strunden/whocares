@@ -1,35 +1,41 @@
-# Atlas v2 validation, 8 October 2026
+# Atlas rebuild validation — 8 October 2026
 
 ## Preview
 
-From the repository root run `python3 -m http.server 8765 --directory site`, then open http://localhost:8765. No dependency installation or build is required. `browse.html` preserves the previous research index. Legacy home hash links to entries and funders redirect there.
+Run `python3 -m http.server 8765 --directory site` from the repository root, then open http://localhost:8765/. No installation or build is needed. Start at the illustrated picker or use `/#/relative` for Angehörige. `/#/worker/story/0` opens the care-workday story. Existing `browse.html` remains available, but atlas navigation no longer sends users into that different interface.
 
-## Hard critique rubric
+## Critique against the goal
 
-Assess the product against these gates, separately from implementation correctness. These are agent review findings, not a claimed independent participant study.
+This is a documented implementation critique and real-browser verification, not an independent participant study. The earlier version failed the mental-model and zoom gates. The rebuild addresses those failures; discovery comprehension and exact reference fidelity remain unvalidated.
 
-| Gate | Failure condition | Findings and iteration |
+| Gate | Hard failure condition | Revision / finding |
 | --- | --- | --- |
-| Venture-builder discovery | Visitor cannot get from a need to incumbent responses and a next research question | Every territory offers a fieldwork question, linked problem decisions and actual companies. Killed ideas remain visible. Participant comprehension still needs validation. |
-| Mental model | Territory size or lens implies a ranked market or separate dataset | Area/position disclaimer and lens interpretation notice; lenses dim but retain all territories. Dashed territory connections are editorial context, not quantified causal edges. |
-| Evidence trust | Fiction is attributed as observation or research decision as proof of need resolution | Explicit fictional workflow notice; source-record links; incomplete company research flags. Corrected a story link that incorrectly connected documentation to benefits administration. No invented quotes or economics. |
-| Usability | Pan triggers detail; wheel selects territory; keyboard or phone has no usable route | Real wheel and drag tests; keyboard Enter detail; direct territory navigation added after phone overview labels failed readability. Escape closes detail and restores focus. Native story dialog manages modal focus. |
-| Aesthetic fidelity | Box-and-line graph dominates, chrome competes with landscape, labels collide | Soft translucent SVG territories and restrained editorial typography. Fixed desktop heading wrap and phone labels. Exact reference-image fidelity cannot be certified because cached conversation exposed no image. |
+| Venture-builder discovery | Cannot follow a need to existing responses, payer and a useful next question | Integrated records expose jobs, payer information where present, research decisions, sources and next questions. Related companies use explicit links/shared theme tags. All 403 published records are searchable; category-only records are included in territory collections. Missing payer/evidence remains visible. Participant discovery success still needs testing. |
+| Mental model | ICP merely dims a generic map; unrelated navigation destroys context | Five illustrated entrances open distinct six-territory maps. Angehörige coordination is separate from hands-on family care. Problem/company reading stays in the atlas; closing restores camera. |
+| Empathy and evidence trust | Fiction poses as testimony; one day defines a group; a product is treated as proof of a solved problem | Five explicitly fictional exemplary stories with linked research, interpretation labels and source limitations. Stories preserve choice and relationships. No invented quotes or outcomes. Existing research has not been independently refreshed. |
+| Zoom and usability | Text balloons, overlaps, wheel selects content, dragging opens a record | HTML labels stay fixed while SVG territories and projected positions move. LOD thresholds are 155% and 270%; camera scale remains continuous. Collision handling, native buttons, keyboard map controls, search/list alternative, reduced-motion support. |
+| Aesthetic fidelity | Dominant boxes/lines, competing headline, incoherent detail view | Illustrated entrances, soft organic territories, editorial type, small orientation header, integrated reading panel. Screenshots inspected at desktop and phone widths. Exact loneliness-story reference was unavailable in the cached conversation; this remains an unverified reference requirement. |
 
-## Real-browser checks
+## Browser evidence
 
-Codex in-app browser, desktop 1280 × 720 and phone 393 × 852:
+Tested in the real Codex in-app browser at 1280 × 800, intermediate widths and 393 × 852:
 
-- Research landscape loaded from bundled index without build or external map dependencies.
-- Wheel produced continuous 111% zoom, not preset views. Transform changed from `translate(154.2105 35) scale(0.6842105)` to `translate(101.0883 1.3559) scale(0.7622432)` around cursor (620, 420), whose map-local y is 330. Cursor world coordinate was preserved.
-- Drag by (80, 30) changed translation by (80, 30), retained scale, and did not open a panel.
-- Zoom-in controls revealed problem labels at 144%; Overview restored 100%.
-- Keyboard Enter opened The work of care. Close restored territory focus.
-- Phone Care worker lens and territory selector opened actual problem/company records. Lifting and transfers link loaded the existing entry with job and payer details.
-- Five-scene workday dialog opened and closed on phone; illustrative notice and linked research visible.
-- Atlas console: no warnings or errors. Existing index emitted its expected static fallback warning because no live API was served locally, then loaded successfully.
-- Syntax and whitespace checks passed.
+- All five entrances, distinct territory structures and linked stories load from the bundled published index.
+- Six overview territory labels visible on phone; no horizontal page overflow.
+- Typography stayed 22px at desktop overview, 195% and 305% zoom. Problems appeared at the first LOD boundary; company responses at the second. Problem and company labels remained 13px and 12px.
+- Native wheel test changed scale continuously from 0.4629441624 to 0.5270707287. Translation changed from (271.9594,25) to (225.1343,-6.3053), preserving cursor location (610,251) in map coordinates. No reading panel opened.
+- Native drag by (80,30) changed translation by exactly (80,30), with unchanged scale and no selection.
+- Worker territory → lifting problem → Arjo → Back stayed on atlas routes. Source links were available. Closing restored the exact saved camera.
+- Keyboard Enter opened a territory; Escape and close controls provide return paths.
+- Scrolling the provider story moved map focus between relevant problems. Angehörige story links opened the existing hospital-discharge record. Returning preserved scrollTop 1448 exactly and kept its evidence disclosure expanded.
+- Search listed 403 records, Show more increased the visible limit from 60 to 120, and an unmatched query displayed a clear empty state.
+- No errors or warnings from the rebuilt atlas were captured. The tab retained one older warning from the previous `app.js` static-data fallback, dated before the rewrite.
+- Phone layout uses two columns of territories and an integrated bottom reading panel. Physical touch/pinch and screen-reader use were not tested.
 
-## Limits / follow-up validation
+## Automated checks
 
-Touch pinch code supports two pointer IDs but was not tested on physical touch hardware. Browser zoom, drag, layout and keyboard checks are not a substitute for screen-reader testing or a venture-builder comprehension study. Existing research is a dated snapshot; no source claims were refreshed in this UI task. Some records lack public primary evidence and remain explicitly incomplete. This implementation does not rank opportunities.
+`node --test tests/atlas-camera.test.mjs`: five passing tests cover arbitrary cursor anchors, bounds fitting, LOD boundaries, distinct map definitions with valid published themes, and valid story links/focus. JavaScript syntax and `git diff --check` pass.
+
+## Remaining limits
+
+The atlas is a research snapshot, not an exhaustive census of care needs or companies. Broad category membership is editorial and must not be mistaken for a verified product fit. Some records lack primary source evidence. Loading succeeds locally; the failure-state message exists but a network-failure browser scenario was not exercised. Browser checks do not establish venture-builder comprehension, accessibility conformance, or independent research validity. Exact reference scrollytelling fidelity and a participant study remain open.
