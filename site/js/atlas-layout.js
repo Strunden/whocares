@@ -58,32 +58,29 @@ export function buildHierarchy(entries,definitions,{portrait=false,extraRoots=[]
  roots.forEach(n=>visit(n,0,n.id));
  return {roots,all,bounds,maxDepth};
 }
-// Explicit reading levels: panning never changes the visible information layer.
-export function readingLevel(tree,groupId,camera,width,height,options={}){
- const group=groupId?tree.all.get(groupId):null;
+// A scene contains exactly the chosen level's siblings. Ancestors are navigation,
+// not a second set of differently scaled reading surfaces.
+export function levelScene(tree,groupId,options={}){
+ const group=tree.all.get(groupId);
  const page=group?.paged?collectionPage(group,options):null;
  const nodes=page?page.nodes:group?(group.children?.length?group.children:[group]):tree.roots;
+ return {group,page,items:nodes.map((node,index)=>({node,anchor:page?group.children[index].box:node.box}))};
+}
+export const UNIT={width:350,height:300};
+export function unitSize(width){return {w:Math.min(UNIT.width,width-32),h:UNIT.height};}
+export function unitScale(box,width){const size=unitSize(width);return Math.max(size.w/box.w,size.h/box.h);}
+export function projectUnit(anchor,camera,width){
+ const {w,h}=unitSize(width);
+ return {x:(anchor.x+anchor.w/2)*camera.s+camera.x-w/2,y:(anchor.y+anchor.h/2)*camera.s+camera.y-h/2,w,h};
+}
+export function levelScale(tree,groupId,width){return unitScale(levelScene(tree,groupId).items[0]?.anchor||tree.all.get(groupId).box,width);}
+export function frameLevel(tree,groupId,width){
+ const anchor=levelScene(tree,groupId).items[0]?.anchor||tree.all.get(groupId).box,{w,h}=unitSize(width),s=levelScale(tree,groupId,width)*1.2;
+ return {s,x:28+w/2-(anchor.x+anchor.w/2)*s,y:(groupId&&!tree.all.get(groupId)?.paged?110:28)+h/2-(anchor.y+anchor.h/2)*s};
+}
+export function readingLevel(tree,groupId,camera,width,height,options={}){
  const viewport={x:-80,y:-80,w:width+160,h:height+160};
- const project=(node,mode,index)=>{
-  const b=page&&mode==='summary'?group.children[index].box:node.box;
-  const worldW=b.w*camera.s,worldH=b.h*camera.s;
-  // Fixed reading surfaces travel by their centre, so magnification does not
-  // push the text away from the point the user is exploring.
-  const w=mode==='context'?worldW:Math.min(b.w*(options.surfaceScale||camera.s),420,width-32),h=mode==='context'?worldH:Math.min(b.h*(options.surfaceScale||camera.s),360);
-  return {node,box:{x:b.x*camera.s+camera.x+(worldW-w)/2,y:b.y*camera.s+camera.y+(worldH-h)/2,w,h},mode};
- };
- const result=nodes.map((node,i)=>project(node,group?'summary':'compact',i)).filter(v=>intersects(v.box,viewport));
- // Neighbouring regions remain part of the same world at every reading level.
- // Their context is navigable but never silently opens while panning.
- if(group){
-  const path=ancestry(tree,groupId);
-  for(const ancestor of path){
-   const parent=tree.all.get(ancestor.parent);
-   const siblings=parent?.paged?parent.children.filter(n=>n.page===ancestor.page):parent?.children||tree.roots;
-   for(const node of siblings)if(node.id!==ancestor.id){const v=project(node,'context');if(intersects(v.box,viewport))result.push(v);}
-  }
- }
- return result.slice(0,90);
+ return levelScene(tree,groupId,options).items.map(({node,anchor})=>({node,box:projectUnit(anchor,camera,width),mode:groupId?'summary':'compact'})).filter(item=>intersects(item.box,viewport)).slice(0,90);
 }
 export function panWithinWorld(camera,dx,dy,bounds,width,height){
  // Keep some of the world reachable, but do not pin a small group to the viewport.
@@ -91,3 +88,19 @@ export function panWithinWorld(camera,dx,dy,bounds,width,height){
  return {...camera,x:clamp(camera.x+dx,width*.1-(bounds.x+bounds.width)*camera.s,width*.9-bounds.x*camera.s),y:clamp(camera.y+dy,height*.1-(bounds.y+bounds.height)*camera.s,height*.9-bounds.y*camera.s)};
 }
 export function ancestry(tree,id){const path=[];while(id){const n=tree.all.get(id);if(!n)break;path.unshift(n);id=n.parent;}return path;}
+
+export function perspectiveHierarchy(definitions,portrait=false){
+ const colors=['#b9d6bc','#b4d2d7','#e2bfb5','#d4c1da','#d7d6ae'];
+ const tree=buildHierarchy([],Object.entries(definitions).map(([id,d],i)=>({id,title:d.name,description:d.intro,themes:[],color:colors[i%colors.length]})),{portrait});
+ for(const node of tree.roots){node.personaKey=node.id;node.kind='perspective';}
+ return tree;
+}
+// Each lens occupies its person's region in the same outer coordinate system.
+export function embedHierarchy(tree,parent,worldBounds){
+ const b=parent.box,padding=.07,target={x:b.x+b.w*padding,y:b.y+b.h*padding,w:b.w*(1-padding*2),h:b.h*(1-padding*2)};
+ const scale=Math.min(target.w/tree.bounds.width,target.h/tree.bounds.height);
+ const x=target.x+(target.w-tree.bounds.width*scale)/2,y=target.y+(target.h-tree.bounds.height*scale)/2;
+ for(const node of tree.all.values()){const a=node.box;node.box={x:x+a.x*scale,y:y+a.y*scale,w:a.w*scale,h:a.h*scale};}
+ tree.viewBounds={x,y,width:tree.bounds.width*scale,height:tree.bounds.height*scale};tree.bounds=worldBounds;
+ return tree;
+}

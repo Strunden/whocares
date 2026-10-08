@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {performance} from 'node:perf_hooks';
-import {buildHierarchy,readingLevel,ancestry,panWithinWorld} from '../site/js/atlas-layout.js';
+import {buildHierarchy,readingLevel,ancestry,panWithinWorld,unitScale,levelScale,frameLevel,perspectiveHierarchy,embedHierarchy} from '../site/js/atlas-layout.js';
 import {personaMaps} from '../site/js/atlas-content.js';
 const data=JSON.parse(await readFile(new URL('../site/data/index.json',import.meta.url)));
 const entries=data.entries.filter(e=>e.published!==false);
@@ -28,7 +28,7 @@ test('the compact index covers published data and every on-demand detail is loss
 });
 
 test('a group that fits the viewport still pans freely in both directions',()=>{const start={s:1,x:100,y:50},bounds={x:0,y:0,width:500,height:400};const next=panWithinWorld(start,80,60,bounds,1280,720);assert.deepEqual(next,{s:1,x:180,y:110});assert.deepEqual(panWithinWorld(next,-80,-60,bounds,1280,720),start);});
-test('entering a group retains neighbours in the same world coordinates',()=>{const t=buildHierarchy(entries,personaMaps.provider.regions);const before=t.all.get('delivery').box;const view=readingLevel(t,'delivery',{s:.25,x:0,y:0},1280,720);assert.ok(view.some(v=>v.mode==='context'&&v.node.id==='staff'));assert.ok(view.some(v=>v.mode==='summary'&&v.node.parent==='delivery'));assert.equal(t.all.get('delivery').box,before);});
+test('a level contains its own siblings, without differently scaled ancestor surfaces',()=>{const t=buildHierarchy(entries,personaMaps.provider.regions);const view=readingLevel(t,'delivery',{s:.25,x:0,y:0},1280,720);assert.ok(view.length);assert.ok(view.every(v=>v.node.parent==='delivery'&&v.mode==='summary'));});
 
 test('zoomed reading surfaces remain centred, phone-sized and culled by visible bounds',()=>{
  const node={id:'record',box:{x:0,y:0,w:350,h:300}};
@@ -36,7 +36,7 @@ test('zoomed reading surfaces remain centred, phone-sized and culled by visible 
  const tree={roots:[group],all:new Map([['group',group],['record',node]])};
  const camera={s:2.4,x:196.5-175*2.4,y:280-150*2.4};
  const [view]=readingLevel(tree,'group',camera,393,578);
- assert.equal(view.box.w,361);assert.equal(view.box.h,360);
+ assert.equal(view.box.w,350);assert.equal(view.box.h,300);
  assert.ok(Math.abs(view.box.x+view.box.w/2-196.5)<1e-8);
  assert.ok(Math.abs(view.box.y+view.box.h/2-280)<1e-8);
  // Large world slot still intersects the viewport, but the real card does not.
@@ -53,4 +53,31 @@ test('local magnification never resizes a reading card or changes its representa
   assert.equal(view.box.w,350);assert.equal(view.box.h,300);
   assert.equal(view.mode,'summary');assert.equal(view.node.id,'record');
  }
+});
+
+test('every perspective and territory uses a readable common surface in narrow viewports',()=>{
+ for(const width of [393,743,1280]){
+  const outer=perspectiveHierarchy(personaMaps,width<701);
+  for(const key of Object.keys(personaMaps)){
+   const lens=embedHierarchy(buildHierarchy(entries,personaMaps[key].regions,{portrait:width<701}),outer.all.get(key),outer.bounds);
+   checkCoverage(lens,entries);
+   for(const t of [outer,lens]){
+    const node=t.roots[0],scale=unitScale(node.box,width);
+    const cam={s:scale*1.2,x:width/2-(node.box.x+node.box.w/2)*scale*1.2,y:180-(node.box.y+node.box.h/2)*scale*1.2};
+    const view=readingLevel(t,null,cam,width,500,{surfaceScale:scale}).find(v=>v.node.id===node.id);
+    assert.ok(Math.abs(view.box.w-Math.min(350,width-32))<1e-8);assert.ok(Math.abs(view.box.h-300)<1e-8);
+   }
+   const p=outer.all.get(key).box;
+   for(const root of lens.roots)assert.ok(root.box.x>=p.x&&root.box.y>=p.y&&root.box.x+root.box.w<=p.x+p.w&&root.box.y+root.box.h<=p.y+p.h);
+  }
+ }
+});
+
+test('empty research collections have a safe camera without inventing records',()=>{
+ const group={id:'empty',box:{x:50,y:70,w:350,h:300},paged:true,children:[]};
+ const tree={roots:[group],all:new Map([['empty',group]])};
+ const camera=frameLevel(tree,'empty',393);
+ assert.ok(Object.values(camera).every(Number.isFinite));
+ assert.equal(levelScale(tree,'empty',393),1);
+ assert.deepEqual(readingLevel(tree,'empty',camera,393,600),[]);
 });

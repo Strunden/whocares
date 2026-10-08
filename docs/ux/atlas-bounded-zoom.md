@@ -18,8 +18,8 @@ We adopt the FigJam / trackpad convention. Removed the unreliable per-event hori
 - Plain scroll, drag and arrow keys pan. Shift-scroll pans horizontally. Pinch or Ctrl/⌘ + scroll zooms. Plus/minus zoom at the viewport centre.
 - Wheel mode and zoom anchor lock at gesture start until a 180ms idle gap. Events requesting another mode during that transaction are ignored, including plain-scroll tails after a pinch. Mouse dragging suppresses wheel input.
 - Touch waits through small/ambiguous movement, then locks to translation or finger separation. A stationary-finger pinch resolves after a 60ms ambiguity window. Zoom keeps the initial centroid anchored without adding translation. Pan never changes scale. The mode persists until all fingers lift; lifting/replacing one finger cannot unlock it, and adding a second finger to an established pan preserves pan.
-- Local scale spans the readable entry scale to 2.4×, or 3× at overview. Reaching either boundary clamps the camera; it never changes level, record type, content or disclosure. Minus disables at the minimum. Click groups to enter; breadcrumbs/Backspace return; Overview resets to fit.
-- Card dimensions and text wrapping are fixed to the reading level's reference scale, independent of local magnification. Culling, keyboard inertness and counts use actual displayed bounds. Zoom moves the world and card centres. Pan bounds are applied only during pan, so they cannot introduce extra drift into cursor-anchored zoom.
+- Local scale spans the readable entry scale to 2.4×, or 3× at overview. Reaching either boundary clamps the camera; it never changes level, record type, content or disclosure. Minus disables at the minimum. Click groups to enter; breadcrumbs/Backspace return; Overview resets to readable entry framing.
+- Unit dimensions and text wrapping are fixed, independent of local magnification. Culling, keyboard inertness and counts use actual displayed bounds. Zoom moves the world and card centres. Pan bounds are applied only during pan, so they cannot introduce extra drift into cursor-anchored zoom.
 - Parent camera memory restores position and magnification. Reader closing restores the map. Level travel ignores in-flight wheel/pointer input; reduced motion skips animation.
 
 ## Critique and verification
@@ -39,3 +39,5 @@ Magnification supports spatial inspection without altering evidence or graph mem
 ## Try it
 
 Serve site locally; open /#/relative and enter Finding care. Scroll diagonally: only the position should move. Pinch or hold Ctrl/⌘ while scrolling: only magnification should change around its fixed anchor. Use + and − to check the same bounds. Text, wrapping and card contents must stay identical. Clicking Care admin changes the data level; the Finding care breadcrumb restores the previous view. Repeated zoom-out at the minimum must never navigate upward.
+
+The later scene refactor and current verification supersede the historical surface measurements above; see [the current system contract](atlas-system.md).

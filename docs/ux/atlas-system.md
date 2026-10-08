@@ -1,22 +1,40 @@
-# Data-driven spatial index
+# Spatial atlas implementation
 
-## Interaction contract
+## Current interaction contract — 2026-10-08
 
-The user's latest direction combines explicit reading levels and Prezi-style travel with bounded local zoom. Scroll, drag or use arrow keys to pan. Pinch or Ctrl/⌘ + scroll zooms; Shift-scroll pans horizontally. Each gesture locks to pan or zoom. Plus/minus magnify locally and stop at the limits; zoom never changes the data level. Text, card dimensions and revealed content remain fixed. Click a group to enter; breadcrumbs/Backspace go up and restore saved cameras. Overview resets to fit. The dot grid and territories share the camera. Full evidence opens in the integrated reader and closing it restores the view. Reduced-motion preferences skip level travel. See [interaction research and verification](atlas-bounded-zoom.md).
+The user refined the original semantic-zoom brief: explicit reading levels, Prezi-style spatial travel, and bounded local magnification. Local zoom must never resize type, rewrap text, reveal different information or navigate to another level. This refinement governs the implementation; the database principles were checked at version 1, hash `1698c1ce402af9694166b15938d24fb9fb05c55e85a330b4e589b7dca5b2a8c2`.
 
-## Data, hierarchy and rendering
+Scroll, drag and arrow keys pan. Pinch or Ctrl/Command-scroll zooms around a fixed gesture anchor. Shift-scroll pans horizontally. Gestures lock to pan or zoom. Plus/minus change local magnification. Click a group to enter; breadcrumbs and Backspace return. The overview control resets to the initial readable framing, not a fit of every item onto the screen. Levels open at 120% of their minimum spacing, with room to zoom out to 100%. The lower bound prevents readable units overlapping.
 
-- Canonical research remains `site/data/index.json`. `npm run build:atlas` extracts published metadata into a compact discovery index and lossless detail chunks of at most 64 records. Hash-named chunks load on demand when a full record is opened. The Pages build and export command run this generator. No main-branch deployment was performed in this task.
-- Persona definitions describe editorial territories and theme membership. They do not supply per-record coordinates or a finished page layout.
-- The hierarchy indexes actual themes first. Category-only records appear in clearly labelled broader collections; they do not become asserted product-problem links. Records outside a perspective's territory coverage remain reachable in The wider research.
-- Collections recursively divide into at most six alphabetical groups, then records. Alphabetical grouping is a neutral retrieval fallback, not inferred similarity or opportunity ranking. Richer research relationships can replace this fallback when available.
-- Layout recursively allocates bounds from child counts. No record needs a manually placed coordinate or an illustration. Current-level viewport intersection determines which DOM tiles mount. The view has a defensive cap of 90 mounted tiles; tested levels use far fewer.
-- The five original illustrations live in a semantic asset registry with fallback selection. Adding records requires rebuilding data, not generating art or hand-building pages.
+The outermost perspective selection is itself a pannable map. The five perspectives share graph identities; Angehörige (organising care) remains distinct from hands-on family caregiving. The breadcrumb begins with one illustrated “Exploring as” identity. Its name returns to the perspective overview; the adjacent arrow returns to the perspective map. Research ancestors follow this control. There is no additional People breadcrumb.
 
-## Known boundaries
+## One level, one scene, one unit
 
-This is a scalable static-snapshot architecture, not an infinitely sized remote database browser. Compact metadata and hierarchy are still resident in browser memory. Full text/source payloads are fetched in chunks. The 100,000-record benchmark uses short synthetic records and establishes navigation/rendering behaviour, not the network or memory cost of 100,000 full real-world dossiers. Truly larger collections need a server-side metadata/search index or metadata shards. Asset derivatives and a larger scene vocabulary remain useful follow-up work.
+- `atlas-layout.js` creates hierarchy and stable world anchors from real records. `levelScene` selects only the chosen level's siblings, or one collection page. `projectUnit` owns all screen geometry. `frameLevel` and `levelScale` own initial framing and local bounds.
+- Every visible unit has one fixed readable footprint (350×300px, constrained by viewport width). Its background wash, illustration, content and action area share that footprint. Zoom changes projected centres and spacing. There is no second world-scaled frame or independently scaled context surface.
+- `atlas-view.js` renders keyed units with person, territory and record content variants. Organic surfaces belong inside the unit. Shape variation derives from stable IDs, never DOM order. Company records use open editorial groups, logos, offering/evidence status and source actions.
+- `atlas.js` coordinates application state. Every level change passes through `navigateTo`, which remembers the settled camera, resolves the destination, frames it, transitions and updates the route. Interrupted travel never replaces a settled camera. Outgoing and incoming levels fade around an explicit midpoint; reduced motion commits directly. Pan/zoom never chooses a scene.
+- `atlas-map.css` is the sole map styling contract. `atlas.css` contains the shell, reader and stories. Obsolete chooser, branch, landscape and successive card overrides were removed.
+- Current-level siblings remain pannable. Ancestors are reached through breadcrumbs or the minimap; they are not rendered again as a second class of zooming surfaces. The dot pattern shares the camera origin.
 
-## Spatial continuity correction
+Positions use deterministic layout slots, not an inferred similarity graph. Organic boundaries group information visually; shape, area, colour and position do not encode market size, evidence strength or opportunity value. Actual graph relationships remain explicit in the evidence reader.
 
-Reading levels must not become separate card-grid pages. The territory heading and guiding question are attached to world coordinates, not a fixed page header. Pan limits use the whole world, not the active group: even a group smaller than the viewport must move freely. Parent camera positions are remembered. Neighbouring regions remain navigable context without opening automatically.
+## Data and scale
+
+The canonical published snapshot remains `site/data/index.json`. The compact atlas metadata and lossless hashed detail chunks are generated by `npm run build:atlas`. Full evidence loads on demand. Persona definitions describe editorial territories and theme membership, without per-record coordinates.
+
+Collections show actual records in pages of six, with local text/type filtering. There are no alphabetical range folders. Legacy themes and broader categories are visibly labelled retrieval scaffolds, not validated problem spaces or asserted product fit. Unmapped records remain reachable through The wider research. The first graph slice retains its documented limited coverage; no historical research was invented or silently promoted.
+
+The scene mounts only visible units, with a defensive 90-node cap. A 100,000-record synthetic fixture retains coverage and renders at most six units in tested scenes. Metadata still resides in browser memory; this is not proof of remote-database or full-dossier performance at that scale. Larger corpora would need server-side metadata/search or shards. Independent illustrations are chosen from a registry; adding a record does not require generating a complete map image.
+
+## Independent review and verification
+
+Separate architecture and critique reviews used frozen criteria: one surface, stable zoom content/shape, clear breadcrumbs, responsive action visibility, settled camera restoration, evidence integrity, bounded retrieval and consolidated code.
+
+Review found and corrected: viewport-culling-dependent shape flips; stale camera memory after breakpoint changes; loss of story selection; empty-collection framing; and saving an interpolated camera when navigation is interrupted. Responsive inspection also moved dense collection headings into the breadcrumb and removed map counters that covered source actions.
+
+Automated: 30 tests pass, including actual gesture-handler wiring, cursor anchoring, record coverage, graph identity/provenance, empty collections and 100,000-record synthetic scaling.
+
+Real browser: 1280px overview/territory navigation; 393px phone viewport; 393px and 743px side-by-side framed viewports. Zoom 120→144 retained the same 350×300 surface, 23px title, complete text and node identity, with zero outer frames. Native scroll and drag changed position without changing scale or level. Rapid descent interrupted by the overview breadcrumb restored the exact settled camera. The phone company view loaded Arjo's logo and kept Company & sources inside the map; opening/closing the evidence reader preserved the collection. The provider operations layer could zoom outward from its entry scale. Direct app console checks showed no errors. The temporary iframe review harness emitted two unassigned MutationObserver errors; no corresponding observer exists in the atlas source, and their origin was not established.
+
+Physical trackpad/touch feel and screen-reader behavior are not validated by these browser and handler tests. Independent critique is not a venture-builder usability study. Research taxonomy quality and coverage remain separate limitations, documented in `atlas-real-data-critique.md`.

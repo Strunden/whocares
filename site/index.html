@@ -7,8 +7,8 @@
   <meta name="theme-color" content="#fcfdff">
   <link rel="icon" href="data:,">
   <title>Who Cares · Research atlas</title>
-  <link rel="stylesheet" href="css/atlas.css">
-  <link rel="stylesheet" href="css/atlas-records.css">
+  <link rel="stylesheet" href="css/atlas.css?v=scene-refactor-3">
+  <link rel="stylesheet" href="css/atlas-map.css?v=scene-refactor-3">
 </head>
 <body>
   <a class="skip" href="#map">Skip to map</a>
@@ -20,16 +20,10 @@
   <section class="orientation" hidden aria-label="Atlas orientation">
     <div><h1>The landscape of ageing & care</h1><p id="perspective-note">Start with a territory. Follow a problem. Find a better question.</p></div>
   </section>
-  <section id="persona-picker" aria-labelledby="picker-heading">
-    <div class="picker-intro"><p class="kicker">DIFFERENT LIVES. CONNECTED WORLDS.</p><h2 id="picker-heading">Whose world do you want to understand?</h2><p>Start with a person. Explore the problems, people and systems around them.</p></div>
-    <div id="persona-cards"></div>
-    <p class="picker-note">Roles can overlap. Organising care and giving hands-on care are distinct experiences. Change perspective at any time.</p>
-  </section>
   <main id="workspace" hidden>
     <div class="map-column">
-      <nav id="map-breadcrumbs" aria-label="Map location"><button id="persona-change" class="persona-change" aria-label="Choose whose world to explore"></button><span aria-hidden="true">/</span><div id="map-breadcrumb-trail"></div></nav><div id="collection-tools" hidden><label><span class="sr-only">Search this collection</span><input id="collection-search" type="search" placeholder="Search this collection…"></label><select id="collection-type" aria-label="Record type"><option value="all">All records</option><option value="company">Companies</option><option value="research">Research</option></select><span id="collection-count" role="status"></span><button id="collection-prev" aria-label="Previous records">←</button><button id="collection-next" aria-label="Next records">→</button></div><section id="map" tabindex="0" aria-label="Interactive care atlas" aria-describedby="map-help">
-        <svg id="landscape" aria-hidden="true"><defs><filter id="soft"><feGaussianBlur stdDeviation=".6"/></filter></defs><g id="territories"></g><g id="connections"></g></svg>
-        <section id="level-context" hidden aria-label="Current research group"></section><div id="labels"></div><button id="minimap-home" hidden aria-label="Return to the whole map"><svg id="map-minimap" aria-hidden="true"></svg><span>Whole map ↗</span></button><span id="zoom-hint" role="status" hidden></span><span id="level-range" aria-live="polite"></span><button id="map-up" hidden aria-label="Back to the enclosing group"></button>
+      <nav id="map-breadcrumbs" aria-label="Map location"><button id="people-home" aria-current="location">Exploring as…</button><button id="persona-change" class="persona-change" aria-label="Return to this perspective overview"></button><button id="perspective-switch" aria-label="Change perspective" title="Change perspective">⌄</button><div id="map-breadcrumb-trail"></div></nav><div id="collection-tools" hidden><label><span class="sr-only">Search this collection</span><input id="collection-search" type="search" placeholder="Search this collection…"></label><select id="collection-type" aria-label="Record type"><option value="all">All records</option><option value="company">Companies</option><option value="research">Research</option></select><span id="collection-count" role="status"></span><button id="collection-prev" aria-label="Previous records">←</button><button id="collection-next" aria-label="Next records">→</button></div><section id="map" tabindex="0" aria-label="Interactive care atlas" aria-describedby="map-help">
+        <section id="level-context" hidden aria-label="Current research group"></section><div id="labels"></div><button id="minimap-home" hidden aria-label="Return to the whole map"><svg id="map-minimap" aria-hidden="true"></svg><span>Whole map ↗</span></button><span id="zoom-hint" role="status" hidden></span><span id="level-range" aria-live="polite"></span>
         <div id="loading" role="status">Loading the research atlas…</div>
         <div id="map-empty" hidden>No labels in view.<button id="recover">Return to overview</button></div>
       </section>
@@ -43,9 +37,9 @@
       <div id="panel-content" tabindex="-1"></div>
     </aside>
   </main>
-  <footer class="atlas-footer" hidden><div class="depth" aria-label="Visible map detail"><span data-level="0" class="current">Territories</span><i>›</i><span data-level="1">Collections</span><i>›</i><span data-level="2">Records</span></div><p id="map-help">Scroll / drag to pan · Pinch or Ctrl/⌘ + scroll to zoom</p><button id="list-open">Browse as a list</button></footer>
+  <footer class="atlas-footer" hidden><div class="depth" aria-label="Visible map detail"><span data-level="-1">People</span><i>›</i><span data-level="0" class="current">Territories</span><i>›</i><span data-level="1">Collections</span><i>›</i><span data-level="2">Records</span></div><p id="map-help">Scroll / drag to pan · Pinch or Ctrl/⌘ + scroll to zoom</p><button id="list-open">Browse as a list</button></footer>
   <p class="sr-only" id="announcement" role="status" aria-live="polite"></p>
   <script src="js/config.js"></script>
-  <script type="module" src="js/atlas.js?v=exclusive-gestures-3"></script>
+  <script type="module" src="js/atlas.js?v=scene-refactor-3"></script>
 </body>
 </html>
