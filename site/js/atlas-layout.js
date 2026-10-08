@@ -74,7 +74,7 @@ export function unitScale(box,width,compact=false){const size=unitSize(width,com
 // together: type, illustration, boundary and hit targets. No zoom-driven reflow.
 export function projectUnit(anchor,camera,width,referenceScale=unitScale(anchor,width),compact=false,contentHeight=null){
  const size=unitSize(width,compact);if(contentHeight)size.h=contentHeight;const scale=camera.s/referenceScale,w=size.w*scale,h=size.h*scale;
- return {x:(anchor.x+anchor.w/2)*camera.s+camera.x-w/2,y:(anchor.y+anchor.h/2)*camera.s+camera.y-h/2,w,h,scale,layoutW:size.w,layoutH:size.h};
+ return {x:(anchor.x+anchor.w/2)*camera.s+camera.x-w/2,y:(anchor.y+anchor.h/2)*camera.s+camera.y-h/2,w,h,scale,layoutW:size.w,layoutH:size.h,layoutX:(anchor.x+anchor.w/2)*referenceScale-size.w/2,layoutY:(anchor.y+anchor.h/2)*referenceScale-size.h/2};
 }
 export const itemHeight=(node,compact=false)=>compact?220:!node.children?.length&&(node.entry?.type==='company'||node.entry?.kind==='solution')?210:!node.children?.length&&node.entry&&(node.title.length+(node.entry.summary||node.description||'').length)<220?240:UNIT.height;
 export function levelScale(tree,groupId,width){return unitScale(levelScene(tree,groupId).items[0]?.anchor||tree.all.get(groupId).box,width,!groupId);}
@@ -108,7 +108,7 @@ export function levelZoomLimits(tree,groupId,width,height,options={}){
 export function readingLevel(tree,groupId,camera,width,height,options={}){
  const viewport={x:-80,y:-80,w:width+160,h:height+160},reference=levelScale(tree,groupId,width);
  const items=levelScene(tree,groupId,options).items.map(({node,anchor})=>({node,box:projectUnit(anchor,camera,width,reference,!groupId,itemHeight(node,!groupId)),mode:groupId?'summary':'compact'}));
- // Keep ordinary small scenes mounted for native compositor scrolling. Large
+ // Keep ordinary small scenes mounted for camera transforms. Large
  // unpaged scenes still window by visibility so later nodes remain reachable.
  return (options.includeOffscreen&&items.length<=90?items:items.filter(item=>intersects(item.box,viewport))).slice(0,90);
 }

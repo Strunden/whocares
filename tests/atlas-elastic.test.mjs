@@ -65,14 +65,14 @@ test('heavy edge inertia cannot delay a two-pixel reversal, including diagonal a
 });
 test('interrupting returns never ratchets the boundary outward',()=>{
  const h=harness(1);h.ctx.panMap(10000,0);
- for(let i=0;i<20;i++){h.release();h.tick(20);h.ctx.panMap(20,0);assert.ok(h.ctx.camera.x<100+800*.12);}
+ for(let i=0;i<20;i++){h.release();h.tick(20);h.ctx.panMap(20,0);assert.ok(h.ctx.camera.x<100+800*.24);}
  h.release();h.tick(240);assert.equal(h.ctx.camera.x,100);
 });
 test('reversal crosses the valid range continuously and resists at the opposite edge',()=>{
  const bounds={minX:-100,maxX:100,minY:-100,maxY:100};
  const start={s:1,x:180,y:0};
  const inside=elasticPanBy(start,-200,0,bounds,800,600);assert.equal(inside.x,-20);
- const far=elasticPanBy(start,-400,0,bounds,800,600);assert.ok(far.x<-100&&far.x>-196);
+ const far=elasticPanBy(start,-400,0,bounds,800,600);assert.ok(far.x<-100&&far.x>-292);
  let split=start;for(let i=0;i<40;i++)split=elasticPanBy(split,-10,0,bounds,800,600);
  assert.ok(Math.abs(split.x-far.x)<1e-8);
 });
@@ -88,16 +88,3 @@ test('interrupting return from distant anchored framing never jumps inward on ou
  h.release();h.tick(240);assert.equal(h.ctx.camera.x,-400);
 });
 
-test('native pan takes over an interrupted zoom return without leaving invalid scale or a second animation',()=>{
- for(const [scale,factor] of [[1,.8],[4,1.2]]){
-  const h=harness(scale);h.ctx.zoomMap(factor,{x:270,y:180});h.release();h.tick(40);
-  assert.notEqual(h.ctx.camera.s,scale);h.ctx.beginNativePan();assert.equal(h.ctx.camera.s,scale);
-  const position={...h.ctx.camera};h.tick(300);assert.deepEqual({...h.ctx.camera},position);
- }
-});
-
-test('ordinary native pan never rewrites fractional camera positions while the scale is valid',()=>{
- const h=harness(2);h.ctx.camera={s:2,x:-120.4,y:-77.3};let renders=0;h.ctx.render=()=>renders++;
- for(let i=0;i<100;i++)h.ctx.beginNativePan();
- assert.equal(renders,0);assert.equal(h.ctx.camera.x,-120.4);assert.equal(h.ctx.camera.y,-77.3);
-});

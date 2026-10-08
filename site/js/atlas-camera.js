@@ -13,17 +13,23 @@ export function zoomAt(camera, factor, anchor, min, max) {
  return {s,x:anchor.x-(anchor.x-camera.x)*ratio,y:anchor.y-(anchor.y-camera.y)*ratio};
 }
 
-// Rubber-band zoom in log space: continuous at the bound and progressively
-// resistant, with no second hard stop. Invert the previous displayed scale so
-// event subdivision and reversal cannot compound the resistance.
-// Pattern: https://use-gesture.netlify.app/docs/options/#rubberband
+// Shared rubber-band response. Zoom uses logarithmic scale; pan uses pixels.
+// The optional immediate reversal keeps pan from accumulating hidden travel.
+export function elasticValue(value,delta,min,max,extent,{directReverse=false}={}){
+ const edge=clamp(value,min,max),over=value-edge;
+ const bend=d=>d/(1+Math.abs(d)/extent);
+ if(directReverse&&over*delta<0){
+  const next=value+delta;
+  if((over>0&&next>=min)||(over<0&&next<=max))return next;
+  const opposite=clamp(next,min,max);return opposite+bend(next-opposite);
+ }
+ if(directReverse&&Math.abs(over)>=extent)return value;
+ const raw=edge+(over?extent*over/Math.max(1e-12,extent-Math.abs(over)):0)+delta;
+ const bound=clamp(raw,min,max);return bound+bend(raw-bound);
+}
 export function elasticZoomScale(scale,factor,min,max) {
  factor=clamp(Number.isNaN(factor)?1:factor,1e-6,1e6);
- const extent=.24,lo=Math.log(min),hi=Math.log(max),current=Math.log(scale);
- const unbend=d=>extent*d/Math.max(1e-12,extent-Math.abs(d));
- const raw=(current<lo?lo+unbend(current-lo):current>hi?hi+unbend(current-hi):current)+Math.log(factor);
- const bend=d=>d/(1+Math.abs(d)/extent);
- return Math.exp(raw<lo?lo+bend(raw-lo):raw>hi?hi+bend(raw-hi):raw);
+ return Math.exp(elasticValue(Math.log(scale),Math.log(factor),Math.log(min),Math.log(max),.24));
 }
 
 // Keep the selected item's screen trajectory straight while scale interpolates.
@@ -33,25 +39,8 @@ export function interpolateCamera(start,target,anchor,t){
  return {s,x:a.x+(b.x-a.x)*t-anchor.x*s,y:a.y+(b.y-a.y)*t-anchor.y*s};
 }
 
-// Reversing at an edge must move immediately: never make the user repay hidden
-// overscroll accumulated by trackpad inertia. Outward travel stays elastic;
-// inward travel consumes visible displacement before crossing the bound.
+// Match zoom's progressive resistance in viewport-relative screen space.
 export function elasticPanBy(camera,dx,dy,bounds,width,height){
- const advance=(position,delta,min,max,extent)=>{
-  const edge=clamp(position,min,max),over=position-edge;
-  if(over&&over*delta<0){
-   const next=position+delta;
-   if((over>0&&next>=min)||(over<0&&next<=max))return next;
-   const opposite=clamp(next,min,max),d=next-opposite;
-   return opposite+d/(1+Math.abs(d)/extent);
-  }
-  // An interrupted return from anchored framing can already exceed this
-  // curve's reach. Keep that position for outward input; inward input above
-  // remains immediate, and release continues the return without a jump.
-  if(Math.abs(over)>=extent)return position;
-  const raw=edge+(over?extent*over/Math.max(.000001,extent-Math.abs(over)):0)+delta;
-  const bound=clamp(raw,min,max),d=raw-bound;
-  return bound+d/(1+Math.abs(d)/extent);
- };
- return {...camera,x:advance(camera.x,dx,bounds.minX,bounds.maxX,width*.12),y:advance(camera.y,dy,bounds.minY,bounds.maxY,height*.12)};
+ const options={directReverse:true};
+ return {...camera,x:elasticValue(camera.x,dx,bounds.minX,bounds.maxX,width*.24,options),y:elasticValue(camera.y,dy,bounds.minY,bounds.maxY,height*.24,options)};
 }

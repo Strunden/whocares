@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {project,fit,zoomAt,elasticZoomScale,interpolateCamera} from '../site/js/atlas-camera.js';
+import {project,fit,zoomAt,elasticZoomScale,elasticValue,elasticPanBy,interpolateCamera} from '../site/js/atlas-camera.js';
 import {personaMaps,personaStories} from '../site/js/atlas-content.js';
 import {collectionLabels,availableStory} from '../site/js/atlas-navigation.js';
 import {readFile} from 'node:fs/promises';
@@ -64,4 +64,12 @@ test('level transition moves its selected focal point along a straight screen pa
  const start={s:.3,x:-20,y:140},target={s:3.6,x:-1800,y:-950},anchor={x:600,y:370};
  const a=project(start,anchor),b=project(target,anchor);
  for(const t of [0,.1,.25,.5,.75,.9,1]){const current=interpolateCamera(start,target,anchor,t),p=project(current,anchor);almost(p.x,a.x+(b.x-a.x)*t);almost(p.y,a.y+(b.y-a.y)*t);}
+});
+
+test('pan and zoom share the same elastic response after normalising their units',()=>{
+ for(const delta of [.01,.08,.2,.5]){
+  const zoom=Math.log(elasticZoomScale(1,Math.exp(delta),.5,1));
+  const pan=elasticPanBy({s:1,x:100,y:0},delta*800,0,{minX:-100,maxX:100,minY:-100,maxY:100},800,600);
+  almost((pan.x-100)/800,zoom);
+ }
 });

@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {performance} from 'node:perf_hooks';
-import {buildHierarchy,readingLevel,ancestry,panWithinWorld,panWithinScene,scenePanBounds,levelScene,unitScale,levelScale,frameLevel,entryFrame,levelZoomLimits,perspectiveHierarchy,embedHierarchy} from '../site/js/atlas-layout.js';
+import {buildHierarchy,projectUnit,readingLevel,ancestry,panWithinWorld,panWithinScene,scenePanBounds,levelScene,unitScale,levelScale,frameLevel,entryFrame,levelZoomLimits,perspectiveHierarchy,embedHierarchy} from '../site/js/atlas-layout.js';
 import {personaMaps} from '../site/js/atlas-content.js';
 const data=JSON.parse(await readFile(new URL('../site/data/index.json',import.meta.url)));
 const entries=data.entries.filter(e=>e.published!==false);
@@ -111,5 +111,28 @@ test('every visible-page item can reach the exact viewport centre at every zoom 
     }
    }
   }
+ }
+});
+
+test('camera transforms can still reach later items in an unpaged scene larger than the render budget',()=>{
+ const roots=Array.from({length:120},(_,i)=>({id:String(i),title:String(i),box:{x:i*400,y:0,w:350,h:220}}));
+ const tree={roots,all:new Map(roots.map(n=>[n.id,n]))};
+ const last=roots.at(-1),camera={s:1,x:400-last.box.x-175,y:190};
+ const visible=readingLevel(tree,null,camera,800,600,{includeOffscreen:true});
+ assert.ok(visible.some(n=>n.node===last));assert.ok(visible.length<=90);
+});
+
+
+test('one parent camera transform preserves tile layout and matches screen hit bounds',()=>{
+ const anchor={x:237,y:519,w:350,h:300},reference=.63;
+ const base=projectUnit(anchor,{s:reference,x:0,y:0},743,reference);
+ for(const s of [.2,.63,1.7,3])for(const [x,y] of [[0,0],[-1234,745],[450,-220]]){
+  const b=projectUnit(anchor,{s,x,y},743,reference),scale=s/reference;
+  assert.equal(b.layoutX,base.layoutX);assert.equal(b.layoutY,base.layoutY);
+  assert.equal(b.layoutW,base.layoutW);assert.equal(b.layoutH,base.layoutH);
+  assert.ok(Math.abs(b.x-(x+b.layoutX*scale))<1e-8);
+  assert.ok(Math.abs(b.y-(y+b.layoutY*scale))<1e-8);
+  assert.ok(Math.abs(b.w-b.layoutW*scale)<1e-8);
+  assert.ok(Math.abs(b.h-b.layoutH*scale)<1e-8);
  }
 });

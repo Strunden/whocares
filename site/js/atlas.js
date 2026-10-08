@@ -1,15 +1,14 @@
 import {availableStory} from './atlas-navigation.js';
-import {createNativePan} from './atlas-native-pan.js?v=native-pan-35';
-import {wheelGesture,centroid,separation,touchIntent} from './atlas-gestures.js?v=native-pan-35';
-import {personaMaps, insights, personaStories} from './atlas-content.js?v=native-pan-35';
-import {clamp, zoomAt, elasticZoomScale, elasticPanBy, interpolateCamera} from './atlas-camera.js?v=native-pan-35';
-import {buildHierarchy,readingLevel,ancestry,scenePanBounds,panWithinScene,collectionPage,themesFor,levelScale,levelZoomLimits,frameLevel,entryFrame,perspectiveHierarchy,embedHierarchy} from './atlas-layout.js?v=native-pan-35';
+import {wheelGesture,centroid,separation,touchIntent} from './atlas-gestures.js?v=shared-elastic-37';
+import {personaMaps, insights, personaStories} from './atlas-content.js?v=shared-elastic-37';
+import {clamp, zoomAt, elasticZoomScale, elasticPanBy, interpolateCamera} from './atlas-camera.js?v=shared-elastic-37';
+import {buildHierarchy,readingLevel,ancestry,scenePanBounds,panWithinScene,collectionPage,themesFor,levelScale,levelZoomLimits,frameLevel,entryFrame,perspectiveHierarchy,embedHierarchy} from './atlas-layout.js?v=shared-elastic-37';
 import {portrait as illustration} from './atlas-assets.js';
 
-import {graphRecords,graphRoots,recordLabel,recordStatus,evidenceLabels} from './atlas-records.js?v=native-pan-35';
+import {graphRecords,graphRoots,recordLabel,recordStatus,evidenceLabels} from './atlas-records.js?v=shared-elastic-37';
 import {graphSourceBlock} from './atlas-sources.js?v=source-details-13';
 
-import {esc,short,companyLogo,recordMedia,createMapView} from './atlas-view.js?v=native-pan-35';
+import {esc,short,companyLogo,recordMedia,createMapView} from './atlas-view.js?v=shared-elastic-37';
 
 const $ = id => document.getElementById(id);
 const safeUrl = value => /^https?:\/\//i.test(value || '') ? value : '';
@@ -30,12 +29,6 @@ let wheelState=null,wheelTimer,touchState=null,touchTimer,pointerMode=null;
 const activeStory=()=>availableStory(personaStories[persona]||personaStories.worker,byId);
 const pointers=new Map();
 let gestureStart=null, dragged=false, navigationFrame=0, finishNavigation=null;
-const panSurface=$('pan-surface');
-const nativePan=createNativePan(map,panSurface,next=>{
- if(!ready||navigationFrame)return;
- if(Math.abs(camera.x-next.x)<.01&&Math.abs(camera.y-next.y)<.01&&camera.s===next.s)return;
- camera=next;render(true);
-});
 
 function isProblem(entry){return ['theme','parent_theme'].includes(entry.idea_kind);}
 function inRegion(entry,region){return themesFor(entry).some(theme=>region.themes.includes(theme));}
@@ -76,17 +69,6 @@ function zoomMap(factor,anchor={x:map.clientWidth/2,y:map.clientHeight/2}){
  const s=reducedMotion.matches?clamp(camera.s*factor,min,max):elasticZoomScale(camera.s,factor,min,max);
  camera=zoomAt(camera,s/camera.s,anchor,0,Infinity);render();
  cameraReturnTimer=setTimeout(settleCamera,180);
-}
-
-function beginNativePan(){
- const pending=panPending,start={...camera};stopCameraReturn(true,false);panPending=false;
- const {min,max}=zoomLimits();
- if(!pending&&camera.s>=min&&camera.s<=max)return;
- camera=zoomAt(camera,1,zoomAnchor||{x:map.clientWidth/2,y:map.clientHeight/2},min,max);
- if(pending)camera=panWithinScene(tree,activeGroup,camera,0,0,map.clientWidth,map.clientHeight,collectionView());
- // Resolve an interrupted custom gesture once, before native input takes over.
- // Never keep its animation writing offsets during native momentum.
- if(camera.s!==start.s||camera.x!==start.x||camera.y!==start.y)render();
 }
 
 function zoomStep(direction){
@@ -172,14 +154,15 @@ function panMap(dx,dy){
  camera=reducedMotion.matches?{...camera,x:clamp(camera.x+dx,panGesture.bounds.minX,panGesture.bounds.maxX),y:clamp(camera.y+dy,panGesture.bounds.minY,panGesture.bounds.maxY)}:elasticPanBy(camera,dx,dy,panGesture.bounds,map.clientWidth,map.clientHeight);
  render();cameraReturnTimer=setTimeout(settleCamera,180);
 }
-function render(fromNativeScroll=false){
+function render(){
  if(!ready)return;
- if(!fromNativeScroll)nativePan.setView(camera,scenePanBounds(tree,activeGroup,camera,map.clientWidth,map.clientHeight,collectionView()),map.clientWidth,map.clientHeight);
- const origin=nativePan.origin;
+ // One camera transform moves the whole scene. Item layouts do not move or
+ // rescale independently while a gesture or return animation is running.
+ $('labels').style.transform=`translate(${camera.x}px,${camera.y}px) scale(${camera.s/readingScale()})`;
  // Dot positions share the world origin; subdivide only to keep a useful density.
  const gridWorldStep=2**Math.floor(Math.log2(32/camera.s));
- panSurface.style.backgroundSize=`${gridWorldStep*camera.s}px ${gridWorldStep*camera.s}px`;
- panSurface.style.backgroundPosition=`${origin.x}px ${origin.y}px`;
+ map.style.backgroundSize=`${gridWorldStep*camera.s}px ${gridWorldStep*camera.s}px`;
+ map.style.backgroundPosition=`${camera.x}px ${camera.y}px`;
  const frontier=readingLevel(tree,activeGroup,camera,map.clientWidth,map.clientHeight,{...collectionView(),includeOffscreen:true});
  const pageGroup=tree.all.get(activeGroup),paged=!!pageGroup?.paged;
  $('collection-tools').hidden=!paged||collectionPage(pageGroup,collectionView()).pages<=1;
@@ -195,7 +178,7 @@ function render(fromNativeScroll=false){
   $('ancestor-jump')?.addEventListener('change',event=>{if(event.target.value)focusNode(event.target.value);});
   $('map-breadcrumbs').scrollLeft=$('map-breadcrumbs').scrollWidth;
  }
- mapView.render(frontier,{tree,persona,selectedId,width:map.clientWidth,height:map.clientHeight,offsetX:origin.x-camera.x,offsetY:origin.y-camera.y});
+ mapView.render(frontier,{tree,persona,selectedId,width:map.clientWidth,height:map.clientHeight});
  const nextLevel=Math.min(2,path.length);
  if(level!==nextLevel){level=nextLevel;announce(['Territories and guiding questions','Problem summaries and research collections','Research records and evidence'][level]);}
  $('level-range').textContent=pageGroup?.paged?`${frontier.filter(v=>v.mode==='summary'&&v.box.y>=0&&v.box.y+v.box.h<=map.clientHeight&&v.box.x>=0&&v.box.x+v.box.w<=map.clientWidth).length} of ${collectionPage(pageGroup,collectionView()).nodes.length} on this page in view · Pan to explore`:activeGroup?`${frontier.filter(v=>Math.max(0,Math.min(v.box.x+v.box.w,map.clientWidth)-Math.max(v.box.x,0))*Math.max(0,Math.min(v.box.y+v.box.h,map.clientHeight)-Math.max(v.box.y,0))>=v.box.w*v.box.h*.5).length} of ${tree.all.get(activeGroup).children?.length||1} groups in view · Drag to explore`:`${tree.roots.length} ${persona?'territories':'perspectives'} · Pan to explore`;
@@ -359,19 +342,18 @@ function ensureMap(){if(!ready)showPicker();}
 $('panel-content').addEventListener('scroll',()=>{if(panelState?.type==='story')panelState.scrollTop=$('panel-content').scrollTop;},{passive:true});
 $('panel-content').addEventListener('input',event=>{if(event.target.id==='research-search'){panelState.limit=60;renderSearch();}});
 map.addEventListener('wheel',event=>{
- if(navigationFrame||pointers.size){event.preventDefault();return;}
+ event.preventDefault();
+ if(navigationFrame||pointers.size)return;
  const rect=map.getBoundingClientRect();
  wheelState=wheelGesture(wheelState,{now:performance.now(),zoom:event.ctrlKey||event.metaKey,anchor:{x:event.clientX-rect.left,y:event.clientY-rect.top}});
  clearTimeout(wheelTimer);wheelTimer=setTimeout(()=>{wheelState=null;delete map.dataset.gesture;},180);
- if(!wheelState.accept){event.preventDefault();return;}
+ if(!wheelState.accept)return;
  map.dataset.gesture=wheelState.mode;
  const unit=event.deltaMode===1?16:event.deltaMode===2?map.clientHeight:1;
  if(wheelState.mode==='zoom'){
-  event.preventDefault();zoomMap(Math.exp(clamp(-event.deltaY*unit*.008,-.18,.18)),wheelState.anchor);
+  zoomMap(Math.exp(clamp(-event.deltaY*unit*.008,-.18,.18)),wheelState.anchor);
  }else{
-  // Let the browser track fingers, momentum and rubber-band release.
-  // No pan timer, synthetic spring or scroll-offset write on this path.
-  beginNativePan();
+  panMap(-(event.shiftKey&&!event.deltaX?event.deltaY:event.deltaX)*unit,-(event.shiftKey&&!event.deltaX?0:event.deltaY)*unit);
  }
 },{passive:false});
 function updateTouch(){
