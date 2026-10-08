@@ -33,9 +33,25 @@ export function interpolateCamera(start,target,anchor,t){
  return {s,x:a.x+(b.x-a.x)*t-anchor.x*s,y:a.y+(b.y-a.y)*t-anchor.y*s};
 }
 
-// Apply resistance to raw gesture displacement, never repeatedly to the already
-// resisted display position. This keeps event subdivision and reversal stable.
-export function elasticPan(raw,bounds,width,height){
- const bend=(value,min,max,extent)=>{const edge=clamp(value,min,max),d=value-edge;return edge+d/(1+Math.abs(d)/extent);};
- return {...raw,x:bend(raw.x,bounds.minX,bounds.maxX,width*.12),y:bend(raw.y,bounds.minY,bounds.maxY,height*.12)};
+// Reversing at an edge must move immediately: never make the user repay hidden
+// overscroll accumulated by trackpad inertia. Outward travel stays elastic;
+// inward travel consumes visible displacement before crossing the bound.
+export function elasticPanBy(camera,dx,dy,bounds,width,height){
+ const advance=(position,delta,min,max,extent)=>{
+  const edge=clamp(position,min,max),over=position-edge;
+  if(over&&over*delta<0){
+   const next=position+delta;
+   if((over>0&&next>=min)||(over<0&&next<=max))return next;
+   const opposite=clamp(next,min,max),d=next-opposite;
+   return opposite+d/(1+Math.abs(d)/extent);
+  }
+  // An interrupted return from anchored framing can already exceed this
+  // curve's reach. Keep that position for outward input; inward input above
+  // remains immediate, and release continues the return without a jump.
+  if(Math.abs(over)>=extent)return position;
+  const raw=edge+(over?extent*over/Math.max(.000001,extent-Math.abs(over)):0)+delta;
+  const bound=clamp(raw,min,max),d=raw-bound;
+  return bound+d/(1+Math.abs(d)/extent);
+ };
+ return {...camera,x:advance(camera.x,dx,bounds.minX,bounds.maxX,width*.12),y:advance(camera.y,dy,bounds.minY,bounds.maxY,height*.12)};
 }

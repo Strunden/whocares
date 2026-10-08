@@ -1,13 +1,13 @@
-import {wheelGesture,centroid,separation,touchIntent} from './atlas-gestures.js?v=centre-pan-31';
-import {personaMaps, insights, personaStories} from './atlas-content.js?v=centre-pan-31';
-import {clamp, zoomAt, elasticZoomScale, elasticPan, interpolateCamera} from './atlas-camera.js?v=centre-pan-31';
-import {buildHierarchy,readingLevel,ancestry,scenePanBounds,panWithinScene,collectionPage,themesFor,levelScale,levelZoomLimits,frameLevel,entryFrame,perspectiveHierarchy,embedHierarchy} from './atlas-layout.js?v=centre-pan-31';
+import {wheelGesture,centroid,separation,touchIntent} from './atlas-gestures.js?v=elastic-pan-33';
+import {personaMaps, insights, personaStories} from './atlas-content.js?v=elastic-pan-33';
+import {clamp, zoomAt, elasticZoomScale, elasticPanBy, interpolateCamera} from './atlas-camera.js?v=elastic-pan-33';
+import {buildHierarchy,readingLevel,ancestry,scenePanBounds,panWithinScene,collectionPage,themesFor,levelScale,levelZoomLimits,frameLevel,entryFrame,perspectiveHierarchy,embedHierarchy} from './atlas-layout.js?v=elastic-pan-33';
 import {portrait as illustration} from './atlas-assets.js';
 
-import {graphRecords,graphRoots,recordLabel,recordStatus,evidenceLabels} from './atlas-records.js?v=centre-pan-31';
+import {graphRecords,graphRoots,recordLabel,recordStatus,evidenceLabels} from './atlas-records.js?v=elastic-pan-33';
 import {graphSourceBlock} from './atlas-sources.js?v=source-details-13';
 
-import {esc,short,companyLogo,recordMedia,createMapView} from './atlas-view.js?v=centre-pan-31';
+import {esc,short,companyLogo,recordMedia,createMapView} from './atlas-view.js?v=elastic-pan-33';
 
 const $ = id => document.getElementById(id);
 const safeUrl = value => /^https?:\/\//i.test(value || '') ? value : '';
@@ -139,17 +139,18 @@ function focusNode(id,{keepPanel=false}={}){if(tree.all.has(id))navigateTo(perso
 function goUp(){const node=tree.all.get(activeGroup);navigateTo(node?.parent||activeGroup?persona:null,node?.parent||null);}
 function panMap(dx,dy){
  if(navigationFrame)return;
- stopCameraReturn(false,false);panPending=true;
+ const resumingPan=panPending;stopCameraReturn(false,false);panPending=true;
  if(!panGesture){
   const bounds=scenePanBounds(tree,activeGroup,camera,map.clientWidth,map.clientHeight,collectionView());
   // An anchored zoom or entry framing can start outside the centre bounds.
   // Include that starting position for this gesture so its first delta cannot jump.
-  bounds.minX=Math.min(bounds.minX,camera.x);bounds.maxX=Math.max(bounds.maxX,camera.x);
-  bounds.minY=Math.min(bounds.minY,camera.y);bounds.maxY=Math.max(bounds.maxY,camera.y);
-  panGesture={raw:{...camera},bounds};
+  if(!resumingPan){
+   bounds.minX=Math.min(bounds.minX,camera.x);bounds.maxX=Math.max(bounds.maxX,camera.x);
+   bounds.minY=Math.min(bounds.minY,camera.y);bounds.maxY=Math.max(bounds.maxY,camera.y);
+  }
+  panGesture={bounds};
  }
- panGesture.raw.x+=dx;panGesture.raw.y+=dy;
- camera=reducedMotion.matches?{...panGesture.raw,x:clamp(panGesture.raw.x,panGesture.bounds.minX,panGesture.bounds.maxX),y:clamp(panGesture.raw.y,panGesture.bounds.minY,panGesture.bounds.maxY)}:elasticPan(panGesture.raw,panGesture.bounds,map.clientWidth,map.clientHeight);
+ camera=reducedMotion.matches?{...camera,x:clamp(camera.x+dx,panGesture.bounds.minX,panGesture.bounds.maxX),y:clamp(camera.y+dy,panGesture.bounds.minY,panGesture.bounds.maxY)}:elasticPanBy(camera,dx,dy,panGesture.bounds,map.clientWidth,map.clientHeight);
  render();cameraReturnTimer=setTimeout(settleCamera,180);
 }
 function render(){

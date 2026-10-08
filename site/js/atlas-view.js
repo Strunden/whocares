@@ -1,5 +1,5 @@
 import {assetFor} from './atlas-assets.js';
-import {logoUrl} from './atlas-records.js?v=centre-pan-31';
+import {logoUrl} from './atlas-records.js?v=elastic-pan-33';
 import {mediaFor} from './atlas-media.js?v=media-20261008';
 export const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const title=entry=>entry.title||entry.name||'Untitled research';
@@ -43,7 +43,7 @@ export function createMapView(container){
     if(changed){
      // Measure in fixed layout pixels once per item, never as the camera zooms.
      const summary=el.querySelector('.node-summary'),description=summary?.querySelector('.node-description');
-     if(description){const style=getComputedStyle(description);description.style.webkitLineClamp=String(Math.max(1,Math.floor((summary.clientHeight-parseFloat(style.marginTop))/parseFloat(style.lineHeight))));}
+     if(description){const style=getComputedStyle(description),copy=summary.parentElement,copyStyle=getComputedStyle(copy),heading=copy.querySelector('.record-heading');const available=copy.clientHeight-parseFloat(copyStyle.paddingTop)-parseFloat(copyStyle.paddingBottom)-heading.offsetHeight;description.style.webkitLineClamp=String(Math.max(1,Math.floor((available-parseFloat(style.marginTop))/parseFloat(style.lineHeight))));}
     }
     el.classList.toggle('selected',node.entry?.id===selectedId);
     el.inert=box.x+box.w<=0||box.x>=width||box.y+box.h<=0||box.y>=height;

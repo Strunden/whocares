@@ -11,12 +11,12 @@
 .territory-surface path{fill:var(--territory);fill-opacity:.32;stroke:var(--territory);stroke-opacity:.5;stroke-width:1}
 .atlas-node[data-shape="1"] .territory-surface{transform:scaleX(-1)}
 .atlas-node[data-shape="2"] .territory-surface{transform:scaleY(-1)}
-.node-copy{position:absolute;inset:0;padding:30px;display:flex;flex-direction:column;align-items:stretch;overflow:hidden}
+.node-copy{position:absolute;inset:0;padding:30px;display:flex;flex-direction:column;align-items:stretch;justify-content:center;overflow:hidden}
 .node-title{font:23px/1.17 var(--serif);letter-spacing:-.35px;margin:0;text-align:left;white-space:normal;padding:0;max-width:100%;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere;flex-shrink:0}
 .node-description{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;font-size:12px;line-height:1.5;margin:14px 0 0;color:#35475a;flex-shrink:0}
-.atlas-node[data-mode="compact"] .node-title{padding-right:46px}
-.overview-art{position:absolute;right:26px;top:24px;width:48px;height:65px;object-fit:contain;pointer-events:none}
-.perspective-art{position:absolute;right:24px;top:29px;width:119px;height:158px;object-fit:contain;pointer-events:none}
+.atlas-node[data-mode="compact"] .node-title,.atlas-node[data-mode="compact"] .node-description{padding-right:46px}
+.overview-art{position:absolute;right:26px;top:50%;transform:translateY(-50%);width:48px;height:65px;object-fit:contain;pointer-events:none}
+.perspective-art{position:absolute;right:24px;top:50%;transform:translateY(-50%);width:119px;height:158px;object-fit:contain;pointer-events:none}
 .atlas-node[data-visual="person"] .node-title{font-size:28px;padding-right:113px}
 .atlas-node[data-visual="person"] .node-description{font-size:14px;padding-right:115px}
 .atlas-node[data-visual="person"] .territory-surface path{fill-opacity:.17;stroke:none}
@@ -28,7 +28,7 @@
 .company-logo{position:relative;display:inline-flex;width:64px;height:48px;align-items:center;justify-content:center;border:0;border-radius:0;background:transparent;flex-shrink:0;overflow:hidden;font:600 17px var(--sans);color:#687c91}
 .company-logo img{position:absolute;inset:0;width:100%;height:100%;padding:2px;background:transparent;object-fit:contain}
 .company-logo.logo-missing{background:#edf1f5}
-.node-summary{flex:1;display:flex;gap:12px;align-items:flex-start;min-height:0;min-width:0;overflow:hidden}
+.node-summary{flex:0 1 auto;display:flex;gap:12px;align-items:flex-start;min-height:0;min-width:0;overflow:hidden}
 .node-summary .node-description{flex:1;min-width:0;margin-top:12px;font-size:13px;line-height:1.5;-webkit-line-clamp:6}
 .record-media{width:86px;margin:10px 0 0;flex-shrink:0}
 .record-media img{width:100%;height:66px;object-fit:contain;background:#f6f8fa;border-radius:5px}
@@ -72,11 +72,10 @@
 }
 
 /* Overview content is deliberately lighter; local zoom never changes disclosure. */
-.atlas-node[data-mode="compact"] .node-copy{padding:25px 30px 55px}
+.atlas-node[data-mode="compact"] .node-copy{padding:25px 30px}
 .atlas-node[data-mode="compact"] .node-title{font-size:26px}
 .atlas-node[data-mode="compact"] .node-description{font-size:13px;-webkit-line-clamp:2;margin-top:10px}
-.atlas-node[data-visual="person"] .node-copy{justify-content:center;padding-block:25px}
-.atlas-node[data-visual="person"] .perspective-art{top:50%;transform:translateY(-50%);height:135px;width:110px}
+.atlas-node[data-visual="person"] .perspective-art{height:135px;width:110px}
 .atlas-node[data-visual="person"] .node-description{font-size:14px;-webkit-line-clamp:3}
 
 .atlas-node:hover .territory-surface path{fill-opacity:.48;stroke-opacity:.9}
