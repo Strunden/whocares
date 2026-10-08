@@ -1,3 +1,5 @@
+import {loadAtlas} from './atlas-loader.js';
+import {setProductMedia} from './atlas-media.js';
 import {availableStory} from './atlas-navigation.js';
 import {createNativePan} from './atlas-native-pan.js?v=native-pan-35';
 import {wheelGesture,centroid,separation,touchIntent} from './atlas-gestures.js?v=native-pan-35';
@@ -16,7 +18,6 @@ const safeUrl = value => /^https?:\/\//i.test(value || '') ? value : '';
 const title = entry => entry.title || entry.name || 'Untitled research';
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 const map = $('map');
-const detailLoads=new Map();
 let graphData=null,graphEntries=[];const collectionViews=new Map();
 const collectionView=()=>collectionViews.get(activeGroup)||{page:0,query:'',type:'all'};
 let entries=[], byId=new Map(), regions=[], persona=null;
@@ -236,12 +237,7 @@ async function openEntry(id,{remember=true}={}){
  const entry=byId.get(id);if(!entry)return;
  selectedId=id;
  showPanel({type:'entry',id},{remember});
- if(entry.detail_file&&!entry._detailLoaded){
-  try{if(!detailLoads.has(entry.detail_file))detailLoads.set(entry.detail_file,fetch('data/atlas/'+entry.detail_file).then(r=>{if(!r.ok)throw new Error('Detail unavailable');return r.json();}).catch(error=>{detailLoads.delete(entry.detail_file);throw error;}));
-   const chunk=await detailLoads.get(entry.detail_file);for(const full of chunk){const record=byId.get(full.id);if(record)Object.assign(record,full,{_detailLoaded:true,_detailError:false});}
-  }catch(error){entry._detailError=true;}
-  if(panelState?.type==='entry'&&panelState.id===id)renderPanel();
- }
+
 }
 
 function backPanel(){
@@ -260,7 +256,6 @@ function sourceRecords(entry){
  return [...sources.values()];
 }
 function evidence(entry){
- if(entry.detail_file&&!entry._detailLoaded)return entry._detailError?`<p class="evidence-note">The full record could not load. Sources have not been checked.</p><button class="panel-action" data-entry="${esc(entry.id)}">Retry loading evidence</button>`:'<p class="evidence-note" role="status">Loading the full record and sources…</p>';
  const sources=sourceRecords(entry);
  return `<h3>Evidence & provenance</h3><p class="evidence-note">Research snapshot: ${esc(entry.writeup?.status?.as_of||entry.added_date||'Date not recorded')}. ${entry.type==='company'?'Product descriptions may be company claims. They do not establish effectiveness in practice.':'This is an analyst research record, not a validated finding.'}</p>${sources.length?`<ul class="source-list">${sources.map(source=>`<li><a href="${esc(source.url)}" target="_blank" rel="noopener">${esc(source.label)} ↗</a><small>${esc(new URL(source.url).hostname)}${source.date?' · Accessed '+esc(source.date):''}</small></li>`).join('')}</ul>`:`<p class="evidence-note">No direct public source is attached to this record. Internal provenance: ${esc(entry.source_scan||'not recorded')}. Treat its claims as unverified until traced to primary evidence.</p>`}`;
 }
@@ -450,13 +445,15 @@ function applyRoute(){
 window.addEventListener('hashchange',()=>{if(entries.length)applyRoute();});
 
 try{
- const response=await fetch('data/atlas/index.json',{cache:'no-cache'});if(!response.ok)throw new Error(`Index ${response.status}`);
- const data=await response.json();entries=data.entries.filter(entry=>entry.published!==false);
+ const data=await loadAtlas(fetch,window.WHOCARES_CONFIG?.API_BASE);
+ entries=data.entries.filter(entry=>entry.published!==false);
+ setProductMedia(data.media);
+ graphData=data.graph;graphEntries=graphRecords(graphData,entries);
+ document.documentElement.dataset.researchRevision=data.revision;
  if(stressCount){entries.push(...Array.from({length:stressCount},(_,i)=>({id:'synthetic-'+i,title:'Synthetic service '+String(i).padStart(6,'0'),type:'company',themes:[i%2?'T11':'T13'],summary:'Synthetic scale-test record. Not real research or evidence.'})));const banner=document.createElement('div');banner.className='stress-banner';banner.textContent=`SYNTHETIC SCALE TEST · ${stressCount.toLocaleString()} generated records · Not research`;document.body.prepend(banner);document.title='SCALE TEST · Who Cares';}
- try{const r=await fetch('data/atlas/graph.json',{cache:'no-cache'});if(!r.ok)throw new Error('Graph snapshot unavailable');graphData=await r.json();graphEntries=graphRecords(graphData,entries);}catch(error){console.warn('Graph snapshot unavailable; legacy research remains available.');}
  byId=new Map([...entries,...graphEntries].map(entry=>[entry.id,entry]));$('loading').hidden=true;
  applyRoute();
 }catch(error){
  $('workspace').hidden=false;
- $('loading').textContent='Research could not load.';console.error('Atlas could not load its research index',error);
+ $('loading').textContent='The research service is unavailable. Reload to try again; no saved copy is being shown.';console.error('Atlas could not load its research index',error);
 }

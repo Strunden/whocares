@@ -7,7 +7,7 @@ import {execFileSync} from 'node:child_process';
 import {mergeResearchAtlas} from '../scripts/merge-research-atlas.mjs';
 import {graphRecords,graphRoots,recordStatus} from '../site/js/atlas-records.js';
 
-const baseline=JSON.parse(await readFile(new URL('../site/data/atlas/graph.json',import.meta.url),'utf8'));
+import {graph as baseline} from './fixtures/discovery.mjs';
 const principleSha256=baseline.snapshot.principle_sha256;
 const options={principleSha256};
 const provenance={batch:'reviewed-research-fixture',authored_by:'Test reviewer'};
@@ -29,7 +29,7 @@ function research(){
 test('merge preserves every existing row and surfaces findings in the existing map and detail records',()=>{
  const before=structuredClone(baseline),patch=research();
  const {graph,report}=mergeResearchAtlas(baseline,patch,options);
- assert.ok(baseline.objects.length>=17);assert.ok(baseline.relationships.length>=13);
+ assert.ok(baseline.objects.length>0);assert.ok(baseline.relationships.length>0);
  for(const table of ['objects','relationships','sources','evidence_links']){
   assert.deepEqual(graph[table].slice(0,baseline[table].length),baseline[table]);
  }

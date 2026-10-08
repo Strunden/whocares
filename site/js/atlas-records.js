@@ -1,5 +1,5 @@
 import {presentationFor} from './atlas-presentations.js';
-import {productLogoFor} from './atlas-media.js?v=media-20261008';
+import {productLogoFor} from './atlas-media.js';
 // Presentation contracts shared by every lens. No evidence or taxonomy is inferred here.
 export const kindLabels={problem_space:'Problem space',problem:'Problem',daily_situation:'Situation',lived_workaround:'Workaround',systemic_cause:'Mechanism',institutional_response:'Institutional response',solution:'Existing response',open_question:'Open question',aspiration:'Aspiration',stakeholder:'Stakeholder'};
 export const evidenceLabels={documented:'Documented claim',interpretation:'Interpretation',candidate:'Research candidate',hypothesis:'Hypothesis',illustrative:'Illustrative · not observed',open_question:'Open question',normative:'Product direction',reference:'Reference'};

@@ -12,7 +12,8 @@ test('overview fits both portrait and landscape without clipping world bounds',(
   assert.ok(a.x>=11.99&&a.y>=11.99&&b.x<=w-11.99&&b.y<=h-11.99);
  }
 });
-const data=JSON.parse(await readFile(new URL('../site/data/index.json',import.meta.url)));
+import {entries as fixtureEntries} from './fixtures/discovery.mjs';
+const data={entries:fixtureEntries};
 const published=new Map(data.entries.filter(e=>e.published!==false).map(e=>[e.id,e]));
 test('all five maps have distinct territories and named categories independent of archived claims',()=>{
  const signatures=[];

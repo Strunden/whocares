@@ -8,6 +8,7 @@ Extendable: pass --url for other public list pages.
 Does not invent product theses. New rows get summary from the page blurb when present.
 """
 from __future__ import annotations
+raise SystemExit('Local catalog edits are retired. Publish reviewed research to Neon.')
 import argparse, json, re, sys, urllib.request
 from datetime import date
 from pathlib import Path

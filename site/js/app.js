@@ -1,6 +1,6 @@
 /* Who Cares flat index.
    One list of published entries. Search and tag chips filter it.
-   API_BASE /api/index, then data/index.json. */
+   Canonical database service only; no saved-data fallback. */
 (function () {
   const TAGS = [
     "Health and medicines",
@@ -22,11 +22,6 @@
     note: '<path d="M7 4h7l4 4v12H7V4z"/><path d="M14 4v4h4M9 12h6M9 16h4"/>'
   };
 
-  function dataUrl() {
-    const path = location.pathname;
-    if (path.includes("/companies/") || path.includes("/entry.html")) return "../data/index.json";
-    return "data/index.json";
-  }
   function esc(s) {
     return String(s == null ? "" : s)
       .replace(/&/g, "&amp;")
@@ -618,25 +613,14 @@
     if (typeof raw !== "string") return "";
     return raw.trim().replace(/\/+$/, "");
   }
-  async function loadStaticIndex() {
-    const res = await fetch(dataUrl(), { cache: "no-store" });
-    if (!res.ok) throw new Error("Could not load data/index.json");
-    return res.json();
-  }
   async function loadIndex() {
     const base = apiBase();
-    if (base) {
-      try {
-        const res = await fetch(`${base}/api/index`, { cache: "no-store" });
-        if (res.ok) {
-          const data = await res.json();
-          if (data && Array.isArray(data.entries)) return data;
-        }
-      } catch (err) {
-        console.warn("Live index unavailable, using data/index.json");
-      }
-    }
-    return loadStaticIndex();
+    if (!/^https:\/\//.test(base)) throw new Error("Research service is not configured");
+    const res = await fetch(`${base}/api/index`, { cache: "no-store", signal: AbortSignal.timeout(20000) });
+    if (!res.ok) throw new Error("Research service is unavailable");
+    const data = await res.json();
+    if (!data?.revision || !Array.isArray(data.entries)) throw new Error("Incomplete research response");
+    return data;
   }
   async function loadFunders() {
     const base = apiBase();
@@ -1614,7 +1598,7 @@
       render("keep");
       loadFunders();
     }).catch(() => {
-      if (boot) boot.textContent = "We could not load the list. Try again in a moment.";
+      if (boot) boot.textContent = "The research service is unavailable. Reload to try again; no saved copy is being shown.";
     });
   });
 })();

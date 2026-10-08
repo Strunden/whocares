@@ -1,0 +1,13 @@
+// Synthetic test data only. Never imported by the website or used as a fallback.
+export const entries=Array.from({length:108},(_,i)=>({id:'test-company-'+i,name:'Test company '+i,title:'Test company '+i,type:'company',published:true,themes:['T'+String(i%18+1).padStart(2,'0')],summary:'Synthetic test record, not research.',website:'https://example.org/',logo:'/api/logo/test-company-'+i}));
+const confidence={basis:'not_assessed',rationale:'Synthetic fixture; no real-world claim.'},provenance={fixture:true};
+const obj=(id,kind,epistemic_status='interpretation')=>({id,kind,title:'Test '+kind,statement:'Synthetic assertion for software tests only.',scope:{limitations:'Not evidence'},confidence,provenance,revision:1,epistemic_status});
+const rel=(id,from_id,to_id,relation)=>({id,from_id,to_id,relation,statement:'Synthetic relationship.',confidence,provenance,revision:1,epistemic_status:'interpretation'});
+export const graph={
+ snapshot:{as_of:'2026-10-08',origin:'Synthetic test fixture',principle_sha256:'a'.repeat(64)},
+ objects:[obj('space-everyday-participation','problem_space'),obj('problem-digital-family-contact','problem','candidate'),obj('solution-amara-home','solution','candidate'),obj('workaround-family-assistance','lived_workaround','hypothesis'),obj('problem-environmental-barriers','problem','documented'),obj('test-stakeholder','stakeholder'),obj('test-misclassified-response','institutional_response')],
+ relationships:[rel('test-membership','problem-digital-family-contact','space-everyday-participation','part_of'),rel('test-response','solution-amara-home','problem-digital-family-contact','responds_to'),rel('test-context','test-misclassified-response','space-everyday-participation','context_for')],
+ sources:[{id:'test-provider',title:'Synthetic provider',locator:'https://example.org/provider',publisher:'Test',source_kind:'provider_claim',scope:'Synthetic',limitations:'Not real evidence',accessed_date:'2026-10-08',provenance},{id:'test-institutional',title:'Synthetic institution',locator:'https://example.org/institution',publisher:'Test',source_kind:'institutional',scope:'Synthetic',limitations:'Not real evidence',accessed_date:'2026-10-08',provenance}],
+ evidence_links:[{id:'test-response-evidence',relationship_id:'test-response',source_id:'test-provider',stance:'context',provenance},{id:'test-problem-evidence',object_id:'problem-environmental-barriers',source_id:'test-institutional',stance:'supports',reviewed_at:'2026-10-08',provenance},{id:'test-held-evidence',object_id:'test-misclassified-response',source_id:'test-institutional',stance:'context',provenance}],
+ content_reviews:[{id:'test-type-review',record_table:'objects',record_id:'test-misclassified-response',decision:'reclassify'}]
+};

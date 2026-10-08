@@ -1,5 +1,5 @@
 import { attachFunding, funderDetail, funderSummary } from "./funders-shape.js";
-import { buildIndex } from "./index-shape.js";
+import {queryDiscovery} from "./discovery.js";
 import { decodeSlug } from "./path-slug.js";
 import { withSql } from "./pg-wire.js";
 
@@ -26,61 +26,7 @@ function json(body, status = 200) {
 }
 
 async function readIndex(env) {
-  return withSql(env, async (sql) => {
-    const metaRows = await sql.simpleQuery(`
-      SELECT schema_version,
-             to_char(generated, 'YYYY-MM-DD') AS generated,
-             title
-      FROM atlas_meta
-      LIMIT 1
-    `);
-    const changelog = await sql.simpleQuery(`
-      SELECT to_char(entry_date, 'YYYY-MM-DD') AS date, text
-      FROM changelog
-      ORDER BY position ASC, id ASC
-    `);
-    const entryRows = await sql.simpleQuery(`
-      SELECT document,
-             (logo_bytes IS NOT NULL) AS has_logo,
-             product_type
-      FROM entries
-      ORDER BY position ASC, id ASC
-    `);
-    const linkRows = await sql.simpleQuery(`
-      SELECT l.entry_id,
-             f.id AS funder_id,
-             f.name AS funder_name,
-             l.relation,
-             l.round_label,
-             l.amount_eur::text AS amount_eur,
-             to_char(l.date, 'YYYY-MM-DD') AS date,
-             l.sources::text AS sources
-      FROM funding_links l
-      JOIN funders f ON f.id = l.funder_id AND f.published
-      JOIN entries e ON e.id = l.entry_id AND e.published
-      WHERE l.verified
-      ORDER BY l.date DESC NULLS LAST, f.name ASC
-    `);
-    const documents = entryRows.map((row) => {
-      const doc = row.document;
-      let entry = doc;
-      if (typeof doc === "string") {
-        try { entry = JSON.parse(doc); } catch { entry = null; }
-      }
-      if (!entry || typeof entry !== "object") return doc;
-      const pt = row.product_type;
-      if (pt) return { ...entry, product_type: pt };
-      const next = { ...entry };
-      delete next.product_type;
-      return next;
-    });
-    return attachFunding(buildIndex(
-      metaRows[0] || null,
-      changelog,
-      documents,
-      entryRows.map((row) => row.has_logo),
-    ), linkRows);
-  });
+  return withSql(env, async sql => (await queryDiscovery(sql)).catalog);
 }
 
 const FUNDER_ID = /^[A-Za-z0-9][A-Za-z0-9_-]{0,80}$/;
@@ -100,7 +46,7 @@ async function readFunders(env) {
              (
                SELECT count(DISTINCT l.entry_id)::int
                FROM funding_links l
-               JOIN entries e ON e.id = l.entry_id AND e.published
+               JOIN atlas.catalog_read_model e ON e.id = l.entry_id AND e.visible AND e.review_current AND e.review_id IS NOT NULL AND e.decision IN ('retain','correct')
                WHERE l.funder_id = f.id
                  AND l.verified
              ) AS backed
@@ -138,14 +84,14 @@ async function readFunder(env, id) {
     if (!rows[0]) return null;
     const links = await sql.simpleQuery(`
       SELECT e.id AS entry_id,
-             COALESCE(NULLIF(e.title, ''), NULLIF(e.name, ''), e.id) AS entry_name,
+             COALESCE(NULLIF(e.document->>'title', ''), NULLIF(e.document->>'name', ''), e.id) AS entry_name,
              l.relation,
              l.round_label,
              l.amount_eur::text AS amount_eur,
              to_char(l.date, 'YYYY-MM-DD') AS date,
              l.sources::text AS sources
       FROM funding_links l
-      JOIN entries e ON e.id = l.entry_id AND e.published
+      JOIN atlas.catalog_read_model e ON e.id = l.entry_id AND e.visible AND e.review_current AND e.review_id IS NOT NULL AND e.decision IN ('retain','correct')
       WHERE l.funder_id = '${id}'
         AND l.verified
       ORDER BY l.date DESC NULLS LAST, entry_name ASC
@@ -155,7 +101,8 @@ async function readFunder(env, id) {
 }
 
 function isApiPath(path) {
-  return path === "/api/index"
+  return path === "/api/discovery"
+    || path === "/api/index"
     || path === "/api/health"
     || path === "/api/funders"
     || path.startsWith("/api/funders/")
@@ -200,13 +147,18 @@ export default {
       try {
         const countRows = await withSql(
           env,
-          (sql) => sql.simpleQuery("SELECT count(*)::int AS entries FROM entries"),
+          (sql) => sql.simpleQuery("SELECT count(*)::int AS entries FROM atlas.catalog_read_model WHERE visible AND review_current AND review_id IS NOT NULL AND decision IN ('retain','correct')"),
         );
         const entries = countRows[0] ? Number(countRows[0].entries) : 0;
         return json({ ok: true, database: "up", entries });
       } catch (error) {
         return dbError(error);
       }
+    }
+
+    if (path === "/api/discovery") {
+      try { return json(await withSql(env, queryDiscovery)); }
+      catch (error) { return dbError(error); }
     }
 
     if (path === "/api/index") {
@@ -248,7 +200,8 @@ export default {
         const rows = await withSql(env, (sql) => sql.simpleQuery(`
           SELECT encode(logo_bytes, 'base64') AS logo_b64
           FROM entries
-          WHERE id = '${slug}'
+          WHERE EXISTS (SELECT 1 FROM atlas.catalog_read_model c WHERE c.id=entries.id AND c.visible AND c.review_current AND c.review_id IS NOT NULL AND c.decision IN ('retain','correct'))
+            AND id = '${slug}'
             AND logo_bytes IS NOT NULL
           LIMIT 1
         `));
@@ -261,7 +214,7 @@ export default {
           status: 200,
           headers: {
             "Content-Type": "image/png",
-            "Cache-Control": "public, max-age=86400",
+            "Cache-Control": "no-store",
             ...corsHeaders(),
           },
         });

@@ -21,3 +21,6 @@ venv/
 .vscode/
 uploads/
 site/logos/
+
+# Catalog data lives in Neon, never in website bundles.
+site/data/

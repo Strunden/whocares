@@ -1,6 +1,6 @@
 import {assetFor} from './atlas-assets.js';
 import {logoUrl} from './atlas-records.js?v=native-pan-35';
-import {mediaFor} from './atlas-media.js?v=media-20261008';
+import {mediaFor} from './atlas-media.js';
 export const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const title=entry=>entry.title||entry.name||'Untitled research';
 export const short=(value,max=220)=>{const t=String(value||'');return t.length>max?t.slice(0,max).replace(/\s+\S*$/,'')+'…':t;};

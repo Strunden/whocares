@@ -4,7 +4,8 @@ import {readFile} from 'node:fs/promises';
 import {performance} from 'node:perf_hooks';
 import {buildHierarchy,readingLevel,ancestry,panWithinWorld,panWithinScene,scenePanBounds,levelScene,unitScale,levelScale,frameLevel,entryFrame,levelZoomLimits,perspectiveHierarchy,embedHierarchy} from '../site/js/atlas-layout.js';
 import {personaMaps} from '../site/js/atlas-content.js';
-const data=JSON.parse(await readFile(new URL('../site/data/index.json',import.meta.url)));
+import {entries as fixtureEntries} from './fixtures/discovery.mjs';
+const data={entries:fixtureEntries};
 const entries=data.entries.filter(e=>e.published!==false);
 function checkCoverage(tree,records){const represented=new Set([...tree.all.values()].filter(n=>n.entry).map(n=>n.entry.id));for(const e of records)assert.ok(represented.has(e.id),`Unreachable record ${e.id}`);}
 test('every published record remains spatially reachable from every perspective',()=>{for(const p of Object.values(personaMaps))checkCoverage(buildHierarchy(entries,p.regions),entries);});
@@ -19,14 +20,6 @@ test('100,000 records stay reachable with a bounded viewport frontier',()=>{
 });
 
 test('panning keeps the chosen hierarchy level and content representation fixed',()=>{const t=buildHierarchy(entries,personaMaps.relative.regions);const group=t.all.get('services');for(const x of [-1000,0,1000]){const visible=readingLevel(t,group.id,{s:1,x,y:0},1280,700);assert.ok(visible.filter(v=>v.mode!=='context').every(v=>v.node.parent===group.id&&v.mode==='summary'));}assert.deepEqual(ancestry(t,'services/T13').map(n=>n.title),['Finding care','Care admin']);});
-test('the compact index covers published data and every on-demand detail is lossless',async()=>{
- const lean=JSON.parse(await readFile(new URL('../site/data/atlas/index.json',import.meta.url)));
- assert.equal(lean.entries.length,entries.length);
- const original=new Map(entries.map(e=>[e.id,e])),full=new Map();
- for(const file of new Set(lean.entries.map(e=>e.detail_file))){assert.match(file,/^records-[a-f0-9]{12}\.json$/);const chunk=JSON.parse(await readFile(new URL('../site/data/atlas/'+file,import.meta.url)));for(const e of chunk)full.set(e.id,e);}
- for(const e of lean.entries){assert.deepEqual(full.get(e.id),original.get(e.id));assert.equal(e.deep_dive,undefined);assert.equal(e.writeup,undefined);}
-});
-
 test('a group that fits the viewport still pans freely in both directions',()=>{const start={s:1,x:100,y:50},bounds={x:0,y:0,width:500,height:400};const next=panWithinWorld(start,80,60,bounds,1280,720);assert.deepEqual(next,{s:1,x:180,y:110});assert.deepEqual(panWithinWorld(next,-80,-60,bounds,1280,720),start);});
 test('a level contains its own siblings, without differently scaled ancestor surfaces',()=>{const t=buildHierarchy(entries,personaMaps.provider.regions);const view=readingLevel(t,'delivery',{s:.25,x:0,y:0},1280,720);assert.ok(view.length);assert.ok(view.every(v=>v.node.parent==='delivery'&&v.mode==='summary'));});
 

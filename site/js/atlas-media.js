@@ -1,10 +1,7 @@
-import productMedia from '../data/atlas/product-media.js';
+let productMedia=[];
+export function setProductMedia(rows){productMedia=Array.isArray(rows)?rows:[];}
 // Media stays independent of layout. A record.media object takes precedence as data grows.
 // These are provider images, not independent evidence or generated product depictions.
-export const mediaLibrary={
- 'company-amara':{src:'https://amara.app/_next/static/immutable/media/base.326k9f63bcax4.webp',alt:'Amara Home tablet on its base',kind:'Product image',source:'https://amara.app/',credit:'Amara',checked:'2026-10-08'},
- 'solution-amara-home':{src:'https://amara.app/_next/static/immutable/media/base.326k9f63bcax4.webp',alt:'Amara Home tablet on its base',kind:'Product image',source:'https://amara.app/',credit:'Amara',checked:'2026-10-08'}
-};
 export function reviewedMedia(entry,rows=productMedia,{internal=['localhost','127.0.0.1','::1'].includes(globalThis.location?.hostname)}={}){
  return rows.filter(m=>m.entry_id===(entry?.company_id||entry?.id)&&m.review_state==='reviewed'&&m.reviewed_by&&m.reviewed_at&&
   /^[a-f0-9]{64}$/.test(m.source_capture_sha256||'')&&m.alt_text&&m.credit&&m.rights_note&&
@@ -15,7 +12,7 @@ export function reviewedMedia(entry,rows=productMedia,{internal=['localhost','12
 }
 export function productLogoFor(entry){return reviewedMedia(entry).find(m=>m.media_role==='logo');}
 export function mediaFor(entry){
- const m=reviewedMedia(entry).find(m=>m.media_role!=='logo')||entry?.media||mediaLibrary[entry?.id];
+ const m=reviewedMedia(entry).find(m=>m.media_role!=='logo')||entry?.media;
  if(m&&/^https:\/\//.test(m.src)&&/^https:\/\//.test(m.source)&&m.alt)return m;
  if(['daily_situation','lived_workaround'].includes(entry?.kind))return {src:'assets/illustrations/family.png',alt:'Illustrative family members',kind:'Illustration',credit:'Generated illustration; not field evidence'};
  return null;

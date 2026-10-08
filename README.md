@@ -1,5 +1,15 @@
 # Who Cares
 
-Design agents: start at [`WHO-CARES-DESIGN-BRIEF.md`](WHO-CARES-DESIGN-BRIEF.md) and [`docs/research-map-ux-patterns.md`](docs/research-map-ux-patterns.md).
+Evidence-backed problem discovery and market intelligence for venture builders.
+Read `AGENTS.md` and the reviewed product briefs before changing research or design.
 
-Live list of companies and ideas in ageing and care. The site reads `GET /api/index` at runtime. Logos are `GET /api/logo/<id>` from the database, not files in the repo. Add a company with one SQL insert. See `site/README.md`. `site/data/index.json` is only the outage fallback.
+The map reads `/api/discovery`; the company list reads `/api/index`. Both use the
+same reviewed Neon projection through the Cloudflare Worker. The discovery response
+contains the catalog, graph, presentation copy and eligible media from one database
+statement, with a shared revision. There is no bundled catalog, file fallback,
+local-storage database or offline mode. An unavailable API produces an explicit
+unavailable state. New research appears after reviewed database publication and a
+page reload, without regenerating files or redeploying the website.
+
+Run `npm run test:atlas` and `npm run build:atlas`. API tests live under `workers/api`.
+See `docs/ux/canonical-data-service.md` for release order and remaining migration work.

@@ -10,6 +10,7 @@ Dedupe: same id merges; else same normalized name+domain for companies refuses d
 Validates required fields against schema_version 1.
 """
 from __future__ import annotations
+raise SystemExit('Local catalog edits are retired. Publish reviewed research to Neon.')
 import argparse, json, re, sys
 from datetime import date
 from pathlib import Path
