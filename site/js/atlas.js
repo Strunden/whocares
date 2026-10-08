@@ -4,7 +4,8 @@ import {clamp, zoomAt} from './atlas-camera.js?v=uniform-zoom-11';
 import {buildHierarchy,readingLevel,ancestry,panWithinWorld,collectionPage,themesFor,levelScene,levelScale,levelZoomLimits,frameLevel,projectUnit,perspectiveHierarchy,embedHierarchy} from './atlas-layout.js?v=uniform-zoom-11';
 import {portrait as illustration} from './atlas-assets.js';
 
-import {graphRecords,graphRoots,recordLabel,recordStatus,evidenceLabels} from './atlas-records.js';
+import {graphRecords,graphRoots,recordLabel,recordStatus,evidenceLabels} from './atlas-records.js?v=research-publication-12';
+import {graphSourceBlock} from './atlas-sources.js?v=source-details-13';
 
 import {esc,short,companyLogo,recordMedia,createMapView} from './atlas-view.js?v=uniform-zoom-11';
 
@@ -218,7 +219,7 @@ function evidence(entry){
  return `<h3>Evidence & provenance</h3><p class="evidence-note">Research snapshot: ${esc(entry.added_date||'2026-10-05')}. ${entry.type==='company'?'Product descriptions may be company claims. They do not establish effectiveness in practice.':'This is an analyst research record, not a validated finding.'}</p>${sources.length?`<ul class="source-list">${sources.map(source=>`<li><a href="${esc(source.url)}" target="_blank" rel="noopener">${esc(source.label)} ↗</a><small>${esc(new URL(source.url).hostname)}${source.date?' · Accessed '+esc(source.date):''}</small></li>`).join('')}</ul>`:`<p class="evidence-note">No direct public source is attached to this record. Internal provenance: ${esc(entry.source_scan||'not recorded')}. Treat its claims as unverified until traced to primary evidence.</p>`}`;
 }
 function graphPanel(entry){
- const sourceBlock=(list)=>list.length?list.map(s=>`<div class="graph-source"><b>${esc(s.stance)} · ${esc(s.source_kind?.replaceAll('_',' '))}</b><p>${safeUrl(s.url)?`<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)} ↗</a>`:esc(s.title)}</p><p>${esc(s.note)}</p><small>${esc(s.locator)} · Accessed ${esc(s.accessed_date||'not recorded')}</small><p class="evidence-note">${esc(s.limitations)}</p></div>`).join(''):'<p class="evidence-note">No claim-level source attached. This is not established evidence.</p>';
+ const sourceBlock=graphSourceBlock;
  const linked=entry.links.map(r=>({r,e:byId.get(r.from_id===entry.id?r.to_id:r.from_id)})).filter(v=>v.e);
  return `<p class="kicker">Research graph · ${esc(recordLabel(entry))}</p><h2>${esc(entry.title)}</h2><span class="status unresolved">${esc(recordStatus(entry))}</span><p class="lead">${esc(entry.statement)}</p>${recordMedia(entry,true)}<h3>Scope of this claim</h3><dl>${Object.entries(entry.scope||{}).map(([k,v])=>`<div class="fact"><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl><h3>Research basis</h3><p class="body-copy">${esc(entry.confidence?.rationale)}</p><h3>Sources for this claim</h3>${sourceBlock(entry.sources)}<h3>Connected research</h3>${linked.map(({r,e})=>`<div class="graph-link"><p class="kicker">${esc(evidenceLabels[r.epistemic_status]||r.epistemic_status)}</p>${row(e)}<p class="relation-direction">${esc(byId.get(r.from_id)?.title||r.from_id)} <b>${esc(r.relation.replaceAll('_',' '))}</b> ${esc(byId.get(r.to_id)?.title||r.to_id)}</p><p class="evidence-note">${esc(r.statement)}</p><details><summary>Basis for this connection</summary><p class="evidence-note">${esc(r.confidence?.rationale)}</p>${sourceBlock(r.evidence)}</details></div>`).join('')}${entry.company_id?`<button class="panel-action" data-entry="${esc(entry.company_id)}">Open full company record →</button>`:''}<p class="evidence-note">Database snapshot ${esc(graphData?.snapshot?.as_of)} · Revision ${entry.revision}. A documented offering is not proof of effectiveness.</p>`;
 }
@@ -395,10 +396,10 @@ function applyRoute(){
 window.addEventListener('hashchange',()=>{if(entries.length)applyRoute();});
 
 try{
- const response=await fetch('data/atlas/index.json');if(!response.ok)throw new Error(`Index ${response.status}`);
+ const response=await fetch('data/atlas/index.json',{cache:'no-cache'});if(!response.ok)throw new Error(`Index ${response.status}`);
  const data=await response.json();entries=data.entries.filter(entry=>entry.published!==false);
  if(stressCount){entries.push(...Array.from({length:stressCount},(_,i)=>({id:'synthetic-'+i,title:'Synthetic service '+String(i).padStart(6,'0'),type:'company',themes:[i%2?'T11':'T13'],summary:'Synthetic scale-test record. Not real research or evidence.'})));const banner=document.createElement('div');banner.className='stress-banner';banner.textContent=`SYNTHETIC SCALE TEST · ${stressCount.toLocaleString()} generated records · Not research`;document.body.prepend(banner);document.title='SCALE TEST · Who Cares';}
- try{const r=await fetch('data/atlas/graph.json');if(!r.ok)throw new Error('Graph snapshot unavailable');graphData=await r.json();graphEntries=graphRecords(graphData,entries);}catch(error){console.warn('Graph snapshot unavailable; legacy research remains available.');}
+ try{const r=await fetch('data/atlas/graph.json',{cache:'no-cache'});if(!r.ok)throw new Error('Graph snapshot unavailable');graphData=await r.json();graphEntries=graphRecords(graphData,entries);}catch(error){console.warn('Graph snapshot unavailable; legacy research remains available.');}
  byId=new Map([...entries,...graphEntries].map(entry=>[entry.id,entry]));$('loading').hidden=true;
  applyRoute();
 }catch(error){

@@ -23,6 +23,12 @@ export function graphRoots(records){
    const related=p.links.filter(r=>r.relation!=='part_of').map(r=>({e:byId.get(r.from_id===p.id?r.to_id:r.from_id),r})).filter(v=>v.e&&v.e.kind!=='stakeholder');
    return {id:space.id+'/'+p.id,title:p.title,kind:'topic',entry:p,count:related.length+1,children:related.map(({e,r})=>leaf(e,space.id+'/'+p.id+'/'+e.id,r))};
   });
+  // Responses may explain a space through context_for without becoming problems
+  // or claiming taxonomic part_of membership. Keep the real relationship intact.
+  const members=new Set(children.map(child=>child.entry.id));
+  children.push(...space.links.filter(r=>r.to_id===space.id&&r.relation==='context_for')
+   .map(r=>({e:byId.get(r.from_id),r})).filter(({e})=>e&&!members.has(e.id))
+   .map(({e,r})=>leaf(e,space.id+'/'+e.id,r)));
   children.push(...space.links.filter(r=>r.from_id===space.id&&r.relation==='raises_question').map(r=>byId.get(r.to_id)).filter(Boolean).map(e=>leaf(e,space.id+'/'+e.id)));
   return {id:space.id,title:space.title,kind:'territory',entry:space,graph:true,description:space.statement,question:'What is documented, what is proposed, and whose experience is missing?',color:'#c3d7ea',themes:[],children,count:children.reduce((n,c)=>n+c.count,1)};
  });
