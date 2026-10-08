@@ -1,3 +1,5 @@
+> Historical brief, superseded on 8 October 2026. Read `AGENTS.md` and `WHOCARES_PRODUCT_NORTH_STAR.md` before work. Its theme-first taxonomy, optional continuous zoom and dark-console direction do not override current database principles. The remainder is retained as historical context.
+
 # Who Cares design brief
 
 **Status:** Revised 5 Oct 2026 Europe/Berlin after research-map UX review and rejection of image-gen mockups as source of truth.  

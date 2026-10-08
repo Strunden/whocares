@@ -19,3 +19,7 @@ npx wrangler deploy
 ```
 
 Account: `7900f10c4e99776ebbab5e336b8bfa98`.
+
+## Problem atlas (prepared, not deployed)
+
+`GET /api/principles` and `GET /api/atlas` read the additive `atlas` schema. They preserve epistemic status, confidence rationale, source provenance and explicit response relationships. The existing index contract stays intact. Read [the knowledge model](../../docs/atlas/knowledge-model.md) and `AGENTS.md` before making changes. No Worker deployment was performed for this foundation.

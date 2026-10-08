@@ -1,0 +1,992 @@
+{
+  "objects": [
+    {
+      "id": "aspiration-valued-activities",
+      "kind": "aspiration",
+      "scope": {
+        "setting": "not established",
+        "geography": "not established",
+        "population": "not established"
+      },
+      "title": "Continue activities that matter to me",
+      "entry_id": null,
+      "revision": 1,
+      "statement": "Candidate aspiration to investigate in the person’s own terms: continue relationships and activities they value, with agency over help.",
+      "confidence": {
+        "basis": "not_assessed",
+        "rationale": "Requires field research; not an observed or verified claim."
+      },
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "updated_at": "2026-10-08T14:14:38.587991+00:00",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "cause-environment-capacity-fit",
+      "kind": "systemic_cause",
+      "scope": {
+        "setting": "physical and social environments",
+        "geography": "global",
+        "population": "older people"
+      },
+      "title": "Fit between environments and capacity",
+      "entry_id": null,
+      "revision": 1,
+      "statement": "WHO describes environments as affecting health through barriers and incentives and enabling valued activity despite capacity loss. This is a broad mechanism, not a measured local causal effect.",
+      "confidence": {
+        "basis": "single_source",
+        "rationale": "Institutional synthesis; no local causal estimate."
+      },
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "updated_at": "2026-10-08T14:14:38.587991+00:00",
+      "epistemic_status": "documented"
+    },
+    {
+      "id": "problem-digital-family-contact",
+      "kind": "problem",
+      "scope": {
+        "setting": "not established",
+        "geography": "not established",
+        "population": "not established"
+      },
+      "title": "Difficulty initiating digital family contact",
+      "entry_id": null,
+      "revision": 1,
+      "statement": "Candidate question: in which situations do digital interfaces obstruct family contact for an older person, and whose goal does contact serve?",
+      "confidence": {
+        "basis": "not_assessed",
+        "rationale": "Requires field research; not an observed or verified claim."
+      },
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "updated_at": "2026-10-08T14:14:38.587991+00:00",
+      "epistemic_status": "candidate"
+    },
+    {
+      "id": "problem-environmental-barriers",
+      "kind": "problem",
+      "scope": {
+        "setting": "homes, neighbourhoods and communities",
+        "geography": "global",
+        "population": "older people; heterogeneous needs"
+      },
+      "title": "Environments can obstruct valued activities",
+      "entry_id": null,
+      "revision": 1,
+      "statement": "Physical and social environments can constrain what older people are able to do.",
+      "confidence": {
+        "basis": "single_source",
+        "rationale": "Supported at a broad global level by WHO; local mechanisms and distribution remain unresearched."
+      },
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "updated_at": "2026-10-08T14:14:38.587991+00:00",
+      "epistemic_status": "documented"
+    },
+    {
+      "id": "question-care-work",
+      "kind": "open_question",
+      "scope": {
+        "setting": "not established",
+        "geography": "not established",
+        "population": "not established"
+      },
+      "title": "How does participation relate to care work?",
+      "entry_id": null,
+      "revision": 1,
+      "statement": "What effects do support arrangements have on professional caregivers, provider workload and sustainable service provision? No effect direction is assumed.",
+      "confidence": {
+        "basis": "not_assessed",
+        "rationale": "Requires field research; not an observed or verified claim."
+      },
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "updated_at": "2026-10-08T14:14:38.587991+00:00",
+      "epistemic_status": "open_question"
+    },
+    {
+      "id": "question-lived-needs",
+      "kind": "open_question",
+      "scope": {
+        "setting": "not established",
+        "geography": "not established",
+        "population": "not established"
+      },
+      "title": "Whose aspiration is being served?",
+      "entry_id": null,
+      "revision": 1,
+      "statement": "What do older adults want from contact, and how does that differ from family expectations? Recruit varied circumstances; preserve attributed observations.",
+      "confidence": {
+        "basis": "not_assessed",
+        "rationale": "Requires field research; not an observed or verified claim."
+      },
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "updated_at": "2026-10-08T14:14:38.587991+00:00",
+      "epistemic_status": "open_question"
+    },
+    {
+      "id": "question-response-outcomes",
+      "kind": "open_question",
+      "scope": {
+        "setting": "not established",
+        "geography": "not established",
+        "population": "not established"
+      },
+      "title": "What does the response change?",
+      "entry_id": null,
+      "revision": 1,
+      "statement": "Does easier initiation change valued contact, autonomy or work for families? Seek independent outcomes, costs, non-use and alternatives.",
+      "confidence": {
+        "basis": "not_assessed",
+        "rationale": "Requires field research; not an observed or verified claim."
+      },
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "updated_at": "2026-10-08T14:14:38.587991+00:00",
+      "epistemic_status": "open_question"
+    },
+    {
+      "id": "response-who-decade",
+      "kind": "institutional_response",
+      "scope": {
+        "setting": "public-health systems",
+        "geography": "global",
+        "population": "older people, families and communities"
+      },
+      "title": "UN Decade of Healthy Ageing",
+      "entry_id": null,
+      "revision": 1,
+      "statement": "WHO describes a collaborative programme that includes supportive communities, integrated care and access to long-term care.",
+      "confidence": {
+        "basis": "single_source",
+        "rationale": "Documents an institutional response, not proof of its outcomes."
+      },
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "updated_at": "2026-10-08T14:14:38.587991+00:00",
+      "epistemic_status": "documented"
+    },
+    {
+      "id": "situation-family-call",
+      "kind": "daily_situation",
+      "scope": {
+        "setting": "not established",
+        "geography": "not established",
+        "population": "not established"
+      },
+      "title": "Initiating a family call at home",
+      "entry_id": null,
+      "revision": 1,
+      "statement": "Illustrative research scenario: a person wants to call family at a time they choose. No person, interview, quotation or frequency is asserted.",
+      "confidence": {
+        "basis": "not_applicable",
+        "rationale": "A prompt for fieldwork, not an observed day-in-the-life."
+      },
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "updated_at": "2026-10-08T14:14:38.587991+00:00",
+      "epistemic_status": "illustrative"
+    },
+    {
+      "id": "solution-amara-home",
+      "kind": "solution",
+      "scope": {
+        "setting": "home",
+        "geography": "not assessed",
+        "population": "older users and families"
+      },
+      "title": "Amara Home",
+      "entry_id": "company-amara",
+      "revision": 1,
+      "statement": "The provider describes a preconfigured voice-operated device and family app for calls, photos and messages. This documents the offering, not effectiveness against loneliness.",
+      "confidence": {
+        "basis": "single_source",
+        "rationale": "Provider claim inspected; no independent outcome evaluation."
+      },
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "updated_at": "2026-10-08T14:14:38.587991+00:00",
+      "epistemic_status": "documented"
+    },
+    {
+      "id": "space-everyday-participation",
+      "kind": "problem_space",
+      "scope": {
+        "setting": "not established",
+        "geography": "not established",
+        "population": "not established"
+      },
+      "title": "Participation in everyday life",
+      "entry_id": null,
+      "revision": 1,
+      "statement": "Explore frictions between what people value doing and what their environments let them do. Scope includes home, neighbourhood and social participation, with overlaps into care work and provision. Excludes a general catalogue of diseases or communication products. Boundaries remain revisable.",
+      "confidence": {
+        "basis": "not_applicable",
+        "rationale": "Editorial boundary informed by WHO context; not a validated universal taxonomy."
+      },
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "updated_at": "2026-10-08T14:14:38.587991+00:00",
+      "epistemic_status": "interpretation"
+    },
+    {
+      "id": "stakeholder-care-providers",
+      "kind": "stakeholder",
+      "scope": {
+        "setting": "not established",
+        "geography": "not established",
+        "population": "not established"
+      },
+      "title": "Care providers",
+      "entry_id": null,
+      "revision": 1,
+      "statement": "Include this perspective in the shared graph; investigate diversity within it.",
+      "confidence": {
+        "basis": "not_applicable",
+        "rationale": "Stakeholder inclusion is product direction, not a research finding."
+      },
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "updated_at": "2026-10-08T14:14:38.587991+00:00",
+      "epistemic_status": "normative"
+    },
+    {
+      "id": "stakeholder-family-caregivers",
+      "kind": "stakeholder",
+      "scope": {
+        "setting": "not established",
+        "geography": "not established",
+        "population": "not established"
+      },
+      "title": "Family caregivers",
+      "entry_id": null,
+      "revision": 1,
+      "statement": "Include this perspective in the shared graph; investigate diversity within it.",
+      "confidence": {
+        "basis": "not_applicable",
+        "rationale": "Stakeholder inclusion is product direction, not a research finding."
+      },
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "updated_at": "2026-10-08T14:14:38.587991+00:00",
+      "epistemic_status": "normative"
+    },
+    {
+      "id": "stakeholder-older-adults",
+      "kind": "stakeholder",
+      "scope": {
+        "setting": "not established",
+        "geography": "not established",
+        "population": "not established"
+      },
+      "title": "Older adults",
+      "entry_id": null,
+      "revision": 1,
+      "statement": "Include this perspective in the shared graph; investigate diversity within it.",
+      "confidence": {
+        "basis": "not_applicable",
+        "rationale": "Stakeholder inclusion is product direction, not a research finding."
+      },
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "updated_at": "2026-10-08T14:14:38.587991+00:00",
+      "epistemic_status": "normative"
+    },
+    {
+      "id": "stakeholder-professional-caregivers",
+      "kind": "stakeholder",
+      "scope": {
+        "setting": "not established",
+        "geography": "not established",
+        "population": "not established"
+      },
+      "title": "Professional caregivers",
+      "entry_id": null,
+      "revision": 1,
+      "statement": "Include this perspective in the shared graph; investigate diversity within it.",
+      "confidence": {
+        "basis": "not_applicable",
+        "rationale": "Stakeholder inclusion is product direction, not a research finding."
+      },
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "updated_at": "2026-10-08T14:14:38.587991+00:00",
+      "epistemic_status": "normative"
+    },
+    {
+      "id": "stakeholder-sustainable-innovators",
+      "kind": "stakeholder",
+      "scope": {
+        "setting": "not established",
+        "geography": "not established",
+        "population": "not established"
+      },
+      "title": "Financially sustainable innovators",
+      "entry_id": null,
+      "revision": 1,
+      "statement": "Include this perspective in the shared graph; investigate diversity within it.",
+      "confidence": {
+        "basis": "not_applicable",
+        "rationale": "Stakeholder inclusion is product direction, not a research finding."
+      },
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "updated_at": "2026-10-08T14:14:38.587991+00:00",
+      "epistemic_status": "normative"
+    },
+    {
+      "id": "workaround-family-assistance",
+      "kind": "lived_workaround",
+      "scope": {
+        "setting": "not established",
+        "geography": "not established",
+        "population": "not established"
+      },
+      "title": "Ask a relative to operate the interface",
+      "entry_id": null,
+      "revision": 1,
+      "statement": "Hypothesized workaround to investigate: relying on a relative to set up or initiate contact. Do not display as observed lived experience until field evidence exists.",
+      "confidence": {
+        "basis": "not_assessed",
+        "rationale": "Requires field research; not an observed or verified claim."
+      },
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "updated_at": "2026-10-08T14:14:38.587991+00:00",
+      "epistemic_status": "hypothesis"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source-amara-product-20261008",
+      "scope": "Provider description of a preconfigured voice-operated device and family app.",
+      "title": "Amara Home product page",
+      "locator": "https://amara.app/",
+      "publisher": "Amara",
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "read_method": "web page inspected",
+        "existing_entry_id": "company-amara"
+      },
+      "limitations": "Self-description of an offering; no independent outcome or unmet-need evidence.",
+      "source_kind": "provider_claim",
+      "accessed_date": "2026-10-08",
+      "published_date": null
+    },
+    {
+      "id": "source-user-product-direction",
+      "scope": "Product and model decisions, not empirical claims.",
+      "title": "Defining the atlas and authorized realignment request",
+      "locator": "chatgpt-conversation://6ac6aa26-312c-83eb-b973-f82acbe0770d",
+      "publisher": "Project owner",
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "conversation_id": "6ac6aa26-312c-83eb-b973-f82acbe0770d"
+      },
+      "limitations": "Cannot support factual claims about stakeholder experiences.",
+      "source_kind": "product_direction",
+      "accessed_date": "2026-10-08",
+      "published_date": null
+    },
+    {
+      "id": "source-who-ageing-2025",
+      "scope": "Global overview of ageing, environments and public-health responses.",
+      "title": "Ageing and health",
+      "locator": "https://www.who.int/news-room/fact-sheets/detail/ageing-and-health",
+      "publisher": "World Health Organization",
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "sections": [
+          "Factors influencing healthy ageing",
+          "WHO response"
+        ],
+        "read_method": "web page inspected"
+      },
+      "limitations": "Broad institutional synthesis; no local field observation or prevalence estimate for this atlas slice.",
+      "source_kind": "institutional",
+      "accessed_date": "2026-10-08",
+      "published_date": "2025-10-01"
+    }
+  ],
+  "truncated": false,
+  "relationships": [
+    {
+      "id": "rel-amara-response",
+      "to_id": "problem-digital-family-contact",
+      "from_id": "solution-amara-home",
+      "relation": "responds_to",
+      "revision": 1,
+      "statement": "The described offering is a response relevant to the candidate contact problem; this match is editorial and establishes neither unmet need nor effectiveness.",
+      "confidence": {
+        "basis": "not_applicable",
+        "rationale": "Editorial connection, not empirical or causal verification."
+      },
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "updated_at": "2026-10-08T14:14:38.587991+00:00",
+      "epistemic_status": "interpretation"
+    },
+    {
+      "id": "rel-aspiration",
+      "to_id": "aspiration-valued-activities",
+      "from_id": "stakeholder-older-adults",
+      "relation": "aspires_to",
+      "revision": 1,
+      "statement": "Candidate aspiration; requires people’s own accounts.",
+      "confidence": {
+        "basis": "not_assessed",
+        "rationale": "Not an attributed aspiration."
+      },
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "updated_at": "2026-10-08T14:14:38.587991+00:00",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "rel-digital-in-space",
+      "to_id": "space-everyday-participation",
+      "from_id": "problem-digital-family-contact",
+      "relation": "part_of",
+      "revision": 1,
+      "statement": "Candidate subproblem, not a verified need.",
+      "confidence": {
+        "basis": "not_applicable",
+        "rationale": "Editorial connection, not empirical or causal verification."
+      },
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "updated_at": "2026-10-08T14:14:38.587991+00:00",
+      "epistemic_status": "interpretation"
+    },
+    {
+      "id": "rel-env-affects-older",
+      "to_id": "stakeholder-older-adults",
+      "from_id": "problem-environmental-barriers",
+      "relation": "affects",
+      "revision": 1,
+      "statement": "WHO explains environmental barriers and supportive environments for older people.",
+      "confidence": {
+        "basis": "single_source",
+        "rationale": "WHO broad institutional synthesis."
+      },
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "updated_at": "2026-10-08T14:14:38.587991+00:00",
+      "epistemic_status": "documented"
+    },
+    {
+      "id": "rel-env-in-space",
+      "to_id": "space-everyday-participation",
+      "from_id": "problem-environmental-barriers",
+      "relation": "part_of",
+      "revision": 1,
+      "statement": "Editorially grouped by the valued-activity friction.",
+      "confidence": {
+        "basis": "not_applicable",
+        "rationale": "Editorial connection, not empirical or causal verification."
+      },
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "updated_at": "2026-10-08T14:14:38.587991+00:00",
+      "epistemic_status": "interpretation"
+    },
+    {
+      "id": "rel-env-mechanism",
+      "to_id": "problem-environmental-barriers",
+      "from_id": "cause-environment-capacity-fit",
+      "relation": "contributes_to",
+      "revision": 1,
+      "statement": "Environmental barriers and incentives are part of the broad mechanism described by WHO.",
+      "confidence": {
+        "basis": "single_source",
+        "rationale": "Broad mechanism; no local causal estimate."
+      },
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "updated_at": "2026-10-08T14:14:38.587991+00:00",
+      "epistemic_status": "documented"
+    },
+    {
+      "id": "rel-family-affects",
+      "to_id": "stakeholder-family-caregivers",
+      "from_id": "problem-digital-family-contact",
+      "relation": "affects",
+      "revision": 1,
+      "statement": "Investigate how support burdens and family goals interact.",
+      "confidence": {
+        "basis": "not_assessed",
+        "rationale": "Not measured."
+      },
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "updated_at": "2026-10-08T14:14:38.587991+00:00",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "rel-question-care-work",
+      "to_id": "question-care-work",
+      "from_id": "space-everyday-participation",
+      "relation": "raises_question",
+      "revision": 1,
+      "statement": "Keep this unanswered question visible.",
+      "confidence": {
+        "basis": "not_applicable",
+        "rationale": "Editorial connection, not empirical or causal verification."
+      },
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "updated_at": "2026-10-08T14:14:38.587991+00:00",
+      "epistemic_status": "interpretation"
+    },
+    {
+      "id": "rel-question-lived-needs",
+      "to_id": "question-lived-needs",
+      "from_id": "space-everyday-participation",
+      "relation": "raises_question",
+      "revision": 1,
+      "statement": "Keep this unanswered question visible.",
+      "confidence": {
+        "basis": "not_applicable",
+        "rationale": "Editorial connection, not empirical or causal verification."
+      },
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "updated_at": "2026-10-08T14:14:38.587991+00:00",
+      "epistemic_status": "interpretation"
+    },
+    {
+      "id": "rel-question-response-outcomes",
+      "to_id": "question-response-outcomes",
+      "from_id": "space-everyday-participation",
+      "relation": "raises_question",
+      "revision": 1,
+      "statement": "Keep this unanswered question visible.",
+      "confidence": {
+        "basis": "not_applicable",
+        "rationale": "Editorial connection, not empirical or causal verification."
+      },
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "updated_at": "2026-10-08T14:14:38.587991+00:00",
+      "epistemic_status": "interpretation"
+    },
+    {
+      "id": "rel-situation",
+      "to_id": "situation-family-call",
+      "from_id": "problem-digital-family-contact",
+      "relation": "arises_in",
+      "revision": 1,
+      "statement": "Illustrative setting for investigating a candidate problem.",
+      "confidence": {
+        "basis": "not_applicable",
+        "rationale": "Editorial connection, not empirical or causal verification."
+      },
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "updated_at": "2026-10-08T14:14:38.587991+00:00",
+      "epistemic_status": "illustrative"
+    },
+    {
+      "id": "rel-who-response",
+      "to_id": "problem-environmental-barriers",
+      "from_id": "response-who-decade",
+      "relation": "responds_to",
+      "revision": 1,
+      "statement": "WHO’s described response includes supportive communities.",
+      "confidence": {
+        "basis": "single_source",
+        "rationale": "Institutional response documented; outcomes not established."
+      },
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "updated_at": "2026-10-08T14:14:38.587991+00:00",
+      "epistemic_status": "documented"
+    },
+    {
+      "id": "rel-workaround",
+      "to_id": "problem-digital-family-contact",
+      "from_id": "workaround-family-assistance",
+      "relation": "works_around",
+      "revision": 1,
+      "statement": "Potential reliance on family is a research hypothesis.",
+      "confidence": {
+        "basis": "not_assessed",
+        "rationale": "No observed workaround yet."
+      },
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "updated_at": "2026-10-08T14:14:38.587991+00:00",
+      "epistemic_status": "hypothesis"
+    }
+  ],
+  "evidence_links": [
+    {
+      "id": "ev-amara",
+      "note": "Offering described by provider. No loneliness outcome inferred.",
+      "stance": "supports",
+      "excerpt": null,
+      "locator": "Amara in 3 Schritten; Amara Home für Oma, eine App für Euch",
+      "object_id": "solution-amara-home",
+      "source_id": "source-amara-product-20261008",
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "reviewed_at": "2026-10-08T14:00:00+00:00",
+      "relationship_id": null
+    },
+    {
+      "id": "ev-amara-response-origin",
+      "note": "Context for editorial response linkage; not independent need or outcome evidence.",
+      "stance": "context",
+      "excerpt": null,
+      "locator": "Amara in 3 Schritten",
+      "object_id": null,
+      "source_id": "source-amara-product-20261008",
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "reviewed_at": "2026-10-08T14:00:00+00:00",
+      "relationship_id": "rel-amara-response"
+    },
+    {
+      "id": "ev-cause-environment-capacity-fit",
+      "note": "WHO describes direct influences, barriers, incentives and support despite capacity loss.",
+      "stance": "supports",
+      "excerpt": null,
+      "locator": "Factors influencing healthy ageing",
+      "object_id": "cause-environment-capacity-fit",
+      "source_id": "source-who-ageing-2025",
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "reviewed_at": "2026-10-08T14:00:00+00:00",
+      "relationship_id": null
+    },
+    {
+      "id": "ev-origin-stakeholder-care-providers",
+      "note": "Stakeholder inclusion follows product direction.",
+      "stance": "origin",
+      "excerpt": null,
+      "locator": "ethical-north-star",
+      "object_id": "stakeholder-care-providers",
+      "source_id": "source-user-product-direction",
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "reviewed_at": "2026-10-08T14:00:00+00:00",
+      "relationship_id": null
+    },
+    {
+      "id": "ev-origin-stakeholder-family-caregivers",
+      "note": "Stakeholder inclusion follows product direction.",
+      "stance": "origin",
+      "excerpt": null,
+      "locator": "ethical-north-star",
+      "object_id": "stakeholder-family-caregivers",
+      "source_id": "source-user-product-direction",
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "reviewed_at": "2026-10-08T14:00:00+00:00",
+      "relationship_id": null
+    },
+    {
+      "id": "ev-origin-stakeholder-older-adults",
+      "note": "Stakeholder inclusion follows product direction.",
+      "stance": "origin",
+      "excerpt": null,
+      "locator": "ethical-north-star",
+      "object_id": "stakeholder-older-adults",
+      "source_id": "source-user-product-direction",
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "reviewed_at": "2026-10-08T14:00:00+00:00",
+      "relationship_id": null
+    },
+    {
+      "id": "ev-origin-stakeholder-professional-caregivers",
+      "note": "Stakeholder inclusion follows product direction.",
+      "stance": "origin",
+      "excerpt": null,
+      "locator": "ethical-north-star",
+      "object_id": "stakeholder-professional-caregivers",
+      "source_id": "source-user-product-direction",
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "reviewed_at": "2026-10-08T14:00:00+00:00",
+      "relationship_id": null
+    },
+    {
+      "id": "ev-origin-stakeholder-sustainable-innovators",
+      "note": "Stakeholder inclusion follows product direction.",
+      "stance": "origin",
+      "excerpt": null,
+      "locator": "ethical-north-star",
+      "object_id": "stakeholder-sustainable-innovators",
+      "source_id": "source-user-product-direction",
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "reviewed_at": "2026-10-08T14:00:00+00:00",
+      "relationship_id": null
+    },
+    {
+      "id": "ev-problem-environmental-barriers",
+      "note": "Paraphrase of WHO sections on physical and social environments. No local prevalence asserted.",
+      "stance": "supports",
+      "excerpt": null,
+      "locator": "Factors influencing healthy ageing",
+      "object_id": "problem-environmental-barriers",
+      "source_id": "source-who-ageing-2025",
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "reviewed_at": "2026-10-08T14:00:00+00:00",
+      "relationship_id": null
+    },
+    {
+      "id": "ev-rel-env-affects-older",
+      "note": "Scoped support for the stated broad relationship.",
+      "stance": "supports",
+      "excerpt": null,
+      "locator": "Factors influencing healthy ageing; WHO response",
+      "object_id": null,
+      "source_id": "source-who-ageing-2025",
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "reviewed_at": "2026-10-08T14:00:00+00:00",
+      "relationship_id": "rel-env-affects-older"
+    },
+    {
+      "id": "ev-rel-env-mechanism",
+      "note": "Scoped support for the stated broad relationship.",
+      "stance": "supports",
+      "excerpt": null,
+      "locator": "Factors influencing healthy ageing; WHO response",
+      "object_id": null,
+      "source_id": "source-who-ageing-2025",
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "reviewed_at": "2026-10-08T14:00:00+00:00",
+      "relationship_id": "rel-env-mechanism"
+    },
+    {
+      "id": "ev-rel-who-response",
+      "note": "Scoped support for the stated broad relationship.",
+      "stance": "supports",
+      "excerpt": null,
+      "locator": "Factors influencing healthy ageing; WHO response",
+      "object_id": null,
+      "source_id": "source-who-ageing-2025",
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "reviewed_at": "2026-10-08T14:00:00+00:00",
+      "relationship_id": "rel-who-response"
+    },
+    {
+      "id": "ev-response-who-decade",
+      "note": "Programme description; not an evaluation.",
+      "stance": "supports",
+      "excerpt": null,
+      "locator": "WHO response",
+      "object_id": "response-who-decade",
+      "source_id": "source-who-ageing-2025",
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "reviewed_at": "2026-10-08T14:00:00+00:00",
+      "relationship_id": null
+    },
+    {
+      "id": "ev-space-origin",
+      "note": "Context for an editorial grouping; does not validate its boundaries.",
+      "stance": "context",
+      "excerpt": null,
+      "locator": "Factors influencing healthy ageing",
+      "object_id": "space-everyday-participation",
+      "source_id": "source-who-ageing-2025",
+      "created_at": "2026-10-08T14:14:38.587991+00:00",
+      "provenance": {
+        "batch": "atlas-first-slice-20261008",
+        "method": "Scoped editorial curation, independently of company themes",
+        "authored_by": "Codex"
+      },
+      "reviewed_at": "2026-10-08T14:00:00+00:00",
+      "relationship_id": null
+    }
+  ],
+  "schema_version": 1,
+  "principles_version": 1,
+  "exported_from": {
+    "project_id": "proud-sea-34268045",
+    "branch_id": "br-silent-mouse-b2g45sar",
+    "database": "neondb",
+    "date": "2026-10-08"
+  }
+}

@@ -1,3 +1,4 @@
+import { ATLAS_QUERY, PRINCIPLES_QUERY, readPayload } from "./atlas-read.js";
 import { attachFunding, funderDetail, funderSummary } from "./funders-shape.js";
 import { buildIndex } from "./index-shape.js";
 import { decodeSlug } from "./path-slug.js";
@@ -155,7 +156,9 @@ async function readFunder(env, id) {
 }
 
 function isApiPath(path) {
-  return path === "/api/index"
+  return path === "/api/principles"
+    || path === "/api/atlas"
+    || path === "/api/index"
     || path === "/api/health"
     || path === "/api/funders"
     || path.startsWith("/api/funders/")
@@ -204,6 +207,18 @@ export default {
         );
         const entries = countRows[0] ? Number(countRows[0].entries) : 0;
         return json({ ok: true, database: "up", entries });
+      } catch (error) {
+        return dbError(error);
+      }
+    }
+
+    if (path === "/api/principles" || path === "/api/atlas") {
+      try {
+        const payload = await withSql(env, sql => readPayload(
+          sql, path === "/api/principles" ? PRINCIPLES_QUERY : ATLAS_QUERY,
+        ));
+        if (!payload) return json({ ok: false, error: "not found" }, 404);
+        return json(payload);
       } catch (error) {
         return dbError(error);
       }
