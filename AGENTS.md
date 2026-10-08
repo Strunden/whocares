@@ -15,6 +15,21 @@ Project `proud-sea-34268045`, database `neondb`. The live branch is `br-silent-m
 
 Read principles again when their version changes. Do not independently rewrite the mirror: append a reviewed database version and regenerate the mirror with its canonical hash. Disclose stale mirrors.
 
+
+## Shared implementation specifications
+
+In addition to the database principles, read the applicable **reviewed implementation briefs** before proposing taxonomy, design or data changes:
+
+- [Product vision and venture-builder jobs](docs/PRODUCT_VISION.md)
+- [Problem-space definitions and research process](docs/PROBLEM_ATLAS.md)
+- [Graph objects, evidence and data contracts](docs/KNOWLEDGE_MODEL.md)
+- [Map-first semantic zoom, lenses and storytelling](docs/UX_PRINCIPLES.md)
+- [Research and publication standards](docs/RESEARCH_STANDARDS.md)
+
+These briefs explain how to implement the canonical database principles. They are **not independent policy authorities**. For conflicts, check `atlas.current_principles`, compare its version/hash with the [canonical repository mirror](https://github.com/Strunden/whocares/blob/data/problem-atlas-foundation/WHOCARES_PRODUCT_NORTH_STAR.md), and reconcile openly before making changes.
+
+Before shipping an atlas UI, perform a product-alignment review of the problem-space definition, bottom-up/top-down evidence, horizontal comprehension, semantic zoom and user agency. A passing functional test is not a substitute for this review.
+
 ## Required product rules
 
 - Evidence-backed problem discovery and market intelligence for venture builders: discovery, causal understanding, self-directed hypothesis formation. No opportunity scores, AI attractiveness rankings or venture judgments.
