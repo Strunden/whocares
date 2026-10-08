@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="A research atlas of ageing and care. Explore human needs, existing responses and questions worth investigating.">
-  <meta name="theme-color" content="#f6f8f5">
+  <meta name="theme-color" content="#fcfdff">
+  <link rel="icon" href="data:,">
   <title>Who Cares · Research atlas</title>
   <link rel="stylesheet" href="css/atlas.css">
 </head>
@@ -26,15 +27,15 @@
   </section>
   <main id="workspace" hidden>
     <div class="map-column">
-      <section id="map" tabindex="0" aria-label="Interactive care atlas" aria-describedby="map-help">
+      <nav id="map-breadcrumbs" aria-label="Map location"></nav><section id="level-context" hidden aria-label="Current research group"></section><section id="map" tabindex="0" aria-label="Interactive care atlas" aria-describedby="map-help">
         <svg id="landscape" aria-hidden="true"><defs><filter id="soft"><feGaussianBlur stdDeviation=".6"/></filter></defs><g id="territories"></g><g id="connections"></g></svg>
-        <div id="labels"></div>
+        <div id="labels"></div><span id="level-range" aria-live="polite"></span><button id="map-up" hidden aria-label="Back to the enclosing group"></button>
         <div id="loading" role="status">Loading the research atlas…</div>
         <div id="map-empty" hidden>No labels in view.<button id="recover">Return to overview</button></div>
       </section>
       <div class="map-bottom">
         <button class="story-entry" id="story-open"><span class="story-time">05:45</span><span>A morning in care<small>Follow the work, then the evidence</small></span><span aria-hidden="true">↗</span></button>
-        <div class="map-controls" aria-label="Map controls"><button id="zoom-out" aria-label="Zoom out">−</button><output id="zoom-value">100%</output><button id="zoom-in" aria-label="Zoom in">+</button><button id="overview">Overview</button></div>
+        <div class="map-controls" aria-label="Map controls"><button id="zoom-out" aria-label="Go up one level">−</button><output id="zoom-value">100%</output><button id="zoom-in" aria-label="Enter the nearest group">+</button><button id="overview">Overview</button></div>
       </div>
     </div>
     <aside id="inspector" hidden aria-label="Research reading panel">
@@ -42,7 +43,7 @@
       <div id="panel-content" tabindex="-1"></div>
     </aside>
   </main>
-  <footer class="atlas-footer" hidden><div class="depth" aria-label="Visible map detail"><span data-level="0" class="current">Territories</span><i>›</i><span data-level="1">Problems</span><i>›</i><span data-level="2">Responses</span></div><p id="map-help">Drag to pan · Scroll to zoom · Text stays the same size</p><button id="list-open">Browse as a list</button></footer>
+  <footer class="atlas-footer" hidden><div class="depth" aria-label="Visible map detail"><span data-level="0" class="current">Territories</span><i>›</i><span data-level="1">Collections</span><i>›</i><span data-level="2">Records</span></div><p id="map-help">Drag or scroll to pan · Click a group to enter</p><button id="list-open">Browse as a list</button></footer>
   <p class="sr-only" id="announcement" role="status" aria-live="polite"></p>
   <script type="module" src="js/atlas.js"></script>
 </body>

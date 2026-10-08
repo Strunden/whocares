@@ -7,7 +7,7 @@ Help venture builders explore ageing and care problem spaces, form a fast mental
 ## Core interaction principles
 
 - **Map first:** a spacious, editorial landscape communicates breadth, relevance and relationships before any deep dive.
-- **True continuous zoom:** smoothly pan and zoom around the pointer. Zoom reveals additional semantic detail; it must not switch between a fixed sequence of screens or select a region automatically.
+- **Explicit reading levels (latest user direction):** click a territory or collection to enter a stable level of detail. Pan with drag or scroll. Content does not change while panning. Breadcrumbs show the path and provide the route back. This supersedes the original continuous-zoom requirement.
 - **Human-centered visual fidelity:** soft translucent organic territories, restrained typography, subtle links and illustrations rather than default box-and-line graph styling.
 - **Illustrated person selection:** older adult, care worker, family caregiver, Angehörige and care provider each open a distinct editorial map of the same research graph. Angehörige arrange and coordinate support without necessarily providing hands-on care; family caregiving is a separate experience. Roles can overlap. Selection changes the organisation and questions of the map, not a dimming filter.
 - **Stories as depth:** real, attributed accounts or clearly labelled illustrative workflows help visitors understand particular situations, evidence, workarounds and existing solutions.
@@ -22,8 +22,10 @@ This branch is a safe workspace for the next iteration. The old mock is not cons
 
 ## User-directed revision, 8 October 2026
 
-- Text remains fixed in screen space while territories and node positions move continuously. Detail appears in three content layers: territories, problems, responses. These are visibility thresholds, not preset camera views.
+- Text remains fixed in screen space. Explicit navigation opens territories, collections and records; no continuous zoom threshold changes content. See `atlas-system.md` for the current architecture.
 - Clicking a territory, problem, company or story source opens one integrated reading panel. Closing restores the prior camera. Returning from a source preserves the story position and expanded evidence.
 - Maps provide breadth; stories are exemplary routes, never definitions of a demographic. Fictional names, times and scenes are explicitly labelled. A person’s preferences and agency remain central.
 - The same source record may belong in several perspectives. Broad category membership is distinct from an explicit research connection. Neither is evidence of effectiveness.
 - The loneliness scroll-story reference mentioned in conversation was not exposed in the bounded cached conversation available to this implementation. Exact fidelity to that reference has not been assessed.
+
+The latest implementation uses independent generated image assets, a data-derived hierarchy, viewport-culling at explicit reading levels, and compact metadata with on-demand evidence records. See `atlas-validation.md` for the measured scale test and remaining limits.

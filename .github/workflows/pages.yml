@@ -24,6 +24,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Build atlas discovery index
+        run: node scripts/build-atlas-data.mjs
+
       - name: Check static site
         run: |
           python3 -c "import json; d=json.load(open('site/data/index.json')); assert d['entries'], 'index empty'; print(d['counts'])"

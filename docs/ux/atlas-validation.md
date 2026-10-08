@@ -1,41 +1,41 @@
-# Atlas rebuild validation — 8 October 2026
+# Spatial index validation — 8 October 2026
 
-## Preview
+## Preview and checks
 
-Run `python3 -m http.server 8765 --directory site` from the repository root, then open http://localhost:8765/. No installation or build is needed. Start at the illustrated picker or use `/#/relative` for Angehörige. `/#/worker/story/0` opens the care-workday story. Existing `browse.html` remains available, but atlas navigation no longer sends users into that different interface.
+Run `npm run build:atlas`, then `python3 -m http.server 8765 --directory site`. Open http://localhost:8765/#/relative. Choose Finding care, then Care admin. Breadcrumbs should read Angehörige / Finding care / Care admin. Drag/scroll pans, and must not change the level, text size or revealed content.
 
-## Critique against the goal
+Run `npm run test:atlas` for nine tests. A local-only browser scale test is available at http://localhost:8765/?stress=100000#/relative. It clearly labels 100,000 synthetic records as test data; it does not alter source research. Search for Synthetic service 099999 or open a theme and keep entering its alphabetical groups.
 
-This is a documented implementation critique and real-browser verification, not an independent participant study. The earlier version failed the mental-model and zoom gates. The rebuild addresses those failures; discovery comprehension and exact reference fidelity remain unvalidated.
+## Browser verification
 
-| Gate | Hard failure condition | Revision / finding |
+Real Codex in-app browser, desktop and 393 × 852 phone viewport:
+
+- All five illustrated entrances use independently generated PNG assets. Phone layout was visually inspected; no whole-page horizontal overflow was observed.
+- Finding care opens its question and four data-backed groups directly in the spatial reading surface. Care admin opens six research records. The initial display shows a subset, with an explicit “groups in view” cue.
+- Scroll panning changed camera translation while retaining scale 1.0676252518, group services and 22px title typography. Fixed reading-level membership is also tested in the pure layout module.
+- Keyboard Enter entered a territory. Breadcrumbs, up-level and overview controls provide explicit return routes.
+- dala.care opened its full job, payer, buyer, risks and source link from the on-demand detail file. Closing restored the exact saved camera and breadcrumb path.
+- An isolated test server deliberately failed the first evidence chunk with HTTP 503. The reader showed an explicit failure and Retry loading evidence. Retry loaded the full record and source link successfully.
+- The workday story retained reading-panel focus while its companion map followed the scene. Closing returned to overview. All story references and persona-map coverage pass automated checks.
+- Changing from phone to desktop preserved the current Finding care group.
+- The browser loaded 100,000 synthetic records plus 403 published records: 287,372 hierarchy nodes, seven mounted overview tiles and 176 total DOM elements. An eight-level route reached individual records with four map tiles and 169 DOM elements. Searching the final synthetic record returned one result. No browser console errors were recorded during these checks.
+- Automated construction of a separate 100,000-record fixture took roughly 0.2 seconds in this environment. All records were reachable; sampled reading levels mounted at most six tiles. This is a local result, not a universal performance guarantee.
+- The compact real-data discovery payload is 208,200 bytes versus 1,179,665 bytes for the original index. Full records remain lossless in seven on-demand chunks. Original illustration PNGs total about 6.7 MB and load lazily.
+
+## Hard critique and iteration
+
+This is an implementation critique backed by browser checks, not an independent participant study.
+
+| Gate | Failure identified | Change / remaining judgement |
 | --- | --- | --- |
-| Venture-builder discovery | Cannot follow a need to existing responses, payer and a useful next question | Integrated records expose jobs, payer information where present, research decisions, sources and next questions. Related companies use explicit links/shared theme tags. All 403 published records are searchable; category-only records are included in territory collections. Missing payer/evidence remains visible. Participant discovery success still needs testing. |
-| Mental model | ICP merely dims a generic map; unrelated navigation destroys context | Five illustrated entrances open distinct six-territory maps. Angehörige coordination is separate from hands-on family care. Problem/company reading stays in the atlas; closing restores camera. |
-| Empathy and evidence trust | Fiction poses as testimony; one day defines a group; a product is treated as proof of a solved problem | Five explicitly fictional exemplary stories with linked research, interpretation labels and source limitations. Stories preserve choice and relationships. No invented quotes or outcomes. Existing research has not been independently refreshed. |
-| Zoom and usability | Text balloons, overlaps, wheel selects content, dragging opens a record | HTML labels stay fixed while SVG territories and projected positions move. LOD thresholds are 155% and 270%; camera scale remains continuous. Collision handling, native buttons, keyboard map controls, search/list alternative, reduced-motion support. |
-| Aesthetic fidelity | Dominant boxes/lines, competing headline, incoherent detail view | Illustrated entrances, soft organic territories, editorial type, small orientation header, integrated reading panel. Screenshots inspected at desktop and phone widths. Exact loneliness-story reference was unavailable in the cached conversation; this remains an unverified reference requirement. |
+| Mental model | Continuous zoom changed text/content at hard-to-find positions | Replaced with click-to-enter levels and explicit breadcrumbs. Pan leaves the reading level unchanged. |
+| Discovery | Selected sample nodes concealed much of the research | Every published record is reachable in every perspective; uncovered records have a wider-research route. Search and paginated lists supplement spatial browsing. Alphabetical fallback is useful for retrieval, but does not discover new semantic relationships. |
+| Orientation | Deep paths became a long line of indistinguishable labels | Intermediate ancestors collapse into a menu. Range crumbs show record counts. Current level and in-view group counts remain visible. |
+| Scalability | Fixed nodes and full dossier payloads did not scale | Recursive data layout, bounded view rendering, compact index and on-demand full records. 100k synthetic test passed. Browser-resident metadata remains a finite-memory limit. |
+| Usability | Resizing shifted the view; returning from sources could lose position | Preserved current group on breakpoint changes and exact camera on reader close. Phone/keyboard checks passed. Physical touch and screen-reader sessions remain untested. |
+| Evidence trust | Broad categories could be mistaken for verified relevance | Separate theme and broader-category collections, explicit status and provenance, no efficacy inference. Existing analyst language is retained as research, not independently validated. |
+| Aesthetic fidelity | SVG substitutes lost the preferred human illustration quality | Five separate reference-style painted assets now replace them. The layout is generated, not a frozen visual. The first library is intentionally small; repeated portraits and large original PNGs remain limitations. |
 
-## Browser evidence
+## Remaining validation
 
-Tested in the real Codex in-app browser at 1280 × 800, intermediate widths and 393 × 852:
-
-- All five entrances, distinct territory structures and linked stories load from the bundled published index.
-- Six overview territory labels visible on phone; no horizontal page overflow.
-- Typography stayed 22px at desktop overview, 195% and 305% zoom. Problems appeared at the first LOD boundary; company responses at the second. Problem and company labels remained 13px and 12px.
-- Native wheel test changed scale continuously from 0.4629441624 to 0.5270707287. Translation changed from (271.9594,25) to (225.1343,-6.3053), preserving cursor location (610,251) in map coordinates. No reading panel opened.
-- Native drag by (80,30) changed translation by exactly (80,30), with unchanged scale and no selection.
-- Worker territory → lifting problem → Arjo → Back stayed on atlas routes. Source links were available. Closing restored the exact saved camera.
-- Keyboard Enter opened a territory; Escape and close controls provide return paths.
-- Scrolling the provider story moved map focus between relevant problems. Angehörige story links opened the existing hospital-discharge record. Returning preserved scrollTop 1448 exactly and kept its evidence disclosure expanded.
-- Search listed 403 records, Show more increased the visible limit from 60 to 120, and an unmatched query displayed a clear empty state.
-- No errors or warnings from the rebuilt atlas were captured. The tab retained one older warning from the previous `app.js` static-data fallback, dated before the rewrite.
-- Phone layout uses two columns of territories and an integrated bottom reading panel. Physical touch/pinch and screen-reader use were not tested.
-
-## Automated checks
-
-`node --test tests/atlas-camera.test.mjs`: five passing tests cover arbitrary cursor anchors, bounds fitting, LOD boundaries, distinct map definitions with valid published themes, and valid story links/focus. JavaScript syntax and `git diff --check` pass.
-
-## Remaining limits
-
-The atlas is a research snapshot, not an exhaustive census of care needs or companies. Broad category membership is editorial and must not be mistaken for a verified product fit. Some records lack primary source evidence. Loading succeeds locally; the failure-state message exists but a network-failure browser scenario was not exercised. Browser checks do not establish venture-builder comprehension, accessibility conformance, or independent research validity. Exact reference scrollytelling fidelity and a participant study remain open.
+Test discovery comprehension with venture builders, physical touch navigation and a screen reader. The original loneliness scroll-story URL remains unavailable in the retrieved cached conversation, so exact reference fidelity cannot be claimed. Research claims were not refreshed in this UI task.

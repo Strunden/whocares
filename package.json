@@ -7,8 +7,10 @@
     "dev": "node server/dev.mjs",
     "migrate": "node db/migrate.mjs",
     "seed": "node db/seed.mjs",
-    "export": "node db/export.mjs",
-    "test": "node --test api/_lib/shape.test.mjs"
+    "export": "node db/export.mjs && node scripts/build-atlas-data.mjs",
+    "test": "node --test api/_lib/shape.test.mjs",
+    "build:atlas": "node scripts/build-atlas-data.mjs",
+    "test:atlas": "node --test tests/*.test.mjs"
   },
   "engines": {
     "node": ">=20"
