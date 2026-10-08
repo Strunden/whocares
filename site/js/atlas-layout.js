@@ -55,6 +55,22 @@ export function readingLevel(tree,groupId,camera,width,height){
  const group=groupId?tree.all.get(groupId):null;
  const nodes=group?(group.children?.length?group.children:[group]):tree.roots;
  const viewport={x:-80,y:-80,w:width+160,h:height+160};
- return nodes.map(node=>({node,box:{x:node.box.x*camera.s+camera.x,y:node.box.y*camera.s+camera.y,w:node.box.w*camera.s,h:node.box.h*camera.s},mode:group?'summary':'compact'})).filter(v=>intersects(v.box,viewport)).slice(0,90);
+ const project=(node,mode)=>({node,box:{x:node.box.x*camera.s+camera.x,y:node.box.y*camera.s+camera.y,w:node.box.w*camera.s,h:node.box.h*camera.s},mode});
+ const result=nodes.map(node=>project(node,group?'summary':'compact')).filter(v=>intersects(v.box,viewport));
+ // Neighbouring regions remain part of the same world at every reading level.
+ // Their context is navigable but never silently opens while panning.
+ if(group){
+  const path=ancestry(tree,groupId);
+  for(const ancestor of path){
+   const siblings=ancestor.parent?tree.all.get(ancestor.parent).children:tree.roots;
+   for(const node of siblings)if(node.id!==ancestor.id){const v=project(node,'context');if(intersects(v.box,viewport))result.push(v);}
+  }
+ }
+ return result.slice(0,90);
+}
+export function panWithinWorld(camera,dx,dy,bounds,width,height){
+ // Keep some of the world reachable, but do not pin a small group to the viewport.
+ const clamp=(v,min,max)=>Math.max(min,Math.min(max,v));
+ return {...camera,x:clamp(camera.x+dx,width*.1-(bounds.x+bounds.width)*camera.s,width*.9-bounds.x*camera.s),y:clamp(camera.y+dy,height*.1-(bounds.y+bounds.height)*camera.s,height*.9-bounds.y*camera.s)};
 }
 export function ancestry(tree,id){const path=[];while(id){const n=tree.all.get(id);if(!n)break;path.unshift(n);id=n.parent;}return path;}

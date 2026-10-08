@@ -4,7 +4,7 @@
 
 Run `npm run build:atlas`, then `python3 -m http.server 8765 --directory site`. Open http://localhost:8765/#/relative. Choose Finding care, then Care admin. Breadcrumbs should read Angehörige / Finding care / Care admin. Drag/scroll pans, and must not change the level, text size or revealed content.
 
-Run `npm run test:atlas` for nine tests. A local-only browser scale test is available at http://localhost:8765/?stress=100000#/relative. It clearly labels 100,000 synthetic records as test data; it does not alter source research. Search for Synthetic service 099999 or open a theme and keep entering its alphabetical groups.
+Run `npm run test:atlas` for eleven tests. A local-only browser scale test is available at http://localhost:8765/?stress=100000#/relative. It clearly labels 100,000 synthetic records as test data; it does not alter source research. Search for Synthetic service 099999 or open a theme and keep entering its alphabetical groups.
 
 ## Browser verification
 
@@ -39,3 +39,16 @@ This is an implementation critique backed by browser checks, not an independent 
 ## Remaining validation
 
 Test discovery comprehension with venture builders, physical touch navigation and a screen reader. The original loneliness scroll-story URL remains unavailable in the retrieved cached conversation, so exact reference fidelity cannot be claimed. Research claims were not refreshed in this UI task.
+
+## Spatial continuity regression and correction
+
+The prior fixed-level build failed the spatial-model gate: its group-only pan clamp pinned content when it fit the viewport, and replacing the visible canvas with cards obscured geographic context. Corrected by world-bound pan limits, retained parent/neighbor contours, world-positioned headings, a viewport minimap and Prezi-style camera travel. Fixed reading levels and breadcrumbs remain.
+
+Real browser checks on the corrected build:
+- In Delivering care, a drag of (−80, −60) changed translation by exactly (−80, −60), retaining scale 1.0676252518 and the delivery reading level.
+- Clicking Lifting and transfers activated the camera transition and arrived at delivery/T01. Its parent region and the neighbouring Incontinence care region stayed spatially present.
+- Returning through the Delivering care breadcrumb restored the exact parent camera.
+- At 393 × 852 the settled view retained its territory heading, illustration, research summary, evidence action and minimap with no whole-page horizontal overflow.
+- Two regression tests cover free panning when a group fits the viewport and retaining neighbours at unchanged world coordinates. All eleven tests pass.
+
+Remaining critique: the recursive layout still uses regular allocation cells to avoid overlapping data. The organic contours and camera navigation preserve spatial orientation, but this is not a validated model of semantic distance. Participant comprehension and physical touch testing remain open.

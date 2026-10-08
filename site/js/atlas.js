@@ -1,6 +1,6 @@
 import {personaMaps, insights, personaStories} from './atlas-content.js';
 import {clamp, fit} from './atlas-camera.js';
-import {buildHierarchy,readingLevel,ancestry,themesFor,tagThemes} from './atlas-layout.js';
+import {buildHierarchy,readingLevel,ancestry,panWithinWorld,themesFor,tagThemes} from './atlas-layout.js';
 import {assetFor,portrait as illustration} from './atlas-assets.js';
 
 const $ = id => document.getElementById(id);
@@ -20,7 +20,7 @@ let storyObserver=null;
 let tree=null;const mapElements=new Map();let maxScale=30;let mapParent=null;let activeGroup=null;const levelCameras=new Map();
 const activeStory=()=>personaStories[persona]||personaStories.worker;
 const pointers=new Map();
-let gestureStart=null, dragged=false;
+let gestureStart=null, dragged=false, navigationFrame=0;
 
 function svg(tag,attrs,parent){
   const element=document.createElementNS(svgNS,tag);
@@ -41,19 +41,32 @@ function row(entry,context=''){
 function announce(text){$('announcement').textContent=text;}
 function currentBounds(){return tree?.bounds||{x:0,y:0,width:3150,height:2580};}
 function overviewCamera(){return fit(map.clientWidth,map.clientHeight,currentBounds(),mobile?8:25);}
-function toOverview(){closePanel(false);selectedId=null;selectedRegion=null;activeGroup=null;render();camera=overviewCamera();base=camera.s;previousSize={w:map.clientWidth,h:map.clientHeight};render();setHash();}
+function toOverview(){closePanel(false);selectedId=null;selectedRegion=null;const target=overviewCamera();base=target.s;travelTo(target,null);}
 function pointFor(id){return points.find(point=>point.entry?.id===id);}
+function stopNavigation(){cancelAnimationFrame(navigationFrame);navigationFrame=0;map.classList.remove('navigating');}
+function travelTo(target,group,{focus=true}={}){
+ stopNavigation();const start={...camera},began=performance.now();map.classList.add('navigating');
+ const finish=()=>{camera=target;activeGroup=group;navigationFrame=0;map.classList.remove('navigating');previousSize={w:map.clientWidth,h:map.clientHeight};render();setHash();if(focus)map.focus({preventScroll:true});};
+ if(reducedMotion.matches){finish();return;}
+ function frame(now){const t=Math.min(1,(now-began)/560),ease=t*t*(3-2*t);
+  // Interpolate the world point at the viewport centre, keeping the journey spatial.
+  const cx=map.clientWidth/2,cy=map.clientHeight/2;
+  const s=Math.exp(Math.log(start.s)+(Math.log(target.s)-Math.log(start.s))*ease);
+  const wx=(cx-start.x)/start.s+((cx-target.x)/target.s-(cx-start.x)/start.s)*ease;
+  const wy=(cy-start.y)/start.s+((cy-target.y)/target.s-(cy-start.y)/start.s)*ease;
+  camera={s,x:cx-wx*s,y:cy-wy*s};render();
+  if(t<1)navigationFrame=requestAnimationFrame(frame);else finish();
+ }
+ navigationFrame=requestAnimationFrame(frame);
+}
 function focusNode(id,{keepPanel=false}={}){
  const node=tree.all.get(id);if(!node)return;
  if(!keepPanel&&!$('inspector').hidden)closePanel(false);
- const sameLevel=activeGroup===id;levelCameras.set(activeGroup||'overview',{...camera});activeGroup=id;render();
- const saved=sameLevel?null:levelCameras.get(id);
- const kids=node.children?.length?node.children:[node];
- const first=kids[0].box;
- const scale=Math.min((map.clientWidth<700?map.clientWidth-40:390)/first.w,Math.max(280,Math.min(340,map.clientHeight-48))/first.h);
- const left=Math.min(...kids.map(n=>n.box.x)),top=Math.min(...kids.map(n=>n.box.y));
- camera=saved||{s:scale,x:32-left*scale,y:28-top*scale};
- previousSize={w:map.clientWidth,h:map.clientHeight};render();setHash();if(!keepPanel)map.focus({preventScroll:true});
+ stopNavigation();const sameLevel=activeGroup===id;levelCameras.set(activeGroup||'overview',{...camera});
+ const saved=sameLevel?null:levelCameras.get(id),kids=node.children?.length?node.children:[node],first=kids[0].box;
+ const scale=Math.min((map.clientWidth<700?map.clientWidth-40:390)/first.w,Math.max(280,Math.min(340,map.clientHeight-160))/first.h);
+ const b=node.box,target=saved||{s:scale,x:mobile?16-b.x*scale:map.clientWidth/2-(b.x+b.w/2)*scale,y:12-b.y*scale};
+ travelTo(target,id,{focus:!keepPanel});
 }
 function goUp(){const n=tree.all.get(activeGroup);if(n?.parent)focusNode(n.parent);else toOverview();}
 function focusRegion(region){focusNode(region.id);}
@@ -71,18 +84,26 @@ function nodeMarkup(n,mode){
  const image=assetFor(n.kind==='territory'?n.id:root.id,persona);
  const eyebrow=n.kind==='territory'?'':n.kind==='category'?'Broader category · product fit unverified':n.kind==='range'?'Alphabetical collection':entry?status(entry):'Research collection';
  const heading=`<button class="node-title" ${n.children?.length||n.kind==='territory'?`data-zoom="${esc(n.id)}"`:`data-entry="${esc(entry?.id||'')}"`}>${esc(n.title)}</button>`;
+ if(mode==='context')return `<div class="context-label"><small>Neighbouring territory</small>${heading}<span>Enter this region ↗</span></div>`;
  if(mode==='branch')return `<div class="branch-heading">${heading}<span>${n.count} records</span></div>`;
  const info=entry?.summary||entry?.research_summary||entry?.job||entry?.scene?.job||n.description;
  const question=n.question||insights[entry?.id]?.next;
  const groupNote=n.kind==='category'?'Grouped by the published category. A match does not establish product fit.':n.kind==='range'?'An alphabetical group. Open it to reach every record.':n.kind==='topic'?'Published theme and associated research records.':'';
  return `<div class="node-copy"><p class="node-eyebrow">${esc(eyebrow||'Explore a territory')}</p>${heading}<p class="node-description">${esc(short(info||groupNote,240))}</p>${mode==='summary'&&question?`<div class="node-question"><small>A question to investigate</small><p>${esc(short(question,220))}</p></div>`:''}${mode==='summary'&&entry?`<p class="node-fact"><b>${entry.type==='company'?'Evidence':'Who pays'}</b> ${esc(short(entry.type==='company'?'Company record; effectiveness is not established.':entry.who_pays||entry.scene?.payer||'Not established in this record.',130))}</p>`:''}<div class="node-actions">${n.children?.length?`<button data-zoom-deeper="${esc(n.id)}">Explore ${n.count} records ↗</button>`:''}${entry?`<button data-entry="${esc(entry.id)}">Read evidence ↗</button>`:''}</div></div>${n.kind==='territory'?`<img class="node-art" src="${image.src}" alt="" loading="lazy" decoding="async"><span class="art-note">Illustration</span>`:''}`;
 }
-function clampPan(){
- if(!activeGroup)return;const n=tree.all.get(activeGroup);if(!n)return;const kids=n.children?.length?n.children:[n];
- const left=Math.min(...kids.map(n=>n.box.x))*camera.s,right=Math.max(...kids.map(n=>n.box.x+n.box.w))*camera.s;
- const top=Math.min(...kids.map(n=>n.box.y))*camera.s,bottom=Math.max(...kids.map(n=>n.box.y+n.box.h))*camera.s;
- camera.x=right-left<map.clientWidth-64?32-left:clamp(camera.x,map.clientWidth-32-right,32-left);
- camera.y=bottom-top<map.clientHeight-56?28-top:clamp(camera.y,map.clientHeight-28-bottom,28-top);
+function clampPan(){camera=panWithinWorld(camera,0,0,tree.bounds,map.clientWidth,map.clientHeight);}
+function organicPath(b){
+ const x=b.x,y=b.y,w=b.w,h=b.h;
+ return `M ${x+w*.06} ${y+h*.25} C ${x-w*.01} ${y+h*.02},${x+w*.26} ${y-h*.02},${x+w*.46} ${y+h*.025} C ${x+w*.71} ${y-h*.04},${x+w*1.04} ${y+h*.06},${x+w*.98} ${y+h*.39} C ${x+w*1.07} ${y+h*.75},${x+w*.86} ${y+h*1.035},${x+w*.6} ${y+h*.97} C ${x+w*.33} ${y+h*1.04},${x-w*.045} ${y+h*.94},${x+w*.025} ${y+h*.62} C ${x-w*.015} ${y+h*.46},${x+w*.015} ${y+h*.33},${x+w*.06} ${y+h*.25} Z`;
+}
+function drawLandscape(){
+ $('territories').replaceChildren();
+ $('territories').setAttribute('transform',`translate(${camera.x} ${camera.y}) scale(${camera.s})`);
+ const path=ancestry(tree,activeGroup),ground=[...tree.roots,...path.filter(n=>n.parent)];
+ for(const n of ground){svg('path',{d:organicPath(n.box),fill:tree.all.get(n.root).color,'fill-opacity':n.id===activeGroup?'.24':'.12',stroke:tree.all.get(n.root).color,'stroke-opacity':'.5','stroke-width':1.2/camera.s},$('territories'));}
+ const mini=$('map-minimap');mini.replaceChildren();mini.setAttribute('viewBox',`0 0 ${tree.bounds.width} ${tree.bounds.height}`);
+ for(const n of tree.roots)svg('path',{d:organicPath(n.box),fill:n.color,'fill-opacity':'.6',stroke:'#fff','stroke-width':20},mini);
+ svg('rect',{x:-camera.x/camera.s,y:-camera.y/camera.s,width:map.clientWidth/camera.s,height:map.clientHeight/camera.s,fill:'#fff4',stroke:'#39577e','stroke-width':20},mini);
 }
 function render(){
  if(!ready||!persona)return;
@@ -100,6 +121,8 @@ function render(){
   const current=path.at(-1);$('level-context').hidden=!current;
   $('level-context').innerHTML=current?`<div><p class="kicker">${current.count.toLocaleString()} research records · ${current.children?.length||1} groups · Level ${path.length}</p><h2>${esc(current.title)}</h2><p>${esc(current.question||current.description||current.entry?.summary||'Explore the groups below. Each opens the next level of research.')}</p></div>${current.kind==='territory'?illustration(assetFor(current.id,persona)===assetFor('family')?'family':persona):''}`:'';
  }
+ drawLandscape();
+ const current=path.at(-1);if(current){const b=current.box;$('level-context').style.cssText=`left:${b.x*camera.s+camera.x+b.w*camera.s*(mobile?.025:.075)}px;top:${b.y*camera.s+camera.y+b.h*camera.s*.045}px;width:${Math.min(780,map.clientWidth-64,b.w*camera.s*.82)}px;--territory:${tree.all.get(current.root).color}`;}
  let deepest=0;
  for(const {node:n,box:b,mode} of frontier){
   deepest=Math.max(deepest,n.depth);keep.add(n.id);
@@ -115,11 +138,12 @@ function render(){
  for(const [id,el] of mapElements)if(!keep.has(id)){el.remove();mapElements.delete(id);}
  const nextLevel=Math.min(2,path.length);
  if(level!==nextLevel){level=nextLevel;announce(['Territories and guiding questions','Problem summaries and research collections','Research records and evidence'][level]);}
- $('level-range').textContent=activeGroup?`${frontier.filter(v=>Math.max(0,Math.min(v.box.x+v.box.w,map.clientWidth)-Math.max(v.box.x,0))*Math.max(0,Math.min(v.box.y+v.box.h,map.clientHeight)-Math.max(v.box.y,0))>=v.box.w*v.box.h*.5).length} of ${tree.all.get(activeGroup).children?.length||1} groups in view · Scroll to explore`:'';
+ $('level-range').textContent=activeGroup?`${frontier.filter(v=>v.mode!=='context'&&Math.max(0,Math.min(v.box.x+v.box.w,map.clientWidth)-Math.max(v.box.x,0))*Math.max(0,Math.min(v.box.y+v.box.h,map.clientHeight)-Math.max(v.box.y,0))>=v.box.w*v.box.h*.5).length} of ${tree.all.get(activeGroup).children?.length||1} groups in view · Scroll to explore`:'';
  map.dataset.level=String(level);map.dataset.group=activeGroup||'overview';map.dataset.camera=JSON.stringify(camera);map.dataset.rendered=String(frontier.length);map.dataset.totalNodes=String(tree.all.size);
  $('zoom-value').value=path.length?'Level '+path.length:'Overview';$('zoom-out').disabled=!activeGroup;
  document.querySelectorAll('[data-level]').forEach(el=>el.classList.toggle('current',Number(el.dataset.level)===level));
  $('map-empty').hidden=frontier.length>0;
+ $('minimap-home').hidden=!activeGroup;
 }
 function exploreDeeper(id){focusNode(id);}
 function setHash(){
@@ -136,6 +160,7 @@ function showPanel(state,{remember=true,focus=true}={}){
  render();
 }
 function closePanel(restore=true){
+ stopNavigation();
  storyObserver?.disconnect();
  const wasOpen=!$('inspector').hidden;
  $('inspector').hidden=true;panelState=null;panelHistory=[];selectedId=null;
@@ -233,6 +258,7 @@ function openStory(step=0,remember=true){
  if(step>0)$('panel-content').querySelector(`[data-chapter="${step}"]`)?.scrollIntoView({block:'start'});
 }
 function choosePersona(key){
+ stopNavigation();
  if(!personaMaps[key]||!entries.length)return;
  closePanel(false);persona=key;selectedId=null;selectedRegion=null;
  $('persona-picker').hidden=true;$('workspace').hidden=false;document.querySelector('.orientation').hidden=false;document.querySelector('.atlas-footer').hidden=false;
@@ -241,7 +267,7 @@ function choosePersona(key){
  document.querySelector('h1').textContent=personaMaps[key].heading;$('perspective-note').textContent=personaMaps[key].description;
  buildMap();render();camera=overviewCamera();base=camera.s;previousSize={w:map.clientWidth,h:map.clientHeight};render();setHash();map.focus({preventScroll:true});announce(`${personaMaps[key].name} map. ${regions.length} territories to explore.`);
 }
-function showPicker(){$('persona-picker').hidden=false;$('workspace').hidden=true;document.querySelector('.orientation').hidden=true;document.querySelector('.atlas-footer').hidden=true;history.replaceState(null,'','#/');document.querySelector('[data-persona]')?.focus();}
+function showPicker(){stopNavigation();$('persona-picker').hidden=false;$('workspace').hidden=true;document.querySelector('.orientation').hidden=true;document.querySelector('.atlas-footer').hidden=true;history.replaceState(null,'','#/');document.querySelector('[data-persona]')?.focus();}
 $('persona-cards').innerHTML=Object.entries(personaMaps).map(([key,definition])=>`<button class="persona-card" data-persona="${key}" aria-label="Explore the ${definition.name.toLowerCase()} map">${illustration(key)}<h3>${esc(definition.name)}</h3><p>${esc(definition.intro)}</p><span class="enter">Enter this world <span aria-hidden="true">↗</span></span></button>`).join('');
 document.addEventListener('click',event=>{
  const target=event.target.closest('button');if(!target)return;
@@ -260,6 +286,7 @@ document.addEventListener('click',event=>{
 });
 $('panel-close').onclick=()=>closePanel();$('panel-back').onclick=backPanel;
 $('home').onclick=()=>persona?toOverview():showPicker();$('persona-change').onclick=showPicker;
+$('minimap-home').onclick=toOverview;
 $('map-up').onclick=()=>focusNode(mapParent);
 $('overview').onclick=toOverview;$('recover').onclick=toOverview;
 $('zoom-in').onclick=()=>{const candidates=readingLevel(tree,activeGroup,camera,map.clientWidth,map.clientHeight).filter(v=>v.node.children?.length);const next=candidates.sort((a,b)=>Math.hypot(a.box.x+a.box.w/2-map.clientWidth/2,a.box.y+a.box.h/2-map.clientHeight/2)-Math.hypot(b.box.x+b.box.w/2-map.clientWidth/2,b.box.y+b.box.h/2-map.clientHeight/2))[0];if(next)focusNode(next.node.id);};$('zoom-out').onclick=goUp;
@@ -271,12 +298,13 @@ $('about-open').onclick=()=>{ensureMap();showPanel({type:'about'});};
 $('panel-content').addEventListener('scroll',()=>{if(panelState?.type==='story')panelState.scrollTop=$('panel-content').scrollTop;},{passive:true});
 $('panel-content').addEventListener('input',event=>{if(event.target.id==='research-search'){panelState.limit=60;renderSearch();}});
 map.addEventListener('wheel',event=>{
- event.preventDefault();
+ event.preventDefault();stopNavigation();
  const unit=event.deltaMode===1?16:event.deltaMode===2?map.clientHeight:1;
  camera.x-=event.deltaX*unit;camera.y-=event.deltaY*unit;render();
 },{passive:false});
 map.addEventListener('pointerdown',event=>{
- if(event.button!==0)return;
+ if(event.target.closest('#minimap-home'))return;
+ if(event.button!==0)return;stopNavigation();
  pointers.set(event.pointerId,{x:event.clientX,y:event.clientY});
  if(pointers.size===1){dragged=false;gestureStart={x:event.clientX,y:event.clientY};}
  else dragged=true;
@@ -303,11 +331,11 @@ map.addEventListener('pointerup',event=>{
 });
 map.addEventListener('pointercancel',event=>{pointers.delete(event.pointerId);dragged=true;map.classList.remove('dragging');});
 // Pointer selection is handled on release, so dragging never activates a record.
-map.addEventListener('click',event=>{if(event.detail>0)event.stopPropagation();});
+map.addEventListener('click',event=>{if(event.detail>0&&!event.target.closest('#minimap-home'))event.stopPropagation();});
 map.addEventListener('keydown',event=>{
  if(event.target!==map)return;
  const actions={'+':()=>$('zoom-in').click(),'=':()=>$('zoom-in').click(),'-':goUp,Home:toOverview,ArrowLeft:()=>{camera.x+=50;render();},ArrowRight:()=>{camera.x-=50;render();},ArrowUp:()=>{camera.y+=50;render();},ArrowDown:()=>{camera.y-=50;render();}};
- if(actions[event.key]){event.preventDefault();actions[event.key]();}
+ if(actions[event.key]){event.preventDefault();stopNavigation();actions[event.key]();}
 });
 document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!$('inspector').hidden){event.preventDefault();closePanel();}});
 new ResizeObserver(()=>{

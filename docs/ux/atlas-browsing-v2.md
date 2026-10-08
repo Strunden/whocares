@@ -7,7 +7,7 @@ Help venture builders explore ageing and care problem spaces, form a fast mental
 ## Core interaction principles
 
 - **Map first:** a spacious, editorial landscape communicates breadth, relevance and relationships before any deep dive.
-- **Explicit reading levels (latest user direction):** click a territory or collection to enter a stable level of detail. Pan with drag or scroll. Content does not change while panning. Breadcrumbs show the path and provide the route back. This supersedes the original continuous-zoom requirement.
+- **Explicit reading levels (latest user direction):** click a territory or collection to enter a stable level of detail. Keep one spatial canvas with Prezi-style camera travel into existing territory bounds. Pan with drag or scroll in both directions; retain parents and neighbours as context. Content does not change while panning. Breadcrumbs show the path and provide the route back. This supersedes the original continuous-zoom requirement.
 - **Human-centered visual fidelity:** soft translucent organic territories, restrained typography, subtle links and illustrations rather than default box-and-line graph styling.
 - **Illustrated person selection:** older adult, care worker, family caregiver, Angehörige and care provider each open a distinct editorial map of the same research graph. Angehörige arrange and coordinate support without necessarily providing hands-on care; family caregiving is a separate experience. Roles can overlap. Selection changes the organisation and questions of the map, not a dimming filter.
 - **Stories as depth:** real, attributed accounts or clearly labelled illustrative workflows help visitors understand particular situations, evidence, workarounds and existing solutions.
