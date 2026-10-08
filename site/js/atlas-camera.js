@@ -44,3 +44,11 @@ export function elasticPanBy(camera,dx,dy,bounds,width,height){
  const options={directReverse:true};
  return {...camera,x:elasticValue(camera.x,dx,bounds.minX,bounds.maxX,width*.24,options),y:elasticValue(camera.y,dy,bounds.minY,bounds.maxY,height*.24,options)};
 }
+
+// Relax only visible overscroll. No velocity state or invisible displacement.
+// Advance at both event and frame timestamps so scheduling cannot add lag.
+export function relaxPan(camera,bounds,elapsed){
+ const decay=Math.exp(-Math.max(0,elapsed)/85);
+ const axis=(value,min,max)=>{const edge=clamp(value,min,max),over=(value-edge)*decay;return edge+(Math.abs(over)<.05?0:over);};
+ return {...camera,x:axis(camera.x,bounds.minX,bounds.maxX),y:axis(camera.y,bounds.minY,bounds.maxY)};
+}

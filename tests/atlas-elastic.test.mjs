@@ -2,15 +2,15 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import vm from 'node:vm';
 import {readFile} from 'node:fs/promises';
-import {zoomAt,clamp,elasticZoomScale,elasticPanBy} from '../site/js/atlas-camera.js';
+import {zoomAt,clamp,elasticZoomScale,elasticPanBy,relaxPan} from '../site/js/atlas-camera.js';
 const source=await readFile(new URL('../site/js/atlas.js',import.meta.url),'utf8');
-const pan=source.slice(source.indexOf('function panMap('),source.indexOf('function render('));
+const pan=source.slice(source.indexOf('function relaxWheelPan('),source.indexOf('function render('));
 const zoom=source.slice(source.indexOf('let cameraReturnFrame='),source.indexOf('function zoomStep('));
 function harness(scale,reduced=false,panBounds={minX:-100,maxX:100,minY:-100,maxY:100}){
  let now=0,id=0;const frames=new Map(),timers=new Map();
- const ctx=vm.createContext({zoomAt,clamp,elasticZoomScale,elasticPanBy,tree:{},activeGroup:null,collectionView:()=>({}),scenePanBounds:()=>({...panBounds}),panWithinScene:(tree,group,camera)=>({...camera,x:clamp(camera.x,panBounds.minX,panBounds.maxX),y:clamp(camera.y,panBounds.minY,panBounds.maxY)}),performance:{now:()=>now},map:{clientWidth:800,clientHeight:600},reducedMotion:{matches:reduced},pointers:new Map(),navigationFrame:0,camera:{s:scale,x:20,y:-40},zoomLimits:()=>({min:1,max:4}),render(){},requestAnimationFrame:fn=>{frames.set(++id,fn);return id;},cancelAnimationFrame:i=>frames.delete(i),setTimeout:fn=>{timers.set(++id,fn);return id;},clearTimeout:i=>timers.delete(i)});
+ const ctx=vm.createContext({zoomAt,clamp,elasticZoomScale,elasticPanBy,relaxPan,tree:{},activeGroup:null,collectionView:()=>({}),scenePanBounds:()=>({...panBounds}),panWithinScene:(tree,group,camera,dx,dy,w,h,options={})=>{const b=options.panBounds||panBounds;return {...camera,x:clamp(camera.x,b.minX,b.maxX),y:clamp(camera.y,b.minY,b.maxY)};},performance:{now:()=>now},map:{clientWidth:800,clientHeight:600},reducedMotion:{matches:reduced},pointers:new Map(),navigationFrame:0,camera:{s:scale,x:20,y:-40},zoomLimits:()=>({min:1,max:4}),render(){},requestAnimationFrame:fn=>{frames.set(++id,fn);return id;},cancelAnimationFrame:i=>frames.delete(i),setTimeout:(fn,delay=0)=>{timers.set(++id,{fn,at:now+delay});return id;},clearTimeout:i=>timers.delete(i)});
  vm.runInContext(zoom+pan,ctx);
- return {ctx,release(){const pending=[...timers.values()];timers.clear();pending.forEach(fn=>fn());},tick(ms){now+=ms;const pending=[...frames.values()];frames.clear();pending.forEach(fn=>fn(now));}};
+ return {ctx,advance(ms,step=16){const end=now+ms;while(now<end){now=Math.min(end,now+step);for(const [key,timer] of [...timers])if(timer.at<=now){timers.delete(key);timer.fn();}const pending=[...frames.values()];frames.clear();pending.forEach(fn=>fn(now));}},release(){const pending=[...timers.values()];timers.clear();pending.forEach(({fn})=>fn());},tick(ms){now+=ms;const pending=[...frames.values()];frames.clear();pending.forEach(fn=>fn(now));}};
 }
 test('actual gesture zoom elastically overshoots then returns to the bound without anchor drift',()=>{
  for(const [scale,factor] of [[1,.8],[4,1.2]]){
@@ -88,3 +88,66 @@ test('interrupting return from distant anchored framing never jumps inward on ou
  h.release();h.tick(240);assert.equal(h.ctx.camera.x,-400);
 });
 
+
+
+test('wheel stretch relaxes on the next frames without waiting for the idle timer',()=>{
+ const h=harness(1);h.ctx.panMap(240,0,{wheel:true});const peak=h.ctx.camera.x;
+ h.advance(32);assert.ok(h.ctx.camera.x<peak,'must start before the old 180ms wait');
+ h.advance(80);assert.ok(h.ctx.camera.x<100+(peak-100)*.3);
+});
+test('decaying trackpad tail cannot keep the edge stretched until the last event',()=>{
+ const h=harness(1);h.ctx.panMap(240,0,{wheel:true});let peak=h.ctx.camera.x;
+ for(let i=0;i<50;i++){h.advance(16);h.ctx.panMap(20*.9**i,0,{wheel:true});peak=Math.max(peak,h.ctx.camera.x);if(i===24)assert.ok(h.ctx.camera.x<100+(peak-100)*.35);}
+ assert.ok(h.ctx.camera.x<105,'edge recovers while momentum events still arrive');
+ h.advance(450);assert.equal(h.ctx.camera.x,100);
+});
+test('wheel reversal responds on the first event and hands over cleanly to pinch',()=>{
+ const h=harness(1);for(let i=0;i<80;i++){h.advance(16);h.ctx.panMap(1000,1000,{wheel:true});}
+ const before={...h.ctx.camera};h.ctx.panMap(-2,-2,{wheel:true});
+ assert.equal(h.ctx.camera.x,before.x-2);assert.equal(h.ctx.camera.y,before.y-2);
+ h.ctx.zoomMap(1.1,{x:300,y:300});const next={...h.ctx.camera};h.advance(100);
+ assert.deepEqual(h.ctx.camera,next,'wheel relaxation cannot continue after pinch');
+});
+test('wheel response is independent of RAF subdivision and never eases in-bounds movement',()=>{
+ const a=harness(1),b=harness(1);
+ for(let i=0;i<30;i++){a.advance(16,4);b.advance(16,16);for(const h of [a,b])h.ctx.panMap(20,0,{wheel:true});}
+ assert.ok(Math.abs(a.ctx.camera.x-b.ctx.camera.x)<1e-8);
+ const inside=harness(1);inside.ctx.panMap(10,20,{wheel:true});inside.advance(100);assert.equal(inside.ctx.camera.x,30);assert.equal(inside.ctx.camera.y,-20);
+});
+
+
+test('recorded physical trackpad tail relaxes before its final wheel event',async()=>{
+ const trace=JSON.parse(await readFile(new URL('./fixtures/pan-wheel-tail.json',import.meta.url)));
+ const h=harness(1);h.ctx.camera.x=100;let now=0,peak=100,earlyRecovery=false;
+ for(const [time,dx,dy] of trace){h.advance(time-now);now=time;h.ctx.panMap(dx,dy,{wheel:true});peak=Math.max(peak,h.ctx.camera.x);if(time<trace.at(-1)[0]-100&&peak>150&&h.ctx.camera.x<100+(peak-100)*.2)earlyRecovery=true;}
+ assert.ok(earlyRecovery,'must recover before the user-recorded momentum tail stops');
+ assert.ok(h.ctx.camera.x<110);h.advance(450);assert.equal(h.ctx.camera.x,100);
+});
+
+
+test('wheel settlement respects the same starting-frame bounds as its live response',()=>{
+ const h=harness(1,false,{minX:-500,maxX:-400,minY:-100,maxY:100});h.ctx.panMap(1,0,{wheel:true});
+ h.advance(500);assert.equal(h.ctx.camera.x,20,'no delayed jump to unrelated regular bound');
+ h.ctx.panMap(1,0,{wheel:true});h.ctx.stopCameraReturn();assert.equal(h.ctx.camera.x,20);
+});
+test('an older RAF timestamp cannot move the integration clock backwards',()=>{
+ const a=harness(1),b=harness(1);for(const h of [a,b]){h.advance(20);h.ctx.panMap(240,0,{wheel:true});}
+ a.ctx.relaxWheelPan(10);a.advance(16);b.advance(16);
+ assert.equal(a.ctx.camera.x,b.ctx.camera.x);
+});
+
+
+test('tap and navigation interrupting wheel settlement keep its resting bounds',()=>{
+ for(const navigation of [false,true]){
+  const h=harness(1,false,{minX:-500,maxX:-400,minY:-100,maxY:100});
+  h.ctx.panMap(100,0,{wheel:true});h.advance(190);h.ctx.stopCameraReturn(true,navigation);
+  if(!navigation)h.ctx.settleCamera();h.advance(260);assert.equal(h.ctx.camera.x,20);
+ }
+});
+
+
+test('wheel input resuming an interrupted final return keeps its permitted bounds',()=>{
+ const h=harness(1,false,{minX:-500,maxX:-400,minY:-100,maxY:100});
+ h.ctx.panMap(100,0,{wheel:true});h.advance(190);h.ctx.stopCameraReturn(true,false);
+ h.ctx.panMap(-2,0,{wheel:true});h.advance(500);assert.equal(h.ctx.camera.x,20);
+});

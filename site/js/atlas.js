@@ -1,14 +1,14 @@
 import {availableStory} from './atlas-navigation.js';
-import {wheelGesture,centroid,separation,touchIntent} from './atlas-gestures.js?v=shared-elastic-37';
-import {personaMaps, insights, personaStories} from './atlas-content.js?v=shared-elastic-37';
-import {clamp, zoomAt, elasticZoomScale, elasticPanBy, interpolateCamera} from './atlas-camera.js?v=shared-elastic-37';
-import {buildHierarchy,readingLevel,ancestry,scenePanBounds,panWithinScene,collectionPage,themesFor,levelScale,levelZoomLimits,frameLevel,entryFrame,perspectiveHierarchy,embedHierarchy} from './atlas-layout.js?v=shared-elastic-37';
+import {wheelGesture,centroid,separation,touchIntent} from './atlas-gestures.js?v=responsive-pan-40';
+import {personaMaps, insights, personaStories} from './atlas-content.js?v=responsive-pan-40';
+import {clamp, zoomAt, elasticZoomScale, elasticPanBy, relaxPan, interpolateCamera} from './atlas-camera.js?v=responsive-pan-40';
+import {buildHierarchy,readingLevel,ancestry,scenePanBounds,panWithinScene,collectionPage,themesFor,levelScale,levelZoomLimits,frameLevel,entryFrame,perspectiveHierarchy,embedHierarchy} from './atlas-layout.js?v=responsive-pan-40';
 import {portrait as illustration} from './atlas-assets.js';
 
-import {graphRecords,graphRoots,recordLabel,recordStatus,evidenceLabels} from './atlas-records.js?v=shared-elastic-37';
+import {graphRecords,graphRoots,recordLabel,recordStatus,evidenceLabels} from './atlas-records.js?v=responsive-pan-40';
 import {graphSourceBlock} from './atlas-sources.js?v=source-details-13';
 
-import {esc,short,companyLogo,recordMedia,createMapView} from './atlas-view.js?v=shared-elastic-37';
+import {esc,short,companyLogo,recordMedia,createMapView} from './atlas-view.js?v=responsive-pan-40';
 
 const $ = id => document.getElementById(id);
 const safeUrl = value => /^https?:\/\//i.test(value || '') ? value : '';
@@ -42,29 +42,32 @@ function announce(text){$('announcement').textContent=text;}
 function toOverview({restore=false}={}){navigateTo(persona,null,{restore});}
 function readingScale(id=activeGroup){return levelScale(tree,id,map.clientWidth);}
 function zoomLimits(){return levelZoomLimits(tree,activeGroup,map.clientWidth,map.clientHeight,collectionView());}
-let cameraReturnFrame=0,cameraReturnTimer,zoomAnchor=null,panGesture=null,panPending=false;
+let cameraReturnFrame=0,cameraReturnTimer,zoomAnchor=null,panGesture=null,panPending=false,panRelaxedAt=null,pendingPanBounds=null;
 function stopCameraReturn(resetPan=true,finishPan=true){
- cancelAnimationFrame(cameraReturnFrame);cameraReturnFrame=0;clearTimeout(cameraReturnTimer);
+ const panBounds=pendingPanBounds;
+ cancelAnimationFrame(cameraReturnFrame);cameraReturnFrame=0;clearTimeout(cameraReturnTimer);panRelaxedAt=null;
  if(resetPan)panGesture=null;
- if(finishPan&&panPending){camera=panWithinScene(tree,activeGroup,camera,0,0,map.clientWidth,map.clientHeight,collectionView());panPending=false;}
+ if(finishPan&&panPending){camera=panWithinScene(tree,activeGroup,camera,0,0,map.clientWidth,map.clientHeight,{...collectionView(),panBounds});panPending=false;pendingPanBounds=null;}
 }
 function settleCamera(){
  clearTimeout(cameraReturnTimer);if(navigationFrame||pointers.size)return;
+ cancelAnimationFrame(cameraReturnFrame);cameraReturnFrame=0;panRelaxedAt=null;
  const {min,max}=zoomLimits(),anchor=zoomAnchor||{x:map.clientWidth/2,y:map.clientHeight/2};
  const start={...camera},zoomed=zoomAt(start,1,anchor,min,max);
- const target=panPending?panWithinScene(tree,activeGroup,zoomed,0,0,map.clientWidth,map.clientHeight,collectionView()):zoomed;
+ const panBounds=zoomed.s===start.s?pendingPanBounds:null;
+ const target=panPending?panWithinScene(tree,activeGroup,zoomed,0,0,map.clientWidth,map.clientHeight,{...collectionView(),panBounds}):zoomed;
  panGesture=null;
- if(Math.abs(start.s-target.s)<.000001&&Math.abs(start.x-target.x)<.01&&Math.abs(start.y-target.y)<.01){panPending=false;return;}
+ if(Math.abs(start.s-target.s)<.000001&&Math.abs(start.x-target.x)<.01&&Math.abs(start.y-target.y)<.01){panPending=false;pendingPanBounds=null;return;}
  const began=performance.now();
  function frame(now){const t=reducedMotion.matches?1:Math.min(1,(now-began)/240),ease=1-(1-t)**3;
   camera={s:start.s+(target.s-start.s)*ease,x:start.x+(target.x-start.x)*ease,y:start.y+(target.y-start.y)*ease};render();
-  cameraReturnFrame=t<1?requestAnimationFrame(frame):0;if(t===1)panPending=false;
+  cameraReturnFrame=t<1?requestAnimationFrame(frame):0;if(t===1){panPending=false;pendingPanBounds=null;}
  }
  cameraReturnFrame=requestAnimationFrame(frame);
 }
 function zoomMap(factor,anchor={x:map.clientWidth/2,y:map.clientHeight/2}){
  if(navigationFrame)return;
- stopCameraReturn(true,false);panPending=false;zoomAnchor=anchor;
+ stopCameraReturn(true,false);panPending=false;pendingPanBounds=null;zoomAnchor=anchor;
  const {min,max}=zoomLimits();
  const s=reducedMotion.matches?clamp(camera.s*factor,min,max):elasticZoomScale(camera.s,factor,min,max);
  camera=zoomAt(camera,s/camera.s,anchor,0,Infinity);render();
@@ -138,11 +141,24 @@ function navigateTo(key,group=null,{restore=true,animate=true,keepPanel=false,sa
 }
 function focusNode(id,{keepPanel=false}={}){if(tree.all.has(id))navigateTo(persona,id,{keepPanel});}
 function goUp(){const node=tree.all.get(activeGroup);navigateTo(node?.parent||activeGroup?persona:null,node?.parent||null);}
-function panMap(dx,dy){
+// Wheel events include system momentum but expose no finger-release phase.
+// Let visible edge stretch relax continuously; never wait for the tail to end.
+function relaxWheelPan(now){
+ cameraReturnFrame=0;
+ if(panRelaxedAt===null||!panGesture)return;
+ const before=camera;now=Math.max(now,panRelaxedAt);
+ camera=relaxPan(camera,panGesture.bounds,now-panRelaxedAt);panRelaxedAt=now;
+ if(camera.x!==before.x||camera.y!==before.y){render();cameraReturnFrame=requestAnimationFrame(relaxWheelPan);}
+}
+function panMap(dx,dy,{wheel=false}={}){
  if(navigationFrame)return;
+ const now=performance.now();
+ // Integrate to the event time before applying its delta. RAF cadence must
+ // not change how far an input moves, or make reversal repay hidden travel.
+ if(wheel&&panRelaxedAt!==null&&panGesture)camera=relaxPan(camera,panGesture.bounds,now-panRelaxedAt);
  const resumingPan=panPending;stopCameraReturn(false,false);panPending=true;
  if(!panGesture){
-  const bounds=scenePanBounds(tree,activeGroup,camera,map.clientWidth,map.clientHeight,collectionView());
+  const bounds=wheel&&pendingPanBounds?{...pendingPanBounds}:scenePanBounds(tree,activeGroup,camera,map.clientWidth,map.clientHeight,collectionView());
   // An anchored zoom or entry framing can start outside the centre bounds.
   // Include that starting position for this gesture so its first delta cannot jump.
   if(!resumingPan){
@@ -151,8 +167,13 @@ function panMap(dx,dy){
   }
   panGesture={bounds};
  }
+ pendingPanBounds=wheel?panGesture.bounds:null;
  camera=reducedMotion.matches?{...camera,x:clamp(camera.x+dx,panGesture.bounds.minX,panGesture.bounds.maxX),y:clamp(camera.y+dy,panGesture.bounds.minY,panGesture.bounds.maxY)}:elasticPanBy(camera,dx,dy,panGesture.bounds,map.clientWidth,map.clientHeight);
- render();cameraReturnTimer=setTimeout(settleCamera,180);
+ render();
+ if(wheel&&!reducedMotion.matches){panRelaxedAt=now;cameraReturnFrame=requestAnimationFrame(relaxWheelPan);}
+ // Final settlement handles sparse gaps and scale interrupted by pan. The
+ // visible wheel edge response already runs above, independent of this timer.
+ cameraReturnTimer=setTimeout(settleCamera,180);
 }
 function render(){
  if(!ready)return;
@@ -353,7 +374,7 @@ map.addEventListener('wheel',event=>{
  if(wheelState.mode==='zoom'){
   zoomMap(Math.exp(clamp(-event.deltaY*unit*.008,-.18,.18)),wheelState.anchor);
  }else{
-  panMap(-(event.shiftKey&&!event.deltaX?event.deltaY:event.deltaX)*unit,-(event.shiftKey&&!event.deltaX?0:event.deltaY)*unit);
+  panMap(-(event.shiftKey&&!event.deltaX?event.deltaY:event.deltaX)*unit,-(event.shiftKey&&!event.deltaX?0:event.deltaY)*unit,{wheel:true});
  }
 },{passive:false});
 function updateTouch(){

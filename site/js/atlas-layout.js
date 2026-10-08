@@ -126,7 +126,7 @@ export function scenePanBounds(tree,groupId,camera,width,height,options={}){
 // Resting position only. Do not project each gesture delta out of a sparse gap:
 // that would stop the user crossing it to reach the next item.
 export function panWithinScene(tree,groupId,camera,dx,dy,width,height,options={}){
- const b=scenePanBounds(tree,groupId,camera,width,height,options),clamp=(v,min,max)=>Math.max(min,Math.min(max,v));
+ const b=options.panBounds||scenePanBounds(tree,groupId,camera,width,height,options),clamp=(v,min,max)=>Math.max(min,Math.min(max,v));
  const next={...camera,x:clamp(camera.x+dx,b.minX,b.maxX),y:clamp(camera.y+dy,b.minY,b.maxY)};
  const scene=levelScene(tree,groupId,options),reference=levelScale(tree,groupId,width);
  const boxes=scene.items.map(({node,anchor})=>projectUnit(anchor,next,width,reference,!groupId,itemHeight(node,!groupId)));
