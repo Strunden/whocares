@@ -29,3 +29,28 @@ test('the compact index covers published data and every on-demand detail is loss
 
 test('a group that fits the viewport still pans freely in both directions',()=>{const start={s:1,x:100,y:50},bounds={x:0,y:0,width:500,height:400};const next=panWithinWorld(start,80,60,bounds,1280,720);assert.deepEqual(next,{s:1,x:180,y:110});assert.deepEqual(panWithinWorld(next,-80,-60,bounds,1280,720),start);});
 test('entering a group retains neighbours in the same world coordinates',()=>{const t=buildHierarchy(entries,personaMaps.provider.regions);const before=t.all.get('delivery').box;const view=readingLevel(t,'delivery',{s:.25,x:0,y:0},1280,720);assert.ok(view.some(v=>v.mode==='context'&&v.node.id==='staff'));assert.ok(view.some(v=>v.mode==='summary'&&v.node.parent==='delivery'));assert.equal(t.all.get('delivery').box,before);});
+
+test('zoomed reading surfaces remain centred, phone-sized and culled by visible bounds',()=>{
+ const node={id:'record',box:{x:0,y:0,w:350,h:300}};
+ const group={id:'group',box:node.box,children:[node]};
+ const tree={roots:[group],all:new Map([['group',group],['record',node]])};
+ const camera={s:2.4,x:196.5-175*2.4,y:280-150*2.4};
+ const [view]=readingLevel(tree,'group',camera,393,578);
+ assert.equal(view.box.w,361);assert.equal(view.box.h,360);
+ assert.ok(Math.abs(view.box.x+view.box.w/2-196.5)<1e-8);
+ assert.ok(Math.abs(view.box.y+view.box.h/2-280)<1e-8);
+ // Large world slot still intersects the viewport, but the real card does not.
+ assert.equal(readingLevel(tree,'group',{s:2.4,x:-740,y:0},393,578).length,0);
+});
+
+test('local magnification never resizes a reading card or changes its representation',()=>{
+ const node={id:'record',box:{x:0,y:0,w:350,h:300}};
+ const group={id:'group',box:node.box,children:[node]};
+ const tree={roots:[group],all:new Map([['group',group],['record',node]])};
+ for(const scale of [1,1.2,1.8,2.4]){
+  const camera={s:scale,x:196.5-175*scale,y:280-150*scale};
+  const [view]=readingLevel(tree,'group',camera,393,578,{surfaceScale:1});
+  assert.equal(view.box.w,350);assert.equal(view.box.h,300);
+  assert.equal(view.mode,'summary');assert.equal(view.node.id,'record');
+ }
+});

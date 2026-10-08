@@ -2,7 +2,7 @@
 
 ## Interaction contract
 
-The user's later direction supersedes continuous semantic zoom. This is one pannable spatial canvas with explicit reading levels and Prezi-style camera navigation. Click a territory/group to travel into its existing world bounds; drag, scroll or use arrow keys to pan in both directions. Parent territory contours and neighbouring regions remain in the same coordinate space. A minimap shows the viewport within the wider landscape. The settled representation and text size stay fixed. The camera transition preserves the outgoing detail level until arrival; panning does not change it. Reduced-motion preferences skip the transition. Breadcrumbs show the path and return to ancestors. Deep paths collapse intermediate ancestors into a native menu. A current-level breadcrumb resets its pan position. Minus goes up; plus enters a nearby group; Overview returns to the landscape. Full evidence opens in the integrated reader, then returns to the same location.
+The user's latest direction combines explicit reading levels and Prezi-style travel with bounded local zoom. Scroll, drag or use arrow keys to pan. Pinch or Ctrl/⌘ + scroll zooms; Shift-scroll pans horizontally. Each gesture locks to pan or zoom. Plus/minus magnify locally and stop at the limits; zoom never changes the data level. Text, card dimensions and revealed content remain fixed. Click a group to enter; breadcrumbs/Backspace go up and restore saved cameras. Overview resets to fit. The dot grid and territories share the camera. Full evidence opens in the integrated reader and closing it restores the view. Reduced-motion preferences skip level travel. See [interaction research and verification](atlas-bounded-zoom.md).
 
 ## Data, hierarchy and rendering
 

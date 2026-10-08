@@ -29,13 +29,13 @@
     <div class="map-column">
       <nav id="map-breadcrumbs" aria-label="Map location"><button id="persona-change" class="persona-change" aria-label="Choose whose world to explore"></button><span aria-hidden="true">/</span><div id="map-breadcrumb-trail"></div></nav><div id="collection-tools" hidden><label><span class="sr-only">Search this collection</span><input id="collection-search" type="search" placeholder="Search this collection…"></label><select id="collection-type" aria-label="Record type"><option value="all">All records</option><option value="company">Companies</option><option value="research">Research</option></select><span id="collection-count" role="status"></span><button id="collection-prev" aria-label="Previous records">←</button><button id="collection-next" aria-label="Next records">→</button></div><section id="map" tabindex="0" aria-label="Interactive care atlas" aria-describedby="map-help">
         <svg id="landscape" aria-hidden="true"><defs><filter id="soft"><feGaussianBlur stdDeviation=".6"/></filter></defs><g id="territories"></g><g id="connections"></g></svg>
-        <section id="level-context" hidden aria-label="Current research group"></section><div id="labels"></div><button id="minimap-home" hidden aria-label="Return to the whole map"><svg id="map-minimap" aria-hidden="true"></svg><span>Whole map ↗</span></button><span id="level-range" aria-live="polite"></span><button id="map-up" hidden aria-label="Back to the enclosing group"></button>
+        <section id="level-context" hidden aria-label="Current research group"></section><div id="labels"></div><button id="minimap-home" hidden aria-label="Return to the whole map"><svg id="map-minimap" aria-hidden="true"></svg><span>Whole map ↗</span></button><span id="zoom-hint" role="status" hidden></span><span id="level-range" aria-live="polite"></span><button id="map-up" hidden aria-label="Back to the enclosing group"></button>
         <div id="loading" role="status">Loading the research atlas…</div>
         <div id="map-empty" hidden>No labels in view.<button id="recover">Return to overview</button></div>
       </section>
       <div class="map-bottom">
         <button class="story-entry" id="story-open"><span class="story-time">05:45</span><span>A morning in care<small>Follow the work, then the evidence</small></span><span aria-hidden="true">↗</span></button>
-        <div class="map-controls" aria-label="Map controls"><button id="zoom-out" aria-label="Go up one level">−</button><output id="zoom-value">100%</output><button id="zoom-in" aria-label="Enter the nearest group">+</button><button id="overview">Overview</button></div>
+        <div class="map-controls" aria-label="Map controls"><button id="zoom-out" aria-label="Zoom out">−</button><output id="zoom-value">100%</output><button id="zoom-in" aria-label="Zoom in">+</button><button id="overview">Overview</button></div>
       </div>
     </div>
     <aside id="inspector" hidden aria-label="Research reading panel">
@@ -43,9 +43,9 @@
       <div id="panel-content" tabindex="-1"></div>
     </aside>
   </main>
-  <footer class="atlas-footer" hidden><div class="depth" aria-label="Visible map detail"><span data-level="0" class="current">Territories</span><i>›</i><span data-level="1">Collections</span><i>›</i><span data-level="2">Records</span></div><p id="map-help">Drag or scroll to pan · Click a group to enter</p><button id="list-open">Browse as a list</button></footer>
+  <footer class="atlas-footer" hidden><div class="depth" aria-label="Visible map detail"><span data-level="0" class="current">Territories</span><i>›</i><span data-level="1">Collections</span><i>›</i><span data-level="2">Records</span></div><p id="map-help">Scroll / drag to pan · Pinch or Ctrl/⌘ + scroll to zoom</p><button id="list-open">Browse as a list</button></footer>
   <p class="sr-only" id="announcement" role="status" aria-live="polite"></p>
   <script src="js/config.js"></script>
-  <script type="module" src="js/atlas.js"></script>
+  <script type="module" src="js/atlas.js?v=exclusive-gestures-3"></script>
 </body>
 </html>

@@ -1,6 +1,7 @@
+import {wheelGesture,centroid,separation,touchIntent} from './atlas-gestures.js?v=exclusive-gestures-3';
 import {personaMaps, insights, personaStories} from './atlas-content.js';
-import {clamp, fit} from './atlas-camera.js';
-import {buildHierarchy,readingLevel,ancestry,panWithinWorld,collectionPage,themesFor,tagThemes} from './atlas-layout.js';
+import {clamp, fit, zoomAt} from './atlas-camera.js?v=exclusive-gestures-3';
+import {buildHierarchy,readingLevel,ancestry,panWithinWorld,collectionPage,themesFor,tagThemes} from './atlas-layout.js?v=exclusive-gestures-3';
 import {assetFor,portrait as illustration} from './atlas-assets.js';
 
 import {graphRecords,graphRoots,logoUrl,recordLabel,recordStatus,kindLabels,evidenceLabels} from './atlas-records.js';
@@ -23,7 +24,8 @@ let panelHistory=[], panelState=null, closedCamera=null, closedGroup=null, lastF
 let previousSize={w:0,h:0}, mobile=false, ready=false;
 const stressCount=["localhost","127.0.0.1"].includes(location.hostname)?Math.min(100000,Math.max(0,Number(new URLSearchParams(location.search).get("stress"))||0)):0;
 let storyObserver=null;
-let tree=null;const mapElements=new Map();let maxScale=30;let mapParent=null;let activeGroup=null;const levelCameras=new Map();
+let tree=null;const mapElements=new Map();let mapParent=null;let activeGroup=null;const levelCameras=new Map();
+let wheelState=null,wheelTimer,zoomHintTimer,touchState=null,touchTimer,pointerMode=null;
 const activeStory=()=>personaStories[persona]||personaStories.worker;
 const pointers=new Map();
 let gestureStart=null, dragged=false, navigationFrame=0;
@@ -44,12 +46,28 @@ function row(entry,context=''){
 function announce(text){$('announcement').textContent=text;}
 function currentBounds(){return tree?.bounds||{x:0,y:0,width:3150,height:2580};}
 function overviewCamera(){return fit(map.clientWidth,map.clientHeight,currentBounds(),mobile?8:25);}
-function toOverview(){closePanel(false);selectedId=null;selectedRegion=null;const target=overviewCamera();base=target.s;travelTo(target,null);}
+function toOverview({restore=false}={}){closePanel(false);selectedId=null;selectedRegion=null;levelCameras.set(activeGroup||'overview',{...camera});const target=(restore&&levelCameras.get('overview'))||overviewCamera();base=overviewCamera().s;travelTo(target,null);}
+function readingScale(id=activeGroup){
+ const node=tree.all.get(id);if(!node)return overviewCamera().s;
+ const first=(node.children?.[0]||node).box;
+ return Math.min((map.clientWidth<700?map.clientWidth-36:350)/first.w,Math.max(330,Math.min(380,map.clientHeight-125))/first.h);
+}
+function zoomLimits(){const min=readingScale();return {min,max:min*(activeGroup?2.4:3)};}
+function zoomHint(text){clearTimeout(zoomHintTimer);$('zoom-hint').textContent=text;$('zoom-hint').hidden=false;zoomHintTimer=setTimeout(()=>{$('zoom-hint').hidden=true;},2200);}
+function zoomMap(factor,anchor={x:map.clientWidth/2,y:map.clientHeight/2}){
+ if(navigationFrame)return;
+ const {min,max}=zoomLimits();
+ if(factor<1&&camera.s*factor<min)zoomHint('Widest view · Use the breadcrumbs to go up a level');
+ else if(factor>1&&camera.s*factor>=max)zoomHint('Closest view · Pan to explore this level');
+ else $('zoom-hint').hidden=true;
+ camera=zoomAt(camera,factor,anchor,min,max);render();
+}
+
 function pointFor(id){return points.find(point=>point.entry?.id===id);}
 function stopNavigation(){cancelAnimationFrame(navigationFrame);navigationFrame=0;map.classList.remove('navigating');}
 function travelTo(target,group,{focus=true}={}){
  stopNavigation();const start={...camera},began=performance.now();map.classList.add('navigating');
- const finish=()=>{camera=target;activeGroup=group;navigationFrame=0;map.classList.remove('navigating');previousSize={w:map.clientWidth,h:map.clientHeight};render();setHash();if(focus)map.focus({preventScroll:true});};
+ const finish=()=>{camera=target;activeGroup=group;navigationFrame=0;map.classList.remove('navigating');render();previousSize={w:map.clientWidth,h:map.clientHeight};setHash();if(focus)map.focus({preventScroll:true});};
  if(reducedMotion.matches){finish();return;}
  function frame(now){const t=Math.min(1,(now-began)/560),ease=t*t*(3-2*t);
   // Interpolate the world point at the viewport centre, keeping the journey spatial.
@@ -67,18 +85,18 @@ function focusNode(id,{keepPanel=false}={}){
  if(!keepPanel&&!$('inspector').hidden)closePanel(false);
  stopNavigation();const sameLevel=activeGroup===id;levelCameras.set(activeGroup||'overview',{...camera});
  const saved=sameLevel?null:levelCameras.get(id),kids=node.children?.length?node.children:[node],first=kids[0].box;
- const scale=Math.min((map.clientWidth<700?map.clientWidth-36:350)/first.w,Math.max(330,Math.min(380,map.clientHeight-125))/first.h);
+ const scale=readingScale(id);
  const b=node.box,target=saved||{s:scale,x:mobile?16-first.x*scale:map.clientWidth/2-(b.x+b.w/2)*scale,y:125-first.y*scale};
  travelTo(target,id,{focus:!keepPanel});
 }
-function goUp(){const n=tree.all.get(activeGroup);if(n?.parent)focusNode(n.parent);else toOverview();}
+function goUp(){const n=tree.all.get(activeGroup);if(n?.parent)focusNode(n.parent);else toOverview({restore:true});}
 function focusRegion(region){focusNode(region.id);}
 function buildMap(){
  mobile=window.innerWidth<701;
  tree=buildHierarchy(entries,personaMaps[persona].regions,{portrait:mobile,extraRoots:graphRoots(graphEntries)});
  regions=tree.roots.map(n=>({...n,x:n.box.x+n.box.w/2,y:n.box.y+n.box.h/2}));
  points=[...tree.all.values()].filter(n=>n.entry).map(n=>({entry:n.entry,x:n.box.x+n.box.w/2,y:n.box.y+n.box.h/2}));
- maxScale=Math.max(30,Math.pow(4,tree.maxDepth+1));levelCameras.clear();activeGroup=null;
+ levelCameras.clear();activeGroup=null;wheelState=null;touchState=null;
  $('territories').replaceChildren();$('labels').replaceChildren();$('connections').replaceChildren();mapElements.clear();ready=true;
 }
 const short=(value,max=220)=>{const t=String(value||'');return t.length>max?t.slice(0,max).replace(/\s+\S*$/,'')+'…':t;};
@@ -111,7 +129,7 @@ function groupDescription(node){
  const children=node.children||[],companies=children.filter(n=>n.entry?.type==='company').length,research=children.length-companies;
  return `${companies} company records and ${research} research records filed under this theme. Inspect existing responses and the original analyst assumptions; inclusion does not establish effectiveness.`;
 }
-function clampPan(){camera=panWithinWorld(camera,0,0,tree.bounds,map.clientWidth,map.clientHeight);}
+function panMap(dx,dy){camera=panWithinWorld(camera,dx,dy,tree.bounds,map.clientWidth,map.clientHeight);render();}
 function organicPath(b){
  const x=b.x,y=b.y,w=b.w,h=b.h;
  return `M ${x+w*.06} ${y+h*.25} C ${x-w*.01} ${y+h*.02},${x+w*.26} ${y-h*.02},${x+w*.46} ${y+h*.025} C ${x+w*.71} ${y-h*.04},${x+w*1.04} ${y+h*.06},${x+w*.98} ${y+h*.39} C ${x+w*1.07} ${y+h*.75},${x+w*.86} ${y+h*1.035},${x+w*.6} ${y+h*.97} C ${x+w*.33} ${y+h*1.04},${x-w*.045} ${y+h*.94},${x+w*.025} ${y+h*.62} C ${x-w*.015} ${y+h*.46},${x+w*.015} ${y+h*.33},${x+w*.06} ${y+h*.25} Z`;
@@ -127,12 +145,11 @@ function drawLandscape(){
 }
 function render(){
  if(!ready||!persona)return;
- clampPan();
  // Dot positions share the world origin; subdivide only to keep a useful density.
  const gridWorldStep=2**Math.floor(Math.log2(32/camera.s));
  map.style.backgroundSize=`${gridWorldStep*camera.s}px ${gridWorldStep*camera.s}px`;
  map.style.backgroundPosition=`${camera.x}px ${camera.y}px`;
- const frontier=readingLevel(tree,activeGroup,camera,map.clientWidth,map.clientHeight,collectionView()),keep=new Set();
+ const frontier=readingLevel(tree,activeGroup,camera,map.clientWidth,map.clientHeight,{...collectionView(),surfaceScale:readingScale()}),keep=new Set();
  const pageGroup=tree.all.get(activeGroup),paged=!!pageGroup?.paged;
  $('collection-tools').hidden=!paged;
  if(paged){const view=collectionView(),p=collectionPage(pageGroup,view);if($('collection-search')!==document.activeElement)$('collection-search').value=view.query;$('collection-type').value=view.type;$('collection-count').textContent=`${p.total.toLocaleString()} ${p.total===1?'record':'records'} · Page ${p.page+1} of ${p.pages}`;$('collection-prev').disabled=p.page===0;$('collection-next').disabled=p.page+1===p.pages;}
@@ -149,7 +166,7 @@ function render(){
   $('level-context').innerHTML=current?`<div><p class="kicker">${current.entry?.graph?'Research graph · '+esc(recordLabel(current.entry)):'Legacy collection · '+current.count.toLocaleString()+' records'}${current.entry?` <button class="context-source" data-entry="${esc(current.entry.id)}">${current.entry.graph?'Scope & sources':'Original research'} ↗</button>`:''}</p><h2>${esc(current.title)}</h2><p>${esc(groupDescription(current))}</p></div>${current.kind==='territory'?illustration(persona):''}`:'';
  }
  drawLandscape();
- const current=path.at(-1);if(current){const b=current.box,anchor=current.children?.[0]?.box||b;$('level-context').style.cssText=`left:${anchor.x*camera.s+camera.x+6}px;top:${anchor.y*camera.s+camera.y-123}px;width:${Math.min(780,map.clientWidth-48,b.w*camera.s*.82)}px;--territory:${tree.all.get(current.root).color}`;}
+ const current=path.at(-1);if(current){const b=current.box,anchor=current.children?.[0]?.box||b;$('level-context').style.cssText=`left:${anchor.x*camera.s+camera.x+6}px;top:${anchor.y*camera.s+camera.y-123}px;width:${Math.min(780,map.clientWidth-48,b.w*readingScale()*.82)}px;--territory:${tree.all.get(current.root).color}`;}
  let deepest=0;
  for(const {node:n,box:b,mode} of frontier){
   deepest=Math.max(deepest,n.depth);keep.add(n.id);
@@ -165,9 +182,9 @@ function render(){
  for(const [id,el] of mapElements)if(!keep.has(id)){el.remove();mapElements.delete(id);}
  const nextLevel=Math.min(2,path.length);
  if(level!==nextLevel){level=nextLevel;announce(['Territories and guiding questions','Problem summaries and research collections','Research records and evidence'][level]);}
- $('level-range').textContent=pageGroup?.paged?`${frontier.filter(v=>v.mode==='summary'&&v.box.y>=0&&v.box.y+v.box.h<=map.clientHeight&&v.box.x>=0&&v.box.x+v.box.w<=map.clientWidth).length} of ${collectionPage(pageGroup,collectionView()).nodes.length} on this page in view · Pan to explore`:activeGroup?`${frontier.filter(v=>v.mode!=='context'&&Math.max(0,Math.min(v.box.x+v.box.w,map.clientWidth)-Math.max(v.box.x,0))*Math.max(0,Math.min(v.box.y+v.box.h,map.clientHeight)-Math.max(v.box.y,0))>=v.box.w*v.box.h*.5).length} of ${tree.all.get(activeGroup).children?.length||1} groups in view · Scroll to explore`:'';
+ $('level-range').textContent=pageGroup?.paged?`${frontier.filter(v=>v.mode==='summary'&&v.box.y>=0&&v.box.y+v.box.h<=map.clientHeight&&v.box.x>=0&&v.box.x+v.box.w<=map.clientWidth).length} of ${collectionPage(pageGroup,collectionView()).nodes.length} on this page in view · Pan to explore`:activeGroup?`${frontier.filter(v=>v.mode!=='context'&&Math.max(0,Math.min(v.box.x+v.box.w,map.clientWidth)-Math.max(v.box.x,0))*Math.max(0,Math.min(v.box.y+v.box.h,map.clientHeight)-Math.max(v.box.y,0))>=v.box.w*v.box.h*.5).length} of ${tree.all.get(activeGroup).children?.length||1} groups in view · Drag to explore`:'';
  map.dataset.level=String(level);map.dataset.group=activeGroup||'overview';map.dataset.camera=JSON.stringify(camera);map.dataset.rendered=String(frontier.length);map.dataset.totalNodes=String(tree.all.size);
- $('zoom-value').value=path.length?'Level '+path.length:'Overview';$('zoom-out').disabled=!activeGroup;
+ const limits=zoomLimits();$('zoom-value').value=Math.round(camera.s/limits.min*100)+'%';$('zoom-in').disabled=camera.s>=limits.max-.00001;$('zoom-out').disabled=camera.s<=limits.min+.00001;map.dataset.zoom=Math.round(camera.s/limits.min*100);
  document.querySelectorAll('[data-level]').forEach(el=>el.classList.toggle('current',Number(el.dataset.level)===level));
  $('map-empty').hidden=frontier.length>0;
  $('minimap-home').hidden=!activeGroup;
@@ -270,7 +287,7 @@ function renderPanel(){
   const region=regions.find(g=>g.id===panelState.id),responses=entries.filter(e=>e.type==='company'&&inRegion(e,region));
   content.innerHTML=`<p class="kicker">${esc(region.title)} / responses</p><h2>Who is already here?</h2><p class="evidence-note">${responses.length} published company records. Shared theme or published category membership is a research connection, not proof of effectiveness.</p>${responses.slice(0,panelState.limit||60).map(e=>row(e)).join('')}${responses.length>(panelState.limit||60)?'<button class="panel-action" data-panel-more>Show more records</button>':''}`;
  }else{
-  content.innerHTML=`<p class="kicker">How to read this atlas</p><h2>Start with people.<br>Stay close to evidence.</h2><p class="body-copy">Who Cares helps venture builders understand ageing and care before deciding what to build. Each person opens a different map of the same published research.</p><h3>From landscape to detail</h3><p class="body-copy">Click a territory to enter its reading level. Its guiding question and data-backed groups appear in the map. Click a group to go deeper; breadcrumbs return to any ancestor. Drag or scroll to pan without changing the level or text. Collections show actual records, with search, type filters and pages. Alphabetical order is a retrieval aid, not a research hierarchy. Read evidence opens a full record.</p><h3>Read the connections carefully</h3><p class="body-copy">Territories group research by perspective. Nested groups follow published themes; broader category collections are labelled separately and do not establish product fit. Positions, sizes and colors do not rank venture potential. Illustrations are fictional reusable assets, not testimony.</p><h3>Research is not certainty</h3><p class="body-copy">The atlas uses the repository’s published research snapshot. Original records include hypotheses and analyst decisions, including ideas set aside. Source links, missing evidence and incomplete research remain visible in each record.</p><h3>Explore without a mouse</h3><p class="body-copy">Tab to territories or records and press Enter. With the map focused, use arrow keys to pan, + to enter a visible group, − to go up a level, and Home for the overview. Escape closes the reading panel. Search and list browsing provide an alternative to spatial navigation.</p><p class="evidence-note">The care-workday story is explicitly illustrative. It contains no attributed interviews, invented quotes or measured outcomes.</p>`;
+  content.innerHTML=`<p class="kicker">How to read this atlas</p><h2>Start with people.<br>Stay close to evidence.</h2><p class="body-copy">Who Cares helps venture builders understand ageing and care before deciding what to build. Each person opens a different map of the same published research.</p><h3>From landscape to detail</h3><p class="body-copy">Click a territory to enter its reading level. Its guiding question and data-backed groups appear in the map. Click a group to go deeper; breadcrumbs return to any ancestor. Drag or two-finger scroll to pan. Pinch, or hold Ctrl / ⌘ while scrolling, to zoom. Each gesture stays in one mode. Zoom changes only the spatial view: text, card contents and reading level stay fixed. Click groups or breadcrumbs to change level. Shift-scroll pans horizontally. Collections show actual records, with search, type filters and pages. Alphabetical order is a retrieval aid, not a research hierarchy. Read evidence opens a full record.</p><h3>Read the connections carefully</h3><p class="body-copy">Territories group research by perspective. Nested groups follow published themes; broader category collections are labelled separately and do not establish product fit. Positions, sizes and colors do not rank venture potential. Illustrations are fictional reusable assets, not testimony.</p><h3>Research is not certainty</h3><p class="body-copy">The atlas uses the repository’s published research snapshot. Original records include hypotheses and analyst decisions, including ideas set aside. Source links, missing evidence and incomplete research remain visible in each record.</p><h3>Explore without a mouse</h3><p class="body-copy">Tab to territories or records and press Enter. With the map focused, use arrow keys to pan, + and − to zoom, Backspace to go up a level, and Home for the overview. Escape closes the reading panel. Search and list browsing provide an alternative to spatial navigation.</p><p class="evidence-note">The care-workday story is explicitly illustrative. It contains no attributed interviews, invented quotes or measured outcomes.</p>`;
  }
  content.scrollTop=panelState.type==='story'?(panelState.scrollTop||0):0;
 }
@@ -304,7 +321,7 @@ function showPicker(){stopNavigation();$('persona-picker').hidden=false;$('works
 $('persona-cards').innerHTML=Object.entries(personaMaps).map(([key,definition])=>`<button class="persona-card" data-persona="${key}" aria-label="Explore the ${definition.name.toLowerCase()} map">${illustration(key)}<h3>${esc(definition.name)}</h3><p>${esc(definition.intro)}</p><span class="enter">Enter this world <span aria-hidden="true">↗</span></span></button>`).join('');
 document.addEventListener('click',event=>{
  const target=event.target.closest('button');if(!target)return;
- if(target.hasAttribute('data-map-overview')){toOverview();return;}
+ if(target.hasAttribute('data-map-overview')){toOverview({restore:true});return;}
  if(target.dataset.zoom){focusNode(target.dataset.zoom);return;}
  if(target.dataset.zoomDeeper){exploreDeeper(target.dataset.zoomDeeper);return;}
  if(target.dataset.persona){choosePersona(target.dataset.persona);return;}
@@ -328,7 +345,7 @@ $('home').onclick=()=>persona?toOverview():showPicker();$('persona-change').oncl
 $('minimap-home').onclick=toOverview;
 $('map-up').onclick=()=>focusNode(mapParent);
 $('overview').onclick=toOverview;$('recover').onclick=toOverview;
-$('zoom-in').onclick=()=>{const candidates=readingLevel(tree,activeGroup,camera,map.clientWidth,map.clientHeight,collectionView()).filter(v=>v.node.children?.length);const next=candidates.sort((a,b)=>Math.hypot(a.box.x+a.box.w/2-map.clientWidth/2,a.box.y+a.box.h/2-map.clientHeight/2)-Math.hypot(b.box.x+b.box.w/2-map.clientWidth/2,b.box.y+b.box.h/2-map.clientHeight/2))[0];if(next)focusNode(next.node.id);};$('zoom-out').onclick=goUp;
+$('zoom-in').onclick=()=>zoomMap(1.2);$('zoom-out').onclick=()=>zoomMap(1/1.2);
 $('story-open').onclick=()=>openStory();
 function ensureMap(){if(!persona)choosePersona('worker');}
 $('search-open').onclick=()=>{ensureMap();showPanel({type:'search'});$('research-search').focus();};
@@ -337,44 +354,72 @@ $('about-open').onclick=()=>{ensureMap();showPanel({type:'about'});};
 $('panel-content').addEventListener('scroll',()=>{if(panelState?.type==='story')panelState.scrollTop=$('panel-content').scrollTop;},{passive:true});
 $('panel-content').addEventListener('input',event=>{if(event.target.id==='research-search'){panelState.limit=60;renderSearch();}});
 map.addEventListener('wheel',event=>{
- event.preventDefault();stopNavigation();
+ event.preventDefault();
+ if(navigationFrame||pointers.size)return;
+ const rect=map.getBoundingClientRect();
+ wheelState=wheelGesture(wheelState,{now:performance.now(),zoom:event.ctrlKey||event.metaKey,anchor:{x:event.clientX-rect.left,y:event.clientY-rect.top}});
+ clearTimeout(wheelTimer);wheelTimer=setTimeout(()=>{wheelState=null;delete map.dataset.gesture;},180);
+ if(!wheelState.accept)return;
+ map.dataset.gesture=wheelState.mode;
  const unit=event.deltaMode===1?16:event.deltaMode===2?map.clientHeight:1;
- camera.x-=event.deltaX*unit;camera.y-=event.deltaY*unit;render();
+ if(wheelState.mode==='zoom'){
+  zoomMap(Math.exp(clamp(-event.deltaY*unit*.008,-.18,.18)),wheelState.anchor);
+ }else{
+  panMap(-(event.shiftKey&&!event.deltaX?event.deltaY:event.deltaX)*unit,-(event.shiftKey&&!event.deltaX?0:event.deltaY)*unit);
+ }
 },{passive:false});
+function updateTouch(){
+ if(!touchState||touchState.blocked||pointers.size!==2||navigationFrame)return;
+ const after=[...pointers.values()];
+ touchState.mode=touchIntent(touchState.start,after,touchState.mode,performance.now()-touchState.began);
+ if(!touchState.mode)return;
+ pointerMode=touchState.mode;map.dataset.gesture=pointerMode;
+ if(pointerMode==='zoom')zoomMap(separation(after)/Math.max(1,separation(touchState.previous)),touchState.anchor);
+ else{const a=centroid(touchState.previous),b=centroid(after);panMap(b.x-a.x,b.y-a.y);}
+ touchState.previous=after;
+}
 map.addEventListener('pointerdown',event=>{
- if(event.target.closest('#minimap-home'))return;
- if(event.button!==0)return;stopNavigation();
+ if(event.target.closest('#minimap-home')||event.button!==0||navigationFrame)return;
+ wheelState=null;clearTimeout(wheelTimer);
  pointers.set(event.pointerId,{x:event.clientX,y:event.clientY});
- if(pointers.size===1){dragged=false;gestureStart={x:event.clientX,y:event.clientY};}
- else dragged=true;
+ if(pointers.size===1){touchState=null;pointerMode=null;dragged=false;gestureStart={x:event.clientX,y:event.clientY};}
+ else if(pointers.size===2&&!touchState){
+  dragged=true;const start=[...pointers.values()];
+  const rect=map.getBoundingClientRect(),c=centroid(start);
+  touchState={start,previous:start,mode:pointerMode,anchor:{x:c.x-rect.left,y:c.y-rect.top},blocked:false,began:performance.now()};
+  touchTimer=setTimeout(updateTouch,65);
+ }else{clearTimeout(touchTimer);if(touchState)touchState.blocked=true;}
  map.setPointerCapture(event.pointerId);
 });
 map.addEventListener('pointermove',event=>{
  const previous=pointers.get(event.pointerId);if(!previous)return;
- const before=[...pointers.values()];pointers.set(event.pointerId,{x:event.clientX,y:event.clientY});const after=[...pointers.values()];
+ pointers.set(event.pointerId,{x:event.clientX,y:event.clientY});const after=[...pointers.values()];
  if(gestureStart&&Math.hypot(event.clientX-gestureStart.x,event.clientY-gestureStart.y)>5)dragged=true;
- if(!dragged)return;
+ if(!dragged||navigationFrame||touchState?.blocked)return;
  map.classList.add('dragging');
- if(after.length===2){
-  const center=values=>({x:(values[0].x+values[1].x)/2,y:(values[0].y+values[1].y)/2});
-  const a=center(before),b=center(after);
-  // Two-finger gestures pan within this reading level; no changing typography or LOD.
-  camera.x+=b.x-a.x;camera.y+=b.y-a.y;
- }else{camera.x+=event.clientX-previous.x;camera.y+=event.clientY-previous.y;}
- render();
+ if(after.length===2&&touchState)updateTouch();
+ else if(!touchState){pointerMode='pan';map.dataset.gesture='pan';panMap(event.clientX-previous.x,event.clientY-previous.y);}
 });
+function releasePointer(event,cancelled=false){
+ if(!pointers.has(event.pointerId))return false;
+ pointers.delete(event.pointerId);
+ if(map.hasPointerCapture(event.pointerId))map.releasePointerCapture(event.pointerId);
+ clearTimeout(touchTimer);if(touchState)touchState.blocked=true; // No one-finger jump after a pinch.
+ if(cancelled)dragged=true;
+ if(!pointers.size){map.classList.remove('dragging');gestureStart=null;touchState=null;pointerMode=null;delete map.dataset.gesture;}
+ return true;
+}
 map.addEventListener('pointerup',event=>{
- pointers.delete(event.pointerId);map.releasePointerCapture(event.pointerId);
- if(!pointers.size){map.classList.remove('dragging');gestureStart=null;}
+ if(!releasePointer(event))return;
  if(!dragged){const hit=document.elementFromPoint(event.clientX,event.clientY)?.closest('button');if(hit?.dataset.zoom){event.preventDefault();focusNode(hit.dataset.zoom);}else if(hit?.dataset.zoomDeeper){event.preventDefault();exploreDeeper(hit.dataset.zoomDeeper);}else if(hit?.dataset.entry){event.preventDefault();openEntry(hit.dataset.entry);}else if(hit?.dataset.region){event.preventDefault();openRegion(hit.dataset.region);}else if(hit?.dataset.listRegion){event.preventDefault();showPanel({type:'responses',id:hit.dataset.listRegion});}}
 });
-map.addEventListener('pointercancel',event=>{pointers.delete(event.pointerId);dragged=true;map.classList.remove('dragging');});
+map.addEventListener('pointercancel',event=>releasePointer(event,true));
 // Pointer selection is handled on release, so dragging never activates a record.
 map.addEventListener('click',event=>{if(event.detail>0&&!event.target.closest('#minimap-home'))event.stopPropagation();});
 map.addEventListener('keydown',event=>{
  if(event.target!==map)return;
- const actions={'+':()=>$('zoom-in').click(),'=':()=>$('zoom-in').click(),'-':goUp,Home:toOverview,ArrowLeft:()=>{camera.x+=50;render();},ArrowRight:()=>{camera.x-=50;render();},ArrowUp:()=>{camera.y+=50;render();},ArrowDown:()=>{camera.y-=50;render();}};
- if(actions[event.key]){event.preventDefault();stopNavigation();actions[event.key]();}
+ const actions={'+':()=>$('zoom-in').click(),'=':()=>$('zoom-in').click(),'-':()=>$('zoom-out').click(),Backspace:goUp,Home:toOverview,ArrowLeft:()=>panMap(50,0),ArrowRight:()=>panMap(-50,0),ArrowUp:()=>panMap(0,50),ArrowDown:()=>panMap(0,-50)};
+ if(actions[event.key]){event.preventDefault();if(!navigationFrame&&!pointers.size&&!(event.repeat&&['+','=','-','Backspace'].includes(event.key)))actions[event.key]();}
 });
 document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!$('inspector').hidden){event.preventDefault();closePanel();}});
 new ResizeObserver(()=>{

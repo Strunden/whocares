@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {project,fit} from '../site/js/atlas-camera.js';
+import {project,fit,zoomAt} from '../site/js/atlas-camera.js';
 import {personaMaps,personaStories} from '../site/js/atlas-content.js';
 import {readFile} from 'node:fs/promises';
 const almost=(a,b)=>assert.ok(Math.abs(a-b)<1e-8,`${a} differs from ${b}`);
@@ -27,4 +27,15 @@ test('every story links to existing records and focuses on a problem in its own 
   const entry=published.get(beat.focus);
   assert.ok(personaMaps[persona].regions.some(g=>entry.themes.some(t=>g.themes.includes(t))),`${persona}: unmapped story focus ${beat.focus}`);
  }
+});
+
+test('zoom preserves cursor world point at both limits and reverses exactly',()=>{
+ const camera={s:2,x:-130,y:88},anchor={x:319,y:201};
+ const world={x:(anchor.x-camera.x)/camera.s,y:(anchor.y-camera.y)/camera.s};
+ for(const factor of [.01,.8,1.3,100]){
+  const next=zoomAt(camera,factor,anchor,1,4),point=project(next,world);
+  almost(point.x,anchor.x);almost(point.y,anchor.y);assert.ok(next.s>=1&&next.s<=4);
+ }
+ const back=zoomAt(zoomAt(camera,1.4,anchor,1,4),1/1.4,anchor,1,4);
+ for(const key of ['s','x','y'])almost(back[key],camera[key]);
 });

@@ -64,7 +64,14 @@ export function readingLevel(tree,groupId,camera,width,height,options={}){
  const page=group?.paged?collectionPage(group,options):null;
  const nodes=page?page.nodes:group?(group.children?.length?group.children:[group]):tree.roots;
  const viewport={x:-80,y:-80,w:width+160,h:height+160};
- const project=(node,mode,index)=>{const b=page&&mode==='summary'?group.children[index].box:node.box;return {node,box:{x:b.x*camera.s+camera.x,y:b.y*camera.s+camera.y,w:b.w*camera.s,h:b.h*camera.s},mode};};
+ const project=(node,mode,index)=>{
+  const b=page&&mode==='summary'?group.children[index].box:node.box;
+  const worldW=b.w*camera.s,worldH=b.h*camera.s;
+  // Fixed reading surfaces travel by their centre, so magnification does not
+  // push the text away from the point the user is exploring.
+  const w=mode==='context'?worldW:Math.min(b.w*(options.surfaceScale||camera.s),420,width-32),h=mode==='context'?worldH:Math.min(b.h*(options.surfaceScale||camera.s),360);
+  return {node,box:{x:b.x*camera.s+camera.x+(worldW-w)/2,y:b.y*camera.s+camera.y+(worldH-h)/2,w,h},mode};
+ };
  const result=nodes.map((node,i)=>project(node,group?'summary':'compact',i)).filter(v=>intersects(v.box,viewport));
  // Neighbouring regions remain part of the same world at every reading level.
  // Their context is navigable but never silently opens while panning.
