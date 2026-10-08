@@ -52,3 +52,13 @@ Real browser checks on the corrected build:
 - Two regression tests cover free panning when a group fits the viewport and retaining neighbours at unchanged world coordinates. All eleven tests pass.
 
 Remaining critique: the recursive layout still uses regular allocation cells to avoid overlapping data. The organic contours and camera navigation preserve spatial orientation, but this is not a validated model of semantic distance. Participant comprehension and physical touch testing remain open.
+
+## Perspective breadcrumb and world grid
+
+Moved the existing illustrated perspective chooser into the breadcrumb path: Exploring as / Care provider / Whole map / current ancestors. Its click still opens all five perspectives. The dot grid now uses the camera translation and world-space spacing; subdivision keeps dots useful at deep levels. Browser verification: ArrowRight moved both content and grid by −50px, with unchanged scale 2.9392797289 and grid spacing 23.5142px. The perspective breadcrumb opened the chooser successfully. Eleven automated tests pass and no browser console errors were captured in this check.
+
+## Product alignment review
+
+Read the live atlas.current_principles record who-cares-product, version 1, on 8 October 2026; canonical SHA256 1698c1ce402af9694166b15938d24fb9fb05c55e85a330b4e589b7dca5b2a8c2. Incorporated the concurrently updated product, problem-atlas, knowledge-model, UX and research-standard briefs without overwriting them.
+
+The user's later explicit fixed-level / Prezi-style direction supersedes the older continuous semantic-zoom interaction requirement for this prototype. This correction changes navigation and presentation, not the database or canonical principles. Shared record identities, uncertainty labels and access to source records remain. The existing legacy themes/company categories are a prototype retrieval structure, not independently researched problem spaces; the full problem-first graph alignment gate remains unmet. No production deployment is claimed. The new layer-design mock documents the proposed information hierarchy separately from implemented UI.

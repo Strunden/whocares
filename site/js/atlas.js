@@ -108,6 +108,10 @@ function drawLandscape(){
 function render(){
  if(!ready||!persona)return;
  clampPan();
+ // Dot positions share the world origin; subdivide only to keep a useful density.
+ const gridWorldStep=2**Math.floor(Math.log2(32/camera.s));
+ map.style.backgroundSize=`${gridWorldStep*camera.s}px ${gridWorldStep*camera.s}px`;
+ map.style.backgroundPosition=`${camera.x}px ${camera.y}px`;
  const frontier=readingLevel(tree,activeGroup,camera,map.clientWidth,map.clientHeight),keep=new Set();
  const path=ancestry(tree,activeGroup);mapParent=path.at(-1)?.parent||null;
  $('map-up').hidden=true;
@@ -115,7 +119,7 @@ function render(){
  if($('map-breadcrumbs').dataset.path!==crumbKey){
   $('map-breadcrumbs').dataset.path=crumbKey;
   const trail=path.length>5?[...path.slice(0,2),null,...path.slice(-2)]:path;
-  $('map-breadcrumbs').innerHTML=`<button data-map-overview>${esc(personaMaps[persona].name)}</button>`+trail.map(n=>n?`<span aria-hidden="true">/</span><button title="${esc(n.title)}" data-zoom="${esc(n.id)}" ${n.id===activeGroup?'aria-current="location"':''}>${esc(n.kind==='range'?n.count.toLocaleString()+' records':short(n.title,40))}</button>`:`<span aria-hidden="true">/</span><select id="ancestor-jump" aria-label="Earlier research levels"><option value="">… Earlier levels</option>${path.slice(2,-2).map(a=>`<option value="${esc(a.id)}">${a.count.toLocaleString()} records · ${esc(a.title)}</option>`).join('')}</select>`).join('');
+  $('map-breadcrumb-trail').innerHTML=`<button data-map-overview ${!activeGroup?'aria-current="location"':''}>Whole map</button>`+trail.map(n=>n?`<span aria-hidden="true">/</span><button title="${esc(n.title)}" data-zoom="${esc(n.id)}" ${n.id===activeGroup?'aria-current="location"':''}>${esc(n.kind==='range'?n.count.toLocaleString()+' records':short(n.title,40))}</button>`:`<span aria-hidden="true">/</span><select id="ancestor-jump" aria-label="Earlier research levels"><option value="">… Earlier levels</option>${path.slice(2,-2).map(a=>`<option value="${esc(a.id)}">${a.count.toLocaleString()} records · ${esc(a.title)}</option>`).join('')}</select>`).join('');
   $('ancestor-jump')?.addEventListener('change',event=>{if(event.target.value)focusNode(event.target.value);});
   $('map-breadcrumbs').scrollLeft=$('map-breadcrumbs').scrollWidth;
   const current=path.at(-1);$('level-context').hidden=!current;
