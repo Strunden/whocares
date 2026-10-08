@@ -1,13 +1,13 @@
-import {wheelGesture,centroid,separation,touchIntent} from './atlas-gestures.js?v=browse-items-29';
-import {personaMaps, insights, personaStories} from './atlas-content.js?v=browse-items-29';
-import {clamp, zoomAt, elasticZoomScale, interpolateCamera} from './atlas-camera.js?v=browse-items-29';
-import {buildHierarchy,readingLevel,ancestry,panWithinScene,collectionPage,themesFor,levelScale,levelZoomLimits,frameLevel,entryFrame,perspectiveHierarchy,embedHierarchy} from './atlas-layout.js?v=browse-items-29';
+import {wheelGesture,centroid,separation,touchIntent} from './atlas-gestures.js?v=centre-pan-31';
+import {personaMaps, insights, personaStories} from './atlas-content.js?v=centre-pan-31';
+import {clamp, zoomAt, elasticZoomScale, elasticPan, interpolateCamera} from './atlas-camera.js?v=centre-pan-31';
+import {buildHierarchy,readingLevel,ancestry,scenePanBounds,panWithinScene,collectionPage,themesFor,levelScale,levelZoomLimits,frameLevel,entryFrame,perspectiveHierarchy,embedHierarchy} from './atlas-layout.js?v=centre-pan-31';
 import {portrait as illustration} from './atlas-assets.js';
 
-import {graphRecords,graphRoots,recordLabel,recordStatus,evidenceLabels} from './atlas-records.js?v=browse-items-29';
+import {graphRecords,graphRoots,recordLabel,recordStatus,evidenceLabels} from './atlas-records.js?v=centre-pan-31';
 import {graphSourceBlock} from './atlas-sources.js?v=source-details-13';
 
-import {esc,short,companyLogo,recordMedia,createMapView} from './atlas-view.js?v=browse-items-29';
+import {esc,short,companyLogo,recordMedia,createMapView} from './atlas-view.js?v=centre-pan-31';
 
 const $ = id => document.getElementById(id);
 const safeUrl = value => /^https?:\/\//i.test(value || '') ? value : '';
@@ -41,31 +41,37 @@ function announce(text){$('announcement').textContent=text;}
 function toOverview({restore=false}={}){navigateTo(persona,null,{restore});}
 function readingScale(id=activeGroup){return levelScale(tree,id,map.clientWidth);}
 function zoomLimits(){return levelZoomLimits(tree,activeGroup,map.clientWidth,map.clientHeight,collectionView());}
-let zoomReturnFrame=0,zoomReturnTimer,zoomAnchor=null;
-function stopZoomReturn(){cancelAnimationFrame(zoomReturnFrame);zoomReturnFrame=0;clearTimeout(zoomReturnTimer);}
-function settleZoom(){
- clearTimeout(zoomReturnTimer);if(navigationFrame||pointers.size)return;
+let cameraReturnFrame=0,cameraReturnTimer,zoomAnchor=null,panGesture=null,panPending=false;
+function stopCameraReturn(resetPan=true,finishPan=true){
+ cancelAnimationFrame(cameraReturnFrame);cameraReturnFrame=0;clearTimeout(cameraReturnTimer);
+ if(resetPan)panGesture=null;
+ if(finishPan&&panPending){camera=panWithinScene(tree,activeGroup,camera,0,0,map.clientWidth,map.clientHeight,collectionView());panPending=false;}
+}
+function settleCamera(){
+ clearTimeout(cameraReturnTimer);if(navigationFrame||pointers.size)return;
  const {min,max}=zoomLimits(),anchor=zoomAnchor||{x:map.clientWidth/2,y:map.clientHeight/2};
- const start={...camera},target=zoomAt(start,1,anchor,min,max);
- if(Math.abs(start.s-target.s)<.000001)return;
+ const start={...camera},zoomed=zoomAt(start,1,anchor,min,max);
+ const target=panPending?panWithinScene(tree,activeGroup,zoomed,0,0,map.clientWidth,map.clientHeight,collectionView()):zoomed;
+ panGesture=null;
+ if(Math.abs(start.s-target.s)<.000001&&Math.abs(start.x-target.x)<.01&&Math.abs(start.y-target.y)<.01){panPending=false;return;}
  const began=performance.now();
  function frame(now){const t=reducedMotion.matches?1:Math.min(1,(now-began)/240),ease=1-(1-t)**3;
   camera={s:start.s+(target.s-start.s)*ease,x:start.x+(target.x-start.x)*ease,y:start.y+(target.y-start.y)*ease};render();
-  zoomReturnFrame=t<1?requestAnimationFrame(frame):0;
+  cameraReturnFrame=t<1?requestAnimationFrame(frame):0;if(t===1)panPending=false;
  }
- zoomReturnFrame=requestAnimationFrame(frame);
+ cameraReturnFrame=requestAnimationFrame(frame);
 }
 function zoomMap(factor,anchor={x:map.clientWidth/2,y:map.clientHeight/2}){
  if(navigationFrame)return;
- stopZoomReturn();zoomAnchor=anchor;
+ stopCameraReturn(true,false);panPending=false;zoomAnchor=anchor;
  const {min,max}=zoomLimits();
  const s=reducedMotion.matches?clamp(camera.s*factor,min,max):elasticZoomScale(camera.s,factor,min,max);
  camera=zoomAt(camera,s/camera.s,anchor,0,Infinity);render();
- zoomReturnTimer=setTimeout(settleZoom,180);
+ cameraReturnTimer=setTimeout(settleCamera,180);
 }
 
 function zoomStep(direction){
- if(navigationFrame)return;stopZoomReturn();
+ if(navigationFrame)return;stopCameraReturn();
  const limits=zoomLimits(),s=clamp(camera.s*(direction>0?1.2:1/1.2),limits.min,limits.max);
  const fit=frameLevel(tree,activeGroup,map.clientWidth,map.clientHeight,collectionView());
  if(direction<0&&s<=fit.s*1.02){
@@ -97,7 +103,7 @@ function installLevel(key,group,nextTree){
 }
 // All level changes pass through here. Pan and zoom only update the camera.
 function navigateTo(key,group=null,{restore=true,animate=true,keepPanel=false,saveCurrent=true}={}){
- const interrupted=!!navigationFrame;stopZoomReturn();stopNavigation();if(!keepPanel)closePanel(false);
+ const interrupted=!!navigationFrame;stopCameraReturn();stopNavigation();if(!keepPanel)closePanel(false);
  if(ready&&saveCurrent&&!interrupted)levelCameras.set(locationKey(persona,activeGroup),{...camera});
  mobile=window.innerWidth<701;$('workspace').hidden=false;
  const nextTree=key===persona&&tree?tree:makeTree(key);
@@ -131,7 +137,21 @@ function navigateTo(key,group=null,{restore=true,animate=true,keepPanel=false,sa
 }
 function focusNode(id,{keepPanel=false}={}){if(tree.all.has(id))navigateTo(persona,id,{keepPanel});}
 function goUp(){const node=tree.all.get(activeGroup);navigateTo(node?.parent||activeGroup?persona:null,node?.parent||null);}
-function panMap(dx,dy){stopZoomReturn();const limits=zoomLimits();camera=zoomAt(camera,1,{x:map.clientWidth/2,y:map.clientHeight/2},limits.min,limits.max);camera=panWithinScene(tree,activeGroup,camera,dx,dy,map.clientWidth,map.clientHeight,collectionView());render();}
+function panMap(dx,dy){
+ if(navigationFrame)return;
+ stopCameraReturn(false,false);panPending=true;
+ if(!panGesture){
+  const bounds=scenePanBounds(tree,activeGroup,camera,map.clientWidth,map.clientHeight,collectionView());
+  // An anchored zoom or entry framing can start outside the centre bounds.
+  // Include that starting position for this gesture so its first delta cannot jump.
+  bounds.minX=Math.min(bounds.minX,camera.x);bounds.maxX=Math.max(bounds.maxX,camera.x);
+  bounds.minY=Math.min(bounds.minY,camera.y);bounds.maxY=Math.max(bounds.maxY,camera.y);
+  panGesture={raw:{...camera},bounds};
+ }
+ panGesture.raw.x+=dx;panGesture.raw.y+=dy;
+ camera=reducedMotion.matches?{...panGesture.raw,x:clamp(panGesture.raw.x,panGesture.bounds.minX,panGesture.bounds.maxX),y:clamp(panGesture.raw.y,panGesture.bounds.minY,panGesture.bounds.maxY)}:elasticPan(panGesture.raw,panGesture.bounds,map.clientWidth,map.clientHeight);
+ render();cameraReturnTimer=setTimeout(settleCamera,180);
+}
 function render(){
  if(!ready)return;
  // Dot positions share the world origin; subdivide only to keep a useful density.
@@ -169,7 +189,7 @@ function setHash(){
  history.replaceState(null,'',`#${route}`);
 }
 function showPanel(state,{remember=true,focus=true}={}){
- stopZoomReturn();
+ stopCameraReturn();
  if(finishNavigation)finishNavigation();
  if(panelState?.type==='story'){panelState.scrollTop=$('panel-content').scrollTop;panelState.expanded=[...$('panel-content').querySelectorAll('[data-chapter]')].filter(chapter=>chapter.querySelector('details').open).map(chapter=>Number(chapter.dataset.chapter));}
  if(remember&&panelState)panelHistory.push({...panelState});
@@ -179,7 +199,7 @@ function showPanel(state,{remember=true,focus=true}={}){
  render();
 }
 function closePanel(restore=true){
- stopZoomReturn();stopNavigation();
+ stopCameraReturn();stopNavigation();
  storyObserver?.disconnect();
  const wasOpen=!$('inspector').hidden;
  $('inspector').hidden=true;panelState=null;panelHistory=[];selectedId=null;
@@ -304,7 +324,7 @@ document.addEventListener('click',event=>{
  if(target.dataset.storyStep!==undefined){openStory(Number(target.dataset.storyStep),false);return;}
  if(target.hasAttribute('data-story-finish')){closePanel();return;}
 });
-function fitCurrentLevel(){stopZoomReturn();camera=frameLevel(tree,activeGroup,map.clientWidth,map.clientHeight,collectionView());render();}
+function fitCurrentLevel(){stopCameraReturn();camera=frameLevel(tree,activeGroup,map.clientWidth,map.clientHeight,collectionView());render();}
 function updateCollection(change){collectionViews.set(activeGroup,{...collectionView(),...change});fitCurrentLevel();}
 $('collection-next').onclick=()=>updateCollection({page:collectionView().page+1});
 $('collection-prev').onclick=()=>updateCollection({page:collectionView().page-1});
@@ -343,7 +363,7 @@ function updateTouch(){
 }
 map.addEventListener('pointerdown',event=>{
  if(event.button!==0||navigationFrame)return;
- stopZoomReturn();wheelState=null;clearTimeout(wheelTimer);
+ stopCameraReturn(pointers.size===0,false);wheelState=null;clearTimeout(wheelTimer);
  pointers.set(event.pointerId,{x:event.clientX,y:event.clientY});
  if(pointers.size===1){touchState=null;pointerMode=null;dragged=false;gestureStart={x:event.clientX,y:event.clientY};}
  else if(pointers.size===2&&!touchState){
@@ -369,7 +389,7 @@ function releasePointer(event,cancelled=false){
  if(map.hasPointerCapture(event.pointerId))map.releasePointerCapture(event.pointerId);
  clearTimeout(touchTimer);if(touchState)touchState.blocked=true; // No one-finger jump after a pinch.
  if(cancelled)dragged=true;
- if(!pointers.size){map.classList.remove('dragging');gestureStart=null;touchState=null;pointerMode=null;delete map.dataset.gesture;settleZoom();}
+ if(!pointers.size){map.classList.remove('dragging');gestureStart=null;touchState=null;pointerMode=null;delete map.dataset.gesture;settleCamera();}
  return true;
 }
 map.addEventListener('pointerup',event=>{
@@ -392,7 +412,7 @@ new ResizeObserver(()=>{
  const w=map.clientWidth,h=map.clientHeight;
  const nextMobile=window.innerWidth<701;
  if(nextMobile!==mobile){const key=persona,group=activeGroup;levelCameras.clear();tree=null;navigateTo(key,group,{restore:false,animate:false,keepPanel:true,saveCurrent:false});if(closedCamera){closedCamera=frameLevel(tree,closedGroup,map.clientWidth,map.clientHeight);}}
- else if(!navigationFrame&&previousSize.w&&previousSize.h&&$('inspector').hidden){stopZoomReturn();camera.x+=(w-previousSize.w)/2;camera.y+=(h-previousSize.h)/2;const limits=zoomLimits();camera=zoomAt(camera,1,{x:w/2,y:h/2},limits.min,limits.max);}
+ else if(!navigationFrame&&previousSize.w&&previousSize.h&&$('inspector').hidden){stopCameraReturn();camera.x+=(w-previousSize.w)/2;camera.y+=(h-previousSize.h)/2;const limits=zoomLimits();camera=zoomAt(camera,1,{x:w/2,y:h/2},limits.min,limits.max);}
  previousSize={w,h};render();
 }).observe(map);
 

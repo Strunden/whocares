@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {performance} from 'node:perf_hooks';
-import {buildHierarchy,readingLevel,ancestry,panWithinWorld,panWithinScene,unitScale,levelScale,frameLevel,entryFrame,levelZoomLimits,perspectiveHierarchy,embedHierarchy} from '../site/js/atlas-layout.js';
+import {buildHierarchy,readingLevel,ancestry,panWithinWorld,panWithinScene,scenePanBounds,levelScene,unitScale,levelScale,frameLevel,entryFrame,levelZoomLimits,perspectiveHierarchy,embedHierarchy} from '../site/js/atlas-layout.js';
 import {personaMaps} from '../site/js/atlas-content.js';
 const data=JSON.parse(await readFile(new URL('../site/data/index.json',import.meta.url)));
 const entries=data.entries.filter(e=>e.published!==false);
@@ -90,6 +90,24 @@ test('extreme panning never loses every item in the active level, including spar
      camera=panWithinScene(tree,groupId,camera,dx,dy,width,620);
      const views=readingLevel(tree,groupId,camera,width,620);
      assert.ok(views.some(({box:b})=>Math.max(0,Math.min(width,b.x+b.w)-Math.max(0,b.x))*Math.max(0,Math.min(620,b.y+b.h)-Math.max(0,b.y))>=Math.min(width,b.w)*Math.min(620,b.h)*.5),'lost the active scene');
+    }
+   }
+  }
+ }
+});
+
+test('every visible-page item can reach the exact viewport centre at every zoom and viewport size',()=>{
+ for(const width of [393,743,1280]){
+  const tree=buildHierarchy(entries,personaMaps.relative.regions,{portrait:width<701});
+  const groups=[null,...[...tree.all.values()].filter(n=>n.children?.length).map(n=>n.id)];
+  for(const group of groups){
+   const limits=levelZoomLimits(tree,group,width,720);
+   for(const s of [limits.min,(limits.min+limits.max)/2,limits.max]){
+    for(const page of [0,1])for(const {anchor,node} of levelScene(tree,group,{page}).items){
+     const desired={s,x:width/2-(anchor.x+anchor.w/2)*s,y:360-(anchor.y+anchor.h/2)*s};
+     const actual=panWithinScene(tree,group,desired,0,0,width,720,{page});
+     assert.ok(Math.abs(actual.x-desired.x)<1e-7&&Math.abs(actual.y-desired.y)<1e-7,`${width}: ${node.id} cannot centre`);
+     const b=scenePanBounds(tree,group,desired,width,720,{page});assert.ok(desired.x>=b.minX-1e-7&&desired.x<=b.maxX+1e-7&&desired.y>=b.minY-1e-7&&desired.y<=b.maxY+1e-7);
     }
    }
   }

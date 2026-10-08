@@ -75,7 +75,8 @@
 .atlas-node[data-mode="compact"] .node-copy{padding:25px 30px 55px}
 .atlas-node[data-mode="compact"] .node-title{font-size:26px}
 .atlas-node[data-mode="compact"] .node-description{font-size:13px;-webkit-line-clamp:2;margin-top:10px}
-.atlas-node[data-visual="person"] .perspective-art{top:26px;height:135px;width:110px}
+.atlas-node[data-visual="person"] .node-copy{justify-content:center;padding-block:25px}
+.atlas-node[data-visual="person"] .perspective-art{top:50%;transform:translateY(-50%);height:135px;width:110px}
 .atlas-node[data-visual="person"] .node-description{font-size:14px;-webkit-line-clamp:3}
 
 .atlas-node:hover .territory-surface path{fill-opacity:.48;stroke-opacity:.9}

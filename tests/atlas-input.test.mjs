@@ -13,7 +13,7 @@ function harness(){
  const listeners=new Map(),captures=new Set();let time=0;
  const calls={pan:[],zoom:[],settle:0};
  const map={dataset:{},clientHeight:600,classList:{add(){},remove(){}},addEventListener:(name,fn)=>listeners.set(name,fn),getBoundingClientRect:()=>({left:0,top:0}),setPointerCapture:id=>captures.add(id),hasPointerCapture:id=>captures.has(id),releasePointerCapture:id=>captures.delete(id)};
- const ctx=vm.createContext({map,wheelGesture,centroid,separation,touchIntent,clamp,performance:{now:()=>time},setTimeout:()=>1,clearTimeout(){},panMap:(...args)=>calls.pan.push(args),zoomMap:(...args)=>calls.zoom.push(args),stopZoomReturn(){},settleZoom:()=>calls.settle++,activateMapNode(){},document:{elementFromPoint:()=>null}});
+ const ctx=vm.createContext({map,wheelGesture,centroid,separation,touchIntent,clamp,performance:{now:()=>time},setTimeout:()=>1,clearTimeout(){},panMap:(...args)=>calls.pan.push(args),zoomMap:(...args)=>calls.zoom.push(args),stopCameraReturn(){},settleCamera:()=>calls.settle++,activateMapNode(){},document:{elementFromPoint:()=>null}});
  vm.runInContext(`let wheelState=null,wheelTimer,touchTimer,touchState=null,pointerMode=null,dragged=false,gestureStart=null,navigationFrame=0;const pointers=new Map();${handlers}\nvar snapshot=()=>({mode:pointerMode,blocked:touchState?.blocked,size:pointers.size});`,ctx);
  const send=(type,id,x,y,extra={})=>listeners.get(type)({pointerId:id,clientX:x,clientY:y,button:0,target:{closest:()=>null},preventDefault(){},...extra});
  return {calls,snapshot:ctx.snapshot,time:value=>time=value,send};

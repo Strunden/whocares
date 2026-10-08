@@ -1,5 +1,5 @@
 import {assetFor} from './atlas-assets.js';
-import {logoUrl} from './atlas-records.js?v=browse-items-29';
+import {logoUrl} from './atlas-records.js?v=centre-pan-31';
 import {mediaFor} from './atlas-media.js?v=media-20261008';
 export const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const title=entry=>entry.title||entry.name||'Untitled research';

@@ -113,22 +113,24 @@ export function panWithinWorld(camera,dx,dy,bounds,width,height){
  const clamp=(v,min,max)=>Math.max(min,Math.min(max,v));
  return {...camera,x:clamp(camera.x+dx,width*.1-(bounds.x+bounds.width)*camera.s,width*.9-bounds.x*camera.s),y:clamp(camera.y+dy,height*.1-(bounds.y+bounds.height)*camera.s,height*.9-bounds.y*camera.s)};
 }
-// Constrain the current reading surface, not the entire atlas world. Preserve
-// panning while keeping a meaningful part of at least one actual item visible.
+// Every item can reach the viewport centre, including those at the edges.
+export function scenePanBounds(tree,groupId,camera,width,height,options={}){
+ const centres=levelScene(tree,groupId,options).items.map(({anchor})=>({x:(anchor.x+anchor.w/2)*camera.s,y:(anchor.y+anchor.h/2)*camera.s}));
+ if(!centres.length)return {minX:camera.x,maxX:camera.x,minY:camera.y,maxY:camera.y};
+ return {minX:width/2-Math.max(...centres.map(p=>p.x)),maxX:width/2-Math.min(...centres.map(p=>p.x)),minY:height/2-Math.max(...centres.map(p=>p.y)),maxY:height/2-Math.min(...centres.map(p=>p.y))};
+}
+// Resting position only. Do not project each gesture delta out of a sparse gap:
+// that would stop the user crossing it to reach the next item.
 export function panWithinScene(tree,groupId,camera,dx,dy,width,height,options={}){
- const bounds=sceneBounds(tree,groupId,width,options);
- const left=bounds.x*camera.s,right=(bounds.x+bounds.width)*camera.s,top=bounds.y*camera.s,bottom=(bounds.y+bounds.height)*camera.s;
- const clamp=(v,min,max)=>Math.max(min,Math.min(max,v)),padding=18;
- const bounded=(position,start,end,viewport)=>{const a=padding-start,b=viewport-padding-end;return clamp(position,Math.min(a,b),Math.max(a,b));};
- const next={...camera,x:bounded(camera.x+dx,left,right,width),y:bounded(camera.y+dy,top,bottom,height)};
+ const b=scenePanBounds(tree,groupId,camera,width,height,options),clamp=(v,min,max)=>Math.max(min,Math.min(max,v));
+ const next={...camera,x:clamp(camera.x+dx,b.minX,b.maxX),y:clamp(camera.y+dy,b.minY,b.maxY)};
  const scene=levelScene(tree,groupId,options),reference=levelScale(tree,groupId,width);
  const boxes=scene.items.map(({node,anchor})=>projectUnit(anchor,next,width,reference,!groupId,itemHeight(node,!groupId)));
  const overlap=b=>Math.max(0,Math.min(width,b.x+b.w)-Math.max(0,b.x))*Math.max(0,Math.min(height,b.y+b.h)-Math.max(0,b.y));
  if(boxes.some(b=>overlap(b)>=Math.min(b.w,width)*Math.min(b.h,height)*.5)||!boxes.length)return next;
  const nearest=boxes.sort((a,b)=>Math.hypot(a.x+a.w/2-width/2,a.y+a.h/2-height/2)-Math.hypot(b.x+b.w/2-width/2,b.y+b.h/2-height/2))[0];
- const vx=Math.min(nearest.w,width)*.75,vy=Math.min(nearest.h,height)*.75;
- next.x+=clamp(0,vx-nearest.x-nearest.w,width-vx-nearest.x);
- next.y+=clamp(0,vy-nearest.y-nearest.h,height-vy-nearest.y);
+ next.x+=width/2-nearest.x-nearest.w/2;
+ next.y+=height/2-nearest.y-nearest.h/2;
  return next;
 }
 export function ancestry(tree,id){const path=[];while(id){const n=tree.all.get(id);if(!n)break;path.unshift(n);id=n.parent;}return path;}

@@ -35,3 +35,15 @@ The critic inspected screenshots and rejected microscopic phone entry, truncated
 - The uptake-survey record classified as an institutional response needs a data-model review.
 - Adjacent records still do not explain their relationships well. The planned problem-discovery model remains necessary.
 - Some logos are small website icons, not full brand wordmarks. Their source proportions are preserved; an approved logo asset library remains future work.
+
+## Follow-up: centre-reachable panning and tile alignment (build centre-pan-31)
+
+The earlier bounds were too restrictive: keeping a small group inside the viewport stopped edge items reaching the centre. Resting pan bounds now use the extreme item centres. Movement beyond them follows a rational rubber-band curve, returning after release or 180ms of wheel inactivity. Raw gesture displacement is preserved, so subdivisions and reversals do not compound resistance. A frozen range includes the gesture's initial camera to avoid jumping after an anchored zoom. Sparse-gap recovery happens at release, allowing travel between items. Nothing changes evidence, graph membership, text disclosure or the selected research level; the change supports user-directed inspection of the existing graph.
+
+The return controller handles both scale and translation. Independent architecture/critic review caught tap interruption, additional touch contacts, pan during zoom return, and saving transient overscroll during navigation. These were fixed and covered by actual-controller regressions. New zoom retains its anchor; intentional navigation saves a resting pan position.
+
+Overview text and portraits are vertically centred within each organic tile, with symmetric padding and no zoom-dependent layout changes. Browser measurements confirmed zero centre offset for both text blocks and portraits on all five tiles.
+
+Validation: 58 tests pass in the current combined workspace. New coverage verifies every page item can reach the exact centre at 393/743/1280px and minimum/intermediate/maximum scale; resistance, reversal, interrupted return, no first-delta scale change, and pan-to-pinch handover. Real browser drag and wheel interactions confirmed the first edge item's settled centre at (640,389), matching the map centre exactly, plus opposite boundaries and higher magnification. Visual stills inspected at desktop and 393/743px iframe sizes. No main-page console errors. Physical trackpad pinch remains outside the browser tool's direct input capabilities.
+
+Follow-up proof images in the parent workspace `atlas-qa-after/`: `pan-boundary-settled.png`, `pan-opposite-corner.png`, `centre-pan-responsive.png`, `vertically-centred-overview.png`, `centred-tiles-responsive.png`, and `centred-tiles-zoomed.png`. Earlier images document earlier iterations, not this final build.

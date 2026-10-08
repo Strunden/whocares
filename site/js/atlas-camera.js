@@ -32,3 +32,10 @@ export function interpolateCamera(start,target,anchor,t){
  const a=project(start,anchor),b=project(target,anchor);
  return {s,x:a.x+(b.x-a.x)*t-anchor.x*s,y:a.y+(b.y-a.y)*t-anchor.y*s};
 }
+
+// Apply resistance to raw gesture displacement, never repeatedly to the already
+// resisted display position. This keeps event subdivision and reversal stable.
+export function elasticPan(raw,bounds,width,height){
+ const bend=(value,min,max,extent)=>{const edge=clamp(value,min,max),d=value-edge;return edge+d/(1+Math.abs(d)/extent);};
+ return {...raw,x:bend(raw.x,bounds.minX,bounds.maxX,width*.12),y:bend(raw.y,bounds.minY,bounds.maxY,height*.12)};
+}
