@@ -43,7 +43,7 @@ export const personaMaps={
  ['transition','Hands-on care at home','Transfers, personal care and coming home.',['P03','T01','T02'],'Who makes sure support is actually in place when the person returns home?',['company-arjo','company-assistme']],
  ['decisions','Difficult decisions','Money, housing and the end of life.',['T12','P01','P02','P05','P06','P07'],'Who has the authority, information and support to make the next decision?',['company-willful','company-lateral']]
  ])},
- relative:{name:'Angehörige',heading:'Organising care for someone close',description:'Explore arranging and coordinating support, whether nearby or at a distance. Providing hands-on care is a separate role.',intro:'Finding care. Coordinating help. Staying close.',regions:mapRegions([
+ relative:{name:'Relatives & friends',heading:'Organising care for someone close',description:'Explore arranging and coordinating support, whether nearby or at a distance. Providing hands-on care is a separate role.',intro:'Finding care. Coordinating help. Staying close.',regions:mapRegions([
  ['services','Finding care','Advice, available services and a place to start.',['T11','T13'],'How does someone find support that is actually available, suitable and wanted?',['company-maurice-nora','company-careoasis']],
  ['funding','Making sense of the system','Eligibility, costs and who pays.',['T18','P02','P05','P06'],'Where does an entitlement fail to become an arrangement someone can use?',['company-lateral']],
  ['coordination','Keeping care connected','Appointments, providers and responsibilities.',['P03','T13'],'Who checks that the next step happens when several organisations are involved?',['company-medifox']],

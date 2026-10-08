@@ -1,8 +1,11 @@
 // Explicit input semantics: never infer mouse versus trackpad from delta direction.
 export function wheelGesture(previous,{now,zoom,anchor},idle=180) {
- const fresh=!previous||now-previous.last>idle;
- const state=fresh?{mode:zoom?'zoom':'pan',anchor,last:now}:{...previous,last:now};
- return {...state,accept:state.mode===(zoom?'zoom':'pan')};
+ // A trackpad pinch is explicitly marked by the browser (Ctrl-wheel). It
+ // must preempt an old pan/inertia transaction rather than require a retry.
+ const mode=zoom?'zoom':'pan',fresh=!previous||now-previous.last>idle||(zoom&&previous.mode==='pan');
+ if(fresh)return {mode,anchor,last:now,accept:true};
+ if(previous.mode!==mode)return {...previous,accept:false};
+ return {...previous,last:now,accept:true};
 }
 export const centroid=points=>({x:(points[0].x+points[1].x)/2,y:(points[0].y+points[1].y)/2});
 export const separation=points=>Math.hypot(points[0].x-points[1].x,points[0].y-points[1].y);

@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {performance} from 'node:perf_hooks';
-import {buildHierarchy,readingLevel,ancestry,panWithinWorld,unitScale,levelScale,frameLevel,levelZoomLimits,perspectiveHierarchy,embedHierarchy} from '../site/js/atlas-layout.js';
+import {buildHierarchy,readingLevel,ancestry,panWithinWorld,panWithinScene,unitScale,levelScale,frameLevel,entryFrame,levelZoomLimits,perspectiveHierarchy,embedHierarchy} from '../site/js/atlas-layout.js';
 import {personaMaps} from '../site/js/atlas-content.js';
 const data=JSON.parse(await readFile(new URL('../site/data/index.json',import.meta.url)));
 const entries=data.entries.filter(e=>e.published!==false);
@@ -70,4 +70,28 @@ test('empty research collections have a safe camera without inventing records',(
  assert.ok(Object.values(camera).every(Number.isFinite));
  assert.equal(levelScale(tree,'empty',393),1);
  assert.deepEqual(readingLevel(tree,'empty',camera,393,600),[]);
+});
+
+test('phone detail entry is readable and hints at the neighboring column',()=>{
+ const tree=buildHierarchy(entries,personaMaps.relative.regions,{portrait:true});
+ for(const group of tree.roots.filter(n=>n.children?.length>1)){
+  const camera=entryFrame(tree,group.id,393,620),views=readingLevel(tree,group.id,camera,393,620);
+  const first=views[0];assert.ok(first.box.w>=310);assert.ok(first.box.x>=17&&first.box.x<=19);
+  assert.ok(views.some(v=>v.node.id!==first.node.id&&v.box.x>first.box.x&&v.box.x<393),'neighbor edge should be visible');
+ }
+});
+
+test('extreme panning never loses every item in the active level, including sparse grid corners',()=>{
+ for(const width of [393,743,1280]){
+  const tree=buildHierarchy(entries,personaMaps.relative.regions,{portrait:width<701});
+  for(const groupId of [null,...tree.roots.filter(n=>n.children?.length).map(n=>n.id)]){
+   for(const ratio of [1,1.5]){let camera=entryFrame(tree,groupId,width,620);camera.s*=ratio;
+    for(const [dx,dy] of [[1e6,1e6],[-1e6,-1e6],[1e6,-1e6],[-1e6,1e6],[0,1e6],[1e6,0]]){
+     camera=panWithinScene(tree,groupId,camera,dx,dy,width,620);
+     const views=readingLevel(tree,groupId,camera,width,620);
+     assert.ok(views.some(({box:b})=>Math.max(0,Math.min(width,b.x+b.w)-Math.max(0,b.x))*Math.max(0,Math.min(620,b.y+b.h)-Math.max(0,b.y))>=Math.min(width,b.w)*Math.min(620,b.h)*.5),'lost the active scene');
+    }
+   }
+  }
+ }
 });

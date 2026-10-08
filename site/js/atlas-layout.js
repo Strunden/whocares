@@ -71,38 +71,65 @@ export function unitSize(width,compact=false){return {w:Math.min(UNIT.width,widt
 export function unitScale(box,width,compact=false){const size=unitSize(width,compact);return Math.max(size.w/box.w,size.h/box.h);}
 // A unit's internal layout is fixed. One uniform transform magnifies everything
 // together: type, illustration, boundary and hit targets. No zoom-driven reflow.
-export function projectUnit(anchor,camera,width,referenceScale=unitScale(anchor,width),compact=false){
- const size=unitSize(width,compact),scale=camera.s/referenceScale,w=size.w*scale,h=size.h*scale;
+export function projectUnit(anchor,camera,width,referenceScale=unitScale(anchor,width),compact=false,contentHeight=null){
+ const size=unitSize(width,compact);if(contentHeight)size.h=contentHeight;const scale=camera.s/referenceScale,w=size.w*scale,h=size.h*scale;
  return {x:(anchor.x+anchor.w/2)*camera.s+camera.x-w/2,y:(anchor.y+anchor.h/2)*camera.s+camera.y-h/2,w,h,scale,layoutW:size.w,layoutH:size.h};
 }
+export const itemHeight=(node,compact=false)=>compact?220:!node.children?.length&&(node.entry?.type==='company'||node.entry?.kind==='solution')?210:!node.children?.length&&node.entry&&(node.title.length+(node.entry.summary||node.description||'').length)<220?240:UNIT.height;
 export function levelScale(tree,groupId,width){return unitScale(levelScene(tree,groupId).items[0]?.anchor||tree.all.get(groupId).box,width,!groupId);}
 export function sceneBounds(tree,groupId,width,options={}){
  const scene=levelScene(tree,groupId,options),reference=levelScale(tree,groupId,width);
- const anchors=scene.items.length?scene.items.map(i=>i.anchor):[scene.group.box];
- const boxes=anchors.map(anchor=>projectUnit(anchor,{s:1,x:0,y:0},width,reference,!groupId));
+ const items=scene.items.length?scene.items:[{node:scene.group,anchor:scene.group.box}];
+ const boxes=items.map(({node,anchor})=>projectUnit(anchor,{s:1,x:0,y:0},width,reference,!groupId,itemHeight(node,!groupId)));
  const x=Math.min(...boxes.map(b=>b.x)),y=Math.min(...boxes.map(b=>b.y));
  const right=Math.max(...boxes.map(b=>b.x+b.w)),bottom=Math.max(...boxes.map(b=>b.y+b.h));
- const heading=groupId&&!scene.group.paged?100/reference:0;
- return {x,y:y-heading,width:right-x,height:bottom-y+heading};
+ return {x,y,width:right-x,height:bottom-y};
 }
 export function frameLevel(tree,groupId,width,height=700,options={}){
  const b=sceneBounds(tree,groupId,width,options),padding=width<701?18:28;
  const s=Math.min((width-padding*2)/b.width,(height-padding*2)/b.height,levelScale(tree,groupId,width));
  return {s,x:width/2-(b.x+b.width/2)*s,y:height/2-(b.y+b.height/2)*s};
 }
+// Enter at readable scale; Fit level remains the explicit all-items overview.
+export function entryFrame(tree,groupId,width,height,options={}){
+ const fit=frameLevel(tree,groupId,width,height,options),limits=levelZoomLimits(tree,groupId,width,height,options);
+ const reference=levelScale(tree,groupId,width),s=Math.min(limits.max,Math.max(fit.s,reference*(width<701?.9:.85)));
+ if(!groupId||s===fit.s)return fit;
+ const first=levelScene(tree,groupId,options).items[0];if(!first)return fit;
+ const size=unitSize(width),x=(width<701?18:28)-(first.anchor.x+first.anchor.w/2)*s+size.w*s/reference/2;
+ return {s,x,y:28-(first.anchor.y+first.anchor.h/2)*s+itemHeight(first.node)*s/reference/2};
+}
 export function levelZoomLimits(tree,groupId,width,height,options={}){
  const fit=frameLevel(tree,groupId,width,height,options).s;
- const unit=unitSize(width,!groupId),max=levelScale(tree,groupId,width)*Math.min(2.4,(width-36)/unit.w,(height-36)/unit.h);
+ const unit=unitSize(width,!groupId),max=levelScale(tree,groupId,width)*Math.min(1.5,(width-36)/unit.w,(height-36)/unit.h);
  return {min:fit,max:Math.max(fit,max)};
 }
 export function readingLevel(tree,groupId,camera,width,height,options={}){
  const viewport={x:-80,y:-80,w:width+160,h:height+160},reference=levelScale(tree,groupId,width);
- return levelScene(tree,groupId,options).items.map(({node,anchor})=>({node,box:projectUnit(anchor,camera,width,reference,!groupId),mode:groupId?'summary':'compact'})).filter(item=>intersects(item.box,viewport)).slice(0,90);
+ return levelScene(tree,groupId,options).items.map(({node,anchor})=>({node,box:projectUnit(anchor,camera,width,reference,!groupId,itemHeight(node,!groupId)),mode:groupId?'summary':'compact'})).filter(item=>intersects(item.box,viewport)).slice(0,90);
 }
 export function panWithinWorld(camera,dx,dy,bounds,width,height){
  // Keep some of the world reachable, but do not pin a small group to the viewport.
  const clamp=(v,min,max)=>Math.max(min,Math.min(max,v));
  return {...camera,x:clamp(camera.x+dx,width*.1-(bounds.x+bounds.width)*camera.s,width*.9-bounds.x*camera.s),y:clamp(camera.y+dy,height*.1-(bounds.y+bounds.height)*camera.s,height*.9-bounds.y*camera.s)};
+}
+// Constrain the current reading surface, not the entire atlas world. Preserve
+// panning while keeping a meaningful part of at least one actual item visible.
+export function panWithinScene(tree,groupId,camera,dx,dy,width,height,options={}){
+ const bounds=sceneBounds(tree,groupId,width,options);
+ const left=bounds.x*camera.s,right=(bounds.x+bounds.width)*camera.s,top=bounds.y*camera.s,bottom=(bounds.y+bounds.height)*camera.s;
+ const clamp=(v,min,max)=>Math.max(min,Math.min(max,v)),padding=18;
+ const bounded=(position,start,end,viewport)=>{const a=padding-start,b=viewport-padding-end;return clamp(position,Math.min(a,b),Math.max(a,b));};
+ const next={...camera,x:bounded(camera.x+dx,left,right,width),y:bounded(camera.y+dy,top,bottom,height)};
+ const scene=levelScene(tree,groupId,options),reference=levelScale(tree,groupId,width);
+ const boxes=scene.items.map(({node,anchor})=>projectUnit(anchor,next,width,reference,!groupId,itemHeight(node,!groupId)));
+ const overlap=b=>Math.max(0,Math.min(width,b.x+b.w)-Math.max(0,b.x))*Math.max(0,Math.min(height,b.y+b.h)-Math.max(0,b.y));
+ if(boxes.some(b=>overlap(b)>=Math.min(b.w,width)*Math.min(b.h,height)*.5)||!boxes.length)return next;
+ const nearest=boxes.sort((a,b)=>Math.hypot(a.x+a.w/2-width/2,a.y+a.h/2-height/2)-Math.hypot(b.x+b.w/2-width/2,b.y+b.h/2-height/2))[0];
+ const vx=Math.min(nearest.w,width)*.75,vy=Math.min(nearest.h,height)*.75;
+ next.x+=clamp(0,vx-nearest.x-nearest.w,width-vx-nearest.x);
+ next.y+=clamp(0,vy-nearest.y-nearest.h,height-vy-nearest.y);
+ return next;
 }
 export function ancestry(tree,id){const path=[];while(id){const n=tree.all.get(id);if(!n)break;path.unshift(n);id=n.parent;}return path;}
 

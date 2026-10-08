@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {project,fit,zoomAt} from '../site/js/atlas-camera.js';
+import {project,fit,zoomAt,elasticZoomScale,interpolateCamera} from '../site/js/atlas-camera.js';
 import {personaMaps,personaStories} from '../site/js/atlas-content.js';
 import {readFile} from 'node:fs/promises';
 const almost=(a,b)=>assert.ok(Math.abs(a-b)<1e-8,`${a} differs from ${b}`);
@@ -38,4 +38,30 @@ test('zoom preserves cursor world point at both limits and reverses exactly',()=
  }
  const back=zoomAt(zoomAt(camera,1.4,anchor,1,4),1/1.4,anchor,1,4);
  for(const key of ['s','x','y'])almost(back[key],camera[key]);
+});
+
+test('elastic limits resist overscroll, stay bounded and settle at the same anchor',()=>{
+ const anchor={x:319,y:201};
+ for(const [start,factor,bound] of [[1,.7,1],[4,1.3,4]]){
+  let camera={s:start,x:20,y:-40};const world={x:(anchor.x-camera.x)/start,y:(anchor.y-camera.y)/start};
+  for(let i=0;i<100;i++){const s=elasticZoomScale(camera.s,factor,1,4);camera=zoomAt(camera,s/camera.s,anchor,0,Infinity);}
+  assert.ok(camera.s>Math.exp(-.24)&&camera.s<4*Math.exp(.24));assert.notEqual(camera.s,bound);
+  const settled=zoomAt(camera,1,anchor,1,4);almost(settled.s,bound);almost(project(settled,world).x,anchor.x);almost(project(settled,world).y,anchor.y);
+ }
+ almost(elasticZoomScale(2,1.1,1,4),2.2);
+});
+
+test('rubber-band curve is reversible, event-rate independent and safe for coincident fingers',()=>{
+ let whole=elasticZoomScale(1,.5,1,4),split=1;
+ for(let i=0;i<10;i++)split=elasticZoomScale(split,Math.pow(.5,.1),1,4);
+ almost(whole,split);almost(elasticZoomScale(whole,2,1,4),1);
+ for(const factor of [0,Infinity,NaN,1e200])assert.ok(Number.isFinite(elasticZoomScale(1,factor,1,4))&&elasticZoomScale(1,factor,1,4)>0);
+ let s=1,previousDelta=Infinity;
+ for(let i=0;i<8;i++){const next=elasticZoomScale(s,.8,1,4),delta=s-next;assert.ok(delta>0&&delta<previousDelta);s=next;previousDelta=delta;}
+});
+
+test('level transition moves its selected focal point along a straight screen path',()=>{
+ const start={s:.3,x:-20,y:140},target={s:3.6,x:-1800,y:-950},anchor={x:600,y:370};
+ const a=project(start,anchor),b=project(target,anchor);
+ for(const t of [0,.1,.25,.5,.75,.9,1]){const current=interpolateCamera(start,target,anchor,t),p=project(current,anchor);almost(p.x,a.x+(b.x-a.x)*t);almost(p.y,a.y+(b.y-a.y)*t);}
 });
