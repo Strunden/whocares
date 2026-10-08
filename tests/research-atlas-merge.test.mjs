@@ -54,6 +54,14 @@ test('same export is idempotent, including snapshot import metadata',()=>{
  assert.equal(second.graph.snapshot.research_imports.length,(baseline.snapshot.research_imports||[]).length+1);
 });
 
+test('database write timestamps do not break replay, while assertion revisions still do',()=>{
+ const patch=research(),first=mergeResearchAtlas(baseline,patch,options);
+ first.graph.objects.find(o=>o.id===patch.objects[0].id).created_at='2026-10-09T12:01:00Z';
+ assert.deepEqual(mergeResearchAtlas(first.graph,patch,options).graph,first.graph);
+ patch.objects[0].revision=2;
+ assert.throws(()=>mergeResearchAtlas(first.graph,patch,options),/Conflicting objects/);
+});
+
 test('institutional context appears beside problems without inventing part_of membership',()=>{
  const patch=research();
  patch.objects.push({...patch.objects[0],id:'response-research-support',kind:'institutional_response',title:'Proposed support response',

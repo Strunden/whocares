@@ -1,6 +1,6 @@
 # Atlas discovery contract
 
-Status: proposed read model and additive schema, 8 October 2026. No live migration has been executed for this proposal.
+Status: broader read-model proposal, with an implemented internal slice on 8 October 2026. Presentation/media and reversible catalog dispositions are tested on an isolated Neon branch and exported to the local index. No public deployment or primary migration. See [the cleanup record](catalog-cleanup-20261008.md) and [display criteria](information-and-display-contract.md).
 
 ## Authority and scope
 

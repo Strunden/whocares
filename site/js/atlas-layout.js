@@ -1,4 +1,5 @@
 // Data hierarchy + viewport frontier. No per-record coordinates or illustrations.
+import {collectionLabels} from './atlas-navigation.js';
 export const tagThemes={
  'Health and medicines':['T03','T05','T16','P03'],'Safety and falls':['T04','T17'],
  'Memory and dementia':['T06'],'Loneliness and connection':['T07'],'Daily life and getting around':['T09','T10','T15'],
@@ -42,7 +43,7 @@ export function buildHierarchy(entries,definitions,{portrait=false,extraRoots=[]
   const seen=new Set(),children=[];
   for(const theme of def.themes){const list=byTheme.get(theme)||[],topic=list.find(isTopic);if(!list.length)continue;
    const records=list.filter(e=>!seen.has(e.id)&&e.id!==topic?.id);records.forEach(e=>seen.add(e.id));if(topic)seen.add(topic.id);
-   const node=collection(records,def.id+'/'+theme,topic?title(topic):theme,'topic',topic);children.push(node);
+   const node=collection(records,def.id+'/'+theme,topic?title(topic):(collectionLabels[theme]||theme),'topic',topic);children.push(node);
   }
   for(const [tag,list] of byTag){if(!(tagThemes[tag]||[]).some(t=>def.themes.includes(t)))continue;const records=list.filter(e=>!seen.has(e.id));if(!records.length)continue;records.forEach(e=>seen.add(e.id));children.push(collection(records,def.id+'/category-'+serial++,tag,'category'));}
   seen.forEach(id=>mapped.add(id));

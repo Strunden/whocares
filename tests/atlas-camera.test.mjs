@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {project,fit,zoomAt,elasticZoomScale,interpolateCamera} from '../site/js/atlas-camera.js';
 import {personaMaps,personaStories} from '../site/js/atlas-content.js';
+import {collectionLabels,availableStory} from '../site/js/atlas-navigation.js';
 import {readFile} from 'node:fs/promises';
 const almost=(a,b)=>assert.ok(Math.abs(a-b)<1e-8,`${a} differs from ${b}`);
 test('overview fits both portrait and landscape without clipping world bounds',()=>{
@@ -13,19 +14,18 @@ test('overview fits both portrait and landscape without clipping world bounds',(
 });
 const data=JSON.parse(await readFile(new URL('../site/data/index.json',import.meta.url)));
 const published=new Map(data.entries.filter(e=>e.published!==false).map(e=>[e.id,e]));
-test('all five maps have distinct territories, with valid published theme references',()=>{
+test('all five maps have distinct territories and named categories independent of archived claims',()=>{
  const signatures=[];
  for(const [persona,map] of Object.entries(personaMaps)){
   assert.equal(map.regions.length,6);signatures.push(map.regions.map(g=>g.title).join('|'));
-  for(const region of map.regions)for(const theme of region.themes)assert.ok(published.has(`idea-${theme}`),`${persona}: ${theme}`);
+  for(const region of map.regions)for(const theme of region.themes)assert.ok(collectionLabels[theme],`${persona}: ${theme}`);
  }
  assert.equal(new Set(signatures).size,5);
 });
-test('every story links to existing records and focuses on a problem in its own map',()=>{
- for(const [persona,narrative] of Object.entries(personaStories))for(const beat of narrative.beats){
-  for(const id of [...beat.ids,beat.focus])assert.ok(published.has(id),`${persona}: missing ${id}`);
-  const entry=published.get(beat.focus);
-  assert.ok(personaMaps[persona].regions.some(g=>entry.themes.some(t=>g.themes.includes(t))),`${persona}: unmapped story focus ${beat.focus}`);
+test('stories exclude archived links without relabeling a company as their missing problem',()=>{
+ for(const [persona,narrative] of Object.entries(personaStories))for(const beat of availableStory(narrative,published).beats){
+  for(const id of beat.ids)assert.ok(published.has(id),`${persona}: missing ${id}`);
+  if(beat.focus)assert.ok(published.has(beat.focus));else assert.match(beat.evidence,/archived/);
  }
 });
 

@@ -23,3 +23,11 @@ test('source details escape every field and refuse executable source URLs',()=>{
  assert.match(graphSourceBlock([]),/No claim-level source attached/);
  assert.doesNotThrow(()=>graphSourceBlock([{scope:'null'}]));
 });
+
+
+test('repeated passages group by source version while retaining every locator',()=>{
+ const base={source_id:'source-v1',url:'https://example.org/',title:'Same source',stance:'supports'};
+ const html=graphSourceBlock([{...base,locator:'passage-a'}, {...base,locator:'passage-b'}, {...base,source_id:'source-v2',locator:'changed-version'}]);
+ assert.equal((html.match(/class="graph-source"/g)||[]).length,2);
+ assert.match(html,/passage-a · passage-b/);assert.match(html,/changed-version/);
+});

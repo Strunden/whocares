@@ -1,15 +1,18 @@
+import {presentationFor} from './atlas-presentations.js';
+import {productLogoFor} from './atlas-media.js?v=media-20261008';
 // Presentation contracts shared by every lens. No evidence or taxonomy is inferred here.
 export const kindLabels={problem_space:'Problem space',problem:'Problem',daily_situation:'Situation',lived_workaround:'Workaround',systemic_cause:'Mechanism',institutional_response:'Institutional response',solution:'Existing response',open_question:'Open question',aspiration:'Aspiration',stakeholder:'Stakeholder'};
 export const evidenceLabels={documented:'Documented claim',interpretation:'Interpretation',candidate:'Research candidate',hypothesis:'Hypothesis',illustrative:'Illustrative · not observed',open_question:'Open question',normative:'Product direction',reference:'Reference'};
 export function graphRecords(graph,legacy){
+ const excluded=new Set((graph.content_reviews||[]).filter(r=>r.record_table==='objects'&&['hold','archive','reclassify'].includes(r.decision)).map(r=>r.record_id));
  const sources=new Map(graph.sources.map(s=>[s.id,s])),companies=new Map(legacy.map(e=>[e.id,e]));
  const objectEvidence=new Map(),relationshipEvidence=new Map(),adjacency=new Map();
  const push=(map,id,value)=>{if(!map.has(id))map.set(id,[]);map.get(id).push(value);};
  for(const e of graph.evidence_links){const source=sources.get(e.source_id);const item={...source,...e,url:source?.locator};if(e.object_id)push(objectEvidence,e.object_id,item);if(e.relationship_id)push(relationshipEvidence,e.relationship_id,item);}
- for(const r of graph.relationships){const edge={...r,evidence:relationshipEvidence.get(r.id)||[]};push(adjacency,r.from_id,edge);push(adjacency,r.to_id,edge);}
- return graph.objects.map(o=>{
-  const company=companies.get(o.entry_id);
-  return {...o,type:'graph',graph:true,summary:o.statement,logo:company?.logo,website:company?.website,company_id:o.entry_id,buyer:company?.buyer,country:company?.country,user:company?.user,
+ for(const r of graph.relationships){if(excluded.has(r.from_id)||excluded.has(r.to_id))continue;const edge={...r,evidence:relationshipEvidence.get(r.id)||[]};push(adjacency,r.from_id,edge);push(adjacency,r.to_id,edge);}
+ return graph.objects.filter(o=>!excluded.has(o.id)).map(o=>{
+  const company=companies.get(o.entry_id),presentation=presentationFor(graph,o);
+  return {...o,assertion_title:o.title,title:presentation.title,presentation_state:presentation.state,type:'graph',graph:true,summary:presentation.summary,logo:company?.logo,website:company?.website,company_id:o.entry_id,buyer:company?.buyer,country:company?.country,user:company?.user,
    sources:objectEvidence.get(o.id)||[],links:adjacency.get(o.id)||[]};
  });
 }
@@ -34,10 +37,10 @@ export function graphRoots(records){
  });
 }
 export function logoUrl(entry,apiBase=''){
- const src=String(entry.logo||'');
+ const src=String(productLogoFor(entry)?.src||entry.logo||'');
  if(/^https:\/\//.test(src))return src;
  if(/^\/api\/logo\/[a-zA-Z0-9_-]+$/.test(src)&&/^https:\/\//.test(apiBase))return apiBase.replace(/\/$/,'')+src;
  return '';
 }
 export function recordLabel(e){return e.graph?kindLabels[e.kind]||'Research':e.type==='company'?'Company':['thesis','thesis_card'].includes(e.idea_kind)?'Research hypothesis':'Legacy research theme';}
-export function recordStatus(e){return e.graph?evidenceLabels[e.epistemic_status]||'Unreviewed':e.type==='company'?'Offering · outcomes unverified':'Analyst record · unvalidated';}
+export function recordStatus(e){return e.graph?evidenceLabels[e.epistemic_status]||'Unreviewed':e.type==='company'?(e.catalog_review?.decision==='correct'?'Provider offering · outcomes unverified':e.catalog_review?'Existing research · claims need checking':'Offering · outcomes unverified'):'Analyst record · unvalidated';}

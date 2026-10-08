@@ -14,6 +14,9 @@ const stances=new Set(['supports','contradicts','context','origin']);
 const bases=new Set(['not_assessed','single_source','corroborated','contested','not_applicable']);
 const isObject=value=>value!==null&&typeof value==='object'&&!Array.isArray(value);
 const canonical=value=>JSON.stringify(sortKeys(value));
+// Database-managed write timestamps are not assertion content. Revision and all
+// research fields still compare exactly, so changed claims cannot replay silently.
+const researchContent=({created_at,updated_at,...row})=>row;
 function sortKeys(value){
  if(Array.isArray(value))return value.map(sortKeys);
  if(isObject(value))return Object.fromEntries(Object.keys(value).sort().map(key=>[key,sortKeys(value[key])]));
@@ -117,7 +120,7 @@ export function mergeResearchAtlas(base,research,{principleSha256}={}){
   added[table]=0;unchanged[table]=0;
   for(const row of research[table]){
    if(existing.has(row.id)){
-    if(canonical(existing.get(row.id))!==canonical(row))throw new Error(`Conflicting ${table} identity ${row.id}; this merge never overwrites existing rows`);
+    if(canonical(researchContent(existing.get(row.id)))!==canonical(researchContent(row)))throw new Error(`Conflicting ${table} identity ${row.id}; this merge never overwrites existing rows`);
     unchanged[table]++;continue;
    }
    graph[table].push(structuredClone(row));existing.set(row.id,row);added[table]++;

@@ -5,7 +5,7 @@ const source=JSON.parse(await readFile(new URL('site/data/index.json',root)));
 const records=source.entries.filter(e=>e.published!==false);
 await mkdir(out,{recursive:true});
 const keep=new Set(['index.json']),index=[];
-const fields=['id','title','name','type','themes','tag','idea_kind','status','summary','who_pays','related','added_date','writeup_qa','logo','website','country','city','media'];
+const fields=['id','title','name','type','themes','tag','idea_kind','status','summary','who_pays','related','added_date','logo','website','country','city','media','catalog_review'];
 for(let i=0;i<records.length;i+=64){
  const chunk=records.slice(i,i+64),body=JSON.stringify(chunk),hash=createHash('sha256').update(body).digest('hex').slice(0,12),file=`records-${hash}.json`;
  keep.add(file);await writeFile(new URL(file,out),body);
