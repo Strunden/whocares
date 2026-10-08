@@ -1,40 +1,40 @@
 # Spatial atlas implementation
 
-## Current interaction contract — 2026-10-08
+## Current repair — 8 October 2026
 
-The user refined the original semantic-zoom brief: explicit reading levels, Prezi-style spatial travel, and bounded local magnification. Local zoom must never resize type, rewrap text, reveal different information or navigate to another level. This refinement governs the implementation; the database principles were checked at version 1, hash `1698c1ce402af9694166b15938d24fb9fb05c55e85a330b4e589b7dca5b2a8c2`.
+This is a repaired browsing prototype, not the completed problem-first discovery architecture. See [the discovery contract](atlas-discovery-contract.md) for the reviewed direction and known legacy-taxonomy mismatch.
 
-Scroll, drag and arrow keys pan. Pinch or Ctrl/Command-scroll zooms around a fixed gesture anchor. Shift-scroll pans horizontally. Gestures lock to pan or zoom. Plus/minus change local magnification. Click a group to enter; breadcrumbs and Backspace return. The overview control resets to the initial readable framing, not a fit of every item onto the screen. Levels open at 120% of their minimum spacing, with room to zoom out to 100%. The lower bound prevents readable units overlapping.
+The previous fixed-screen-size implementation failed visual QA: zoom moved items apart without making their contents easier to read. Its passing tests encoded the wrong contract. The current version magnifies each complete item uniformly. Internal layout, wording, wrapping and disclosure remain fixed during local zoom. Explicit selection changes the reading level.
 
-The outermost perspective selection is itself a pannable map. The five perspectives share graph identities; Angehörige (organising care) remains distinct from hands-on family caregiving. The breadcrumb begins with one illustrated “Exploring as” identity. Its name returns to the perspective overview; the adjacent arrow returns to the perspective map. Research ancestors follow this control. There is no additional People breadcrumb.
+The user's latest simplification removes the story shortcut, global search/About controls, collection search/type filters, bottom navigation strip and minimap. Breadcrumbs carry perspective and enclosing groups. Plus/minus and Fit level control the current scene. Pagination appears only for collections with more than one page. Existing story/data records remain intact; removed shortcuts are not deleted research.
 
-## One level, one scene, one unit
+## One scene and one transform
 
-- `atlas-layout.js` creates hierarchy and stable world anchors from real records. `levelScene` selects only the chosen level's siblings, or one collection page. `projectUnit` owns all screen geometry. `frameLevel` and `levelScale` own initial framing and local bounds.
-- Every visible unit has one fixed readable footprint (350×300px, constrained by viewport width). Its background wash, illustration, content and action area share that footprint. Zoom changes projected centres and spacing. There is no second world-scaled frame or independently scaled context surface.
-- `atlas-view.js` renders keyed units with person, territory and record content variants. Organic surfaces belong inside the unit. Shape variation derives from stable IDs, never DOM order. Company records use open editorial groups, logos, offering/evidence status and source actions.
-- `atlas.js` coordinates application state. Every level change passes through `navigateTo`, which remembers the settled camera, resolves the destination, frames it, transitions and updates the route. Interrupted travel never replaces a settled camera. Outgoing and incoming levels fade around an explicit midpoint; reduced motion commits directly. Pan/zoom never chooses a scene.
-- `atlas-map.css` is the sole map styling contract. `atlas.css` contains the shell, reader and stories. Obsolete chooser, branch, landscape and successive card overrides were removed.
-- Current-level siblings remain pannable. Ancestors are reached through breadcrumbs or the minimap; they are not rendered again as a second class of zooming surfaces. The dot pattern shares the camera origin.
+- `atlas-layout.js` selects current siblings with `levelScene`. Overview items have a 350×220 base layout; topic/record items use 350×300. Mobile width is constrained. `projectUnit` applies one scale to the entire item. There is no independent outer frame.
+- `frameLevel` fits the current sibling set/page. This is the minimum zoom. `levelZoomLimits` caps enlargement so a centred item fits the viewport. Root layout uses the overview aspect ratio, avoiding large artificial gaps between rows.
+- `atlas-view.js` renders keyed elements. Shapes derive from stable IDs. Title, image, surface, content and actions share the same transform. Zoom does not replace copy. Company records retain logos, uncertainty and source access.
+- `atlas.js` owns navigation, camera memory and exclusive gesture modes. Scroll/drag pans; pinch or Ctrl/Command-scroll zooms around the gesture anchor. Plus explicitly centres the nearest item while magnifying it; minus recovers the whole scene when it reaches fit. This button focus behavior is intentionally different from cursor-anchored gestures.
+- `navigateTo` stores settled cameras and restores a bounded destination. Opening a reader settles pending travel before recording its return state. Same-breakpoint resizing reconciles scale; breakpoint changes rebuild layout. Paging refits the new page so stale bounds cannot reverse a subsequent zoom.
+- Fit level reframes the current level without changing its route. Perspective/group breadcrumbs handle hierarchy travel. The grid moves with the camera. Keyboard arrows pan, plus/minus zoom and Backspace returns.
 
-Positions use deterministic layout slots, not an inferred similarity graph. Organic boundaries group information visually; shape, area, colour and position do not encode market size, evidence strength or opportunity value. Actual graph relationships remain explicit in the evidence reader.
+The rendered root labels Area and Topic consolidate the legacy prototype. They do not promote company categories into researched problem spaces. Legacy source status remains visible at topic/evidence level. The graph and original research were not changed by this repair.
 
 ## Data and scale
 
-The canonical published snapshot remains `site/data/index.json`. The compact atlas metadata and lossless hashed detail chunks are generated by `npm run build:atlas`. Full evidence loads on demand. Persona definitions describe editorial territories and theme membership, without per-record coordinates.
+The published legacy index remains preserved. Compact metadata and lossless detail chunks load evidence on demand. Collection pages contain at most six records. Visible items are culled with their actual magnified bounds, with a defensive 90-item cap. A 100,000-record synthetic fixture tests coverage and bounded mounting, not database latency or comprehensive research quality.
 
-Collections show actual records in pages of six, with local text/type filtering. There are no alphabetical range folders. Legacy themes and broader categories are visibly labelled retrieval scaffolds, not validated problem spaces or asserted product fit. Unmapped records remain reachable through The wider research. The first graph slice retains its documented limited coverage; no historical research was invented or silently promoted.
+The real researched graph contains one problem space, two problems and three sources. Its UI mapping requires the separate discovery contract. More polished legacy browsing does not supply missing problem research.
 
-The scene mounts only visible units, with a defensive 90-node cap. A 100,000-record synthetic fixture retains coverage and renders at most six units in tested scenes. Metadata still resides in browser memory; this is not proof of remote-database or full-dossier performance at that scale. Larger corpora would need server-side metadata/search or shards. Independent illustrations are chosen from a registry; adding a record does not require generating a complete map image.
+## QA evidence and remaining limits
 
-## Independent review and verification
+29 automated tests pass: camera anchoring, gesture lock and actual handler wiring, coherent unit magnification, full sibling fit at 393/743/1280 widths, record coverage, provenance and synthetic scale.
 
-Separate architecture and critique reviews used frozen criteria: one surface, stable zoom content/shape, clear breadcrumbs, responsive action visibility, settled camera restoration, evidence integrity, bounded retrieval and consolidated code.
+Real browser checks captured multiple magnifications, entry/return, source reading, pagination, native drag and scroll. Final responsive checks use actual 393px and 743px embedded browser viewports, with keyboard-operated zoom controls. Requested viewport overrides sometimes did not apply to the intended tab; those captures are not treated as phone evidence. The explicitly sized frame captures supersede their misleading filenames.
 
-Review found and corrected: viewport-culling-dependent shape flips; stale camera memory after breakpoint changes; loss of story selection; empty-collection framing; and saving an interpolated camera when navigation is interrupted. Responsive inspection also moved dense collection headings into the breadcrumb and removed map counters that covered source actions.
+The visual loop caught and corrected: spacing-only zoom, zooming empty row gutters, an unnecessarily tiny minimum zoom, excessive root row gaps, minimap/title overlap, stale scale bounds, competing toolbar/chrome and ambiguous Overview behavior. Fit level now stays within the selected collection. Final app-tab console inspection showed no errors.
 
-Automated: 30 tests pass, including actual gesture-handler wiring, cursor anchoring, record coverage, graph identity/provenance, empty collections and 100,000-record synthetic scaling.
+Independent critique still rejects this as the finished discovery experience: the overview remains a contents page, enlarging an area does not explain a mechanism, legacy categories are not researched spaces, and some historical claim titles sound stronger than their evidence. The separate contract addresses these information-architecture failures; it has not been shipped as a completed graph UI. Physical pinch feel and screen-reader operation are not validated by screenshots or handler simulations.
 
-Real browser: 1280px overview/territory navigation; 393px phone viewport; 393px and 743px side-by-side framed viewports. Zoom 120→144 retained the same 350×300 surface, 23px title, complete text and node identity, with zero outer frames. Native scroll and drag changed position without changing scale or level. Rapid descent interrupted by the overview breadcrumb restored the exact settled camera. The phone company view loaded Arjo's logo and kept Company & sources inside the map; opening/closing the evidence reader preserved the collection. The provider operations layer could zoom outward from its entry scale. Direct app console checks showed no errors. The temporary iframe review harness emitted two unassigned MutationObserver errors; no corresponding observer exists in the atlas source, and their origin was not established.
+## Required visual gate for future changes
 
-Physical trackpad/touch feel and screen-reader behavior are not validated by these browser and handler tests. Independent critique is not a venture-builder usability study. Research taxonomy quality and coverage remain separate limitations, documented in `atlas-real-data-critique.md`.
+Before claiming completion, capture actual browser stills at fit, intermediate and maximum magnification for perspective/landscape, space/topic and record views. Verify actual dimensions at 393, 743 and1280px. Inspect pixels for clipping, readable names, shape/content coherence, excessive whitespace, evidence status and source actions. Exercise descent, parent return, reader close, native pan, keyboard zoom and pagination. Have the independent critic assess what the visitor can understand, not just geometry. Record failures and recapture affected states after correction. Tests alone do not pass this gate.

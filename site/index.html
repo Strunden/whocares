@@ -7,29 +7,27 @@
   <meta name="theme-color" content="#fcfdff">
   <link rel="icon" href="data:,">
   <title>Who Cares · Research atlas</title>
-  <link rel="stylesheet" href="css/atlas.css?v=scene-refactor-3">
-  <link rel="stylesheet" href="css/atlas-map.css?v=scene-refactor-3">
+  <link rel="stylesheet" href="css/atlas.css?v=uniform-zoom-11">
+  <link rel="stylesheet" href="css/atlas-map.css?v=uniform-zoom-11">
 </head>
 <body>
   <a class="skip" href="#map">Skip to map</a>
   <header class="masthead">
     <button class="brand" id="home" aria-label="Who Cares, return to atlas overview">Who Cares<span>RESEARCH ATLAS</span></button>
     <div class="edition">Ageing & care<span>Germany / EU focus</span></div>
-    <nav aria-label="Research tools"><button id="search-open"><span aria-hidden="true">⌕</span> Search research</button><button id="about-open">About the atlas</button></nav>
   </header>
   <section class="orientation" hidden aria-label="Atlas orientation">
     <div><h1>The landscape of ageing & care</h1><p id="perspective-note">Start with a territory. Follow a problem. Find a better question.</p></div>
   </section>
   <main id="workspace" hidden>
     <div class="map-column">
-      <nav id="map-breadcrumbs" aria-label="Map location"><button id="people-home" aria-current="location">Exploring as…</button><button id="persona-change" class="persona-change" aria-label="Return to this perspective overview"></button><button id="perspective-switch" aria-label="Change perspective" title="Change perspective">⌄</button><div id="map-breadcrumb-trail"></div></nav><div id="collection-tools" hidden><label><span class="sr-only">Search this collection</span><input id="collection-search" type="search" placeholder="Search this collection…"></label><select id="collection-type" aria-label="Record type"><option value="all">All records</option><option value="company">Companies</option><option value="research">Research</option></select><span id="collection-count" role="status"></span><button id="collection-prev" aria-label="Previous records">←</button><button id="collection-next" aria-label="Next records">→</button></div><section id="map" tabindex="0" aria-label="Interactive care atlas" aria-describedby="map-help">
-        <section id="level-context" hidden aria-label="Current research group"></section><div id="labels"></div><button id="minimap-home" hidden aria-label="Return to the whole map"><svg id="map-minimap" aria-hidden="true"></svg><span>Whole map ↗</span></button><span id="zoom-hint" role="status" hidden></span><span id="level-range" aria-live="polite"></span>
+      <nav id="map-breadcrumbs" aria-label="Map location"><button id="people-home" aria-current="location">Exploring as…</button><button id="persona-change" class="persona-change" aria-label="Return to this perspective overview"></button><button id="perspective-switch" aria-label="Change perspective" title="Change perspective">⌄</button><div id="map-breadcrumb-trail"></div></nav><div id="collection-tools" hidden><span id="collection-count" role="status"></span><button id="collection-prev" aria-label="Previous records">←</button><button id="collection-next" aria-label="Next records">→</button></div><section id="map" tabindex="0" aria-label="Interactive care atlas" aria-describedby="map-help">
+        <section id="level-context" hidden aria-label="Current research group"></section><div id="labels"></div><span id="zoom-hint" role="status" hidden></span><span id="level-range" aria-live="polite"></span>
         <div id="loading" role="status">Loading the research atlas…</div>
         <div id="map-empty" hidden>No labels in view.<button id="recover">Return to overview</button></div>
       </section>
       <div class="map-bottom">
-        <button class="story-entry" id="story-open"><span class="story-time">05:45</span><span>A morning in care<small>Follow the work, then the evidence</small></span><span aria-hidden="true">↗</span></button>
-        <div class="map-controls" aria-label="Map controls"><button id="zoom-out" aria-label="Zoom out">−</button><output id="zoom-value">100%</output><button id="zoom-in" aria-label="Zoom in">+</button><button id="overview">Overview</button></div>
+        <div class="map-controls" aria-label="Map controls"><button id="zoom-out" aria-label="Zoom out">−</button><output id="zoom-value">100%</output><button id="zoom-in" aria-label="Zoom in">+</button><button id="overview">Fit level</button></div>
       </div>
     </div>
     <aside id="inspector" hidden aria-label="Research reading panel">
@@ -37,9 +35,9 @@
       <div id="panel-content" tabindex="-1"></div>
     </aside>
   </main>
-  <footer class="atlas-footer" hidden><div class="depth" aria-label="Visible map detail"><span data-level="-1">People</span><i>›</i><span data-level="0" class="current">Territories</span><i>›</i><span data-level="1">Collections</span><i>›</i><span data-level="2">Records</span></div><p id="map-help">Scroll / drag to pan · Pinch or Ctrl/⌘ + scroll to zoom</p><button id="list-open">Browse as a list</button></footer>
+  <p class="sr-only" id="map-help">Drag or scroll to pan. Pinch or Ctrl/Command-scroll to zoom. Click a group to enter; use breadcrumbs to return. Arrow keys pan, plus and minus zoom.</p>
   <p class="sr-only" id="announcement" role="status" aria-live="polite"></p>
   <script src="js/config.js"></script>
-  <script type="module" src="js/atlas.js?v=scene-refactor-3"></script>
+  <script type="module" src="js/atlas.js?v=uniform-zoom-11"></script>
 </body>
 </html>

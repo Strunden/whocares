@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {performance} from 'node:perf_hooks';
-import {buildHierarchy,readingLevel,ancestry,panWithinWorld,unitScale,levelScale,frameLevel,perspectiveHierarchy,embedHierarchy} from '../site/js/atlas-layout.js';
+import {buildHierarchy,readingLevel,ancestry,panWithinWorld,unitScale,levelScale,frameLevel,levelZoomLimits,perspectiveHierarchy,embedHierarchy} from '../site/js/atlas-layout.js';
 import {personaMaps} from '../site/js/atlas-content.js';
 const data=JSON.parse(await readFile(new URL('../site/data/index.json',import.meta.url)));
 const entries=data.entries.filter(e=>e.published!==false);
@@ -30,45 +30,35 @@ test('the compact index covers published data and every on-demand detail is loss
 test('a group that fits the viewport still pans freely in both directions',()=>{const start={s:1,x:100,y:50},bounds={x:0,y:0,width:500,height:400};const next=panWithinWorld(start,80,60,bounds,1280,720);assert.deepEqual(next,{s:1,x:180,y:110});assert.deepEqual(panWithinWorld(next,-80,-60,bounds,1280,720),start);});
 test('a level contains its own siblings, without differently scaled ancestor surfaces',()=>{const t=buildHierarchy(entries,personaMaps.provider.regions);const view=readingLevel(t,'delivery',{s:.25,x:0,y:0},1280,720);assert.ok(view.length);assert.ok(view.every(v=>v.node.parent==='delivery'&&v.mode==='summary'));});
 
-test('zoomed reading surfaces remain centred, phone-sized and culled by visible bounds',()=>{
- const node={id:'record',box:{x:0,y:0,w:350,h:300}};
- const group={id:'group',box:node.box,children:[node]};
+test('zoom magnifies one coherent unit without changing its internal layout or identity',()=>{
+ const node={id:'record',box:{x:0,y:0,w:350,h:300}},group={id:'group',box:node.box,children:[node]};
  const tree={roots:[group],all:new Map([['group',group],['record',node]])};
- const camera={s:2.4,x:196.5-175*2.4,y:280-150*2.4};
- const [view]=readingLevel(tree,'group',camera,393,578);
- assert.equal(view.box.w,350);assert.equal(view.box.h,300);
- assert.ok(Math.abs(view.box.x+view.box.w/2-196.5)<1e-8);
- assert.ok(Math.abs(view.box.y+view.box.h/2-280)<1e-8);
- // Large world slot still intersects the viewport, but the real card does not.
- assert.equal(readingLevel(tree,'group',{s:2.4,x:-740,y:0},393,578).length,0);
-});
-
-test('local magnification never resizes a reading card or changes its representation',()=>{
- const node={id:'record',box:{x:0,y:0,w:350,h:300}};
- const group={id:'group',box:node.box,children:[node]};
- const tree={roots:[group],all:new Map([['group',group],['record',node]])};
- for(const scale of [1,1.2,1.8,2.4]){
+ for(const scale of [.4,1,1.8,2.4]){
   const camera={s:scale,x:196.5-175*scale,y:280-150*scale};
-  const [view]=readingLevel(tree,'group',camera,393,578,{surfaceScale:1});
-  assert.equal(view.box.w,350);assert.equal(view.box.h,300);
+  const [view]=readingLevel(tree,'group',camera,393,578);
+  assert.equal(view.box.w,350*scale);assert.equal(view.box.h,300*scale);
+  assert.equal(view.box.layoutW,350);assert.equal(view.box.layoutH,300);
+  assert.ok(Math.abs(view.box.x+view.box.w/2-196.5)<1e-8);
   assert.equal(view.mode,'summary');assert.equal(view.node.id,'record');
  }
+ assert.equal(readingLevel(tree,'group',{s:2.4,x:-1000,y:0},393,578).length,0);
 });
 
-test('every perspective and territory uses a readable common surface in narrow viewports',()=>{
+test('overview fits every sibling at phone, narrow and desktop sizes at the minimum zoom',()=>{
  for(const width of [393,743,1280]){
   const outer=perspectiveHierarchy(personaMaps,width<701);
   for(const key of Object.keys(personaMaps)){
    const lens=embedHierarchy(buildHierarchy(entries,personaMaps[key].regions,{portrait:width<701}),outer.all.get(key),outer.bounds);
    checkCoverage(lens,entries);
-   for(const t of [outer,lens]){
-    const node=t.roots[0],scale=unitScale(node.box,width);
-    const cam={s:scale*1.2,x:width/2-(node.box.x+node.box.w/2)*scale*1.2,y:180-(node.box.y+node.box.h/2)*scale*1.2};
-    const view=readingLevel(t,null,cam,width,500,{surfaceScale:scale}).find(v=>v.node.id===node.id);
-    assert.ok(Math.abs(view.box.w-Math.min(350,width-32))<1e-8);assert.ok(Math.abs(view.box.h-300)<1e-8);
+   for(const tree of [outer,lens]){
+    for(const group of [null,...tree.roots.filter(n=>n.children?.length).map(n=>n.id)]){
+     const height=420,cam=frameLevel(tree,group,width,height),views=readingLevel(tree,group,cam,width,height);
+     const expected=group?(tree.all.get(group).paged?Math.min(6,tree.all.get(group).children.length):tree.all.get(group).children.length):tree.roots.length;
+     assert.equal(views.length,expected);
+     for(const {box:b} of views)assert.ok(b.x>=0&&b.y>=0&&b.x+b.w<=width+.01&&b.y+b.h<=height+.01,`${key}/${group}: clipped sibling`);
+     assert.ok(levelZoomLimits(tree,group,width,height).min===cam.s);
+    }
    }
-   const p=outer.all.get(key).box;
-   for(const root of lens.roots)assert.ok(root.box.x>=p.x&&root.box.y>=p.y&&root.box.x+root.box.w<=p.x+p.w&&root.box.y+root.box.h<=p.y+p.h);
   }
  }
 });

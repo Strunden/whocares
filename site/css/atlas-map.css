@@ -1,11 +1,11 @@
-/* Explicit levels, a single projected footprint per item, and stable typography. */
+/* Explicit levels and one uniform world transform per item; no zoom-driven reflow. */
 #map{position:relative;flex:1;min-height:0;overflow:hidden;touch-action:none;user-select:none;cursor:grab;background:#f8faf7 radial-gradient(circle at 0 0,#a8b7ca45 1px,transparent 1px);background-size:26px 26px}
 #map.dragging{cursor:grabbing}
 #map.navigating{cursor:progress}
 #map:focus{outline:none}
 #map:focus-visible{box-shadow:inset 0 0 0 2px #8ba7c4}
 #labels{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:2}
-.atlas-node{position:absolute;pointer-events:auto;isolation:isolate}
+.atlas-node{position:absolute;pointer-events:auto;isolation:isolate;cursor:pointer}
 .atlas-node.selected{outline:1px solid #6d91bd;outline-offset:4px}
 .territory-surface{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:-1;overflow:visible}
 .territory-surface path{fill:var(--territory);fill-opacity:.32;stroke:var(--territory);stroke-opacity:.5;stroke-width:1}
@@ -24,9 +24,10 @@
 .atlas-node[data-mode="compact"] .node-title{padding-right:46px}
 .atlas-node[data-mode="compact"] .node-eyebrow{padding-right:44px}
 .overview-art{position:absolute;right:26px;top:24px;width:48px;height:65px;object-fit:contain;pointer-events:none}
-.perspective-art{position:absolute;right:27px;top:27px;width:96px;height:119px;object-fit:contain;pointer-events:none}
-.atlas-node[data-visual="person"] .node-title,.atlas-node[data-visual="person"] .node-description{padding-right:91px}
-.atlas-node[data-visual="person"] .node-preview{margin-top:25px;-webkit-line-clamp:3}
+.perspective-art{position:absolute;right:24px;top:29px;width:119px;height:158px;object-fit:contain;pointer-events:none}
+.atlas-node[data-visual="person"] .node-title{font-size:28px;padding-right:113px}
+.atlas-node[data-visual="person"] .node-description{font-size:14px;padding-right:115px}
+.atlas-node[data-visual="person"] .node-preview{position:absolute;left:30px;right:30px;top:183px;margin:0;font-size:12px;-webkit-line-clamp:3}
 .atlas-node[data-visual="person"] .territory-surface path{fill-opacity:.17;stroke:none}
 /* Records use the same information anatomy, expressed as an open editorial group. */
 .atlas-node[data-visual="record"] .node-copy{padding:22px 20px 58px}
@@ -74,16 +75,11 @@
 #level-context .kicker{font-size:8px;margin-bottom:6px}
 #level-context .editorial-asset{width:65px;height:85px}
 .context-source{pointer-events:auto;text-transform:none;letter-spacing:0;font-size:10px;color:var(--accent);padding:0 0 0 12px;text-decoration:underline}
-#minimap-home{position:absolute;top:12px;right:16px;z-index:9;width:105px;padding:8px;background:#ffffffed;border:1px solid #dbe3ed;border-radius:12px;box-shadow:0 3px 14px #1a355014}
-#map-minimap{display:block;width:100%;height:44px}
-#minimap-home span{display:block;font-size:9px;color:#63728b;margin-top:3px}
 /* Counts are announced without covering the lower row's actions. */
 #level-range{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
 #zoom-hint{position:absolute;z-index:10;bottom:48px;left:50%;transform:translateX(-50%);max-width:calc(100% - 32px);width:max-content;padding:10px 14px;border:1px solid #ccd8e6;border-radius:8px;background:#fffffff2;box-shadow:0 4px 20px #24395112;color:#35475a;font:12px/1.5 var(--sans);pointer-events:none}
-.map-bottom:has(#story-open[hidden]){justify-content:flex-end}
+.map-bottom{justify-content:flex-end}
 #collection-tools{display:flex;align-items:center;gap:10px;padding:9px 32px;background:#fff;border-bottom:1px solid var(--line);flex-shrink:0;font-size:11px}
-#collection-tools input{width:230px;border:1px solid #d8e0e8;border-radius:6px;padding:8px 10px;background:#f8fafc;font-size:12px}
-#collection-tools select{padding:7px;border:1px solid #d8e0e8;border-radius:6px;background:#fff;font-size:11px}
 #collection-count{margin-left:auto;color:var(--muted)}
 #collection-tools button{border:1px solid var(--line);border-radius:6px;width:34px;height:32px}
 #collection-tools button:hover{background:#edf3fa}
@@ -101,13 +97,17 @@
 @media(max-width:700px){
  #map-breadcrumbs{padding:5px 18px;font-size:10px;gap:8px}
  #collection-tools{padding:8px 14px;gap:7px;flex-wrap:wrap}
- #collection-tools label{flex:1;min-width:160px}
- #collection-tools input{width:100%;min-width:0}
  #collection-count{margin-left:0;flex:1;flex-basis:calc(100% - 90px)}
  #level-context h2{font-size:22px}
  #level-context p:last-child{font-size:12px}
  #level-context .editorial-asset{display:none}
- #minimap-home{display:none}
- #map-minimap{display:none}
- #minimap-home span{margin:0}
 }
+
+/* Overview content is deliberately lighter; local zoom never changes disclosure. */
+.atlas-node[data-mode="compact"] .node-preview{display:none}
+.atlas-node[data-mode="compact"] .node-copy{padding:25px 30px 55px}
+.atlas-node[data-mode="compact"] .node-title{font-size:26px}
+.atlas-node[data-mode="compact"] .node-description{font-size:13px;-webkit-line-clamp:2;margin-top:10px}
+.atlas-node[data-mode="compact"] .node-actions{bottom:18px}
+.atlas-node[data-visual="person"] .perspective-art{top:26px;height:135px;width:110px}
+.atlas-node[data-visual="person"] .node-description{font-size:14px;-webkit-line-clamp:3}

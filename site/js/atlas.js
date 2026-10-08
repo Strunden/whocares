@@ -1,12 +1,12 @@
-import {wheelGesture,centroid,separation,touchIntent} from './atlas-gestures.js?v=scene-refactor-3';
+import {wheelGesture,centroid,separation,touchIntent} from './atlas-gestures.js?v=uniform-zoom-11';
 import {personaMaps, insights, personaStories} from './atlas-content.js';
-import {clamp, zoomAt} from './atlas-camera.js?v=scene-refactor-3';
-import {buildHierarchy,readingLevel,ancestry,panWithinWorld,collectionPage,themesFor,levelScene,levelScale,frameLevel,projectUnit,perspectiveHierarchy,embedHierarchy} from './atlas-layout.js?v=scene-refactor-3';
+import {clamp, zoomAt} from './atlas-camera.js?v=uniform-zoom-11';
+import {buildHierarchy,readingLevel,ancestry,panWithinWorld,collectionPage,themesFor,levelScene,levelScale,levelZoomLimits,frameLevel,projectUnit,perspectiveHierarchy,embedHierarchy} from './atlas-layout.js?v=uniform-zoom-11';
 import {portrait as illustration} from './atlas-assets.js';
 
 import {graphRecords,graphRoots,recordLabel,recordStatus,evidenceLabels} from './atlas-records.js';
 
-import {esc,short,companyLogo,recordMedia,createMapView,renderMinimap} from './atlas-view.js?v=scene-refactor-3';
+import {esc,short,companyLogo,recordMedia,createMapView} from './atlas-view.js?v=uniform-zoom-11';
 
 const $ = id => document.getElementById(id);
 const safeUrl = value => /^https?:\/\//i.test(value || '') ? value : '';
@@ -26,7 +26,7 @@ let tree=null,activeGroup=null;const levelCameras=new Map();const mapView=create
 let wheelState=null,wheelTimer,zoomHintTimer,touchState=null,touchTimer,pointerMode=null;
 const activeStory=()=>personaStories[persona]||personaStories.worker;
 const pointers=new Map();
-let gestureStart=null, dragged=false, navigationFrame=0;
+let gestureStart=null, dragged=false, navigationFrame=0, finishNavigation=null;
 
 function isProblem(entry){return ['theme','parent_theme'].includes(entry.idea_kind);}
 function inRegion(entry,region){return themesFor(entry).some(theme=>region.themes.includes(theme));}
@@ -37,21 +37,37 @@ function row(entry,context=''){
  return `<button class="entry" data-entry="${esc(entry.id)}"><strong>${esc(title(entry))}</strong><small>${esc(context || (entry.type==='company'?'Company · ':'Research · ')+status(entry))}</small></button>`;
 }
 function announce(text){$('announcement').textContent=text;}
-function currentBounds(){return tree?.viewBounds||tree?.bounds||{x:0,y:0,width:3150,height:2580};}
 function toOverview({restore=false}={}){navigateTo(persona,null,{restore});}
 function readingScale(id=activeGroup){return levelScale(tree,id,map.clientWidth);}
-function zoomLimits(){const min=readingScale();return {min,max:min*(activeGroup?2.4:3)};}
+function zoomLimits(){return levelZoomLimits(tree,activeGroup,map.clientWidth,map.clientHeight,collectionView());}
 function zoomHint(text){clearTimeout(zoomHintTimer);$('zoom-hint').textContent=text;$('zoom-hint').hidden=false;zoomHintTimer=setTimeout(()=>{$('zoom-hint').hidden=true;},2200);}
 function zoomMap(factor,anchor={x:map.clientWidth/2,y:map.clientHeight/2}){
  if(navigationFrame)return;
  const {min,max}=zoomLimits();
- if(factor<1&&camera.s*factor<min)zoomHint(persona?'Widest view · Use the breadcrumbs to go up a level':'Widest view · Pan to explore all five perspectives');
+ if(factor<1&&camera.s*factor<min)zoomHint(persona?'Whole level in view · Click a group to enter':'All perspectives in view · Choose a person');
  else if(factor>1&&camera.s*factor>=max)zoomHint('Closest view · Pan to explore this level');
  else $('zoom-hint').hidden=true;
  camera=zoomAt(camera,factor,anchor,min,max);render();
 }
 
-function stopNavigation(){cancelAnimationFrame(navigationFrame);navigationFrame=0;map.classList.remove('navigating');$('labels').style.opacity='';$('level-context').style.opacity='';}
+function zoomStep(direction){
+ if(navigationFrame)return;
+ const limits=zoomLimits(),s=clamp(camera.s*(direction>0?1.2:1/1.2),limits.min,limits.max);
+ const fit=frameLevel(tree,activeGroup,map.clientWidth,map.clientHeight,collectionView());
+ if(direction<0&&s<=fit.s*1.02){
+  // Once the level can fit, recover its whole extent rather than a cropped corner.
+  camera={s,x:map.clientWidth/2-(map.clientWidth/2-fit.x)/fit.s*s,y:map.clientHeight/2-(map.clientHeight/2-fit.y)/fit.s*s};
+ }else if(direction>0){
+  const cx=map.clientWidth/2,cy=map.clientHeight/2;
+  const items=readingLevel(tree,activeGroup,camera,map.clientWidth,map.clientHeight,collectionView());
+  const nearest=items.sort((a,b)=>Math.hypot(a.box.x+a.box.w/2-cx,a.box.y+a.box.h/2-cy)-Math.hypot(b.box.x+b.box.w/2-cx,b.box.y+b.box.h/2-cy))[0];
+  const x=nearest?nearest.box.x+nearest.box.w/2:cx,y=nearest?nearest.box.y+nearest.box.h/2:cy;
+  camera={s,x:cx-(x-camera.x)/camera.s*s,y:cy-(y-camera.y)/camera.s*s};
+ }else camera=zoomAt(camera,s/camera.s,{x:map.clientWidth/2,y:map.clientHeight/2},limits.min,limits.max);
+ $('zoom-hint').hidden=true;render();
+}
+
+function stopNavigation(){cancelAnimationFrame(navigationFrame);navigationFrame=0;finishNavigation=null;map.classList.remove('navigating');$('labels').style.opacity='';$('level-context').style.opacity='';}
 function makeTree(key){
  const outer=perspectiveHierarchy(personaMaps,mobile);
  return key?embedHierarchy(buildHierarchy(entries,personaMaps[key].regions,{portrait:mobile,extraRoots:graphRoots(graphEntries)}),outer.all.get(key),outer.bounds):outer;
@@ -60,11 +76,10 @@ const locationKey=(key,group)=>`${key||'people'}/${group||'overview'}`;
 function installLevel(key,group,nextTree){
  persona=key;activeGroup=group;tree=nextTree;ready=true;mapView.clear();
  regions=tree.roots.map(n=>({...n,x:n.box.x+n.box.w/2,y:n.box.y+n.box.h/2}));
- $('workspace').hidden=false;document.querySelector('.atlas-footer').hidden=false;
+ $('workspace').hidden=false;
  $('persona-change').innerHTML=key?`${illustration(key)}<span><small>Exploring as</small><strong>${esc(personaMaps[key].name)}</strong></span>`:'';
  document.querySelector('h1').textContent=key?personaMaps[key].heading:'Whose world do you want to understand?';
  $('perspective-note').textContent=key?personaMaps[key].description:'Five perspectives on the same research. Organising care and giving care are distinct experiences.';
- if(key)$('story-open').innerHTML=`<span class="story-time">${activeStory().beats[0].time}</span><span>${esc(activeStory().title)}<small>One possible day · Follow the story</small></span><span aria-hidden="true">↗</span>`;
 }
 // All level changes pass through here. Pan and zoom only update the camera.
 function navigateTo(key,group=null,{restore=true,animate=true,keepPanel=false,saveCurrent=true}={}){
@@ -73,10 +88,18 @@ function navigateTo(key,group=null,{restore=true,animate=true,keepPanel=false,sa
  mobile=window.innerWidth<701;$('workspace').hidden=false;
  const nextTree=key===persona&&tree?tree:makeTree(key);
  if(group&&!nextTree.all.has(group))group=null;
- const target=restore&&levelCameras.get(locationKey(key,group))||frameLevel(nextTree,group,map.clientWidth);
+
+ document.querySelector('h1').textContent=key?personaMaps[key].heading:'Whose world do you want to understand?';
+ $('perspective-note').textContent=key?personaMaps[key].description:'Five perspectives on the same research. Organising care and giving care are distinct experiences.';
+ document.querySelector('.orientation').hidden=!!group;
+ const destination=nextTree.all.get(group);$('collection-tools').hidden=!destination?.paged||collectionPage(destination,collectionViews.get(group)||{}).pages<=1;
+ let target=restore&&levelCameras.get(locationKey(key,group))||frameLevel(nextTree,group,map.clientWidth,map.clientHeight,collectionViews.get(group)||{});
+ const limits=levelZoomLimits(nextTree,group,map.clientWidth,map.clientHeight,collectionViews.get(group)||{});
+ target=zoomAt(target,1,{x:map.clientWidth/2,y:map.clientHeight/2},limits.min,limits.max);
  const start={...camera},began=performance.now();let swapped=false;
  const enter=()=>{installLevel(key,group,nextTree);swapped=true;};
  const finish=()=>{if(!swapped)enter();camera=target;stopNavigation();render();previousSize={w:map.clientWidth,h:map.clientHeight};setHash();if(!keepPanel)map.focus({preventScroll:true});announce(`${key?personaMaps[key].name:'Perspectives'} · ${group?nextTree.all.get(group).title:'Overview'}`);};
+ finishNavigation=finish;
  clearTimeout(zoomHintTimer);$('zoom-hint').hidden=true;wheelState=null;touchState=null;if(!keepPanel){selectedId=null;}
  if(!ready||!animate||reducedMotion.matches){finish();return;}
  map.classList.add('navigating');
@@ -109,9 +132,9 @@ function render(){
  map.style.backgroundPosition=`${camera.x}px ${camera.y}px`;
  const frontier=readingLevel(tree,activeGroup,camera,map.clientWidth,map.clientHeight,collectionView());
  const pageGroup=tree.all.get(activeGroup),paged=!!pageGroup?.paged;
- $('collection-tools').hidden=!paged;
- if(paged){const view=collectionView(),p=collectionPage(pageGroup,view);if($('collection-search')!==document.activeElement)$('collection-search').value=view.query;$('collection-type').value=view.type;$('collection-count').textContent=`${p.total.toLocaleString()} ${p.total===1?'record':'records'} · Page ${p.page+1} of ${p.pages}`;$('collection-prev').disabled=p.page===0;$('collection-next').disabled=p.page+1===p.pages;}
- $('persona-change').hidden=!persona;$('perspective-switch').hidden=!persona;$('people-home').hidden=!!persona;$('story-open').hidden=!persona;
+ $('collection-tools').hidden=!paged||collectionPage(pageGroup,collectionView()).pages<=1;
+ if(paged){const view=collectionView(),p=collectionPage(pageGroup,view);$('collection-count').textContent=`${p.total.toLocaleString()} ${p.total===1?'record':'records'} · Page ${p.page+1} of ${p.pages}`;$('collection-prev').disabled=p.page===0;$('collection-next').disabled=p.page+1===p.pages;}
+ $('persona-change').hidden=!persona;$('perspective-switch').hidden=!persona;$('people-home').hidden=!!persona;
  $('persona-change').setAttribute('aria-current',activeGroup?'false':'location');
  const path=ancestry(tree,activeGroup);document.querySelector('.orientation').hidden=!!activeGroup;
  const crumbKey=persona+'/'+(activeGroup||'');
@@ -124,18 +147,16 @@ function render(){
   const current=path.at(-1);$('level-context').hidden=!current||!!current.paged;
   $('level-context').innerHTML=current?`<div><p class="kicker">${current.entry?.graph?'Research graph · '+esc(recordLabel(current.entry)):'Legacy collection · '+current.count.toLocaleString()+' records'}${current.entry?` <button class="context-source" data-entry="${esc(current.entry.id)}">${current.entry.graph?'Scope & sources':'Original research'} ↗</button>`:''}</p><h2>${esc(current.title)}</h2><p>${esc(groupDescription(current))}</p></div>${current.kind==='territory'?illustration(persona):''}`:'';
  }
- renderMinimap($('map-minimap'),tree,currentBounds(),camera,map.clientWidth,map.clientHeight);
  const current=path.at(-1);
- if(current){const first=levelScene(tree,activeGroup).items[0],b=projectUnit(first?.anchor||current.box,camera,map.clientWidth);$('level-context').style.cssText=`left:${b.x+6}px;top:${b.y-90}px;width:${Math.min(700,map.clientWidth-48)}px;--territory:${tree.all.get(current.root).color}`;}
+ if(current){const first=levelScene(tree,activeGroup).items[0],b=projectUnit(first?.anchor||current.box,camera,map.clientWidth,readingScale());$('level-context').style.cssText=`left:${b.x}px;top:${b.y-100*b.scale}px;width:${Math.min(700,map.clientWidth-48)}px;transform:scale(${b.scale});transform-origin:0 0;--territory:${tree.all.get(current.root).color}`;}
  mapView.render(frontier,{tree,persona,selectedId,width:map.clientWidth,height:map.clientHeight});
  const nextLevel=Math.min(2,path.length);
  if(level!==nextLevel){level=nextLevel;announce(['Territories and guiding questions','Problem summaries and research collections','Research records and evidence'][level]);}
  $('level-range').textContent=pageGroup?.paged?`${frontier.filter(v=>v.mode==='summary'&&v.box.y>=0&&v.box.y+v.box.h<=map.clientHeight&&v.box.x>=0&&v.box.x+v.box.w<=map.clientWidth).length} of ${collectionPage(pageGroup,collectionView()).nodes.length} on this page in view · Pan to explore`:activeGroup?`${frontier.filter(v=>Math.max(0,Math.min(v.box.x+v.box.w,map.clientWidth)-Math.max(v.box.x,0))*Math.max(0,Math.min(v.box.y+v.box.h,map.clientHeight)-Math.max(v.box.y,0))>=v.box.w*v.box.h*.5).length} of ${tree.all.get(activeGroup).children?.length||1} groups in view · Drag to explore`:`${tree.roots.length} ${persona?'territories':'perspectives'} · Pan to explore`;
  map.dataset.perspective=persona||'people';map.dataset.level=String(level);map.dataset.group=activeGroup||'overview';map.dataset.camera=JSON.stringify(camera);map.dataset.rendered=String(frontier.length);map.dataset.totalNodes=String(tree.all.size);
- const limits=zoomLimits();$('zoom-value').value=Math.round(camera.s/limits.min*100)+'%';$('zoom-in').disabled=camera.s>=limits.max-.00001;$('zoom-out').disabled=camera.s<=limits.min+.00001;map.dataset.zoom=Math.round(camera.s/limits.min*100);
+ const limits=zoomLimits();$('zoom-value').value=Math.round(camera.s/readingScale()*100)+'%';$('zoom-in').disabled=camera.s>=limits.max-.00001;$('zoom-out').disabled=camera.s<=limits.min+.00001;map.dataset.zoom=Math.round(camera.s/readingScale()*100);
  document.querySelectorAll('[data-level]').forEach(el=>el.classList.toggle('current',Number(el.dataset.level)===(persona?level:-1)));
  $('map-empty').hidden=frontier.length>0;
- $('minimap-home').hidden=!activeGroup;
 }
 function exploreDeeper(id){focusNode(id);}
 function setHash(){
@@ -144,6 +165,7 @@ function setHash(){
  history.replaceState(null,'',`#${route}`);
 }
 function showPanel(state,{remember=true,focus=true}={}){
+ if(finishNavigation)finishNavigation();
  if(panelState?.type==='story'){panelState.scrollTop=$('panel-content').scrollTop;panelState.expanded=[...$('panel-content').querySelectorAll('[data-chapter]')].filter(chapter=>chapter.querySelector('details').open).map(chapter=>Number(chapter.dataset.chapter));}
  if(remember&&panelState)panelHistory.push({...panelState});
  if($('inspector').hidden){closedCamera={...camera};closedGroup=activeGroup;lastFocus=document.activeElement;$('inspector').hidden=false;}
@@ -156,7 +178,7 @@ function closePanel(restore=true){
  storyObserver?.disconnect();
  const wasOpen=!$('inspector').hidden;
  $('inspector').hidden=true;panelState=null;panelHistory=[];selectedId=null;
- if(restore&&closedCamera){activeGroup=closedGroup;render();camera={...closedCamera};render();}
+ if(restore&&closedCamera){activeGroup=closedGroup;render();const limits=zoomLimits();camera=zoomAt(closedCamera,1,{x:map.clientWidth/2,y:map.clientHeight/2},limits.min,limits.max);render();}
  closedCamera=null;closedGroup=null;
  previousSize={w:map.clientWidth,h:map.clientHeight};
  if(wasOpen&&lastFocus?.isConnected&&!lastFocus.hidden)lastFocus.focus({preventScroll:true});
@@ -235,7 +257,7 @@ function renderPanel(){
   const region=regions.find(g=>g.id===panelState.id),responses=entries.filter(e=>e.type==='company'&&inRegion(e,region));
   content.innerHTML=`<p class="kicker">${esc(region.title)} / responses</p><h2>Who is already here?</h2><p class="evidence-note">${responses.length} published company records. Shared theme or published category membership is a research connection, not proof of effectiveness.</p>${responses.slice(0,panelState.limit||60).map(e=>row(e)).join('')}${responses.length>(panelState.limit||60)?'<button class="panel-action" data-panel-more>Show more records</button>':''}`;
  }else{
-  content.innerHTML=`<p class="kicker">How to read this atlas</p><h2>Start with people.<br>Stay close to evidence.</h2><p class="body-copy">Who Cares helps venture builders understand ageing and care before deciding what to build. Each person opens a different map of the same published research.</p><h3>From landscape to detail</h3><p class="body-copy">Click a territory to enter its reading level. Its guiding question and data-backed groups appear in the map. Click a group to go deeper; breadcrumbs return to any ancestor. Drag or two-finger scroll to pan. Pinch, or hold Ctrl / ⌘ while scrolling, to zoom. Each gesture stays in one mode. Zoom changes only the spatial view: text, item contents and reading level stay fixed. Click groups or breadcrumbs to change level. Shift-scroll pans horizontally. Collections show actual records, with search, type filters and pages. Alphabetical order is a retrieval aid, not a research hierarchy. Read evidence opens a full record.</p><h3>Read the connections carefully</h3><p class="body-copy">Territories group research by perspective. Nested groups follow published themes; broader category collections are labelled separately and do not establish product fit. Positions, sizes and colors do not rank venture potential. Illustrations are fictional reusable assets, not testimony.</p><h3>Research is not certainty</h3><p class="body-copy">The atlas uses the repository’s published research snapshot. Original records include hypotheses and analyst decisions, including ideas set aside. Source links, missing evidence and incomplete research remain visible in each record.</p><h3>Explore without a mouse</h3><p class="body-copy">Tab to territories or records and press Enter. With the map focused, use arrow keys to pan, + and − to zoom, Backspace to go up a level, and Home for the overview. Escape closes the reading panel. Search and list browsing provide an alternative to spatial navigation.</p><p class="evidence-note">The care-workday story is explicitly illustrative. It contains no attributed interviews, invented quotes or measured outcomes.</p>`;
+  content.innerHTML=`<p class="kicker">How to read this atlas</p><h2>Start with people.<br>Stay close to evidence.</h2><p class="body-copy">Who Cares helps venture builders understand ageing and care before deciding what to build. Each person opens a different map of the same published research.</p><h3>From landscape to detail</h3><p class="body-copy">Click a territory to enter its reading level. Its guiding question and data-backed groups appear in the map. Click a group to go deeper; breadcrumbs return to any ancestor. Drag or two-finger scroll to pan. Pinch, or hold Ctrl / ⌘ while scrolling, to zoom. Each gesture stays in one mode. Zoom changes only the spatial view: the entire item magnifies together; wording, wrapping and reading level stay fixed. Click groups or breadcrumbs to change level. Shift-scroll pans horizontally. Collections show actual records, with search, type filters and pages. Alphabetical order is a retrieval aid, not a research hierarchy. Read evidence opens a full record.</p><h3>Read the connections carefully</h3><p class="body-copy">Territories group research by perspective. Nested groups follow published themes; broader category collections are labelled separately and do not establish product fit. Positions, sizes and colors do not rank venture potential. Illustrations are fictional reusable assets, not testimony.</p><h3>Research is not certainty</h3><p class="body-copy">The atlas uses the repository’s published research snapshot. Original records include hypotheses and analyst decisions, including ideas set aside. Source links, missing evidence and incomplete research remain visible in each record.</p><h3>Explore without a mouse</h3><p class="body-copy">Tab to territories or records and press Enter. With the map focused, use arrow keys to pan, + and − to zoom, Backspace to go up a level, and Home for the overview. Escape closes the reading panel. Search and list browsing provide an alternative to spatial navigation.</p><p class="evidence-note">The care-workday story is explicitly illustrative. It contains no attributed interviews, invented quotes or measured outcomes.</p>`;
  }
  content.scrollTop=panelState.type==='story'?(panelState.scrollTop||0):0;
 }
@@ -272,22 +294,16 @@ document.addEventListener('click',event=>{
  if(target.dataset.storyStep!==undefined){openStory(Number(target.dataset.storyStep),false);return;}
  if(target.hasAttribute('data-story-finish')){closePanel();return;}
 });
-function updateCollection(change){collectionViews.set(activeGroup,{...collectionView(),...change});render();}
-$('collection-search').oninput=event=>updateCollection({query:event.target.value,page:0});
-$('collection-type').onchange=event=>updateCollection({type:event.target.value,page:0});
+function fitCurrentLevel(){camera=frameLevel(tree,activeGroup,map.clientWidth,map.clientHeight,collectionView());render();}
+function updateCollection(change){collectionViews.set(activeGroup,{...collectionView(),...change});fitCurrentLevel();}
 $('collection-next').onclick=()=>updateCollection({page:collectionView().page+1});
 $('collection-prev').onclick=()=>updateCollection({page:collectionView().page-1});
 document.addEventListener('error',event=>{if(event.target.matches?.('.record-media img')){event.target.closest('figure').hidden=true;}if(event.target.matches?.('.company-logo img')){event.target.hidden=true;event.target.parentElement.classList.add('logo-missing');}},true);
 $('panel-close').onclick=()=>closePanel();$('panel-back').onclick=backPanel;
 $('home').onclick=()=>showPicker();$('persona-change').onclick=()=>toOverview({restore:true});$('people-home').onclick=showPicker;$('perspective-switch').onclick=showPicker;
-$('minimap-home').onclick=toOverview;
-$('overview').onclick=toOverview;$('recover').onclick=toOverview;
-$('zoom-in').onclick=()=>zoomMap(1.2);$('zoom-out').onclick=()=>zoomMap(1/1.2);
-$('story-open').onclick=()=>openStory();
+$('overview').onclick=fitCurrentLevel;$('recover').onclick=fitCurrentLevel;
+$('zoom-in').onclick=()=>zoomStep(1);$('zoom-out').onclick=()=>zoomStep(-1);
 function ensureMap(){if(!ready)showPicker();}
-$('search-open').onclick=()=>{ensureMap();showPanel({type:'search'});$('research-search').focus();};
-$('list-open').onclick=()=>{ensureMap();showPanel({type:'search'});$('research-search').focus();};
-$('about-open').onclick=()=>{ensureMap();showPanel({type:'about'});};
 $('panel-content').addEventListener('scroll',()=>{if(panelState?.type==='story')panelState.scrollTop=$('panel-content').scrollTop;},{passive:true});
 $('panel-content').addEventListener('input',event=>{if(event.target.id==='research-search'){panelState.limit=60;renderSearch();}});
 map.addEventListener('wheel',event=>{
@@ -316,7 +332,7 @@ function updateTouch(){
  touchState.previous=after;
 }
 map.addEventListener('pointerdown',event=>{
- if(event.target.closest('#minimap-home')||event.button!==0||navigationFrame)return;
+ if(event.button!==0||navigationFrame)return;
  wheelState=null;clearTimeout(wheelTimer);
  pointers.set(event.pointerId,{x:event.clientX,y:event.clientY});
  if(pointers.size===1){touchState=null;pointerMode=null;dragged=false;gestureStart={x:event.clientX,y:event.clientY};}
@@ -348,11 +364,11 @@ function releasePointer(event,cancelled=false){
 }
 map.addEventListener('pointerup',event=>{
  if(!releasePointer(event))return;
- if(!dragged){const hit=document.elementFromPoint(event.clientX,event.clientY)?.closest('button');if(hit?.dataset.persona){event.preventDefault();choosePersona(hit.dataset.persona);}else if(hit?.dataset.zoom){event.preventDefault();focusNode(hit.dataset.zoom);}else if(hit?.dataset.zoomDeeper){event.preventDefault();exploreDeeper(hit.dataset.zoomDeeper);}else if(hit?.dataset.entry){event.preventDefault();openEntry(hit.dataset.entry);}else if(hit?.dataset.region){event.preventDefault();openRegion(hit.dataset.region);}else if(hit?.dataset.listRegion){event.preventDefault();showPanel({type:'responses',id:hit.dataset.listRegion});}}
+ if(!dragged){const target=document.elementFromPoint(event.clientX,event.clientY),hit=target?.closest('button');if(hit?.dataset.persona){event.preventDefault();choosePersona(hit.dataset.persona);}else if(hit?.dataset.zoom){event.preventDefault();focusNode(hit.dataset.zoom);}else if(hit?.dataset.zoomDeeper){event.preventDefault();exploreDeeper(hit.dataset.zoomDeeper);}else if(hit?.dataset.entry){event.preventDefault();openEntry(hit.dataset.entry);}else if(hit?.dataset.region){event.preventDefault();openRegion(hit.dataset.region);}else if(hit?.dataset.listRegion){event.preventDefault();showPanel({type:'responses',id:hit.dataset.listRegion});}else if(!hit){const node=tree.all.get(target?.closest('.atlas-node')?.dataset.node);if(node){if(node.personaKey)choosePersona(node.personaKey);else if(node.children?.length)focusNode(node.id);else if(node.entry)openEntry(node.entry.id);}}}
 });
 map.addEventListener('pointercancel',event=>releasePointer(event,true));
 // Pointer selection is handled on release, so dragging never activates a record.
-map.addEventListener('click',event=>{if(event.detail>0&&!event.target.closest('#minimap-home'))event.stopPropagation();});
+map.addEventListener('click',event=>{if(event.detail>0)event.stopPropagation();});
 map.addEventListener('keydown',event=>{
  if(event.target!==map)return;
  const actions={'+':()=>$('zoom-in').click(),'=':()=>$('zoom-in').click(),'-':()=>$('zoom-out').click(),Backspace:goUp,Home:toOverview,ArrowLeft:()=>panMap(50,0),ArrowRight:()=>panMap(-50,0),ArrowUp:()=>panMap(0,50),ArrowDown:()=>panMap(0,-50)};
@@ -363,8 +379,8 @@ new ResizeObserver(()=>{
  if(!ready||$('workspace').hidden)return;
  const w=map.clientWidth,h=map.clientHeight;
  const nextMobile=window.innerWidth<701;
- if(nextMobile!==mobile){const key=persona,group=activeGroup;levelCameras.clear();tree=null;navigateTo(key,group,{restore:false,animate:false,keepPanel:true,saveCurrent:false});if(closedCamera){closedCamera=frameLevel(tree,closedGroup,map.clientWidth);}}
- else if(previousSize.w&&previousSize.h&&$('inspector').hidden){camera.x+=(w-previousSize.w)/2;camera.y+=(h-previousSize.h)/2;}
+ if(nextMobile!==mobile){const key=persona,group=activeGroup;levelCameras.clear();tree=null;navigateTo(key,group,{restore:false,animate:false,keepPanel:true,saveCurrent:false});if(closedCamera){closedCamera=frameLevel(tree,closedGroup,map.clientWidth,map.clientHeight);}}
+ else if(!navigationFrame&&previousSize.w&&previousSize.h&&$('inspector').hidden){camera.x+=(w-previousSize.w)/2;camera.y+=(h-previousSize.h)/2;const limits=zoomLimits();camera=zoomAt(camera,1,{x:w/2,y:h/2},limits.min,limits.max);}
  previousSize={w,h};render();
 }).observe(map);
 

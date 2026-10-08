@@ -9,14 +9,14 @@ export const themesFor=e=>e.themes?.length?e.themes:(tagThemes[e.tag]||[]);
 const title=e=>e.title||e.name||'Untitled';
 export const isTopic=e=>['theme','parent_theme'].includes(e.idea_kind);
 const intersects=(a,b)=>a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y;
-function arrange(children,box,columns){
+function arrange(children,box,columns,maxColumns=3,aspect=1.18){
  if(!children.length)return;
  const paged=children.some(n=>n.page!==undefined),count=paged?Math.min(6,children.length):children.length;
- const cols=columns||Math.min(3,count);const rows=Math.ceil(count/cols);
+ const cols=columns||Math.min(maxColumns,count);const rows=Math.ceil(count/cols);
  const gap=Math.min(box.w/cols,box.h/rows)*.055;
- const w=Math.min(box.w/cols,box.h/rows*1.18),h=w/1.18;
+ const w=Math.min(box.w/cols,box.h/rows*aspect),h=w/aspect;
  children.forEach((n,index)=>{const i=paged?index%6:index;n.box={x:box.x+(i%cols)*w+gap,y:box.y+Math.floor(i/cols)*h+gap,w:w-gap*2,h:h-gap*2};
- if(n.children?.length)arrange(n.children,{x:n.box.x+n.box.w*.035,y:n.box.y+n.box.h*.16,w:n.box.w*.93,h:n.box.h*.80});});
+ if(n.children?.length)arrange(n.children,{x:n.box.x+n.box.w*.035,y:n.box.y+n.box.h*.16,w:n.box.w*.93,h:n.box.h*.80},undefined,maxColumns);});
 }
 export const PAGE_SIZE=6;
 function collection(records,id,label,kind='collection',entry=null){
@@ -51,8 +51,8 @@ export function buildHierarchy(entries,definitions,{portrait=false,extraRoots=[]
  const remainder=entries.filter(e=>!mapped.has(e.id));
  if(remainder.length)roots.push({...collection(remainder,'wider-research','The wider research','territory'),description:'Records beyond these editorial territories.',question:'What connection should be investigated next?',color:'#dce3eb',themes:[]});
  roots.unshift(...extraRoots);
- const cols=portrait?2:Math.ceil(Math.sqrt(roots.length*1.7)),rows=Math.ceil(roots.length/cols),bounds={x:0,y:0,width:cols*1050,height:rows*860};
- arrange(roots,{x:0,y:0,w:bounds.width,h:bounds.height},cols);
+ const cols=portrait?2:Math.ceil(Math.sqrt(roots.length*1.7)),rows=Math.ceil(roots.length/cols),bounds={x:0,y:0,width:cols*1050,height:rows*660};
+ arrange(roots,{x:0,y:0,w:bounds.width,h:bounds.height},cols,portrait?2:3,350/220);
  const all=new Map();let maxDepth=0;
  function visit(n,depth,root,parent=null){n.parent=parent;n.root=root;n.depth=depth;maxDepth=Math.max(depth,maxDepth);all.set(n.id,n);n.children?.forEach(c=>visit(c,depth+1,root,n.id));}
  roots.forEach(n=>visit(n,0,n.id));
@@ -67,20 +67,37 @@ export function levelScene(tree,groupId,options={}){
  return {group,page,items:nodes.map((node,index)=>({node,anchor:page?group.children[index].box:node.box}))};
 }
 export const UNIT={width:350,height:300};
-export function unitSize(width){return {w:Math.min(UNIT.width,width-32),h:UNIT.height};}
-export function unitScale(box,width){const size=unitSize(width);return Math.max(size.w/box.w,size.h/box.h);}
-export function projectUnit(anchor,camera,width){
- const {w,h}=unitSize(width);
- return {x:(anchor.x+anchor.w/2)*camera.s+camera.x-w/2,y:(anchor.y+anchor.h/2)*camera.s+camera.y-h/2,w,h};
+export function unitSize(width,compact=false){return {w:Math.min(UNIT.width,width-32),h:compact?220:UNIT.height};}
+export function unitScale(box,width,compact=false){const size=unitSize(width,compact);return Math.max(size.w/box.w,size.h/box.h);}
+// A unit's internal layout is fixed. One uniform transform magnifies everything
+// together: type, illustration, boundary and hit targets. No zoom-driven reflow.
+export function projectUnit(anchor,camera,width,referenceScale=unitScale(anchor,width),compact=false){
+ const size=unitSize(width,compact),scale=camera.s/referenceScale,w=size.w*scale,h=size.h*scale;
+ return {x:(anchor.x+anchor.w/2)*camera.s+camera.x-w/2,y:(anchor.y+anchor.h/2)*camera.s+camera.y-h/2,w,h,scale,layoutW:size.w,layoutH:size.h};
 }
-export function levelScale(tree,groupId,width){return unitScale(levelScene(tree,groupId).items[0]?.anchor||tree.all.get(groupId).box,width);}
-export function frameLevel(tree,groupId,width){
- const anchor=levelScene(tree,groupId).items[0]?.anchor||tree.all.get(groupId).box,{w,h}=unitSize(width),s=levelScale(tree,groupId,width)*1.2;
- return {s,x:28+w/2-(anchor.x+anchor.w/2)*s,y:(groupId&&!tree.all.get(groupId)?.paged?110:28)+h/2-(anchor.y+anchor.h/2)*s};
+export function levelScale(tree,groupId,width){return unitScale(levelScene(tree,groupId).items[0]?.anchor||tree.all.get(groupId).box,width,!groupId);}
+export function sceneBounds(tree,groupId,width,options={}){
+ const scene=levelScene(tree,groupId,options),reference=levelScale(tree,groupId,width);
+ const anchors=scene.items.length?scene.items.map(i=>i.anchor):[scene.group.box];
+ const boxes=anchors.map(anchor=>projectUnit(anchor,{s:1,x:0,y:0},width,reference,!groupId));
+ const x=Math.min(...boxes.map(b=>b.x)),y=Math.min(...boxes.map(b=>b.y));
+ const right=Math.max(...boxes.map(b=>b.x+b.w)),bottom=Math.max(...boxes.map(b=>b.y+b.h));
+ const heading=groupId&&!scene.group.paged?100/reference:0;
+ return {x,y:y-heading,width:right-x,height:bottom-y+heading};
+}
+export function frameLevel(tree,groupId,width,height=700,options={}){
+ const b=sceneBounds(tree,groupId,width,options),padding=width<701?18:28;
+ const s=Math.min((width-padding*2)/b.width,(height-padding*2)/b.height,levelScale(tree,groupId,width));
+ return {s,x:width/2-(b.x+b.width/2)*s,y:height/2-(b.y+b.height/2)*s};
+}
+export function levelZoomLimits(tree,groupId,width,height,options={}){
+ const fit=frameLevel(tree,groupId,width,height,options).s;
+ const unit=unitSize(width,!groupId),max=levelScale(tree,groupId,width)*Math.min(2.4,(width-36)/unit.w,(height-36)/unit.h);
+ return {min:fit,max:Math.max(fit,max)};
 }
 export function readingLevel(tree,groupId,camera,width,height,options={}){
- const viewport={x:-80,y:-80,w:width+160,h:height+160};
- return levelScene(tree,groupId,options).items.map(({node,anchor})=>({node,box:projectUnit(anchor,camera,width),mode:groupId?'summary':'compact'})).filter(item=>intersects(item.box,viewport)).slice(0,90);
+ const viewport={x:-80,y:-80,w:width+160,h:height+160},reference=levelScale(tree,groupId,width);
+ return levelScene(tree,groupId,options).items.map(({node,anchor})=>({node,box:projectUnit(anchor,camera,width,reference,!groupId),mode:groupId?'summary':'compact'})).filter(item=>intersects(item.box,viewport)).slice(0,90);
 }
 export function panWithinWorld(camera,dx,dy,bounds,width,height){
  // Keep some of the world reachable, but do not pin a small group to the viewport.
