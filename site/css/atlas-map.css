@@ -1,5 +1,7 @@
 /* Explicit levels and one uniform world transform per item; no zoom-driven reflow. */
-#map{position:relative;flex:1;min-height:0;overflow:hidden;touch-action:none;user-select:none;cursor:grab;background:#f8faf7 radial-gradient(circle at 0 0,#a8b7ca45 1px,transparent 1px);background-size:26px 26px}
+#map{position:relative;flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;scrollbar-width:none;overflow-anchor:none;scroll-behavior:auto;touch-action:none;user-select:none;cursor:grab;background:#f8faf7}
+#map::-webkit-scrollbar{display:none}
+#pan-surface{position:relative;overflow:hidden;min-width:100%;min-height:100%;background:#f8faf7 radial-gradient(circle at 0 0,#a8b7ca45 1px,transparent 1px);background-size:26px 26px}
 #map.dragging{cursor:grabbing}
 #map.navigating{cursor:progress}
 #map:focus{outline:none}
@@ -83,7 +85,7 @@
 .atlas-node:focus-visible .territory-surface path,.atlas-node.selected .territory-surface path{stroke:#355f86;stroke-opacity:1;stroke-width:2}
 /* A small, whole-item response confirms a click without competing with navigation. */
 .atlas-node{transition:scale 170ms cubic-bezier(.2,.8,.2,1),translate 170ms cubic-bezier(.2,.8,.2,1),filter 170ms ease}
-@media(hover:hover) and (pointer:fine){#map:not(.dragging):not(.navigating) .atlas-node:hover{translate:0 -4px;scale:1.025;filter:drop-shadow(0 8px 9px #263f5025)}}
+@media(hover:hover) and (pointer:fine){#map:not(.dragging):not(.navigating):not([data-gesture="pan"]) .atlas-node:hover{translate:0 -4px;scale:1.025;filter:drop-shadow(0 8px 9px #263f5025)}}
 .atlas-node:focus-visible{translate:0 -4px;scale:1.025;filter:drop-shadow(0 8px 9px #263f5025)}
 #map:not(.dragging) .atlas-node:active{translate:0 0;scale:.975;filter:drop-shadow(0 1px 2px #263f5020)}
 @media(prefers-reduced-motion:reduce){.atlas-node{transition:none}#map .atlas-node:hover,#map .atlas-node:focus-visible,#map .atlas-node:active{translate:none;scale:1}}

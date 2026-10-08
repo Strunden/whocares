@@ -106,7 +106,10 @@ export function levelZoomLimits(tree,groupId,width,height,options={}){
 }
 export function readingLevel(tree,groupId,camera,width,height,options={}){
  const viewport={x:-80,y:-80,w:width+160,h:height+160},reference=levelScale(tree,groupId,width);
- return levelScene(tree,groupId,options).items.map(({node,anchor})=>({node,box:projectUnit(anchor,camera,width,reference,!groupId,itemHeight(node,!groupId)),mode:groupId?'summary':'compact'})).filter(item=>intersects(item.box,viewport)).slice(0,90);
+ const items=levelScene(tree,groupId,options).items.map(({node,anchor})=>({node,box:projectUnit(anchor,camera,width,reference,!groupId,itemHeight(node,!groupId)),mode:groupId?'summary':'compact'}));
+ // Keep ordinary small scenes mounted for native compositor scrolling. Large
+ // unpaged scenes still window by visibility so later nodes remain reachable.
+ return (options.includeOffscreen&&items.length<=90?items:items.filter(item=>intersects(item.box,viewport))).slice(0,90);
 }
 export function panWithinWorld(camera,dx,dy,bounds,width,height){
  // Keep some of the world reachable, but do not pin a small group to the viewport.

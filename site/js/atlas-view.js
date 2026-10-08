@@ -1,5 +1,5 @@
 import {assetFor} from './atlas-assets.js';
-import {logoUrl} from './atlas-records.js?v=elastic-pan-33';
+import {logoUrl} from './atlas-records.js?v=native-pan-35';
 import {mediaFor} from './atlas-media.js?v=media-20261008';
 export const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const title=entry=>entry.title||entry.name||'Untitled research';
@@ -31,7 +31,7 @@ export function createMapView(container){
  const elements=new Map();
  return {
   clear(){container.replaceChildren();elements.clear();},
-  render(items,{tree,persona,selectedId,width,height}){
+  render(items,{tree,persona,selectedId,width,height,offsetX=0,offsetY=0}){
    const keep=new Set();
    for(const {node,box,mode} of items){
     keep.add(node.id);let el=elements.get(node.id);
@@ -39,7 +39,7 @@ export function createMapView(container){
     const signature=node.id+mode+box.layoutW+(node.entry?._detailLoaded?'loaded':'');const changed=el.dataset.signature!==signature;
     if(el.dataset.signature!==signature){el.innerHTML=territorySurface(node,mode)+nodeMarkup(node,mode,persona);el.dataset.signature=signature;const descriptions=[...el.querySelectorAll('.node-description')];descriptions.forEach((d,i)=>{d.id='map-'+node.id+'-detail-'+i;});el.setAttribute('aria-describedby',descriptions.map(d=>d.id).join(' '));}
     el.dataset.shape=String(shapeVariant(node.id));el.dataset.mode=mode;el.dataset.kind=node.kind;el.dataset.visual=node.personaKey?'person':mode!=='compact'&&!node.children?.length?'record':'territory';
-    el.style.cssText=`left:${box.x}px;top:${box.y}px;width:${box.layoutW}px;height:${box.layoutH}px;transform:scale(${box.scale});transform-origin:0 0;--territory:${tree.all.get(node.root).color}`;
+    el.style.cssText=`left:${box.x+offsetX}px;top:${box.y+offsetY}px;width:${box.layoutW}px;height:${box.layoutH}px;transform:scale(${box.scale});transform-origin:0 0;--territory:${tree.all.get(node.root).color}`;
     if(changed){
      // Measure in fixed layout pixels once per item, never as the camera zooms.
      const summary=el.querySelector('.node-summary'),description=summary?.querySelector('.node-description');

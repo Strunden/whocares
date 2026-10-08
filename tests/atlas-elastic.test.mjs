@@ -87,3 +87,17 @@ test('interrupting return from distant anchored framing never jumps inward on ou
  const before=h.ctx.camera.x;h.ctx.panMap(1,0);assert.ok(h.ctx.camera.x>=before);
  h.release();h.tick(240);assert.equal(h.ctx.camera.x,-400);
 });
+
+test('native pan takes over an interrupted zoom return without leaving invalid scale or a second animation',()=>{
+ for(const [scale,factor] of [[1,.8],[4,1.2]]){
+  const h=harness(scale);h.ctx.zoomMap(factor,{x:270,y:180});h.release();h.tick(40);
+  assert.notEqual(h.ctx.camera.s,scale);h.ctx.beginNativePan();assert.equal(h.ctx.camera.s,scale);
+  const position={...h.ctx.camera};h.tick(300);assert.deepEqual({...h.ctx.camera},position);
+ }
+});
+
+test('ordinary native pan never rewrites fractional camera positions while the scale is valid',()=>{
+ const h=harness(2);h.ctx.camera={s:2,x:-120.4,y:-77.3};let renders=0;h.ctx.render=()=>renders++;
+ for(let i=0;i<100;i++)h.ctx.beginNativePan();
+ assert.equal(renders,0);assert.equal(h.ctx.camera.x,-120.4);assert.equal(h.ctx.camera.y,-77.3);
+});
