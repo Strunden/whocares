@@ -12,7 +12,7 @@ __pycache__/
 !.env.example
 .dev.vars
 .wrangler/
-node_modules/
+node_modules
 workers/api/dist/
 .venv/
 venv/

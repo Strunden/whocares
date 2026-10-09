@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {readFile,mkdtemp,writeFile,rm} from 'node:fs/promises';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
+import {fileURLToPath} from 'node:url';
 import {execFileSync} from 'node:child_process';
 import {mergeResearchAtlas} from '../scripts/merge-research-atlas.mjs';
 import {graphRecords,graphRoots,recordStatus} from '../site/js/atlas-records.js';
@@ -131,7 +132,7 @@ test('CLI writes only an explicitly requested merged artifact',async()=>{
  try{
   const base=join(directory,'base.json'),input=join(directory,'research.json'),out=join(directory,'merged.json');
   await writeFile(base,JSON.stringify(baseline));await writeFile(input,JSON.stringify(research()));
-  const stdout=execFileSync(process.execPath,[new URL('../scripts/merge-research-atlas.mjs',import.meta.url).pathname,
+  const stdout=execFileSync(process.execPath,[fileURLToPath(new URL('../scripts/merge-research-atlas.mjs',import.meta.url)),
    '--base',base,'--research',input,'--out',out,'--principles-sha256',principleSha256],{encoding:'utf8'});
   assert.equal(JSON.parse(stdout).totals.objects,baseline.objects.length+2);
   assert.equal(JSON.parse(await readFile(out,'utf8')).relationships.length,baseline.relationships.length+1);
