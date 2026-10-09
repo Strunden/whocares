@@ -3,6 +3,14 @@ import assert from 'node:assert/strict';
 import vm from 'node:vm';
 import {readFile} from 'node:fs/promises';
 import {loadAtlas} from '../site/js/atlas-loader.js';
+
+test('private loopback service is allowed; remote HTTP remains rejected',async()=>{
+ let calls=0;
+ const fetcher=async url=>{calls++;assert.equal(url,'http://127.0.0.1:8788/api/discovery');return {ok:false};};
+ await assert.rejects(loadAtlas(fetcher,'http://127.0.0.1:8788'),/unavailable/);
+ for(const url of ['http://example.org','http://127.0.0.1.evil:8788','http://127.0.0.1:8788@evil'])await assert.rejects(loadAtlas(fetcher,url),/not configured/);
+ assert.equal(calls,1);
+});
 import {graphRecords} from '../site/js/atlas-records.js';
 import {graph} from './fixtures/discovery.mjs';
 const response={schema_version:2,revision:'database-revision',catalog:{entries:[{id:'new-company',published:true}]},graph,media:[]};
