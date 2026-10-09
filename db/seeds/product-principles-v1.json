@@ -1,0 +1,68 @@
+{
+  "key": "who-cares-product",
+  "version": 1,
+  "effective_date": "2026-10-08",
+  "authority": "User-approved product direction; not empirical research evidence",
+  "provenance": {
+    "conversation_id": "6ac6aa26-312c-83eb-b973-f82acbe0770d",
+    "request": "Realign Who Cares knowledge model",
+    "date": "2026-10-08"
+  },
+  "principles": [
+    {
+      "id": "purpose",
+      "text": "Evidence-backed problem discovery and market intelligence for venture builders. Discovery leads to causal understanding and self-directed hypothesis formation."
+    },
+    {
+      "id": "ethical-north-star",
+      "text": "A Life Worth Living guides consideration of ALL affected stakeholders: older adults, professional and family caregivers, providers, payers, communities and financially sustainable innovators. It is not a mandatory navigation taxonomy."
+    },
+    {
+      "id": "problem-first",
+      "text": "Research the problem landscape independently of existing companies and company themes. Companies and solutions are evidence of responses, not the origin of the taxonomy. An existing response does not establish effectiveness or remove a problem."
+    },
+    {
+      "id": "problem-space",
+      "text": "A problem space is a bounded, revisable grouping of related human, operational or systemic frictions that impede valued outcomes. Define affected stakeholders, situations, scope, connected problems, proposed mechanisms, responses and evidence gaps. It is not merely a diagnosis, industry label, company cluster or market size. Overlaps are allowed; boundaries are editorial interpretations with provenance."
+    },
+    {
+      "id": "bottom-up",
+      "text": "Represent aspirations, daily situations and lived workarounds with their speakers, settings, dates and limits. Do not invent interviews or universal aspirations. Illustrative narratives must remain visibly illustrative."
+    },
+    {
+      "id": "top-down",
+      "text": "Represent systems, incentives, reimbursement, care provision and institutional responses distinctly, and connect them to lived experience through sourced relationships. Distinguish documented mechanisms from causal hypotheses."
+    },
+    {
+      "id": "one-graph",
+      "text": "All persona lenses operate on one knowledge graph with stable identities and explicit relationships. Lenses highlight stakeholder aspirations, experiences and constraints; they do not create disconnected maps or taxonomies."
+    },
+    {
+      "id": "semantic-zoom",
+      "text": "A map-centric continuous semantic zoom first builds a quick horizontal mental model, then enables vertical documentary-story deep dives into situations, mechanisms, stakeholders, research and responses. Each scale should teach something new and preserve orientation."
+    },
+    {
+      "id": "visual-direction",
+      "text": "Use soft translucent organic territories, generous space and sparse chrome. Preserve an accessible search/list route and clear evidence reading. Territory size, color and position must not rank venture potential."
+    },
+    {
+      "id": "research-integrity",
+      "text": "Keep documented claims, interpretation, research candidates, hypotheses, illustrative scenes and unknowns distinct. Each claim and relationship carries provenance, scoped evidence and qualitative research confidence with a rationale. A citation alone does not verify a candidate."
+    },
+    {
+      "id": "no-ai-selection",
+      "text": "No opportunity scores, attractiveness rankings or AI venture judgments. Users form their own hypotheses. Historical killed/standing statuses remain historical analyst decisions and must not become problem validity or opportunity labels."
+    },
+    {
+      "id": "provenance-and-change",
+      "text": "Preserve existing company and user records. Version principles append-only; track graph revisions, sources, research gaps and every write. Import earlier 48 domains, 384 candidate problems and 50 sources only from accessible original artifacts; keep candidates unverified until claim-level evidence is reviewed."
+    }
+  ],
+  "alignment_checks": [
+    "Define the problem space without referencing company clusters.",
+    "Show how bottom-up situations and top-down mechanisms connect with appropriate evidence status.",
+    "Show what horizontal overview and vertical zoom teach.",
+    "Demonstrate all lenses share graph identities.",
+    "Show sources, limits and open questions without opportunity judgments."
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "date": "2026-10-08",
+  "project_id": "proud-sea-34268045",
+  "live_branch": "br-silent-mouse-b2g45sar",
+  "backup_branch": "br-raspy-morning-b2xwxgu7",
+  "test_branches": [
+    "br-empty-star-b2hpk36u",
+    "br-green-pine-b2ooz5ov"
+  ],
+  "initial_atomic_attempt": "Rolled back fully due to pending deferred trigger events before ALTER TABLE; zero atlas tables confirmed. Fixed ordering and retested full transaction on fresh branch.",
+  "before": [
+    {
+      "fingerprints": {
+        "entries": "49b4016822f57fae1038bd830cc4057e",
+        "funders": "ebaad0cce5ef20534ffbd5ab09908189",
+        "evidence": "21d18594017c033a5aa1d2a6a4d1ad8d",
+        "funding_links": "3e60b86c96907fc0f6f315fbaa3a9df7"
+      }
+    }
+  ],
+  "verification": [
+    [
+      {
+        "objects": "17",
+        "relationships": "13",
+        "sources": "3",
+        "evidence_links": "14",
+        "legacy_records": "75",
+        "audit_rows": "128",
+        "migrations": "3",
+        "principle_versions": "1"
+      }
+    ],
+    [
+      {
+        "kind": "aspiration",
+        "epistemic_status": "hypothesis",
+        "count": "1"
+      },
+      {
+        "kind": "daily_situation",
+        "epistemic_status": "illustrative",
+        "count": "1"
+      },
+      {
+        "kind": "institutional_response",
+        "epistemic_status": "documented",
+        "count": "1"
+      },
+      {
+        "kind": "lived_workaround",
+        "epistemic_status": "hypothesis",
+        "count": "1"
+      },
+      {
+        "kind": "open_question",
+        "epistemic_status": "open_question",
+        "count": "3"
+      },
+      {
+        "kind": "problem",
+        "epistemic_status": "candidate",
+        "count": "1"
+      },
+      {
+        "kind": "problem",
+        "epistemic_status": "documented",
+        "count": "1"
+      },
+      {
+        "kind": "problem_space",
+        "epistemic_status": "interpretation",
+        "count": "1"
+      },
+      {
+        "kind": "solution",
+        "epistemic_status": "documented",
+        "count": "1"
+      },
+      {
+        "kind": "stakeholder",
+        "epistemic_status": "normative",
+        "count": "5"
+      },
+      {
+        "kind": "systemic_cause",
+        "epistemic_status": "documented",
+        "count": "1"
+      }
+    ],
+    [
+      {
+        "relation": "atlas.evidence_links",
+        "operation": "INSERT",
+        "batch_id": "atlas-first-slice-20261008",
+        "count": "14"
+      },
+      {
+        "relation": "atlas.import_batches",
+        "operation": "INSERT",
+        "batch_id": "atlas-first-slice-20261008",
+        "count": "2"
+      },
+      {
+        "relation": "atlas.legacy_records",
+        "operation": "INSERT",
+        "batch_id": "atlas-first-slice-20261008",
+        "count": "75"
+      },
+      {
+        "relation": "atlas.migrations",
+        "operation": "INSERT",
+        "batch_id": "atlas-foundation-20261008",
+        "count": "1"
+      },
+      {
+        "relation": "atlas.migrations",
+        "operation": "INSERT",
+        "batch_id": "atlas-first-slice-20261008",
+        "count": "1"
+      },
+      {
+        "relation": "atlas.migrations",
+        "operation": "INSERT",
+        "batch_id": "atlas-integrity-20261008",
+        "count": "1"
+      },
+      {
+        "relation": "atlas.objects",
+        "operation": "INSERT",
+        "batch_id": "atlas-first-slice-20261008",
+        "count": "17"
+      },
+      {
+        "relation": "atlas.principles_versions",
+        "operation": "INSERT",
+        "batch_id": "atlas-foundation-20261008",
+        "count": "1"
+      },
+      {
+        "relation": "atlas.relationships",
+        "operation": "INSERT",
+        "batch_id": "atlas-first-slice-20261008",
+        "count": "13"
+      },
+      {
+        "relation": "atlas.sources",
+        "operation": "INSERT",
+        "batch_id": "atlas-first-slice-20261008",
+        "count": "3"
+      }
+    ],
+    [
+      {
+        "fingerprints": {
+          "entries": "49b4016822f57fae1038bd830cc4057e",
+          "funders": "ebaad0cce5ef20534ffbd5ab09908189",
+          "evidence": "21d18594017c033a5aa1d2a6a4d1ad8d",
+          "funding_links": "3e60b86c96907fc0f6f315fbaa3a9df7"
+        }
+      }
+    ],
+    [
+      {
+        "key": "who-cares-product",
+        "version": 1,
+        "canonical_sha256": "1698c1ce402af9694166b15938d24fb9fb05c55e85a330b4e589b7dca5b2a8c2"
+      }
+    ],
+    [
+      {
+        "staged_documents_matching_live": "75"
+      }
+    ],
+    [
+      {
+        "id": "earlier-research-48-384-50",
+        "state": "pending_artifact",
+        "expected_counts": {
+          "domains": 48,
+          "sources": 50,
+          "candidate_problems": 384
+        },
+        "actual_counts": {
+          "domains": 0,
+          "sources": 0,
+          "candidate_problems": 0
+        }
+      },
+      {
+        "id": "legacy-ideas-20261008",
+        "state": "staged",
+        "expected_counts": {},
+        "actual_counts": {
+          "records": 75
+        }
+      }
+    ]
+  ],
+  "tests": {
+    "database_integrity_checks": 9,
+    "node_tests": 20,
+    "api_sql_query": "Executed against live database; 17 objects, 13 relationships, 14 evidence links, 3 sources, not truncated"
+  },
+  "production_ui_deployed": false,
+  "api_deployed": false
+}
