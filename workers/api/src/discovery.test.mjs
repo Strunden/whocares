@@ -21,3 +21,12 @@ test('broken graph references and malformed catalogs cannot appear as a successf
  assert.throws(()=>shapeDiscovery({payload:{...payload,catalog:[{...row,review_current:false}]},revision:'a'}),/stale/);
  assert.throws(()=>shapeDiscovery({payload,revision:null}),/Missing/);
 });
+
+test('internal images require a trusted server option and remain part of one database result',async()=>{
+ let query;
+ await queryDiscovery({simpleQuery:async q=>{query=q;return [{payload,revision:'internal'}];}},{internalMedia:true});
+ assert.match(query,/m.visibility='internal' OR/);
+ assert.match(query,/m.review_state='reviewed'/);
+ assert.match(query,/m.rights_status<>'unknown'/);
+ assert.ok(!DISCOVERY_SQL.includes("m.visibility='internal'"));
+});

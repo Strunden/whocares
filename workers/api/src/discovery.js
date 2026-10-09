@@ -40,7 +40,9 @@ export function shapeDiscovery(row){
  if(graph.relationships.some(r=>!ids.has(r.from_id)||!ids.has(r.to_id)))throw new Error('Dangling graph relationship');
  return {schema_version:2,revision:row.revision,catalog,graph,media:payload.media||[]};
 }
-export async function queryDiscovery(sql){
- const rows=await sql.simpleQuery(DISCOVERY_SQL);
+// Only the loopback server opts into internal media; the public worker uses the default.
+export async function queryDiscovery(sql,{internalMedia=false}={}){
+ const query=internalMedia?DISCOVERY_SQL.replace("m.visibility='public' AND m.review_state='reviewed' AND m.rights_status<>'unknown' AND m.rights_url ~ '^https://'","m.review_state='reviewed' AND (m.visibility='internal' OR (m.visibility='public' AND m.rights_status<>'unknown' AND m.rights_url ~ '^https://'))"):DISCOVERY_SQL;
+ const rows=await sql.simpleQuery(query);
  return shapeDiscovery(rows[0]||{});
 }

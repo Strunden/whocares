@@ -20,7 +20,7 @@ createServer(async(req,res)=>{
  try{
   const path=decodeURIComponent(new URL(req.url,origin).pathname);
   if(path==='/api/discovery'){
-   const data=await queryDiscovery({simpleQuery:query=>sql.unsafe(query)});
+   const data=await queryDiscovery({simpleQuery:query=>sql.unsafe(query)},{internalMedia:true});
    res.setHeader('Content-Type','application/json');res.end(JSON.stringify(data));return;
   }
   if(path.startsWith('/api/logo/')){
