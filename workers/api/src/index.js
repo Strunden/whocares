@@ -1,5 +1,6 @@
 import { attachFunding, funderDetail, funderSummary } from "./funders-shape.js";
 import {queryDiscovery} from "./discovery.js";
+import {readLogo} from "./logo.js";
 import { decodeSlug } from "./path-slug.js";
 import { withSql } from "./pg-wire.js";
 
@@ -197,15 +198,7 @@ export default {
         return json({ ok: false, error: "not found" }, 404);
       }
       try {
-        const rows = await withSql(env, (sql) => sql.simpleQuery(`
-          SELECT encode(logo_bytes, 'base64') AS logo_b64
-          FROM entries
-          WHERE EXISTS (SELECT 1 FROM atlas.catalog_read_model c WHERE c.id=entries.id AND c.visible AND c.review_current AND c.review_id IS NOT NULL AND c.decision IN ('retain','correct'))
-            AND id = '${slug}'
-            AND logo_bytes IS NOT NULL
-          LIMIT 1
-        `));
-        const b64 = rows[0] && rows[0].logo_b64;
+        const b64 = await withSql(env, sql => readLogo(sql, slug));
         if (!b64) return json({ ok: false, error: "not found" }, 404);
         const raw = atob(b64);
         const bytes = new Uint8Array(raw.length);

@@ -14,3 +14,11 @@ test('real thesis_card records retain their hypothesis identity',()=>{assert.equ
 
 import {mediaFor} from '../site/js/atlas-media.js';
 test('product imagery requires provenance; illustrations cannot become product evidence',()=>{assert.equal(mediaFor({id:'company-amara'}),null);assert.equal(mediaFor({media:{src:'javascript:alert(1)',source:'https://example.org',alt:'x'}}),null);assert.equal(mediaFor({kind:'daily_situation'}).kind,'Illustration');assert.equal(mediaFor({type:'company',id:'unknown'}),null);});
+
+test('logos use same-origin, HTTPS or explicit loopback HTTP only',()=>{
+ const entry={logo:'/api/logo/company-arjo'};
+ assert.equal(logoUrl(entry),entry.logo);
+ for(const base of ['http://127.0.0.1:8788','http://localhost:8788','http://[::1]:8788','https://api.example.org'])assert.equal(logoUrl(entry,base),base+entry.logo);
+ for(const base of ['http://example.org','http://127.0.0.1.evil.test','javascript:alert(1)','https://user:pass@example.org','https://example.org?redirect='])assert.equal(logoUrl(entry,base),'');
+ assert.equal(logoUrl({logo:'http://example.org/logo.png'}),'');
+});

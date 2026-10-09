@@ -4,6 +4,7 @@ import {fileURLToPath} from 'node:url';
 import {resolve,extname,sep} from 'node:path';
 import postgres from '../workers/api/node_modules/postgres/src/index.js';
 import {queryDiscovery} from '../workers/api/src/discovery.js';
+import {readLogo} from '../workers/api/src/logo.js';
 
 // Private preview uses the same database query as production, without snapshots.
 if(!process.env.DATABASE_URL)throw Error('DATABASE_URL is required');
@@ -21,6 +22,11 @@ createServer(async(req,res)=>{
   if(path==='/api/discovery'){
    const data=await queryDiscovery({simpleQuery:query=>sql.unsafe(query)});
    res.setHeader('Content-Type','application/json');res.end(JSON.stringify(data));return;
+  }
+  if(path.startsWith('/api/logo/')){
+   const logo=await readLogo({simpleQuery:query=>sql.unsafe(query)},path.slice('/api/logo/'.length));
+   if(!logo){res.writeHead(404).end();return;}
+   res.setHeader('Content-Type','image/png');res.end(Buffer.from(logo,'base64'));return;
   }
   if(path==='/js/config.js'){
    res.setHeader('Content-Type','text/javascript');

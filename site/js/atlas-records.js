@@ -39,7 +39,13 @@ export function graphRoots(records){
 export function logoUrl(entry,apiBase=''){
  const src=String(productLogoFor(entry)?.src||entry.logo||'');
  if(/^https:\/\//.test(src))return src;
- if(/^\/api\/logo\/[a-zA-Z0-9_-]+$/.test(src)&&/^https:\/\//.test(apiBase))return apiBase.replace(/\/$/,'')+src;
+ if(!/^\/api\/logo\/[a-zA-Z0-9_-]+$/.test(src))return '';
+ if(!apiBase)return src;
+ try{
+  const base=new URL(apiBase);
+  if(base.username||base.password||base.search||base.hash)return '';
+  if(base.protocol==='https:'||(base.protocol==='http:'&&['localhost','127.0.0.1','[::1]'].includes(base.hostname)))return base.href.replace(/\/$/,'')+src;
+ }catch{}
  return '';
 }
 export function recordLabel(e){return e.graph?kindLabels[e.kind]||'Research':e.type==='company'?'Company':['thesis','thesis_card'].includes(e.idea_kind)?'Research hypothesis':'Legacy research theme';}
