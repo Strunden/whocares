@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-09",
+  "tool": "built-in image_gen",
+  "output_id": "exec-80506995-1a10-4755-975b-069044695ff9",
+  "reference": "assets/illustrations/study/break-hours-v4.png",
+  "output": "assets/illustrations/study/break-hours-wide-v1.png",
+  "prompt": "Create a landscape editorial illustration asset with a wide 3:2 aspect ratio by recomposing this exact scene. Keep the same pencil and sparse watercolor style, same middle-aged woman wearing sage green, same man in his late eighties reading independently in the background. Show the woman seated at her table with her head resting on one hand; the CLOSED sketchbook, pencils, and her resting other hand must be clearly visible. The book signifies her own activity waiting for a break from caring, not paid paperwork. Compose horizontally: woman left/centre, older man on right in a separate room; faces, book and context all visible at the same time in a wide frame. Preserve adult dignity, no touching or new interaction, no invented care task, no new people, no typography, logos, UI or text. Crisp enough for a large website map tile, full scene with natural watercolor fading edges into a plain white background, especially along bottom. Minimize blank margins but do not clip heads, hands or the sketchbook. Output only the single illustration, not a card design.",
+  "fictional": true,
+  "display_provenance": false,
+  "purpose": "Recompose approved scene for the user-approved map layout without cropping its distinguishing objects."
+}

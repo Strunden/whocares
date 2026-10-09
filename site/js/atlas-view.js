@@ -1,5 +1,5 @@
 import {assetFor} from './atlas-assets.js';
-import {logoUrl} from './atlas-records.js?v=native-pan-35';
+import {logoUrl,recordStatus,recordLabel} from './atlas-records.js?v=native-pan-35';
 import {mediaFor} from './atlas-media.js';
 export const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const title=entry=>entry.title||entry.name||'Untitled research';
@@ -10,16 +10,20 @@ export function companyLogo(entry){
 }
 export function recordMedia(entry,large=false){
  const media=mediaFor(entry);if(!media)return '';
- return `<figure class="record-media ${large?'media-large':''}"><img src="${esc(media.src)}" alt="${esc(media.alt)}" loading="lazy" decoding="async" referrerpolicy="no-referrer"><figcaption>${large&&media.source?`<a href="${esc(media.source)}" target="_blank" rel="noopener">${esc(media.kind)} · ${esc(media.credit)} ↗</a>`:esc(media.kind)}</figcaption></figure>`;
+ const artwork=media.src.startsWith('assets/illustrations/');
+ const caption=large&&!artwork?`<figcaption><a href="${esc(media.source)}" target="_blank" rel="noopener">${esc(media.caption||media.kind)} · ${esc(media.credit)} ↗</a></figcaption>`:'';
+ return `<figure class="record-media ${large?'media-large':''}"><img src="${esc(media.src)}" alt="${artwork?'':esc(media.alt)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">${caption}</figure>`;
 }
 function nodeMarkup(n,mode,persona){
  const e=n.entry,heading=`<h2 class="node-title">${esc(n.title)}</h2>`;
- if(n.personaKey)return `<div class="node-copy">${heading}<p class="node-description">${esc(n.description)}</p></div><img class="perspective-art" src="${assetFor(n.personaKey).src}" alt="Illustration" loading="lazy">`;
- if(mode==='compact')return `<div class="node-copy">${heading}<p class="node-description">${esc(short(n.description,145))}</p></div><img class="overview-art" src="${assetFor(n.graph?'adult':n.id,persona).src}" alt="Illustration" loading="lazy" decoding="async">`;
+ if(n.personaKey)return `<div class="node-copy">${heading}<p class="node-description">${esc(n.description)}</p></div><img class="perspective-art" src="${assetFor(n.personaKey).src}" alt="" loading="lazy">`;
+ if(n.study&&n.kind==='record')return `<div class="node-copy study-copy study-response">${logoUrl(e)?companyLogo(e):''}${heading}<p class="node-description">${esc(n.description||e?.summary)}</p>${recordMedia(e)}</div>`;
+ if(n.study)return `<div class="node-copy study-composition">${n.image?`<img class="study-scene" src="${esc(n.image)}" alt="" loading="lazy">`:''}<div class="study-caption"><div>${heading}<p class="node-description">${esc(n.description||e?.summary)}</p></div></div></div>`;
+ if(mode==='compact')return `<div class="node-copy">${heading}<p class="node-description">${esc(short(n.description,145))}</p></div><img class="overview-art" src="${assetFor(n.graph?'adult':n.id,persona).src}" alt="" loading="lazy" decoding="async">`;
  if(n.children?.length)return `<div class="node-copy">${heading}<p class="node-description">${esc(short(e?.summary||n.description||'Explore the records filed under this subject.',220))}</p></div>`;
  const company=e?.type==='company'||e?.kind==='solution';
  const description=e?.summary||n.description||'Records grouped by their existing category; relevance to a specific problem needs review.';
- return `<div class="node-copy"><div class="record-heading">${company?companyLogo(e):''}<div>${heading}</div></div><div class="node-summary"><p class="node-description">${esc(short(description,320))}</p>${recordMedia(e)}</div></div>`;
+ return `<div class="node-copy">${e?.graph?`<p class="node-kicker">${esc(e.studyRole||recordLabel(e))} · ${esc(recordStatus(e))}</p>`:''}<div class="record-heading">${company?companyLogo(e):''}<div>${heading}</div></div><div class="node-summary"><p class="node-description">${esc(short(description,320))}</p>${recordMedia(e)}</div></div>`;
 }
 
 function territorySurface(n,mode){
@@ -36,9 +40,9 @@ export function createMapView(container){
    for(const {node,box,mode} of items){
     keep.add(node.id);let el=elements.get(node.id);
     if(!el){el=document.createElement('section');el.className='atlas-node';el.dataset.node=node.id;el.setAttribute('role','button');el.tabIndex=0;el.setAttribute('aria-label',node.title);container.append(el);elements.set(node.id,el);}
-    const signature=node.id+mode+box.layoutW+(node.entry?._detailLoaded?'loaded':'');const changed=el.dataset.signature!==signature;
+    const signature=node.id+mode+box.layoutW+persona+(node.entry?._detailLoaded?'loaded':'');const changed=el.dataset.signature!==signature;
     if(el.dataset.signature!==signature){el.innerHTML=territorySurface(node,mode)+nodeMarkup(node,mode,persona);el.dataset.signature=signature;const descriptions=[...el.querySelectorAll('.node-description')];descriptions.forEach((d,i)=>{d.id='map-'+node.id+'-detail-'+i;});el.setAttribute('aria-describedby',descriptions.map(d=>d.id).join(' '));}
-    el.dataset.shape=String(shapeVariant(node.id));el.dataset.mode=mode;el.dataset.kind=node.kind;el.dataset.visual=node.personaKey?'person':mode!=='compact'&&!node.children?.length?'record':'territory';
+    el.dataset.study=node.study?'true':'false';el.dataset.illustrated=!!node.image;el.classList.toggle('perspective-muted',!!node.muted);el.dataset.shape=String(shapeVariant(node.id));el.dataset.mode=mode;el.dataset.kind=node.kind;el.dataset.visual=node.personaKey?'person':mode!=='compact'&&!node.children?.length?'record':'territory';
     el.style.cssText=`left:${box.x+offsetX}px;top:${box.y+offsetY}px;width:${box.layoutW}px;height:${box.layoutH}px;transform:scale(${box.scale});transform-origin:0 0;--territory:${tree.all.get(node.root).color}`;
     if(changed){
      // Measure in fixed layout pixels once per item, never as the camera zooms.

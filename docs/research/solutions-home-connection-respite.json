@@ -1,0 +1,1022 @@
+{
+  "title": "Existing solutions: staying home, companionship and care breaks",
+  "researched_on": "2026-10-09",
+  "scope": "Germany-first desk research across seven existing reviewed situations",
+  "decision": "Need → specific situation → existing solutions. Informal workarounds remain supporting evidence, not solution-map nodes.",
+  "method": "Searched official provider sources and opened each included source page beyond search snippets. Verified described offerings, not customer availability, outcomes or endorsement.",
+  "verification_limitations": [
+    "Current means the provider currently describes the offering; live capacity was not contacted or booked.",
+    "Prices reflect pages accessed on research date; benefits and legal entitlement were not independently adjudicated.",
+    "No images were downloaded; image licensing and visual review remain separate.",
+    "No new prevalence, demand, unmet-need or underserved-market claims are supported by these records."
+  ],
+  "solutions": [
+    {
+      "id": "company-careship",
+      "name": "Careship hourly support",
+      "provider": "Care Companion GmbH / Careship Ambulant GmbH",
+      "type": "existing_solution",
+      "mechanism": "Hourly household help, shopping, companionship and accompaniment.",
+      "country": "DE",
+      "locality": "Selected German regions; postcode and staffing check required.",
+      "url": "https://www.careship.de/groundpage",
+      "evidence_status": "provider_offering_verified_on_opened_official_page",
+      "verified_on": "2026-10-09",
+      "sources": [
+        {
+          "url": "https://www.careship.de/groundpage",
+          "title": "Careship im Überblick: Fakten und Kerndaten",
+          "publisher": "Care Companion GmbH / Careship Ambulant GmbH",
+          "locator": "Leistungen; Alltagsunterstützung; Standorte; Preise & Abrechnung",
+          "accessed_on": "2026-10-09",
+          "published_or_updated_on": "2026-09-25",
+          "source_type": "official_provider"
+        }
+      ],
+      "verified_claims": [
+        {
+          "claim": "Hourly household help, shopping, companionship and accompaniment.",
+          "source_url": "https://www.careship.de/groundpage",
+          "source_title": "Careship im Überblick: Fakten und Kerndaten",
+          "locator": "Leistungen; Alltagsunterstützung; Standorte; Preise & Abrechnung",
+          "claim_type": "provider_description"
+        }
+      ],
+      "cost": {
+        "status": "published_regional_rates",
+        "summary": "Independent helpers: €33/hour, €38 in Bavaria/Baden-Württemberg; Ambulant rates vary (€35.50–45 in listed regions).",
+        "currency": "EUR"
+      },
+      "eligibility": {
+        "status": "published",
+        "summary": "Self-pay available without Pflegegrad; minimum independent booking 1 hour, regular Ambulant booking 1.5 hours."
+      },
+      "fit_by_situation": {
+        "review-problem-home-shopping": {
+          "fit": "Help buying or carrying groceries.",
+          "basis": "editorial mapping of documented mechanism; not an outcome claim",
+          "limits_or_unknowns": "Actual tasks and availability agreed individually."
+        },
+        "review-problem-company-talk": {
+          "fit": "Scheduled conversation and activities at home.",
+          "basis": "editorial mapping of documented mechanism; not an outcome claim",
+          "limits_or_unknowns": "Paid scheduled contact."
+        },
+        "review-problem-company-out": {
+          "fit": "Accompaniment to walks and leisure activities.",
+          "basis": "editorial mapping of documented mechanism; not an outcome claim",
+          "limits_or_unknowns": "Accessible transport provision not verified."
+        },
+        "review-problem-break-hours": {
+          "fit": "Scheduled support can cover agreed daytime tasks.",
+          "basis": "editorial mapping of documented mechanism; not an outcome claim",
+          "limits_or_unknowns": "No 24-hour service or medical treatment care."
+        }
+      },
+      "verification_notes": [
+        "Prices dated 28 September 2026; reimbursement requires separate entitlement decision.",
+        "No independent outcomes or guaranteed recurring capacity checked."
+      ],
+      "media": [],
+      "existing_record_id": "company-careship"
+    },
+    {
+      "id": "review-response-johanniter-day",
+      "name": "Johanniter day care",
+      "provider": "Johanniter",
+      "type": "existing_solution",
+      "mechanism": "Daytime care, group activities and typically morning pickup with afternoon return.",
+      "country": "DE",
+      "locality": "German network; individual centre capacity and transport catchment vary.",
+      "url": "https://www.johanniter.de/dienste-leistungen/pflege-und-begleitung/tagespflege/",
+      "evidence_status": "provider_offering_verified_on_opened_official_page",
+      "verified_on": "2026-10-09",
+      "sources": [
+        {
+          "url": "https://www.johanniter.de/dienste-leistungen/pflege-und-begleitung/tagespflege/",
+          "title": "Johanniter-Tagespflege",
+          "publisher": "Johanniter",
+          "locator": "Tagesablauf; Tagespflege in der Nähe; Kostenübernahme und Eigenanteil",
+          "accessed_on": "2026-10-09",
+          "published_or_updated_on": null,
+          "source_type": "official_provider"
+        }
+      ],
+      "verified_claims": [
+        {
+          "claim": "Daytime care, group activities and typically morning pickup with afternoon return.",
+          "source_url": "https://www.johanniter.de/dienste-leistungen/pflege-und-begleitung/tagespflege/",
+          "source_title": "Johanniter-Tagespflege",
+          "locator": "Tagesablauf; Tagespflege in der Nähe; Kostenübernahme und Eigenanteil",
+          "claim_type": "provider_description"
+        }
+      ],
+      "cost": {
+        "status": "local_quote_required",
+        "summary": "Daily rates include care, accommodation/food, transport and investment charges; personal contribution remains."
+      },
+      "eligibility": {
+        "status": "individual_assessment",
+        "summary": "For people needing daytime care; page describes insurance eligibility for care grades 2–5."
+      },
+      "fit_by_situation": {
+        "review-problem-break-hours": {
+          "fit": "A scheduled day away from home care.",
+          "basis": "editorial mapping of documented mechanism; not an outcome claim",
+          "limits_or_unknowns": "Attendance and transport need local agreement."
+        },
+        "review-problem-company-out": {
+          "fit": "Group activities with transport to the centre.",
+          "basis": "editorial mapping of documented mechanism; not an outcome claim",
+          "limits_or_unknowns": "Supports attendance at this centre, not arbitrary outings."
+        }
+      },
+      "verification_notes": [
+        "Website verifies offering, not a vacant place.",
+        "Funding amounts intentionally omitted; individual assessment needed."
+      ],
+      "media": [],
+      "existing_record_id": "review-response-johanniter-day"
+    },
+    {
+      "id": "solution-malteser-hausnotruf",
+      "name": "Malteser home alarm",
+      "provider": "Malteser",
+      "type": "existing_solution",
+      "mechanism": "Home call button connects to a 24-hour response centre; higher packages add local response and inactivity sensing.",
+      "country": "DE",
+      "locality": "Germany; package availability checked by locality.",
+      "url": "https://www.malteser.de/hausnotruf/kosten.html",
+      "evidence_status": "provider_offering_verified_on_opened_official_page",
+      "verified_on": "2026-10-09",
+      "sources": [
+        {
+          "url": "https://www.malteser.de/hausnotruf/kosten.html",
+          "title": "Kosten und Leistungen des Malteser Hausnotrufs",
+          "publisher": "Malteser",
+          "locator": "Leistungspakete; Paketpreis; Kostenübernahme",
+          "accessed_on": "2026-10-09",
+          "published_or_updated_on": null,
+          "source_type": "official_provider"
+        }
+      ],
+      "verified_claims": [
+        {
+          "claim": "Home call button connects to a 24-hour response centre; higher packages add local response and inactivity sensing.",
+          "source_url": "https://www.malteser.de/hausnotruf/kosten.html",
+          "source_title": "Kosten und Leistungen des Malteser Hausnotrufs",
+          "locator": "Leistungspakete; Paketpreis; Kostenübernahme",
+          "claim_type": "provider_description"
+        }
+      ],
+      "cost": {
+        "status": "published",
+        "summary": "Monthly packages €27, €60.40 or €64.90; posted setup promotion €0, subject to current terms.",
+        "currency": "EUR"
+      },
+      "eligibility": {
+        "status": "assessment_required",
+        "summary": "Home installation and local availability check; insurance pays only where individual necessity is accepted."
+      },
+      "fit_by_situation": {
+        "review-problem-home-help": {
+          "fit": "Reach a staffed centre without reaching a telephone.",
+          "basis": "editorial mapping of documented mechanism; not an outcome claim",
+          "limits_or_unknowns": "In-person response and inactivity sensing depend on package."
+        }
+      },
+      "verification_notes": [
+        "No claim of preventing falls or guaranteeing response time.",
+        "Promotions and locality must be reconfirmed before purchase."
+      ],
+      "media": []
+    },
+    {
+      "id": "solution-drk-stuttgart-wohnberatung",
+      "name": "DRK Stuttgart home adaptation advice",
+      "provider": "DRK Kreisverband Stuttgart",
+      "type": "existing_solution",
+      "mechanism": "Home assessment with written recommendations on aids and building adaptations.",
+      "country": "DE",
+      "locality": "Stuttgart city; referrals elsewhere.",
+      "url": "https://www.drk-stuttgart.de/wohnberatung.html",
+      "evidence_status": "provider_offering_verified_on_opened_official_page",
+      "verified_on": "2026-10-09",
+      "sources": [
+        {
+          "url": "https://www.drk-stuttgart.de/wohnberatung.html",
+          "title": "Wohnberatung",
+          "publisher": "DRK Kreisverband Stuttgart",
+          "locator": "Individuelle Beratung; FAQ: Wie hilft mir die Wohnberatung?; Wie viel kostet die Wohnberatung?",
+          "accessed_on": "2026-10-09",
+          "published_or_updated_on": null,
+          "source_type": "official_provider"
+        }
+      ],
+      "verified_claims": [
+        {
+          "claim": "Home assessment with written recommendations on aids and building adaptations.",
+          "source_url": "https://www.drk-stuttgart.de/wohnberatung.html",
+          "source_title": "Wohnberatung",
+          "locator": "Individuelle Beratung; FAQ: Wie hilft mir die Wohnberatung?; Wie viel kostet die Wohnberatung?",
+          "claim_type": "provider_description"
+        }
+      ],
+      "cost": {
+        "status": "published",
+        "summary": "Home visit including report €150; €75 with city Bonuskarte. General advice in model home free.",
+        "currency": "EUR"
+      },
+      "eligibility": {
+        "status": "published",
+        "summary": "All Stuttgart residents; tenants, owners and landlords included."
+      },
+      "fit_by_situation": {
+        "review-problem-home-access": {
+          "fit": "Identify changes for difficult rooms, stairs or access.",
+          "basis": "editorial mapping of documented mechanism; not an outcome claim",
+          "limits_or_unknowns": "Advice does not itself install adaptations; tradespeople must assess construction."
+        }
+      },
+      "verification_notes": [
+        "Specific local offering; do not copy this price to nationwide DRK advice.",
+        "Actual building feasibility and funding unknown until assessment."
+      ],
+      "media": []
+    },
+    {
+      "id": "solution-rewe-lieferservice",
+      "name": "REWE grocery delivery",
+      "provider": "REWE Markt GmbH or selected REWE merchant",
+      "type": "existing_solution",
+      "mechanism": "Online-selected groceries delivered to the apartment door.",
+      "country": "DE",
+      "locality": "Germany; delivery postcode and slot dependent.",
+      "url": "https://www.rewe.de/service/agb/lieferservice",
+      "evidence_status": "provider_offering_verified_on_opened_official_page",
+      "verified_on": "2026-10-09",
+      "sources": [
+        {
+          "url": "https://www.rewe.de/service/agb/lieferservice",
+          "title": "AGB des REWE Lieferservice",
+          "publisher": "REWE Markt GmbH or selected REWE merchant",
+          "locator": "Sections 1.1–1.2, 2, 3.1, 3.8, 4.1–4.2",
+          "accessed_on": "2026-10-09",
+          "published_or_updated_on": "2023-10-13",
+          "source_type": "official_provider"
+        }
+      ],
+      "verified_claims": [
+        {
+          "claim": "Online-selected groceries delivered to the apartment door.",
+          "source_url": "https://www.rewe.de/service/agb/lieferservice",
+          "source_title": "AGB des REWE Lieferservice",
+          "locator": "Sections 1.1–1.2, 2, 3.1, 3.8, 4.1–4.2",
+          "claim_type": "provider_description"
+        }
+      ],
+      "cost": {
+        "status": "published_conditional",
+        "summary": "Goods plus €0–4.90 delivery; minimum basket varies by postcode; drink-crate surcharges may apply. Merchant terms may differ.",
+        "currency": "EUR"
+      },
+      "eligibility": {
+        "status": "published",
+        "summary": "Adult customer; online registration, supported address and delivery slot required."
+      },
+      "fit_by_situation": {
+        "review-problem-home-shopping": {
+          "fit": "Removes carrying groceries home.",
+          "basis": "editorial mapping of documented mechanism; not an outcome claim",
+          "limits_or_unknowns": "Online ordering and minimum basket; not accompanied shopping."
+        }
+      },
+      "verification_notes": [
+        "Displayed terms dated 13 October 2023, still served on access date.",
+        "No test order or postcode booking performed."
+      ],
+      "media": []
+    },
+    {
+      "id": "solution-lifta-treppenlift",
+      "name": "Lifta stairlifts",
+      "provider": "Lifta",
+      "type": "existing_solution",
+      "mechanism": "Installed seated lifts for indoor/outdoor stairs, including straight and curved configurations.",
+      "country": "DE",
+      "locality": "Germany; individual staircase survey.",
+      "url": "https://www.lifta.de/treppenlift",
+      "evidence_status": "provider_offering_verified_on_opened_official_page",
+      "verified_on": "2026-10-09",
+      "sources": [
+        {
+          "url": "https://www.lifta.de/treppenlift",
+          "title": "Ein Lifta Treppenlift für Ihr Zuhause",
+          "publisher": "Lifta",
+          "locator": "Was kostet ein Treppenlift?; Treppenlift-Service und Wartung",
+          "accessed_on": "2026-10-09",
+          "published_or_updated_on": null,
+          "source_type": "official_provider"
+        }
+      ],
+      "verified_claims": [
+        {
+          "claim": "Installed seated lifts for indoor/outdoor stairs, including straight and curved configurations.",
+          "source_url": "https://www.lifta.de/treppenlift",
+          "source_title": "Ein Lifta Treppenlift für Ihr Zuhause",
+          "locator": "Was kostet ein Treppenlift?; Treppenlift-Service und Wartung",
+          "claim_type": "provider_description"
+        }
+      ],
+      "cost": {
+        "status": "published_indicative",
+        "summary": "One-floor indoor straight €5,500–9,900; curved €10,000–17,000. Final quote depends on layout and options.",
+        "currency": "EUR"
+      },
+      "eligibility": {
+        "status": "assessment_required",
+        "summary": "Building and user suitability require survey; age alone is not an eligibility condition."
+      },
+      "fit_by_situation": {
+        "review-problem-home-access": {
+          "fit": "Cross stair barriers between floors.",
+          "basis": "editorial mapping of documented mechanism; not an outcome claim",
+          "limits_or_unknowns": "Does not address every indoor movement barrier; transfers and installation feasibility need assessment."
+        }
+      },
+      "verification_notes": [
+        "Provider ranges, not binding quotations or independent effectiveness evidence.",
+        "Subsidy claims not repeated without payer confirmation."
+      ],
+      "media": []
+    },
+    {
+      "id": "review-response-silbernetz",
+      "name": "Silbernetz telephone companionship",
+      "provider": "Silbernetz e.V.",
+      "type": "existing_solution",
+      "mechanism": "Free anonymous conversation line plus optional weekly matched telephone friendship.",
+      "country": "DE",
+      "locality": "Germany.",
+      "url": "https://silbernetz.org/",
+      "evidence_status": "provider_offering_verified_on_opened_official_page",
+      "verified_on": "2026-10-09",
+      "sources": [
+        {
+          "url": "https://silbernetz.org/",
+          "title": "Silbernetz",
+          "publisher": "Silbernetz e.V.",
+          "locator": "Silbernetz verbindet; Silbertelefon; Silbernetz-Freundschaft",
+          "accessed_on": "2026-10-09",
+          "published_or_updated_on": null,
+          "source_type": "official_provider"
+        }
+      ],
+      "verified_claims": [
+        {
+          "claim": "Free anonymous conversation line plus optional weekly matched telephone friendship.",
+          "source_url": "https://silbernetz.org/",
+          "source_title": "Silbernetz",
+          "locator": "Silbernetz verbindet; Silbertelefon; Silbernetz-Freundschaft",
+          "claim_type": "provider_description"
+        }
+      ],
+      "cost": {
+        "status": "published",
+        "summary": "Free via 0800 4 70 80 90."
+      },
+      "eligibility": {
+        "status": "published",
+        "summary": "People aged 60+; friendship requests must come from the older person, not third parties."
+      },
+      "fit_by_situation": {
+        "review-problem-company-talk": {
+          "fit": "A conversation on demand, or recurring contact with the same person.",
+          "basis": "editorial mapping of documented mechanism; not an outcome claim",
+          "limits_or_unknowns": "Telephone contact; hotline daily 08:00–22:00, not in-person care."
+        }
+      },
+      "verification_notes": [
+        "60+ is actual service scope, independent of illustration convention.",
+        "Matching delay and effects on loneliness not established here."
+      ],
+      "media": [],
+      "existing_record_id": "review-response-silbernetz"
+    },
+    {
+      "id": "solution-retla-telefon-engel",
+      "name": "Retla Telefon-Engel",
+      "provider": "Retla e.V.",
+      "type": "existing_solution",
+      "mechanism": "Matches older people with volunteers for recurring telephone conversations.",
+      "country": "DE",
+      "locality": "Germany.",
+      "url": "https://retla.org/telefon-engel/",
+      "evidence_status": "provider_offering_verified_on_opened_official_page",
+      "verified_on": "2026-10-09",
+      "sources": [
+        {
+          "url": "https://retla.org/telefon-engel/",
+          "title": "Telefon-Engel",
+          "publisher": "Retla e.V.",
+          "locator": "Für Senior:innen: Jetzt anrufen, anmelden und mitmachen",
+          "accessed_on": "2026-10-09",
+          "published_or_updated_on": null,
+          "source_type": "official_provider"
+        }
+      ],
+      "verified_claims": [
+        {
+          "claim": "Matches older people with volunteers for recurring telephone conversations.",
+          "source_url": "https://retla.org/telefon-engel/",
+          "source_title": "Telefon-Engel",
+          "locator": "Für Senior:innen: Jetzt anrufen, anmelden und mitmachen",
+          "claim_type": "provider_description"
+        }
+      ],
+      "cost": {
+        "status": "published",
+        "summary": "No service charge; ordinary telephone charges only."
+      },
+      "eligibility": {
+        "status": "published_partial",
+        "summary": "Older people wanting conversation; register by phone Monday–Friday 09:00–12:00."
+      },
+      "fit_by_situation": {
+        "review-problem-company-talk": {
+          "fit": "Weekly conversation with a matched volunteer.",
+          "basis": "editorial mapping of documented mechanism; not an outcome claim",
+          "limits_or_unknowns": "Matching required; no immediate-call guarantee."
+        }
+      },
+      "verification_notes": [
+        "Provider evaluation claims were not independently assessed and are excluded.",
+        "Waiting times and language matching unknown."
+      ],
+      "media": []
+    },
+    {
+      "id": "solution-radeln-ohne-alter",
+      "name": "Radeln ohne Alter outings",
+      "provider": "Radeln ohne Alter Deutschland e.V. and local groups",
+      "type": "existing_solution",
+      "mechanism": "Volunteer pilots take people on shared rickshaw outings.",
+      "country": "DE",
+      "locality": "German local groups; not universal coverage.",
+      "url": "https://radelnohnealter.de/passagier/",
+      "evidence_status": "provider_offering_verified_on_opened_official_page",
+      "verified_on": "2026-10-09",
+      "sources": [
+        {
+          "url": "https://radelnohnealter.de/passagier/",
+          "title": "Fahrgast werden",
+          "publisher": "Radeln ohne Alter Deutschland e.V. and local groups",
+          "locator": "Organisation; Kosten; intended journeys",
+          "accessed_on": "2026-10-09",
+          "published_or_updated_on": null,
+          "source_type": "official_provider"
+        }
+      ],
+      "verified_claims": [
+        {
+          "claim": "Volunteer pilots take people on shared rickshaw outings.",
+          "source_url": "https://radelnohnealter.de/passagier/",
+          "source_title": "Fahrgast werden",
+          "locator": "Organisation; Kosten; intended journeys",
+          "claim_type": "provider_description"
+        }
+      ],
+      "cost": {
+        "status": "published",
+        "summary": "Rides free."
+      },
+      "eligibility": {
+        "status": "published",
+        "summary": "People unable to pedal themselves; local rickshaw, insured operation and volunteer availability required."
+      },
+      "fit_by_situation": {
+        "review-problem-company-out": {
+          "fit": "A social outdoor trip when independent cycling is not possible.",
+          "basis": "editorial mapping of documented mechanism; not an outcome claim",
+          "limits_or_unknowns": "Leisure focus, not a routine transport service; transfer/access suitability needs checking."
+        }
+      },
+      "verification_notes": [
+        "No claim that every wheelchair user can board every rickshaw.",
+        "Weather, booking capacity and specific accessibility unknown."
+      ],
+      "media": []
+    },
+    {
+      "id": "solution-malteser-besuchsdienst",
+      "name": "Malteser visits and accompaniment",
+      "provider": "Malteser",
+      "type": "existing_solution",
+      "mechanism": "Volunteers visit at home for conversation and activities, with optional walks or telephone visits.",
+      "country": "DE",
+      "locality": "Germany; find a local service by postcode.",
+      "url": "https://www.malteser.de/besuchsdienst.html",
+      "evidence_status": "provider_offering_verified_on_opened_official_page",
+      "verified_on": "2026-10-09",
+      "sources": [
+        {
+          "url": "https://www.malteser.de/besuchsdienst.html",
+          "title": "Ehrenamtlicher Besuchsdienst für Seniorinnen und Senioren",
+          "publisher": "Malteser",
+          "locator": "Main service description and Ihr Kontakt vor Ort",
+          "accessed_on": "2026-10-09",
+          "published_or_updated_on": null,
+          "source_type": "official_provider"
+        }
+      ],
+      "verified_claims": [
+        {
+          "claim": "Volunteers visit at home for conversation and activities, with optional walks or telephone visits.",
+          "source_url": "https://www.malteser.de/besuchsdienst.html",
+          "source_title": "Ehrenamtlicher Besuchsdienst für Seniorinnen und Senioren",
+          "locator": "Main service description and Ihr Kontakt vor Ort",
+          "claim_type": "provider_description"
+        }
+      ],
+      "cost": {
+        "status": "published",
+        "summary": "Visits free."
+      },
+      "eligibility": {
+        "status": "published_partial",
+        "summary": "People seeking company and exchange; local matching needed."
+      },
+      "fit_by_situation": {
+        "review-problem-company-talk": {
+          "fit": "Recurring in-person conversation and shared activities.",
+          "basis": "editorial mapping of documented mechanism; not an outcome claim",
+          "limits_or_unknowns": "No nursing or household tasks."
+        },
+        "review-problem-company-out": {
+          "fit": "A companion for walks or visits outside.",
+          "basis": "editorial mapping of documented mechanism; not an outcome claim",
+          "limits_or_unknowns": "Transport and mobility assistance not established."
+        }
+      },
+      "verification_notes": [
+        "Explicitly not a replacement nursing/housekeeping service.",
+        "Do not map it as guaranteed caregiver respite."
+      ],
+      "media": []
+    },
+    {
+      "id": "solution-johanniter-short-stay",
+      "name": "Johanniter short-term residential care",
+      "provider": "Johanniter Seniorenhäuser GmbH",
+      "type": "existing_solution",
+      "mechanism": "Temporary care in a residential facility while family carers are away.",
+      "country": "DE",
+      "locality": "Germany; referenced listing is Berlin central contact, not proof of a particular vacant bed.",
+      "url": "https://www.johanniter.de/dienste-leistungen/angebote-fuer-privatpersonen/lokale-angebote/dienstleistung/kurzzeitpflege-3599/",
+      "evidence_status": "provider_offering_verified_on_opened_official_page",
+      "verified_on": "2026-10-09",
+      "sources": [
+        {
+          "url": "https://www.johanniter.de/dienste-leistungen/angebote-fuer-privatpersonen/lokale-angebote/dienstleistung/kurzzeitpflege-3599/",
+          "title": "Kurzzeitpflege Berlin",
+          "publisher": "Johanniter Seniorenhäuser GmbH",
+          "locator": "Unsere Leistungen; Kontakt Zentrale Geschäftsstelle",
+          "accessed_on": "2026-10-09",
+          "published_or_updated_on": null,
+          "source_type": "official_provider"
+        }
+      ],
+      "verified_claims": [
+        {
+          "claim": "Temporary care in a residential facility while family carers are away.",
+          "source_url": "https://www.johanniter.de/dienste-leistungen/angebote-fuer-privatpersonen/lokale-angebote/dienstleistung/kurzzeitpflege-3599/",
+          "source_title": "Kurzzeitpflege Berlin",
+          "locator": "Unsere Leistungen; Kontakt Zentrale Geschäftsstelle",
+          "claim_type": "provider_description"
+        }
+      ],
+      "cost": {
+        "status": "unknown",
+        "summary": "No rate on opened page; facility quote required."
+      },
+      "eligibility": {
+        "status": "assessment_required",
+        "summary": "People needing temporary care; admission suitability and available places must be confirmed."
+      },
+      "fit_by_situation": {
+        "review-problem-break-away": {
+          "fit": "Care provided elsewhere during the carer’s holiday.",
+          "basis": "editorial mapping of documented mechanism; not an outcome claim",
+          "limits_or_unknowns": "The relative stays in a facility; not a joint holiday."
+        }
+      },
+      "verification_notes": [
+        "Provider-level offering verified; dates, price and facility selection unresolved.",
+        "Do not inherit historical generic short-stay evidence as this provider’s outcomes."
+      ],
+      "media": []
+    },
+    {
+      "id": "solution-alzheimer-hamburg-rerik",
+      "name": "Supported breaks in Rerik",
+      "provider": "Alzheimer Gesellschaft Hamburg with AWOSANO gGmbH",
+      "type": "existing_solution",
+      "mechanism": "Joint holiday with scheduled group support for the person with early dementia.",
+      "country": "DE",
+      "locality": "Rerik, Mecklenburg-Vorpommern; organised from Hamburg.",
+      "url": "https://www.alzheimer-hamburg.de/freizeitkultur/betreute-urlaube",
+      "evidence_status": "provider_offering_verified_on_opened_official_page",
+      "verified_on": "2026-10-09",
+      "sources": [
+        {
+          "url": "https://www.alzheimer-hamburg.de/freizeitkultur/betreute-urlaube",
+          "title": "Betreute Urlaube für Menschen mit beginnender Demenz und Angehörige",
+          "publisher": "Alzheimer Gesellschaft Hamburg with AWOSANO gGmbH",
+          "locator": "Termine; Unterkunft; An wen richtet sich die Auszeit?",
+          "accessed_on": "2026-10-09",
+          "published_or_updated_on": null,
+          "source_type": "official_provider"
+        }
+      ],
+      "verified_claims": [
+        {
+          "claim": "Joint holiday with scheduled group support for the person with early dementia.",
+          "source_url": "https://www.alzheimer-hamburg.de/freizeitkultur/betreute-urlaube",
+          "source_title": "Betreute Urlaube für Menschen mit beginnender Demenz und Angehörige",
+          "locator": "Termine; Unterkunft; An wen richtet sich die Auszeit?",
+          "claim_type": "provider_description"
+        }
+      ],
+      "cost": {
+        "status": "unknown",
+        "summary": "No current package price on opened page."
+      },
+      "eligibility": {
+        "status": "published",
+        "summary": "Pairs only; early dementia, largely independent with small assistance needs; 8–10 pairs."
+      },
+      "fit_by_situation": {
+        "review-problem-break-away": {
+          "fit": "Travel together with daytime group support.",
+          "basis": "editorial mapping of documented mechanism; not an outcome claim",
+          "limits_or_unknowns": "Support 09:00–13:00 and 15:00–18:00; participants arrange travel."
+        }
+      },
+      "verification_notes": [
+        "4–13 October 2026 trip already underway on research date.",
+        "18–27 May and 27 September–6 October 2027 are planned, not confirmed bookable capacity.",
+        "Do not generalise to advanced dementia or independent solo travel."
+      ],
+      "media": []
+    },
+    {
+      "id": "solution-aai-supported-holidays",
+      "name": "Alzheimer Angehörigen-Initiative supported holidays",
+      "provider": "Alzheimer Angehörigen-Initiative",
+      "type": "existing_solution",
+      "mechanism": "Joint trips with activities, group supervision and support with care.",
+      "country": "DE",
+      "locality": "Destinations include Burg/Spreewald; Berlin-based organiser.",
+      "url": "https://alzheimer-organisation.de/demenz-urlaub/",
+      "evidence_status": "provider_offering_verified_on_opened_official_page",
+      "verified_on": "2026-10-09",
+      "sources": [
+        {
+          "url": "https://alzheimer-organisation.de/demenz-urlaub/",
+          "title": "Urlaub mit Demenz",
+          "publisher": "Alzheimer Angehörigen-Initiative",
+          "locator": "Angebot für Demenz-Urlaub erhalten; listed destinations",
+          "accessed_on": "2026-10-09",
+          "published_or_updated_on": null,
+          "source_type": "official_provider"
+        },
+        {
+          "url": "https://alzheimer-organisation.de/betreute-urlaube/betreuter-urlaub-in-burg-spreewald/",
+          "title": "Burg/Spreewald",
+          "publisher": "Alzheimer Angehörigen-Initiative",
+          "locator": "Leistungen: daily six-hour group support; Unterstützung bei Pflege; Kostenerstattung warning",
+          "accessed_on": "2026-10-09",
+          "published_or_updated_on": "2020-12-27",
+          "source_type": "official_provider"
+        }
+      ],
+      "verified_claims": [
+        {
+          "claim": "Joint trips with activities, group supervision and support with care.",
+          "source_url": "https://alzheimer-organisation.de/demenz-urlaub/",
+          "source_title": "Urlaub mit Demenz",
+          "locator": "Angebot für Demenz-Urlaub erhalten; listed destinations",
+          "claim_type": "provider_description"
+        },
+        {
+          "claim": "Burg description lists six daily hours of supervised group activities and care assistance.",
+          "source_url": "https://alzheimer-organisation.de/betreute-urlaube/betreuter-urlaub-in-burg-spreewald/",
+          "source_title": "Burg/Spreewald",
+          "locator": "Leistungen",
+          "claim_type": "provider_description_with_recency_caveat"
+        }
+      ],
+      "cost": {
+        "status": "quote_required",
+        "summary": "Request current quotation; historical price/reimbursement text excluded."
+      },
+      "eligibility": {
+        "status": "assessment_required",
+        "summary": "People with dementia travelling with relatives; provider asks about mobility."
+      },
+      "fit_by_situation": {
+        "review-problem-break-away": {
+          "fit": "A joint trip with a provider coordinating support.",
+          "basis": "editorial mapping of documented mechanism; not an outcome claim",
+          "limits_or_unknowns": "Current dates, care coverage and capacity must be confirmed."
+        }
+      },
+      "verification_notes": [
+        "Main offering and inquiry form verified.",
+        "Burg detail page has stale reimbursement amount and 2020 date despite later metadata; do not reuse financial guidance.",
+        "2026 directory used only for discovery; past April departure is not future availability."
+      ],
+      "media": []
+    },
+    {
+      "id": "solution-malteser-mobile-einkaufshilfe",
+      "name": "Malteser Mobile Einkaufswagen",
+      "provider": "Malteser",
+      "type": "existing_solution",
+      "mechanism": "Volunteers collect a group for accompanied shopping and conversation.",
+      "country": "DE",
+      "locality": "Germany; participating local services.",
+      "url": "https://www.malteser.de/einkaufshilfe.html",
+      "evidence_status": "provider_offering_verified_on_opened_official_page",
+      "verified_on": "2026-10-09",
+      "sources": [
+        {
+          "url": "https://www.malteser.de/einkaufshilfe.html",
+          "title": "Mobile Einkaufshilfe: Mit Begleitung in den Supermarkt",
+          "publisher": "Malteser",
+          "locator": "Main service description; Ihr Kontakt vor Ort",
+          "accessed_on": "2026-10-09",
+          "published_or_updated_on": null,
+          "source_type": "official_provider"
+        }
+      ],
+      "verified_claims": [
+        {
+          "claim": "Volunteers collect a group for accompanied shopping and conversation.",
+          "source_url": "https://www.malteser.de/einkaufshilfe.html",
+          "source_title": "Mobile Einkaufshilfe: Mit Begleitung in den Supermarkt",
+          "locator": "Main service description; Ihr Kontakt vor Ort",
+          "claim_type": "provider_description"
+        }
+      ],
+      "cost": {
+        "status": "published",
+        "summary": "Service free; personal purchases separate."
+      },
+      "eligibility": {
+        "status": "published_partial",
+        "summary": "Older people needing shopping support and wanting social contact; local service check."
+      },
+      "fit_by_situation": {
+        "review-problem-home-shopping": {
+          "fit": "Assistance going shopping rather than ordering delivery.",
+          "basis": "editorial mapping of documented mechanism; not an outcome claim",
+          "limits_or_unknowns": "Generally not a delivery service."
+        },
+        "review-problem-company-out": {
+          "fit": "Group outing combines shopping and conversation.",
+          "basis": "editorial mapping of documented mechanism; not an outcome claim",
+          "limits_or_unknowns": "Local schedule and individual mobility suitability unknown."
+        }
+      },
+      "verification_notes": [
+        "Free service does not mean free groceries.",
+        "Not asserted available in every postcode."
+      ],
+      "media": []
+    },
+    {
+      "id": "solution-alzheimer-hamburg-home-visits",
+      "name": "Alzheimer Hamburg home support visits",
+      "provider": "Alzheimer Gesellschaft Hamburg e.V.",
+      "type": "existing_solution",
+      "mechanism": "Trained volunteers spend planned time with a person with dementia at home or nearby.",
+      "country": "DE",
+      "locality": "Hamburg.",
+      "url": "https://www.alzheimer-hamburg.de/angebote/betreuung/haeuslicher-besuchsdienst",
+      "evidence_status": "provider_offering_verified_on_opened_official_page",
+      "verified_on": "2026-10-09",
+      "sources": [
+        {
+          "url": "https://www.alzheimer-hamburg.de/angebote/betreuung/haeuslicher-besuchsdienst",
+          "title": "Häuslicher Besuchsdienst",
+          "publisher": "Alzheimer Gesellschaft Hamburg e.V.",
+          "locator": "Betreuungsaktivitäten; Aufnahme; Umfang und Kosten",
+          "accessed_on": "2026-10-09",
+          "published_or_updated_on": null,
+          "source_type": "official_provider"
+        }
+      ],
+      "verified_claims": [
+        {
+          "claim": "Trained volunteers spend planned time with a person with dementia at home or nearby.",
+          "source_url": "https://www.alzheimer-hamburg.de/angebote/betreuung/haeuslicher-besuchsdienst",
+          "source_title": "Häuslicher Besuchsdienst",
+          "locator": "Betreuungsaktivitäten; Aufnahme; Umfang und Kosten",
+          "claim_type": "provider_description"
+        }
+      ],
+      "cost": {
+        "status": "published",
+        "summary": "€12–15/hour; provider describes reimbursement from care grade 1, subject to individual entitlement.",
+        "currency": "EUR"
+      },
+      "eligibility": {
+        "status": "published",
+        "summary": "People with dementia cared for by relatives at home; coordinator assessment and introduction."
+      },
+      "fit_by_situation": {
+        "review-problem-break-hours": {
+          "fit": "Usually 2–4 weekly hours to relieve a family carer.",
+          "basis": "editorial mapping of documented mechanism; not an outcome claim",
+          "limits_or_unknowns": "Timing agreed with volunteer; not continuous cover."
+        },
+        "review-problem-company-talk": {
+          "fit": "Conversation and activities with a regular visitor.",
+          "basis": "editorial mapping of documented mechanism; not an outcome claim",
+          "limits_or_unknowns": "Dementia-specific service; not general companionship for all older adults."
+        }
+      },
+      "verification_notes": [
+        "No medical/nursing coverage inferred.",
+        "Current waitlist and payer approval not checked."
+      ],
+      "media": []
+    },
+    {
+      "id": "solution-drk-leer-transport",
+      "name": "DRK Leer accessible transport",
+      "provider": "DRK Kreisverband Leer",
+      "type": "existing_solution",
+      "mechanism": "Wheelchair, carrying-chair and lying transport to medical or private destinations.",
+      "country": "DE",
+      "locality": "Landkreis Leer; longer journeys by agreement.",
+      "url": "https://www.drk-leer.de/angebote/fahrdienst.html",
+      "evidence_status": "provider_offering_verified_on_opened_official_page",
+      "verified_on": "2026-10-09",
+      "sources": [
+        {
+          "url": "https://www.drk-leer.de/angebote/fahrdienst.html",
+          "title": "DRK-Fahrdienst im Landkreis Leer",
+          "publisher": "DRK Kreisverband Leer",
+          "locator": "Leistungen; FAQ Transport & Begleitung; Buchung",
+          "accessed_on": "2026-10-09",
+          "published_or_updated_on": null,
+          "source_type": "official_provider"
+        }
+      ],
+      "verified_claims": [
+        {
+          "claim": "Wheelchair, carrying-chair and lying transport to medical or private destinations.",
+          "source_url": "https://www.drk-leer.de/angebote/fahrdienst.html",
+          "source_title": "DRK-Fahrdienst im Landkreis Leer",
+          "locator": "Leistungen; FAQ Transport & Begleitung; Buchung",
+          "claim_type": "provider_description"
+        }
+      ],
+      "cost": {
+        "status": "quote_required",
+        "summary": "No public fare on opened page; medical reimbursement conditional."
+      },
+      "eligibility": {
+        "status": "published",
+        "summary": "People with restricted mobility; transport type agreed individually."
+      },
+      "fit_by_situation": {
+        "review-problem-company-out": {
+          "fit": "Reach private visits or events with assisted transport.",
+          "basis": "editorial mapping of documented mechanism; not an outcome claim",
+          "limits_or_unknowns": "Fare, booking and destination access need checking; not companionship at destination."
+        },
+        "review-problem-home-access": {
+          "fit": "Carrying-chair assistance over steps for a booked journey.",
+          "basis": "editorial mapping of documented mechanism; not an outcome claim",
+          "limits_or_unknowns": "Journey-specific help, not daily independent access within the home."
+        }
+      },
+      "verification_notes": [
+        "Do not treat locally verified transport as nationwide service coverage.",
+        "Provider says accompaniment can travel if declared when booking."
+      ],
+      "media": []
+    },
+    {
+      "id": "solution-drk-leer-hausnotruf",
+      "name": "DRK Leer home alarm",
+      "provider": "DRK Kreisverband Leer",
+      "type": "existing_solution",
+      "mechanism": "Wearable button opens voice contact to a staffed centre, which alerts agreed contacts or emergency help.",
+      "country": "DE",
+      "locality": "Landkreis Leer.",
+      "url": "https://www.drk-leer.de/angebote/alltagshilfen/hausnotruf.html",
+      "evidence_status": "provider_offering_verified_on_opened_official_page",
+      "verified_on": "2026-10-09",
+      "sources": [
+        {
+          "url": "https://www.drk-leer.de/angebote/alltagshilfen/hausnotruf.html",
+          "title": "Hausnotruf – Hilfe auf Knopfdruck",
+          "publisher": "DRK Kreisverband Leer",
+          "locator": "Grundleistungen; Funktion; FAQ Wieviel kostet der Hausnotruf?",
+          "accessed_on": "2026-10-09",
+          "published_or_updated_on": null,
+          "source_type": "official_provider"
+        }
+      ],
+      "verified_claims": [
+        {
+          "claim": "Wearable button opens voice contact to a staffed centre, which alerts agreed contacts or emergency help.",
+          "source_url": "https://www.drk-leer.de/angebote/alltagshilfen/hausnotruf.html",
+          "source_title": "Hausnotruf – Hilfe auf Knopfdruck",
+          "locator": "Grundleistungen; Funktion; FAQ Wieviel kostet der Hausnotruf?",
+          "claim_type": "provider_description"
+        }
+      ],
+      "cost": {
+        "status": "published_with_conflict",
+        "summary": "Basic €27/month; additional service package €19/month. Reimbursement section inconsistently says €25.50; confirm before relying on it.",
+        "currency": "EUR"
+      },
+      "eligibility": {
+        "status": "assessment_required",
+        "summary": "Provider consultation and home range check; insurance eligibility separately assessed."
+      },
+      "fit_by_situation": {
+        "review-problem-home-help": {
+          "fit": "Contact help without reaching a normal phone.",
+          "basis": "editorial mapping of documented mechanism; not an outcome claim",
+          "limits_or_unknowns": "Local responder is an extra package; radio coverage must be tested in the home."
+        }
+      },
+      "verification_notes": [
+        "Conflicting insurance figure retained as uncertainty, not silently corrected.",
+        "No response-time or clinical-outcome guarantee inferred."
+      ],
+      "media": []
+    }
+  ],
+  "coverage": {
+    "review-problem-break-away": [
+      "solution-johanniter-short-stay",
+      "solution-alzheimer-hamburg-rerik",
+      "solution-aai-supported-holidays"
+    ],
+    "review-problem-break-hours": [
+      "company-careship",
+      "review-response-johanniter-day",
+      "solution-alzheimer-hamburg-home-visits"
+    ],
+    "review-problem-company-out": [
+      "company-careship",
+      "review-response-johanniter-day",
+      "solution-radeln-ohne-alter",
+      "solution-malteser-besuchsdienst",
+      "solution-malteser-mobile-einkaufshilfe",
+      "solution-drk-leer-transport"
+    ],
+    "review-problem-company-talk": [
+      "company-careship",
+      "review-response-silbernetz",
+      "solution-retla-telefon-engel",
+      "solution-malteser-besuchsdienst",
+      "solution-alzheimer-hamburg-home-visits"
+    ],
+    "review-problem-home-access": [
+      "solution-drk-stuttgart-wohnberatung",
+      "solution-lifta-treppenlift",
+      "solution-drk-leer-transport"
+    ],
+    "review-problem-home-help": [
+      "solution-malteser-hausnotruf",
+      "solution-drk-leer-hausnotruf"
+    ],
+    "review-problem-home-shopping": [
+      "company-careship",
+      "solution-rewe-lieferservice",
+      "solution-malteser-mobile-einkaufshilfe"
+    ]
+  },
+  "excluded_or_deferred": [
+    {
+      "name": "Nationwide DRK shopping / visits / alarm summaries",
+      "reason": "Official national pages repeatedly timed out in open; snippets alone not sufficient for this batch. Previously sourced records are not disproven. Local DRK offerings included where page opened."
+    },
+    {
+      "name": "Generic home adaptations / relative steps in",
+      "reason": "Not named existing offerings; preserve as mechanism or supporting evidence, not competing solution-map entries."
+    },
+    {
+      "name": "Historical supported-holiday account",
+      "reason": "Keep lived experience evidence; do not treat past trip account as current bookable supply."
+    }
+  ]
+}

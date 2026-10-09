@@ -1,0 +1,1538 @@
+{
+  "snapshot_date": "2026-10-09",
+  "status": "Historical prototype snapshot from earlier on 2026-10-09, superseded by the whole-atlas needs → situations → existing-solutions navigation contract. Candidate needs and fit hypotheses remain unvalidated.",
+  "hierarchy": [
+    {
+      "view_id": "study-need-stay-home",
+      "record_id": "study-aspiration-stay-home",
+      "level": "need",
+      "kind": "aspiration",
+      "title": "I don’t want to leave my home",
+      "description": "Keep familiar surroundings while getting the help everyday life requires.",
+      "illustration": "assets/illustrations/adult.png",
+      "primary_perspectives": [
+        "adult"
+      ],
+      "affected_perspectives": [
+        "adult",
+        "family",
+        "worker",
+        "provider"
+      ],
+      "perspective_overrides": {},
+      "need_brief": {
+        "people": "Older adult; family where relevant",
+        "struggle": "I don’t want to leave my home",
+        "today": "See concrete situations and alternative responses below.",
+        "gap": "Underserved segments are not yet established.",
+        "next": "Compare what the person wants with what they tried and experienced."
+      },
+      "children": [
+        {
+          "record_id": "review-problem-home-shopping",
+          "view_id": "study-need-stay-home/review-problem-home-shopping",
+          "kind": "problem",
+          "level": "problem",
+          "title": "I can’t manage the shopping on my own",
+          "description": "Older adult with difficulty shopping or carrying purchases; wants to remain at home.",
+          "epistemic_status": "candidate",
+          "evidence_ids": [],
+          "evidence_note": "Editorial need statement, not a quotation. Needs direct problem research; service descriptions below establish offerings only.",
+          "responses": [
+            {
+              "record_id": "review-response-drk-shopping",
+              "fit_and_limits": "Delivery or accompaniment; each offers a different degree of participation.",
+              "evidence_ids": [
+                "shopping-offer"
+              ]
+            },
+            {
+              "record_id": "company-careship",
+              "fit_and_limits": "Everyday help; tasks, cost and local availability require checking.",
+              "evidence_ids": [
+                "companionship"
+              ]
+            },
+            {
+              "record_id": "wc-object-add32eb018abad005b10780a",
+              "fit_and_limits": "Shopping accompaniment may be included; local arrangements vary.",
+              "evidence_ids": [
+                "visit-offer"
+              ]
+            }
+          ],
+          "remaining_question": "Does the person want groceries delivered, help choosing them, or the outing and company itself?",
+          "children": [],
+          "adjacent_needs": [
+            {
+              "record_id": "review-problem-company-out",
+              "reason": "Shopping may also be a valued outing; delivery could meet the practical need while losing that experience.",
+              "epistemic_status": "hypothesis"
+            }
+          ]
+        },
+        {
+          "record_id": "review-problem-home-access",
+          "view_id": "study-need-stay-home/review-problem-home-access",
+          "kind": "problem",
+          "level": "problem",
+          "title": "I struggle to move around my own home",
+          "description": "Older adult whose mobility no longer fits the home.",
+          "epistemic_status": "candidate",
+          "evidence_ids": [
+            "housing-barrier"
+          ],
+          "evidence_note": "Editorial need statement, not a quotation. Evidence supports broader context, not this exact segment.",
+          "responses": [
+            {
+              "record_id": "review-response-drk-housing",
+              "fit_and_limits": "Advice and possible funding routes; not the building work itself.",
+              "evidence_ids": [
+                "housing-offer"
+              ]
+            },
+            {
+              "record_id": "review-response-home-adaptations",
+              "fit_and_limits": "Physical changes; suitability, cost and permission are unresolved locally.",
+              "evidence_ids": [
+                "adaptation-offer"
+              ]
+            }
+          ],
+          "remaining_question": "What prevents a suitable adaptation for this household: money, permission, property constraints or arranging the work?",
+          "children": [],
+          "adjacent_needs": [
+            {
+              "record_id": "review-problem-company-out",
+              "reason": "The route out of the home may block participation before transport begins.",
+              "epistemic_status": "hypothesis"
+            }
+          ]
+        },
+        {
+          "record_id": "review-problem-home-help",
+          "view_id": "study-need-stay-home/review-problem-home-help",
+          "kind": "problem",
+          "level": "problem",
+          "title": "I need to reach help when I’m alone",
+          "description": "Older adult who wants to stay home but worries about obtaining assistance.",
+          "epistemic_status": "candidate",
+          "evidence_ids": [],
+          "evidence_note": "Editorial need statement, not a quotation. Needs direct problem research; service descriptions below establish offerings only.",
+          "responses": [
+            {
+              "record_id": "review-response-drk-alarm",
+              "fit_and_limits": "Alert/response system; not continuous in-person care or fall prevention.",
+              "evidence_ids": [
+                "alarm-offer"
+              ]
+            }
+          ],
+          "remaining_question": "Can the person summon help when needed, and who can actually respond?",
+          "children": [],
+          "adjacent_needs": [
+            {
+              "record_id": "review-problem-break-hours",
+              "reason": "Ability to summon help may matter when alone; an alarm cannot substitute for required supervision.",
+              "epistemic_status": "hypothesis"
+            }
+          ]
+        }
+      ],
+      "review_scope": {
+        "people": "Older adults with the stated situation, not all older people.",
+        "geography": "Germany",
+        "evidence_boundary": "Exploratory slice with candidate needs, source-backed offerings and selective population context."
+      }
+    },
+    {
+      "view_id": "study-need-company",
+      "record_id": "study-aspiration-company",
+      "level": "need",
+      "kind": "aspiration",
+      "title": "I miss having someone to talk to",
+      "description": "Find companionship that feels wanted and meaningful.",
+      "illustration": "assets/illustrations/study/family-call.png",
+      "primary_perspectives": [
+        "adult"
+      ],
+      "affected_perspectives": [
+        "adult",
+        "family",
+        "worker"
+      ],
+      "perspective_overrides": {},
+      "need_brief": {
+        "people": "Older adult; family where relevant",
+        "struggle": "I miss having someone to talk to",
+        "today": "See concrete situations and alternative responses below.",
+        "gap": "Underserved segments are not yet established.",
+        "next": "Compare what the person wants with what they tried and experienced."
+      },
+      "children": [
+        {
+          "record_id": "review-problem-company-talk",
+          "view_id": "study-need-company/review-problem-company-talk",
+          "kind": "problem",
+          "level": "problem",
+          "title": "I want someone to talk to in my everyday life",
+          "description": "Older adult who wants more or different everyday contact.",
+          "epistemic_status": "candidate",
+          "evidence_ids": [],
+          "evidence_note": "Editorial need statement, not a quotation. Needs direct problem research; service descriptions below establish offerings only.",
+          "responses": [
+            {
+              "record_id": "review-response-silbernetz",
+              "fit_and_limits": "Telephone conversation; friendship format differs from an anonymous call.",
+              "evidence_ids": [
+                "phone-offer"
+              ]
+            },
+            {
+              "record_id": "wc-object-add32eb018abad005b10780a",
+              "fit_and_limits": "In-person volunteer company; frequency and matching are local questions.",
+              "evidence_ids": [
+                "visit-offer"
+              ]
+            },
+            {
+              "record_id": "company-careship",
+              "fit_and_limits": "Paid companionship; relationship quality and affordability need investigation.",
+              "evidence_ids": [
+                "companionship"
+              ]
+            }
+          ],
+          "remaining_question": "Is the unmet need immediate conversation, continuity, intimacy, reciprocity or belonging?",
+          "children": [],
+          "adjacent_needs": [
+            {
+              "record_id": "review-problem-break-hours",
+              "reason": "A visit may offer company and give a caregiver time off; companionship does not establish safe replacement care.",
+              "epistemic_status": "hypothesis"
+            }
+          ]
+        },
+        {
+          "record_id": "review-problem-company-out",
+          "view_id": "study-need-company/review-problem-company-out",
+          "kind": "problem",
+          "level": "problem",
+          "title": "I want to spend time with people, but getting out is difficult",
+          "description": "Older adult with a desired social activity and barriers to reaching it.",
+          "epistemic_status": "candidate",
+          "evidence_ids": [
+            "housing-barrier"
+          ],
+          "evidence_note": "Editorial need statement, not a quotation. Evidence supports broader context, not this exact segment.",
+          "responses": [
+            {
+              "record_id": "review-response-drk-transport",
+              "fit_and_limits": "Addresses travel; does not create a welcome or relationships at the destination.",
+              "evidence_ids": [
+                "transport-offer"
+              ]
+            },
+            {
+              "record_id": "wc-object-add32eb018abad005b10780a",
+              "fit_and_limits": "Accompaniment may help with an outing.",
+              "evidence_ids": [
+                "visit-offer"
+              ]
+            },
+            {
+              "record_id": "review-response-johanniter-day",
+              "fit_and_limits": "A group setting with care and transport; relevant only where that setting fits the person.",
+              "evidence_ids": [
+                "day-offer"
+              ]
+            }
+          ],
+          "remaining_question": "Does the blockage lie in leaving home, transport, support at the destination or finding people they want to see?",
+          "children": [],
+          "adjacent_needs": [
+            {
+              "record_id": "review-problem-break-hours",
+              "reason": "Day care may address both needs when the recipient wants that setting and the service fits.",
+              "epistemic_status": "hypothesis"
+            },
+            {
+              "record_id": "review-problem-home-shopping",
+              "reason": "Shopping may also be a valued outing; delivery could meet the practical need while losing that experience.",
+              "epistemic_status": "hypothesis"
+            },
+            {
+              "record_id": "review-problem-home-access",
+              "reason": "The route out of the home may block participation before transport begins.",
+              "epistemic_status": "hypothesis"
+            }
+          ]
+        }
+      ],
+      "review_scope": {
+        "people": "Older adults with the stated situation, not all older people.",
+        "geography": "Germany",
+        "evidence_boundary": "Exploratory slice with candidate needs, source-backed offerings and selective population context."
+      }
+    },
+    {
+      "view_id": "wc-object-a11e36230c1d42a53fbca57d",
+      "record_id": "study-aspiration-wc-object-a11e36230c1d42a53fbca57d",
+      "level": "need",
+      "kind": "aspiration",
+      "title": "I need a break from caring",
+      "description": "Take time for myself while my relative receives support they are comfortable with.",
+      "illustration": "assets/illustrations/relative.png",
+      "primary_perspectives": [
+        "family"
+      ],
+      "affected_perspectives": [
+        "family",
+        "adult",
+        "provider"
+      ],
+      "perspective_overrides": {},
+      "need_brief": {
+        "people": "Family caregiver and older relative",
+        "struggle": "Take time for myself while my relative receives support they are comfortable with.",
+        "today": "Public advice, funded replacement care, commercial help, day care and informal family support.",
+        "gap": "Reported barriers exist; named services have not been shown to fail for a defined segment.",
+        "next": "Compare real attempts to arrange a break, including successful ones."
+      },
+      "current_workarounds": "One published account describes limited cover from a daughter; other household adaptations remain unresearched.",
+      "children": [
+        {
+          "record_id": "review-problem-break-hours",
+          "view_id": "wc-object-a11e36230c1d42a53fbca57d/review-problem-break-hours",
+          "kind": "problem",
+          "level": "problem",
+          "title": "I need a few predictable hours to myself",
+          "description": "Family caregiver seeking a recurring daytime break.",
+          "epistemic_status": "candidate",
+          "evidence_ids": [
+            "timing",
+            "case-daycare"
+          ],
+          "evidence_note": "Editorial need statement, not a quotation. Evidence supports broader context, not this exact segment.",
+          "responses": [
+            {
+              "record_id": "review-response-johanniter-day",
+              "fit_and_limits": "Daytime coverage; travel, opening times, suitability and acceptance matter.",
+              "evidence_ids": [
+                "day-offer"
+              ]
+            },
+            {
+              "record_id": "company-careship",
+              "fit_and_limits": "Everyday support; care tasks and local availability must fit.",
+              "evidence_ids": [
+                "companionship"
+              ]
+            },
+            {
+              "record_id": "review-response-volunteer-help",
+              "fit_and_limits": "Social supervision only; nursing and housework excluded.",
+              "evidence_ids": [
+                "volunteer-offer"
+              ]
+            },
+            {
+              "record_id": "review-workaround-daughter",
+              "fit_and_limits": "Actual family backup in one account; availability was limited.",
+              "evidence_ids": [
+                "case-backup"
+              ]
+            }
+          ],
+          "remaining_question": "Who still cannot take a useful break despite these options, and which requirement prevents it?",
+          "children": [],
+          "adjacent_needs": [
+            {
+              "record_id": "review-problem-company-talk",
+              "reason": "A visit may offer company and give a caregiver time off; companionship does not establish safe replacement care.",
+              "epistemic_status": "hypothesis"
+            },
+            {
+              "record_id": "review-problem-company-out",
+              "reason": "Day care may address both needs when the recipient wants that setting and the service fits.",
+              "epistemic_status": "hypothesis"
+            },
+            {
+              "record_id": "review-problem-home-help",
+              "reason": "Ability to summon help may matter when alone; an alarm cannot substitute for required supervision.",
+              "epistemic_status": "hypothesis"
+            }
+          ]
+        },
+        {
+          "record_id": "review-problem-break-away",
+          "view_id": "wc-object-a11e36230c1d42a53fbca57d/review-problem-break-away",
+          "kind": "problem",
+          "level": "problem",
+          "title": "I need a holiday without carrying all the care myself",
+          "description": "Family caregiver seeking several days of recovery, with or without the relative.",
+          "epistemic_status": "candidate",
+          "evidence_ids": [
+            "case-acceptance"
+          ],
+          "evidence_note": "Editorial need statement, not a quotation. Evidence supports broader context, not this exact segment.",
+          "responses": [
+            {
+              "record_id": "review-response-supported-holiday",
+              "fit_and_limits": "One positive historical account; caregiver and recipient travelled together.",
+              "evidence_ids": [
+                "case-acceptance"
+              ]
+            },
+            {
+              "record_id": "review-response-short-stay",
+              "fit_and_limits": "Recipient temporarily stays elsewhere; fit and acceptance need checking.",
+              "evidence_ids": [
+                "short-stay-offer"
+              ]
+            },
+            {
+              "record_id": "review-workaround-daughter",
+              "fit_and_limits": "One account of limited family cover, not guaranteed sustained capacity.",
+              "evidence_ids": [
+                "case-backup"
+              ]
+            }
+          ],
+          "remaining_question": "When does time away provide recovery, and when does responsibility simply move with the caregiver?",
+          "children": []
+        }
+      ],
+      "review_scope": {
+        "people": "Unpaid family caregivers supporting an older adult at home in Germany.",
+        "situation": "Trying to arrange a planned break, from a few hours to time away.",
+        "evidence_boundary": "Concrete situations are candidates; published account and surveys support context. Six earlier access hurdles retained as supporting detail.",
+        "excluded_from_this_branch": "Emergency illness backup is a related situation; hospital discharge and permanent care-home placement have different triggers."
+      },
+      "related_context": [
+        {
+          "record_id": "wc-object-2edf029216b82ab4ca730909",
+          "role": "Emergency backup: related but different trigger."
+        },
+        {
+          "record_id": "wc-object-fd34e2b482a969fa24d19a46",
+          "role": "Provider capacity: possible mechanism; historical evidence requires local updating."
+        }
+      ],
+      "access_conditions": [
+        {
+          "view_id": "wc-object-a11e36230c1d42a53fbca57d/review-problem-care-break-find",
+          "record_id": "review-problem-care-break-find",
+          "level": "problem",
+          "kind": "problem",
+          "title": "I need to find help that fits our situation",
+          "description": "Suitable support is hard to identify.",
+          "desired_outcome": "Know which options fit our care needs and circumstances.",
+          "evidence_ids": [
+            "options"
+          ],
+          "responses": [
+            {
+              "record_id": "wc-object-2ca5b9a5d800c0ecec85adc1",
+              "contribution": "Advice on local support and care arrangements.",
+              "evidence_ids": [
+                "counselling"
+              ],
+              "assessment": "Service or policy description; effect on this need untested"
+            },
+            {
+              "record_id": "review-response-alzheimer-phone",
+              "contribution": "Dementia-specific advice.",
+              "evidence_ids": [
+                "phone"
+              ],
+              "assessment": "Service or policy description; effect on this need untested"
+            }
+          ],
+          "remaining_question": "Which households still cannot identify a suitable option after receiving advice?",
+          "check_next": "Observe whether advice leads to a suitable contact and usable offer.",
+          "children": []
+        },
+        {
+          "view_id": "wc-object-a11e36230c1d42a53fbca57d/review-problem-care-break-accept",
+          "record_id": "review-problem-care-break-accept",
+          "level": "problem",
+          "kind": "problem",
+          "title": "I need help my relative feels comfortable accepting",
+          "description": "Outside help may be declined.",
+          "desired_outcome": "Agree on support the recipient is comfortable using.",
+          "evidence_ids": [
+            "acceptance"
+          ],
+          "responses": [
+            {
+              "record_id": "review-response-supported-holiday",
+              "contribution": "One account describes a comfortable relationship with a helper.",
+              "evidence_ids": [
+                "case-acceptance"
+              ],
+              "assessment": "Published individual experience"
+            },
+            {
+              "record_id": "company-careship",
+              "contribution": "Advertises familiar helpers.",
+              "evidence_ids": [
+                "companionship"
+              ],
+              "assessment": "Service or policy description; effect on this need untested"
+            }
+          ],
+          "remaining_question": "What makes support acceptable to the recipient, and when do introductions fail?",
+          "check_next": "Hear from the recipient as well as the caregiver; compare accepted and declined arrangements.",
+          "children": []
+        },
+        {
+          "view_id": "wc-object-a11e36230c1d42a53fbca57d/review-problem-care-break-time",
+          "record_id": "review-problem-care-break-time",
+          "level": "problem",
+          "kind": "problem",
+          "title": "I need someone available when I need a break",
+          "description": "Available support may not match the required time or place.",
+          "desired_outcome": "Take a break of the needed length at a workable time.",
+          "evidence_ids": [
+            "timing"
+          ],
+          "responses": [
+            {
+              "record_id": "company-careship",
+              "contribution": "Hourly everyday support, subject to local availability.",
+              "evidence_ids": [
+                "companionship"
+              ],
+              "assessment": "Service or policy description; effect on this need untested"
+            },
+            {
+              "record_id": "review-response-weekly-daycare",
+              "contribution": "Regular time away in one reported case.",
+              "evidence_ids": [
+                "case-daycare"
+              ],
+              "assessment": "Published individual experience"
+            },
+            {
+              "record_id": "review-workaround-daughter",
+              "contribution": "Family member covers some time.",
+              "evidence_ids": [
+                "case-backup"
+              ],
+              "assessment": "Published individual experience"
+            }
+          ],
+          "remaining_question": "Which requested times and care requirements remain uncovered locally?",
+          "check_next": "Compare actual requests with bookable support, travel time and handover requirements.",
+          "children": []
+        },
+        {
+          "view_id": "wc-object-a11e36230c1d42a53fbca57d/review-problem-care-break-afford",
+          "record_id": "review-problem-care-break-afford",
+          "level": "problem",
+          "kind": "problem",
+          "title": "I need to afford enough help for a proper break",
+          "description": "Cost may limit how much relief a household can use.",
+          "desired_outcome": "Obtain a useful break within the household’s means.",
+          "evidence_ids": [
+            "cost"
+          ],
+          "responses": [
+            {
+              "record_id": "review-response-respite-funding",
+              "contribution": "Funding route for replacement and short-term care.",
+              "evidence_ids": [
+                "funding"
+              ],
+              "assessment": "Service or policy description; effect on this need untested"
+            },
+            {
+              "record_id": "wc-object-2ca5b9a5d800c0ecec85adc1",
+              "contribution": "Advice on financial support.",
+              "evidence_ids": [
+                "counselling"
+              ],
+              "assessment": "Service or policy description; effect on this need untested"
+            }
+          ],
+          "remaining_question": "What remains unaffordable after applicable support for a specific household?",
+          "check_next": "Reconstruct total costs, funding actually received and forgone breaks; do not assume eligibility.",
+          "children": []
+        },
+        {
+          "view_id": "wc-object-a11e36230c1d42a53fbca57d/review-problem-care-break-arrange",
+          "record_id": "review-problem-care-break-arrange",
+          "level": "problem",
+          "kind": "problem",
+          "title": "I need arranging the break to be manageable",
+          "description": "Arranging support can require substantial effort.",
+          "desired_outcome": "Complete coordination and paperwork without exhausting the time gained.",
+          "evidence_ids": [
+            "effort"
+          ],
+          "responses": [
+            {
+              "record_id": "wc-object-2ca5b9a5d800c0ecec85adc1",
+              "contribution": "Help with arrangements and applications.",
+              "evidence_ids": [
+                "counselling"
+              ],
+              "assessment": "Service or policy description; effect on this need untested"
+            },
+            {
+              "record_id": "review-response-supported-holiday",
+              "contribution": "Organiser supplied information and prepared letters in the account.",
+              "evidence_ids": [
+                "case-admin"
+              ],
+              "assessment": "Published individual experience"
+            }
+          ],
+          "remaining_question": "Which steps remain burdensome despite available assistance?",
+          "check_next": "Compare household effort and completion across successful and abandoned attempts.",
+          "children": []
+        },
+        {
+          "view_id": "wc-object-a11e36230c1d42a53fbca57d/review-problem-care-break-permission",
+          "record_id": "review-problem-care-break-permission",
+          "level": "problem",
+          "kind": "problem",
+          "title": "I need to take time for myself without feeling guilty",
+          "description": "Guilt can accompany taking a break.",
+          "desired_outcome": "Feel able to take personal time while respecting the recipient’s needs.",
+          "evidence_ids": [
+            "guilt"
+          ],
+          "responses": [
+            {
+              "record_id": "review-response-alzheimer-phone",
+              "contribution": "An existing route to discuss dementia-related concerns; effect on guilt unknown.",
+              "evidence_ids": [
+                "phone"
+              ],
+              "assessment": "Service or policy description; effect on this need untested"
+            }
+          ],
+          "remaining_question": "Does guilt prevent breaks once suitable cover exists, and what helps?",
+          "check_next": "Separate self-imposed expectations, family pressure and legitimate concerns about care quality.",
+          "children": []
+        }
+      ]
+    }
+  ],
+  "records": {
+    "study-aspiration-stay-home": {
+      "kind": "aspiration",
+      "title": "Keep familiar surroundings while getting the help everyday life requires.",
+      "statement": "Keep familiar surroundings while getting the help everyday life requires.",
+      "epistemic_status": "candidate",
+      "scope": {
+        "geography": "Germany unless the linked source states otherwise",
+        "limitations": "Editorial expression of a valued outcome, not a participant quotation or a universal preference."
+      },
+      "confidence": {
+        "basis": "single_source",
+        "rationale": "Editorial expression of a valued outcome, not a participant quotation or a universal preference."
+      },
+      "sources": [
+        {
+          "title": "Housing accessibility among people aged 65+",
+          "url": "https://www.dza.de/themen/wohnen-nachbarschaft/detailansicht/wie-altersgerecht-ist-das-wohnen-fuer-menschen-ab-65",
+          "publisher": "DZA",
+          "published_date": "2026-09-30",
+          "stance": "context",
+          "limitations": "Population context does not establish an individual wish to stay or the support a particular household needs."
+        },
+        {
+          "title": "Finding a suitable care home",
+          "url": "https://www.verbraucherzentrale.de/wissen/gesundheit-pflege/pflege-im-heim/so-finden-sie-das-passende-pflegeheim-12023",
+          "publisher": "Verbraucherzentrale",
+          "published_date": "2025-11-03",
+          "stance": "context",
+          "limitations": "Consumer guidance, not a prevalence study or a family interview."
+        }
+      ]
+    },
+    "study-aspiration-company": {
+      "kind": "aspiration",
+      "title": "Find companionship that feels wanted and meaningful.",
+      "statement": "Find companionship that feels wanted and meaningful.",
+      "epistemic_status": "candidate",
+      "scope": {
+        "geography": "Germany unless the linked source states otherwise",
+        "limitations": "Editorial expression of a valued outcome, not a participant quotation or a universal preference."
+      },
+      "confidence": {
+        "basis": "single_source",
+        "rationale": "Editorial expression of a valued outcome, not a participant quotation or a universal preference."
+      },
+      "sources": [
+        {
+          "title": "Loneliness in the second half of life",
+          "url": "https://www.dza.de/themen/soziale-beziehungen/detailansicht/alterssurvey-zeigt-menschen-in-der-lebensmitte-staerker-einsam-als-im-rentenalter",
+          "publisher": "DZA",
+          "published_date": "2025-07-10",
+          "stance": "context",
+          "limitations": "Survey findings do not equate living alone, older age and loneliness, or establish causes for an individual."
+        }
+      ]
+    },
+    "wc-object-add32eb018abad005b10780a": {
+      "kind": "institutional_response",
+      "title": "DRK volunteer visiting service",
+      "statement": "The DRK describes a volunteer visiting service for older, often single-living people at home or in senior facilities, offering company, conversation, help with official forms, games, accompaniment and shopping help. The provider says usually no costs arise. Recipient intake, eligibility and availability in a particular locality are not established by the captured passages.",
+      "epistemic_status": "candidate",
+      "scope": {
+        "time": "undated webpage",
+        "method": "official provider website",
+        "people": "older, often single-living people",
+        "geography": "Germany, via local DRK Kreisverbände",
+        "limitations": "Undated provider description; recipient intake, eligibility, actual local capacity and visit frequency unknown; no independent effectiveness claim."
+      },
+      "confidence": {
+        "basis": "single_source",
+        "rationale": "Official provider description supports stated activities and audience only; capacity, access and outcomes remain unknown."
+      },
+      "sources": [
+        {
+          "title": "Official DRK Besuchsdienst service description",
+          "url": "https://www.drk.de/hilfe-in-deutschland/senioren/altersgerechtes-wohnen/besuchsdienst/",
+          "publisher": "Deutsches Rotes Kreuz e.V.",
+          "published_date": null,
+          "stance": "supports",
+          "limitations": "undated provider page; local availability and capacity unknown; no effectiveness claim"
+        }
+      ]
+    },
+    "study-aspiration-wc-object-a11e36230c1d42a53fbca57d": {
+      "kind": "aspiration",
+      "title": "Step away knowing the person you care for is in good hands.",
+      "statement": "Step away knowing the person you care for is in good hands.",
+      "epistemic_status": "candidate",
+      "scope": {
+        "geography": "Germany unless the linked source states otherwise",
+        "limitations": "Editorial expression of a valued outcome, not a participant quotation or a universal preference."
+      },
+      "confidence": {
+        "basis": "single_source",
+        "rationale": "Editorial expression of a valued outcome, not a participant quotation or a universal preference."
+      },
+      "sources": [
+        {
+          "title": "Umfrage zur Situation pflegender An- und Zugehöriger",
+          "url": "https://www.diakonie.de/informieren/infothek/2025/oktober/umfrage-pflegende-angehoerige",
+          "publisher": "Diakonie Deutschland",
+          "published_date": null,
+          "stance": "supports",
+          "limitations": "Counselor assessments, not direct caregiver self-reports or caregiver prevalence. Mixed individual and service-team return units; introduction says 560 versus 565 in methods. Financial barrier percentage conflicts within the page: 68.37% in summary versus 84.10% in detailed section. Uptake section mixes language about mentioning and using support; original questionnaire unavailable."
+        },
+        {
+          "title": "Wie geht es pflegenden Angehörigen? — pflege.de survey summary",
+          "url": "https://www.pflege.de/studien/studie-2025-wie-geht-es-pflegenden-angehoerigen/",
+          "publisher": "pflege.de",
+          "published_date": null,
+          "stance": "supports",
+          "limitations": "Aggregate self-reports from surveyed respondents; sample size, recruitment method and representativeness are not established. No attributed participant quotations in captured body."
+        }
+      ]
+    },
+    "company-careship": {
+      "kind": "solution",
+      "title": "Careship hourly support",
+      "statement": "Provider offers hourly companionship and everyday support.",
+      "epistemic_status": "documented",
+      "scope": {
+        "geography": "Germany; local or historical examples as specified by evidence",
+        "limitations": "Provider claim; no independent outcome evidence or local availability verification."
+      },
+      "evidence_ids": [
+        "companionship"
+      ],
+      "sources": [
+        {
+          "title": "Careship Seniorenbetreuung",
+          "url": "https://www.careship.de/seniorenbetreuung",
+          "publisher": "Careship",
+          "published_date": null,
+          "evidence_type": "provider_claim",
+          "scope": "Hourly everyday support; local availability must be checked.",
+          "limitations": "Marketing claims, not independent outcomes. Treatment nursing is excluded; suitability and service model require checking.",
+          "accessed_on": "2026-10-09"
+        }
+      ],
+      "catalogue_id": "company-careship"
+    },
+    "review-response-supported-holiday": {
+      "kind": "institutional_response",
+      "title": "Supported Alzheimer Society holiday",
+      "statement": "Supported trip described in a published caregiver account.",
+      "epistemic_status": "documented",
+      "scope": {
+        "geography": "Germany; local or historical examples as specified by evidence",
+        "limitations": "Historical individual experience; not current availability."
+      },
+      "evidence_ids": [
+        "case-acceptance"
+      ],
+      "sources": [
+        {
+          "title": "Interview with Waltraud Dambrowski: supported Alzheimer Society holiday",
+          "url": "https://www.gesund-aktiv-aelter-werden.de/fachinformationen/projektdatenbank/interviews-mit-projektteilnehmenden/betreute-urlaube-der-alzheimer-gesellschaft/",
+          "publisher": "gesund-aktiv-aelter-werden.de",
+          "published_date": "2020-04",
+          "evidence_type": "published_participant_account",
+          "scope": "One caregiver supporting her mother with dementia; interview created April 2020, holiday date unspecified.",
+          "limitations": "Selected positive account, self-reported. Recipient’s experience is indirect. No current service availability or benefit guidance.",
+          "accessed_on": "2026-10-09"
+        }
+      ]
+    },
+    "review-workaround-daughter": {
+      "kind": "lived_workaround",
+      "title": "Her daughter steps in",
+      "statement": "Family backup described by the caregiver.",
+      "epistemic_status": "documented",
+      "scope": {
+        "geography": "Germany; local or historical examples as specified by evidence",
+        "limitations": "One historical household account, not a universal workaround."
+      },
+      "evidence_ids": [
+        "case-backup"
+      ],
+      "sources": [
+        {
+          "title": "Interview with Waltraud Dambrowski: supported Alzheimer Society holiday",
+          "url": "https://www.gesund-aktiv-aelter-werden.de/fachinformationen/projektdatenbank/interviews-mit-projektteilnehmenden/betreute-urlaube-der-alzheimer-gesellschaft/",
+          "publisher": "gesund-aktiv-aelter-werden.de",
+          "published_date": "2020-04",
+          "evidence_type": "published_participant_account",
+          "scope": "One caregiver supporting her mother with dementia; interview created April 2020, holiday date unspecified.",
+          "limitations": "Selected positive account, self-reported. Recipient’s experience is indirect. No current service availability or benefit guidance.",
+          "accessed_on": "2026-10-09"
+        }
+      ]
+    },
+    "review-response-johanniter-day": {
+      "kind": "institutional_response",
+      "title": "Johanniter day care",
+      "statement": "Daytime care and group activities; transport described.",
+      "epistemic_status": "documented",
+      "evidence_ids": [
+        "day-offer"
+      ],
+      "sources": [
+        {
+          "title": "Johanniter Tagespflege",
+          "url": "https://www.johanniter.de/dienste-leistungen/pflege-und-begleitung/tagespflege/",
+          "publisher": "Johanniter",
+          "evidence_type": "provider_description",
+          "accessed_on": "2026-10-09",
+          "limitations": "Daytime care, activities and transport; locality-specific. Funding figures on the page were not used."
+        }
+      ],
+      "scope": {
+        "geography": "Germany; local examples subject to availability",
+        "limitations": "Editorial review mapping. Provider offerings are not evidence of unmet demand or effectiveness."
+      }
+    },
+    "review-response-silbernetz": {
+      "kind": "institutional_response",
+      "title": "Silbernetz",
+      "statement": "Hotline and regular telephone friendship.",
+      "epistemic_status": "documented",
+      "evidence_ids": [
+        "phone-offer",
+        "phone-evaluation"
+      ],
+      "sources": [
+        {
+          "title": "Silbernetz: Über uns",
+          "url": "https://silbernetz.org/ueber-uns/",
+          "publisher": "Silbernetz",
+          "evidence_type": "provider_description",
+          "accessed_on": "2026-10-09",
+          "limitations": "Telephone contact for people 60+; hotline and regular telephone friendship are different formats."
+        },
+        {
+          "title": "ReWiSil evaluation",
+          "url": "https://www.dza.de/forschung/aktuelle-projekte/evaluationsprojekt-reichweite-und-wirkung-der-silbernetz-hotline-rewisil",
+          "publisher": "DZA",
+          "evidence_type": "research_project",
+          "accessed_on": "2026-10-09",
+          "limitations": "Evaluation results available June 2026; project page inspected, full results and methods not appraised here. Hotline only, not all Silbernetz services."
+        }
+      ],
+      "scope": {
+        "geography": "Germany; local examples subject to availability",
+        "limitations": "Editorial review mapping. Provider offerings are not evidence of unmet demand or effectiveness."
+      }
+    },
+    "review-response-drk-shopping": {
+      "kind": "institutional_response",
+      "title": "DRK shopping service",
+      "statement": "Accompanied shopping or delivery.",
+      "epistemic_status": "documented",
+      "evidence_ids": [
+        "shopping-offer"
+      ],
+      "sources": [
+        {
+          "title": "DRK Einkaufsservice",
+          "url": "https://www.drk.de/hilfe-in-deutschland/senioren/altersgerechtes-wohnen/einkaufsservice/",
+          "publisher": "DRK",
+          "evidence_type": "provider_description",
+          "accessed_on": "2026-10-09",
+          "limitations": "Shopping accompaniment or delivery; local organisation and prices vary."
+        }
+      ],
+      "scope": {
+        "geography": "Germany; local examples subject to availability",
+        "limitations": "Editorial review mapping. Provider offerings are not evidence of unmet demand or effectiveness."
+      }
+    },
+    "review-response-drk-housing": {
+      "kind": "institutional_response",
+      "title": "DRK housing advice",
+      "statement": "Advice on adapting the home.",
+      "epistemic_status": "documented",
+      "evidence_ids": [
+        "housing-offer"
+      ],
+      "sources": [
+        {
+          "title": "DRK Wohnberatung",
+          "url": "https://www.drk.de/hilfe-in-deutschland/senioren/altersgerechtes-wohnen/wohnberatung/",
+          "publisher": "DRK",
+          "evidence_type": "provider_description",
+          "accessed_on": "2026-10-09",
+          "limitations": "In-home advice on adaptations and possible funding; advice is not an installed adaptation."
+        }
+      ],
+      "scope": {
+        "geography": "Germany; local examples subject to availability",
+        "limitations": "Editorial review mapping. Provider offerings are not evidence of unmet demand or effectiveness."
+      }
+    },
+    "review-response-drk-alarm": {
+      "kind": "institutional_response",
+      "title": "DRK emergency alarm",
+      "statement": "Alerting and arranging a response when help is needed.",
+      "epistemic_status": "documented",
+      "evidence_ids": [
+        "alarm-offer"
+      ],
+      "sources": [
+        {
+          "title": "DRK Hausnotruf",
+          "url": "https://www.drk.de/hilfe-in-deutschland/senioren/altersgerechtes-wohnen/hausnotruf/",
+          "publisher": "DRK",
+          "evidence_type": "provider_description",
+          "accessed_on": "2026-10-09",
+          "limitations": "Alert and response service; options and prices vary by locality."
+        }
+      ],
+      "scope": {
+        "geography": "Germany; local examples subject to availability",
+        "limitations": "Editorial review mapping. Provider offerings are not evidence of unmet demand or effectiveness."
+      }
+    },
+    "review-response-drk-transport": {
+      "kind": "institutional_response",
+      "title": "DRK transport",
+      "statement": "Transport for people with impairments.",
+      "epistemic_status": "documented",
+      "evidence_ids": [
+        "transport-offer"
+      ],
+      "sources": [
+        {
+          "title": "DRK Fahrdienst",
+          "url": "https://www.drk.de/hilfe-in-deutschland/senioren/mobilitaet/fahrdienst/",
+          "publisher": "DRK",
+          "evidence_type": "provider_description",
+          "accessed_on": "2026-10-09",
+          "limitations": "Transport for people with impairments, including visits and outings; local availability unverified."
+        }
+      ],
+      "scope": {
+        "geography": "Germany; local examples subject to availability",
+        "limitations": "Editorial review mapping. Provider offerings are not evidence of unmet demand or effectiveness."
+      }
+    },
+    "review-response-volunteer-help": {
+      "kind": "institutional_response",
+      "title": "Dementia volunteer helpers",
+      "statement": "Limited hours of social supervision.",
+      "epistemic_status": "documented",
+      "evidence_ids": [
+        "volunteer-offer"
+      ],
+      "sources": [
+        {
+          "title": "Entlastungsangebote",
+          "url": "https://www.deutsche-alzheimer.de/angebote-zur-unterstuetzung/entlastungsangebote",
+          "publisher": "Deutsche Alzheimer Gesellschaft",
+          "evidence_type": "service_overview",
+          "accessed_on": "2026-10-09",
+          "limitations": "Volunteer help, groups and day care. Historical financial and entitlement details are excluded."
+        }
+      ],
+      "scope": {
+        "geography": "Germany; local examples subject to availability",
+        "limitations": "Editorial review mapping. Provider offerings are not evidence of unmet demand or effectiveness."
+      }
+    },
+    "review-response-short-stay": {
+      "kind": "institutional_response",
+      "title": "Short-term residential care",
+      "statement": "Temporary care away from home during caregiver absence.",
+      "epistemic_status": "documented",
+      "evidence_ids": [
+        "short-stay-offer"
+      ],
+      "sources": [
+        {
+          "title": "Antworten auf häufige Fragen",
+          "url": "https://www.deutsche-alzheimer.de/demenz-wissen/antworten-auf-haeufige-fragen",
+          "publisher": "Deutsche Alzheimer Gesellschaft",
+          "evidence_type": "service_overview",
+          "accessed_on": "2026-10-09",
+          "limitations": "Describes temporary residential care during caregiver illness or holiday; no current eligibility advice."
+        }
+      ],
+      "scope": {
+        "geography": "Germany; local examples subject to availability",
+        "limitations": "Editorial review mapping. Provider offerings are not evidence of unmet demand or effectiveness."
+      }
+    },
+    "review-response-home-adaptations": {
+      "kind": "solution",
+      "title": "Home adaptations",
+      "statement": "Changes to the home, selected to suit the person and property.",
+      "epistemic_status": "documented",
+      "evidence_ids": [
+        "adaptation-offer"
+      ],
+      "sources": [
+        {
+          "title": "Wohnungsanpassung",
+          "url": "https://www.verbraucherzentrale.de/wissen/gesundheit-pflege/pflege-zu-hause/wohnungsanpassung-veraenderungen-fuer-pflegebeduerftige-menschen-13925",
+          "publisher": "Verbraucherzentrale",
+          "evidence_type": "consumer_guidance",
+          "accessed_on": "2026-10-09",
+          "limitations": "Adaptation options and advice. No current subsidy amount or individual entitlement asserted."
+        }
+      ],
+      "scope": {
+        "geography": "Germany; local examples subject to availability",
+        "limitations": "Editorial review mapping. Provider offerings are not evidence of unmet demand or effectiveness."
+      }
+    },
+    "review-problem-break-hours": {
+      "kind": "problem",
+      "title": "I need a few predictable hours to myself",
+      "statement": "Family caregiver seeking a recurring daytime break.",
+      "epistemic_status": "candidate",
+      "evidence_ids": [
+        "timing",
+        "case-daycare"
+      ],
+      "sources": [
+        {
+          "title": "Diakonie: survey of care counselling professionals and services",
+          "url": "https://www.diakonie.de/informieren/infothek/2025/oktober/umfrage-pflegende-angehoerige",
+          "publisher": "Diakonie Deutschland",
+          "published_date": "2025-10",
+          "evidence_type": "professional_survey",
+          "scope": "Germany; August–September 2025; mixed individual and team responses. Methods state 565 respondents, introduction 560.",
+          "limitations": "Indirect accounts about caregivers; not caregiver prevalence. Conflicting financial-barrier percentages are not used.",
+          "accessed_on": "2026-10-09"
+        },
+        {
+          "title": "Interview with Waltraud Dambrowski: supported Alzheimer Society holiday",
+          "url": "https://www.gesund-aktiv-aelter-werden.de/fachinformationen/projektdatenbank/interviews-mit-projektteilnehmenden/betreute-urlaube-der-alzheimer-gesellschaft/",
+          "publisher": "gesund-aktiv-aelter-werden.de",
+          "published_date": "2020-04",
+          "evidence_type": "published_participant_account",
+          "scope": "One caregiver supporting her mother with dementia; interview created April 2020, holiday date unspecified.",
+          "limitations": "Selected positive account, self-reported. Recipient’s experience is indirect. No current service availability or benefit guidance.",
+          "accessed_on": "2026-10-09"
+        }
+      ],
+      "scope": {
+        "geography": "Germany; local examples subject to availability",
+        "limitations": "Editorial review mapping. Provider offerings are not evidence of unmet demand or effectiveness."
+      }
+    },
+    "review-problem-break-away": {
+      "kind": "problem",
+      "title": "I need a holiday without carrying all the care myself",
+      "statement": "Family caregiver seeking several days of recovery, with or without the relative.",
+      "epistemic_status": "candidate",
+      "evidence_ids": [
+        "case-acceptance"
+      ],
+      "sources": [
+        {
+          "title": "Interview with Waltraud Dambrowski: supported Alzheimer Society holiday",
+          "url": "https://www.gesund-aktiv-aelter-werden.de/fachinformationen/projektdatenbank/interviews-mit-projektteilnehmenden/betreute-urlaube-der-alzheimer-gesellschaft/",
+          "publisher": "gesund-aktiv-aelter-werden.de",
+          "published_date": "2020-04",
+          "evidence_type": "published_participant_account",
+          "scope": "One caregiver supporting her mother with dementia; interview created April 2020, holiday date unspecified.",
+          "limitations": "Selected positive account, self-reported. Recipient’s experience is indirect. No current service availability or benefit guidance.",
+          "accessed_on": "2026-10-09"
+        }
+      ],
+      "scope": {
+        "geography": "Germany; local examples subject to availability",
+        "limitations": "Editorial review mapping. Provider offerings are not evidence of unmet demand or effectiveness."
+      }
+    },
+    "review-problem-home-shopping": {
+      "kind": "problem",
+      "title": "I can’t manage the shopping on my own",
+      "statement": "Older adult with difficulty shopping or carrying purchases; wants to remain at home.",
+      "epistemic_status": "candidate",
+      "evidence_ids": [],
+      "sources": [],
+      "scope": {
+        "geography": "Germany; local examples subject to availability",
+        "limitations": "Editorial review mapping. Provider offerings are not evidence of unmet demand or effectiveness."
+      }
+    },
+    "review-problem-home-access": {
+      "kind": "problem",
+      "title": "I struggle to move around my own home",
+      "statement": "Older adult whose mobility no longer fits the home.",
+      "epistemic_status": "candidate",
+      "evidence_ids": [
+        "housing-barrier"
+      ],
+      "sources": [
+        {
+          "title": "Barrier-reduced housing and mobility",
+          "url": "https://www.dza.de/themen/soziale-beziehungen/detailansicht/welche-personen-die-darauf-angewiesen-waeren-leben-tatsaechlich-in-barriere-reduzierten-wohnungen",
+          "publisher": "DZA",
+          "evidence_type": "population_research",
+          "accessed_on": "2026-10-09",
+          "limitations": "DEAS 2020/21, people 65+; step-free access and interior. Supports broad barrier mismatch, not the needs of a specific household."
+        }
+      ],
+      "scope": {
+        "geography": "Germany; local examples subject to availability",
+        "limitations": "Editorial review mapping. Provider offerings are not evidence of unmet demand or effectiveness."
+      }
+    },
+    "review-problem-home-help": {
+      "kind": "problem",
+      "title": "I need to reach help when I’m alone",
+      "statement": "Older adult who wants to stay home but worries about obtaining assistance.",
+      "epistemic_status": "candidate",
+      "evidence_ids": [],
+      "sources": [],
+      "scope": {
+        "geography": "Germany; local examples subject to availability",
+        "limitations": "Editorial review mapping. Provider offerings are not evidence of unmet demand or effectiveness."
+      }
+    },
+    "review-problem-company-talk": {
+      "kind": "problem",
+      "title": "I want someone to talk to in my everyday life",
+      "statement": "Older adult who wants more or different everyday contact.",
+      "epistemic_status": "candidate",
+      "evidence_ids": [],
+      "sources": [],
+      "scope": {
+        "geography": "Germany; local examples subject to availability",
+        "limitations": "Editorial review mapping. Provider offerings are not evidence of unmet demand or effectiveness."
+      }
+    },
+    "review-problem-company-out": {
+      "kind": "problem",
+      "title": "I want to spend time with people, but getting out is difficult",
+      "statement": "Older adult with a desired social activity and barriers to reaching it.",
+      "epistemic_status": "candidate",
+      "evidence_ids": [
+        "housing-barrier"
+      ],
+      "sources": [
+        {
+          "title": "Barrier-reduced housing and mobility",
+          "url": "https://www.dza.de/themen/soziale-beziehungen/detailansicht/welche-personen-die-darauf-angewiesen-waeren-leben-tatsaechlich-in-barriere-reduzierten-wohnungen",
+          "publisher": "DZA",
+          "evidence_type": "population_research",
+          "accessed_on": "2026-10-09",
+          "limitations": "DEAS 2020/21, people 65+; step-free access and interior. Supports broad barrier mismatch, not the needs of a specific household."
+        }
+      ],
+      "scope": {
+        "geography": "Germany; local examples subject to availability",
+        "limitations": "Editorial review mapping. Provider offerings are not evidence of unmet demand or effectiveness."
+      }
+    }
+  },
+  "sources": {
+    "diakonie-2025": {
+      "title": "Diakonie: survey of care counselling professionals and services",
+      "url": "https://www.diakonie.de/informieren/infothek/2025/oktober/umfrage-pflegende-angehoerige",
+      "publisher": "Diakonie Deutschland",
+      "published_date": "2025-10",
+      "evidence_type": "professional_survey",
+      "scope": "Germany; August–September 2025; mixed individual and team responses. Methods state 565 respondents, introduction 560.",
+      "limitations": "Indirect accounts about caregivers; not caregiver prevalence. Conflicting financial-barrier percentages are not used.",
+      "accessed_on": "2026-10-09"
+    },
+    "pflege-2025": {
+      "title": "Wie geht es pflegenden Angehörigen?",
+      "url": "https://www.pflege.de/studien/studie-2025-wie-geht-es-pflegenden-angehoerigen/",
+      "publisher": "pflege.de",
+      "published_date": "2025",
+      "evidence_type": "caregiver_survey",
+      "scope": "1,048 family caregivers, surveyed August 2025; mixed care-recipient ages and relationships.",
+      "limitations": "Commercial portal’s own survey; representativeness and recruitment not established in this review. No older-recipient subgroup analysis.",
+      "accessed_on": "2026-10-09"
+    },
+    "holiday-2020": {
+      "title": "Interview with Waltraud Dambrowski: supported Alzheimer Society holiday",
+      "url": "https://www.gesund-aktiv-aelter-werden.de/fachinformationen/projektdatenbank/interviews-mit-projektteilnehmenden/betreute-urlaube-der-alzheimer-gesellschaft/",
+      "publisher": "gesund-aktiv-aelter-werden.de",
+      "published_date": "2020-04",
+      "evidence_type": "published_participant_account",
+      "scope": "One caregiver supporting her mother with dementia; interview created April 2020, holiday date unspecified.",
+      "limitations": "Selected positive account, self-reported. Recipient’s experience is indirect. No current service availability or benefit guidance.",
+      "accessed_on": "2026-10-09"
+    },
+    "hamburg-2026": {
+      "title": "Hamburg Pflegestützpunkte leaflet",
+      "url": "https://dokumente.hamburg.de/resource/blob/58048/23b89bdb1f526f97e3f492f6dd368b7a/faltblatt-pflegestuetzpunkte-data.pdf",
+      "publisher": "Hamburg",
+      "published_date": "2026-06",
+      "evidence_type": "official_service_description",
+      "scope": "Hamburg; leaflet page 2.",
+      "limitations": "Describes services, not uptake, waiting time or outcomes.",
+      "accessed_on": "2026-10-09"
+    },
+    "alzheimer-phone": {
+      "title": "Alzheimer-Telefon",
+      "url": "https://www.deutschealzheimer.de/alzheimer-telefon",
+      "publisher": "Deutsche Alzheimer Gesellschaft",
+      "published_date": null,
+      "evidence_type": "official_service_description",
+      "scope": "Telephone and email advice about dementia.",
+      "limitations": "Service description; no measured effect on respite uptake or caregiver guilt.",
+      "accessed_on": "2026-10-09"
+    },
+    "careship": {
+      "title": "Careship Seniorenbetreuung",
+      "url": "https://www.careship.de/seniorenbetreuung",
+      "publisher": "Careship",
+      "published_date": null,
+      "evidence_type": "provider_claim",
+      "scope": "Hourly everyday support; local availability must be checked.",
+      "limitations": "Marketing claims, not independent outcomes. Treatment nursing is excluded; suitability and service model require checking.",
+      "accessed_on": "2026-10-09"
+    },
+    "bmg-2025": {
+      "title": "Für Pflegende wird es leichter",
+      "url": "https://www.bundesgesundheitsministerium.de/presse/pressemitteilungen/fuer-pflegende-wird-es-leichter-1",
+      "publisher": "Bundesministerium für Gesundheit",
+      "published_date": "2025-06-30",
+      "evidence_type": "official_policy_description",
+      "scope": "Announcement of joint replacement-care and short-term-care budget from July 2025.",
+      "limitations": "Shows a funding mechanism exists; not household eligibility, sufficient funding, current legal advice or available care capacity.",
+      "accessed_on": "2026-10-09"
+    },
+    "johanniter-day": {
+      "title": "Johanniter Tagespflege",
+      "url": "https://www.johanniter.de/dienste-leistungen/pflege-und-begleitung/tagespflege/",
+      "publisher": "Johanniter",
+      "evidence_type": "provider_description",
+      "accessed_on": "2026-10-09",
+      "limitations": "Daytime care, activities and transport; locality-specific. Funding figures on the page were not used."
+    },
+    "silbernetz": {
+      "title": "Silbernetz: Über uns",
+      "url": "https://silbernetz.org/ueber-uns/",
+      "publisher": "Silbernetz",
+      "evidence_type": "provider_description",
+      "accessed_on": "2026-10-09",
+      "limitations": "Telephone contact for people 60+; hotline and regular telephone friendship are different formats."
+    },
+    "silbernetz-evaluation": {
+      "title": "ReWiSil evaluation",
+      "url": "https://www.dza.de/forschung/aktuelle-projekte/evaluationsprojekt-reichweite-und-wirkung-der-silbernetz-hotline-rewisil",
+      "publisher": "DZA",
+      "evidence_type": "research_project",
+      "accessed_on": "2026-10-09",
+      "limitations": "Evaluation results available June 2026; project page inspected, full results and methods not appraised here. Hotline only, not all Silbernetz services."
+    },
+    "drk-visits": {
+      "title": "DRK Besuchsdienst",
+      "url": "https://www.drk.de/hilfe-in-deutschland/senioren/altersgerechtes-wohnen/besuchsdienst/",
+      "publisher": "DRK",
+      "evidence_type": "provider_description",
+      "accessed_on": "2026-10-09",
+      "limitations": "Volunteer conversation, visits and accompaniment; local capacity unverified."
+    },
+    "drk-shopping": {
+      "title": "DRK Einkaufsservice",
+      "url": "https://www.drk.de/hilfe-in-deutschland/senioren/altersgerechtes-wohnen/einkaufsservice/",
+      "publisher": "DRK",
+      "evidence_type": "provider_description",
+      "accessed_on": "2026-10-09",
+      "limitations": "Shopping accompaniment or delivery; local organisation and prices vary."
+    },
+    "drk-housing": {
+      "title": "DRK Wohnberatung",
+      "url": "https://www.drk.de/hilfe-in-deutschland/senioren/altersgerechtes-wohnen/wohnberatung/",
+      "publisher": "DRK",
+      "evidence_type": "provider_description",
+      "accessed_on": "2026-10-09",
+      "limitations": "In-home advice on adaptations and possible funding; advice is not an installed adaptation."
+    },
+    "drk-alarm": {
+      "title": "DRK Hausnotruf",
+      "url": "https://www.drk.de/hilfe-in-deutschland/senioren/altersgerechtes-wohnen/hausnotruf/",
+      "publisher": "DRK",
+      "evidence_type": "provider_description",
+      "accessed_on": "2026-10-09",
+      "limitations": "Alert and response service; options and prices vary by locality."
+    },
+    "drk-transport": {
+      "title": "DRK Fahrdienst",
+      "url": "https://www.drk.de/hilfe-in-deutschland/senioren/mobilitaet/fahrdienst/",
+      "publisher": "DRK",
+      "evidence_type": "provider_description",
+      "accessed_on": "2026-10-09",
+      "limitations": "Transport for people with impairments, including visits and outings; local availability unverified."
+    },
+    "alz-relief": {
+      "title": "Entlastungsangebote",
+      "url": "https://www.deutsche-alzheimer.de/angebote-zur-unterstuetzung/entlastungsangebote",
+      "publisher": "Deutsche Alzheimer Gesellschaft",
+      "evidence_type": "service_overview",
+      "accessed_on": "2026-10-09",
+      "limitations": "Volunteer help, groups and day care. Historical financial and entitlement details are excluded."
+    },
+    "alz-short-stay": {
+      "title": "Antworten auf häufige Fragen",
+      "url": "https://www.deutsche-alzheimer.de/demenz-wissen/antworten-auf-haeufige-fragen",
+      "publisher": "Deutsche Alzheimer Gesellschaft",
+      "evidence_type": "service_overview",
+      "accessed_on": "2026-10-09",
+      "limitations": "Describes temporary residential care during caregiver illness or holiday; no current eligibility advice."
+    },
+    "dza-housing": {
+      "title": "Barrier-reduced housing and mobility",
+      "url": "https://www.dza.de/themen/soziale-beziehungen/detailansicht/welche-personen-die-darauf-angewiesen-waeren-leben-tatsaechlich-in-barriere-reduzierten-wohnungen",
+      "publisher": "DZA",
+      "evidence_type": "population_research",
+      "accessed_on": "2026-10-09",
+      "limitations": "DEAS 2020/21, people 65+; step-free access and interior. Supports broad barrier mismatch, not the needs of a specific household."
+    },
+    "housing-adaptations": {
+      "title": "Wohnungsanpassung",
+      "url": "https://www.verbraucherzentrale.de/wissen/gesundheit-pflege/pflege-zu-hause/wohnungsanpassung-veraenderungen-fuer-pflegebeduerftige-menschen-13925",
+      "publisher": "Verbraucherzentrale",
+      "evidence_type": "consumer_guidance",
+      "accessed_on": "2026-10-09",
+      "limitations": "Adaptation options and advice. No current subsidy amount or individual entitlement asserted."
+    }
+  },
+  "evidence": {
+    "options": {
+      "source_id": "diakonie-2025",
+      "locator": "Hinderungsgründe",
+      "claim": "Professionals report unknown or unsuitable offers as barriers.",
+      "epistemic_status": "documented_source_report"
+    },
+    "acceptance": {
+      "source_id": "diakonie-2025",
+      "locator": "Hinderungsgründe; Stärkung der Akzeptanz",
+      "claim": "Professionals report recipients declining external help.",
+      "epistemic_status": "documented_source_report"
+    },
+    "timing": {
+      "source_id": "diakonie-2025",
+      "locator": "Hinderungsgründe",
+      "claim": "Professionals report unavailable places, waiting, mismatched hours and travel barriers.",
+      "epistemic_status": "documented_source_report"
+    },
+    "cost": {
+      "source_id": "diakonie-2025",
+      "locator": "Bessere Finanzierung",
+      "claim": "Professionals report costs limiting use of relief.",
+      "epistemic_status": "documented_source_report"
+    },
+    "effort": {
+      "source_id": "diakonie-2025",
+      "locator": "Hinderungsgründe; Organisation und Antragstellung",
+      "claim": "Professionals report organisational effort and bureaucracy obstructing use.",
+      "epistemic_status": "documented_source_report"
+    },
+    "guilt": {
+      "source_id": "pflege-2025",
+      "locator": "Pflegebelastung und Unterstützung",
+      "claim": "The survey report describes guilt about breaks and bureaucratic barriers.",
+      "epistemic_status": "documented_source_report"
+    },
+    "case-backup": {
+      "source_id": "holiday-2020",
+      "locator": "Question 2",
+      "claim": "Her daughter previously covered up to a week a year but had limited time.",
+      "epistemic_status": "documented_source_report"
+    },
+    "case-acceptance": {
+      "source_id": "holiday-2020",
+      "locator": "Questions 2–3",
+      "claim": "Initial concerns eased during a supported holiday; her mother got on with a helper.",
+      "epistemic_status": "documented_source_report"
+    },
+    "case-daycare": {
+      "source_id": "holiday-2020",
+      "locator": "Question 4",
+      "claim": "Afterwards she arranged weekly day care and reported more time for herself.",
+      "epistemic_status": "documented_source_report"
+    },
+    "case-admin": {
+      "source_id": "holiday-2020",
+      "locator": "Question 6",
+      "claim": "The organiser supplied cost information and prepared letters; she reported no reimbursement difficulty.",
+      "epistemic_status": "documented_source_report"
+    },
+    "counselling": {
+      "source_id": "hamburg-2026",
+      "locator": "Page 2, Leistungen im Überblick",
+      "claim": "Free advice covers benefits, support arrangements and applications.",
+      "epistemic_status": "documented_source_report"
+    },
+    "phone": {
+      "source_id": "alzheimer-phone",
+      "locator": "Service description",
+      "claim": "Dementia advice is available to relatives by telephone and email.",
+      "epistemic_status": "documented_source_report"
+    },
+    "companionship": {
+      "source_id": "careship",
+      "locator": "Seniorenbetreuung; Grenzen; Demenz",
+      "claim": "Provider advertises hourly companionship and familiar helpers, excluding treatment nursing.",
+      "epistemic_status": "documented_source_report"
+    },
+    "funding": {
+      "source_id": "bmg-2025",
+      "locator": "Opening announcement",
+      "claim": "Government describes combined funding for replacement and short-term care from July 2025.",
+      "epistemic_status": "documented_source_report"
+    },
+    "day-offer": {
+      "source_id": "johanniter-day",
+      "claim": "Daytime care and shared activities, with transport described by the provider.",
+      "epistemic_status": "documented_source_report"
+    },
+    "phone-offer": {
+      "source_id": "silbernetz",
+      "claim": "Anonymous calls and weekly calls with a familiar volunteer are offered.",
+      "epistemic_status": "documented_source_report"
+    },
+    "phone-evaluation": {
+      "source_id": "silbernetz-evaluation",
+      "claim": "DZA links published hotline evaluation results and methods; effects are not assessed in this review.",
+      "epistemic_status": "documented_source_report"
+    },
+    "visit-offer": {
+      "source_id": "drk-visits",
+      "claim": "Volunteer visits include conversation and accompaniment.",
+      "epistemic_status": "documented_source_report"
+    },
+    "shopping-offer": {
+      "source_id": "drk-shopping",
+      "claim": "Shopping can be delivered or accompanied.",
+      "epistemic_status": "documented_source_report"
+    },
+    "housing-offer": {
+      "source_id": "drk-housing",
+      "claim": "Home visits identify adaptation options and possible funding.",
+      "epistemic_status": "documented_source_report"
+    },
+    "alarm-offer": {
+      "source_id": "drk-alarm",
+      "claim": "A wearable button connects to a response centre; optional monitoring features vary locally.",
+      "epistemic_status": "documented_source_report"
+    },
+    "transport-offer": {
+      "source_id": "drk-transport",
+      "claim": "Transport is offered for people with impairments, including social visits.",
+      "epistemic_status": "documented_source_report"
+    },
+    "volunteer-offer": {
+      "source_id": "alz-relief",
+      "claim": "Volunteer helpers provide limited hours of social supervision, excluding nursing and housework.",
+      "epistemic_status": "documented_source_report"
+    },
+    "short-stay-offer": {
+      "source_id": "alz-short-stay",
+      "claim": "Temporary residential care is described as an option during caregiver absence.",
+      "epistemic_status": "documented_source_report"
+    },
+    "housing-barrier": {
+      "source_id": "dza-housing",
+      "claim": "The study identifies a mismatch between mobility limitations and step-free housing.",
+      "epistemic_status": "documented_source_report"
+    },
+    "adaptation-offer": {
+      "source_id": "housing-adaptations",
+      "claim": "Housing adaptations and local housing advice are described.",
+      "epistemic_status": "documented_source_report"
+    }
+  },
+  "solution_reverse_index": {
+    "review-response-johanniter-day": [
+      "review-problem-break-hours",
+      "review-problem-company-out"
+    ],
+    "company-careship": [
+      "review-problem-break-hours",
+      "review-problem-home-shopping",
+      "review-problem-company-talk"
+    ],
+    "review-response-volunteer-help": [
+      "review-problem-break-hours"
+    ],
+    "review-workaround-daughter": [
+      "review-problem-break-hours",
+      "review-problem-break-away"
+    ],
+    "review-response-supported-holiday": [
+      "review-problem-break-away"
+    ],
+    "review-response-short-stay": [
+      "review-problem-break-away"
+    ],
+    "review-response-drk-shopping": [
+      "review-problem-home-shopping"
+    ],
+    "wc-object-add32eb018abad005b10780a": [
+      "review-problem-home-shopping",
+      "review-problem-company-talk",
+      "review-problem-company-out"
+    ],
+    "review-response-drk-housing": [
+      "review-problem-home-access"
+    ],
+    "review-response-home-adaptations": [
+      "review-problem-home-access"
+    ],
+    "review-response-drk-alarm": [
+      "review-problem-home-help"
+    ],
+    "review-response-silbernetz": [
+      "review-problem-company-talk"
+    ],
+    "review-response-drk-transport": [
+      "review-problem-company-out"
+    ]
+  },
+  "historical_usage_note": "Preserved research example, not a current production input. Workaround leaves and generic response classes are historical navigation; retain their evidence but do not copy them into solution tiles. The database graph is canonical; site/js/atlas-needs.js projects flagged navigation relationships."
+}

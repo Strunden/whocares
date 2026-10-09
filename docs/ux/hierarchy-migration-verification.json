@@ -1,0 +1,14 @@
+{
+  "checked_at": "2026-10-09T17:01:14.659Z",
+  "branch": "br-silent-mouse-b2g45sar",
+  "needs": 6,
+  "situations": 19,
+  "solutions": 37,
+  "original_assertions_checked": 44,
+  "changed_or_missing": [],
+  "legacy_entries": 652,
+  "test_branch": "br-raspy-shadow-b2ldscd7",
+  "idempotency_verified": true,
+  "frontend_tests_passed": 78,
+  "public_ui_deployed": false
+}

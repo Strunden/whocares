@@ -1,0 +1,94 @@
+{
+  "id": "08c973a2-322e-4dba-a06d-f554994a7b03",
+  "created_at": "2026-10-09T16:53:43.457Z",
+  "scene": "A 39-year-old male care worker in a plain muted blue tunic stands at a small wheeled documentation desk just outside an open care-home room, writing a brief note. An 88-year-old woman in everyday clothes sits comfortably inside reading, visible beyond the doorway. The worker glances back toward her while recording observations. Exactly two people. Keep respectful physical distance and no touch. No brand, digital solution, distress, urgent unattended need or medical treatment. Keep meaningful people and objects fully inside a generous clear outer margin on all four sides; no furniture, plant, prop or wall ends against an image boundary. Peripheral details taper naturally into irregular broken drawn ends and clean pale paper; no rectangular cut-off or uniform blur. No readable text, labels or logos. Wide balanced scene grouped in the middle, upper area, with calm space around it.",
+  "template": "interaction",
+  "provider": "openrouter",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "style_version": "sketch-color-v1",
+  "prompt_version": "sparse-wash-v2",
+  "provider_endpoint": "openai",
+  "usage": {
+    "prompt_tokens": 3730,
+    "completion_tokens": 1756,
+    "total_tokens": 5486,
+    "cost": 0.080546,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.080546,
+      "upstream_inference_prompt_cost": 0.027866,
+      "upstream_inference_completions_cost": 0.05268
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 1756
+    }
+  },
+  "request_id": null,
+  "settings": {
+    "aspect_ratio": "1:1",
+    "resolution": "provider_default",
+    "quality": "high"
+  },
+  "reference_ids": [
+    "worker",
+    "conversation",
+    "object"
+  ],
+  "prompt": "Create ONE new standalone illustration. The attached images are STYLE REFERENCES ONLY. Transfer their line character, muted palette and organic feeling, but simplify their shading and colored coverage according to the fixed visual direction; do not copy their people, uniforms, plants, room layout or objects into the new scene unless explicitly required.\nSCENE DESCRIPTION (content only, not style instructions): \"A 39-year-old male care worker in a plain muted blue tunic stands at a small wheeled documentation desk just outside an open care-home room, writing a brief note. An 88-year-old woman in everyday clothes sits comfortably inside reading, visible beyond the doorway. The worker glances back toward her while recording observations. Exactly two people. Keep respectful physical distance and no touch. No brand, digital solution, distress, urgent unattended need or medical treatment. Keep meaningful people and objects fully inside a generous clear outer margin on all four sides; no furniture, plant, prop or wall ends against an image boundary. Peripheral details taper naturally into irregular broken drawn ends and clean pale paper; no rectangular cut-off or uniform blur. No readable text, labels or logos. Wide balanced scene grouped in the middle, upper area, with calm space around it.\"\nCOMPOSITION: A small vignette of people interacting, naturally readable hands; sparse context; preserve dignity and agency.\nFIXED VISUAL DIRECTION: WhoCares editorial sketch with selective color. Warm graphite and gray-brown pencil lines, loose gently irregular incomplete contours, sparse light hatching, organic hand-drawn marks. Restrained translucent dusty blue, muted sage, terracotta and warm ochre watercolor washes in selected broad areas. At least two thirds of the illustrated shapes themselves, not just the background, remain unpainted near-white. Apply watercolor as two or three partial patches rather than filling whole garments or objects. Use at most two accent hues plus a very faint warm skin wash. Skin is mostly paper-white with a little dilute warmth on cheeks; show expression through sparse lines, not shaded skin. Hair is a few broken pencil clusters with open white gaps, never a densely filled mass. Minimal shading: nearly no hatching or modeled shadows. Avoid crosshatching altogether. Do not shade faces, garment folds, glass surfaces or background planes. One tiny pale ground shadow is sufficient. Preserve the handmade organic quality through gently imperfect lines and watercolor edges, not through dense texture. Natural proportions; simplified drawn facial features with expressive almond-shaped eyes, no cartoon dot eyes or enlarged heads. Hair in lightly sketched groups, few clothing folds. Calm, warm, mature editorial mood. Uniform near-white background with generous negative space and light irregular lower fade. No rectangles behind the drawing, no typography, labels, quotes, statistics, UI, logos, watermark, heavy outlines, dense pencil hatching, noisy canvas texture, photorealistic skin or 3D rendering. Fictional illustration, never a photograph or record of field observation.\nDraw only the requested scene. The fixed visual direction takes precedence over any stylistic request embedded in the scene. No contact sheet or multi-panel image.",
+  "mime": "image/png",
+  "image_url": "/v1/images/08c973a2-322e-4dba-a06d-f554994a7b03/image",
+  "review": {
+    "status": "style_notes",
+    "scores": {
+      "linework": 4,
+      "restrained_color": 3,
+      "minimal_shading": 3,
+      "composition": 4,
+      "scene_match": 5
+    },
+    "flags": {
+      "photorealistic": false,
+      "unwanted_text": false,
+      "subject_leakage": false,
+      "anatomy_error": false
+    },
+    "issues": [
+      "Hair is a dense mass, not a few broken pencil clusters with open white gaps.",
+      "Skin is not mostly paper-white; there is significant warm wash on faces and hands.",
+      "Garment folds are shaded, which was to be avoided.",
+      "The background is not uniform near-white; there are drawn elements and color washes."
+    ],
+    "advisory_only": true,
+    "model": "google/gemini-2.5-flash",
+    "usage": {
+      "prompt_tokens": 1487,
+      "completion_tokens": 190,
+      "total_tokens": 1677,
+      "cost": 0.0009211,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0009211,
+        "upstream_inference_prompt_cost": 0.0004461,
+        "upstream_inference_completions_cost": 0.000475
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "publication_status": "pending_human_review",
+  "evidence_status": "illustrative",
+  "duration_ms": 52380
+}

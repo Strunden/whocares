@@ -10,7 +10,7 @@ import {readLogo} from '../workers/api/src/logo.js';
 if(!process.env.DATABASE_URL)throw Error('DATABASE_URL is required');
 const sql=postgres(process.env.DATABASE_URL,{max:2,connect_timeout:15,idle_timeout:20});
 const root=fileURLToPath(new URL('../site/',import.meta.url));
-const port=8788,origin=`http://127.0.0.1:${port}`;
+const port=Number(process.env.PORT||8788),origin=`http://127.0.0.1:${port}`;
 const types={'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.svg':'image/svg+xml','.png':'image/png','.webp':'image/webp','.ico':'image/x-icon','.woff2':'font/woff2'};
 createServer(async(req,res)=>{
  res.setHeader('Cache-Control','no-store');

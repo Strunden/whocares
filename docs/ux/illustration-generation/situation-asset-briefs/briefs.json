@@ -1,0 +1,86 @@
+[
+  {
+    "situation_id": "study-problem-care-fit",
+    "meaning": "care comparison",
+    "nearest_neighbour": "disagreement about moving",
+    "misreading_to_avoid": "Do not imply the daughter makes the decision alone.",
+    "request_path": "atlas-iteration/study/research/situation-asset-briefs/study-problem-care-fit.json"
+  },
+  {
+    "situation_id": "study-problem-care-choice",
+    "meaning": "different wishes about moving",
+    "nearest_neighbour": "comparing possible homes",
+    "misreading_to_avoid": "Show respectful disagreement, not coercion or family conflict.",
+    "request_path": "atlas-iteration/study/research/situation-asset-briefs/study-problem-care-choice.json"
+  },
+  {
+    "situation_id": "review-problem-care-home-urgent",
+    "meaning": "hospital discharge destination",
+    "nearest_neighbour": "ordinary home search",
+    "misreading_to_avoid": "Packed bag and hospital setting signal a transition, not a completed placement.",
+    "request_path": "atlas-iteration/study/research/situation-asset-briefs/review-problem-care-home-urgent.json"
+  },
+  {
+    "situation_id": "study-problem-housing-cost",
+    "meaning": "rent versus essentials",
+    "nearest_neighbour": "arrears and benefit application",
+    "misreading_to_avoid": "Show a recurring budget choice without equating a demographic with poverty.",
+    "request_path": "atlas-iteration/study/research/situation-asset-briefs/study-problem-housing-cost.json"
+  },
+  {
+    "situation_id": "study-problem-housing-support",
+    "meaning": "which financial help to claim",
+    "nearest_neighbour": "monthly shortfall and rent arrears",
+    "misreading_to_avoid": "Do not suggest cognitive impairment or approved benefits.",
+    "request_path": "atlas-iteration/study/research/situation-asset-briefs/study-problem-housing-support.json"
+  },
+  {
+    "situation_id": "review-problem-rent-arrears",
+    "meaning": "worry about overdue rent",
+    "nearest_neighbour": "monthly budgeting",
+    "misreading_to_avoid": "The title supplies arrears; avoid falsely depicting an eviction already occurring.",
+    "request_path": "atlas-iteration/study/research/situation-asset-briefs/review-problem-rent-arrears.json"
+  },
+  {
+    "situation_id": "review-problem-rent-affordable-home",
+    "meaning": "affordable manageable home",
+    "nearest_neighbour": "applying for financial support",
+    "misreading_to_avoid": "Layout and mobility context distinguish home suitability from benefit paperwork.",
+    "request_path": "atlas-iteration/study/research/situation-asset-briefs/review-problem-rent-affordable-home.json"
+  },
+  {
+    "situation_id": "review-problem-care-documentation",
+    "meaning": "documentation draws worker away",
+    "nearest_neighbour": "handover and absent colleague",
+    "misreading_to_avoid": "Show the task and distance without suggesting neglect or endorsing a software solution.",
+    "request_path": "atlas-iteration/study/research/situation-asset-briefs/review-problem-care-documentation.json"
+  },
+  {
+    "situation_id": "review-problem-care-handover",
+    "meaning": "sharing changes at shift handover",
+    "nearest_neighbour": "documentation alone and finding shift cover",
+    "misreading_to_avoid": "Make it a peer information exchange, not a supervisor disciplining a colleague.",
+    "request_path": "atlas-iteration/study/research/situation-asset-briefs/review-problem-care-handover.json"
+  },
+  {
+    "situation_id": "review-problem-care-cover",
+    "meaning": "organising cover for an absent colleague",
+    "nearest_neighbour": "handover between present colleagues",
+    "misreading_to_avoid": "Show staffing coordination rather than blaming or portraying an absent person.",
+    "request_path": "atlas-iteration/study/research/situation-asset-briefs/review-problem-care-cover.json"
+  },
+  {
+    "situation_id": "study-problem-conversation-time",
+    "meaning": "resident wants staff time to listen",
+    "nearest_neighbour": "companionship at home; documentation task",
+    "misreading_to_avoid": "Do not imply neglect, or depict an idealised completed solution.",
+    "request_path": "atlas-iteration/study/research/situation-asset-briefs/study-problem-conversation-time.json"
+  },
+  {
+    "situation_id": "study-problem-care-routines",
+    "meaning": "different evening preferences",
+    "nearest_neighbour": "conversation and rota planning",
+    "misreading_to_avoid": "Fictional illustration of the reported tension, not a reconstruction or confirmation of the wife’s testimony.",
+    "request_path": "atlas-iteration/study/research/situation-asset-briefs/study-problem-care-routines.json"
+  }
+]

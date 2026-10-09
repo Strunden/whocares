@@ -1,3 +1,4 @@
+import {navigationRoots} from './atlas-needs.js';
 import {loadAtlas} from './atlas-loader.js';
 import {setProductMedia} from './atlas-media.js';
 import {availableStory} from './atlas-navigation.js';
@@ -108,8 +109,7 @@ function zoomStep(direction){
 
 function stopNavigation(){cancelAnimationFrame(navigationFrame);navigationFrame=0;finishNavigation=null;map.classList.remove('navigating');$('labels').style.opacity='';}
 function makeTree(key){
- const outer=perspectiveHierarchy(personaMaps,mobile);
- return key?embedHierarchy(buildHierarchy(entries,personaMaps[key].regions,{portrait:mobile,extraRoots:graphRoots(graphEntries)}),outer.all.get(key),outer.bounds):outer;
+ return buildHierarchy([],[],{portrait:mobile,extraRoots:navigationRoots(graphEntries,key)});
 }
 const locationKey=(key,group)=>`${key||'people'}/${group||'overview'}`;
 function installLevel(key,group,nextTree){
@@ -117,6 +117,11 @@ function installLevel(key,group,nextTree){
  regions=tree.roots.map(n=>({...n,x:n.box.x+n.box.w/2,y:n.box.y+n.box.h/2}));
  $('workspace').hidden=false;
  $('persona-change').textContent=key?personaMaps[key].name:'';
+ const node=tree.all.get(group);
+ $('study-title').textContent=node?.title||'What do people need?';
+ $('study-description').textContent=node?.description||'Explore the situations people face in ageing and care.';
+ $('study-kicker').hidden=true;
+ $('map-evidence').hidden=!node?.entry;
 }
 // All level changes pass through here. Pan and zoom only update the camera.
 function navigateTo(key,group=null,{restore=true,animate=true,keepPanel=false,saveCurrent=true}={}){
@@ -126,7 +131,7 @@ function navigateTo(key,group=null,{restore=true,animate=true,keepPanel=false,sa
  const nextTree=key===persona&&tree?tree:makeTree(key);
  if(group&&!nextTree.all.has(group))group=null;
 
- $('map-breadcrumbs').hidden=!key;
+ $('map-breadcrumbs').hidden=!group;
  const destination=nextTree.all.get(group);
  let target=restore&&levelCameras.get(locationKey(key,group))||entryFrame(nextTree,group,map.clientWidth,map.clientHeight);
  const limits=levelZoomLimits(nextTree,group,map.clientWidth,map.clientHeight);
@@ -135,7 +140,7 @@ function navigateTo(key,group=null,{restore=true,animate=true,keepPanel=false,sa
  const focusBox=destination?.box||tree?.all.get(key)?.box||tree?.all.get(activeGroup)?.box;
  const focus=focusBox?{x:focusBox.x+focusBox.w/2,y:focusBox.y+focusBox.h/2}:{x:(map.clientWidth/2-start.x)/start.s,y:(map.clientHeight/2-start.y)/start.s};
  const enter=()=>{installLevel(key,group,nextTree);swapped=true;};
- const finish=()=>{if(!swapped)enter();camera=target;stopNavigation();render();previousSize={w:map.clientWidth,h:map.clientHeight};setHash();if(!keepPanel)map.focus({preventScroll:true});announce(`${key?personaMaps[key].name:'Perspectives'} · ${group?nextTree.all.get(group).title:'Overview'}`);};
+ const finish=()=>{if(!swapped)enter();camera=target;stopNavigation();render();previousSize={w:map.clientWidth,h:map.clientHeight};setHash();if(!keepPanel)map.focus({preventScroll:true});announce(`${key?personaMaps[key].name:'Needs'} · ${group?nextTree.all.get(group).title:'Overview'}`);};
  finishNavigation=finish;
  wheelState=null;touchState=null;if(!keepPanel){selectedId=null;}
  if(!ready||!animate||reducedMotion.matches){finish();return;}
@@ -176,32 +181,34 @@ function render(fromNativeScroll=false){
  panSurface.style.backgroundSize=`${gridWorldStep*camera.s}px ${gridWorldStep*camera.s}px`;
  panSurface.style.backgroundPosition=`${origin.x}px ${origin.y}px`;
  const frontier=readingLevel(tree,activeGroup,camera,map.clientWidth,map.clientHeight,{includeOffscreen:true});
- $('persona-change').hidden=!persona;
+ $('persona-change').hidden=true;
  $('persona-change').setAttribute('aria-current',activeGroup?'false':'location');
  const path=ancestry(tree,activeGroup);
  const crumbKey=persona+'/'+(activeGroup||'');
  if($('map-breadcrumbs').dataset.path!==crumbKey){
   $('map-breadcrumbs').dataset.path=crumbKey;
   const trail=path.length>5?[...path.slice(0,2),null,...path.slice(-2)]:path;
-  $('map-breadcrumb-trail').innerHTML=!persona?'':trail.map(n=>n?`<span aria-hidden="true">/</span><button title="${esc(n.title)}" ${n.id===activeGroup&&n.entry?`data-entry="${esc(n.entry.id)}" aria-label="Read scope and sources: ${esc(n.title)}"`:`data-zoom="${esc(n.id)}"`} ${n.id===activeGroup?'aria-current="location"':''}>${esc(n.kind==='range'?n.count.toLocaleString()+' records':short(n.title,40))}</button>`:`<span aria-hidden="true">/</span><select id="ancestor-jump" aria-label="Earlier research levels"><option value="">… Earlier levels</option>${path.slice(2,-2).map(a=>`<option value="${esc(a.id)}">${a.count.toLocaleString()} records · ${esc(a.title)}</option>`).join('')}</select>`).join('');
+  $('map-breadcrumb-trail').innerHTML=trail.map(n=>n?`<span aria-hidden="true">/</span><button title="${esc(n.title)}" ${n.id===activeGroup&&n.entry?`data-entry="${esc(n.entry.id)}" aria-label="Read scope and sources: ${esc(n.title)}"`:`data-zoom="${esc(n.id)}"`} ${n.id===activeGroup?'aria-current="location"':''}>${esc(n.kind==='range'?n.count.toLocaleString()+' records':short(n.title,40))}</button>`:`<span aria-hidden="true">/</span><select id="ancestor-jump" aria-label="Earlier research levels"><option value="">… Earlier levels</option>${path.slice(2,-2).map(a=>`<option value="${esc(a.id)}">${a.count.toLocaleString()} records · ${esc(a.title)}</option>`).join('')}</select>`).join('');
   $('ancestor-jump')?.addEventListener('change',event=>{if(event.target.value)focusNode(event.target.value);});
   $('map-breadcrumbs').scrollLeft=$('map-breadcrumbs').scrollWidth;
  }
  mapView.render(frontier,{tree,persona,selectedId,width:map.clientWidth,height:map.clientHeight,offsetX:origin.x-camera.x,offsetY:origin.y-camera.y});
  const nextLevel=Math.min(2,path.length);
- if(level!==nextLevel){level=nextLevel;announce(['Territories and guiding questions','Problem summaries and research collections','Research records and evidence'][level]);}
- $('level-range').textContent=activeGroup?`${frontier.filter(v=>Math.max(0,Math.min(v.box.x+v.box.w,map.clientWidth)-Math.max(v.box.x,0))*Math.max(0,Math.min(v.box.y+v.box.h,map.clientHeight)-Math.max(v.box.y,0))>=v.box.w*v.box.h*.5).length} of ${tree.all.get(activeGroup).children?.length||1} items in view · Drag to explore`:`${tree.roots.length} ${persona?'territories':'perspectives'} · Pan to explore`;
+ if(level!==nextLevel){level=nextLevel;announce(['Needs','Specific situations','Existing solutions'][level]);}
+ $('level-range').textContent=activeGroup?`${frontier.filter(v=>Math.max(0,Math.min(v.box.x+v.box.w,map.clientWidth)-Math.max(v.box.x,0))*Math.max(0,Math.min(v.box.y+v.box.h,map.clientHeight)-Math.max(v.box.y,0))>=v.box.w*v.box.h*.5).length} of ${tree.all.get(activeGroup).children?.length??1} items in view · Drag to explore`:`${tree.roots.length} needs · Pan to explore`;
  map.dataset.perspective=persona||'people';map.dataset.level=String(level);map.dataset.group=activeGroup||'overview';map.dataset.camera=JSON.stringify(camera);map.dataset.rendered=String(frontier.length);map.dataset.totalNodes=String(tree.all.size);
  const limits=zoomLimits();$('zoom-value').value=Math.round(camera.s/readingScale()*100)+'%';$('zoom-in').disabled=camera.s>=limits.max-.00001;$('zoom-out').disabled=camera.s<=limits.min+.00001;map.dataset.zoom=Math.round(camera.s/readingScale()*100);
  document.querySelectorAll('[data-level]').forEach(el=>el.classList.toggle('current',Number(el.dataset.level)===(persona?level:-1)));
  $('map-empty').hidden=!!navigationFrame||frontier.length>0;
+ $('map-empty-message').textContent=tree.all.get(activeGroup)?.children?.length===0?'Research coverage is incomplete. No solutions have been mapped here yet.':'No items in view.';
 }
 function exploreDeeper(id){focusNode(id);}
 function setHash(){
- if(!persona){history.replaceState(null,'',panelState?.type==='entry'?`#/e/${panelState.id}`:'#/');return;}
- const route=panelState?.type==='entry'?`/${persona}/e/${panelState.id}`:panelState?.type==='story'?`/${persona}/story/${panelState.step}`:activeGroup?`/${persona}/g/${encodeURIComponent(activeGroup)}`:`/${persona}`;
+ const key=persona||'all';
+ const route=panelState?.type==='entry'?`/${key}/e/${panelState.id}${activeGroup?'?within='+encodeURIComponent(activeGroup):''}`:activeGroup?`/${key}/g/${encodeURIComponent(activeGroup)}`:persona?`/${persona}`:'/';
  history.replaceState(null,'',`#${route}`);
 }
+
 function showPanel(state,{remember=true,focus=true}={}){
  stopCameraReturn();
  if(finishNavigation)finishNavigation();
@@ -253,7 +260,7 @@ function evidence(entry){
 function graphPanel(entry){
  const sourceBlock=graphSourceBlock;
  const linked=entry.links.map(r=>({r,e:byId.get(r.from_id===entry.id?r.to_id:r.from_id)})).filter(v=>v.e);
- return `<p class="kicker">Research graph · ${esc(recordLabel(entry))}</p><h2>${esc(entry.title)}</h2><span class="status unresolved">${esc(recordStatus(entry))}</span><p class="lead">${esc(entry.statement)}</p>${recordMedia(entry,true)}<h3>Scope of this claim</h3><dl>${Object.entries(entry.scope||{}).map(([k,v])=>`<div class="fact"><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl><h3>Research basis</h3><p class="body-copy">${esc(entry.confidence?.rationale)}</p><h3>Sources for this claim</h3>${sourceBlock(entry.sources)}<h3>Connected research</h3>${linked.map(({r,e})=>`<div class="graph-link"><p class="kicker">${esc(evidenceLabels[r.epistemic_status]||r.epistemic_status)}</p>${row(e)}<p class="relation-direction">${esc(byId.get(r.from_id)?.title||r.from_id)} <b>${esc(r.relation.replaceAll('_',' '))}</b> ${esc(byId.get(r.to_id)?.title||r.to_id)}</p><p class="evidence-note">${esc(r.statement)}</p><details><summary>Basis for this connection</summary><p class="evidence-note">${esc(r.confidence?.rationale)}</p>${sourceBlock(r.evidence)}</details></div>`).join('')}${entry.company_id?`<button class="panel-action" data-entry="${esc(entry.company_id)}">Open full company record →</button>`:''}<p class="evidence-note">Database snapshot ${esc(graphData?.snapshot?.as_of)} · Revision ${entry.revision}. A documented offering is not proof of effectiveness.</p>`;
+ return `<p class="kicker">Research graph · ${esc(recordLabel(entry))}</p><h2>${esc(entry.scope?.navigation?.title||entry.title)}</h2><span class="status unresolved">${esc(recordStatus(entry))}</span><p class="lead">${esc(entry.statement)}</p>${recordMedia(entry,true)}<h3>Scope of this claim</h3><dl>${Object.entries(entry.scope||{}).filter(([key])=>key!=='navigation').map(([k,v])=>`<div class="fact"><dt>${esc(k)}</dt><dd>${Array.isArray(v)?v.map(item=>esc(item)).join('<br>'):v&&typeof v==='object'?Object.values(v).map(item=>esc(item)).join(' · '):k==='website'&&safeUrl(v)?`<a href="${esc(v)}" target="_blank" rel="noopener">Visit provider ↗</a>`:esc(v)}</dd></div>`).join('')}</dl><h3>Research basis</h3><p class="body-copy">${esc(entry.confidence?.rationale)}</p><h3>Sources for this claim</h3>${sourceBlock(entry.sources)}<h3>Connected research</h3>${linked.map(({r,e})=>`<div class="graph-link"><p class="kicker">${esc(evidenceLabels[r.epistemic_status]||r.epistemic_status)}</p>${row(e)}<p class="relation-direction">${esc(byId.get(r.from_id)?.title||r.from_id)} <b>${esc(r.relation.replaceAll('_',' '))}</b> ${esc(byId.get(r.to_id)?.title||r.to_id)}</p><p class="evidence-note">${esc(r.statement)}</p><details><summary>Basis for this connection</summary><p class="evidence-note">${esc(r.confidence?.rationale)}</p>${sourceBlock(r.evidence)}</details></div>`).join('')}${entry.company_id?`<button class="panel-action" data-entry="${esc(entry.company_id)}">Open full company record →</button>`:''}<p class="evidence-note">A documented offering is not proof of effectiveness.</p>`;
 }
 function renderPanel(){
  $('panel-back').disabled=panelHistory.length===0;
@@ -281,7 +288,7 @@ function renderPanel(){
   },{root:content,rootMargin:'-15% 0px -45% 0px',threshold:0});
   content.querySelectorAll('[data-chapter]').forEach(chapter=>{chapter.querySelector('details').open=panelState.expanded?.includes(Number(chapter.dataset.chapter))||false;storyObserver.observe(chapter);});
  }else if(panelState.type==='search'){
-  content.innerHTML=`<p class="kicker">Connected research</p><h2>Follow your question.</h2><label class="sr-only" for="research-search">Search problems and companies</label><input class="search-field" id="research-search" type="search" placeholder="A problem, company or keyword…" autocomplete="off"><p class="search-summary">Search all ${entries.length} published records, across every perspective.</p><div id="search-results"></div>`;
+  content.innerHTML=`<p class="kicker">Connected research</p><h2>Follow your question.</h2><label class="sr-only" for="research-search">Search problems and companies</label><input class="search-field" id="research-search" type="search" placeholder="A problem, company or keyword…" autocomplete="off"><p class="search-summary">Search ${entries.length+graphEntries.length} source and research records, across every perspective.</p><div id="search-results"></div>`;
   $('research-search').value=panelState.query||'';renderSearch();
  }else if(panelState.type==='related'){
   const entry=byId.get(panelState.id),responses=relatedTo(entry);
@@ -290,7 +297,7 @@ function renderPanel(){
   const region=regions.find(g=>g.id===panelState.id),responses=entries.filter(e=>e.type==='company'&&inRegion(e,region));
   content.innerHTML=`<p class="kicker">${esc(region.title)} / responses</p><h2>Who is already here?</h2><p class="evidence-note">${responses.length} published company records. Shared theme or published category membership is a research connection, not proof of effectiveness.</p>${responses.slice(0,panelState.limit||60).map(e=>row(e)).join('')}${responses.length>(panelState.limit||60)?'<button class="panel-action" data-panel-more>Show more records</button>':''}`;
  }else{
-  content.innerHTML=`<p class="kicker">How to read this atlas</p><h2>Start with people.<br>Stay close to evidence.</h2><p class="body-copy">Who Cares helps venture builders understand ageing and care before deciding what to build. Each person opens a different map of the same published research.</p><h3>From landscape to detail</h3><p class="body-copy">Click a territory to enter its reading level. Its guiding question and data-backed groups appear in the map. Click a group to go deeper; breadcrumbs return to any ancestor. Drag or two-finger scroll to pan. Pinch, or hold Ctrl / ⌘ while scrolling, to zoom. Each gesture stays in one mode. Zoom changes only the spatial view: the entire item magnifies together; wording, wrapping and reading level stay fixed. Click groups or breadcrumbs to change level. Shift-scroll pans horizontally. Collections show actual records on the same pannable map. Alphabetical order is a retrieval aid, not a research hierarchy. Read evidence opens a full record.</p><h3>Read the connections carefully</h3><p class="body-copy">Territories group research by perspective. Named collections are navigation labels, not evidenced problems; broader category collections are labelled separately and do not establish product fit. Positions, sizes and colors do not rank venture potential. Illustrations are fictional reusable assets, not testimony.</p><h3>Research is not certainty</h3><p class="body-copy">The atlas uses the repository’s published research snapshot. Historical analyst themes and venture decisions are retained in the archive; active graph claims keep their own evidence status. Source links, missing evidence and incomplete research remain visible in each record.</p><h3>Explore without a mouse</h3><p class="body-copy">Tab to territories or records and press Enter. With the map focused, use arrow keys to pan, + and − to zoom, Backspace to go up a level, and Home for the overview. Escape closes the reading panel. </p><p class="evidence-note">The care-workday story is explicitly illustrative. It contains no attributed interviews, invented quotes or measured outcomes.</p>`;
+  content.innerHTML=`<h2>Start with a person’s need.</h2><p class="body-copy">Explore specific situations, then existing products, services and organised support. Open a record to inspect its sources, fit and limitations.</p><p class="body-copy">Drag or scroll to pan. Zoom magnifies the current level without changing its content. Click to enter the next level; breadcrumbs take you back.</p><p class="body-copy">An offering is not proof of effectiveness. Empty branches mean research coverage is incomplete, not that no solutions exist. Search also includes source records that have not yet been placed on the map.</p><p class="body-copy">With the map focused, arrow keys pan, + and − zoom, and Backspace returns. Escape closes a record.</p>`;
  }
  content.scrollTop=panelState.type==='story'?(panelState.scrollTop||0):0;
 }
@@ -313,7 +320,7 @@ function openStory(step=0,remember=true){
 function activateMapNode(id){
  if(navigationFrame||pointers.size)return;
  const node=tree.all.get(id);if(!node)return;
- if(node.personaKey)choosePersona(node.personaKey);else if(node.children?.length)focusNode(node.id);else if(node.entry)openEntry(node.entry.id);
+ if(node.personaKey)choosePersona(node.personaKey);else if(node.viewKind||node.children?.length)focusNode(node.id);else if(node.entry)openEntry(node.entry.id);
 }
 function choosePersona(key,options={}){if(personaMaps[key]&&entries.length)navigateTo(key,null,options);}
 function showPicker(){navigateTo(null);}
@@ -335,6 +342,8 @@ document.addEventListener('click',event=>{
 function fitCurrentLevel(){stopCameraReturn();camera=frameLevel(tree,activeGroup,map.clientWidth,map.clientHeight);render();}
 document.addEventListener('error',event=>{if(event.target.matches?.('.record-media img')){event.target.closest('figure').hidden=true;}if(event.target.matches?.('.company-logo img')){event.target.hidden=true;event.target.parentElement.classList.add('logo-missing');}},true);
 $('panel-close').onclick=()=>closePanel();$('panel-back').onclick=backPanel;
+$('study-search').onclick=()=>showPanel({type:'search'});$('study-help').onclick=()=>showPanel({type:'help'});
+$('map-evidence').onclick=()=>openEntry(tree.all.get(activeGroup).entry.id);
 $('home').onclick=()=>showPicker();$('persona-change').onclick=()=>toOverview({restore:true});$('icps-home').onclick=showPicker;
 $('overview').onclick=fitCurrentLevel;$('recover').onclick=fitCurrentLevel;
 $('zoom-in').onclick=()=>zoomStep(1);$('zoom-out').onclick=()=>zoomStep(-1);
@@ -423,12 +432,12 @@ new ResizeObserver(()=>{
 }).observe(map);
 
 function applyRoute(){
- const bits=location.hash.replace(/^#\/?/,'').split('/'),key=personaMaps[bits[0]]?bits[0]:null;
- const group=key&&bits[1]==='g'?decodeURIComponent(bits.slice(2).join('/')):null;
+ const [path,query='']=location.hash.replace(/^#\/?/,'').split('?');
+ const bits=path.split('/'),key=personaMaps[bits[0]]?bits[0]:null;
+ const group=bits[1]==='g'?decodeURIComponent(bits.slice(2).join('/')):new URLSearchParams(query).get('within');
  navigateTo(key,group,{animate:false});
- if(key&&bits[1]==='e'&&byId.has(bits[2]))openEntry(bits[2]);
- else if(key&&bits[1]==='story')openStory(Number(bits[2])||0);
- else if(!key&&bits[0]==='e'&&byId.has(bits[1]))openEntry(bits[1]);
+ if(bits[1]==='e'&&byId.has(bits[2]))openEntry(bits[2]);
+ else if(bits[0]==='e'&&byId.has(bits[1]))openEntry(bits[1]);
 }
 window.addEventListener('hashchange',()=>{if(entries.length)applyRoute();});
 
@@ -443,5 +452,6 @@ try{
  applyRoute();
 }catch(error){
  $('workspace').hidden=false;
- $('loading').textContent='The research service is unavailable. Reload to try again; no saved copy is being shown.';console.error('Atlas could not load its research index',error);
+ $('loading').hidden=false;
+ $('loading').textContent=error.message.startsWith('The needs hierarchy')?error.message:'The research service is unavailable. Reload to try again; no saved copy is being shown.';console.error('Atlas could not load its research index',error);
 }

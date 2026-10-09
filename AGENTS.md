@@ -47,3 +47,9 @@ Use `ux/index-browse-v2` or a separate branch; never edit or push main. Do not d
 The `atlas` schema is additive. Set `atlas.batch_id` within each write transaction; triggers audit graph writes and increment object/relationship revisions. Never bypass the audit or evidence checks. Stage legacy research losslessly in `atlas.legacy_records` before reviewing or mapping it.
 
 Before implementation, explain how the proposed problem space, evidence, graph relationships and zoom experience satisfy the alignment checks in the north star. The old theme-based maps and design brief do not override these principles.
+
+## Current atlas navigation contract — 9 October 2026
+
+Read the [hierarchy and indexing skill](.agents/skills/whocares-hierarchy/SKILL.md) before authoring or changing navigation. The whole visible atlas uses **needs → specific situations → existing solutions**; lived workarounds and historical groupings remain supporting research, not solution tiles. Click drills into the next level; pan/zoom magnifies stable content, superseding earlier zoom-threshold content changes in the implementation briefs.
+
+The database graph is canonical: `scope.navigation.role` identifies `need`, `situation` and `solution`; deliberately flagged `context_for` links run situation → need and `responds_to` links run solution → situation, with `provenance.navigation = true`. `site/js/atlas-needs.js` projects this graph. Do not introduce a local prototype JSON dependency for production navigation or silently promote candidate evidence during reorganisation. This display/source contract does not alter the principle authority or write/deployment rules above.

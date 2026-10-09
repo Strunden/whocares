@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-09",
+  "tool": "built-in image_gen",
+  "output_id": "exec-683ad0fb-2e80-4916-90b7-006cc9255de4",
+  "reference": "assets/illustrations/study/break-away-v3.png",
+  "output": "assets/illustrations/study/break-away-wide-v1.png",
+  "prompt": "Create a landscape editorial illustration asset with a wide 3:2 aspect ratio by recomposing this exact scene. Keep the same pencil and sparse watercolor style and same middle-aged South Asian woman wearing burgundy seated at a planning notebook. Preserve thoughtful natural expression and adult agency. Arrange horizontally: woman and notebook on left, OPEN SUITCASE with packed clothes and straw hat on right. Show BOTH her face and the whole open suitcase clearly; suitcase must read as luggage, not a random chair. The need is several days away from care responsibilities. No additional people, no invented care interaction, no text, UI, logos or typography. Minimize the background room details; retain a hint of the bed if helpful. Natural edges fade into a plain white background, especially bottom; no hard rectangle. Minimize blank margins while keeping head, hands, notebook and suitcase intact. Output only the single illustration, not a card design.",
+  "fictional": true,
+  "display_provenance": false,
+  "purpose": "Recompose approved scene for the user-approved map layout without cropping its distinguishing objects."
+}

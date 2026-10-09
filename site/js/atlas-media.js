@@ -14,6 +14,6 @@ export function productLogoFor(entry){return reviewedMedia(entry).find(m=>m.medi
 export function mediaFor(entry){
  const m=reviewedMedia(entry).find(m=>m.media_role!=='logo')||entry?.media;
  if(m&&/^https:\/\//.test(m.src)&&/^https:\/\//.test(m.source)&&m.alt)return m;
- if(['daily_situation','lived_workaround'].includes(entry?.kind))return {src:'assets/illustrations/family.png',alt:'Illustrative family members',kind:'Illustration',credit:'Generated illustration; not field evidence'};
+
  return null;
 }

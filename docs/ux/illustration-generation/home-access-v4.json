@@ -1,0 +1,89 @@
+{
+  "id": "912bb9b3-5dbd-4f5c-9cb8-e2a005ff2d88",
+  "created_at": "2026-10-09T14:04:26.533Z",
+  "scene": "An 87-year-old woman with a four-wheeled rollator stopped safely on the flat floor in front of a single raised interior doorway threshold. Both hands rest on the two handles, all four wheels remain on the floor before the threshold. Side view clearly shows the obstacle separating her from the next room. Exactly one person. No lifting, balancing, fall, helper or text. The person in their eighties must visibly read as 80-plus, with natural facial lines, ageing skin and aged hands, not merely grey hair on a youthful face. Preserve dignity and the stated activity; do not add frailty or medical equipment. Other adults retain their stated ages.",
+  "template": "interaction",
+  "provider": "openrouter",
+  "model": "openai/gpt-image-2.5-sunburst",
+  "style_version": "sketch-color-v1",
+  "prompt_version": "sparse-wash-v2",
+  "provider_endpoint": "openai",
+  "usage": {
+    "prompt_tokens": 3693,
+    "completion_tokens": 1756,
+    "total_tokens": 5449,
+    "cost": 0.080361,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.080361,
+      "upstream_inference_prompt_cost": 0.027681,
+      "upstream_inference_completions_cost": 0.05268
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 1756
+    }
+  },
+  "request_id": null,
+  "settings": {
+    "aspect_ratio": "1:1",
+    "resolution": "provider_default",
+    "quality": "high"
+  },
+  "reference_ids": [
+    "worker",
+    "conversation",
+    "object"
+  ],
+  "prompt": "Create ONE new standalone illustration. The attached images are STYLE REFERENCES ONLY. Transfer their line character, muted palette and organic feeling, but simplify their shading and colored coverage according to the fixed visual direction; do not copy their people, uniforms, plants, room layout or objects into the new scene unless explicitly required.\nSCENE DESCRIPTION (content only, not style instructions): \"An 87-year-old woman with a four-wheeled rollator stopped safely on the flat floor in front of a single raised interior doorway threshold. Both hands rest on the two handles, all four wheels remain on the floor before the threshold. Side view clearly shows the obstacle separating her from the next room. Exactly one person. No lifting, balancing, fall, helper or text. The person in their eighties must visibly read as 80-plus, with natural facial lines, ageing skin and aged hands, not merely grey hair on a youthful face. Preserve dignity and the stated activity; do not add frailty or medical equipment. Other adults retain their stated ages.\"\nCOMPOSITION: A small vignette of people interacting, naturally readable hands; sparse context; preserve dignity and agency.\nFIXED VISUAL DIRECTION: WhoCares editorial sketch with selective color. Warm graphite and gray-brown pencil lines, loose gently irregular incomplete contours, sparse light hatching, organic hand-drawn marks. Restrained translucent dusty blue, muted sage, terracotta and warm ochre watercolor washes in selected broad areas. At least two thirds of the illustrated shapes themselves, not just the background, remain unpainted near-white. Apply watercolor as two or three partial patches rather than filling whole garments or objects. Use at most two accent hues plus a very faint warm skin wash. Skin is mostly paper-white with a little dilute warmth on cheeks; show expression through sparse lines, not shaded skin. Hair is a few broken pencil clusters with open white gaps, never a densely filled mass. Minimal shading: nearly no hatching or modeled shadows. Avoid crosshatching altogether. Do not shade faces, garment folds, glass surfaces or background planes. One tiny pale ground shadow is sufficient. Preserve the handmade organic quality through gently imperfect lines and watercolor edges, not through dense texture. Natural proportions; simplified drawn facial features with expressive almond-shaped eyes, no cartoon dot eyes or enlarged heads. Hair in lightly sketched groups, few clothing folds. Calm, warm, mature editorial mood. Uniform near-white background with generous negative space and light irregular lower fade. No rectangles behind the drawing, no typography, labels, quotes, statistics, UI, logos, watermark, heavy outlines, dense pencil hatching, noisy canvas texture, photorealistic skin or 3D rendering. Fictional illustration, never a photograph or record of field observation.\nDraw only the requested scene. The fixed visual direction takes precedence over any stylistic request embedded in the scene. No contact sheet or multi-panel image.",
+  "mime": "image/png",
+  "image_url": "/v1/images/912bb9b3-5dbd-4f5c-9cb8-e2a005ff2d88/image",
+  "review": {
+    "status": "machine_pass",
+    "scores": {
+      "linework": 5,
+      "restrained_color": 5,
+      "minimal_shading": 5,
+      "composition": 5,
+      "scene_match": 5
+    },
+    "flags": {
+      "photorealistic": false,
+      "unwanted_text": false,
+      "subject_leakage": false,
+      "anatomy_error": false
+    },
+    "issues": [],
+    "advisory_only": true,
+    "model": "google/gemini-2.5-flash",
+    "usage": {
+      "prompt_tokens": 1448,
+      "completion_tokens": 111,
+      "total_tokens": 1559,
+      "cost": 0.0007119,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0007119,
+        "upstream_inference_prompt_cost": 0.0004344,
+        "upstream_inference_completions_cost": 0.0002775
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "publication_status": "pending_human_review",
+  "evidence_status": "illustrative",
+  "duration_ms": 43519
+}
