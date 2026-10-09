@@ -29,3 +29,9 @@ test('logos use same-origin, HTTPS or explicit loopback HTTP only',()=>{
  for(const base of ['http://example.org','http://127.0.0.1.evil.test','javascript:alert(1)','https://user:pass@example.org','https://example.org?redirect='])assert.equal(logoUrl(entry,base),'');
  assert.equal(logoUrl({logo:'http://example.org/logo.png'}),'');
 });
+
+test('structured scope preserves qualifications without exposing enum syntax',async()=>{
+ const {scopeDescription}=await import('../site/js/atlas-records.js');
+ assert.equal(scopeDescription({status:'published_with_conflict',summary:'Confirm the conflicting price.',currency:'EUR'}),'published with conflict · Confirm the conflicting price. · EUR');
+ assert.equal(scopeDescription({status:'unknown',note:'Eligibility not verified.'}),'unknown · Eligibility not verified.');
+});

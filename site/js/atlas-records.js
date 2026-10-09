@@ -3,6 +3,10 @@ import {productLogoFor} from './atlas-media.js';
 // Presentation contracts shared by every lens. No evidence or taxonomy is inferred here.
 export const kindLabels={problem_space:'Problem space',problem:'Problem',daily_situation:'Situation',lived_workaround:'Workaround',systemic_cause:'Mechanism',institutional_response:'Institutional response',solution:'Existing response',open_question:'Open question',aspiration:'Aspiration',stakeholder:'Stakeholder'};
 export const evidenceLabels={documented:'Documented claim',interpretation:'Interpretation',candidate:'Research candidate',hypothesis:'Hypothesis',illustrative:'Illustrative · not observed',open_question:'Open question',normative:'Product direction',reference:'Reference'};
+export function scopeDescription(value){
+ if(!value||typeof value!=='object'||Array.isArray(value))return value;
+ return Object.entries(value).map(([key,text])=>key==='status'?String(text).replaceAll('_',' '):text).join(' · ');
+}
 export function graphRecords(graph,legacy){
  const excluded=new Set((graph.content_reviews||[]).filter(r=>r.record_table==='objects'&&['hold','archive','reclassify'].includes(r.decision)).map(r=>r.record_id));
  const sources=new Map(graph.sources.map(s=>[s.id,s])),companies=new Map(legacy.map(e=>[e.id,e]));
