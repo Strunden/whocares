@@ -42,6 +42,10 @@ Before shipping an atlas UI, perform a product-alignment review of the problem-s
 
 ## Working rules
 
+For atlas hierarchy, content and discovery navigation, follow the [WhoCares hierarchy skill](.agents/skills/whocares-hierarchy/SKILL.md), including its worked example and entry acceptance criteria. The reviewed interaction is click-to-drill: zoom magnifies the current level without replacing its content. This supersedes earlier zoom-triggered disclosure guidance for this iteration.
+
+For illustration selection, reuse, generation or review, follow the [WhoCares illustration skill](.agents/skills/whocares-illustrations/SKILL.md). Its meaning, human-interaction and bias checks apply before integrating imagery. Skills document the reviewed local direction; they do not claim the prototype or its data has been deployed.
+
 Use `ux/index-browse-v2` or a separate branch; never edit or push main. Do not deploy the production UI without user approval. Preserve existing company/user records, sources and provenance. Test database migrations on a Neon branch; keep a pre-change backup and migration files. Never reset or restore live data autonomously.
 
 The `atlas` schema is additive. Set `atlas.batch_id` within each write transaction; triggers audit graph writes and increment object/relationship revisions. Never bypass the audit or evidence checks. Stage legacy research losslessly in `atlas.legacy_records` before reviewing or mapping it.
