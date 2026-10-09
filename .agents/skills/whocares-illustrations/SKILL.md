@@ -44,6 +44,16 @@ Specify who is doing what, who initiates, and which visible cues make the intera
 
 When an image has a problematic reading, identify the concrete visible cue and its consequence rather than declaring the people or identities depicted inappropriate. Revise the cue or composition; do not rely on a caption to repair it.
 
+## Edges that blend into the map
+
+Generated atlas illustrations sit on a pale canvas with a very subtle organic wash. Their outer silhouette must dissolve naturally into that surface. Do not let a planter, plant box, table, chair, wall or other prop be abruptly cut off at the rectangular image boundary: a straight clipped edge exposes the image seam even when its background is white or transparent.
+
+Keep meaningful objects complete and inset from the outer boundary; omit or reposition incidental props that would run into it. Let peripheral marks and background washes taper into clean paper or transparency through irregular, broken pencil strokes and partial washes, as in the user-approved chair/clothing edge. Avoid a uniform blurred halo or rounded rectangular mask. This concerns the outside of the illustration, not every edge within it: preserve crisp faces, hands and the contours needed to understand objects. Do not blur the entire scene or crop away a meaningful object to hide the seam.
+
+**Edge acceptance check:** inspect all four sides and corners at full size, then at the actual map size against the canvas and organic backing. Reject visible rectangular crops, hard white patches, clipped props and straight image-boundary seams. A soft background alone does not pass if a foreground object still hits the edge. Revise the composition or regenerate the affected edge before accepting the asset; do not conceal the defect with a card or border. This rule applies to generated map illustrations, not authentic provider logos or product photographs.
+
+See the [user-reviewed pass/fail edge crops](references/prompting.md#user-reviewed-edge-examples) before accepting a generated map asset.
+
 ## Review in context
 
 Inspect full-size pixels for anatomy and contact, then the actual crop at ordinary tile size beside neighbouring tiles. Small scale can hide the obstacle or turn a helping gesture into a grip. Check these tests before integration:

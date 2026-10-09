@@ -28,6 +28,8 @@ For busy ideas, choose one main action rather than requesting a whole narrative 
 
 These are composition instructions, not topic categories. Agents may omit the template and get interaction by default.
 
+For map illustrations, include this framing constraint in the brief: “Keep the person and meaningful objects fully inside the image. Leave a clear outer margin; no planter, furniture or other prop cut off against any image edge. Let peripheral details taper away naturally.” Check the final asset for the edge acceptance criteria in `SKILL.md`; “soft edges” in the prompt is not sufficient evidence that it passed.
+
 ## Exact details
 
 The first test of a “weekly pill organiser” produced five compartments. If a count matters, state it: “exactly seven separate compartments.” Inspect it afterwards; wording alone cannot guarantee counts. Avoid inventing brand names, written labels, or irrelevant objects from the style references.
@@ -53,3 +55,14 @@ Inspect the actual image at its normal card size, alongside the approved referen
 A scene can be wrong even when the critic gives scene_match 5/5. Conversely, optional aesthetic notes do not mean the user-approved image is wrong. Preserve the exact prompt, model, reference IDs, and usage from the result metadata.
 
 When an image has a concrete content error, revise only that detail and make at most one corrective generation within the user's requested work. If it still fails, show the candidates and explain the remaining issue instead of retrying indefinitely. Do not regenerate on a timeout before checking whether the first result was saved.
+
+
+## User-reviewed edge examples
+
+**Pass — irregular drawn ends.** Chair legs, clothing and loose pencil marks break into tapered, uneven strokes, with paper showing between them. Objects can dissolve naturally at their perimeter; do not replace this with a uniform blur or rounded rectangular mask.
+
+![Approved: irregular pencil edges fading into the page](edge-approved.png)
+
+**Fail — a visible crop seam.** The planter and foliage meet a straight vertical image boundary. The hard outer cut reveals a rectangle even though the rest of the illustration fades naturally. Move or omit the incidental planter, or recompose that perimeter; retain the readable interior contours.
+
+![Rejected: planter abruptly clipped at a straight vertical edge](edge-rejected.png)
