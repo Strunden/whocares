@@ -117,11 +117,8 @@ function installLevel(key,group,nextTree){
  regions=tree.roots.map(n=>({...n,x:n.box.x+n.box.w/2,y:n.box.y+n.box.h/2}));
  $('workspace').hidden=false;
  $('persona-change').textContent=key?personaMaps[key].name:'';
- const node=tree.all.get(group);
- $('study-title').textContent=node?.title||'What do people need?';
- $('study-description').textContent=node?.description||'Explore the situations people face in ageing and care.';
- $('study-kicker').hidden=true;
- $('map-evidence').hidden=!node?.entry;
+ $('brand-tagline').hidden=!!group;
+ $('map-breadcrumbs').hidden=!group;
 }
 // All level changes pass through here. Pan and zoom only update the camera.
 function navigateTo(key,group=null,{restore=true,animate=true,keepPanel=false,saveCurrent=true}={}){
@@ -131,7 +128,6 @@ function navigateTo(key,group=null,{restore=true,animate=true,keepPanel=false,sa
  const nextTree=key===persona&&tree?tree:makeTree(key);
  if(group&&!nextTree.all.has(group))group=null;
 
- $('map-breadcrumbs').hidden=!group;
  const destination=nextTree.all.get(group);
  let target=restore&&levelCameras.get(locationKey(key,group))||entryFrame(nextTree,group,map.clientWidth,map.clientHeight);
  const limits=levelZoomLimits(nextTree,group,map.clientWidth,map.clientHeight);
@@ -188,7 +184,7 @@ function render(fromNativeScroll=false){
  if($('map-breadcrumbs').dataset.path!==crumbKey){
   $('map-breadcrumbs').dataset.path=crumbKey;
   const trail=path.length>5?[...path.slice(0,2),null,...path.slice(-2)]:path;
-  $('map-breadcrumb-trail').innerHTML=trail.map(n=>n?`<span aria-hidden="true">/</span><button title="${esc(n.title)}" ${n.id===activeGroup&&n.entry?`data-entry="${esc(n.entry.id)}" aria-label="Read scope and sources: ${esc(n.title)}"`:`data-zoom="${esc(n.id)}"`} ${n.id===activeGroup?'aria-current="location"':''}>${esc(n.kind==='range'?n.count.toLocaleString()+' records':short(n.title,40))}</button>`:`<span aria-hidden="true">/</span><select id="ancestor-jump" aria-label="Earlier research levels"><option value="">… Earlier levels</option>${path.slice(2,-2).map(a=>`<option value="${esc(a.id)}">${a.count.toLocaleString()} records · ${esc(a.title)}</option>`).join('')}</select>`).join('');
+  $('map-breadcrumb-trail').innerHTML=trail.map(n=>n?`<span aria-hidden="true">/</span><button title="${esc(n.title)}" ${n.id===activeGroup&&n.entry?`data-entry="${esc(n.entry.id)}" aria-label="Read scope and sources: ${esc(n.title)}"`:`data-zoom="${esc(n.id)}"`} ${n.id===activeGroup?'aria-current="location"':''}>${esc(n.kind==='range'?n.count.toLocaleString()+' records':n.shortTitle||n.title)}</button>`:`<span aria-hidden="true">/</span><select id="ancestor-jump" aria-label="Earlier research levels"><option value="">… Earlier levels</option>${path.slice(2,-2).map(a=>`<option value="${esc(a.id)}">${a.count.toLocaleString()} records · ${esc(a.shortTitle||a.title)}</option>`).join('')}</select>`).join('');
   $('ancestor-jump')?.addEventListener('change',event=>{if(event.target.value)focusNode(event.target.value);});
   $('map-breadcrumbs').scrollLeft=$('map-breadcrumbs').scrollWidth;
  }
@@ -343,7 +339,6 @@ function fitCurrentLevel(){stopCameraReturn();camera=frameLevel(tree,activeGroup
 document.addEventListener('error',event=>{if(event.target.matches?.('.record-media img')){event.target.closest('figure').hidden=true;}if(event.target.matches?.('.company-logo img')){event.target.hidden=true;event.target.parentElement.classList.add('logo-missing');}},true);
 $('panel-close').onclick=()=>closePanel();$('panel-back').onclick=backPanel;
 $('study-search').onclick=()=>showPanel({type:'search'});$('study-help').onclick=()=>showPanel({type:'help'});
-$('map-evidence').onclick=()=>openEntry(tree.all.get(activeGroup).entry.id);
 $('home').onclick=()=>showPicker();$('persona-change').onclick=()=>toOverview({restore:true});$('icps-home').onclick=showPicker;
 $('overview').onclick=fitCurrentLevel;$('recover').onclick=fitCurrentLevel;
 $('zoom-in').onclick=()=>zoomStep(1);$('zoom-out').onclick=()=>zoomStep(-1);

@@ -1,14 +1,14 @@
 # Needs map integration
 
-The approved map presentation is integrated into the existing app: large illustrations above concise copy, faint organic washes, full colour, no tile arrows or enclosing borders, and a dot grid that follows the camera. The original tagline, contextual subline and lower breadcrumbs are retained; zoom controls stay horizontal.
+The approved map presentation is integrated into the existing app: large illustrations above concise copy, faint organic washes, full colour, no tile arrows or enclosing borders, and a dot grid that follows the camera. The brand stays fixed. At the root its second line is “Ageing and care, mapped for venture builders.” Inside a branch, breadcrumbs replace that tagline in the same position, with the current breadcrumb bold. No “All needs” breadcrumb appears at the root. The duplicate map heading and introductory block were removed after user review. Zoom controls stay horizontal.
 
 ## Live data contract
 
 The page still makes one uncached `/api/discovery` request through `atlas-loader.js`. It does not import the prototype's study JSON or a saved catalog. The migration supplies canonical metadata in `atlas.objects.scope.navigation`:
 
-- Need: `role: "need"`, stable `view_id`, `title`, `summary`, reviewed local `image` path, `order`, `lenses`, `affected_lenses`.
-- Situation: `role: "situation"`, optional stable `view_id`, `title`, `summary`, reviewed `image`, `order`, optional `remaining_question`.
-- Named solution: optional `role: "solution"`, display `title` and `summary`. Actual assertion, cost, eligibility, provider, website and limitations remain in its source record.
+- Need: `role: "need"`, stable `view_id`, `title`, `short_title`, `summary`, reviewed local `image` path, `order`, `lenses`, `affected_lenses`.
+- Situation: `role: "situation"`, optional stable `view_id`, `title`, `short_title`, `summary`, reviewed `image`, `order`, optional `remaining_question`.
+- Named solution: optional `role: "solution"`, display `title`, `short_title` and `summary`. Actual assertion, cost, eligibility, provider, website and limitations remain in its source record.
 - Situation → need: `context_for` with `provenance.navigation: true`.
 - Solution/institutional response → situation: `responds_to` or `addresses` with `provenance.navigation: true`. The relationship statement explains contextual fit and limitations.
 
@@ -35,3 +35,7 @@ The 31 newly researched offerings have dated official sources in `docs/research/
 The merged app runs locally at port 8793 against live Neon. GitHub Pages has not been deployed in this task. The configured public API `/api/discovery` returned 404 during verification; public deployment requires the existing API implementation in this branch to be deployed as well. Do not point a public browser at a database connection string or replace this with a bundled snapshot.
 
 Validation: 78 frontend tests, 17 API tests, the database-only site check, migration constraints and replay, plus desktop browser checks of overview, drill-in, stable zoom, keyboard pan, contextual detail URLs and source access. Mobile remains outside this iteration. The locked Wrangler development dependency tree reports three related audit warnings through `sharp`/`miniflare`; dependencies were not upgraded as part of this design/data change.
+
+## Breadcrumb label refinement
+
+`20261009-navigation-short-titles.sql` adds authored `scope.navigation.short_title` to all 62 mapped records (6 needs, 19 situations, 37 solutions). The existing `title` is the full display version; assertion titles remain intact. The audited update was tested on the existing test branch, then applied to live Neon. All pre-existing navigation fields were checked unchanged. Breadcrumbs use the short label, with full wording retained in their accessible label/title and on tiles and records. Older records without a short label fall back to the full wording rather than truncation. The label change does not change routes or create a new map level.

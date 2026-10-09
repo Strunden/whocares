@@ -18,6 +18,7 @@ The decisions another agent needs to preserve:
 - Existing solutions include named products, services, public provision and organised community support. They are concrete offerings a venture builder can investigate. A lived workaround remains valuable supporting evidence, but is **not a solution tile**. A generic mechanism or a future idea is not a named existing offering.
 - People’s perspectives clarify the person affected and the buyer, payer or decision-maker. All lenses use one graph with stable identities; do not create separate persona taxonomies.
 - **Click to drill; zoom only magnifies the current level.** Retain continuous pan/zoom and stable content. This explicit user decision supersedes earlier implementation briefs that changed semantic content at zoom thresholds.
+- The brand’s second line shows the tagline only at the root. Within a branch, breadcrumbs replace it in the same position. No root “All needs” label, duplicate map heading or extra “Scope & evidence” control. Breadcrumbs use authored short titles; tiles and records use full titles.
 - Keep the existing app, sparse map and evidence access. Desktop is the current review scope. Do not add dense metadata labels to explain a weak title.
 
 ## Hierarchy and information shown
@@ -54,7 +55,7 @@ Keep material qualifications with the claim they qualify. An offering's existenc
 - Existing solution: `scope.navigation.role = "solution"` on an existing `solution` or `institutional_response` object. Public/community provision uses the latter where appropriate.
 - Situation → need: `context_for`, with `from_id` the situation, `to_id` the need and `provenance.navigation = true`.
 - Solution → situation: `responds_to`, with `from_id` the solution, `to_id` the situation and `provenance.navigation = true`. Put the situation-specific fit in the relationship statement and attach its evidence/provenance. The current reader also accepts explicitly flagged legacy `addresses` links; use `responds_to` for newly authored navigation links.
-- `scope.navigation` carries concise `title`, `summary`, ordering and applicable lens metadata. Need/situation nodes require an approved `image`; the current reader expects `assets/illustrations/study/<filename>.png`. `view_id`, when used, preserves readable/stable routes without changing the object ID.
+- `scope.navigation` carries the full display `title`, an authored `short_title` for breadcrumbs, `summary`, ordering and applicable lens metadata. Need/situation nodes require an approved `image`; the current reader expects `assets/illustrations/study/<filename>.png`. `view_id`, when used, preserves readable/stable routes without changing the object ID.
 - Only deliberately flagged relationships enter the browsing tree. Historical `context_for` or `responds_to` research edges must not automatically become navigation. Never flag a workaround merely to fill a solution level.
 
 One solution can respond to several situations. Reuse its identity; record fit and uncertainty on each edge. A visiting service that offers conversation does not thereby provide replacement nursing. A transport service can help someone get out without supplying companionship at the destination. Keep solution scope narrower than the provider's entire company where offerings differ.
@@ -65,6 +66,7 @@ One solution can respond to several situations. Reuse its identity; record fit a
 
 - Helps someone understand a person, struggle, offering or meaningful constraint; not a synonym, decorative grouping or filler.
 - Plain title and short explanation identify the person/context without universal claims about older people. An editorial first-person title is not a participant quote.
+- Every mapped need, situation and solution stores both `scope.navigation.title` and `scope.navigation.short_title`. Short labels should usually be two to five words, remain distinguishable among siblings and preserve the meaning of the full title; a concise product name can serve as both. Do not generate them by character truncation or replace the full title. Preserve provider identity in solution labels.
 - Stable identity, geography, setting and time scope; preserve source records and provenance. Distinguish the person affected from the buyer/payer.
 - Honest epistemic status: documented observation, provider description, interpretation, candidate, hypothesis or unknown. Reorganisation and a citation do not upgrade status.
 - Claims have source URL/publisher, date or access date, locator and an explanation of what is supported. Search snippets alone are insufficient verification. Keep contrary evidence and missing perspectives.

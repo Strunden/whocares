@@ -31,3 +31,17 @@ test('empty research coverage remains an empty map level with a finite camera',(
  const camera=frameLevel(tree,id,1280,720);assert.ok(Object.values(camera).every(Number.isFinite));
  assert.equal(readingLevel(tree,id,camera,1280,720).length,0);
 });
+
+test('authored breadcrumb labels stay separate from full titles and shared identities',()=>{
+ const data=records();
+ data[0].scope.navigation.short_title='Care home';
+ data[1].scope.navigation.short_title='Finding the right fit';
+ data[4].scope={navigation:{title:'An existing care offering',short_title:'Care offering'}};
+ const root=navigationRoots(data)[0],situation=root.children[0],solution=situation.children[0];
+ assert.equal(root.shortTitle,'Care home');assert.equal(root.title,'need title');
+ assert.equal(situation.shortTitle,'Finding the right fit');assert.equal(situation.title,'situation title');
+ assert.equal(solution.shortTitle,'Care offering');assert.equal(solution.title,'An existing care offering');
+ assert.equal(solution.entry,root.children[1].children[0].entry);
+ assert.equal(root.children[1].shortTitle,'situation title');
+ assert.equal(root.id,'existing-route');
+});
