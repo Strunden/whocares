@@ -5,6 +5,7 @@ export const kindLabels={problem_space:'Problem space',problem:'Problem',daily_s
 export const evidenceLabels={documented:'Documented claim',interpretation:'Interpretation',candidate:'Research candidate',hypothesis:'Hypothesis',illustrative:'Illustrative · not observed',open_question:'Open question',normative:'Product direction',reference:'Reference'};
 export function scopeDescription(value){
  if(!value||typeof value!=='object'||Array.isArray(value))return value;
+ if(typeof value.summary==='string'&&value.summary.trim())return value.summary;
  return Object.entries(value).map(([key,text])=>key==='status'?String(text).replaceAll('_',' '):text).join(' · ');
 }
 export function graphRecords(graph,legacy){

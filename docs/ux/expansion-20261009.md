@@ -1,4 +1,4 @@
-# Atlas expansion checkpoint — 9 October 2026
+# Atlas expansion checkpoints — 9–10 October 2026
 
 The requested expansion is approximately tenfold from 62 unique mapped records (6 needs, 19 situations, 37 offerings). Count identities, not repeated placements. This is a target, not an achieved coverage claim.
 
@@ -65,3 +65,27 @@ The new ellio record has concise display text, full/short names, pironex technol
 Isolated and live database checks passed with pre-change backups and audited writes; public queries expose none of the internal-only new media. The full research suite passes **197 tests**; the frontend/API suite remains **101 passing tests**. No public UI deployment. Durable records are under `publication-artifacts/safety-reviewed-20261010/` and `publication-artifacts/offering-careship-media-20261010/` in the research state directory, outside Git.
 
 The remaining presence gaps are **31 offerings without a logo reference, 32 without a product/service visual, eight situations without a reviewed object source and six relationships without reviewed evidence**. A DRK-hosted visual failed browser certificate verification and remains unapproved; no security warning was bypassed. Hearing and conversation is the next bounded research pass. These checks and additions remain far short of the approximately 620-record goal.
+
+
+## Latest checkpoint — live-in workers and existing-record repairs
+
+**69 unique visible records: 8 needs, 21 situations, 40 named offerings.** This remains far short of the approximately 620-record goal. Earlier counts above are dated checkpoints, not current totals. Repeated solution placements and supporting research records are not counted as expansion.
+
+The new path is **Life beyond care work → Uninterrupted time off → Faire Mobilität**. It concerns migrant live-in workers in private households in Germany, distinct from family respite and residential nursing workflow. The 2023 PLOS qualitative study reports permanent availability, little free time, family separation and relationship strain, alongside positive relationships, self-determination and motivation. Its abstract and body disagree on participant count; neither one count nor population prevalence is asserted. Full and short display titles are editorial, not interview quotations.
+
+Faire Mobilität's official pages establish free anonymous labour-law advice, language-specific phone/email access and appointments by prior arrangement for workers from Central and Eastern Europe. The provider identity page records DGB responsibility. Advice is a route to investigate boundaries; it does not itself supply replacement care or establish that time off is secured. Current appointment capacity and individual resolution are unknown. Two new contextual illustrations, the authentic provider mark and its official live-in-care campaign graphic were visually reviewed. The graphic is labelled campaign material, not a counselling session or research participant. Provider assets remain internal-only while reuse rights are unverified.
+
+Four independently reviewed findings, three preserved sources and 15 evidence links support the addition. Two supporting context records retain the study's positive experiences and provider identity without adding map levels. Existing publication tooling compiled exact-version mappings; isolated then live assertions, backups and audited writes passed. Durable artifacts: `publication-artifacts/livein-reviewed-20261010/` in canonical research storage, outside Git.
+
+Additional repairs since the safety checkpoint:
+
+- Added reviewed authentic Malteser alarm imagery, Vivendi PEP logo/interface example, Silbernetz logo/phone photograph and Pforzheim neighbourhood-help emblem. The Vivendi screenshot is explicitly historical (February 2020); a provider photograph is not labelled as a verified research participant or service user.
+- Linked two previously reviewed discharge accounts to the urgent-care-home situation. They are 2024 clinician proxy accounts from Harzklinikum/Saxony-Anhalt, not direct family interviews, national prevalence or today's capacity.
+- Attached specific reviewed offering passages to five existing solution-fit links. Pforzheim's explicit shopping-for/with passage now supports its shopping connection. A separate independent review confirmed that scope and the undated published private-pay rate: €16 per hour plus travel, donor-subsidised, checked 10 October 2026. Capacity and individual price agreement remain unverified.
+- Structured scope uses its authored summary without repeating raw amounts, URLs and dates after the prose. Underscores in scope headings are rendered as spaces. No new map chrome or hierarchy changes.
+
+The current **presence audit** flags 27 offerings without a logo reference, 29 without a product/service visual, seven situations without a reviewed object-source link, and zero solution-fit links without a reviewed relationship-source link. Presence is not quality assurance: source fit, image loading, meaning, availability and duplication still require inspection. These outstanding properties are unfinished work, not acceptable placeholders for completion.
+
+The automatic researcher remains unreliable: recent passes either exhausted completion tokens, guessed an irrelevant DOI, or returned no usable output. Those attempts are retained and did not publish records. The exact-source handoff was corrected; optional extended reasoning was disabled only for the configured DeepSeek researcher. The live-in branch was then extracted directly from saved sources and independently reviewed through four bounded reviewer calls. Do not interpret that supervised success as a validated autonomous expansion pipeline. Digital and hearing drafts remain outside the map where admission checks are incomplete. No source-access restriction was bypassed.
+
+Validation: **199 research tests and 101 frontend/API tests pass**. Research branch `codex/branch-research-expansion` is pushed and installed in the clean existing runtime. Public UI deployment remains unchanged. Further expansion must preserve these checks rather than multiply unreviewed records.

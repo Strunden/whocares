@@ -32,6 +32,7 @@ test('logos use same-origin, HTTPS or explicit loopback HTTP only',()=>{
 
 test('structured scope preserves qualifications without exposing enum syntax',async()=>{
  const {scopeDescription}=await import('../site/js/atlas-records.js');
- assert.equal(scopeDescription({status:'published_with_conflict',summary:'Confirm the conflicting price.',currency:'EUR'}),'published with conflict · Confirm the conflicting price. · EUR');
+ assert.equal(scopeDescription({status:'published_with_conflict',summary:'Confirm the conflicting price.',currency:'EUR'}),'Confirm the conflicting price.');
  assert.equal(scopeDescription({status:'unknown',note:'Eligibility not verified.'}),'unknown · Eligibility not verified.');
+ assert.equal(scopeDescription({status:'published_partial',summary:'€16 per hour plus travel. Confirm the current rate.',hourly_amount:16,currency:'EUR',checked_date:'2026-10-10',source_url:'https://example.org'}),'€16 per hour plus travel. Confirm the current rate.');
 });
