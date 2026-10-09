@@ -21,3 +21,14 @@ test('broken graph references and malformed catalogs cannot appear as a successf
  assert.throws(()=>shapeDiscovery({payload:{...payload,catalog:[{...row,review_current:false}]},revision:'a'}),/stale/);
  assert.throws(()=>shapeDiscovery({payload,revision:null}),/Missing/);
 });
+
+test('internal media requires an explicit server-side opt-in; the public query stays restricted',async()=>{
+ let query;
+ const sql={simpleQuery:async value=>{query=value;return [{payload,revision:'abc'}];}};
+ await queryDiscovery(sql,{internalMedia:true});
+ assert.match(query,/m.review_state='reviewed' AND \(m.visibility='internal' OR/);
+ assert.match(query,/m.rights_status<>'unknown'/);
+ await queryDiscovery(sql);
+ assert.equal(query,DISCOVERY_SQL);
+ assert.doesNotMatch(query,/m.visibility='internal'/);
+});

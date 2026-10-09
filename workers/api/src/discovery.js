@@ -3,6 +3,7 @@ import {projectCatalog} from '../../../site/js/atlas-catalog.js';
 
 // One statement provides one consistent database snapshot across the catalog,
 // graph and reviews. No branch selection or research staging is exposed to clients.
+const publicMedia="m.visibility='public' AND m.rights_status<>'unknown' AND m.rights_url ~ '^https://'";
 export const DISCOVERY_SQL=`WITH bundle AS (
  SELECT jsonb_build_object(
   'catalog',COALESCE((SELECT jsonb_agg(to_jsonb(c) ORDER BY c.id) FROM atlas.catalog_read_model c WHERE c.visible AND c.review_current AND c.review_id IS NOT NULL AND c.decision IN ('retain','correct')),'[]'::jsonb),
@@ -22,7 +23,7 @@ export const DISCOVERY_SQL=`WITH bundle AS (
    'content_reviews',COALESCE((SELECT jsonb_agg(to_jsonb(r) ORDER BY r.id) FROM atlas.current_content_reviews r WHERE r.record_table='objects'),'[]'::jsonb),
    'snapshot',jsonb_build_object('origin','Canonical WhoCares database','principle_sha256',(SELECT canonical_sha256 FROM atlas.current_principles WHERE key='who-cares-product'),'as_of',(SELECT max(reviewed_at)::text FROM atlas.content_reviews))
   ),
-  'media',COALESCE((SELECT jsonb_agg(to_jsonb(m) ORDER BY m.id) FROM atlas.product_media m WHERE m.visibility='public' AND m.review_state='reviewed' AND m.rights_status<>'unknown' AND m.rights_url ~ '^https://'),'[]'::jsonb)
+  'media',COALESCE((SELECT jsonb_agg(to_jsonb(m) ORDER BY m.id) FROM atlas.product_media m WHERE m.review_state='reviewed' AND (${publicMedia})),'[]'::jsonb)
  ) AS payload
 )
 SELECT payload,md5(payload::text) AS revision FROM bundle`;
@@ -40,7 +41,9 @@ export function shapeDiscovery(row){
  if(graph.relationships.some(r=>!ids.has(r.from_id)||!ids.has(r.to_id)))throw new Error('Dangling graph relationship');
  return {schema_version:2,revision:row.revision,catalog,graph,media:payload.media||[]};
 }
-export async function queryDiscovery(sql){
- const rows=await sql.simpleQuery(DISCOVERY_SQL);
+export async function queryDiscovery(sql,{internalMedia=false}={}){
+ // Only the loopback preview opts in; public callers retain the rights gate.
+ const query=internalMedia?DISCOVERY_SQL.replace(publicMedia,"m.visibility='internal' OR ("+publicMedia+")"):DISCOVERY_SQL;
+ const rows=await sql.simpleQuery(query);
  return shapeDiscovery(rows[0]||{});
 }

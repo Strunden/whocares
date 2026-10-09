@@ -22,3 +22,10 @@ test('public export omits internal media bytes entirely unless internal audience
   assert.equal((await writeReadLayer(graph,layer,media,{internal:true})).media,1);
  }finally{await rm(dir,{recursive:true,force:true});}
 });
+
+test('offering media binds to its graph identity without leaking to sibling offerings',()=>{
+ const specific={...row,entry_id:null,object_id:'service-day-care'};
+ assert.equal(reviewedMedia({id:'service-day-care'},[specific],{internal:true}).length,1);
+ assert.equal(reviewedMedia({id:'service-night-care',company_id:'service-day-care'},[specific],{internal:true}).length,0);
+ assert.equal(reviewedMedia({id:'service-day-care'},[specific],{internal:false}).length,0);
+});
