@@ -8,7 +8,7 @@ The requested expansion is approximately tenfold from 62 unique mapped records (
 - The private loopback server can show reviewed internal media. The public database query still excludes internal media and unknown reuse rights.
 - Visually checked the Malteser mark and official visits/accompaniment photograph against the source page, then attached both to `solution-malteser-besuchsdienst`. Source capture hashes, attribution and unresolved rights remain recorded. Other pictures from that page illustrate different offerings and were not reused.
 - Migration and ownership constraints tested on the existing isolated branch before live application. Existing media backups are outside Git. Internal/public read paths verified separately; live browser checked tile, detail, attribution and contextual links.
-- 100 frontend/API tests pass. Current solution tiles still have a small photo area; wider visual review and remaining offering images are unfinished.
+- 101 frontend/API tests pass. Current solution tiles still have a small photo area; wider visual review and remaining offering images are unfinished.
 
 The researcher branch `codex/branch-research-expansion` in `Strunden/whocares-indexer` adds evidence-linked branch proposals, explicit imagery/context gaps and three bounded calibration briefs. Research proposals are not automatic publication. Further research and admitted records must be counted separately.
 
@@ -44,3 +44,12 @@ Two original scene illustrations were generated through the configured endpoint,
 The existing audited publication adapter compiled the reviewed source records, passages and relationships. The additive import, navigation and media were tested on the isolated branch with before-snapshots, then applied live under audit batch IDs. Browser checks verified need → situation → solution, short breadcrumbs, authentic photo and practical context. Publication receipts and full manifests remain in canonical research storage/outside Git. No public UI deployment.
 
 Research calibration now has a successful meals pass (seven supported findings, three admitted map nodes after editorial review). The running scope remains approximately 620 distinct useful records; this first branch does not meet that goal. The remaining media and evidence gaps above still need repair. Research branch `codex/branch-research-expansion` is also installed in the existing local research checkout; model and budget caps remain unchanged.
+
+
+## Product media correction — 10 October
+
+Four additional reviewed references now attach the MEDIFOX DAN logo and MD Stationär CarePad product visual to the residential-care offering, and the Lifta emblem and official Avantgarde example photo to Lifta stairlifts. Isolated/live tests confirm internal visibility only, with backups. The browser caught an older company-owned MD Ambulant screenshot appearing on MD Stationär; the shared media selector now permits company-logo inheritance but requires exact offering ownership for product imagery. A regression test covers this sibling-product mismatch; all 101 frontend/API tests pass. The original company image remains on its company record.
+
+The current presence audit reports 65 unique map records, 31 missing logo references, 33 missing product/service visuals, nine situations without reviewed source links and six connections without reviewed relationship evidence. These are unfinished work, not a completeness claim.
+
+Research coverage now has 25 bounded seed questions (12 additional human circumstances); they are questions, not admitted needs. Safety/privacy calibration hit a repeated-read guard, then a researcher completion truncation. No safety findings or nodes were admitted. The researcher’s low-reasoning setting now matches the reviewer setting without increasing caps; 25 targeted runner/media tests pass. The media extractor also prioritises main-page images ahead of navigation galleries. A bounded retry remains separately supervised.

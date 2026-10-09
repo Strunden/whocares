@@ -29,3 +29,11 @@ test('offering media binds to its graph identity without leaking to sibling offe
  assert.equal(reviewedMedia({id:'service-night-care',company_id:'service-day-care'},[specific],{internal:true}).length,0);
  assert.equal(reviewedMedia({id:'service-day-care'},[specific],{internal:false}).length,0);
 });
+
+test('a company logo can be shared but its product shot cannot stand in for another offering',()=>{
+ const product={...row,media_role:'product_image'},logo={...row,media_role:'logo'};
+ const offering={id:'residential-product',company_id:row.entry_id};
+ const exact={...product,entry_id:null,object_id:offering.id};
+ assert.deepEqual(reviewedMedia(offering,[product,logo,exact],{internal:true}).map(m=>m.object_id||m.media_role),['logo',offering.id]);
+ assert.equal(reviewedMedia({id:row.entry_id},[product],{internal:true}).length,1);
+});
