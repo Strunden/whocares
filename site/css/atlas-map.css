@@ -39,23 +39,18 @@
 .media-large img{height:200px}
 .media-large figcaption{font-size:10px}
 /* One perspective breadcrumb, followed by actual enclosing research groups. */
-#map-breadcrumbs{display:flex;align-items:center;gap:10px;flex-shrink:0;min-height:47px;padding:5px 32px;border-bottom:1px solid var(--line);overflow:auto;white-space:nowrap;font-size:11px;background:#fff}
-#map-breadcrumbs button{padding:4px 0;color:#5d6b87;flex-shrink:0}
+#map-breadcrumbs{display:flex;align-items:center;gap:10px;flex-shrink:0;min-height:44px;padding:5px 32px;overflow:auto;white-space:nowrap;font-size:11px;background:var(--paper)}
+#map-breadcrumbs button{min-height:34px;padding:6px 0;color:#5d6b87;flex-shrink:0}
 #map-breadcrumbs button[aria-current="location"]{color:var(--ink);font-weight:600}
 #map-breadcrumbs button:hover{text-decoration:underline}
 #map-breadcrumb-trail{display:flex;align-items:center;gap:10px}
 #map-breadcrumb-trail>span{color:#bbc3d2}
 .persona-change{display:flex;gap:8px;align-items:center;white-space:nowrap;text-align:left}
-.persona-change .editorial-asset{width:29px;height:34px}
-.persona-change strong{display:block;font-size:11px;font-weight:500;color:var(--ink)}
 #ancestor-jump{font:11px var(--sans);max-width:145px;border:1px solid #dce3ee;background:white;border-radius:6px;padding:3px;color:var(--muted)}
 /* Counts are announced without covering the lower row's actions. */
 #level-range{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
-.map-bottom{justify-content:flex-end}
-#collection-tools{display:flex;align-items:center;gap:10px;padding:9px 32px;background:#fff;border-bottom:1px solid var(--line);flex-shrink:0;font-size:11px}
-#collection-count{margin-left:auto;color:var(--muted)}
-#collection-tools button{border:1px solid var(--line);border-radius:6px;width:34px;height:32px}
-#collection-tools button:hover{background:#edf3fa}
+.map-bottom{position:absolute;right:0;bottom:0;justify-content:flex-end;background:transparent;pointer-events:none;z-index:3}
+.map-bottom .map-controls{pointer-events:auto}
 /* Shared record content inside the evidence inspector. */
 #inspector .company-logo{width:78px;height:62px;margin:0 0 18px}
 .graph-source{padding:14px 0;border-bottom:1px solid var(--line);font-size:12px}
@@ -67,10 +62,9 @@
 .graph-link .entry{border:0;padding:10px 0}
 .graph-link details{font-size:11px;color:var(--muted)}
 .relation-direction{font-size:11px;line-height:1.6;color:var(--muted)}
+@media(min-width:701px) and (max-width:1000px){#map-breadcrumbs{padding-inline:24px}}
 @media(max-width:700px){
  #map-breadcrumbs{padding:5px 18px;font-size:10px;gap:8px}
- #collection-tools{padding:8px 14px;gap:7px;flex-wrap:wrap}
- #collection-count{margin-left:0;flex:1;flex-basis:calc(100% - 90px)}
 }
 
 /* Overview content is deliberately lighter; local zoom never changes disclosure. */
@@ -89,3 +83,5 @@
 .atlas-node:focus-visible{translate:0 -4px;scale:1.025;filter:drop-shadow(0 8px 9px #263f5025)}
 #map:not(.dragging) .atlas-node:active{translate:0 0;scale:.975;filter:drop-shadow(0 1px 2px #263f5020)}
 @media(prefers-reduced-motion:reduce){.atlas-node{transition:none}#map .atlas-node:hover,#map .atlas-node:focus-visible,#map .atlas-node:active{translate:none;scale:1}}
+
+.map-controls #overview{display:grid;place-items:center;min-width:40px;padding:6px 10px}

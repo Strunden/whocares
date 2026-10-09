@@ -12,28 +12,16 @@ export const isTopic=e=>['theme','parent_theme'].includes(e.idea_kind);
 const intersects=(a,b)=>a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y;
 function arrange(children,box,columns,maxColumns=3,aspect=1.18){
  if(!children.length)return;
- const paged=children.some(n=>n.page!==undefined),count=paged?Math.min(6,children.length):children.length;
+ const count=children.length;
  const cols=columns||Math.min(maxColumns,count);const rows=Math.ceil(count/cols);
  const gap=Math.min(box.w/cols,box.h/rows)*.055;
  const w=Math.min(box.w/cols,box.h/rows*aspect),h=w/aspect;
- children.forEach((n,index)=>{const i=paged?index%6:index;n.box={x:box.x+(i%cols)*w+gap,y:box.y+Math.floor(i/cols)*h+gap,w:w-gap*2,h:h-gap*2};
+ children.forEach((n,index)=>{const i=index;n.box={x:box.x+(i%cols)*w+gap,y:box.y+Math.floor(i/cols)*h+gap,w:w-gap*2,h:h-gap*2};
  if(n.children?.length)arrange(n.children,{x:n.box.x+n.box.w*.035,y:n.box.y+n.box.h*.16,w:n.box.w*.93,h:n.box.h*.80},undefined,maxColumns);});
 }
-export const PAGE_SIZE=6;
 function collection(records,id,label,kind='collection',entry=null){
  const sorted=[...records].sort((a,b)=>title(a).localeCompare(title(b))||a.id.localeCompare(b.id));
- return {id,title:label,kind,entry,count:records.length,paged:true,children:sorted.map((e,i)=>({id:id+'/'+e.id,title:title(e),kind:'record',entry:e,count:1,page:Math.floor(i/PAGE_SIZE)}))};
-}
-const matchCache=new WeakMap();
-export function collectionPage(group,{page=0,query='',type='all'}={}){
- const all=group?.children||[];
- const key=JSON.stringify([query,type]);let cache=matchCache.get(group);
- if(!cache||cache.key!==key||cache.children!==all){
- const matched=all.filter(n=>(type==='all'||(type==='company'?n.entry?.type==='company':n.entry?.type!=='company'))&&(!query||[n.title,n.entry?.summary,n.entry?.country,n.entry?.buyer].join(' ').toLowerCase().includes(query.toLowerCase())));
- cache={key,children:all,matched};matchCache.set(group,cache);}
- const matched=cache.matched;
- const pages=Math.max(1,Math.ceil(matched.length/PAGE_SIZE));page=Math.max(0,Math.min(pages-1,page));
- return {nodes:matched.slice(page*PAGE_SIZE,(page+1)*PAGE_SIZE),total:matched.length,page,pages};
+ return {id,title:label,kind,entry,count:records.length,children:sorted.map(e=>({id:id+'/'+e.id,title:title(e),kind:'record',entry:e,count:1}))};
 }
 export function buildHierarchy(entries,definitions,{portrait=false,extraRoots=[]}={}){
  const byTheme=new Map(),byTag=new Map();
@@ -63,9 +51,8 @@ export function buildHierarchy(entries,definitions,{portrait=false,extraRoots=[]
 // not a second set of differently scaled reading surfaces.
 export function levelScene(tree,groupId,options={}){
  const group=tree.all.get(groupId);
- const page=group?.paged?collectionPage(group,options):null;
- const nodes=page?page.nodes:group?(group.children?.length?group.children:[group]):tree.roots;
- return {group,page,items:nodes.map((node,index)=>({node,anchor:page?group.children[index].box:node.box}))};
+ const nodes=group?(group.children||[group]):tree.roots;
+ return {group,items:nodes.map(node=>({node,anchor:node.box}))};
 }
 export const UNIT={width:350,height:300};
 export function unitSize(width,compact=false){return {w:Math.min(UNIT.width,width-32),h:compact?220:UNIT.height};}
@@ -110,7 +97,7 @@ export function readingLevel(tree,groupId,camera,width,height,options={}){
  const items=levelScene(tree,groupId,options).items.map(({node,anchor})=>({node,box:projectUnit(anchor,camera,width,reference,!groupId,itemHeight(node,!groupId)),mode:groupId?'summary':'compact'}));
  // Keep ordinary small scenes mounted for native compositor scrolling. Large
  // unpaged scenes still window by visibility so later nodes remain reachable.
- return (options.includeOffscreen&&items.length<=90?items:items.filter(item=>intersects(item.box,viewport))).slice(0,90);
+ return (options.includeOffscreen&&items.length<=90?items:items.filter(item=>intersects(item.box,viewport)));
 }
 export function panWithinWorld(camera,dx,dy,bounds,width,height){
  // Keep some of the world reachable, but do not pin a small group to the viewport.

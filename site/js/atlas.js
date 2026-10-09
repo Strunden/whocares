@@ -5,7 +5,7 @@ import {createNativePan} from './atlas-native-pan.js?v=native-pan-35';
 import {wheelGesture,centroid,separation,touchIntent} from './atlas-gestures.js?v=native-pan-35';
 import {personaMaps, insights, personaStories} from './atlas-content.js?v=native-pan-35';
 import {clamp, zoomAt, elasticZoomScale, elasticPanBy, interpolateCamera} from './atlas-camera.js?v=native-pan-35';
-import {buildHierarchy,readingLevel,ancestry,scenePanBounds,panWithinScene,collectionPage,themesFor,levelScale,levelZoomLimits,frameLevel,entryFrame,perspectiveHierarchy,embedHierarchy} from './atlas-layout.js?v=native-pan-35';
+import {buildHierarchy,readingLevel,ancestry,scenePanBounds,panWithinScene,themesFor,levelScale,levelZoomLimits,frameLevel,entryFrame,perspectiveHierarchy,embedHierarchy} from './atlas-layout.js?v=spatial-records-48';
 import {portrait as illustration} from './atlas-assets.js';
 
 import {graphRecords,graphRoots,recordLabel,recordStatus,evidenceLabels} from './atlas-records.js?v=native-pan-35';
@@ -18,8 +18,7 @@ const safeUrl = value => /^https?:\/\//i.test(value || '') ? value : '';
 const title = entry => entry.title || entry.name || 'Untitled research';
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 const map = $('map');
-let graphData=null,graphEntries=[];const collectionViews=new Map();
-const collectionView=()=>collectionViews.get(activeGroup)||{page:0,query:'',type:'all'};
+let graphData=null,graphEntries=[];
 let entries=[], byId=new Map(), regions=[], persona=null;
 let camera={s:1,x:0,y:0}, level=0, selectedId=null;
 let panelHistory=[], panelState=null, closedCamera=null, closedGroup=null, lastFocus=null;
@@ -49,18 +48,18 @@ function row(entry,context=''){
 function announce(text){$('announcement').textContent=text;}
 function toOverview({restore=false}={}){navigateTo(persona,null,{restore});}
 function readingScale(id=activeGroup){return levelScale(tree,id,map.clientWidth);}
-function zoomLimits(){return levelZoomLimits(tree,activeGroup,map.clientWidth,map.clientHeight,collectionView());}
+function zoomLimits(){return levelZoomLimits(tree,activeGroup,map.clientWidth,map.clientHeight);}
 let cameraReturnFrame=0,cameraReturnTimer,zoomAnchor=null,panGesture=null,panPending=false;
 function stopCameraReturn(resetPan=true,finishPan=true){
  cancelAnimationFrame(cameraReturnFrame);cameraReturnFrame=0;clearTimeout(cameraReturnTimer);
  if(resetPan)panGesture=null;
- if(finishPan&&panPending){camera=panWithinScene(tree,activeGroup,camera,0,0,map.clientWidth,map.clientHeight,collectionView());panPending=false;}
+ if(finishPan&&panPending){camera=panWithinScene(tree,activeGroup,camera,0,0,map.clientWidth,map.clientHeight);panPending=false;}
 }
 function settleCamera(){
  clearTimeout(cameraReturnTimer);if(navigationFrame||pointers.size)return;
  const {min,max}=zoomLimits(),anchor=zoomAnchor||{x:map.clientWidth/2,y:map.clientHeight/2};
  const start={...camera},zoomed=zoomAt(start,1,anchor,min,max);
- const target=panPending?panWithinScene(tree,activeGroup,zoomed,0,0,map.clientWidth,map.clientHeight,collectionView()):zoomed;
+ const target=panPending?panWithinScene(tree,activeGroup,zoomed,0,0,map.clientWidth,map.clientHeight):zoomed;
  panGesture=null;
  if(Math.abs(start.s-target.s)<.000001&&Math.abs(start.x-target.x)<.01&&Math.abs(start.y-target.y)<.01){panPending=false;return;}
  const began=performance.now();
@@ -84,7 +83,7 @@ function beginNativePan(){
  const {min,max}=zoomLimits();
  if(!pending&&camera.s>=min&&camera.s<=max)return;
  camera=zoomAt(camera,1,zoomAnchor||{x:map.clientWidth/2,y:map.clientHeight/2},min,max);
- if(pending)camera=panWithinScene(tree,activeGroup,camera,0,0,map.clientWidth,map.clientHeight,collectionView());
+ if(pending)camera=panWithinScene(tree,activeGroup,camera,0,0,map.clientWidth,map.clientHeight);
  // Resolve an interrupted custom gesture once, before native input takes over.
  // Never keep its animation writing offsets during native momentum.
  if(camera.s!==start.s||camera.x!==start.x||camera.y!==start.y)render();
@@ -93,13 +92,13 @@ function beginNativePan(){
 function zoomStep(direction){
  if(navigationFrame)return;stopCameraReturn();
  const limits=zoomLimits(),s=clamp(camera.s*(direction>0?1.2:1/1.2),limits.min,limits.max);
- const fit=frameLevel(tree,activeGroup,map.clientWidth,map.clientHeight,collectionView());
+ const fit=frameLevel(tree,activeGroup,map.clientWidth,map.clientHeight);
  if(direction<0&&s<=fit.s*1.02){
   // Once the level can fit, recover its whole extent rather than a cropped corner.
   camera={s,x:map.clientWidth/2-(map.clientWidth/2-fit.x)/fit.s*s,y:map.clientHeight/2-(map.clientHeight/2-fit.y)/fit.s*s};
  }else if(direction>0){
   const cx=map.clientWidth/2,cy=map.clientHeight/2;
-  const items=readingLevel(tree,activeGroup,camera,map.clientWidth,map.clientHeight,collectionView());
+  const items=readingLevel(tree,activeGroup,camera,map.clientWidth,map.clientHeight);
   const nearest=items.sort((a,b)=>Math.hypot(a.box.x+a.box.w/2-cx,a.box.y+a.box.h/2-cy)-Math.hypot(b.box.x+b.box.w/2-cx,b.box.y+b.box.h/2-cy))[0];
   const x=nearest?nearest.box.x+nearest.box.w/2:cx,y=nearest?nearest.box.y+nearest.box.h/2:cy;
   camera={s,x:cx-(x-camera.x)/camera.s*s,y:cy-(y-camera.y)/camera.s*s};
@@ -117,9 +116,7 @@ function installLevel(key,group,nextTree){
  persona=key;activeGroup=group;tree=nextTree;ready=true;mapView.clear();
  regions=tree.roots.map(n=>({...n,x:n.box.x+n.box.w/2,y:n.box.y+n.box.h/2}));
  $('workspace').hidden=false;
- $('persona-change').innerHTML=key?`${illustration(key)}<span><strong>${esc(personaMaps[key].name)}</strong></span>`:'';
- document.querySelector('h1').textContent=key?personaMaps[key].heading:'Whose world do you want to understand?';
- $('perspective-note').textContent=key?personaMaps[key].description:'Five perspectives on the same research. Organising care and giving care are distinct experiences.';
+ $('persona-change').textContent=key?personaMaps[key].name:'';
 }
 // All level changes pass through here. Pan and zoom only update the camera.
 function navigateTo(key,group=null,{restore=true,animate=true,keepPanel=false,saveCurrent=true}={}){
@@ -129,13 +126,10 @@ function navigateTo(key,group=null,{restore=true,animate=true,keepPanel=false,sa
  const nextTree=key===persona&&tree?tree:makeTree(key);
  if(group&&!nextTree.all.has(group))group=null;
 
- document.querySelector('h1').textContent=key?personaMaps[key].heading:'Whose world do you want to understand?';
- $('perspective-note').textContent=key?personaMaps[key].description:'Five perspectives on the same research. Organising care and giving care are distinct experiences.';
- document.querySelector('.orientation').hidden=!!group;
  $('map-breadcrumbs').hidden=!key;
- const destination=nextTree.all.get(group);$('collection-tools').hidden=!destination?.paged||collectionPage(destination,collectionViews.get(group)||{}).pages<=1;
- let target=restore&&levelCameras.get(locationKey(key,group))||entryFrame(nextTree,group,map.clientWidth,map.clientHeight,collectionViews.get(group)||{});
- const limits=levelZoomLimits(nextTree,group,map.clientWidth,map.clientHeight,collectionViews.get(group)||{});
+ const destination=nextTree.all.get(group);
+ let target=restore&&levelCameras.get(locationKey(key,group))||entryFrame(nextTree,group,map.clientWidth,map.clientHeight);
+ const limits=levelZoomLimits(nextTree,group,map.clientWidth,map.clientHeight);
  target=zoomAt(target,1,{x:map.clientWidth/2,y:map.clientHeight/2},limits.min,limits.max);
  const start={...camera},began=performance.now();let swapped=false;
  const focusBox=destination?.box||tree?.all.get(key)?.box||tree?.all.get(activeGroup)?.box;
@@ -161,7 +155,7 @@ function panMap(dx,dy){
  if(navigationFrame)return;
  const resumingPan=panPending;stopCameraReturn(false,false);panPending=true;
  if(!panGesture){
-  const bounds=scenePanBounds(tree,activeGroup,camera,map.clientWidth,map.clientHeight,collectionView());
+  const bounds=scenePanBounds(tree,activeGroup,camera,map.clientWidth,map.clientHeight);
   // An anchored zoom or entry framing can start outside the centre bounds.
   // Include that starting position for this gesture so its first delta cannot jump.
   if(!resumingPan){
@@ -175,19 +169,16 @@ function panMap(dx,dy){
 }
 function render(fromNativeScroll=false){
  if(!ready)return;
- if(!fromNativeScroll)nativePan.setView(camera,scenePanBounds(tree,activeGroup,camera,map.clientWidth,map.clientHeight,collectionView()),map.clientWidth,map.clientHeight);
+ if(!fromNativeScroll)nativePan.setView(camera,scenePanBounds(tree,activeGroup,camera,map.clientWidth,map.clientHeight),map.clientWidth,map.clientHeight);
  const origin=nativePan.origin;
  // Dot positions share the world origin; subdivide only to keep a useful density.
  const gridWorldStep=2**Math.floor(Math.log2(32/camera.s));
  panSurface.style.backgroundSize=`${gridWorldStep*camera.s}px ${gridWorldStep*camera.s}px`;
  panSurface.style.backgroundPosition=`${origin.x}px ${origin.y}px`;
- const frontier=readingLevel(tree,activeGroup,camera,map.clientWidth,map.clientHeight,{...collectionView(),includeOffscreen:true});
- const pageGroup=tree.all.get(activeGroup),paged=!!pageGroup?.paged;
- $('collection-tools').hidden=!paged||collectionPage(pageGroup,collectionView()).pages<=1;
- if(paged){const view=collectionView(),p=collectionPage(pageGroup,view);$('collection-count').textContent=`${p.total.toLocaleString()} ${p.total===1?'record':'records'} · Page ${p.page+1} of ${p.pages}`;$('collection-prev').disabled=p.page===0;$('collection-next').disabled=p.page+1===p.pages;}
+ const frontier=readingLevel(tree,activeGroup,camera,map.clientWidth,map.clientHeight,{includeOffscreen:true});
  $('persona-change').hidden=!persona;
  $('persona-change').setAttribute('aria-current',activeGroup?'false':'location');
- const path=ancestry(tree,activeGroup);document.querySelector('.orientation').hidden=!!activeGroup;
+ const path=ancestry(tree,activeGroup);
  const crumbKey=persona+'/'+(activeGroup||'');
  if($('map-breadcrumbs').dataset.path!==crumbKey){
   $('map-breadcrumbs').dataset.path=crumbKey;
@@ -199,7 +190,7 @@ function render(fromNativeScroll=false){
  mapView.render(frontier,{tree,persona,selectedId,width:map.clientWidth,height:map.clientHeight,offsetX:origin.x-camera.x,offsetY:origin.y-camera.y});
  const nextLevel=Math.min(2,path.length);
  if(level!==nextLevel){level=nextLevel;announce(['Territories and guiding questions','Problem summaries and research collections','Research records and evidence'][level]);}
- $('level-range').textContent=pageGroup?.paged?`${frontier.filter(v=>v.mode==='summary'&&v.box.y>=0&&v.box.y+v.box.h<=map.clientHeight&&v.box.x>=0&&v.box.x+v.box.w<=map.clientWidth).length} of ${collectionPage(pageGroup,collectionView()).nodes.length} on this page in view · Pan to explore`:activeGroup?`${frontier.filter(v=>Math.max(0,Math.min(v.box.x+v.box.w,map.clientWidth)-Math.max(v.box.x,0))*Math.max(0,Math.min(v.box.y+v.box.h,map.clientHeight)-Math.max(v.box.y,0))>=v.box.w*v.box.h*.5).length} of ${tree.all.get(activeGroup).children?.length||1} groups in view · Drag to explore`:`${tree.roots.length} ${persona?'territories':'perspectives'} · Pan to explore`;
+ $('level-range').textContent=activeGroup?`${frontier.filter(v=>Math.max(0,Math.min(v.box.x+v.box.w,map.clientWidth)-Math.max(v.box.x,0))*Math.max(0,Math.min(v.box.y+v.box.h,map.clientHeight)-Math.max(v.box.y,0))>=v.box.w*v.box.h*.5).length} of ${tree.all.get(activeGroup).children?.length||1} items in view · Drag to explore`:`${tree.roots.length} ${persona?'territories':'perspectives'} · Pan to explore`;
  map.dataset.perspective=persona||'people';map.dataset.level=String(level);map.dataset.group=activeGroup||'overview';map.dataset.camera=JSON.stringify(camera);map.dataset.rendered=String(frontier.length);map.dataset.totalNodes=String(tree.all.size);
  const limits=zoomLimits();$('zoom-value').value=Math.round(camera.s/readingScale()*100)+'%';$('zoom-in').disabled=camera.s>=limits.max-.00001;$('zoom-out').disabled=camera.s<=limits.min+.00001;map.dataset.zoom=Math.round(camera.s/readingScale()*100);
  document.querySelectorAll('[data-level]').forEach(el=>el.classList.toggle('current',Number(el.dataset.level)===(persona?level:-1)));
@@ -299,7 +290,7 @@ function renderPanel(){
   const region=regions.find(g=>g.id===panelState.id),responses=entries.filter(e=>e.type==='company'&&inRegion(e,region));
   content.innerHTML=`<p class="kicker">${esc(region.title)} / responses</p><h2>Who is already here?</h2><p class="evidence-note">${responses.length} published company records. Shared theme or published category membership is a research connection, not proof of effectiveness.</p>${responses.slice(0,panelState.limit||60).map(e=>row(e)).join('')}${responses.length>(panelState.limit||60)?'<button class="panel-action" data-panel-more>Show more records</button>':''}`;
  }else{
-  content.innerHTML=`<p class="kicker">How to read this atlas</p><h2>Start with people.<br>Stay close to evidence.</h2><p class="body-copy">Who Cares helps venture builders understand ageing and care before deciding what to build. Each person opens a different map of the same published research.</p><h3>From landscape to detail</h3><p class="body-copy">Click a territory to enter its reading level. Its guiding question and data-backed groups appear in the map. Click a group to go deeper; breadcrumbs return to any ancestor. Drag or two-finger scroll to pan. Pinch, or hold Ctrl / ⌘ while scrolling, to zoom. Each gesture stays in one mode. Zoom changes only the spatial view: the entire item magnifies together; wording, wrapping and reading level stay fixed. Click groups or breadcrumbs to change level. Shift-scroll pans horizontally. Collections show actual records, with search, type filters and pages. Alphabetical order is a retrieval aid, not a research hierarchy. Read evidence opens a full record.</p><h3>Read the connections carefully</h3><p class="body-copy">Territories group research by perspective. Named collections are navigation labels, not evidenced problems; broader category collections are labelled separately and do not establish product fit. Positions, sizes and colors do not rank venture potential. Illustrations are fictional reusable assets, not testimony.</p><h3>Research is not certainty</h3><p class="body-copy">The atlas uses the repository’s published research snapshot. Historical analyst themes and venture decisions are retained in the archive; active graph claims keep their own evidence status. Source links, missing evidence and incomplete research remain visible in each record.</p><h3>Explore without a mouse</h3><p class="body-copy">Tab to territories or records and press Enter. With the map focused, use arrow keys to pan, + and − to zoom, Backspace to go up a level, and Home for the overview. Escape closes the reading panel. Search and list browsing provide an alternative to spatial navigation.</p><p class="evidence-note">The care-workday story is explicitly illustrative. It contains no attributed interviews, invented quotes or measured outcomes.</p>`;
+  content.innerHTML=`<p class="kicker">How to read this atlas</p><h2>Start with people.<br>Stay close to evidence.</h2><p class="body-copy">Who Cares helps venture builders understand ageing and care before deciding what to build. Each person opens a different map of the same published research.</p><h3>From landscape to detail</h3><p class="body-copy">Click a territory to enter its reading level. Its guiding question and data-backed groups appear in the map. Click a group to go deeper; breadcrumbs return to any ancestor. Drag or two-finger scroll to pan. Pinch, or hold Ctrl / ⌘ while scrolling, to zoom. Each gesture stays in one mode. Zoom changes only the spatial view: the entire item magnifies together; wording, wrapping and reading level stay fixed. Click groups or breadcrumbs to change level. Shift-scroll pans horizontally. Collections show actual records on the same pannable map. Alphabetical order is a retrieval aid, not a research hierarchy. Read evidence opens a full record.</p><h3>Read the connections carefully</h3><p class="body-copy">Territories group research by perspective. Named collections are navigation labels, not evidenced problems; broader category collections are labelled separately and do not establish product fit. Positions, sizes and colors do not rank venture potential. Illustrations are fictional reusable assets, not testimony.</p><h3>Research is not certainty</h3><p class="body-copy">The atlas uses the repository’s published research snapshot. Historical analyst themes and venture decisions are retained in the archive; active graph claims keep their own evidence status. Source links, missing evidence and incomplete research remain visible in each record.</p><h3>Explore without a mouse</h3><p class="body-copy">Tab to territories or records and press Enter. With the map focused, use arrow keys to pan, + and − to zoom, Backspace to go up a level, and Home for the overview. Escape closes the reading panel. </p><p class="evidence-note">The care-workday story is explicitly illustrative. It contains no attributed interviews, invented quotes or measured outcomes.</p>`;
  }
  content.scrollTop=panelState.type==='story'?(panelState.scrollTop||0):0;
 }
@@ -341,10 +332,7 @@ document.addEventListener('click',event=>{
  if(target.dataset.storyStep!==undefined){openStory(Number(target.dataset.storyStep),false);return;}
  if(target.hasAttribute('data-story-finish')){closePanel();return;}
 });
-function fitCurrentLevel(){stopCameraReturn();camera=frameLevel(tree,activeGroup,map.clientWidth,map.clientHeight,collectionView());render();}
-function updateCollection(change){collectionViews.set(activeGroup,{...collectionView(),...change});fitCurrentLevel();}
-$('collection-next').onclick=()=>updateCollection({page:collectionView().page+1});
-$('collection-prev').onclick=()=>updateCollection({page:collectionView().page-1});
+function fitCurrentLevel(){stopCameraReturn();camera=frameLevel(tree,activeGroup,map.clientWidth,map.clientHeight);render();}
 document.addEventListener('error',event=>{if(event.target.matches?.('.record-media img')){event.target.closest('figure').hidden=true;}if(event.target.matches?.('.company-logo img')){event.target.hidden=true;event.target.parentElement.classList.add('logo-missing');}},true);
 $('panel-close').onclick=()=>closePanel();$('panel-back').onclick=backPanel;
 $('home').onclick=()=>showPicker();$('persona-change').onclick=()=>toOverview({restore:true});$('icps-home').onclick=showPicker;
