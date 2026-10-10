@@ -7,7 +7,7 @@ export function navigationRoots(records,lens=null){
  if(!needs.length)throw Error('The needs hierarchy is not available yet. Existing research remains searchable.');
  const node=(entry,id,needId,viewKind)=>{
   const nav=navigation(entry);
-  if(!nav.title||!nav.summary||!/^assets\/illustrations\/study\/[a-zA-Z0-9-]+\.png$/.test(nav.image||''))throw Error('The needs hierarchy has an incomplete illustration or description. Existing research remains searchable.');
+  if(!nav.title||!nav.summary||(nav.image&&!/^assets\/illustrations\/study\/[a-zA-Z0-9-]+\.png$/.test(nav.image)))throw Error('The needs hierarchy has an incomplete description or unsafe illustration path. Existing research remains searchable.');
   return {id,needId,viewKind,title:nav.title,shortTitle:nav.short_title||nav.title,description:nav.summary,image:nav.image,entry,study:true,kind:'territory'};
  };
  return needs.map(need=>{

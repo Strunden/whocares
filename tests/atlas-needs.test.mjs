@@ -21,9 +21,9 @@ test('navigation uses only explicit canonical needs, situations and existing off
  const hidden={id:'workaround',kind:'lived_workaround'};data.push(hidden);a.entry.links.push({from_id:hidden.id,to_id:a.entry.id,relation:'addresses',provenance:{navigation:true}});
  assert.equal(navigationRoots(data)[0].children[0].children.length,1);
 });
-test('missing navigation fails visibly; unsafe and absent illustrations cannot become map items',()=>{
+test('missing navigation fails visibly; unsafe illustration paths remain rejected',()=>{
  assert.throws(()=>navigationRoots([]),/not available/);
- for(const image of ['', '../private.png','https://remote.example/art.png']){const data=records();data[0].scope.navigation.image=image;assert.throws(()=>navigationRoots(data),/incomplete illustration/);}
+ for(const image of ['../private.png','https://remote.example/art.png']){const data=records();data[0].scope.navigation.image=image;assert.throws(()=>navigationRoots(data),/unsafe illustration/);}
 });
 test('empty research coverage remains an empty map level with a finite camera',()=>{
  const tree=buildHierarchy([],[],{extraRoots:navigationRoots(records())});
@@ -44,4 +44,12 @@ test('authored breadcrumb labels stay separate from full titles and shared ident
  assert.equal(solution.entry,root.children[1].children[0].entry);
  assert.equal(root.children[1].shortTitle,'situation title');
  assert.equal(root.id,'existing-route');
+});
+
+test('absent need and situation artwork preserves navigation for the temporary fallback',()=>{
+ const data=records();delete data[0].scope.navigation.image;data[1].scope.navigation.image='';
+ const root=navigationRoots(data)[0];
+ assert.equal(root.image,undefined);assert.equal(root.children[0].image,'');
+ assert.equal(root.children[0].children[0].entry.id,'same-solution');
+ assert.equal(data[0].scope.navigation.image,undefined);
 });

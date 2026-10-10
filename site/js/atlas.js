@@ -1,4 +1,4 @@
-import {navigationRoots} from './atlas-needs.js';
+import {navigationRoots} from './atlas-needs.js?v=placeholder-2';
 import {loadAtlas} from './atlas-loader.js';
 import {setProductMedia} from './atlas-media.js';
 import {availableStory} from './atlas-navigation.js';
