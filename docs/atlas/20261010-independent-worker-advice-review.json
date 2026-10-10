@@ -1,0 +1,41 @@
+{
+  "job_id": "906fdba4c4805f56158fe324dac05e38fb067fb3964df8baebb3f46875cac56c",
+  "research_status": "reviewed_partial",
+  "supported_finding": {
+    "id": "finding-877bc05709c3a1f6735c023b",
+    "title": "Berlin immigration portal points to district welfare-association advice centres for language courses, official paperwork and securing residence",
+    "exact_passages": 4,
+    "source_url": "https://www.berlin.de/einwanderung/service/beratung/artikel.874829.php",
+    "source_hash": "7ac758bc2770e5abe9c9b1c7cd3527a46d7ffe70f622eec603e42afa0896e319"
+  },
+  "publication_decision": "Hold as supporting research. Municipal signposting does not identify a particular independent offering or establish employment-advice capability, eligibility, fees or contact details. No map objects or relationships added.",
+  "research": {
+    "counted_usd": 0.0732049,
+    "ceiling_usd": 0.25,
+    "initial_http_requests": 3,
+    "initial_searches": 2,
+    "repair_http_requests": 0,
+    "repair_searches": 0,
+    "repair_errors": []
+  },
+  "next_source_route": "Follow the captured official welfare-association directory PDF link to verify named centres and their exact access conditions. Preserve the query string from the captured link; do not treat a grouped follow-up target as a fetch URL.",
+  "media_decision": "Berlin portal logo and composite welfare-association logos are not a verified single offering identity. None promoted.",
+  "delivery_context": {
+    "mapped_records_unchanged": 1305,
+    "needs": 198,
+    "situations": 1005,
+    "offerings": 102,
+    "image_generation": "paused",
+    "public_ui_deployment": false,
+    "scheduler": "paused"
+  },
+  "reader_cleanup": {
+    "commit": "bfa252c",
+    "integration_branch": "codex/atlas-experience-integration",
+    "tests_passed": 135,
+    "browser_verified": true,
+    "raw_research_planning_removed": true,
+    "validation_question_visible": true,
+    "deployment": "internal only"
+  }
+}
