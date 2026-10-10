@@ -1,0 +1,90 @@
+{
+  "date": "2026-10-11",
+  "classification": "progress",
+  "research_job": "3c8d5d275e9c83fcb580cb0d844b79ab02c7193c1b808f7e81493d8901c6381b",
+  "new_finding_id": "finding-38069186f1b7463c82901972",
+  "finding": {
+    "epistemic_status": "candidate",
+    "evidence": [
+      {
+        "hash": "b7248f38c302f4c585d9a9aa3505b62b6f60c9cbd26ae09345642e5ddd01c7b3",
+        "passage_id": "passage-8144e41c63c350cc52f27468",
+        "quote": "Besteht ein Bedarf der Betroffenen, werden beispielsweise eine Fr\u00fchintervention und probatorische psychotherapeutische Sitzungen angeboten \u2013 unb\u00fcrokratisch und schnell. Auch eine kostenlose telefonisch-psychologische Beratung ist m\u00f6glich (bis zu f\u00fcnf Telefontermine \u00e0 50 Minuten mit geschulten Psychotherapeutinnen und -therapeuten).",
+        "url": "https://www.bgw-online.de/bgw-online-de/faq/47430-faq"
+      },
+      {
+        "hash": "b7248f38c302f4c585d9a9aa3505b62b6f60c9cbd26ae09345642e5ddd01c7b3",
+        "passage_id": "passage-1648964392a8a684bda683b6",
+        "quote": "Ein \u00dcbergriff ist der BGW grunds\u00e4tzlich vom Arbeitgeber oder der Arbeitgeberin mit einer Unfallanzeige zu melden - auch wenn keine k\u00f6rperliche Verletzung vorliegt.",
+        "url": "https://www.bgw-online.de/bgw-online-de/faq/47430-faq"
+      },
+      {
+        "hash": "b7248f38c302f4c585d9a9aa3505b62b6f60c9cbd26ae09345642e5ddd01c7b3",
+        "passage_id": "passage-f1de70b5d155433e53d3b147",
+        "quote": "Die von der betrieblichen Interessenvertretung (Betriebs-/Personalrat bzw. Mitarbeitervertretung) mitunterzeichnete Unfallanzeige ist an die regional zust\u00e4ndige Bezirksverwaltung zu senden, ggf. auch per Fax. Auch eine Online-Unfallanzeige ist m\u00f6glich. Wir nehmen dann mit der betroffenen Person oder alternativ mit einer in der Unfallanzeige genannten Vertrauensperson Verbindung auf, idealerweise telefonisch (deswegen ist es gut, immer eine Telefonnummer anzugeben).",
+        "url": "https://www.bgw-online.de/bgw-online-de/faq/47430-faq"
+      },
+      {
+        "hash": "b7248f38c302f4c585d9a9aa3505b62b6f60c9cbd26ae09345642e5ddd01c7b3",
+        "passage_id": "passage-03679f692c70cc1acf0e6298",
+        "quote": "Grunds\u00e4tzlich ja, wenn es sich um die Behandlung von Folgen eines Arbeitsunfalls handelt. Die Kosten\u00fcbernahme muss aber im Vorfeld abgekl\u00e4rt sein. Das bedeutet, dass grunds\u00e4tzlich nach dem Ereignis ein D-Arzt oder eine D-\u00c4rztin aufgesucht werden muss oder eine Kosten\u00fcbernahme im direkten Kontakt mit der zust\u00e4ndigen Bezirksverwaltung der BGW abgestimmt wird.",
+        "url": "https://www.bgw-online.de/bgw-online-de/faq/47430-faq"
+      },
+      {
+        "hash": "b7248f38c302f4c585d9a9aa3505b62b6f60c9cbd26ae09345642e5ddd01c7b3",
+        "passage_id": "passage-d7e43c2d4d658af151147d22",
+        "quote": "Die professionelle Unterst\u00fctzung wird sonst in Wohnortn\u00e4he sichergestellt. Dazu nennen wir Ihnen geeignete Psychotherapeutinnen und -therapeuten. Mit einem Behandlungsauftrag an diese ist die Kosten\u00fcbernahme verbunden, zun\u00e4chst f\u00fcr f\u00fcnf sogenannte probatorische Sitzungen, unter Umst\u00e4nden auch dar\u00fcber hinaus. Der weitere Ablauf ist in jedem Fall zwischen Ihnen und der zust\u00e4ndigen Bezirksverwaltung individuell abzustimmen.",
+        "url": "https://www.bgw-online.de/bgw-online-de/faq/47430-faq"
+      },
+      {
+        "hash": "b7248f38c302f4c585d9a9aa3505b62b6f60c9cbd26ae09345642e5ddd01c7b3",
+        "passage_id": "passage-af73ca55ea976e6ca22d8c51",
+        "quote": "Ein eindeutiges NEIN. Sehr viele Menschen erleben traumatische Ereignisse, ohne psychisch zu erkranken. Auch bei schweren traumatischen Ereignissen treten bei den meisten Menschen keine l\u00e4ngerdauernden gesundheitlichen Folgen auf. Bei einigen Betroffenen entwickeln sich hingegen psychische Symptome, die eine fr\u00fchzeitige psychotherapeutische Versorgung erfordern. Bei entsprechenden Symptomen (zum Beispiel Schlafst\u00f6rungen, Angstzust\u00e4nde) sollte fr\u00fchzeitig professionelle Hilfe hinzugezogen werden.",
+        "url": "https://www.bgw-online.de/bgw-online-de/faq/47430-faq"
+      }
+    ],
+    "id": "finding-38069186f1b7463c82901972",
+    "kind": "response",
+    "passage_ids": [
+      "passage-8144e41c63c350cc52f27468",
+      "passage-1648964392a8a684bda683b6",
+      "passage-f1de70b5d155433e53d3b147",
+      "passage-03679f692c70cc1acf0e6298",
+      "passage-d7e43c2d4d658af151147d22",
+      "passage-af73ca55ea976e6ca22d8c51"
+    ],
+    "scope": {
+      "geography": "Germany",
+      "limitations": "Provider self-description (FAQ), not independent evidence; no uptake, outcome or effectiveness data; page undated; the FAQ does not state whether the telephone counselling is subject to the same advance cost-approval as therapy, nor a universal entitlement; no named contact person or direct number captured",
+      "population": "Affected employees of BGW member businesses (health and welfare services) after a workplace assault",
+      "setting": "Post-incident psychological support via the statutory accident insurer",
+      "time": "captured 2026-10-10"
+    },
+    "statement": "The BGW 'Umgang mit Gewalt' FAQ states that, where an affected person has a need, a free telephone psychological counselling option is possible \u2014 up to five telephone appointments of 50 minutes each with trained psychotherapists \u2014 alongside early intervention and probatory psychotherapeutic sessions. This telephone counselling is described separately from the therapy route: professional support is otherwise arranged near the person's place of residence, with BGW naming suitable psychotherapists, and cost coverage is tied to a treatment order (Behandlungsauftrag), initially for five probatory sessions and possibly beyond, with the further course to be agreed individually between the person and the responsible BGW Bezirksverwaltung. The FAQ also states that cost coverage for treatment of the consequences of a work accident must in principle be clarified in advance (via a D-Arzt/D-\u00c4rztin or directly with the responsible BGW Bezirksverwaltung). The FAQ does not state that the advance-approval condition is a rule for the telephone counselling sessions themselves, and it does not state that every affected person automatically qualifies for or receives these services; it also states that many people experience traumatic events without developing a psychological disorder.",
+    "title": "BGW telephone psychological counselling after workplace assault: access and treatment approval boundaries",
+    "review": "supported",
+    "review_reason": "Kind (response) and scope (Germany, BGW member employees post-workplace-assault, provider self-description FAQ) match the cited passages from the BGW 'Umgang mit Gewalt' FAQ. Each material assertion traces to an attached passage: five free 50-minute telephone sessions with trained psychotherapists plus early intervention and probatory sessions (passage-8144e41c63c350cc52f27468); the separate therapy route arranged near the person's residence with BGW naming therapists, cost coverage tied to a Behandlungsauftrag initially for five probatory sessions and possibly beyond, further course agreed individually with the responsible Bezirksverwaltung (passage-d7e43c2d4d658af151147d22); advance clarification of cost coverage via D-Arzt/D-\u00c4rztin or directly with the responsible BGW Bezirksverwaltung (passage-03679f692c70cc1acf0e6298); employer accident-report route (passage-1648964392a8a684bda683b6) and BGW making contact with the affected person (passage-f1de70b5d155433e53d3b147); and that many people experience traumatic events without developing a disorder (passage-af73ca55ea976e6ca22d8c51). The finding correctly holds the epistemic status at provider self-description and explicitly negates the two overreaching inferences the external audit flagged: it states the FAQ does not present the advance-approval clause as a rule for the telephone sessions, and does not claim automatic qualification or receipt. It does not assert universal entitlement, costs, uptake or outcomes, and the scope discloses no-uptake/outcome data and the undated page. Statement, title and scope are aligned; the disputed gaps are flagged as unresolved rather than resolved.",
+    "review_current": true
+  },
+  "metrics": {
+    "duration_seconds": 50.31,
+    "model_calls": 3,
+    "model_calls_by_role": {
+      "researcher": 2,
+      "reviewer": 1
+    },
+    "counted_usd": 0.0166917,
+    "provider_reported_usd": 0.004123915,
+    "http_requests": 0,
+    "page_calls": 0,
+    "search_calls": 0
+  },
+  "all_original_claims_and_citations_preserved": true,
+  "original_broad_finding_held_unclear": true,
+  "source": "https://www.bgw-online.de/bgw-online-de/faq/47430-faq",
+  "media_status": "No appropriate service photo or full HTTPS logo approved. FAQ keyboard, organisational-workshop photo and favicon rejected.",
+  "canonical_atlas_publication": false,
+  "public_ui_deployment": false,
+  "image_generation": false,
+  "next_acceptance_work": "Verify fit with the existing worker situation; retain all eligibility/approval limits and neutral fallback while obtaining authentic media. Test audited publication and browser route before claiming delivery."
+}
