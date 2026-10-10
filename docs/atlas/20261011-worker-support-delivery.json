@@ -1,0 +1,126 @@
+{
+  "date": "2026-10-11",
+  "classification": "progress",
+  "result": "One distinct existing BGW post-assault psychological-support offering linked conditionally to the worker incident-support situation, with reviewed provider identity media.",
+  "migration": {
+    "target": "live",
+    "verified": true,
+    "batch": "bgw-post-assault-psychological-support-20261011",
+    "backup_file": "backup-live-1791670675391.json",
+    "manifest_sha256": "10ae110be4cf2fa55752622d228f27184387d454476bc00e82d86d7e5e9de3bc",
+    "objects": 1352,
+    "mapped": 1309,
+    "newObjects": 1,
+    "navigationLinks": 1,
+    "exactPassages": 8,
+    "sourceVersions": 1,
+    "internalMedia": 1,
+    "publicMedia": 0,
+    "humanObjectsUnchanged": true,
+    "humanHypothesesNotValidated": true
+  },
+  "preservation": {
+    "target": "live",
+    "verified": true,
+    "backup_file": "backup-live-1791670675391.json",
+    "retained_backups": [
+      "backup-live-1791670675391.json"
+    ],
+    "prior_rows_unchanged": {
+      "objects": 1351,
+      "relationships": 1245,
+      "sources": 181,
+      "evidence_links": 1910,
+      "product_media": 141,
+      "import_batches": 69
+    }
+  },
+  "test": {
+    "target": "test",
+    "verified": true,
+    "batch": "bgw-post-assault-psychological-support-20261011",
+    "backup_file": "backup-test-1791670647808.json",
+    "manifest_sha256": "10ae110be4cf2fa55752622d228f27184387d454476bc00e82d86d7e5e9de3bc",
+    "objects": 1352,
+    "mapped": 1309,
+    "newObjects": 1,
+    "navigationLinks": 1,
+    "exactPassages": 8,
+    "sourceVersions": 1,
+    "internalMedia": 1,
+    "publicMedia": 0,
+    "humanObjectsUnchanged": true,
+    "humanHypothesesNotValidated": true
+  },
+  "counts": {
+    "needs": 198,
+    "situations": 1005,
+    "offerings": 106,
+    "mapped_total": 1309
+  },
+  "research": {
+    "job_id": "3c8d5d275e9c83fcb580cb0d844b79ab02c7193c1b808f7e81493d8901c6381b",
+    "finding_id": "finding-38069186f1b7463c82901972",
+    "frozen_review_metrics": {
+      "duration_seconds": 50.31,
+      "model_calls": 3,
+      "model_calls_by_role": {
+        "researcher": 2,
+        "reviewer": 1
+      },
+      "counted_usd": 0.0166917,
+      "provider_reported_usd": 0.004123915,
+      "http_requests": 0,
+      "page_calls": 0,
+      "search_calls": 0
+    },
+    "logo_capture": "One page captured through indexer, zero model calls; attributed Commons logo compared visually to official BGW branding.",
+    "original_broad_finding": "Preserved unchanged and held unclear; not used for publication."
+  },
+  "identity_review": [
+    {
+      "id": "solution-bgw-violence-prevention-organisational-advice",
+      "website": "https://www.bgw-online.de/bgw-online-de/themen/gesund-im-betrieb/umgang-mit-gewalt/organisationsberatung-zum-umgang-mit-gewalt-und-aggression-24594",
+      "title": "BGW violence-prevention organisational advice",
+      "decision": "Distinct existing BGW offering; not the post-assault telephone psychological-support route."
+    },
+    {
+      "id": "wc-object-4c89edd907eb5c203d07e02f",
+      "website": "https://www.bgw-online.de/bgw-online-de/themen/gesund-im-betrieb/umgang-mit-gewalt/qualifizierung-innerbetriebliche-deeskalationstrainer-14600",
+      "title": "BGW funds qualification of in-house de-escalation trainers in member establishments",
+      "decision": "Distinct existing BGW offering; not the post-assault telephone psychological-support route."
+    },
+    {
+      "id": "wc-object-69cd23fb0726c7da8c5f29ac",
+      "website": "https://www.bgw-online.de/bgw-online-de/themen/gesund-im-betrieb/gesunder-ruecken/hilfe-bei-beruflich-bedingten-rueckenproblemen-18128",
+      "title": "BGW R\u00fcckenkolleg: a three-week back programme for insured workers with suspected disc-related lower-back disease",
+      "decision": "Distinct existing BGW offering; not the post-assault telephone psychological-support route."
+    },
+    {
+      "id": "wc-object-95b324d0564e6ad584ba1ca2",
+      "website": "https://www.bgw-online.de/bgw-online-de/themen/sicher-mit-system/gesundheit-managen/die-bgw-arbeitssituationsanalyse-14720",
+      "title": "BGW Arbeitssituationsanalyse: participatory group assessment of work situations",
+      "decision": "Distinct existing BGW offering; not the post-assault telephone psychological-support route."
+    }
+  ],
+  "browser": {
+    "route": "http://127.0.0.1:8793/#/all/g/wc-object-62feeb87067152640cf5e703%2Fwc-candidate-f342d5f792a818d2aee952d9",
+    "refreshed_canonical_entry_seen": true,
+    "logo_loaded": {
+      "natural_width": 214,
+      "identity": "Full BGW provider logo, not counselling session imagery."
+    },
+    "zoom": "Content stable from 100% to 120%.",
+    "detail": "Cost and advance-approval distinction, access, eligibility limits, media attribution, provider-source link and interpreted connection inspected.",
+    "screenshot": "worker-support-map-verified.png"
+  },
+  "limits": [
+    "Published in the context of workplace assault and work-accident consequences; ordinary team debriefing, general occupational stress and all difficult incidents are not established within this offering.",
+    "BGW says telephone counselling is possible; individual eligibility, actual admission, appointment waits and current capacity are unverified. No automatic entitlement or 24-hour emergency response asserted.",
+    "Separate therapy requires advance clarification of cost coverage and individual arrangements with the responsible BGW district administration. The FAQ does not explicitly establish this as a telephone-session admission rule.",
+    "No independent effectiveness or uptake evidence reviewed. Many people experience traumatic events without developing a disorder; the source does not justify assuming every incident causes illness.",
+    "No human status change; no public UI deployment or image generation; identity media internal only.",
+    "Full provider logo attributed on Wikimedia Commons and visually compared to official current branding, internal identity display only. No photograph of the actual counselling service approved; reuse rights unconfirmed.",
+    "Goal still active: remaining graph validation, solution depth, quantification and relevant media are incomplete."
+  ]
+}
