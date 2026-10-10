@@ -12,7 +12,7 @@ import {portrait as illustration} from './atlas-assets.js';
 import {graphRecords,graphRoots,recordLabel,recordStatus,evidenceLabels,scopeDescription} from './atlas-records.js?v=native-pan-35';
 import {graphSourceBlock} from './atlas-sources.js?v=source-details-13';
 
-import {esc,short,companyLogo,recordMedia,createMapView} from './atlas-view.js?v=native-pan-35';
+import {esc,short,companyLogo,recordMedia,createMapView,handleImageError} from './atlas-view.js?v=image-fallback-36';
 
 const $ = id => document.getElementById(id);
 const safeUrl = value => /^https?:\/\//i.test(value || '') ? value : '';
@@ -336,7 +336,7 @@ document.addEventListener('click',event=>{
  if(target.hasAttribute('data-story-finish')){closePanel();return;}
 });
 function fitCurrentLevel(){stopCameraReturn();camera=frameLevel(tree,activeGroup,map.clientWidth,map.clientHeight);render();}
-document.addEventListener('error',event=>{if(event.target.matches?.('.record-media img')){event.target.closest('figure').hidden=true;}if(event.target.matches?.('.company-logo img')){event.target.hidden=true;event.target.parentElement.classList.add('logo-missing');}},true);
+document.addEventListener('error',handleImageError,true);
 $('panel-close').onclick=()=>closePanel();$('panel-back').onclick=backPanel;
 $('study-search').onclick=()=>showPanel({type:'search'});$('study-help').onclick=()=>showPanel({type:'help'});
 $('home').onclick=()=>showPicker();$('persona-change').onclick=()=>toOverview({restore:true});$('icps-home').onclick=showPicker;
