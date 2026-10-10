@@ -25,7 +25,7 @@ export function recordMedia(entry,large=false){
  return `<figure class="record-media ${large?'media-large':''}"><img src="${esc(media.src)}" alt="${artwork?'':esc(media.alt)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">${caption}</figure>`;
 }
 function nodeMarkup(n,mode,persona){
- const e=n.entry,heading=`<h2 class="node-title">${esc(n.title)}</h2>`;
+ const e=n.entry,heading=(n.study&&n.kind!=='record'&&n.perspectiveLabel?`<p class="node-icp">${esc(n.perspectiveLabel)}</p>`:'')+`<h2 class="node-title">${esc(n.title)}</h2>`;
  if(n.personaKey)return `<div class="node-copy">${heading}<p class="node-description">${esc(n.description)}</p></div><img class="perspective-art" src="${assetFor(n.personaKey).src}" alt="" loading="lazy">`;
  if(n.study&&n.kind==='record')return `<div class="node-copy study-copy study-response">${logoUrl(e)?companyLogo(e):''}${heading}<p class="node-description">${esc(n.description||e?.summary)}</p>${recordMedia(e)}</div>`;
  if(n.study)return `<div class="node-copy study-composition"><img class="study-scene" src="${esc(n.image||placeholderImage)}" alt="${n.image?'':'Image not yet available'}" loading="lazy"><div class="study-caption"><div>${heading}<p class="node-description">${esc(n.description||e?.summary)}</p></div></div></div>`;

@@ -53,3 +53,21 @@ test('absent need and situation artwork preserves navigation for the temporary f
  assert.equal(root.children[0].children[0].entry.id,'same-solution');
  assert.equal(data[0].scope.navigation.image,undefined);
 });
+
+test('ICP labels and contiguous overview groups preserve identities and drill paths',()=>{
+ const data=records(),base=data[0];base.scope.navigation.lenses=['worker'];
+ const add=(id,lens)=>({...base,id,scope:{navigation:{...base.scope.navigation,view_id:id,lenses:[lens],order:0}},links:[]});
+ data.push(add('family-need','family'),add('manager-need','provider'),add('adult-need','adult'));
+ data[1].scope.navigation.lenses=['worker','provider'];
+ const before=JSON.stringify(data),roots=navigationRoots(data);
+ assert.deepEqual(roots.map(n=>n.perspectiveLabel),['Older adult','Family carer','Care worker','Care manager']);
+ const worker=roots.find(n=>n.entry.id==='need-a');assert.equal(worker.id,'existing-route');
+ assert.equal(worker.children[0].perspectiveLabel,'Care worker · Care manager');assert.equal(worker.children[0].id,'existing-route/one');
+ assert.equal(worker.children[0].children[0].entry.id,'same-solution');assert.equal(JSON.stringify(data),before);
+});
+
+test('candidate ICP labels use authored planning and situations inherit their parent perspective',()=>{
+ const data=records();delete data[0].scope.navigation.lenses;
+ data[0].scope.research_planning={affected_icps:['family-carer']};
+ const root=navigationRoots(data)[0];assert.equal(root.perspectiveLabel,'Family carer');assert.equal(root.children[0].perspectiveLabel,'Family carer');
+});
