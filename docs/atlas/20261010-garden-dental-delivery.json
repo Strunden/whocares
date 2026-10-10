@@ -1,0 +1,23 @@
+{
+  "target": "live",
+  "verified": true,
+  "batch": "current-garden-mobile-dental-offers-20261010",
+  "manifest_sha256": "0866c61ebc59844b95bc6966a46fd6301ed784ad8923c566d3bfda1b4eaf85fc",
+  "objects": 1340,
+  "mapped": 1297,
+  "newObjects": 4,
+  "navigationLinks": 9,
+  "exactPassages": 29,
+  "sourceVersions": 4,
+  "internalMedia": 8,
+  "publicMedia": 0,
+  "humanObjectsUnchanged": true,
+  "humanHypothesesNotValidated": true,
+  "matching_test_manifest": true,
+  "limits": [
+    "Provider capabilities and interpreted fit, not independently established effects.",
+    "Underlying human hypotheses unchanged.",
+    "Eight authentic media assets internal only; public reuse rights unestablished.",
+    "Rollibeet source image is a low-resolution catalogue photo."
+  ]
+}
