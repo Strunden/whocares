@@ -1,0 +1,106 @@
+{
+  "batch": "resident-laundry-sharps-offerings-20261010",
+  "test": {
+    "target": "test",
+    "verified": true,
+    "batch": "resident-laundry-sharps-offerings-20261010",
+    "manifest_sha256": "4320c0165a2d4c8b0ccef70cfb65258282646bae2bf0da86c080dd1d973a6fce",
+    "objects": 1347,
+    "mapped": 1304,
+    "newObjects": 4,
+    "navigationLinks": 5,
+    "exactPassages": 19,
+    "sourceVersions": 4,
+    "internalMedia": 4,
+    "publicMedia": 0,
+    "humanObjectsUnchanged": true,
+    "humanHypothesesNotValidated": true
+  },
+  "live": {
+    "target": "live",
+    "verified": true,
+    "batch": "resident-laundry-sharps-offerings-20261010",
+    "manifest_sha256": "4320c0165a2d4c8b0ccef70cfb65258282646bae2bf0da86c080dd1d973a6fce",
+    "objects": 1347,
+    "mapped": 1304,
+    "newObjects": 4,
+    "navigationLinks": 5,
+    "exactPassages": 19,
+    "sourceVersions": 4,
+    "internalMedia": 4,
+    "publicMedia": 0,
+    "humanObjectsUnchanged": true,
+    "humanHypothesesNotValidated": true
+  },
+  "research": {
+    "verified": true,
+    "research_jobs": 2,
+    "counted_usd": 0.18964219999999998,
+    "spend_ceiling_usd": 0.5,
+    "exact_saved_passages": 48,
+    "independently_reviewed_findings": 7,
+    "search_limit_encountered_and_review_completed": true,
+    "repair_runs": 0,
+    "canonical_publications": 0,
+    "implementation_commit": "904570e",
+    "campaign_status": "paused",
+    "disposition": [
+      {
+        "provider": "THERMOTEX",
+        "status": "candidate_for_publication_review",
+        "condition": "Named provider textile-identification offering; loss prevention and traceability obligations are provider claims, not independent outcomes or law."
+      },
+      {
+        "provider": "Aumer Textilservice",
+        "status": "candidate_for_publication_review",
+        "condition": "Resident garments use matrix codes; do not copy the staff-clothing RFID clause onto residents."
+      },
+      {
+        "provider": "W\u00e4scherei Wille",
+        "status": "candidate_for_publication_review",
+        "condition": "Resident-laundry identification and tracking; coverage and current contract conditions need confirmation."
+      },
+      {
+        "provider": "HAPART",
+        "status": "candidate_for_publication_review",
+        "condition": "Care homes explicitly addressed; regulatory/certification, safety and environmental claims remain provider-described and unverified."
+      },
+      {
+        "provider": "enretec",
+        "status": "eligibility_hold",
+        "condition": "Two findings describe one offering. Physician and dental practices explicitly addressed; nursing/home-care access not established. No free disposal or guaranteed 48h turnaround claim."
+      },
+      {
+        "provider": "Deutsche-Mietw\u00e4sche.de",
+        "status": "brokerage_context_hold",
+        "condition": "Commercial matching/guide page is not a named laundry operator. Guide prices are not actual quotes or independently sampled market measurements."
+      }
+    ]
+  },
+  "browser": {
+    "laundry_branch": "http://127.0.0.1:8793/#/all/g/wc-candidate-6919420b43fa5a8e7687fa03%2Fwc-candidate-0e5eaa9533aa4cd728831d07",
+    "sharps_branch": "http://127.0.0.1:8793/#/all/g/wc-candidate-ed65a3f411de4f19dffe7348%2Fwc-candidate-9a3eae4b3c91077fde00e97a",
+    "observed": [
+      "Three distinct laundry offerings render, all logo/equipment images loaded.",
+      "Aumer record exposes cost, contract/coverage unknowns and exact official source.",
+      "HAPART record exposes institutional scope, home-care eligibility unknown and both interpreted connections."
+    ],
+    "screenshots": [
+      "internal-laundry-verified.png",
+      "internal-sharps-detail-verified.png"
+    ]
+  },
+  "limits": [
+    "Human hypotheses unchanged.",
+    "No independently proven loss reduction, safety or regulatory claims.",
+    "Aumer resident matrix code distinct from staff-clothing RFID.",
+    "HAPART documentation service not supported and excluded.",
+    "HAPART home-care eligibility unknown, not implied.",
+    "HAPART image gap remains; misleading stock image rejected.",
+    "Media internal only; no public UI deployment.",
+    "Logo fallback repeats the identity in map heading and main-image slot; visual refinement remains.",
+    "Generic detail panel still exposes technical research-planning metadata.",
+    "No new public UI deployment or public-media authorization.",
+    "enretec eligibility hold and brokerage context hold retained."
+  ]
+}
