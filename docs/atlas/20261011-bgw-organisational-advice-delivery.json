@@ -1,0 +1,110 @@
+{
+  "delivery_date": "2026-10-11",
+  "classification": "progress",
+  "scope": "One current BGW organisational violence-prevention service, reused across two narrowly interpreted manager situations.",
+  "research": {
+    "job_id": "3c8d5d275e9c83fcb580cb0d844b79ab02c7193c1b808f7e81493d8901c6381b",
+    "status": "reviewed_partial",
+    "metrics": {
+      "duration_seconds": 143.455,
+      "model_calls": 10,
+      "model_calls_by_role": {
+        "researcher": 5,
+        "reviewer": 5
+      },
+      "counted_usd": 0.041235900000000006,
+      "provider_reported_usd": 0.014452121,
+      "http_requests": 3,
+      "page_calls": 2,
+      "search_calls": 0
+    },
+    "accepted_findings": [
+      "finding-6b3a8b4d36e9cf496f29d887",
+      "finding-71a115396a75bd1e3ac93eef"
+    ],
+    "operator_hold": "Remaining findings retained as research only; compound absence claims not transferred."
+  },
+  "migration": {
+    "target": "live",
+    "verified": true,
+    "batch": "bgw-organisational-violence-advice-20261011",
+    "backup_file": "backup-live-1791669800688.json",
+    "manifest_sha256": "62b0c8643d7731ca8d15e81b2068b3fa6d2a6941e4b6a54a310587af195c6b80",
+    "objects": 1351,
+    "mapped": 1308,
+    "newObjects": 1,
+    "navigationLinks": 2,
+    "exactPassages": 20,
+    "sourceVersions": 1,
+    "internalMedia": 1,
+    "publicMedia": 0,
+    "humanObjectsUnchanged": true,
+    "humanHypothesesNotValidated": true
+  },
+  "preservation": {
+    "target": "live",
+    "verified": true,
+    "backup_file": "backup-live-1791669800688.json",
+    "retained_backups": [
+      "backup-live-1791669800688.json"
+    ],
+    "prior_rows_unchanged": {
+      "objects": 1350,
+      "relationships": 1243,
+      "sources": 180,
+      "evidence_links": 1875,
+      "product_media": 140,
+      "import_batches": 67
+    }
+  },
+  "identity_review": [
+    {
+      "id": "wc-object-4c89edd907eb5c203d07e02f",
+      "website": "https://www.bgw-online.de/bgw-online-de/themen/gesund-im-betrieb/umgang-mit-gewalt/qualifizierung-innerbetriebliche-deeskalationstrainer-14600",
+      "title": "BGW funds qualification of in-house de-escalation trainers in member establishments",
+      "decision": "Separate published offering: trainer funding, R\u00fcckenkolleg or Arbeitssituationsanalyse, not this organisational violence-prevention service."
+    },
+    {
+      "id": "wc-object-69cd23fb0726c7da8c5f29ac",
+      "website": "https://www.bgw-online.de/bgw-online-de/themen/gesund-im-betrieb/gesunder-ruecken/hilfe-bei-beruflich-bedingten-rueckenproblemen-18128",
+      "title": "BGW R\u00fcckenkolleg: a three-week back programme for insured workers with suspected disc-related lower-back disease",
+      "decision": "Separate published offering: trainer funding, R\u00fcckenkolleg or Arbeitssituationsanalyse, not this organisational violence-prevention service."
+    },
+    {
+      "id": "wc-object-95b324d0564e6ad584ba1ca2",
+      "website": "https://www.bgw-online.de/bgw-online-de/themen/sicher-mit-system/gesundheit-managen/die-bgw-arbeitssituationsanalyse-14720",
+      "title": "BGW Arbeitssituationsanalyse: participatory group assessment of work situations",
+      "decision": "Separate published offering: trainer funding, R\u00fcckenkolleg or Arbeitssituationsanalyse, not this organisational violence-prevention service."
+    }
+  ],
+  "browser": {
+    "routes_verified": [
+      "http://127.0.0.1:8793/#/all/g/wc-candidate-27d43317b590145e0a167d2d%2Fwc-candidate-1ea8c15435c0eb6519179dad",
+      "http://127.0.0.1:8793/#/all/g/wc-candidate-cfb6a6a4756e5cb3e9dc6c0f%2Fwc-candidate-54fc33bdd117c92bb8b6b6dd"
+    ],
+    "photo_loaded_both": true,
+    "zoom_content_stable": "First route verified at 100% and 120%; no content switch.",
+    "detail": "Cost, eligibility, access, sources and interpreted relationships inspected in real browser.",
+    "screenshots": [
+      "threatening-visitor-verified.png",
+      "incident-follow-up-verified.png",
+      "service-record-verified.png"
+    ]
+  },
+  "mapped_counts": {
+    "needs": 198,
+    "situations": 1005,
+    "existing_offerings": 105,
+    "total": 1308
+  },
+  "limits": [
+    "Organisational planning and facilitation, not an emergency response, personal debriefing session or individual trauma treatment.",
+    "Follow-up fit is limited to violent incidents; the wider incident-management situation is not fully addressed.",
+    "Additional consulting days are chargeable; their price was not established. The linked contact and telephone pages have not been captured; specific appointment conditions, waits and local capacity are not checked.",
+    "No independent effectiveness, uptake or outcome evidence reviewed. Human situations remain hypotheses.",
+    "No human hypothesis changes; no direct worker-debriefing link; no public UI deployment; internal media only.",
+    "Logo gap remains. Wide header photo usable internally but not a complete visual treatment.",
+    "No new illustration generation; no public UI deployment; no prevalence, demand or effectiveness validation.",
+    "Goal remains active: full graph solution depth, quantification, sources and media incomplete."
+  ]
+}
