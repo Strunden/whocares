@@ -1,0 +1,69 @@
+{
+  "date": "2026-10-11",
+  "status": "review_complete_internal_delivery_pending",
+  "offering": "MD Learning by smartAware",
+  "provider": "MEDIFOX DAN GmbH",
+  "proposed_existing_situation_connections": 3,
+  "new_needs_inferred_from_catalogue": 0,
+  "source_versions": [
+    {
+      "url": "https://www.medifoxdan.de/software-stationaere-pflege/integrationen/smart-aware",
+      "hash": "e8ec5e44e1b86dae364062579f80ebd3d62a28ac0970a5281c7092097ccfd219",
+      "retrieved_at": "2026-10-10T23:45:07.887933+00:00"
+    },
+    {
+      "url": "https://www.smart-aware.de/fuer-medifox-dan-kunden/",
+      "hash": "a0fd1d1429ac78778d8758a3993f5d2d34f1d188b8abc5b990fdeacc855054ea",
+      "retrieved_at": "2026-10-10T23:45:17.777925+00:00"
+    },
+    {
+      "url": "https://www.smart-aware.de/preise/",
+      "hash": "b931f806765f5566daffc50ad263f764913b91a713e40c7d24dd3f5fe44773e9",
+      "retrieved_at": "2026-10-10T23:45:28.813778+00:00"
+    },
+    {
+      "url": "https://www.smart-aware.de/faqs/",
+      "hash": "3502efbeb46ba7a7716ff95798cd39ad61dda45b2d8b96559fa3add1d101150c",
+      "retrieved_at": "2026-10-10T23:45:55.085064+00:00"
+    },
+    {
+      "url": "https://www.smart-aware.de/agb/",
+      "hash": "9ef1227dc9e57790b1e9a800e1a79b4213fff850680555441713c79c855fda1d",
+      "retrieved_at": "2026-10-10T23:46:02.992798+00:00"
+    }
+  ],
+  "source_capture_http_requests": 7,
+  "independent_review": {
+    "job_id": "b263a3bf62041f46fc135691ddc47f2108765db8cbf79db968ae118b757b3c2b",
+    "finding_id": "finding-b46cd4265452bde9db53635e",
+    "status": "supported",
+    "review_current": true,
+    "model_calls": 2,
+    "counted_usd": 0.0059232,
+    "additional_http_requests": 0
+  },
+  "material_qualifications": [
+    "Basic offers software lessons and mandatory instruction; broader professional/specialist training is tier-dependent",
+    "MD Learning Basic advertised from EUR1.98 per employee per month plus19% VAT; individual quote not verified",
+    "Do not transfer the general Professional default ten-person monthly price to MD Learning Basic",
+    "Integrated MD route for MEDIFOX customers; published business-customer terms exclude consumer contracts",
+    "Four-week non-binding trial advertised; actual enrolment and paid transition not verified",
+    "Cancellation notice and fixed-term renewal clauses retained; selected agreement not checked",
+    "No guarantee of protected learning time, replacement staff, practical competency, recognised qualification or learning outcomes"
+  ],
+  "authentic_media_review": {
+    "candidate_id": "ad37691b96b3e1988f598235596f61ac",
+    "asset_url": "https://www.smart-aware.de/app/uploads/2025/09/smartaware-mobile-app-1024x768.png",
+    "source_url": "https://www.smart-aware.de/fuer-medifox-dan-kunden/",
+    "source_capture_sha256": "d2e074459b7c6390992d99245d7107e30464a17f10ee1d2fdd8c8b7c635cd026",
+    "description": "Official vendor smartAware phone/app mockup, with expert-standard and mandatory-instruction tiles. Authentic product visual, not a generated screenshot or evidence of actual customer use. Course categories depend on selected package; expert-standard tiles must not imply Basic inclusion.",
+    "visibility": "internal",
+    "reuse_permission": "not established"
+  },
+  "not_done": [
+    "Canonical identity reconciliation, exact relationship evidence, isolated/live database delivery and actual rendered map checks"
+  ],
+  "public_deployment": false,
+  "image_generation": false,
+  "scheduler_activation": false
+}
