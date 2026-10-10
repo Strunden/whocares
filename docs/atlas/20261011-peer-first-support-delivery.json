@@ -1,0 +1,92 @@
+{
+  "date": "2026-10-11",
+  "delivery": "Internal canonical offering with scoped navigation and authentic provider logo; no public UI deployment",
+  "batch_id": "bgw-peer-first-responder-training-20261011",
+  "manifest_sha256": "5b667e63879bf9c5b4db50d7664a5ec841e6937e8f78401f6adf30cab655fd13",
+  "objects": 1353,
+  "mapped_records": 1310,
+  "counts": {
+    "needs": 198,
+    "situations": 1005,
+    "offerings": 107
+  },
+  "offering": "solution-bgw-peer-first-responder-qualification",
+  "path_verification": [
+    [
+      "wc-object-62feeb87067152640cf5e703",
+      "wc-candidate-f342d5f792a818d2aee952d9",
+      "solution-bgw-peer-first-responder-qualification"
+    ],
+    [
+      "wc-candidate-3d53aedff7d54f0c69451d53",
+      "wc-candidate-f342d5f792a818d2aee952d9",
+      "solution-bgw-peer-first-responder-qualification"
+    ]
+  ],
+  "additions": {
+    "objects": 1,
+    "relationships": 1,
+    "sources": 1,
+    "exact_evidence_links": 17,
+    "internal_logo": 1
+  },
+  "source": {
+    "url": "https://www.bgw-online.de/bgw-online-de/themen/gesund-im-betrieb/umgang-mit-gewalt/qualifizierung-von-kollegialen-erstbetreuerinnen-und-betreuern-18202",
+    "content_hash": "b321b8dc349bc109e6d31ebcf3ded227092d712f3db05738b46dd21a15ec4ab8",
+    "retrieved_at": "2026-10-10T17:46:21.321609+00:00",
+    "public_page_browser_checked": true
+  },
+  "research": {
+    "job_id": "f24bbe8de12d3ab43cc50f31b7da678f132c091e6beb2eb608aca946de246a1a",
+    "finding_id": "finding-62d02547b9022595cb9c5839",
+    "run_id": "91d1d6f3-745b-484d-8708-1ae94fd1ff96",
+    "metrics": {
+      "duration_seconds": 36.166,
+      "model_calls": 2,
+      "model_calls_by_role": {
+        "researcher": 0,
+        "reviewer": 2
+      },
+      "counted_usd": 0.0082458,
+      "provider_reported_usd": 0.00665604,
+      "http_requests": 0,
+      "page_calls": 0,
+      "search_calls": 0
+    },
+    "review": "supported for provider offering only",
+    "original_findings_payloads_preserved": 5,
+    "incomplete_original_review_held": "finding-ff46ed2728a458ce51fa9bbf",
+    "original_branch_hold_restored": true
+  },
+  "verification": {
+    "isolated_test_passed": true,
+    "live_readback_passed": true,
+    "all_prior_rows_preserved": {
+      "objects": 1352,
+      "relationships": 1246,
+      "sources": 183,
+      "evidence_links": 1932,
+      "product_media": 142,
+      "import_batches": 71
+    },
+    "human_hypotheses_unchanged": true,
+    "existing_professional_counselling_retained": true,
+    "public_media_exposure": 0,
+    "record_cleanup_isolated_test_and_live": true,
+    "browser_verified": {
+      "both_offerings_visible": true,
+      "detail_record_and_conditional_cost": true,
+      "authentic_logo_rendered": true,
+      "internal_process_note_absent": true
+    },
+    "cleanup_batch_id": "bgw-peer-first-responder-training-20261011-record-cleanup"
+  },
+  "limits": [
+    "Employer-arranged paid training, with conditional partial funding; not an immediate counselling service",
+    "First support after extreme events is a subset fit, not routine debriefing for every incident",
+    "Full institute prices, booking dates/capacity, individual eligibility and subsidy application steps not checked",
+    "Independent effectiveness and current demand not established",
+    "Reviewed provider logo; no training-specific service photograph verified",
+    "Image generation and recurring scheduler remain paused; autonomous clause review still requires improvement"
+  ]
+}
