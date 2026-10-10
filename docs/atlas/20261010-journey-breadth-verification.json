@@ -1,0 +1,28 @@
+{
+  "target": "live",
+  "verified": true,
+  "manifest_sha256": "ff88e8b3a8ca8cdeeff2173fe7112c4fe902a608ce773f7748967bf162fee66d",
+  "canonical_objects": 1336,
+  "mapped": 1293,
+  "counts": {
+    "need": 198,
+    "situation": 1005,
+    "solution": 90
+  },
+  "visible_candidate_count": 1128,
+  "empty_response_placements": 965,
+  "objects_updated": 477,
+  "relationships_updated": 400,
+  "new_records": 0,
+  "statuses_preserved": true,
+  "research_planning_preserved": true,
+  "sources_evidence_media_unchanged": true,
+  "neutral_placeholders": 477,
+  "test_manifest_sha256": "efbfa762cda152f15122955e03622ccc57d2a663f8e677db697ab441e1dab55d",
+  "test_live_navigation_content_equal": true,
+  "limitations": [
+    "Visible hypotheses are not empirical findings.",
+    "965 situation placements lack mapped offerings; this is incomplete research coverage.",
+    "Illustration generation remains paused; neutral placeholders are temporary."
+  ]
+}
