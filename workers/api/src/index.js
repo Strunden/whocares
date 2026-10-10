@@ -1,3 +1,4 @@
+import {discoveryManifest,discoveryPage,discoveryPageParameters} from './discovery-pages.js';
 import { attachFunding, funderDetail, funderSummary } from "./funders-shape.js";
 import {queryDiscoveryCatalog,queryDiscoveryStream} from "./discovery.js";
 import {readLogo} from "./logo.js";
@@ -155,6 +156,17 @@ export default {
       } catch (error) {
         return dbError(error);
       }
+    }
+
+    if(path==='/api/discovery/manifest'){
+      try{return json(await withSql(env,discoveryManifest));}catch(error){return dbError(error);}
+    }
+    if(path==='/api/discovery/page'){
+      const parameters=discoveryPageParameters(url);
+      if(!parameters)return json({error:'Invalid discovery page'},400);
+      try{const page=await withSql(env,sql=>discoveryPage(sql,parameters));
+        return page?json(page):json({error:'Discovery revision expired'},409);
+      }catch(error){return dbError(error);}
     }
 
     if (path === "/api/discovery") {

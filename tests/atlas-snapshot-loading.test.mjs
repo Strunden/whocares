@@ -6,7 +6,7 @@ import {loadAtlas} from '../site/js/atlas-loader.js';
 
 test('private loopback service is allowed; remote HTTP remains rejected',async()=>{
  let calls=0;
- const fetcher=async url=>{calls++;assert.equal(url,'http://127.0.0.1:8788/api/discovery');return {ok:false};};
+ const fetcher=async url=>{calls++;assert.equal(url,'http://127.0.0.1:8788/api/discovery/manifest');return {ok:false};};
  await assert.rejects(loadAtlas(fetcher,'http://127.0.0.1:8788'),/unavailable/);
  for(const url of ['http://example.org','http://127.0.0.1.evil:8788','http://127.0.0.1:8788@evil'])await assert.rejects(loadAtlas(fetcher,url),/not configured/);
  assert.equal(calls,1);
@@ -14,9 +14,9 @@ test('private loopback service is allowed; remote HTTP remains rejected',async()
 import {graphRecords} from '../site/js/atlas-records.js';
 import {graph} from './fixtures/discovery.mjs';
 const response={schema_version:2,revision:'database-revision',catalog:{entries:[{id:'new-company',published:true}]},graph,media:[]};
-test('one uncached service request loads catalog, graph and media atomically',async()=>{
- const calls=[];const data=await loadAtlas(async(url,options)=>{calls.push({url,cache:options.cache});return {ok:true,json:async()=>response};},'https://example.org/');
- assert.deepEqual(calls,[{url:'https://example.org/api/discovery',cache:'no-store'}]);
+test('legacy loopback compatibility loads a complete snapshot on manifest 404',async()=>{
+ const calls=[];const data=await loadAtlas(async(url,options)=>{calls.push({url,cache:options.cache});return url.endsWith('/manifest')?{status:404,ok:false}:{ok:true,json:async()=>response};},'https://example.org/');
+ assert.deepEqual(calls,[{url:'https://example.org/api/discovery/manifest',cache:'no-store'},{url:'https://example.org/api/discovery',cache:'no-store'}]);
  assert.equal(data.entries[0].id,'new-company');assert.equal(data.graph,graph);assert.equal(data.revision,'database-revision');
 });
 test('outages and malformed responses fail without reading a saved copy',async()=>{

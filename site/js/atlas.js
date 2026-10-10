@@ -1,5 +1,5 @@
 import {navigationRoots} from './atlas-needs.js?v=grouping-4';
-import {loadAtlas} from './atlas-loader.js';
+import {loadAtlas} from './atlas-loader.js?v=delivery-54';
 import {setProductMedia} from './atlas-media.js';
 import {availableStory} from './atlas-navigation.js';
 import {createNativePan} from './atlas-native-pan.js?v=native-pan-35';
