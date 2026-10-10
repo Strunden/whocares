@@ -16,6 +16,7 @@ export function handleImageError(event){
 }
 export function companyLogo(entry){
  const url=logoUrl(entry,window.WHOCARES_CONFIG?.API_BASE),initials=title(entry).split(/\s+/).map(v=>v[0]).join('').slice(0,2).toUpperCase();
+ if(url&&mediaFor(entry)?.src===url)return '';
  return `<span class="company-logo" aria-hidden="true"><span>${esc(initials)}</span>${url?`<img src="${esc(url)}" alt="" loading="lazy" decoding="async">`:''}</span>`;
 }
 export function recordMedia(entry,large=false){
