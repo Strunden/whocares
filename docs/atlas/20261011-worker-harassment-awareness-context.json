@@ -1,0 +1,78 @@
+{
+  "batch_id": "worker-harassment-awareness-context-20261011",
+  "manifest_sha256": "dea5c4ae4ae4d21076c80a28d19025c50961e3099995bc77e8284d7e6c796357",
+  "principles_sha256": "1698c1ce402af9694166b15938d24fb9fb05c55e85a330b4e589b7dca5b2a8c2",
+  "job_id": "ee7c4fbf27421ecfcd81f62dccf3537d0039e22521933aa5e1a3d34de1f618a9",
+  "finding_id": "finding-80988b51986c2d768bd822fe",
+  "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8153261/fullTextXML",
+  "source_content_hash": "a0db3e028423d2f70112508cc4daa442830bb5e2ddf497c34e500cf844c43b50",
+  "primary_article_doi": "10.3390/ijerph18105198",
+  "result": "Historical survey context: 293/901 (32.5%) selected No measures known; awareness only, mixed sectors, July2019-Jan2020. Does not establish absent provision, care-only prevalence, employer response or effectiveness. Methods60 vs abstract61 organisations/facilities unresolved.",
+  "test_verified": true,
+  "live_verified": true,
+  "all_prior_rows_unchanged": true,
+  "prior_rows_checked": {
+    "objects": 1352,
+    "relationships": 1246,
+    "sources": 182,
+    "evidence_links": 1918,
+    "product_media": 142,
+    "import_batches": 70
+  },
+  "source_additions": 1,
+  "context_evidence_links": 14,
+  "map_items_added": 0,
+  "mapped_records": 1309,
+  "human_epistemic_status_unchanged": true,
+  "existing_two_solution_path_verified": true,
+  "original_findings_preserved": true,
+  "research_metrics": {
+    "frozen_archive_investigation": {
+      "duration_seconds": 116.892,
+      "model_calls": 9,
+      "model_calls_by_role": {
+        "researcher": 5,
+        "reviewer": 4
+      },
+      "counted_usd": 0.0443088,
+      "provider_reported_usd": 0.0168652,
+      "http_requests": 0,
+      "page_calls": 0,
+      "search_calls": 0
+    },
+    "frozen_narrow_context_review": {
+      "duration_seconds": 28.875,
+      "model_calls": 2,
+      "model_calls_by_role": {
+        "researcher": 0,
+        "reviewer": 2
+      },
+      "counted_usd": 0.005900399999999999,
+      "provider_reported_usd": 0.002166564,
+      "http_requests": 0,
+      "page_calls": 0,
+      "search_calls": 0
+    }
+  },
+  "indexer_change": {
+    "repository": "Strunden/whocares-indexer",
+    "branch": "codex/branch-research-expansion",
+    "commit": "20a60f9",
+    "full_tests_passed": 233,
+    "purpose": "Capture primary JATS archive XML with original bytes, text, table labels/headers/rows/spans/footnotes and exact version identity; reject unrelated XML/external entities",
+    "limits": "No transcription of image-only tables/figures, no XML image approval. Original publisher captures failed; archived primary article identity verified. Earlier source-condition semantic reviewer limitation remains unresolved."
+  },
+  "browser_verified": {
+    "internal_url": "http://127.0.0.1:8793/#/all/g/wc-candidate-479cd1a0034e3a5fe41617d8%2Fwc-candidate-62cb23d18eb5189f40fbd7f3",
+    "checks": [
+      "Same need/situation identities and hypothesis labels",
+      "Historical context result and limitations visible",
+      "Source methods/sample/capture references expand",
+      "Two existing service tiles and authentic reviewed media remain reachable"
+    ]
+  },
+  "public_ui_deployment": false,
+  "image_generation": false,
+  "media_changed": false,
+  "capture_followups_resolved": 2
+}
