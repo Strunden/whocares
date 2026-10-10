@@ -1,0 +1,103 @@
+{
+  "date": "2026-10-10",
+  "canonical_principles_sha256": "1698c1ce402af9694166b15938d24fb9fb05c55e85a330b4e589b7dca5b2a8c2",
+  "snapshot_summary": {
+    "mapped": 1307,
+    "counts": {
+      "need": 198,
+      "situation": 1005,
+      "solution": 104
+    },
+    "byIcp": {
+      "Older adult": {
+        "needs": 50,
+        "situations": 267,
+        "withOfferings": 26,
+        "offeringPlacements": 69,
+        "withReviewedSource": 22,
+        "withIllustration": 24
+      },
+      "Family carer": {
+        "needs": 50,
+        "situations": 250,
+        "withOfferings": 12,
+        "offeringPlacements": 26,
+        "withReviewedSource": 10,
+        "withIllustration": 5
+      },
+      "Care worker \u00b7 Care manager": {
+        "needs": 9,
+        "situations": 59,
+        "withOfferings": 12,
+        "offeringPlacements": 18,
+        "withReviewedSource": 14,
+        "withIllustration": 5
+      },
+      "Care worker": {
+        "needs": 42,
+        "situations": 211,
+        "withOfferings": 13,
+        "offeringPlacements": 19,
+        "withReviewedSource": 3,
+        "withIllustration": 1
+      },
+      "Care manager": {
+        "needs": 47,
+        "situations": 237,
+        "withOfferings": 15,
+        "offeringPlacements": 23,
+        "withReviewedSource": 5,
+        "withIllustration": 1
+      }
+    },
+    "humanStatuses": {
+      "candidate": 57,
+      "interpretation": 18,
+      "hypothesis": 1128
+    },
+    "uncoveredSituations": 946,
+    "missingPresenceChecks": 1207,
+    "missingRelationshipEvidence": 10,
+    "limits": "Coverage counts are editorial navigation only. Reviewed source presence does not prove direct human validation; illustration presence does not prove visual relevance. No ratings or market size inferred."
+  },
+  "completion_status": "not_proven",
+  "requirement_checks": [
+    {
+      "requirement": "Expand from 62 toward roughly 620 distinct useful records",
+      "evidence": "1,307 distinct reachable navigation identities. Numeric threshold exceeded; distinct identities do not prove semantic uniqueness or usefulness.",
+      "status": "numeric_threshold_met; semantic completeness_unproven"
+    },
+    {
+      "requirement": "Needs \u2192 situations \u2192 existing offerings, stable graph identities and no duplicate padding",
+      "evidence": "Current graph projection shows 198 needs, 1,005 situations and 104 offerings. Last delivery reused one offering across two additional situations without changing object count.",
+      "status": "structure_present; dataset_wide_semantic_review_incomplete"
+    },
+    {
+      "requirement": "Bounded research and evidence review",
+      "evidence": "Recent scouts retain source versions, exact passages, cost caps and operator audits. Compound findings with unsupported clauses required explicit holds/narrowing despite model supported verdicts.",
+      "status": "workflow_operating; autonomous_semantic_reliability_unproven"
+    },
+    {
+      "requirement": "Useful evidence and sufficient context on the map",
+      "evidence": "Only 59 situations currently have an offering. 946 have none; this is an incomplete-research gap, not evidence of market absence. 1,128 human records remain hypotheses; reviewed-source presence is not direct empirical validation. Ten solution placements have no reviewed relationship source.",
+      "status": "incomplete"
+    },
+    {
+      "requirement": "Relevant illustrations and authentic solution media",
+      "evidence": "Illustration generation remains paused by user. Neutral fallback is allowed temporarily, not evidence of media completion. Last delivery fixed a module-image mismatch using an existing reviewed asset selected on its situation link.",
+      "status": "incomplete; approved_temporary_fallback"
+    },
+    {
+      "requirement": "Verified internal map branches without fabricated claims or public deployment",
+      "evidence": "Recent isolated and canonical proofs preserve prior rows, identity, epistemic status and media rights; internal browser checks and screenshots exist in dated delivery receipts. No public UI deployment.",
+      "status": "verified_for_recent_deliveries; global_content_audit_incomplete"
+    }
+  ],
+  "next_work": [
+    "Fill sparse worker/manager branches with distinct current offerings, preserving access, eligibility, cost and actual scope.",
+    "Review the ten relationship-evidence gaps against exact official sources; narrow or hold mismatched links, never borrow unrelated citations.",
+    "Target human validation and quantification at exact population/situation boundaries; keep denominator, method and dates and avoid generalising mixed samples.",
+    "Use paused-generation fallbacks honestly; inspect authentic media for contextual fit instead of assuming ownership alone is enough."
+  ],
+  "limits": "This is a snapshot completion audit, not an opportunity score, deployment authorization or claim that all records have been reviewed."
+}
