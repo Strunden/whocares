@@ -1,0 +1,116 @@
+{
+  "date": "2026-10-10",
+  "batch_id": "faire-integration-employment-advice-20261010",
+  "manifest_sha256": "c73b950d52e5f7bc3be1f2455d9a1522003cec6b9a5d23de478ad93e078ce135",
+  "offering": "solution-faire-integration-employment-advice",
+  "navigation_targets": [
+    "wc-candidate-777680d88b06d6b470f541c4"
+  ],
+  "counts": {
+    "objects": 1350,
+    "mapped": 1307,
+    "needs": 198,
+    "situations": 1005,
+    "offerings": 104
+  },
+  "verification": {
+    "isolated": {
+      "target": "test",
+      "verified": true,
+      "batch": "faire-integration-employment-advice-20261010",
+      "backup_file": "backup-test-1791668408458.json",
+      "manifest_sha256": "c73b950d52e5f7bc3be1f2455d9a1522003cec6b9a5d23de478ad93e078ce135",
+      "objects": 1350,
+      "mapped": 1307,
+      "newObjects": 1,
+      "navigationLinks": 1,
+      "exactPassages": 12,
+      "sourceVersions": 3,
+      "internalMedia": 1,
+      "publicMedia": 0,
+      "humanObjectsUnchanged": true,
+      "humanHypothesesNotValidated": true
+    },
+    "canonical": {
+      "target": "live",
+      "verified": true,
+      "batch": "faire-integration-employment-advice-20261010",
+      "backup_file": "backup-live-1791668466887.json",
+      "manifest_sha256": "c73b950d52e5f7bc3be1f2455d9a1522003cec6b9a5d23de478ad93e078ce135",
+      "objects": 1350,
+      "mapped": 1307,
+      "newObjects": 1,
+      "navigationLinks": 1,
+      "exactPassages": 12,
+      "sourceVersions": 3,
+      "internalMedia": 1,
+      "publicMedia": 0,
+      "humanObjectsUnchanged": true,
+      "humanHypothesesNotValidated": true
+    },
+    "prior_rows": {
+      "test": {
+        "target": "test",
+        "verified": true,
+        "backup_file": "backup-test-1791668408458.json",
+        "retained_backups": [
+          "backup-test-1791668327355.json",
+          "backup-test-1791668408458.json"
+        ],
+        "prior_rows_unchanged": {
+          "objects": 1349,
+          "relationships": 1240,
+          "sources": 177,
+          "evidence_links": 1859,
+          "product_media": 139,
+          "import_batches": 64
+        }
+      },
+      "live": {
+        "target": "live",
+        "verified": true,
+        "backup_file": "backup-live-1791668466887.json",
+        "retained_backups": [
+          "backup-live-1791668466887.json"
+        ],
+        "prior_rows_unchanged": {
+          "objects": 1349,
+          "relationships": 1240,
+          "sources": 177,
+          "evidence_links": 1859,
+          "product_media": 139,
+          "import_batches": 64
+        }
+      }
+    },
+    "browser": {
+      "branch_reachable": true,
+      "detail_reachable": true,
+      "authentic_logo_loaded": true,
+      "companion_offering": "solution-drk-berlin-mbe",
+      "scope_and_sources_visible": true,
+      "screenshot": "research-staging/journey-migrant-worker-rights-20261010/publication/internal-faire-advice-verified.png"
+    }
+  },
+  "research": {
+    "job_id": "395f4ed6e6adb0cffc4a07699f9b4047e3eee2127cd907858ccce341389b1e71",
+    "counted_usd": 0.06144089999999999,
+    "cap_usd": 0.25,
+    "source_pages": 4,
+    "repair_http_requests": 0,
+    "operator_audit": "Compound FAQ topic finding held unclear; contact finding narrowed and independently re-reviewed. Original statement/passages retained in canonical revision event and before-audit packet.",
+    "same_identity_contact_repair": true
+  },
+  "limits": [
+    "Employment-related advice is described; residence-law advice, court representation and resolution of employment/residence conflicts are not established by the reviewed pages.",
+    "Recognition of foreign qualifications is explicitly excluded.",
+    "Provider/ministry descriptions are not independent evidence of quality, effectiveness, demand or outcomes.",
+    "The provider warns that some centres may have waits. Current capacity, response times, appointment conditions and language availability for an individual case are unverified.",
+    "The counselling-centres locator is linked from the official homepage but its local entries were not captured in this four-page pass.",
+    "Not specific to care workers; BMAS describes all occupations and sectors. Confirm individual eligibility.",
+    "No human hypotheses upgraded; no public UI deployment; logo internal only."
+  ],
+  "public_ui_deployment": false,
+  "image_generation": false,
+  "schema_test_recovery": "Invalid confidence vocabulary rejected atomically; raw prior rows verified unchanged before retry. Corrected to existing single_source basis and added manifest assertion. Both backups retained; successful receipt binds exact pre-write backup."
+}
