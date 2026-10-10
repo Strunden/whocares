@@ -436,12 +436,53 @@ function applyRoute(){
 }
 window.addEventListener('hashchange',()=>{if(entries.length)applyRoute();});
 
+
+let refreshInFlight=false;
+const refreshBusy=()=>document.hidden||navigationFrame||pointers.size||wheelState||touchState||cameraReturnFrame||panPending;
+async function refreshResearch(){
+ if(refreshInFlight||refreshBusy())return;
+ refreshInFlight=true;
+ try{
+  const data=await loadAtlas(fetch,window.WHOCARES_CONFIG?.API_BASE);
+  if(refreshBusy())return;
+  if(data.revision!==document.documentElement.dataset.researchRevision){
+   const nextEntries=data.entries.filter(entry=>entry.published!==false);
+   const nextGraphEntries=graphRecords(data.graph,nextEntries);
+   // Validate the new hierarchy before replacing the last usable research snapshot.
+   const nextTree=buildHierarchy([],[],{portrait:mobile,extraRoots:navigationRoots(nextGraphEntries,persona)});
+   const priorTree=tree;
+   let group=activeGroup;
+   while(group&&!nextTree.all.has(group))group=priorTree?.all.get(group)?.parent||null;
+   entries=nextEntries;graphData=data.graph;graphEntries=nextGraphEntries;
+   byId=new Map([...entries,...graphEntries].map(entry=>[entry.id,entry]));
+   setProductMedia(data.media);
+   document.documentElement.dataset.researchRevision=data.revision;
+   if(!ready){$('loading').hidden=true;applyRoute();}
+   else{
+    installLevel(persona,group,nextTree);
+    delete $('map-breadcrumbs').dataset.path;
+    if(selectedId&&!byId.has(selectedId))selectedId=null;
+    if(panelState?.type==='entry'&&!byId.has(panelState.id))closePanel(false);
+    else if(panelState){const scroll=$('panel-content').scrollTop;renderPanel();$('panel-content').scrollTop=scroll;}
+    render();setHash();
+   }
+  }
+  document.documentElement.dataset.researchState='current';$('research-status').hidden=true;
+ }catch(error){
+  document.documentElement.dataset.researchState='stale';
+  $('research-status').textContent=ready?'Updates unavailable · showing the last loaded research. Retrying automatically.':'Research unavailable · retrying automatically.';
+  $('research-status').hidden=false;
+  console.error('Atlas research refresh failed',error);
+ }finally{refreshInFlight=false;}
+}
+
 try{
  const data=await loadAtlas(fetch,window.WHOCARES_CONFIG?.API_BASE);
  entries=data.entries.filter(entry=>entry.published!==false);
  setProductMedia(data.media);
  graphData=data.graph;graphEntries=graphRecords(graphData,entries);
  document.documentElement.dataset.researchRevision=data.revision;
+ document.documentElement.dataset.researchState='current';
  if(stressCount){entries.push(...Array.from({length:stressCount},(_,i)=>({id:'synthetic-'+i,title:'Synthetic service '+String(i).padStart(6,'0'),type:'company',themes:[i%2?'T11':'T13'],summary:'Synthetic scale-test record. Not real research or evidence.'})));const banner=document.createElement('div');banner.className='stress-banner';banner.textContent=`SYNTHETIC SCALE TEST · ${stressCount.toLocaleString()} generated records · Not research`;document.body.prepend(banner);document.title='SCALE TEST · Who Cares';}
  byId=new Map([...entries,...graphEntries].map(entry=>[entry.id,entry]));$('loading').hidden=true;
  applyRoute();
@@ -449,4 +490,9 @@ try{
  $('workspace').hidden=false;
  $('loading').hidden=false;
  $('loading').textContent=error.message.startsWith('The needs hierarchy')?error.message:'The research service is unavailable. Reload to try again; no saved copy is being shown.';console.error('Atlas could not load its research index',error);
+}
+
+if(!stressCount){
+ setInterval(refreshResearch,30000);
+ document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshResearch();});
 }
