@@ -1,0 +1,109 @@
+{
+  "batch": "drk-berlin-existing-resident-advice-20261010",
+  "offering": "solution-drk-berlin-mbe",
+  "test": {
+    "target": "test",
+    "verified": true,
+    "batch": "drk-berlin-existing-resident-advice-20261010",
+    "manifest_sha256": "ffdd8e2054fd51a9352fef5cd36be59bdadfd0a938499b054167b4c4d00d7136",
+    "objects": 1349,
+    "mapped": 1306,
+    "newObjects": 1,
+    "navigationLinks": 2,
+    "exactPassages": 10,
+    "sourceVersions": 2,
+    "internalMedia": 0,
+    "publicMedia": 0,
+    "humanObjectsUnchanged": true,
+    "humanHypothesesNotValidated": true
+  },
+  "canonical": {
+    "target": "live",
+    "verified": true,
+    "batch": "drk-berlin-existing-resident-advice-20261010",
+    "manifest_sha256": "ffdd8e2054fd51a9352fef5cd36be59bdadfd0a938499b054167b4c4d00d7136",
+    "objects": 1349,
+    "mapped": 1306,
+    "newObjects": 1,
+    "navigationLinks": 2,
+    "exactPassages": 10,
+    "sourceVersions": 2,
+    "internalMedia": 0,
+    "publicMedia": 0,
+    "humanObjectsUnchanged": true,
+    "humanHypothesesNotValidated": true
+  },
+  "preservation": {
+    "test": {
+      "target": "test",
+      "verified": true,
+      "prior_rows_unchanged": {
+        "objects": 1348,
+        "relationships": 1238,
+        "sources": 175,
+        "evidence_links": 1849,
+        "product_media": 139,
+        "import_batches": 63
+      }
+    },
+    "canonical": {
+      "target": "live",
+      "verified": true,
+      "prior_rows_unchanged": {
+        "objects": 1348,
+        "relationships": 1238,
+        "sources": 175,
+        "evidence_links": 1849,
+        "product_media": 139,
+        "import_batches": 63
+      }
+    }
+  },
+  "research": {
+    "job_id": "906fdba4c4805f56158fe324dac05e38fb067fb3964df8baebb3f46875cac56c",
+    "counted_usd": 0.1937314,
+    "ceiling_usd": 0.25,
+    "http_requests": 9,
+    "searches": 2,
+    "saved_source_repairs_preserved": true,
+    "held_directory_finding": "finding-221139cf8c9c486c291d399a",
+    "selected_reviewed_finding": "finding-a71e956bbd511bae406f6021",
+    "scope": "Provider-described service, not independently verified outcomes or human demand."
+  },
+  "indexer": {
+    "commit": "f575340",
+    "tests_passed": 230,
+    "tests_failed": 0,
+    "change": "Existing DRK source adapter preserves entry/visa exclusions and target-group sections. Pipeline version changed so earlier captures remain intact and fresh capture uses corrected extraction."
+  },
+  "browser": {
+    "first_situation": "http://127.0.0.1:8793/#/all/g/wc-candidate-1ebe3f2666b6c51a2364423f%2Fwc-candidate-41f57a97c98339750eb2513b",
+    "second_situation": "http://127.0.0.1:8793/#/all/g/wc-candidate-1ebe3f2666b6c51a2364423f%2Fwc-candidate-777680d88b06d6b470f541c4",
+    "both_tiles_verified": true,
+    "offering_detail_verified": true,
+    "existing_resident_and_entry_exclusions_visible": true,
+    "source_versions_accessible": true,
+    "human_hypotheses_retained": true,
+    "neutral_fallbacks_loaded": true,
+    "screenshot": "internal-drk-advice-verified.png"
+  },
+  "counts": {
+    "mapped": 1306,
+    "needs": 198,
+    "situations": 1005,
+    "offerings": 103
+  },
+  "limits": [
+    "Provider description only; current appointment capacity, wait times and outcomes unverified.",
+    "Not an entry, visa-application or immigration-planning service for people abroad.",
+    "Work is an advice topic; specialist employment-dispute representation and independence from employers/recruiters are not established.",
+    "Not care-worker-specific; confirm individual eligibility and documents with the service.",
+    "Online registration form and mbeon app not independently tested.",
+    "Neutral fallback is temporary; authentic media remains incomplete.",
+    "No human hypothesis upgraded; no public UI deployment.",
+    "Source photo depicts Mettmann counselling and was not repurposed as a Berlin service image.",
+    "No standalone authentic offering/logo asset delivered; media requirement remains incomplete.",
+    "No public UI deployment; existing canonical data service exposes approved records dynamically.",
+    "Image generation and ongoing research scheduling remain paused."
+  ]
+}
