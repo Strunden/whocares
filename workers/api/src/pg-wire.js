@@ -309,7 +309,7 @@ function dataRow(body, columns) {
     const name = columns[i] || String(i);
     if (len < 0) row[name] = null;
     else {
-      row[name] = decoder.decode(body.slice(offset, offset + len));
+      row[name] = decoder.decode(body.subarray(offset, offset + len));
       offset += len;
     }
   }

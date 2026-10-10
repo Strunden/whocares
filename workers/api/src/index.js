@@ -1,5 +1,5 @@
 import { attachFunding, funderDetail, funderSummary } from "./funders-shape.js";
-import {queryDiscovery} from "./discovery.js";
+import {queryDiscovery,queryDiscoveryText} from "./discovery.js";
 import {readLogo} from "./logo.js";
 import { decodeSlug } from "./path-slug.js";
 import { withSql } from "./pg-wire.js";
@@ -158,7 +158,9 @@ export default {
     }
 
     if (path === "/api/discovery") {
-      try { return json(await withSql(env, queryDiscovery)); }
+      try { return new Response(await withSql(env, queryDiscoveryText), {headers: {
+          "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store", ...corsHeaders(),
+        }}); }
       catch (error) { return dbError(error); }
     }
 
