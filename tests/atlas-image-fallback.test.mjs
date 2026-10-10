@@ -28,3 +28,10 @@ test('logo-only offerings show their identity once; separate product imagery ret
   if(previousLocation===undefined)delete globalThis.location;else globalThis.location=previousLocation;
  }
 });
+
+
+test('record media renders the selected reviewed module image without changing default product context',()=>{
+ const old=globalThis.location,entry={id:'suite'},base={id:'carepad',object_id:'suite',entry_id:null,media_role:'product_image',asset_url:'https://provider.example/carepad.png',source_url:'https://provider.example/',review_state:'reviewed',reviewed_by:'Codex',reviewed_at:'2026-10-10',checked_at:'2026-10-10',source_capture_sha256:'a'.repeat(64),alt_text:'CarePad',caption:'CarePad',credit:'Provider',rights_note:'Unknown; internal only',rights_status:'unknown',visibility:'internal'};
+ try{globalThis.location={hostname:'127.0.0.1'};setProductMedia([base,{...base,id:'roster',asset_url:'https://provider.example/roster.png',alt_text:'Roster'}]);assert(recordMedia(entry,false,'roster').includes('roster.png'));assert(recordMedia(entry).includes('carepad.png'));}
+ finally{setProductMedia([]);if(old===undefined)delete globalThis.location;else globalThis.location=old;}
+});

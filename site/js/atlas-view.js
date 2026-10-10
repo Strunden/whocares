@@ -14,13 +14,13 @@ export function handleImageError(event){
  const caption=image.closest('figure')?.querySelector('figcaption');if(caption)caption.hidden=true;
  image.src=placeholderImage;
 }
-export function companyLogo(entry){
+export function companyLogo(entry,preferredId){
  const url=logoUrl(entry,window.WHOCARES_CONFIG?.API_BASE),initials=title(entry).split(/\s+/).map(v=>v[0]).join('').slice(0,2).toUpperCase();
- if(url&&mediaFor(entry)?.src===url)return '';
+ if(url&&mediaFor(entry,preferredId)?.src===url)return '';
  return `<span class="company-logo" aria-hidden="true"><span>${esc(initials)}</span>${url?`<img src="${esc(url)}" alt="" loading="lazy" decoding="async">`:''}</span>`;
 }
-export function recordMedia(entry,large=false){
- const media=mediaFor(entry);if(!media)return `<figure class="record-media ${large?'media-large':''}"><img src="${placeholderImage}" alt="Image not yet available" loading="lazy" decoding="async"></figure>`;
+export function recordMedia(entry,large=false,preferredId){
+ const media=mediaFor(entry,preferredId);if(!media)return `<figure class="record-media ${large?'media-large':''}"><img src="${placeholderImage}" alt="Image not yet available" loading="lazy" decoding="async"></figure>`;
  const artwork=media.src.startsWith('assets/illustrations/');
  const caption=large&&!artwork?`<figcaption><a href="${esc(media.source)}" target="_blank" rel="noopener">${esc(media.caption||media.kind)} · ${esc(media.credit)} ↗</a></figcaption>`:'';
  return `<figure class="record-media ${large?'media-large':''}"><img src="${esc(media.src)}" alt="${artwork?'':esc(media.alt)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">${caption}</figure>`;
@@ -28,7 +28,8 @@ export function recordMedia(entry,large=false){
 function nodeMarkup(n,mode,persona){
  const e=n.entry,heading=(n.study&&n.kind!=='record'&&n.perspectiveLabel?`<p class="node-icp">${esc(n.perspectiveLabel)}</p>`:'')+`<h2 class="node-title">${esc(n.title)}</h2>`;
  if(n.personaKey)return `<div class="node-copy">${heading}<p class="node-description">${esc(n.description)}</p></div><img class="perspective-art" src="${assetFor(n.personaKey).src}" alt="" loading="lazy">`;
- if(n.study&&n.kind==='record')return `<div class="node-copy study-copy study-response">${logoUrl(e)?companyLogo(e):''}${heading}<p class="node-description">${esc(n.description||e?.summary)}</p>${recordMedia(e)}</div>`;
+ const preferredId=n.relationship?.provenance?.navigation_media_id;
+ if(n.study&&n.kind==='record')return `<div class="node-copy study-copy study-response">${logoUrl(e)?companyLogo(e,preferredId):''}${heading}<p class="node-description">${esc(n.description||e?.summary)}</p>${recordMedia(e,false,preferredId)}</div>`;
  if(n.study)return `<div class="node-copy study-composition"><img class="study-scene" src="${esc(n.image||placeholderImage)}" alt="${n.image?'':'Image not yet available'}" loading="lazy"><div class="study-caption"><div>${heading}<p class="node-description">${esc(n.description||e?.summary)}</p></div></div></div>`;
  if(mode==='compact')return `<div class="node-copy">${heading}<p class="node-description">${esc(short(n.description,145))}</p></div><img class="overview-art" src="${assetFor(n.graph?'adult':n.id,persona).src}" alt="" loading="lazy" decoding="async">`;
  if(n.children?.length)return `<div class="node-copy">${heading}<p class="node-description">${esc(short(e?.summary||n.description||'Explore the records filed under this subject.',220))}</p></div>`;

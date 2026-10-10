@@ -11,7 +11,8 @@ export function reviewedMedia(entry,rows=productMedia,{internal=['localhost','12
   kind:m.caption+' · '+(m.rights_status==='unknown'?'Reuse rights not confirmed':'Attributed provider media')}));
 }
 export function productLogoFor(entry){return reviewedMedia(entry).find(m=>m.media_role==='logo');}
-export function mediaFor(entry){
+export function mediaFor(entry,preferredId){
+ if(preferredId)return reviewedMedia(entry).find(m=>m.id===preferredId)||productLogoFor(entry)||null;
  const reviewed=reviewedMedia(entry).find(m=>m.media_role!=='logo');if(reviewed)return reviewed;
  const m=entry?.media;
  if(m&&/^https:\/\//.test(m.src)&&/^https:\/\//.test(m.source)&&m.alt)return m;

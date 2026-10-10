@@ -66,3 +66,21 @@ test('logo-only services use reviewed identities without substituting sibling pr
   setProductMedia([logo]);globalThis.location={hostname:'strunden.github.io'};assert.equal(mediaFor(e),null);
  }finally{setProductMedia([]);if(previous===undefined)delete globalThis.location;else globalThis.location=previous;}
 });
+
+
+test('situation media selection respects offering ownership, review and rights; missing selections use identity only',()=>{
+ const previous=globalThis.location,e={id:'residential-suite'};
+ const logo={...row,id:'logo',entry_id:null,object_id:e.id,media_role:'logo'};
+ const carepad={...logo,id:'carepad',media_role:'product_image',asset_url:'https://provider.example/carepad.png'};
+ const roster={...carepad,id:'roster',asset_url:'https://provider.example/roster.png'};
+ const other={...roster,id:'other',object_id:'different-offering'};
+ try{
+  globalThis.location={hostname:'127.0.0.1'};setProductMedia([logo,carepad,roster,other]);
+  assert.equal(mediaFor(e).src,carepad.asset_url);
+  assert.equal(mediaFor(e,'roster').src,roster.asset_url);
+  for(const id of ['missing','other'])assert.equal(mediaFor(e,id).src,logo.asset_url);
+  setProductMedia([logo,carepad,{...roster,review_state:'candidate'}]);assert.equal(mediaFor(e,'roster').src,logo.asset_url);
+  globalThis.location={hostname:'strunden.github.io'};assert.equal(mediaFor(e,'roster'),null);
+  globalThis.location={hostname:'127.0.0.1'};setProductMedia([carepad]);assert.equal(mediaFor(e,'roster'),null);
+ }finally{setProductMedia([]);if(previous===undefined)delete globalThis.location;else globalThis.location=previous;}
+});

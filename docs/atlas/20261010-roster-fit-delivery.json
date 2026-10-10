@@ -1,0 +1,138 @@
+{
+  "date": "2026-10-10",
+  "existing_offering": "solution-medifox-md-stationaer",
+  "new_situation_links": [
+    "wc-candidate-9cf2c8f44285f8732ec7a5f1",
+    "wc-candidate-77ac297a97f3b57a12ec0567"
+  ],
+  "existing_indexer_job_id": "81038e4604c05656d5d6aa76d1d7ffae4f5a58b30aaf78e2c05f04e198153197",
+  "new_research_spending_usd": 0,
+  "new_objects": 0,
+  "mapped_count": 1307,
+  "exact_evidence_links_added": 4,
+  "existing_source_and_media_reused": true,
+  "verified": {
+    "links": {
+      "test": {
+        "target": "test",
+        "verified": true,
+        "batch": "md-stationaer-roster-situation-links-20261010",
+        "backup_file": "backup-test-1791668758782.json",
+        "manifest_sha256": "c2c63d087650088eae04bbfdaf47227dc13ce35be3a29207ebb47f80a4e4fd28",
+        "objects": 1350,
+        "mapped": 1307,
+        "newObjects": 0,
+        "navigationLinks": 2,
+        "exactPassages": 4,
+        "sourceVersions": 0,
+        "internalMedia": 0,
+        "publicMedia": 0,
+        "humanObjectsUnchanged": true,
+        "humanHypothesesNotValidated": true
+      },
+      "live": {
+        "target": "live",
+        "verified": true,
+        "batch": "md-stationaer-roster-situation-links-20261010",
+        "backup_file": "backup-live-1791668818277.json",
+        "manifest_sha256": "c2c63d087650088eae04bbfdaf47227dc13ce35be3a29207ebb47f80a4e4fd28",
+        "objects": 1350,
+        "mapped": 1307,
+        "newObjects": 0,
+        "navigationLinks": 2,
+        "exactPassages": 4,
+        "sourceVersions": 0,
+        "internalMedia": 0,
+        "publicMedia": 0,
+        "humanObjectsUnchanged": true,
+        "humanHypothesesNotValidated": true
+      }
+    },
+    "context_media": {
+      "test": {
+        "target": "test",
+        "verified": true,
+        "manifest_sha256": "633d071aee3ac3bcefe52dfc8262abfd2bc01b8b557c71ddc8635153780d9683",
+        "backup_file": "backup-test-1791668956432.json",
+        "relationshipDisplayUpdates": 2,
+        "prior_other_rows_unchanged": true,
+        "claims_status_and_rights_unchanged": true,
+        "publicUiDeployment": false
+      },
+      "live": {
+        "target": "live",
+        "verified": true,
+        "manifest_sha256": "633d071aee3ac3bcefe52dfc8262abfd2bc01b8b557c71ddc8635153780d9683",
+        "backup_file": "backup-live-1791668978547.json",
+        "relationshipDisplayUpdates": 2,
+        "prior_other_rows_unchanged": true,
+        "claims_status_and_rights_unchanged": true,
+        "publicUiDeployment": false
+      }
+    }
+  },
+  "prior_row_preservation": {
+    "test": {
+      "target": "test",
+      "verified": true,
+      "backup_file": "backup-test-1791668758782.json",
+      "retained_backups": [
+        "backup-test-1791668758782.json"
+      ],
+      "prior_rows_unchanged": {
+        "objects": 1350,
+        "relationships": 1241,
+        "sources": 180,
+        "evidence_links": 1871,
+        "product_media": 140,
+        "import_batches": 65
+      }
+    },
+    "live": {
+      "target": "live",
+      "verified": true,
+      "backup_file": "backup-live-1791668818277.json",
+      "retained_backups": [
+        "backup-live-1791668818277.json"
+      ],
+      "prior_rows_unchanged": {
+        "objects": 1350,
+        "relationships": 1241,
+        "sources": 180,
+        "evidence_links": 1871,
+        "product_media": 140,
+        "import_batches": 65
+      }
+    }
+  },
+  "browser": {
+    "skill_mix_path_reachable": true,
+    "payroll_path_reachable": true,
+    "specific_fit_limits_visible": true,
+    "reviewed_roster_image_loaded": true,
+    "default_carepad_was_detected_and_replaced_on_these_map_tiles": true,
+    "zoom_100_to_150_content_stable": true,
+    "proof_images": [
+      "research-staging/journey-roster-fit-20261010/publication/skill-mix-verified.png",
+      "research-staging/journey-roster-fit-20261010/publication/payroll-fit-verified.png"
+    ]
+  },
+  "implementation": {
+    "contract": "provenance.navigation_media_id on the solution-to-situation link chooses a media ID through the existing reviewed-media ownership/rights filters. Missing choices fall back to offering logo or neutral placeholder, not another module. Canonical identity and default detailed-record media unchanged.",
+    "tests": {
+      "app_api_passed": 137,
+      "failed": 0
+    },
+    "skill_updated": ".agents/skills/whocares-hierarchy/SKILL.md"
+  },
+  "limits": [
+    "Existing offering identity and evidence source reused; no count padding.",
+    "Existing human hypotheses unchanged.",
+    "Feature capabilities are not evidence of outcomes; staffing and payroll boundaries retained.",
+    "Existing authentic offering media retained; no public deployment or image generation.",
+    "Existing suite-level detailed record retains its default module visual; only context-specific map tiles were changed.",
+    "No independent safe-staffing or payroll-accuracy evidence established."
+  ],
+  "public_ui_deployment": false,
+  "image_generation": false
+}
