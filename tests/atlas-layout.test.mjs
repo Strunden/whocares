@@ -106,3 +106,13 @@ test('every visible-page item can reach the exact viewport centre at every zoom 
   }
  }
 });
+
+test('editorial overview groups add only spatial headings and preserve drill paths',()=>{
+ const roots=Array.from({length:118},(_,i)=>({id:'need-'+i,title:'Human need '+i,study:true,kind:'territory',color:'#fff',overviewGroup:{id:'group-'+Math.floor(i/5),label:i<5?'A deliberately long but readable cluster heading for everyday life':'Daily life',icp:i<60?'older-adult':'family-carer',icp_label:i<60?'Older adult':'Family carer'},children:[{id:'need-'+i+'/situation',title:'Specific situation',study:true,kind:'territory',children:[]}]}));
+ const tree=buildHierarchy([],[],{extraRoots:roots});assert.equal(tree.roots.length,118);assert.equal(tree.all.size,236);assert(tree.headings.length>=24);
+ for(const n of tree.roots){assert.deepEqual(ancestry(tree,n.children[0].id).map(x=>x.id),[n.id,n.children[0].id]);const h=tree.headings.find(h=>h.id==='cluster-'+n.overviewGroup.id);assert(n.box.y>=h.y+h.h);}
+ const camera=frameLevel(tree,null,1280,720),overview=readingLevel(tree,null,camera,1280,720);
+ assert.equal(overview.filter(i=>i.node.kind!=='overview-heading').length,118);
+ assert(overview.some(i=>i.node.kind==='overview-heading'));
+ const drilled=readingLevel(tree,roots[0].id,frameLevel(tree,roots[0].id,1280,720),1280,720);assert(drilled.every(i=>i.node.kind!=='overview-heading'));
+});

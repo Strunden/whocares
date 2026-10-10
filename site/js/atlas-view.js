@@ -49,7 +49,11 @@ export function createMapView(container){
    const keep=new Set();
    for(const {node,box,mode} of items){
     keep.add(node.id);let el=elements.get(node.id);
-    if(!el){el=document.createElement('section');el.className='atlas-node';el.dataset.node=node.id;el.setAttribute('role','button');el.tabIndex=0;el.setAttribute('aria-label',node.title);container.append(el);elements.set(node.id,el);}
+    if(!el){el=document.createElement('section');el.className='atlas-node';el.dataset.node=node.id;el.setAttribute('role',node.kind==='overview-heading'?'heading':'button');el.tabIndex=node.kind==='overview-heading'?-1:0;el.setAttribute('aria-label',node.title);container.append(el);elements.set(node.id,el);}
+    if(node.kind==='overview-heading'){
+     el.className='overview-heading'+(node.icp?' overview-icp':'');el.setAttribute('aria-level',node.icp?'2':'3');el.textContent=node.title;
+     el.style.cssText=`left:${box.x+offsetX}px;top:${box.y+offsetY}px;width:${box.layoutW}px;height:${box.layoutH}px;transform:scale(${box.scale});transform-origin:0 0`;continue;
+    }
     const signature=node.id+mode+box.layoutW+persona+(node.entry?._detailLoaded?'loaded':'');const changed=el.dataset.signature!==signature;
     if(el.dataset.signature!==signature){el.innerHTML=territorySurface(node,mode)+nodeMarkup(node,mode,persona);el.dataset.signature=signature;const descriptions=[...el.querySelectorAll('.node-description')];descriptions.forEach((d,i)=>{d.id='map-'+node.id+'-detail-'+i;});el.setAttribute('aria-describedby',descriptions.map(d=>d.id).join(' '));}
     el.dataset.study=node.study?'true':'false';el.dataset.illustrated=!!node.image;el.classList.toggle('perspective-muted',!!node.muted);el.dataset.shape=String(shapeVariant(node.id));el.dataset.mode=mode;el.dataset.kind=node.kind;el.dataset.visual=node.personaKey?'person':mode!=='compact'&&!node.children?.length?'record':'territory';

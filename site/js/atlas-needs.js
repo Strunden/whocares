@@ -7,7 +7,7 @@ export function navigationRoots(records,lens=null){
  const icpLens={'older-adult':'adult','family-carer':'family','professional-caregiver':'worker','care-management':'provider'};
  const lenses=record=>{const nav=navigation(record),planned=(record.scope?.research_planning?.affected_icps||[]).map(icp=>icpLens[icp]);return [...new Set((nav?.lenses?.length?nav.lenses:planned).filter(key=>perspectives[key]))];};
  const groupOrder=record=>{const primary=lenses(record)[0];return primary?Object.keys(perspectives).indexOf(primary):4;};
- const needs=records.filter(record=>navigation(record)?.role==='need').sort((a,b)=>groupOrder(a)-groupOrder(b)||order(a,b));
+ const needs=records.filter(record=>navigation(record)?.role==='need').sort((a,b)=>groupOrder(a)-groupOrder(b)||(navigation(a)?.overview_group?.order??Infinity)-(navigation(b)?.overview_group?.order??Infinity)||order(a,b));
  if(!needs.length)throw Error('The needs hierarchy is not available yet. Existing research remains searchable.');
  const node=(entry,id,needId,viewKind,inherited=[])=>{
   const nav=navigation(entry),ownLenses=lenses(entry);
@@ -27,6 +27,6 @@ export function navigationRoots(records,lens=null){
    const children=responses.map(({entry,edge})=>({id:path+'/'+entry.id,needId:id,title:entry.scope?.navigation?.title||entry.title,shortTitle:entry.scope?.navigation?.short_title||entry.scope?.navigation?.title||entry.title,description:edge.statement||entry.summary,study:true,kind:'record',entry,relationship:edge,count:1}));
    return {...node(situation,path,id,'problem',lenses(need)),children,count:children.length};
   });
-  return {...node(need,id,id,'need'),color:(nav.lenses||[]).includes('family')?'#e4d5c8':'#cbdcc5',themes:[],muted:!!lens&&!(nav.affected_lenses||nav.lenses||[]).includes(lens),children,count:children.length};
+  return {...node(need,id,id,'need'),overviewGroup:nav.overview_group,color:(nav.lenses||[]).includes('family')?'#e4d5c8':'#cbdcc5',themes:[],muted:!!lens&&!(nav.affected_lenses||nav.lenses||[]).includes(lens),children,count:children.length};
  });
 }

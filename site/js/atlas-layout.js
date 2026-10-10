@@ -42,10 +42,22 @@ export function buildHierarchy(entries,definitions,{portrait=false,extraRoots=[]
  roots.unshift(...extraRoots);
  const cols=portrait?2:Math.min(3,Math.ceil(Math.sqrt(roots.length*1.7))),rows=Math.ceil(roots.length/cols),bounds={x:0,y:0,width:cols*1050,height:rows*660};
  arrange(roots,{x:0,y:0,w:bounds.width,h:bounds.height},cols,portrait?2:3,roots.every(n=>n.study)?560/470:350/220);
+ const headings=[];
+ if(roots.length&&roots.every(n=>n.study)&&roots.some(n=>n.overviewGroup)){
+  let y=0,lastIcp=null;const groups=new Map();
+  for(const n of roots){const g=n.overviewGroup,key=g?.id||'unassigned';if(!groups.has(key))groups.set(key,{metadata:g,nodes:[]});groups.get(key).nodes.push(n);}
+  for(const [id,{metadata:g,nodes}] of groups){
+   if(g?.icp!==lastIcp){if(y)y+=160;headings.push({id:'icp-'+g?.icp,title:g?.icp_label||'Further needs',x:35,y,w:bounds.width-70,h:90,icp:true});y+=110;lastIcp=g?.icp;}
+   headings.push({id:'cluster-'+id,title:g?.label||'Further needs',x:35,y,w:bounds.width-70,h:70});y+=90;
+   const height=Math.ceil(nodes.length/cols)*660;
+   arrange(nodes,{x:0,y,w:bounds.width,h:height},cols,portrait?2:3,560/470);y+=height+90;
+  }
+  bounds.height=y;
+ }
  const all=new Map();let maxDepth=0;
  function visit(n,depth,root,parent=null){n.parent=parent;n.root=root;n.depth=depth;maxDepth=Math.max(depth,maxDepth);all.set(n.id,n);n.children?.forEach(c=>visit(c,depth+1,root,n.id));}
  roots.forEach(n=>visit(n,0,n.id));
- return {roots,all,bounds,maxDepth};
+ return {roots,all,bounds,maxDepth,headings};
 }
 // A scene contains exactly the chosen level's siblings. Ancestors are navigation,
 // not a second set of differently scaled reading surfaces.
@@ -73,7 +85,7 @@ export function sceneBounds(tree,groupId,width,options={}){
  const scene=levelScene(tree,groupId,options),reference=levelScale(tree,groupId,width);
  const items=scene.items.length?scene.items:[{node:scene.group,anchor:scene.group.box}];
  const boxes=items.map(({node,anchor})=>projectUnit(anchor,{s:1,x:0,y:0},width,reference,!groupId,itemHeight(node,!groupId),itemWidth(node,width)));
- const x=Math.min(...boxes.map(b=>b.x)),y=Math.min(...boxes.map(b=>b.y));
+ const x=Math.min(...boxes.map(b=>b.x)),y=Math.min(...boxes.map(b=>b.y),...(!groupId?(tree.headings||[]).map(h=>h.y):[]));
  const right=Math.max(...boxes.map(b=>b.x+b.w)),bottom=Math.max(...boxes.map(b=>b.y+b.h));
  return {x,y,width:right-x,height:bottom-y};
 }
@@ -92,7 +104,7 @@ export function entryFrame(tree,groupId,width,height,options={}){
  if((!groupId&&!scene.items.every(({node})=>node.study))||s===fit.s)return fit;
  const first=levelScene(tree,groupId,options).items[0];if(!first)return fit;
  const size={w:itemWidth(first.node,width)},x=(width<701?18:28)-(first.anchor.x+first.anchor.w/2)*s+size.w*s/reference/2;
- return {s,x,y:28-(first.anchor.y+first.anchor.h/2)*s+itemHeight(first.node)*s/reference/2};
+ return {s,x,y:!groupId&&tree.headings?.length?28:28-(first.anchor.y+first.anchor.h/2)*s+itemHeight(first.node)*s/reference/2};
 }
 export function levelZoomLimits(tree,groupId,width,height,options={}){
  const fit=frameLevel(tree,groupId,width,height,options).s;
@@ -104,7 +116,9 @@ export function readingLevel(tree,groupId,camera,width,height,options={}){
  const items=levelScene(tree,groupId,options).items.map(({node,anchor})=>({node,box:projectUnit(anchor,camera,width,reference,!groupId,itemHeight(node,!groupId),itemWidth(node,width)),mode:groupId?'summary':'compact'}));
  // Keep ordinary small scenes mounted for native compositor scrolling. Large
  // unpaged scenes still window by visibility so later nodes remain reachable.
- return (options.includeOffscreen&&items.length<=90?items:items.filter(item=>intersects(item.box,viewport)));
+ const visible=options.includeOffscreen&&items.length<=90?items:items.filter(item=>intersects(item.box,viewport));
+ const headings=groupId?[]:(tree.headings||[]).map(h=>({node:{id:h.id,title:h.title,kind:'overview-heading',icp:h.icp},mode:'heading',box:{x:h.x*camera.s+camera.x,y:h.y*camera.s+camera.y,w:h.w*camera.s,h:h.h*camera.s,layoutW:h.w,layoutH:h.h,scale:camera.s}})).filter(item=>intersects(item.box,viewport));
+ return [...headings,...visible];
 }
 export function panWithinWorld(camera,dx,dy,bounds,width,height){
  // Keep some of the world reachable, but do not pin a small group to the viewport.

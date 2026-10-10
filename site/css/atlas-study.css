@@ -65,3 +65,6 @@ html,body{overflow:clip}
 #map .atlas-node[data-study=true]:is(:hover,:focus-visible,:active){filter:none}
 
 #map:not(.dragging):not(.navigating):not([data-gesture="pan"]) .atlas-node[data-study=true]:hover{filter:none}
+
+.overview-heading{position:absolute;font:38px/1.25 var(--font-body, sans-serif);color:#56645b;pointer-events:none;overflow:visible;white-space:normal;padding:0 20px;box-sizing:border-box;}
+.overview-heading.overview-icp{font-size:50px;color:#253629;font-weight:600;}
