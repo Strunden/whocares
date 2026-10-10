@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-11",
+  "delivery": "MD Station\u00e4r reused for four care-record and working-time situations",
+  "batch_id": "md-stationaer-records-time-fit-20261011",
+  "manifest_sha256": "6e35caac6be4e9911b51d0dc1ce4f8532230fcf09336f6d54f9dd5f39fa09fdf",
+  "new_product_identities": 0,
+  "updated_existing_offerings": 1,
+  "new_navigation_links": 4,
+  "exact_evidence_links": 19,
+  "new_source_versions": 2,
+  "new_internal_product_images": 1,
+  "verified_mapped_records": 1313,
+  "situations_with_mapped_offerings": 87,
+  "coverage_not_validation": true,
+  "verified_paths": [
+    [
+      "wc-candidate-8ae26423b300ac2ab651ac6f",
+      "wc-candidate-6bbfbada2ad2ac3faecddc61",
+      "solution-medifox-md-stationaer"
+    ],
+    [
+      "wc-candidate-705c269ff632a9ff5ec1578a",
+      "wc-candidate-9cecb4b0ffb1160abfa6491e",
+      "solution-medifox-md-stationaer"
+    ],
+    [
+      "wc-candidate-a07f57d14a7eed97294bdf3c",
+      "wc-candidate-0044777bfc0f1776f63487da",
+      "solution-medifox-md-stationaer"
+    ],
+    [
+      "wc-candidate-46f4e615c164f5322122a30f",
+      "wc-candidate-cad13b1124567882354a7775",
+      "solution-medifox-md-stationaer"
+    ]
+  ],
+  "preservation": {
+    "prior_rows_checked": {
+      "objects": 1356,
+      "relationships": 1253,
+      "sources": 187,
+      "evidence_links": 1981,
+      "product_media": 146,
+      "import_batches": 75
+    },
+    "all_unrelated_rows_unchanged": true,
+    "all_prior_offering_scope_and_provenance_keys_preserved": true,
+    "human_status_changes": false
+  },
+  "verified_in_browser": [
+    "All four situation tiles and their distinct fit statements",
+    "MD Time terminal selected for overtime; provider logo for documentation situations",
+    "Shared product detail retains both new module descriptions, hardware/setup/cost qualifications and source access"
+  ],
+  "image_selection": "Official terminal product image internally reviewed; two ambiguous care photographs not used",
+  "public_ui_deployment": false,
+  "image_generation": false,
+  "scheduler_activation": false,
+  "limitations": [
+    "Provider capabilities are not independent outcomes, reliable acknowledgement, payroll correctness or legal compliance",
+    "Licence/hardware/implementation prices, local configuration and real deployment unverified",
+    "Image reuse permission unknown; internal only",
+    "No UI code changed; database preservation, projection and actual rendered paths were checked"
+  ]
+}
