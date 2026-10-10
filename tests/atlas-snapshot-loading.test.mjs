@@ -29,13 +29,13 @@ const source=await readFile(new URL('../site/js/atlas.js',import.meta.url),'utf8
 test('page exposes a coherent revision or an honest unavailable state',async()=>{
  for(const fail of [false,true]){
   const elements=new Map();let media=null;
-  const ctx=vm.createContext({window:{WHOCARES_CONFIG:{API_BASE:'https://example.org'}},document:{documentElement:{dataset:{}},addEventListener(){}},setInterval(){},fetch(){},refreshResearch(){},graphRecords,stressCount:0,
+  const ctx=vm.createContext({window:{WHOCARES_CONFIG:{API_BASE:'https://example.org'}},document:{documentElement:{dataset:{}},addEventListener(){}},setInterval(){},fetch(){},refreshResearch(){},map:{setAttribute(name,value){this[name]=value;}},graphRecords,stressCount:0,
    loadAtlas:async()=>{if(fail)throw new Error('offline');return {entries:response.catalog.entries,graph,media:[],revision:response.revision};},setProductMedia:rows=>media=rows,
    $:id=>{if(!elements.has(id))elements.set(id,{});return elements.get(id);},console:{error(){}}});
   const result=await vm.runInContext(`(async()=>{let entries=[],graphData=null,graphEntries=[],byId=new Map();let routed=false;const applyRoute=()=>routed=true;${startup}\nreturn {ids:[...byId.keys()],routed};})()`,ctx);
-  assert.equal(result.routed,!fail);
+  assert.equal(result.routed,!fail);assert.equal(ctx.map['aria-busy'],'false');
   if(fail){assert.match(elements.get('loading').textContent,/unavailable/);assert.equal(media,null);assert.equal(result.ids.length,0);}
-  else{assert.ok(result.ids.includes('new-company'));assert.equal(ctx.document.documentElement.dataset.researchRevision,response.revision);assert.deepEqual(media,[]);}
+  else{assert.equal(elements.get('loading').hidden,true);assert.equal(elements.get('loading').textContent,'');assert.ok(result.ids.includes('new-company'));assert.equal(ctx.document.documentElement.dataset.researchRevision,response.revision);assert.deepEqual(media,[]);}
  }
 });
 
@@ -72,4 +72,15 @@ test('refresh defers during interaction or hidden tabs and guards concurrent req
  let resolve;h.setWait(new Promise(r=>resolve=r));const pending=h.run();await h.run();assert.equal(h.calls.install,0);
  vm.runInContext('wheelState={mode:"pan"}',h.ctx);resolve();await pending;assert.equal(h.calls.install,0);
  vm.runInContext('wheelState=null',h.ctx);h.setWait(null);await h.run();assert.equal(h.calls.install,1);
+});
+
+test('initial skeleton is decorative, announced and replaced only after the load settles',async()=>{
+ const html=await readFile(new URL('../site/index.html',import.meta.url),'utf8');
+ assert.match(html,/<main id="workspace">/);assert.match(html,/id="map"[^>]*aria-busy="true"/);assert.match(html,/map-skeletons" aria-hidden="true"/);assert.match(html,/<span class="sr-only">Loading the research atlas…<\/span>/);
+ let resolve;const pending=new Promise(r=>resolve=r),loading={hidden:false,textContent:'Loading the research atlas…'},elements=new Map([['loading',loading]]);
+ const ctx=vm.createContext({window:{WHOCARES_CONFIG:{}},document:{documentElement:{dataset:{}},addEventListener(){}},setInterval(){},refreshResearch(){},fetch(){},graphRecords,stressCount:0,setProductMedia(){},console:{error(){}},map:{'aria-busy':'true',setAttribute(name,value){this[name]=value;}},$:id=>{if(!elements.has(id))elements.set(id,{});return elements.get(id);},loadAtlas:()=>pending});
+ const execution=vm.runInContext(`(async()=>{let entries=[],graphData=null,graphEntries=[],byId=new Map();const applyRoute=()=>{};${startup}})()`,ctx);
+ assert.equal(loading.hidden,false);assert.equal(ctx.map['aria-busy'],'true');
+ resolve({entries:[],graph,media:[],revision:'loaded'});await execution;
+ assert.equal(loading.hidden,true);assert.equal(loading.textContent,'');assert.equal(ctx.map['aria-busy'],'false');
 });

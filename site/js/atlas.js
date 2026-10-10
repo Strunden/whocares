@@ -1,4 +1,4 @@
-import {navigationRoots} from './atlas-needs.js?v=placeholder-2';
+import {navigationRoots} from './atlas-needs.js?v=icp-3';
 import {loadAtlas} from './atlas-loader.js';
 import {setProductMedia} from './atlas-media.js';
 import {availableStory} from './atlas-navigation.js';
@@ -12,7 +12,7 @@ import {portrait as illustration} from './atlas-assets.js';
 import {graphRecords,graphRoots,recordLabel,recordStatus,evidenceLabels,scopeDescription} from './atlas-records.js?v=native-pan-35';
 import {graphSourceBlock} from './atlas-sources.js?v=source-details-13';
 
-import {esc,short,companyLogo,recordMedia,createMapView,handleImageError} from './atlas-view.js?v=image-fallback-36';
+import {esc,short,companyLogo,recordMedia,createMapView,handleImageError} from './atlas-view.js?v=icp-37';
 
 const $ = id => document.getElementById(id);
 const safeUrl = value => /^https?:\/\//i.test(value || '') ? value : '';
@@ -114,6 +114,7 @@ function makeTree(key){
 const locationKey=(key,group)=>`${key||'people'}/${group||'overview'}`;
 function installLevel(key,group,nextTree){
  persona=key;activeGroup=group;tree=nextTree;ready=true;mapView.clear();
+ $('home').disabled=false;$('overview').disabled=false;
  regions=tree.roots.map(n=>({...n,x:n.box.x+n.box.w/2,y:n.box.y+n.box.h/2}));
  $('workspace').hidden=false;
  $('persona-change').textContent=key?personaMaps[key].name:'';
@@ -410,6 +411,7 @@ map.addEventListener('pointercancel',event=>releasePointer(event,true));
 // Pointer selection is handled on release, so dragging never activates a record.
 map.addEventListener('click',event=>{if(event.detail>0){event.stopPropagation();return;}const item=event.target.closest('.atlas-node');if(item){event.stopPropagation();activateMapNode(item.dataset.node);}});
 map.addEventListener('keydown',event=>{
+ if(!ready)return;
  const item=event.target.closest('.atlas-node');
  if(item&&['Enter',' '].includes(event.key)){event.preventDefault();if(!event.repeat)activateMapNode(item.dataset.node);return;}
  if(event.target!==map)return;
@@ -457,7 +459,7 @@ async function refreshResearch(){
    byId=new Map([...entries,...graphEntries].map(entry=>[entry.id,entry]));
    setProductMedia(data.media);
    document.documentElement.dataset.researchRevision=data.revision;
-   if(!ready){$('loading').hidden=true;applyRoute();}
+   if(!ready){applyRoute();$('loading').hidden=true;$('loading').textContent='';map.setAttribute('aria-busy','false');}
    else{
     installLevel(persona,group,nextTree);
     delete $('map-breadcrumbs').dataset.path;
@@ -484,9 +486,10 @@ try{
  document.documentElement.dataset.researchRevision=data.revision;
  document.documentElement.dataset.researchState='current';
  if(stressCount){entries.push(...Array.from({length:stressCount},(_,i)=>({id:'synthetic-'+i,title:'Synthetic service '+String(i).padStart(6,'0'),type:'company',themes:[i%2?'T11':'T13'],summary:'Synthetic scale-test record. Not real research or evidence.'})));const banner=document.createElement('div');banner.className='stress-banner';banner.textContent=`SYNTHETIC SCALE TEST · ${stressCount.toLocaleString()} generated records · Not research`;document.body.prepend(banner);document.title='SCALE TEST · Who Cares';}
- byId=new Map([...entries,...graphEntries].map(entry=>[entry.id,entry]));$('loading').hidden=true;
- applyRoute();
+ byId=new Map([...entries,...graphEntries].map(entry=>[entry.id,entry]));
+ applyRoute();$('loading').hidden=true;$('loading').textContent='';map.setAttribute('aria-busy','false');
 }catch(error){
+ map.setAttribute('aria-busy','false');
  $('workspace').hidden=false;
  $('loading').hidden=false;
  $('loading').textContent=error.message.startsWith('The needs hierarchy')?error.message:'The research service is unavailable. Reload to try again; no saved copy is being shown.';console.error('Atlas could not load its research index',error);
