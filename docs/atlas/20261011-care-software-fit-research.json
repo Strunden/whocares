@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-11",
+  "status": "source_review_complete_delivery_pending",
+  "current_internal_coverage": {
+    "needs": 198,
+    "situations": 1005,
+    "offerings": 110,
+    "situations_with_mapped_offerings": 83,
+    "count_basis": "Current graph, explicitly flagged solution-to-situation navigation links; coverage is not evidence of adequacy or demand."
+  },
+  "canonical_offering_to_reuse": "solution-medifox-md-stationaer",
+  "planned_distinct_situation_connections": 4,
+  "new_product_identities": 0,
+  "captures": [
+    {
+      "url": "https://www.medifoxdan.de/software-stationaere-pflege/funktionen/pflegedokumentation",
+      "hash": "c39fcf7a87cfa88a7221f2d3e9311d26c29108b5a14b3bf1cd98c6868d25c57e",
+      "retrieved_at": "2026-10-10T23:34:32.767204+00:00"
+    },
+    {
+      "url": "https://www.medifoxdan.de/software-stationaere-pflege/funktionen/md-time",
+      "hash": "1f8e03c015774864190bac290270711a94c4f119baac87300035ee5072be7a14",
+      "retrieved_at": "2026-10-10T23:34:43.453783+00:00"
+    }
+  ],
+  "bounded_capture_http_requests": 3,
+  "independent_reviews": [
+    {
+      "label": "documentation",
+      "job_id": "eaecccb4a7fd87c45846d484fd7546756162c0920ed69c91029ee14b77bf12f7",
+      "finding_id": "finding-58a483e509ec0fb3d69fdb76",
+      "review": "supported",
+      "review_current": true,
+      "model_calls": 2,
+      "counted_usd": 0.0044621999999999995,
+      "http_requests": 0
+    },
+    {
+      "label": "time",
+      "job_id": "3c1f9a0abd617b86acdbce286ecf142684df6d0a4bb0b65986ae0962c9ea5acf",
+      "finding_id": "finding-fd3080fa43390622468778bd",
+      "review": "supported",
+      "review_current": true,
+      "model_calls": 2,
+      "counted_usd": 0.004149,
+      "http_requests": 0
+    }
+  ],
+  "visual_review": {
+    "approved_internal": "MD Time wall-mounted iPhone terminal product image",
+    "not_selected": [
+      "Handover-named care-worker tablet photo: not a readable handover screen",
+      "Documentation-header care interaction: not a clear product screen"
+    ],
+    "reuse_permission": "not established"
+  },
+  "limits": [
+    "Provider description, not independent outcomes, payroll correctness or legal compliance",
+    "Employer configuration, compatible iPhone and unknown commercial terms retained",
+    "Human hypotheses remain unchanged",
+    "No atlas mutation yet from this research; exact edge evidence, isolated test and rendered verification still required",
+    "No public deployment, image generation or scheduler activation"
+  ]
+}
