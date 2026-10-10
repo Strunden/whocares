@@ -1,0 +1,103 @@
+{
+  "date": "2026-10-11",
+  "status": "internal_delivery_verified",
+  "offering": "solution-md-learning-smartaware",
+  "test": {
+    "target": "test",
+    "verified": true,
+    "batch": "md-learning-smartaware-20261011",
+    "backup_file": "backup-test-1791676331510.json",
+    "manifest_sha256": "46cdb767751404c585d6812e898b8ccffb220cea57885f9ff3e2d81d9726f412",
+    "objects": 1357,
+    "mapped": 1314,
+    "newObjects": 1,
+    "navigationLinks": 3,
+    "exactPassages": 19,
+    "sourceVersions": 4,
+    "internalMedia": 2,
+    "publicMedia": 0,
+    "humanObjectsUnchanged": true,
+    "humanHypothesesNotValidated": true
+  },
+  "live": {
+    "target": "live",
+    "verified": true,
+    "batch": "md-learning-smartaware-20261011",
+    "backup_file": "backup-live-1791676505529.json",
+    "manifest_sha256": "46cdb767751404c585d6812e898b8ccffb220cea57885f9ff3e2d81d9726f412",
+    "objects": 1357,
+    "mapped": 1314,
+    "newObjects": 1,
+    "navigationLinks": 3,
+    "exactPassages": 19,
+    "sourceVersions": 4,
+    "internalMedia": 2,
+    "publicMedia": 0,
+    "humanObjectsUnchanged": true,
+    "humanHypothesesNotValidated": true
+  },
+  "preservation": {
+    "target": "live",
+    "verified": true,
+    "all_prior_rows_unchanged": true,
+    "prior_rows_checked": {
+      "objects": 1356,
+      "relationships": 1257,
+      "sources": 189,
+      "evidence_links": 2000,
+      "product_media": 147,
+      "import_batches": 76
+    },
+    "paths_verified": [
+      [
+        "wc-candidate-5ffe7b63ab59c7db989da719",
+        "wc-candidate-e498e7f245782538673ab68c",
+        "solution-md-learning-smartaware"
+      ],
+      [
+        "wc-candidate-14ba2c1e1b696fb57f06badb",
+        "wc-candidate-457174577f54967d6e1877d4",
+        "solution-md-learning-smartaware"
+      ],
+      [
+        "wc-candidate-14ba2c1e1b696fb57f06badb",
+        "wc-candidate-96d487894e0108c1297e6c13",
+        "solution-md-learning-smartaware"
+      ]
+    ],
+    "human_status_unchanged": true,
+    "public_deployment": false
+  },
+  "counts": {
+    "roles": {
+      "need": 198,
+      "situation": 1005,
+      "solution": 111
+    },
+    "situations_with_offerings": 90
+  },
+  "browser": {
+    "paths_verified": 3,
+    "detail_verified": [
+      "Basic EUR1.98 per employee/month plus 19% VAT",
+      "package-dependent course access",
+      "business-customer route",
+      "trial and cancellation conditions",
+      "no protected learning time or clinical competence guarantee"
+    ],
+    "images": "Official app mockup on training paths; corporate supplier logo on partial induction path; internal reuse only",
+    "presentation_fix": "Summary rule overrode response three-line clamp, shrinking and clipping product images. Matched selector specificity; browser confirmed 95px image within 100px figure, loaded, after reload.",
+    "screenshots": [
+      "/private/tmp/whocares-training-shifts-20261011.png",
+      "/private/tmp/whocares-training-release-20261011.png"
+    ]
+  },
+  "public_ui_deployed": false,
+  "image_generation": false,
+  "limitations": [
+    "Human needs and situations remain hypotheses.",
+    "Vendor offering description is not independent outcome evidence.",
+    "Autonomous review condition-omission benchmark remains unresolved.",
+    "Media reuse rights remain unknown; internal only."
+  ]
+}

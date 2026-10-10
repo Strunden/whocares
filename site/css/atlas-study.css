@@ -23,7 +23,7 @@
 .atlas-node[data-study=true] .territory-surface{display:none}
 .atlas-node:has(.study-composition) .territory-surface{display:block;filter:blur(2px)}
 .atlas-node:has(.study-composition) .territory-surface path{fill:color-mix(in srgb,var(--territory) 10%,var(--paper));fill-opacity:1;stroke:none}
-.atlas-node[data-study=true] .study-response .node-description{padding-right:0!important;-webkit-line-clamp:3!important;margin-top:8px}
+.atlas-node[data-study=true][data-mode] .study-response .node-description{padding-right:0!important;-webkit-line-clamp:3!important;margin-top:8px}
 .study-response .company-logo{width:106px;height:27px;min-height:27px;margin-bottom:9px;justify-content:flex-start}
 .study-response .company-logo img{object-position:left center;background:transparent}
 .company-logo:has(img:not([hidden]))>span{visibility:hidden}
