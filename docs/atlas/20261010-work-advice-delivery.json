@@ -1,0 +1,124 @@
+{
+  "target": "live",
+  "verified": true,
+  "batch": "family-work-care-worker-advice-20261010",
+  "manifest_sha256": "6defa8c4757b42aa9b14c2b016f49308607e53268f9b9503d98d4f81d7054263",
+  "objects": 1343,
+  "mapped": 1300,
+  "newObjects": 3,
+  "navigationLinks": 7,
+  "exactPassages": 39,
+  "sourceVersions": 5,
+  "internalMedia": 4,
+  "publicMedia": 0,
+  "humanObjectsUnchanged": true,
+  "humanHypothesesNotValidated": true,
+  "isolated_test": {
+    "target": "test",
+    "verified": true,
+    "batch": "family-work-care-worker-advice-20261010",
+    "manifest_sha256": "6defa8c4757b42aa9b14c2b016f49308607e53268f9b9503d98d4f81d7054263",
+    "objects": 1343,
+    "mapped": 1300,
+    "newObjects": 3,
+    "navigationLinks": 7,
+    "exactPassages": 39,
+    "sourceVersions": 5,
+    "internalMedia": 4,
+    "publicMedia": 0,
+    "humanObjectsUnchanged": true,
+    "humanHypothesesNotValidated": true
+  },
+  "research": {
+    "verified": true,
+    "runs": 3,
+    "scouts": 2,
+    "saved_source_review_runs": 1,
+    "counted_usd": 0.1727171,
+    "spend_ceiling_usd": 0.65,
+    "saved_passages_exactly_verified": 43,
+    "independently_reviewed_findings": 6,
+    "canonical_writes": 0,
+    "publication_ready": false,
+    "publication_review": [
+      "National return-to-work routes remain guidance, not four offering tiles.",
+      "Review local employment-agency counselling as one offering with local conditions; do not infer national availability.",
+      "ADS finding contains asserted scope details not all present in selected passages. Publish only independently checked exact capabilities; do not copy entire finding statement.",
+      "Helpline advice for affected women/third parties is not a service for all care workers or a care-specific pathway.",
+      "No demand, efficacy or human-hypothesis upgrades."
+    ],
+    "sessions_terminal": [
+      36633,
+      65042,
+      48403
+    ]
+  },
+  "delivery_limits": [
+    "Underlying needs and situations remain hypotheses.",
+    "Local counselling evidence does not establish national availability.",
+    "The women\u2019s helpline is not unrestricted support for all care workers.",
+    "AD\u200bS initial information is not binding legal advice or psychosocial care.",
+    "All four authentic media assets remain internal; public reuse rights unknown.",
+    "Counselling and ADS service-photo gaps remain; authentic logos are present."
+  ],
+  "internal_routes": [
+    "http://127.0.0.1:8793/#/all/g/wc-candidate-479cd1a0034e3a5fe41617d8%2Fwc-candidate-ecca4bd536240df470889e54",
+    "http://127.0.0.1:8793/#/all/g/wc-candidate-d2fd5c61f5d7d8543311b745%2Fwc-candidate-6f0b5c0cdad43340daf56534"
+  ],
+  "selected_offerings_delivered": true,
+  "context_copy_correction": {
+    "verified": true,
+    "target": "live",
+    "sha256": "d998369da2425fd4becbba1735dc8df2e7ecbc71e94a9a9fa9132658d4923194",
+    "batch": "work-advice-context-copy-20261010",
+    "objectContexts": 1,
+    "sourceContexts": 1,
+    "shorterMapDescriptions": 7,
+    "noNewObjects": true,
+    "evidenceUnchanged": true,
+    "mediaUnchanged": true,
+    "otherRecordsUnchanged": true
+  },
+  "isolated_context_copy_test": {
+    "verified": true,
+    "target": "test",
+    "sha256": "d998369da2425fd4becbba1735dc8df2e7ecbc71e94a9a9fa9132658d4923194",
+    "batch": "work-advice-context-copy-20261010",
+    "objectContexts": 1,
+    "sourceContexts": 1,
+    "shorterMapDescriptions": 7,
+    "noNewObjects": true,
+    "evidenceUnchanged": true,
+    "mediaUnchanged": true,
+    "otherRecordsUnchanged": true
+  },
+  "ui_validation": {
+    "tests_passed": 134,
+    "tests_failed": 0,
+    "change": "Approved offering logo is the final media fallback when no product/service image is available. Existing product shots and ownership/rights gates preserved.",
+    "deployment": "Internal preview; no public UI deployment this batch."
+  },
+  "dynamic_http_validation": {
+    "objects": 1343,
+    "catalog_entries": 391,
+    "requests_full": 189,
+    "failures": 0,
+    "requests_unchanged": 1
+  },
+  "mapped_counts": {
+    "needs": 198,
+    "situations": 1005,
+    "existing_offerings": 97,
+    "total": 1300
+  },
+  "browser_validation": {
+    "internal_branches_verified": 2,
+    "solution_record_scope_and_sources_verified": true,
+    "corrected_map_copy_verified": true,
+    "authentic_logo_fallback_verified": true,
+    "screenshots": [
+      "research-staging/journey-work-solutions-20261010/publication/internal-advice-verified.png",
+      "research-staging/journey-work-solutions-20261010/publication/internal-family-work-verified.png"
+    ]
+  }
+}

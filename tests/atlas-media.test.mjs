@@ -52,3 +52,17 @@ test('reviewed internal document previews retain HTTPS provenance and cannot esc
  try{assert.equal(mediaFor(e).src,preview);assert.equal(mediaFor({id:'other',media:{src:preview,source:'https://example.org',alt:'x'}}),null);}
  finally{setProductMedia([]);if(previous===undefined)delete globalThis.location;else globalThis.location=previous;}
 });
+
+
+test('logo-only services use reviewed identities without substituting sibling products or exposing internal media',()=>{
+ const e={id:'service-advice'},previous=globalThis.location;
+ const logo={...row,entry_id:null,object_id:e.id,media_role:'logo',asset_url:'https://provider.example/logo.svg'};
+ const product={...logo,media_role:'product_image',asset_url:'https://provider.example/service.png'};
+ try{
+  globalThis.location={hostname:'127.0.0.1'};setProductMedia([logo]);assert.equal(mediaFor(e).src,logo.asset_url);
+  setProductMedia([logo,product]);assert.equal(mediaFor(e).src,product.asset_url);
+  assert.equal(mediaFor({id:'different-service'}),null);
+  setProductMedia([{...logo,review_state:'candidate'}]);assert.equal(mediaFor(e),null);
+  setProductMedia([logo]);globalThis.location={hostname:'strunden.github.io'};assert.equal(mediaFor(e),null);
+ }finally{setProductMedia([]);if(previous===undefined)delete globalThis.location;else globalThis.location=previous;}
+});

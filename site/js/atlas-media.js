@@ -16,5 +16,5 @@ export function mediaFor(entry){
  const m=entry?.media;
  if(m&&/^https:\/\//.test(m.src)&&/^https:\/\//.test(m.source)&&m.alt)return m;
 
- return null;
+ return productLogoFor(entry)||null;
 }
