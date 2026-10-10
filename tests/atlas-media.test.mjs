@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {reviewedMedia} from '../site/js/atlas-media.js';
+import {reviewedMedia,mediaFor,setProductMedia} from '../site/js/atlas-media.js';
 import {mkdtemp,writeFile,readFile,rm} from 'node:fs/promises';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
@@ -36,4 +36,18 @@ test('a company logo can be shared but its product shot cannot stand in for anot
  const exact={...product,entry_id:null,object_id:offering.id};
  assert.deepEqual(reviewedMedia(offering,[product,logo,exact],{internal:true}).map(m=>m.object_id||m.media_role),['logo',offering.id]);
  assert.equal(reviewedMedia({id:row.entry_id},[product],{internal:true}).length,1);
+});
+
+test('reviewed internal document previews retain HTTPS provenance and cannot escape their local directory',()=>{
+ const e={id:row.entry_id},preview='data/internal-media/communication-card.png';
+ const document={...row,asset_url:'https://example.org/card.pdf',media_role:'product_render',provenance:{preview_path:preview}};
+ assert.equal(reviewedMedia(e,[document],{internal:true})[0].src,preview);
+ assert.equal(reviewedMedia(e,[document],{internal:false}).length,0);
+ for(const path of ['../private.png','data/internal-media/../private.png','data/internal-media/%2e%2e/private.png','https://other.test/image.png','javascript:alert(1)'])
+  assert.equal(reviewedMedia(e,[{...document,provenance:{preview_path:path}}],{internal:true})[0].src,document.asset_url);
+ const publicRow={...document,visibility:'public',rights_status:'permission',rights_url:'https://example.org/rights'};
+ assert.equal(reviewedMedia(e,[publicRow],{internal:true})[0].src,document.asset_url);
+ const previous=globalThis.location;globalThis.location={hostname:'127.0.0.1'};setProductMedia([document]);
+ try{assert.equal(mediaFor(e).src,preview);assert.equal(mediaFor({id:'other',media:{src:preview,source:'https://example.org',alt:'x'}}),null);}
+ finally{setProductMedia([]);if(previous===undefined)delete globalThis.location;else globalThis.location=previous;}
 });
