@@ -136,13 +136,20 @@ export class PgConn {
   }
 
   async readExact(n) {
-    while (this.buf.length < n) {
-      const { done, value } = await this.reader.read();
-      if (done) throw new Error("database connection closed");
-      this.buf = concat(this.buf, value);
+    if (!Number.isSafeInteger(n) || n < 0) throw new Error("invalid database message length");
+    const out = new Uint8Array(n);
+    let offset = 0;
+    while (offset < n) {
+      if (!this.buf.length) {
+        const { done, value } = await this.reader.read();
+        if (done) throw new Error("database connection closed");
+        this.buf = value;
+      }
+      const count = Math.min(this.buf.length, n - offset);
+      out.set(this.buf.subarray(0, count), offset);
+      this.buf = this.buf.subarray(count);
+      offset += count;
     }
-    const out = this.buf.slice(0, n);
-    this.buf = this.buf.slice(n);
     return out;
   }
 

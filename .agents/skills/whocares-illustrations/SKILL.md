@@ -24,6 +24,12 @@ Keep these notes out of the map UI. If no useful visual distinction is possible,
 
 For a need, show a relevant circumstance, tension or desired activity without prematurely selecting an intervention. A wrist alarm illustrates a particular response, not the whole need to reach help when alone. A pleasant conversation can illustrate a desired outcome, but does not establish loneliness or unmet demand. Do not force every need into a distress scene either. Solutions may show how their actual response works; a happy scene is not evidence that it succeeds.
 
+## Recurring ICP characters
+
+Use the same recognisable fictional character **inside the main illustrations** for each ICP across its needs and situations. This is not a separate portrait, badge or avatar. Preserve the character's face, apparent age, hair and other identifying features; change their activity, setting, clothing where appropriate, and necessary props to communicate the specific situation. Keep an approved character reference and casting description with the asset metadata; do not invent an approved reference when none exists. The older-adult character should read as 80+, following the age guidance below.
+
+Character continuity identifies the viewpoint, not a single researched participant or a continuous factual story. Do not invent participant quotes, assume diagnoses or family relationships, or imply every member of an ICP has that character's circumstances. Other scene participants may vary. When a record concerns a materially different population, preserve that distinction rather than forcing the recurring character into it. Check both character recognition and situation distinction at tile size; repeating the same scene does not satisfy this rule. Generation remains paused until the user resumes it.
+
 ## Human interactions and bias
 
 ### Age portrayal
@@ -40,7 +46,7 @@ Specify who is doing what, who initiates, and which visible cues make the intera
 - Check physical plausibility and role clarity: who supports whom, where hands touch, whether mobility aids are used coherently, and whether actions imply unsafe care. Do not infer family ties, professional qualifications, diagnoses or consent from appearance.
 - Review the set as well as each image. Avoid consistently making women carers, men authorities, older people frail or helpless, disabled people passive, or particular ethnicities service workers. Vary casting without using identity as shorthand for a problem. Do not erase relevant disability, dependency or cultural context merely to make an image positive.
 - Do not make every older adult live alone, own a comfortable home, use technology, or have nearby family. Depict relevant context without presenting one fictional household as representative of everyone.
-- Repeated distinctive characters can imply a continuous family story or evidence from one participant. Use that continuity only when intended; style references must not silently import their people, relationships or props into unrelated scenes.
+- Recurring ICP characters are an intentional visual convention, not evidence from one participant or a continuous family story. Keep unneeded relationships and props out of subsequent scenes; character consistency does not justify importing the whole reference scene.
 
 When an image has a problematic reading, identify the concrete visible cue and its consequence rather than declaring the people or identities depicted inappropriate. Revise the cue or composition; do not rely on a caption to repair it.
 
