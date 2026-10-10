@@ -1,0 +1,93 @@
+{
+  "test": {
+    "target": "test",
+    "verified": true,
+    "batch": "international-nurse-arrival-support-20261010",
+    "manifest_sha256": "1378803ca4cb0b0b9a0d610ef2f433e80f344c150b307c1a925010951963c8e3",
+    "objects": 1348,
+    "mapped": 1305,
+    "newObjects": 1,
+    "navigationLinks": 2,
+    "exactPassages": 7,
+    "sourceVersions": 1,
+    "internalMedia": 1,
+    "publicMedia": 0,
+    "humanObjectsUnchanged": true,
+    "humanHypothesesNotValidated": true
+  },
+  "live": {
+    "target": "live",
+    "verified": true,
+    "batch": "international-nurse-arrival-support-20261010",
+    "manifest_sha256": "1378803ca4cb0b0b9a0d610ef2f433e80f344c150b307c1a925010951963c8e3",
+    "objects": 1348,
+    "mapped": 1305,
+    "newObjects": 1,
+    "navigationLinks": 2,
+    "exactPassages": 7,
+    "sourceVersions": 1,
+    "internalMedia": 1,
+    "publicMedia": 0,
+    "humanObjectsUnchanged": true,
+    "humanHypothesesNotValidated": true
+  },
+  "source_context_correction": {
+    "test": {
+      "verified": true,
+      "target": "test",
+      "source_id": "source-journey-offers-a11f1982e454848f6d740d1f",
+      "batch": "international-arrival-source-context-20261010",
+      "changed_field": "limitations",
+      "before": "Provider self-description only: placement and retention figures are unverified marketing claims and are reported as claims, not outcomes. Course month/hour figures come from the same provider page. Worker eligibility, cost to employer or worker, contract terms and worker experience are not established by this page. Not evidence of service quality or of effectiveness in addressing reported friction.",
+      "after": "Employer-facing provider self-description. Worker no-fee conditions include a minimum 24-month employment commitment; employer price requires an individual quote. Full contracts, early-exit consequences, current capacity, worker experience and independent outcomes are unverified. Placement and retention marketing claims are not independently established.",
+      "exact_passages_unchanged": true
+    },
+    "live": {
+      "verified": true,
+      "target": "live",
+      "source_id": "source-journey-offers-a11f1982e454848f6d740d1f",
+      "batch": "international-arrival-source-context-20261010",
+      "changed_field": "limitations",
+      "before": "Provider self-description only: placement and retention figures are unverified marketing claims and are reported as claims, not outcomes. Course month/hour figures come from the same provider page. Worker eligibility, cost to employer or worker, contract terms and worker experience are not established by this page. Not evidence of service quality or of effectiveness in addressing reported friction.",
+      "after": "Employer-facing provider self-description. Worker no-fee conditions include a minimum 24-month employment commitment; employer price requires an individual quote. Full contracts, early-exit consequences, current capacity, worker experience and independent outcomes are unverified. Placement and retention marketing claims are not independently established.",
+      "exact_passages_unchanged": true
+    }
+  },
+  "research": {
+    "counted_usd": 0.1017265,
+    "provider_reported_usd": 0.012714516,
+    "ceiling_usd": 0.25,
+    "initial_findings_held": 2,
+    "saved_source_repairs": 2,
+    "repairs_http_requests": 0,
+    "repairs_searches": 0,
+    "independently_reviewed_final_findings": 3,
+    "canonical_offerings_added": 1,
+    "portal_chatbot": "Supporting research only; no forced fit to existing worker-conflict situations.",
+    "campaign_status": "paused"
+  },
+  "preservation": "Each environment prior projected objects, relationships, sources and evidence compared with its own pre-write backup, unchanged apart from the explicitly audited subsequent source-context correction. SQL date/timestamp serialization normalized.",
+  "browser": {
+    "url": "http://127.0.0.1:8793/#/all/e/solution-talentorange-arrival-support?within=wc-candidate-df5630425eb68be89d56b830%2Fwc-candidate-b4026ef332de7e69573ec453",
+    "fee_condition_visible": true,
+    "corrected_source_context_visible": true,
+    "authentic_logo_loaded": true,
+    "screenshot": "internal-arrival-detail-verified.png"
+  },
+  "checks": {
+    "atlas_app_api_pass": 135,
+    "indexer_pass": 228,
+    "fail": 0
+  },
+  "limits": [
+    "Human hypotheses unchanged.",
+    "Employer-arranged support, not independent worker advocacy.",
+    "Care-home access and current housing capacity unverified.",
+    "24-month worker commitment retained beside fee claim.",
+    "Portal chatbot stays supporting research, not a forced solution tile.",
+    "Media internal only; no public UI deployment.",
+    "No independent worker testimony, outcome verification or current capacity check.",
+    "Image generation remains paused.",
+    "Legacy technical research metadata remains visible in the detail panel."
+  ]
+}
