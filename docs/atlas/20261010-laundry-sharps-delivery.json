@@ -107,5 +107,17 @@
     "test": "All prior projected graph fields compared to isolated test pre-write backup, unchanged.",
     "live": "All prior projected graph fields compared to live pre-write backup, unchanged.",
     "note": "Each environment compared with its own backup; SQL dates normalized and timestamps allow client millisecond serialization precision."
+  },
+  "subsequent_presentation_fix": {
+    "commit": "4fc2a9a",
+    "behavior": "A logo-only offering displays its identity once in the main media slot. Offerings with distinct product imagery retain their small provider logo.",
+    "tests": {
+      "app_api_pass": 135,
+      "fail": 0,
+      "regression": "Logo-only identity suppression and distinct-product logo retention."
+    },
+    "browser": "Aumer and Wille each have zero small-logo duplicates and one main image; THERMOTEX retains one small logo and one distinct equipment image. All observed internally.",
+    "screenshot": "internal-laundry-single-logo.png",
+    "public_ui_deployed": false
   }
 }
