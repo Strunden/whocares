@@ -11,7 +11,8 @@ and checks relationship/catalog integrity. An existing complete immutable
 revision returns immediately after these gates. A changed revision is sanitized
 and split once into indexed page rows. Page reads never rebuild/decompress the
 full graph. This is a derived delivery read model, not a second research catalog.
-Every new browser refresh compares against current canonical data; no freshness
+A refresh supplies its last loaded revision; an unchanged manifest returns immediately
+without downloading any pages. Every new browser refresh compares against current canonical data; no freshness
 TTL hides edits.
 
 Before storage, SQL applies the catalog document and deep-dive allowlists, strips

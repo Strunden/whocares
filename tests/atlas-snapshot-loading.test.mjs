@@ -50,7 +50,7 @@ function refreshHarness(){
  const elements=new Map(),get=id=>{if(!elements.has(id))elements.set(id,{dataset:{},scrollTop:17});return elements.get(id);};
  const calls={render:0,panel:0,hash:0,install:0};let reply={entries:[],graph:refreshGraph(),media:[],revision:'one'},failure=false,release=null;
  const ctx=vm.createContext({document:{hidden:false,documentElement:{dataset:{researchRevision:'one'}}},window:{WHOCARES_CONFIG:{}},fetch(){},graphRecords,navigationRoots,buildHierarchy,setProductMedia(){},$:get,console:{error(){}},
-  loadAtlas:async()=>{if(release)await release;if(failure)throw Error('offline');return reply;},calls});
+  loadAtlas:async(fetcher,base,options)=>{calls.knownRevision=options?.knownRevision;if(release)await release;if(failure)throw Error('offline');return reply;},calls});
  vm.runInContext(`let entries=[],graphData=null,graphEntries=graphRecords(${JSON.stringify(refreshGraph())},[]),byId=new Map(graphEntries.map(e=>[e.id,e]));let tree=buildHierarchy([],[],{extraRoots:navigationRoots(graphEntries)}),activeGroup='need',persona=null,mobile=false,ready=true,selectedId='situation',panelState={type:'entry',id:'situation'};let camera={s:1.7,x:-90,y:44};let navigationFrame=0,wheelState=null,touchState=null,cameraReturnFrame=0,panPending=false;const pointers=new Map();function installLevel(p,g,t){tree=t;activeGroup=g;calls.install++;}function render(){calls.render++;}function renderPanel(){calls.panel++;}function setHash(){calls.hash++;}function closePanel(){panelState=null;}function applyRoute(){};${refreshSource}`,ctx);
  return {ctx,get,calls,setReply:value=>reply=value,setFailure:value=>failure=value,setWait:value=>release=value,run:()=>vm.runInContext('refreshResearch()',ctx),state:()=>JSON.parse(vm.runInContext('JSON.stringify({camera,activeGroup,selectedId,panelState,ids:[...tree.all.keys()],revision:document.documentElement.dataset.researchRevision})',ctx))};
 }
@@ -83,4 +83,9 @@ test('initial skeleton is decorative, announced and replaced only after the load
  assert.equal(loading.hidden,false);assert.equal(ctx.map['aria-busy'],'true');
  resolve({entries:[],graph,media:[],revision:'loaded'});await execution;
  assert.equal(loading.hidden,true);assert.equal(loading.textContent,'');assert.equal(ctx.map['aria-busy'],'false');
+});
+
+test('live refresh passes its known revision and accepts unchanged without replacing data',async()=>{
+ const h=refreshHarness(),before=h.state();h.setReply({unchanged:true,revision:'one'});await h.run();
+ assert.equal(h.calls.knownRevision,'one');assert.deepEqual(h.state(),before);assert.equal(h.calls.install,0);assert.equal(h.ctx.document.documentElement.dataset.researchState,'current');
 });

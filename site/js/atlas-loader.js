@@ -11,7 +11,7 @@ function validate(data){
 function stale(){const error=new Error('Research snapshot changed; retrying');error.stale=true;return error;}
 // Pages are immutable by revision. Assemble privately and expose nothing until
 // every page and the complete snapshot pass validation; callers retain old data.
-export async function loadAtlas(fetcher=fetch,apiBase='',{signal}={}){
+export async function loadAtlas(fetcher=fetch,apiBase='',{signal,knownRevision}={}){
  if(!/^https:\/\//.test(apiBase)&&!/^http:\/\/127\.0\.0\.1:\d+$/.test(apiBase))throw new Error('Research service is not configured');
  const base=apiBase.replace(/\/$/,'');
  for(let attempt=0;attempt<MAX_ATTEMPTS;attempt++){
@@ -35,6 +35,7 @@ export async function loadAtlas(fetcher=fetch,apiBase='',{signal}={}){
    if(manifest.schema_version!==3||!/^[a-f0-9]{32}$/.test(manifest.revision)||
       !Number.isSafeInteger(manifest.pages)||manifest.pages<1||manifest.pages>MAX_PAGES)
     throw new Error('Research service returned an invalid snapshot manifest');
+   if(knownRevision&&manifest.revision===knownRevision)return {unchanged:true,revision:manifest.revision};
    const pieces=new Array(manifest.pages);let next=0;
    const workers=Array.from({length:Math.min(CONCURRENCY,manifest.pages)},async()=>{
     while(next<manifest.pages){

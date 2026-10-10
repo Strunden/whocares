@@ -42,3 +42,13 @@ test('external cancellation aborts page requests and returns no snapshot',async(
   signal.throwIfAborted();
  },'https://example.org',{signal:controller.signal}),/cancelled/);
 });
+
+test('known revision refresh reads only manifest; changed revision loads complete data',async()=>{
+ const calls=[];
+ const fetcher=async url=>{calls.push(url);if(url.endsWith('/manifest'))return reply(manifest);
+  const page=Number(new URL(url).searchParams.get('page'));return reply({revision,page,pages:pieces.length,piece:pieces[page]});};
+ assert.deepEqual(await loadAtlas(fetcher,'https://example.org',{knownRevision:revision}),{unchanged:true,revision});
+ assert.equal(calls.length,1);calls.length=0;
+ const changed=await loadAtlas(fetcher,'https://example.org',{knownRevision:'b'.repeat(32)});
+ assert.deepEqual(changed.graph,payload.graph);assert.equal(calls.length,6);assert.equal(changed.unchanged,undefined);
+});

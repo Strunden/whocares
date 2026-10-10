@@ -445,9 +445,9 @@ async function refreshResearch(){
  if(refreshInFlight||refreshBusy())return;
  refreshInFlight=true;
  try{
-  const data=await loadAtlas(fetch,window.WHOCARES_CONFIG?.API_BASE);
+  const data=await loadAtlas(fetch,window.WHOCARES_CONFIG?.API_BASE,{knownRevision:document.documentElement.dataset.researchRevision});
   if(refreshBusy())return;
-  if(data.revision!==document.documentElement.dataset.researchRevision){
+  if(!data.unchanged&&data.revision!==document.documentElement.dataset.researchRevision){
    const nextEntries=data.entries.filter(entry=>entry.published!==false);
    const nextGraphEntries=graphRecords(data.graph,nextEntries);
    // Validate the new hierarchy before replacing the last usable research snapshot.
