@@ -120,5 +120,25 @@
       "research-staging/journey-work-solutions-20261010/publication/internal-advice-verified.png",
       "research-staging/journey-work-solutions-20261010/publication/internal-family-work-verified.png"
     ]
+  },
+  "later_research_review_correction": {
+    "verified": true,
+    "job_id": "1793d5419c8b9d188821514943e4fc36502b02958666792abb602ccb0eb3b56a",
+    "finding_id": "finding-7a184335d72cbc15e37a69e4",
+    "previous_verdict": "supported",
+    "new_verdict": "unclear",
+    "finding_and_evidence_preserved": true,
+    "canonical_changes": 0,
+    "network_calls": 0,
+    "reason": "Operator exact-clause review: the compound statement includes religion/belief and an additional AGG-ground exclusion not established by the selected attached passages. The previous supported verdict did not check every clause. Narrow the research finding or attach exact support before using the whole statement. The canonical offering uses separately authored narrower capabilities and exact source evidence; no human hypotheses or canonical records change here."
+  },
+  "indexer_followup": {
+    "commit": "904570e",
+    "tests_passed": 228,
+    "changes": [
+      "Search-call limits return a stop-searching result while retaining saved findings for independent review; monetary ceilings still halt paid calls.",
+      "Named provider/service logos and useful image elements precede favicon variants in bounded media discovery."
+    ],
+    "saved_capture_check": "Full helpline service logo and telephone-counselling image recovered within 24 candidate slots with zero network calls."
   }
 }

@@ -86,7 +86,10 @@ One solution can respond to several situations. Reuse its identity; record fit a
 - An opened official source verifies the offering. Record country/locality, access route, relevant eligibility and cost where published; explicitly record unknowns. Keep dates for prices and time-bound programmes. A past holiday is not current bookable capacity.
 - The linked situation has a specific fit statement and material limitation or unknown. Distinguish a verified exclusion from something not checked. Do not invent weaknesses to imply opportunity.
 - Provider evidence supports features and stated availability, not independent effectiveness. Use appropriate independent evidence for outcome claims; mark live capacity unverified unless checked.
+- Check every material clause of a compound finding against its attached exact passages, including population, locality, price and exclusions. A model’s supported verdict does not fill missing evidence. Hold the whole finding as unclear, or author a narrower separately sourced record; preserve the original finding and audit the corrected review.
+- When local pages describe one service, reuse its offering identity and keep each source’s own population, dates and limitations. Do not copy the first locality’s scope or free-price statement onto the others. The combined record must explicitly name the documented local coverage and unknowns.
 - Use authentic provider logos and product/service imagery with source/reuse metadata; no generated brand marks or pretend product shots. A publisher explaining an intervention is not automatically its provider.
+- If no relevant service photograph is reviewed, an approved offering logo may fill the image slot. Keep the photograph gap explicit in the record; do not substitute a generic institution’s favicon or a different service’s scene. Media discovery is not visual approval or permission to publish.
 
 ### Relationships and historical context
 
