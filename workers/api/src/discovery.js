@@ -78,3 +78,38 @@ export async function queryDiscoveryText(sql){
   ',"catalog":'+JSON.stringify(catalog)+',"graph":'+row.graph_json+
   ',"media":'+row.media_json+'}';
 }
+
+export const DISCOVERY_STREAM_SQL=DISCOVERY_TEXT_SQL.replace(
+ "(payload->'graph')::text AS graph_json, (payload->'media')::text AS media_json,\n ", ''
+).replace('AS dangling\n FROM bundle', "AS dangling,\n (payload->'graph')::text AS graph_json, (payload->'media')::text AS media_json\n FROM bundle");
+// Index callers need the same snapshot identity and integrity check, but never
+// transfer or decode the graph they will discard.
+export const DISCOVERY_CATALOG_SQL=DISCOVERY_TEXT_SQL.replace(
+ "(payload->'graph')::text AS graph_json, (payload->'media')::text AS media_json,\n ", '');
+export async function queryDiscoveryCatalog(sql){
+ const [row]=await sql.simpleQuery(DISCOVERY_CATALOG_SQL);
+ if(!row?.revision||typeof row.metadata!=='string')throw new Error('Missing canonical discovery snapshot');
+ if(row.dangling!==false&&row.dangling!=='f')throw new Error('Dangling graph relationship');
+ return shapeCatalog(JSON.parse(row.metadata),row.revision);
+}
+const responseEncoder=new TextEncoder();
+export async function queryDiscoveryStream(sql){
+ const row=await sql.streamDiscovery(DISCOVERY_STREAM_SQL);
+ if(!row.revision||typeof row.metadata!=='string')throw new Error('Missing canonical discovery snapshot');
+ if(row.dangling!=='f')throw new Error('Dangling graph relationship');
+ const catalog=shapeCatalog(JSON.parse(row.metadata),row.revision);
+ const prefix=responseEncoder.encode('{"schema_version":2,"revision":'+JSON.stringify(row.revision)+
+  ',"catalog":'+JSON.stringify(catalog)+',"graph":');
+ return (async function*(){
+  yield prefix;let field='graph_json';
+  for await(const part of row.fields){
+   if(part.name!==field){
+    if(field!=='graph_json'||part.name!=='media_json')throw new Error('Invalid discovery JSON field order');
+    yield responseEncoder.encode(',"media":');field=part.name;
+   }
+   yield part.bytes;
+  }
+  if(field!=='media_json')throw new Error('Missing discovery media field');
+  yield responseEncoder.encode('}');
+ })();
+}

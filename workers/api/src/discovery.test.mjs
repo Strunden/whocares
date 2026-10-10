@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {shapeDiscovery,queryDiscovery,queryDiscoveryText,DISCOVERY_SQL,DISCOVERY_TEXT_SQL} from './discovery.js';
+import {shapeDiscovery,queryDiscovery,queryDiscoveryText,queryDiscoveryStream,queryDiscoveryCatalog,DISCOVERY_CATALOG_SQL,DISCOVERY_STREAM_SQL,DISCOVERY_SQL,DISCOVERY_TEXT_SQL} from './discovery.js';
 const row={id:'company-test',visible:true,review_id:'review-test',review_current:true,decision:'correct',document:{id:'company-test',type:'company',title:'Corrected title',writeup_draft:{private:'draft'},kill_reason:'Legacy verdict'}};
 const payload={catalog:[row],graph:{objects:[],relationships:[],sources:[],evidence_links:[]},media:[],logos:['company-test'],funding:[]};
 test('all catalog consumers get the same corrected and sanitized projection',()=>{
@@ -69,4 +69,32 @@ test('HTTP path rejects missing rows, stale catalogs, and SQL integrity failures
  for(const dangling of ['t',true,null,undefined])await assert.rejects(run({...textRow(),dangling}),/Dangling/);
  await assert.rejects(run({...textRow(),graph_json:null}),/Missing/);
  await assert.rejects(run(textRow({...payload,catalog:[{...row,review_current:false}]})),/stale/);
+});
+
+test('byte stream preserves JSON contract and does not decode large fragments',async()=>{
+ const r=textRow(),encoder=new TextEncoder(),graph=encoder.encode(r.graph_json),media=encoder.encode(r.media_json);
+ let query;
+ const chunks=await queryDiscoveryStream({streamDiscovery:async q=>{
+  query=q;return {...r,fields:(async function*(){yield {name:'graph_json',bytes:graph};yield {name:'media_json',bytes:media};})()};
+ }});
+ const parts=[];for await(const part of chunks)parts.push(part);
+ assert.ok(parts.includes(graph));assert.ok(parts.includes(media));
+ assert.deepEqual(JSON.parse(Buffer.concat(parts).toString()),shapeDiscovery({payload,revision:'abc'}));
+ assert.equal(query,DISCOVERY_STREAM_SQL);
+ assert.match(query,/AS metadata,\n md5/);
+ assert.match(query,/AS dangling,\n \(payload->'graph'\)/);
+ await assert.rejects(queryDiscoveryStream({streamDiscovery:async()=>({...r,dangling:'t'})}),/Dangling/);
+});
+
+test('index projection matches discovery catalog without transferring graph or media',async()=>{
+ const {graph_json,media_json,...r}=textRow();const queries=[];
+ const result=await queryDiscoveryCatalog({simpleQuery:async q=>{queries.push(q);return [r];}});
+ assert.deepEqual(result,shapeDiscovery({payload,revision:'abc'}).catalog);
+ assert.deepEqual(queries,[DISCOVERY_CATALOG_SQL]);
+ assert.doesNotMatch(DISCOVERY_CATALOG_SQL,/AS graph_json|AS media_json/);
+ assert.match(DISCOVERY_CATALOG_SQL,/md5\(payload::text\) AS revision/);
+ assert.match(DISCOVERY_CATALOG_SQL,/AS dangling/);
+ await assert.rejects(queryDiscoveryCatalog({simpleQuery:async()=>[]}),/Missing/);
+ await assert.rejects(queryDiscoveryCatalog({simpleQuery:async()=>[{...r,dangling:'t'}]}),/Dangling/);
+ await assert.rejects(queryDiscoveryCatalog({simpleQuery:async()=>[{...r,metadata:JSON.stringify({...payload,catalog:[{...row,review_current:false}]})}]}),/stale/);
 });

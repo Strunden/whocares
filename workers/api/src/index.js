@@ -1,8 +1,8 @@
 import { attachFunding, funderDetail, funderSummary } from "./funders-shape.js";
-import {queryDiscovery,queryDiscoveryText} from "./discovery.js";
+import {queryDiscoveryCatalog,queryDiscoveryStream} from "./discovery.js";
 import {readLogo} from "./logo.js";
 import { decodeSlug } from "./path-slug.js";
-import { withSql } from "./pg-wire.js";
+import { withSql, withSqlStream } from "./pg-wire.js";
 
 const ALLOW_ORIGIN = "https://strunden.github.io";
 
@@ -27,7 +27,7 @@ function json(body, status = 200) {
 }
 
 async function readIndex(env) {
-  return withSql(env, async sql => (await queryDiscovery(sql)).catalog);
+  return withSql(env, queryDiscoveryCatalog);
 }
 
 const FUNDER_ID = /^[A-Za-z0-9][A-Za-z0-9_-]{0,80}$/;
@@ -158,7 +158,7 @@ export default {
     }
 
     if (path === "/api/discovery") {
-      try { return new Response(await withSql(env, queryDiscoveryText), {headers: {
+      try { return new Response(await withSqlStream(env, queryDiscoveryStream), {headers: {
           "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store", ...corsHeaders(),
         }}); }
       catch (error) { return dbError(error); }

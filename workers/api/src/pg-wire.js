@@ -255,6 +255,61 @@ export class PgConn {
     }
   }
 
+  // Discovery's small metadata is validated first; large fields remain socket
+  // views consumed under response backpressure, without decoding or copying.
+  async streamDiscovery(sql) {
+    const payload=cstr(sql);
+    await this.write(bytesOf(encoder.encode('Q'),u32(payload.length+4),payload));
+    let columns=[];
+    while(true){
+      const type=String.fromCharCode(await this.readByte());
+      const length=viewOf(await this.readExact(4)).getUint32(0)-4;
+      if(type!=='D'){
+        const body=await this.readExact(length);
+        if(type==='T')columns=rowDescription(body);
+        else if(type==='E')throw new Error(errorText(body));
+        else if(type==='Z')throw new Error('Missing canonical discovery snapshot');
+        continue;
+      }
+      if(columns.join(',')!=='metadata,revision,dangling,graph_json,media_json' ||
+         viewOf(await this.readExact(2)).getUint16(0)!==5)
+        throw new Error('Invalid discovery database projection');
+      let remaining=length-2;
+      const fieldLength=async()=>{
+        if(remaining<4)throw new Error('Truncated discovery row');
+        const n=viewOf(await this.readExact(4)).getInt32(0);remaining-=4;
+        if(n<0||n>remaining)throw new Error('Invalid discovery field');
+        remaining-=n;return n;
+      };
+      const header={};
+      for(const name of columns.slice(0,3))header[name]=decoder.decode(await this.readExact(await fieldLength()));
+      const conn=this;
+      async function* fields(){
+        for(const name of columns.slice(3)){
+          let left=await fieldLength();
+          while(left){
+            if(!conn.buf.length){
+              const {done,value}=await conn.reader.read();
+              if(done)throw new Error('database connection closed');
+              conn.buf=value;continue;
+            }
+            const n=Math.min(left,conn.buf.length),bytes=conn.buf.subarray(0,n);
+            conn.buf=conn.buf.subarray(n);left-=n;
+            yield {name,bytes};
+          }
+        }
+        if(remaining!==0)throw new Error('Invalid discovery row length');
+        while(true){
+          const msg=await conn.readMessage();
+          if(msg.type==='E')throw new Error(errorText(msg.body));
+          if(msg.type==='D')throw new Error('Duplicate discovery snapshot');
+          if(msg.type==='Z')return;
+        }
+      }
+      return {...header,fields:fields()};
+    }
+  }
+
   async close() {
     try {
       await this.write(bytesOf(encoder.encode("X"), u32(4)));
@@ -364,4 +419,27 @@ export async function withSql(env, fn) {
   } finally {
     await conn.close();
   }
+}
+
+// Streaming responses retain their database connection until consumed/canceled.
+export async function withSqlStream(env,fn){
+ const cfg=connectionConfig(env);
+ if(!cfg){const error=new Error('database unconfigured');error.code='UNCONFIGURED';throw error;}
+ const conn=await openSocket(cfg);let closed=false;
+ const close=async()=>{if(!closed){closed=true;await conn.close();}};
+ try{
+  await conn.startup(cfg.user,cfg.database);await conn.authenticate(cfg.user,cfg.password);
+  return connectionStream(conn,await fn(conn),close);
+ }catch(error){await close();throw error;}
+}
+export function connectionStream(conn,chunks,close=()=>conn.close()){
+ let closed=false;
+ const finish=async()=>{if(!closed){closed=true;await close();}};
+ return new ReadableStream({
+  async pull(controller){
+   try{const next=await chunks.next();if(next.done){await finish();controller.close();}else controller.enqueue(next.value);}
+   catch(error){await finish();controller.error(error);}
+  },
+  async cancel(){await finish();await chunks.return?.();},
+ });
 }

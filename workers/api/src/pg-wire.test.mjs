@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {PgConn} from './pg-wire.js';
+import {PgConn,connectionStream} from './pg-wire.js';
 
 function connection(chunks) {
   let reads = 0;
@@ -73,4 +73,58 @@ test('invalid frame lengths are rejected before reading', async () => {
   const {conn, reads} = connection([]);
   for (const n of [-1, 1.5, NaN, Infinity]) await assert.rejects(conn.readExact(n), /invalid database message length/);
   assert.equal(reads(), 0);
+});
+
+function discoveryWire(fields){
+ const names=['metadata','revision','dangling','graph_json','media_json'];
+ const encoder=new TextEncoder();
+ const descriptions=names.map(name=>{
+  const text=encoder.encode(name+'\0'),part=new Uint8Array(text.length+18);part.set(text);return part;
+ });
+ const description=new Uint8Array(2+descriptions.reduce((n,b)=>n+b.length,0));
+ new DataView(description.buffer).setUint16(0,5);let at=2;
+ for(const part of descriptions){description.set(part,at);at+=part.length;}
+ const values=fields.map(value=>encoder.encode(value));
+ const row=new Uint8Array(2+values.reduce((n,b)=>n+4+b.length,0));
+ const view=new DataView(row.buffer);view.setUint16(0,5);at=2;
+ for(const value of values){view.setInt32(at,value.length);at+=4;row.set(value,at);at+=value.length;}
+ return Buffer.concat([message('T',description),message('D',row),message('C',encoder.encode('SELECT 1\0')),message('Z',new Uint8Array([73]))]);
+}
+test('discovery streams large JSON as original socket views with bounded copying',async()=>{
+ const graph=JSON.stringify({objects:[{text:'é'.repeat(5*1024*1024)}]}),media='[{"id":"m"}]';
+ const wire=discoveryWire(['{"catalog":[]}','abc','f',graph,media]);
+ const chunks=[];for(let at=0;at<wire.length;at+=65536)chunks.push(wire.subarray(at,at+65536));
+ const {conn,reads}=connection(chunks);conn.writer={write:async()=>{}};
+ const original=Uint8Array.prototype.set;let copied=0;
+ let header,parts=[];
+ try{
+  Uint8Array.prototype.set=function(source,...args){copied+=source.length;return original.call(this,source,...args);};
+  header=await conn.streamDiscovery('SELECT fixture');
+  assert.equal(reads(),1,'large fields are not buffered before metadata returns');
+  for await(const part of header.fields){assert.equal(part.bytes.buffer,wire.buffer);parts.push(part);}
+ }finally{Uint8Array.prototype.set=original;}
+ assert.equal(header.metadata,'{"catalog":[]}');assert.equal(header.revision,'abc');assert.equal(header.dangling,'f');
+ assert.ok(copied<1000,'only protocol headers and small fields are copied');
+ assert.equal(Buffer.concat(parts.filter(p=>p.name==='graph_json').map(p=>p.bytes)).toString(),graph);
+ assert.equal(Buffer.concat(parts.filter(p=>p.name==='media_json').map(p=>p.bytes)).toString(),media);
+ assert.equal(conn.buf.length,0);
+});
+test('truncated streamed payload fails rather than completing valid JSON',async()=>{
+ const wire=discoveryWire(['{}','abc','f','{"large":"payload"}','[]']);
+ const {conn}=connection([wire.subarray(0,wire.length-20)]);conn.writer={write:async()=>{}};
+ const row=await conn.streamDiscovery('SELECT fixture');
+ await assert.rejects(async()=>{for await(const part of row.fields){}},/connection closed/);
+});
+
+test('stream connection closes once on completion, cancellation and errors',async()=>{
+ for(const mode of ['complete','cancel','error']){
+  let closed=0;
+  const chunks=(async function*(){yield new Uint8Array([1]);if(mode==='error')throw new Error('late database error');yield new Uint8Array([2]);})();
+  const reader=connectionStream({},chunks,async()=>{closed++;}).getReader();
+  await reader.read();
+  if(mode==='cancel')await reader.cancel();
+  else if(mode==='error')await assert.rejects(reader.read(),/late database error/);
+  else{await reader.read();assert.equal((await reader.read()).done,true);}
+  assert.equal(closed,1);
+ }
 });
