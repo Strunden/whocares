@@ -17,6 +17,8 @@ The decisions another agent needs to preserve:
 - Define needs independently of companies. Abstract themes, taxonomy labels and generic persona portraits previously obscured the situations people recognised.
 - Existing solutions include named products, services, public provision and organised community support. They are concrete offerings a venture builder can investigate. A lived workaround remains valuable supporting evidence, but is **not a solution tile**. A generic mechanism or a future idea is not a named existing offering.
 - People’s perspectives clarify the person affected and the buyer, payer or decision-maker. All lenses use one graph with stable identities; do not create separate persona taxonomies.
+- At the growing overview, arrange needs under quiet ICP headings and small editorial groups (for example, home and mobility). These groups organise the same canvas, never add a mandatory theme level or define needs from provider categories. Store their stable ID, label, ICP and order in `scope.navigation.overview_group`; mark the grouping editorial. Position and order are not evidence of market importance.
+- Each need/situation has a subtle text ICP indicator. Its context line must add a specific circumstance or constraint, not repeat the ICP or say only that someone faces the need. Keep candidate status and validation questions accessible in the record; never imply that a knowledge-generated candidate is a field observation.
 - **Click to drill; zoom only magnifies the current level.** Retain continuous pan/zoom and stable content. This explicit user decision supersedes earlier implementation briefs that changed semantic content at zoom thresholds.
 - The brand’s second line shows the tagline only at the root. Within a branch, breadcrumbs replace it in the same position. No root “All needs” label, duplicate map heading or extra “Scope & evidence” control. Breadcrumbs use authored short titles; tiles and records use full titles.
 - Keep the existing app, sparse map and evidence access. Desktop is the current review scope. Do not add dense metadata labels to explain a weak title.
@@ -55,7 +57,7 @@ Keep material qualifications with the claim they qualify. An offering's existenc
 - Existing solution: `scope.navigation.role = "solution"` on an existing `solution` or `institutional_response` object. Public/community provision uses the latter where appropriate.
 - Situation → need: `context_for`, with `from_id` the situation, `to_id` the need and `provenance.navigation = true`.
 - Solution → situation: `responds_to`, with `from_id` the solution, `to_id` the situation and `provenance.navigation = true`. Put the situation-specific fit in the relationship statement and attach its evidence/provenance. The current reader also accepts explicitly flagged legacy `addresses` links; use `responds_to` for newly authored navigation links.
-- `scope.navigation` carries the full display `title`, an authored `short_title` for breadcrumbs, `summary`, ordering and applicable lens metadata. Need/situation nodes require an approved `image`; the current reader expects `assets/illustrations/study/<filename>.png`. `view_id`, when used, preserves readable/stable routes without changing the object ID.
+- `scope.navigation` carries the full display `title`, an authored `short_title` for breadcrumbs, `summary`, ordering and applicable lens metadata. Need/situation nodes normally use an approved `image`; the current reader expects `assets/illustrations/study/<filename>.png`. The user paused illustration generation on 10 October: use the shared neutral placeholder for missing scenes, preserving a clear media gap instead of reusing a misleading illustration. This temporary exception does not mean the media requirement is complete. `view_id`, when used, preserves readable/stable routes without changing the object ID.
 - Only deliberately flagged relationships enter the browsing tree. Historical `context_for` or `responds_to` research edges must not automatically become navigation. Never flag a workaround merely to fill a solution level.
 
 One solution can respond to several situations. Reuse its identity; record fit and uncertainty on each edge. A visiting service that offers conversation does not thereby provide replacement nursing. A transport service can help someone get out without supplying companionship at the destination. Keep solution scope narrower than the provider's entire company where offerings differ.
@@ -76,7 +78,7 @@ One solution can respond to several situations. Reuse its identity; record fit a
 - States a human desire or difficulty independently of a technology/provider. “I need to reach help when alone” leaves alternatives open; “I need an alarm pendant” preselects one.
 - A situation is a specific instance of its parent need and distinguishable from siblings. Avoid duplicating the parent's title or using miscellaneous catch-alls.
 - Has a source-supported basis, or an explicit candidate rationale and validation question. An offered product cannot alone validate the underlying need.
-- Has a relevant reviewed illustration in the approved style. The default illustrated older adult is 80+; actual research and service age criteria remain unchanged. Follow the [illustration skill](../whocares-illustrations/SKILL.md), including scene specificity, respectful interactions and soft unfinished edges.
+- Has a relevant reviewed illustration in the approved style, or the explicitly authorised neutral fallback while generation is paused. The default illustrated older adult is 80+; actual research and service age criteria remain unchanged. Follow the [illustration skill](../whocares-illustrations/SKILL.md), including scene specificity, respectful interactions and soft unfinished edges.
 
 ### Existing solution
 
@@ -94,7 +96,7 @@ One solution can respond to several situations. Reuse its identity; record fit a
 
 ## Whole-branch acceptance and success checks
 
-Before a branch becomes visible, confirm its complete path follows the same needs → situations → existing solutions contract as every other branch. All visible need/situation items have readable titles, context lines and approved illustrations. Solutions resolve to inspectable records with source-supported mechanisms and honest availability/unknowns. An empty solution level must state research coverage is incomplete; never fill it with generic mechanisms or unsupported “no alternatives” claims.
+Before a branch becomes visible, confirm its complete path follows the same needs → situations → existing solutions contract as every other branch. All visible need/situation items have readable titles, specific context lines and approved illustrations (or the temporary neutral fallback while generation is paused). Solutions resolve to inspectable records with source-supported mechanisms and honest availability/unknowns. An empty solution level must state research coverage is incomplete; never fill it with generic mechanisms or unsupported “no alternatives” claims.
 
 After browsing without narration, can a venture builder:
 
