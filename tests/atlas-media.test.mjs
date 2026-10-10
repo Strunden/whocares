@@ -42,6 +42,7 @@ test('reviewed internal document previews retain HTTPS provenance and cannot esc
  const e={id:row.entry_id},preview='data/internal-media/communication-card.png';
  const document={...row,asset_url:'https://example.org/card.pdf',media_role:'product_render',provenance:{preview_path:preview}};
  assert.equal(reviewedMedia(e,[document],{internal:true})[0].src,preview);
+ assert.equal(reviewedMedia(e,[{...document,provenance:{preview_path:'data/internal-media/search.jpg'}}],{internal:true})[0].src,'data/internal-media/search.jpg');
  assert.equal(reviewedMedia(e,[document],{internal:false}).length,0);
  for(const path of ['../private.png','data/internal-media/../private.png','data/internal-media/%2e%2e/private.png','https://other.test/image.png','javascript:alert(1)'])
   assert.equal(reviewedMedia(e,[{...document,provenance:{preview_path:path}}],{internal:true})[0].src,document.asset_url);

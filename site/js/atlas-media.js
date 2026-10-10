@@ -7,7 +7,7 @@ export function reviewedMedia(entry,rows=productMedia,{internal=['localhost','12
   /^[a-f0-9]{64}$/.test(m.source_capture_sha256||'')&&m.alt_text&&m.credit&&m.rights_note&&
   /^https:\/\//.test(m.asset_url)&&/^https:\/\//.test(m.source_url)&&
   (m.visibility==='internal'?internal:m.visibility==='public'&&m.rights_status!=='unknown'&&/^https:\/\//.test(m.rights_url||'')))
- .map(m=>({...m,src:internal&&m.visibility==='internal'&&/^data\/internal-media\/[a-z0-9-]+\.png$/.test(m.provenance?.preview_path||'')?m.provenance.preview_path:m.asset_url,alt:m.alt_text,source:m.source_url,
+ .map(m=>({...m,src:internal&&m.visibility==='internal'&&/^data\/internal-media\/[a-z0-9-]+\.(?:png|jpg)$/.test(m.provenance?.preview_path||'')?m.provenance.preview_path:m.asset_url,alt:m.alt_text,source:m.source_url,
   kind:m.caption+' · '+(m.rights_status==='unknown'?'Reuse rights not confirmed':'Attributed provider media')}));
 }
 export function productLogoFor(entry){return reviewedMedia(entry).find(m=>m.media_role==='logo');}
