@@ -1,0 +1,140 @@
+{
+  "hierarchy": "needs → specific situations → existing offerings",
+  "migration": {
+    "target": "live",
+    "verified": true,
+    "id": "navigation-responses-to-situations-20261010",
+    "signature": "atlas.validate_relationship_kinds()",
+    "before_sha256": "bc75622503a9dc0363166ece8176c725069ec0709b042ba1144830ccd0ab167b",
+    "after_sha256": "902ee0466eb74e749b06d5e1007bde59d3f897ba16dbc253d825ac320db55f79",
+    "principles_sha256": "1698c1ce402af9694166b15938d24fb9fb05c55e85a330b4e589b7dca5b2a8c2",
+    "reason": "Needs → situations → named responses requires scoped navigation response links to daily situations. Existing problem endpoints and all other relation invariants preserved. Strict JSON boolean navigation=true required; missing, false and text values rejected. No object retyping.",
+    "endpointTests": [
+      {
+        "from": "solution",
+        "to": "problem",
+        "relation": "responds_to",
+        "navigation": "missing",
+        "allowed": true,
+        "passed": true
+      },
+      {
+        "from": "institutional_response",
+        "to": "problem",
+        "relation": "responds_to",
+        "navigation": "missing",
+        "allowed": true,
+        "passed": true
+      },
+      {
+        "from": "solution",
+        "to": "daily_situation",
+        "relation": "responds_to",
+        "navigation": true,
+        "allowed": true,
+        "passed": true
+      },
+      {
+        "from": "institutional_response",
+        "to": "daily_situation",
+        "relation": "responds_to",
+        "navigation": true,
+        "allowed": true,
+        "passed": true
+      },
+      {
+        "from": "solution",
+        "to": "daily_situation",
+        "relation": "responds_to",
+        "navigation": "missing",
+        "allowed": false,
+        "passed": true
+      },
+      {
+        "from": "solution",
+        "to": "daily_situation",
+        "relation": "responds_to",
+        "navigation": false,
+        "allowed": false,
+        "passed": true
+      },
+      {
+        "from": "solution",
+        "to": "daily_situation",
+        "relation": "responds_to",
+        "navigation": "true",
+        "allowed": false,
+        "passed": true
+      },
+      {
+        "from": "solution",
+        "to": "stakeholder",
+        "relation": "responds_to",
+        "navigation": true,
+        "allowed": false,
+        "passed": true
+      },
+      {
+        "from": "solution",
+        "to": "aspiration",
+        "relation": "responds_to",
+        "navigation": true,
+        "allowed": false,
+        "passed": true
+      },
+      {
+        "from": "problem",
+        "to": "daily_situation",
+        "relation": "responds_to",
+        "navigation": true,
+        "allowed": false,
+        "passed": true
+      },
+      {
+        "from": "solution",
+        "to": "daily_situation",
+        "relation": "addresses",
+        "navigation": true,
+        "allowed": false,
+        "passed": true
+      },
+      {
+        "from": "problem",
+        "to": "daily_situation",
+        "relation": "arises_in",
+        "navigation": "missing",
+        "allowed": true,
+        "passed": true
+      },
+      {
+        "from": "solution",
+        "to": "stakeholder",
+        "relation": "affects",
+        "navigation": "missing",
+        "allowed": false,
+        "passed": true
+      }
+    ],
+    "objectsUnchanged": true,
+    "relationshipsUnchanged": true,
+    "fixturesRolledBack": true
+  },
+  "publication": {
+    "target": "live",
+    "verified": true,
+    "batch": "current-wound-laundry-energy-offers-20261010",
+    "manifest_sha256": "ab43af6992b122a4dd805a1bbeed12bda5adddec455e73a9e993c57906553b77",
+    "objects": 859,
+    "mapped": 816,
+    "newObjects": 6,
+    "navigationLinks": 10,
+    "exactPassages": 54,
+    "sourceVersions": 7,
+    "internalMedia": 6,
+    "publicMedia": 0,
+    "humanObjectsUnchanged": true,
+    "historicalContextTiles": 0
+  },
+  "media_limitation": "Six authentic assets reviewed; unknown reuse rights kept internal. Remaining service/product visuals are incomplete.",
+  "runtime_limitation": "Full discovery request still intermittently exceeds Worker CPU; bounded delivery in progress."
+}
