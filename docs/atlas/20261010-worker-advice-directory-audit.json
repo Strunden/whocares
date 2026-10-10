@@ -1,0 +1,45 @@
+{
+  "job_id": "906fdba4c4805f56158fe324dac05e38fb067fb3964df8baebb3f46875cac56c",
+  "counted_usd": 0.1180669,
+  "ceiling_usd": 0.25,
+  "http_requests": 5,
+  "searches": 2,
+  "initial_directory_model_verdict": "supported",
+  "operator_directory_verdict": "unclear",
+  "operator_reason": "Operator publication audit: hold this compound directory finding. Attached passages omit several claimed per-centre language lists, contact channels and the directory heading; the reviewer used nearby context instead of requiring attached support. The title also adds residence/paperwork/language capability beyond these attached centre entries. A URL cache-buster is not a publication date. Visual review of saved PDF page 3 reveals general free/confidential advice and work/everyday-life support omitted by text extraction; do not turn its text omission into a substantive absence claim. Narrow to a named centre with complete attached headings/contacts and verify capability/access on an official provider source before mapping. This is not evidence of independent employment-residence conflict advice.",
+  "original_claims_evidence_and_review_preserved": true,
+  "directory_task_correction": "Combined textual target replaced with exact captured PDF URL including query string, using the same task identity. Correction audited.",
+  "pdf_warning": {
+    "url": "https://www.berlin.de/einwanderung/_assets/beratung-liga-wohlfahrtsverbaende.pdf?ts=1720617316",
+    "hash": "103c45cea013b2caad2c6942c044c321041d49feacfc574e76cf0e5316737fe2",
+    "cached": true,
+    "extraction_warning": "PDF text extraction can omit scanned or outlined text. Check relevant pages visually before claiming information is absent. Pages without extracted text within the captured page sequence (possibly blank): [2, 3, 32, 33, 34, 35]"
+  },
+  "indexer_change": {
+    "commit": "d163dea",
+    "branch": "codex/branch-research-expansion",
+    "tests_passed": 229,
+    "tests_failed": 0,
+    "scope": "Warning included in read_page results and durable source inventory/compact context, including cached historical reads. Page-number parsing bounded by existing MAX_PAGES. No OCR, schema migration, claim rewriting or new dependency."
+  },
+  "map_delivery": {
+    "new_records": 0,
+    "new_links": 0,
+    "mapped_total_verified": 1305,
+    "needs": 198,
+    "situations": 1005,
+    "offerings": 102,
+    "reason": "Do not publish a directory-level compound finding as a single named independent service. Named centre capability and terms require narrower exact-source verification."
+  },
+  "next_checks": [
+    "Use a named official provider page to verify a specific advice offering and access/fee conditions.",
+    "Keep municipal signpost as supporting research.",
+    "Do not infer employment-residence conflict expertise or employer independence from generic migration counselling."
+  ],
+  "limits": [
+    "Image generation paused.",
+    "No public UI deployment.",
+    "No independent human testimony or outcome validation.",
+    "Warning detects absent text, not whether a page is blank or scanned; relevant page visual inspection remains necessary."
+  ]
+}
