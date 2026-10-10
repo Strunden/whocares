@@ -1,0 +1,186 @@
+{
+  "date": "2026-10-11",
+  "classification": "progress",
+  "problem": "Ten existing visible solution placements had offering-level evidence but no reviewed relationship-level evidence. Two wound-assessment fits needed narrower wording.",
+  "result": "15 exact saved evidence links added to ten placements; two statements narrowed. No new objects, offerings, sources, media or hypothesis upgrades.",
+  "test": {
+    "target": "test",
+    "verified": true,
+    "manifest_sha256": "c4419fbb0e4fa7d729d970ce58a2cf77bc554f452083bd74fbbc6deb64db5e11",
+    "backup_file": "backup-test-1791670051994.json",
+    "mapped": 1308,
+    "reviewedPlacementLinks": 10,
+    "evidenceAdditions": 15,
+    "narrowedStatements": 2,
+    "prior_rows_checked": {
+      "objects": 1351,
+      "relationships": 1245,
+      "sources": 181,
+      "evidence_links": 1895,
+      "product_media": 141,
+      "import_batches": 68
+    },
+    "all_other_prior_rows_unchanged": true,
+    "humanObjectsUnchanged": true,
+    "sourceAndMediaUnchanged": true,
+    "publicUiDeployment": false
+  },
+  "canonical": {
+    "target": "live",
+    "verified": true,
+    "manifest_sha256": "c4419fbb0e4fa7d729d970ce58a2cf77bc554f452083bd74fbbc6deb64db5e11",
+    "backup_file": "backup-live-1791670072290.json",
+    "mapped": 1308,
+    "reviewedPlacementLinks": 10,
+    "evidenceAdditions": 15,
+    "narrowedStatements": 2,
+    "prior_rows_checked": {
+      "objects": 1351,
+      "relationships": 1245,
+      "sources": 181,
+      "evidence_links": 1895,
+      "product_media": 141,
+      "import_batches": 68
+    },
+    "all_other_prior_rows_unchanged": true,
+    "humanObjectsUnchanged": true,
+    "sourceAndMediaUnchanged": true,
+    "publicUiDeployment": false
+  },
+  "whole_graph_presence_audit": {
+    "visible_solution_placement_edges": 152,
+    "missing_reviewed_relationship_evidence": [],
+    "limit": "Presence audit does not prove semantic fitness of every unreviewed historical link; this pass reviewed the ten identified placements."
+  },
+  "review": [
+    {
+      "relationship_id": "nav-03273e2c181c503b0517",
+      "solution_id": "solution-wundex-wound-management",
+      "situation_id": "wc-candidate-7e7ae822f674e3370cefba06",
+      "situation": "Different workers measure and describe a wound differently so its progress is unclear",
+      "fit_statement": "Provider-described regular wound documentation is relevant to tracking progress; consistent measurements and outcomes are unverified.",
+      "passage_ids": [
+        "passage-9e8d34ab507e99b72ca35786",
+        "passage-7cbb2cb06755f9c9dfe4168c"
+      ],
+      "human_epistemic_status": "hypothesis"
+    },
+    {
+      "relationship_id": "nav-05dafe307d1f3b693eec",
+      "solution_id": "solution-wundex-wound-management",
+      "situation_id": "wc-candidate-0b77e26bb02322a12494d4c7",
+      "situation": "I cannot relieve pressure without disrupting the person's sleep or comfort",
+      "fit_statement": "Pressure-relief advice is relevant; the service does not demonstrate less sleep disruption or better comfort.",
+      "passage_ids": [
+        "passage-9e8d34ab507e99b72ca35786"
+      ],
+      "human_epistemic_status": "hypothesis"
+    },
+    {
+      "relationship_id": "nav-3aaddb8c038213b4497b",
+      "solution_id": "solution-lifecare-wound-management",
+      "situation_id": "wc-candidate-7e7ae822f674e3370cefba06",
+      "situation": "Different workers measure and describe a wound differently so its progress is unclear",
+      "fit_statement": "Photo documentation is sent to the physician and facility; measurement consistency and clinical progress are unverified.",
+      "passage_ids": [
+        "passage-0e79f324c260d69ea60ba80d"
+      ],
+      "human_epistemic_status": "hypothesis"
+    },
+    {
+      "relationship_id": "nav-d37eed307172b42b6c83",
+      "solution_id": "solution-tuv-wundexperte-icw",
+      "situation_id": "wc-candidate-7e7ae822f674e3370cefba06",
+      "situation": "Different workers measure and describe a wound differently so its progress is unclear",
+      "fit_statement": "The provider describes wound-assessment/documentation teaching. It supplies training rather than wound visits, supplies or independent proof of staff competence.",
+      "passage_ids": [
+        "Captured HTML syllabus: Wundbeurteilung / Dokumentation",
+        "passage-cfc6cb32e3f2dc146461fa3c"
+      ],
+      "human_epistemic_status": "hypothesis"
+    },
+    {
+      "relationship_id": "nav-4f0e66f80dcf5ba1cd0b",
+      "solution_id": "solution-wundex-wound-management",
+      "situation_id": "wc-candidate-ac4bf5ea5a41f6720e7c8838",
+      "situation": "I find a new skin injury but cannot establish what caused it or who will assess it",
+      "fit_statement": "Offers wound visits and recommendations for chronic or hard-to-heal wounds; assessment of the cause of a new injury, urgent response, eligibility and local capacity are not established.",
+      "passage_ids": [
+        "passage-9e8d34ab507e99b72ca35786",
+        "passage-e63317d4aa10e8850edb2f04"
+      ],
+      "human_epistemic_status": "hypothesis"
+    },
+    {
+      "relationship_id": "nav-9db78e8a8d9c8cf3d659",
+      "solution_id": "solution-lifecare-wound-management",
+      "situation_id": "wc-candidate-ac4bf5ea5a41f6720e7c8838",
+      "situation": "I find a new skin injury but cannot establish what caused it or who will assess it",
+      "fit_statement": "Offers facility wound visits alongside staff; establishing the cause of a new injury, urgent assessment and current local capacity are not established.",
+      "passage_ids": [
+        "passage-961e31df7c4c80104ab7468c"
+      ],
+      "human_epistemic_status": "hypothesis"
+    },
+    {
+      "relationship_id": "nav-7e029026f5371ea2aac2",
+      "solution_id": "solution-lifecare-wound-management",
+      "situation_id": "wc-candidate-a11f5c81fea10f456b183d7a",
+      "situation": "The wound-care instructions do not match the dressings available on my shift",
+      "fit_statement": "The provider describes bringing dressing materials to facilities; immediate availability, lead time and order-specific suitability are unknown.",
+      "passage_ids": [
+        "passage-6d8097850097b8c39e97a093"
+      ],
+      "human_epistemic_status": "hypothesis"
+    },
+    {
+      "relationship_id": "nav-12040452d2d1fb439f9e",
+      "solution_id": "solution-rena-care-home-laundry",
+      "situation_id": "wc-candidate-30c4be35eb860760573e6b69",
+      "situation": "High laundry demand creates costs but reducing it could affect hygiene or comfort",
+      "fit_statement": "The textile-management service and trial route are relevant to laundry operations; price, savings, comfort effects and whether UHF tracking is deployed are unverified.",
+      "passage_ids": [
+        "passage-2cfd7eb955f9b604305a8ddc",
+        "passage-d5cbbd0b20cafc7b6086b41d"
+      ],
+      "human_epistemic_status": "hypothesis"
+    },
+    {
+      "relationship_id": "nav-8f63ce520c6bf96db7cd",
+      "solution_id": "solution-cws-care-home-laundry",
+      "situation_id": "wc-candidate-30c4be35eb860760573e6b69",
+      "situation": "High laundry demand creates costs but reducing it could affect hygiene or comfort",
+      "fit_statement": "Laundry outsourcing, supply planning and cost control may address operational burden; no independent saving or preserved resident-comfort effect is established.",
+      "passage_ids": [
+        "passage-7557292d08f48f2483afbf35",
+        "passage-0a428458105b4524a296bbcf"
+      ],
+      "human_epistemic_status": "hypothesis"
+    },
+    {
+      "relationship_id": "nav-089d8d1bb8a508a752e6",
+      "solution_id": "solution-better-energy",
+      "situation_id": "wc-candidate-4909690e8e4b6ef2adb34828",
+      "situation": "Energy-saving changes make rooms uncomfortable for residents",
+      "fit_statement": "Per-room control may help adapt heating to resident requirements; energy savings and resident comfort are supplier claims, not established outcomes.",
+      "passage_ids": [
+        "passage-c15dd5c9445bc338aad3c798"
+      ],
+      "human_epistemic_status": "hypothesis"
+    }
+  ],
+  "browser": {
+    "route": "http://127.0.0.1:8793/#/all/g/wc-candidate-b0aff529febbb7d550272d0c%2Fwc-candidate-ac4bf5ea5a41f6720e7c8838",
+    "checked": "Both narrowed statements visible; Wundex connection exposes source and both captured passage references.",
+    "screenshots": [
+      "wound-fit-verified.png",
+      "connection-evidence-verified.png"
+    ]
+  },
+  "limits": [
+    "No prevalence, need validation or independent effectiveness established.",
+    "Two newly discovered injury situations receive a partial general wound-support route, not a promise of urgent diagnosis.",
+    "No source, offering or human record changes; no public deployment or image generation.",
+    "Other offerings still need more access/price/eligibility research; no completion claim."
+  ]
+}
