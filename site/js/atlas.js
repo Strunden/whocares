@@ -1,4 +1,4 @@
-import {navigationRoots} from './atlas-needs.js?v=icp-3';
+import {navigationRoots} from './atlas-needs.js?v=grouping-4';
 import {loadAtlas} from './atlas-loader.js';
 import {setProductMedia} from './atlas-media.js';
 import {availableStory} from './atlas-navigation.js';
@@ -6,13 +6,13 @@ import {createNativePan} from './atlas-native-pan.js?v=native-pan-35';
 import {wheelGesture,centroid,separation,touchIntent} from './atlas-gestures.js?v=native-pan-35';
 import {personaMaps, insights, personaStories} from './atlas-content.js?v=native-pan-35';
 import {clamp, zoomAt, elasticZoomScale, elasticPanBy, interpolateCamera} from './atlas-camera.js?v=native-pan-35';
-import {buildHierarchy,readingLevel,ancestry,scenePanBounds,panWithinScene,themesFor,levelScale,levelZoomLimits,frameLevel,entryFrame,perspectiveHierarchy,embedHierarchy} from './atlas-layout.js?v=spatial-records-48';
+import {buildHierarchy,readingLevel,ancestry,scenePanBounds,panWithinScene,themesFor,levelScale,levelZoomLimits,frameLevel,entryFrame,perspectiveHierarchy,embedHierarchy} from './atlas-layout.js?v=grouping-49';
 import {portrait as illustration} from './atlas-assets.js';
 
 import {graphRecords,graphRoots,recordLabel,recordStatus,evidenceLabels,scopeDescription} from './atlas-records.js?v=native-pan-35';
 import {graphSourceBlock} from './atlas-sources.js?v=source-details-13';
 
-import {esc,short,companyLogo,recordMedia,createMapView,handleImageError} from './atlas-view.js?v=icp-37';
+import {esc,short,companyLogo,recordMedia,createMapView,handleImageError} from './atlas-view.js?v=grouping-38';
 
 const $ = id => document.getElementById(id);
 const safeUrl = value => /^https?:\/\//i.test(value || '') ? value : '';
