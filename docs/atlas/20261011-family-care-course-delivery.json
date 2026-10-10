@@ -1,0 +1,102 @@
+{
+  "date": "2026-10-11",
+  "delivery": "Two internal canonical family-care education offerings, reused across three situations; no public deployment",
+  "batch_id": "aok-pfiff-family-care-courses-20261011",
+  "manifest_sha256": "616a48336a689c3f5bca021b2f11d09fa961c42faef40acc4e10f0e643f53aac",
+  "objects": 1355,
+  "mapped_records": 1312,
+  "counts": {
+    "needs": 198,
+    "situations": 1005,
+    "offerings": 109
+  },
+  "offerings": [
+    "solution-aok-pfiff-pflegen-zu-hause-online",
+    "solution-aok-pfiff-practical-care-course"
+  ],
+  "verified_paths": [
+    [
+      "wc-candidate-91008dac2d852dc495cd233f",
+      "wc-candidate-d150bb6d3ad764a5ee0f1fd1",
+      "solution-aok-pfiff-pflegen-zu-hause-online"
+    ],
+    [
+      "wc-candidate-c566ab319b6a1ffd267993c0",
+      "wc-candidate-5bb28be7a0186dbde84fd72f",
+      "solution-aok-pfiff-pflegen-zu-hause-online"
+    ],
+    [
+      "wc-candidate-c566ab319b6a1ffd267993c0",
+      "wc-candidate-5bb28be7a0186dbde84fd72f",
+      "solution-aok-pfiff-practical-care-course"
+    ],
+    [
+      "wc-candidate-c566ab319b6a1ffd267993c0",
+      "wc-candidate-7b4dc2def625a97dfbc4e1a9",
+      "solution-aok-pfiff-practical-care-course"
+    ]
+  ],
+  "additions": {
+    "objects": 2,
+    "relationships": 4,
+    "sources": 1,
+    "exact_evidence_links": 19,
+    "internal_logos": 2
+  },
+  "source": {
+    "url": "https://pflegeakademie.aok.de/schulung",
+    "content_hash": "72275e3b75c6b3ed5cd5fc06c92c4ab2596a08d895c47b2769aacbb75af3805e",
+    "retrieved_at": "2026-10-10T17:14:04.469267+00:00",
+    "browser_checked_individual_course_sections": true
+  },
+  "research": {
+    "job_id": "356c2977275a19f98dbb9768d15d430b498ab351f0f3f7a8f9b29c7b52e83f7e",
+    "run_id": "10a99f83-08bd-46de-a1ab-f87c36fe0aca",
+    "metrics": {
+      "duration_seconds": 55.861,
+      "model_calls": 4,
+      "model_calls_by_role": {
+        "researcher": 0,
+        "reviewer": 4
+      },
+      "counted_usd": 0.0145026,
+      "provider_reported_usd": 0.005336071,
+      "http_requests": 0,
+      "page_calls": 0,
+      "search_calls": 0
+    },
+    "findings": [
+      "finding-9f57b875877fe45f7dccee02",
+      "finding-6aefa37ffd08f3316451efdc"
+    ],
+    "original_finding_payloads_preserved": 3,
+    "original_online_identification_finding_remains_unclear": "finding-dc9068102d97d376e4c471a4",
+    "review_limits": "Two supported qualified provider descriptions; incomplete original citations do not establish product identity. Model verdicts are not autonomous publication authority."
+  },
+  "verification": {
+    "isolated_test": true,
+    "internal_live_readback": true,
+    "prior_rows_preserved": {
+      "objects": 1353,
+      "relationships": 1247,
+      "sources": 184,
+      "evidence_links": 1949,
+      "product_media": 143,
+      "import_batches": 73
+    },
+    "human_hypotheses_unchanged": true,
+    "public_media_exposure": 0,
+    "browser": {
+      "both_offerings_and_authentic_logos_rendered": true,
+      "online_record_book_postage_boundary_and_sources": true,
+      "practical_record_nine_hours_free_price_region_and_booking_caveat": true
+    }
+  },
+  "limitations": [
+    "Provider educational capabilities, not demand validation or proven medication-safety/strain outcomes",
+    "Practical course is regional; current dates, capacity and individual booking not checked",
+    "Online free-training claim is catalogue-wide; separate printed-book delivery charges not established",
+    "Authentic provider logos reviewed; no course-specific teaching photos/screenshots reviewed",
+    "Image generation and recurring scheduler remain paused; no public UI deployment"
+  ]
+}
