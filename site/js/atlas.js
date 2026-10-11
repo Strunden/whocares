@@ -1,4 +1,5 @@
 import {navigationRoots} from './atlas-needs.js?v=grouping-4';
+import {createColumnView} from './atlas-columns.js?v=columns-1';
 import {loadAtlas} from './atlas-loader.js?v=delivery-54';
 import {setProductMedia} from './atlas-media.js';
 import {availableStory} from './atlas-navigation.js';
@@ -32,6 +33,8 @@ const activeStory=()=>availableStory(personaStories[persona]||personaStories.wor
 const pointers=new Map();
 let gestureStart=null, dragged=false, navigationFrame=0, finishNavigation=null;
 const panSurface=$('pan-surface');
+const columnView=createColumnView($('column-browser'),{selectPerson:key=>navigateTo(key)});
+const desktopColumns=()=>window.innerWidth>=701;
 const nativePan=createNativePan(map,panSurface,next=>{
  if(!ready||navigationFrame)return;
  if(Math.abs(camera.x-next.x)<.01&&Math.abs(camera.y-next.y)<.01&&camera.s===next.s)return;
@@ -128,6 +131,13 @@ function navigateTo(key,group=null,{restore=true,animate=true,keepPanel=false,sa
  mobile=window.innerWidth<701;$('workspace').hidden=false;
  const nextTree=key===persona&&tree?tree:makeTree(key);
  if(group&&!nextTree.all.has(group))group=null;
+ if(desktopColumns()){
+  installLevel(key,group,nextTree);document.body.classList.add('column-mode');
+  document.querySelector('.skip').href='#column-browser';document.querySelector('.skip').textContent='Skip to needs';
+  if(!keepPanel)selectedId=null;render();setHash();announce(group?nextTree.all.get(group).title:'Choose a need');return;
+ }
+ document.body.classList.remove('column-mode');
+ document.querySelector('.skip').href='#map';document.querySelector('.skip').textContent='Skip to map';
 
  const destination=nextTree.all.get(group);
  let target=restore&&levelCameras.get(locationKey(key,group))||entryFrame(nextTree,group,map.clientWidth,map.clientHeight);
@@ -171,6 +181,10 @@ function panMap(dx,dy){
 }
 function render(fromNativeScroll=false){
  if(!ready)return;
+ if(desktopColumns()){
+  columnView.render({tree,persona,activeGroup,selectedId,revision:document.documentElement.dataset.researchRevision});
+  return;
+ }
  if(!fromNativeScroll)nativePan.setView(camera,scenePanBounds(tree,activeGroup,camera,map.clientWidth,map.clientHeight),map.clientWidth,map.clientHeight);
  const origin=nativePan.origin;
  // Dot positions share the world origin; subdivide only to keep a useful density.
@@ -221,7 +235,7 @@ function closePanel(restore=true){
  storyObserver?.disconnect();
  const wasOpen=!$('inspector').hidden;
  $('inspector').hidden=true;panelState=null;panelHistory=[];selectedId=null;
- if(restore&&closedCamera){activeGroup=closedGroup;render();const limits=zoomLimits();camera=zoomAt(closedCamera,1,{x:map.clientWidth/2,y:map.clientHeight/2},limits.min,limits.max);render();}
+ if(restore&&closedCamera){activeGroup=closedGroup;render();if(!desktopColumns()){const limits=zoomLimits();camera=zoomAt(closedCamera,1,{x:map.clientWidth/2,y:map.clientHeight/2},limits.min,limits.max);render();}}
  closedCamera=null;closedGroup=null;
  previousSize={w:map.clientWidth,h:map.clientHeight};
  if(wasOpen&&lastFocus?.isConnected&&!lastFocus.hidden)lastFocus.focus({preventScroll:true});
@@ -424,9 +438,10 @@ new ResizeObserver(()=>{
  const w=map.clientWidth,h=map.clientHeight;
  const nextMobile=window.innerWidth<701;
  if(nextMobile!==mobile){const key=persona,group=activeGroup;levelCameras.clear();tree=null;navigateTo(key,group,{restore:false,animate:false,keepPanel:true,saveCurrent:false});if(closedCamera){closedCamera=frameLevel(tree,closedGroup,map.clientWidth,map.clientHeight);}}
- else if(!navigationFrame&&previousSize.w&&previousSize.h&&$('inspector').hidden){stopCameraReturn();camera.x+=(w-previousSize.w)/2;camera.y+=(h-previousSize.h)/2;const limits=zoomLimits();camera=zoomAt(camera,1,{x:w/2,y:h/2},limits.min,limits.max);}
+ else if(!desktopColumns()&&!navigationFrame&&previousSize.w&&previousSize.h&&$('inspector').hidden){stopCameraReturn();camera.x+=(w-previousSize.w)/2;camera.y+=(h-previousSize.h)/2;const limits=zoomLimits();camera=zoomAt(camera,1,{x:w/2,y:h/2},limits.min,limits.max);}
  previousSize={w,h};render();
 }).observe(map);
+window.addEventListener('resize',()=>{if(ready&&desktopColumns()===mobile){tree=null;navigateTo(persona,activeGroup,{animate:false,keepPanel:true,saveCurrent:false});}});
 
 function applyRoute(){
  const [path,query='']=location.hash.replace(/^#\/?/,'').split('?');

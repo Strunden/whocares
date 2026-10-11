@@ -25,6 +25,18 @@ The decisions another agent needs to preserve:
 
 ## Hierarchy and information shown
 
+### Desktop browsing revision — 11 October 2026
+
+The user approved a people-first desktop column browser in the existing app. This supersedes the map and breadcrumb presentation above for desktop only; mobile remains the existing map until reviewed separately. The underlying graph and evidence criteria are unchanged.
+
+- Start with the compact people selector. After selecting a perspective, show a spacious needs overview; reveal situations when a need is selected and existing solutions when a situation is selected. Preserve the parent selections in the three-column view. Do not reserve empty panes on arrival.
+- Filter by the need's primary voiced ICP (`overview_group.icp`, with the first navigation lens as a legacy fallback). Being affected by a need is not the same as speaking it: an organisation affected by staff exhaustion must not receive a worker-voiced need in its ordinary list. Explicit cross-perspective deep links may retain their selected parent.
+- Use existing editorial `overview_group` headings to make responsibilities and contexts recognisable. These headings are browsing aids, not a new hierarchy level, research validation or an opportunity ranking.
+- Titles lead; illustrations support comprehension. Show concise context on the needs overview, selected parents and solution fit; avoid repeating all sibling descriptions inside a branch. Keep material qualifications alongside their claims.
+- Desktop parent selections replace breadcrumbs. Keep the brand and root tagline; do not add a duplicate page title, counts dashboard or arrows on each entry. Provide deliberate research access and keyboard navigation.
+- Empty solution coverage says that research is incomplete, not that no offerings exist. Existing media and honest placeholders remain valid while image generation is paused.
+- Grouping alone does not ground a candidate. A useful entry still identifies whose responsibility/desire it is, a specific circumstance or constraint, and a source-supported basis or explicit hypothesis and validation question in its research record.
+
 ```text
 Need: I need a break from caring
   Situation: I need a few predictable hours to myself

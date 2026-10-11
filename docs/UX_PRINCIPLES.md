@@ -4,6 +4,10 @@
 
 ## What the venture builder needs
 
+### Current desktop presentation — 11 October 2026
+
+The user-approved desktop column browser supersedes the map-first presentation below for desktop, while retaining the same graph and research integrity. People come first. Selecting a perspective reveals needs grouped by existing editorial responsibilities; selecting a need opens situations, and selecting a situation opens existing solutions. Parent selections preserve orientation without duplicate breadcrumbs. Unpopulated downstream panes stay hidden until their parent is selected. Titles lead and illustrations support them; context appears on the overview, selected parents and solution fit. The primary voiced ICP determines an ordinary perspective list, rather than every affected lens. Keyboard navigation and deliberate research inspection remain available. Empty coverage is a research gap, never evidence that solutions do not exist. Mobile retains the existing map until separately reviewed.
+
 The browse experience is for **venture builders trying to understand and discover**, not for care recipients searching for a service. In a few minutes they should develop a credible mental model of breadth, know whom problems affect and why they matter, and feel motivated to investigate one unfamiliar issue. They decide what is commercially or ethically promising.
 
 ## The map *is* the primary interface

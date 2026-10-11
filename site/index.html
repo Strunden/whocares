@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="css/atlas.css?v=loading-52">
   <link rel="stylesheet" href="css/atlas-map.css?v=spatial-records-48">
   <link rel="stylesheet" href="css/atlas-study.css?v=grouping-4">
+  <link rel="stylesheet" href="css/atlas-columns.css?v=columns-1">
 </head>
 <body>
   <a class="skip" href="#map">Skip to map</a>
@@ -20,6 +21,7 @@
     <nav class="header-actions" aria-label="Atlas tools"><button id="study-search">Search</button><button id="study-help">How to explore</button></nav>
   </header>
   <main id="workspace">
+    <section id="column-browser" tabindex="-1" aria-label="Browse needs, situations and existing solutions"></section>
     <div class="map-column">
       <div class="study-stage"><section id="map" tabindex="0" aria-busy="true" aria-label="Interactive care atlas" aria-describedby="map-help">
         <div id="pan-surface"><div id="labels"></div></div><span id="level-range" aria-live="polite"></span>
@@ -48,6 +50,6 @@
   <p class="sr-only" id="map-help">Drag or scroll to pan. Pinch or Ctrl/Command-scroll to zoom. Click a group to enter; use breadcrumbs to return. Arrow keys pan, plus and minus zoom.</p>
   <p class="sr-only" id="announcement" role="status" aria-live="polite"></p>
   <script src="js/config.js"></script>
-  <script type="module" src="js/atlas.js?v=delivery-54"></script>
+  <script type="module" src="js/atlas.js?v=columns-1"></script>
 </body>
 </html>
