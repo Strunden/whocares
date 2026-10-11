@@ -1,10 +1,18 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {columnSelection} from '../site/js/atlas-columns.js';
+import {columnSelection,columnScene} from '../site/js/atlas-columns.js';
 const offer={id:'family-need/situation/shared-offer',entry:{id:'shared-offer'}};
 const situation={id:'family-need/situation',children:[offer]};
 const family={id:'family-need',entry:{scope:{navigation:{lenses:['family']}}},children:[situation]};
 const adult={id:'adult-need',entry:{scope:{navigation:{lenses:['adult']}}},children:[]};
+test('scene presentation requires explicit illustrative status and leaves graph identities unchanged',()=>{
+ const scene={status:'illustrative',title:'Taking on care',question:'How might we clarify responsibilities?',points:{situation:'No clear first contact'}};
+ const need={...family,entry:{scope:{navigation:{scene}}}};
+ assert.equal(columnScene(need),scene);
+ assert.equal(columnScene(family),null);
+ assert.equal(columnScene({...need,entry:{scope:{navigation:{scene:{...scene,status:'documented'}}}}}),null);
+ assert.equal(columnSelection([need],situation.id).situation,situation);
+});
 test('selected path keeps parent, siblings and shared offering identity visible',()=>{
  const state=columnSelection([adult,family],situation.id,'family');
  assert.deepEqual(state.needs,[family]);assert.equal(state.need,family);assert.equal(state.situation,situation);assert.deepEqual(state.solutions,[offer]);

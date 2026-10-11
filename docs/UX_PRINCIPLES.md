@@ -10,6 +10,8 @@ The user-approved desktop column browser supersedes the map-first presentation b
 
 The browse experience is for **venture builders trying to understand and discover**, not for care recipients searching for a service. In a few minutes they should develop a credible mental model of breadth, know whom problems affect and why they matter, and feel motivated to investigate one unfamiliar issue. They decide what is commercially or ethically promising.
 
+The [scene-based discovery trial](SCENE_BROWSING_TRIAL.md) adds one illustrative family-care scene with a how-might-we question and compact existing situation rows. It tests comprehension rather than adding a graph level. Original hypotheses, evidence access and offering links remain intact. Published methods support the direction; improved efficiency for this atlas remains untested with venture builders.
+
 ## The map *is* the primary interface
 
 **Horizontal moment: understand the whole.** The overview is substantial editorial comprehension, **not just a menu of headings**. Each visible territory needs:

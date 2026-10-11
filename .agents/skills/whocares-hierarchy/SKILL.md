@@ -127,6 +127,30 @@ After browsing without narration, can a venture builder:
 
 Functional tests check projection, links, preserved identities, evidence access and stable zoom content. They do not replace observation of venture builders or validate market demand. Keep candidate publication rules distinct from whether navigation renders.
 
+### Coverage and venture-builder usefulness — feedback from 11 October 2026
+
+The user found the growing list arbitrary and questioned whether it helps venture builders find opportunities. More records and grammatical first-person statements do not demonstrate usefulness. Subsequent research must explain coherent coverage, consequential frictions and the scope of existing responses.
+
+- State a branch's bounded goal, perspective, setting and inclusions/exclusions. Check its situations against the person's actual journey or responsibilities, including exceptions and successful arrangements. A proposed journey is editorial until grounded; do not claim exhaustive coverage.
+- Check that each child is a distinct circumstance that obstructs or changes the parent goal. Review overlap with neighbouring goals before adding or moving identities. Preserve canonical identity, evidence status and historical provenance.
+- Avoid automatic “I need to” title generation. Clear goals and concrete circumstances should be distinguishable at a glance. The suggestion to revise browsing titles is not approval to bulk rewrite all existing records or to promote hypotheses.
+- Research consequences, prevalence/reach and frequency with population, denominator, geography, dates and method. Missing measurements are research gaps, never low importance. Keep severe but infrequent problems visible.
+- Compare current offerings and sourced lived workarounds, including fit, cost, access and limits. Workarounds remain research context, not existing-solution tiles. Distinguish a documented response limitation from sparse catalogue coverage.
+- Identify affected person, decision-maker, buyer and payer separately where supported. Existing spending or a budget is evidence to investigate, not willingness to buy a new venture or proof of commercial viability.
+- End a branch review with specific unanswered questions and the evidence needed next. Do not calculate an attractiveness score or label an unexplored gap an unmet market.
+
+Relevant method references: [Product Talk opportunity solution trees](https://www.producttalk.org/opportunity-solution-trees/) ground a team's discovery in customer stories and a desired outcome; [Strategyzer's high-value customer jobs](https://www.strategyzer.com/library/the-high-value-customer-jobs-you-need-to-focus-on) distinguish importance, dissatisfaction and consequences. This atlas contains existing offerings and research hypotheses; it is not a validated team-specific opportunity solution tree or a tested venture thesis.
+
+### Scene and how-might-we trial — 11 October 2026
+
+The user approved trying compact related difficulties beneath a recognisable scene and a clear “How might we…” starting point. This is a one-branch desktop trial, not approval to turn every candidate into a validated insight or rewrite the whole graph. See [the trial, sources and evaluation plan](../../../docs/SCENE_BROWSING_TRIAL.md).
+
+- A scene explains who is trying to achieve what, in a bounded circumstance. Group points by a coherent experience or responsibility; shared wording alone is insufficient. Do not invent participant actions, emotions, dialogue or co-occurrence.
+- Store trial presentation in the existing need's `scope.navigation.scene`: explicit `status: illustrative`, title, summary, question and compact `points` labels keyed by existing child object IDs. Preserve the original titles, identities, relationships and epistemic status. Desktop currently renders only explicitly illustrative scenes.
+- Let the scene and question carry the main visual emphasis; difficulties become compact selectable rows linked to existing offerings and deliberate research inspection. Do not add a mandatory navigation level or give every point another large image. Generation remains paused; a scene image must not be replaced by a misleading reused asset.
+- The question names a desired outcome and leaves several responses possible. Review whether terms such as “plan”, “information” or “tool” accidentally prescribe a mechanism. Existing offerings help inspection; they do not prove the underlying difficulty or that the market is underserved.
+- IDEO and NN/g support insight synthesis and open design questions; Torres supports organising story-derived opportunities by experience moments. These practitioner methods do not prove this atlas improves venture discovery. Compare comprehension, response-finding, the specificity of the next research question and false confidence against the previous list before scaling.
+
 ## Workflow and historical example
 
 Start from current database objects/relationships and source material; sketch the desired branch if that aids review. Research needs independently, then verify existing offerings and their fit. Reuse identities, retain status, record sources and update navigation metadata through the authorised audited workflow in `AGENTS.md`. Review the projected branch in the existing map and check the acceptance criteria above. Do not maintain hand-edited JSON as a production overlay.
