@@ -1,0 +1,784 @@
+{
+  "date": "2026-10-11",
+  "purpose": "Make specific care-worker and manager constraints readable in the broad map without generic ICP-only context lines. Editorial refinement of existing hypotheses, not new evidence or new navigation identities.",
+  "principles_sha256": "1698c1ce402af9694166b15938d24fb9fb05c55e85a330b4e589b7dca5b2a8c2",
+  "canonical_verification": {
+    "target": "live",
+    "verified": true,
+    "batch": "worker-manager-context60-20261011",
+    "changes_sha256": "02f9c6565785feb9b0c0946520bdcf684364af4e207a4241be8e9b6ed7f19ea1",
+    "backup_file": "backup-live-1791708632300.json",
+    "object_updates": 60,
+    "all_other_rows_unchanged": true,
+    "status_preserved": true,
+    "fields": [
+      "scope.navigation.summary",
+      "provenance.context_copy_review"
+    ],
+    "public_ui_deployment": false
+  },
+  "isolated_verification": {
+    "target": "test",
+    "verified": true,
+    "batch": "worker-manager-context60-20261011",
+    "changes_sha256": "02f9c6565785feb9b0c0946520bdcf684364af4e207a4241be8e9b6ed7f19ea1",
+    "backup_file": "backup-test-1791708569893.json",
+    "object_updates": 60,
+    "all_other_rows_unchanged": true,
+    "status_preserved": true,
+    "fields": [
+      "scope.navigation.summary",
+      "provenance.context_copy_review"
+    ],
+    "public_ui_deployment": false
+  },
+  "counts": {
+    "distinct_mapped_entries_before": 1320,
+    "distinct_mapped_entries_after": 1320,
+    "needs": 198,
+    "situations": 1005,
+    "existing_offerings": 117,
+    "covered_situations_before": 123,
+    "covered_situations_after": 123,
+    "generic_situation_contexts_before": 349,
+    "generic_situation_contexts_after": 289,
+    "distinct_situations_refined": 60,
+    "selection": "30 care-worker situations and30 additional manager situations; overlapping perspectives retained on one graph.",
+    "lens_counts": {
+      "worker": 31,
+      "provider": 31
+    },
+    "new_objects": 0,
+    "new_relationships": 0,
+    "new_sources": 0,
+    "new_evidence": 0,
+    "new_media": 0,
+    "indexer_model_calls": 0
+  },
+  "scope": {
+    "changed": [
+      "scope.navigation.summary",
+      "provenance.context_copy_review"
+    ],
+    "preserved": [
+      "Full and short titles",
+      "Needs→situations→existing offerings hierarchy and all links",
+      "Hypothesis statuses and confidence",
+      "Research questions, proposed scopes and measurement status",
+      "Existing offerings and partial-fit evidence",
+      "All source rows and media associations",
+      "All unrelated canonical rows"
+    ],
+    "validation": "Exact pre-change revision/scope/provenance guards, six-table private backups, audited batch transaction and post-write all-row preservation checks on isolated and canonical databases. All60 exact projected context lines checked.",
+    "limits": "Editorial context is not an interview, observed event, prevalence, causal validation or clinical/legal guidance. Existing titles and candidate rationales are the only premises."
+  },
+  "browser": {
+    "preview_origin": "http://127.0.0.1:8793",
+    "worker_branch": {
+      "need_id": "wc-candidate-e7a5dcfc527c5b1d8c85200b",
+      "title": "I need to help people keep their mouths comfortable and healthy",
+      "situations": 5,
+      "refined_this_batch": 3
+    },
+    "manager_branch": {
+      "need_id": "wc-candidate-fe3fe5fb1986dabf95455add",
+      "title": "I need the organisation to remain dependable when key leaders leave",
+      "situations": 5,
+      "refined_this_batch": 3
+    },
+    "observations": [
+      "Canonical reload displayed updated situation summaries in both branches.",
+      "Zoom85→102→85 retained the same five worker situations and text.",
+      "ArrowRight panned the first worker item from x=-140 to x=-190 without changing content.",
+      "Clicking the incoming-manager situation entered its next map level. Its empty solution level explicitly states research coverage is incomplete.",
+      "The manager situation record still displayed Hypothesis and validation-pending information. Map summaries are not repeated in the detailed record, which retains its existing full statement.",
+      "Short breadcrumbs returned to the five-situation manager map.",
+      "Authorised neutral placeholders remain; no generated or reused misleading imagery added.",
+      "An accessibility announcement reported intermittent background refresh failure. CSS and screenshot inspection confirmed it is a1px clipped screen-reader status, not a visible banner. No UI change was made; refresh reliability was not fixed."
+    ],
+    "screenshots": [
+      "whocares-worker-context60-20261011.png",
+      "whocares-manager-context60-20261011.png",
+      "whocares-manager-context60-record-20261011.png"
+    ]
+  },
+  "updates": [
+    {
+      "id": "wc-candidate-de12b45dab1392c460b5cfa7",
+      "title": "I am asked to restrict someone's movement but cannot establish the authorisation or alternatives",
+      "short_title": "Restrictions on movement",
+      "lenses": [
+        "worker"
+      ],
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "A requested restriction leaves the worker without a clear basis to act or an agreed alternative.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-e7ebb4c6c8f2e6a8072808b7",
+      "title": "A person has become less mobile across shifts but we have not agreed what to change",
+      "short_title": "Gradual loss of movement",
+      "lenses": [
+        "worker"
+      ],
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "Workers notice less movement across shifts, but have no shared response to the change.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-f6e2fa67c3515f515157f56d",
+      "title": "I raise a concern but cannot find out who will act on it",
+      "short_title": "Following up concerns",
+      "lenses": [
+        "worker"
+      ],
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "Raising a concern leaves the worker without a clear owner or next step for follow-up.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-725c006cb5f81c13853376f0",
+      "title": "Changing employer would disrupt my housing, residence arrangements or family commitments",
+      "short_title": "Constraints on changing employer",
+      "lenses": [
+        "worker"
+      ],
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "Changing jobs means coordinating work with housing, residence arrangements or responsibilities at home.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-96b1984a7b6966deefad4487",
+      "title": "I witness a colleague treating someone roughly and fear consequences if I report it",
+      "short_title": "Reporting a colleague",
+      "lenses": [
+        "worker"
+      ],
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "Concern for the person conflicts with the worker’s fear of what reporting a colleague could mean for them.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-f84de6b91b499fc62b7d8e44",
+      "title": "The medication list received after discharge conflicts with the list we use",
+      "short_title": "Conflicting medication lists",
+      "lenses": [
+        "worker"
+      ],
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "Two medication lists give conflicting information after discharge, leaving the current arrangement unclear.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-c2104b8577e753dbebcdc9f5",
+      "title": "I cannot reach the team responsible for symptom support when needs change quickly",
+      "short_title": "Timely symptom support",
+      "lenses": [
+        "worker"
+      ],
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "The person’s needs change quickly while the worker cannot reach the team responsible for symptom support.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-b0644b6c239f1952630abbd6",
+      "title": "Doing a task for someone is quicker than letting them practise but reduces their chance to move",
+      "short_title": "Time to practise movement",
+      "lenses": [
+        "worker"
+      ],
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "Time pressure favours completing the task while the person needs opportunities to practise moving.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-731195e67f5586fc502aeefa",
+      "title": "A new colleague is assigned residents before learning their routines and risks",
+      "short_title": "Learning residents before a shift",
+      "lenses": [
+        "worker"
+      ],
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "A new worker begins care before learning the routines and risks of the people assigned to them.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-c3923fa9268ac637fbfc2763",
+      "title": "We do not share a language and no suitable interpreter is available",
+      "short_title": "Language support unavailable",
+      "lenses": [
+        "worker",
+        "provider"
+      ],
+      "previous_summary": "A paid care worker or A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "The person and worker need to understand one another without a shared language or suitable interpreter.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-da1315f93ecdc0fff271453c",
+      "title": "I am expected to provide unfamiliar end-of-life care without accessible supervision",
+      "short_title": "Supervision for unfamiliar care",
+      "lenses": [
+        "worker"
+      ],
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "Unfamiliar care near the end of life must be provided without someone the worker can consult.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-9356392be1fb814b1133e8ee",
+      "title": "A disagreement about what good care means keeps returning without a shared decision",
+      "short_title": "Unresolved ethical disagreement",
+      "lenses": [
+        "worker"
+      ],
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "Different expectations of good care remain unresolved and return in everyday decisions.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-ef06089c1cff58f98da99b6f",
+      "title": "I need advice overnight and do not know which service can take responsibility",
+      "short_title": "Advice overnight",
+      "lenses": [
+        "worker"
+      ],
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "An overnight care question has no clear service the worker can approach for advice and responsibility.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-be76c2c4f72c9c0ceef491e3",
+      "title": "Mouth-care supplies are mixed up or unavailable when a person needs them",
+      "short_title": "Missing oral-care supplies",
+      "lenses": [
+        "worker"
+      ],
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "Mouth care is due, but the supplies cannot be found or matched reliably to the person.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-74dc6f1f661ea721be267c35",
+      "title": "I cannot locate who is authorised to make a decision when the person cannot decide at that moment",
+      "short_title": "Unclear decision authority",
+      "lenses": [
+        "worker"
+      ],
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "A decision is needed while the person cannot make it and the authorised decision-maker cannot be located.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-9541d06bd456accf3bcc86f5",
+      "title": "A person needs the toilet but cannot wait until I finish helping someone else",
+      "short_title": "Help to reach toilet",
+      "lenses": [
+        "worker"
+      ],
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "Two people need help at once, and one cannot wait for support to reach the toilet.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-cdeea607456ee6b4acd4547b",
+      "title": "A resident resists intimate care and I do not know how to proceed respectfully",
+      "short_title": "Resistance during intimate care",
+      "lenses": [
+        "worker"
+      ],
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "The worker needs a respectful way forward when the person does not accept proposed intimate care.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-dd285188424fd00e104c8a59",
+      "title": "My round changes after I leave and the revised plan reaches me too late",
+      "short_title": "Late changes to rounds",
+      "lenses": [
+        "worker"
+      ],
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "The worker is already travelling when a revised round arrives too late to follow as planned.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-9d2710ab540ff138f1b41a27",
+      "title": "Colleagues respond differently to the same expression of affection",
+      "short_title": "Inconsistent responses to affection",
+      "lenses": [
+        "worker"
+      ],
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "The person’s expression of affection receives different responses depending on who is working.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-763e681baca41dad9d53dfac",
+      "title": "My rota changes after I have arranged childcare or other commitments",
+      "short_title": "Rota changes and commitments",
+      "lenses": [
+        "worker"
+      ],
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "Time outside work has already been arranged when the team changes the worker’s rota.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-c918ce1b868958cec04311cf",
+      "title": "A person cannot speak and I do not know their reliable way to express a choice",
+      "short_title": "Understanding nonverbal choices",
+      "lenses": [
+        "worker"
+      ],
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "The worker needs to understand a choice from someone whose communication method is not known to them.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-fdb502a9df66ce4ffe13baa3",
+      "title": "I am interrupted while preparing medicines and lose my place",
+      "short_title": "Interruptions during preparation",
+      "lenses": [
+        "worker"
+      ],
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "An interruption breaks the worker’s place in medicine preparation, leaving the next step uncertain.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-7e7ae822f674e3370cefba06",
+      "title": "Different workers measure and describe a wound differently so its progress is unclear",
+      "short_title": "Unclear wound progress",
+      "lenses": [
+        "worker"
+      ],
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "Changes in how workers record a wound make it difficult to compare its progress across visits.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-968ec7ece694401ac79c41fb",
+      "title": "A person cannot describe mouth pain and their difficulty eating has no clear explanation",
+      "short_title": "Unrecognised mouth discomfort",
+      "lenses": [
+        "worker"
+      ],
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "Eating has become difficult, but the worker cannot obtain a clear account of possible mouth discomfort.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-ff178e3747cf1daed18c46d3",
+      "title": "Shared equipment is elsewhere when several people need it at once",
+      "short_title": "Locating shared equipment",
+      "lenses": [
+        "worker"
+      ],
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "Several care tasks depend on the same equipment, which is elsewhere when the worker needs it.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-7a4e53c90b46fbe67b3c1180",
+      "title": "I notice a change in eating but cannot get an assessment or follow-up agreed",
+      "short_title": "Following up changed eating",
+      "lenses": [
+        "worker"
+      ],
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "A change in eating needs review, but no shared assessment or follow-up has been agreed.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-d64ce260851e056128c96bfe",
+      "title": "A person cannot tolerate the position needed for a dressing change",
+      "short_title": "Painful dressing position",
+      "lenses": [
+        "worker"
+      ],
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "The planned dressing change requires a position the person cannot tolerate.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-d9dbdbaaad56c9bb5ef340bd",
+      "title": "Routine night checks wake a person who then struggles to settle again",
+      "short_title": "Disruptive night checks",
+      "lenses": [
+        "worker"
+      ],
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "A routine night check interrupts sleep and the person finds it difficult to settle afterwards.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-cc9258bd03d0fcbb6e2fae5b",
+      "title": "The colleague who knows our equipment is absent when I first need to use it",
+      "short_title": "Learning equipment in time",
+      "lenses": [
+        "worker"
+      ],
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "The worker first needs unfamiliar equipment when the colleague who knows it is unavailable.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-90f6b6fd3689ea49ff964c5d",
+      "title": "I do not know which mouth-care routine is safe when a person struggles to swallow",
+      "short_title": "Mouth care and swallowing",
+      "lenses": [
+        "worker"
+      ],
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "The person has difficulty swallowing, leaving the worker uncertain about the appropriate mouth-care routine.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-f9b51bb11fe5a0ef88244e36",
+      "title": "Food arrives that does not match a resident's swallowing or dietary needs",
+      "short_title": "Meal suitability",
+      "lenses": [
+        "provider"
+      ],
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "The meal delivered does not fit the person’s swallowing or dietary requirements.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-cb75fbf140ff99c07d91fe6c",
+      "title": "We cannot develop future leaders without removing skilled people from care delivery",
+      "short_title": "Developing future leaders",
+      "lenses": [
+        "provider"
+      ],
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "Developing future leaders competes with keeping skilled workers available for current care.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-bd031a71fd9e37744f2343ce",
+      "title": "Contractor changes are not communicated to the people coordinating daily care",
+      "short_title": "Unannounced contractor changes",
+      "lenses": [
+        "provider"
+      ],
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "The care team plans around an external service without receiving its changed arrangements.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-7bc5d7b5fc266e011f014deb",
+      "title": "I cannot accommodate agreed time off without repeatedly asking others to cover",
+      "short_title": "Respecting time off",
+      "lenses": [
+        "provider"
+      ],
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "Honouring agreed leave depends on repeatedly asking other workers to cover the resulting gaps.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-c5e5cd19e0b290bf625f9c3a",
+      "title": "A quality report is too general to show which residents need attention",
+      "short_title": "Actionable quality information",
+      "lenses": [
+        "provider"
+      ],
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "A broad quality report gives the manager little help identifying which people need closer attention.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-8d8422af62f277850cbf2c4c",
+      "title": "An agency sends a replacement with skills different from those we requested",
+      "short_title": "Agency skill mismatch",
+      "lenses": [
+        "provider"
+      ],
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "The replacement supplied by an agency does not match the skills requested for the shift.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-bc5c634fa13b863df8c6369b",
+      "title": "A resident repeatedly loses weight but follow-up is fragmented",
+      "short_title": "Nutrition follow-up",
+      "lenses": [
+        "provider"
+      ],
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "Repeated weight loss generates separate follow-up actions without a coordinated response.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-c6dc52a421ac1551637c2c14",
+      "title": "A senior worker becomes the informal trainer but has no time allocated for it",
+      "short_title": "Time for mentoring",
+      "lenses": [
+        "provider"
+      ],
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "A senior worker is relied on to train colleagues alongside care work without time allocated for teaching.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-9f681ed7cf788a31ec0c7366",
+      "title": "Temporary staff do not know the local medicine process",
+      "short_title": "Unfamiliar medicine process",
+      "lenses": [
+        "provider"
+      ],
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "Temporary workers begin medicine-related tasks without knowing the service’s local process.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-ec6cc1d7d515211a7b61e525",
+      "title": "A new manager inherits unresolved problems without a usable handover",
+      "short_title": "Management handover",
+      "lenses": [
+        "provider"
+      ],
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "The incoming manager must address unresolved issues without a handover that explains their history.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-e438613e4b50dc02e005cbc7",
+      "title": "Equipment breaks and repair arrangements leave us without a workable substitute",
+      "short_title": "Repair cover",
+      "lenses": [
+        "provider"
+      ],
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "A care task depends on equipment under repair, with no workable substitute arranged.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-738213fc015804d1b684f339",
+      "title": "Families report a problem that our internal checks did not detect",
+      "short_title": "Hidden problems",
+      "lenses": [
+        "provider"
+      ],
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "Relatives raise a problem that the service’s own checks have missed.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-cc035c5f5b62aa304ac2e542",
+      "title": "Responsibility is disputed when an external worker makes a care error",
+      "short_title": "External worker accountability",
+      "lenses": [
+        "provider"
+      ],
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "An error involving an external worker leaves the provider and contractor disputing who must respond.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-714f51189cf1ea6873f17c96",
+      "title": "We cannot tell whether growth is improving access or merely stretching existing capacity",
+      "short_title": "Growth and actual access",
+      "lenses": [
+        "provider"
+      ],
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "The provider cannot establish whether service growth improves access or stretches existing capacity.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-eff508e218991c7a1ad8b36e",
+      "title": "Leftover medicines accumulate because return or disposal responsibilities are unclear",
+      "short_title": "Unused medicines",
+      "lenses": [
+        "provider"
+      ],
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "Unused medicines remain on site while ownership of their return or disposal is unclear.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-e550886d4ee3d4626247027e",
+      "title": "Kitchen and care teams do not share updates about individual preferences and restrictions",
+      "short_title": "Kitchen-care coordination",
+      "lenses": [
+        "provider"
+      ],
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "The kitchen and care team work from different information about what the person wants or can eat.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-cc46527e988e6f4fcd2b4554",
+      "title": "A departing worker's access remains active after they leave",
+      "short_title": "Removing access",
+      "lenses": [
+        "provider"
+      ],
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "A worker has left the organisation, but their access to care information has not been closed.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-f5fe9395609e2c157ed9f052",
+      "title": "A prescription change does not reach all the people handling medicines",
+      "short_title": "Prescription updates",
+      "lenses": [
+        "provider"
+      ],
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "Different people handling medicines are not all working from the updated prescription information.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-7ebbafb787d3f01d275fdef4",
+      "title": "A purchased service duplicates another contract that a different team manages",
+      "short_title": "Overlapping service contracts",
+      "lenses": [
+        "provider"
+      ],
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "Separate teams manage overlapping contracts without seeing that they have purchased the same support.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-8ba488160e4a852023a9fdfb",
+      "title": "A service is essential to residents but loses money at our current scale",
+      "short_title": "Unsustainable service",
+      "lenses": [
+        "provider"
+      ],
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "Continuing a valued service requires the provider to address costs that its current scale does not cover.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-fd968f02499a9c80822b50f9",
+      "title": "A bathroom cannot accommodate the resident and the help they require",
+      "short_title": "Unsuitable bathroom space",
+      "lenses": [
+        "provider"
+      ],
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "The bathroom space does not fit the person together with the assistance they require.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-c621f2bdd59f2200231e4ef4",
+      "title": "An unexpected leadership absence leaves urgent decisions without an authorised owner",
+      "short_title": "Urgent decisions during absence",
+      "lenses": [
+        "provider"
+      ],
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "An unexpected leadership gap leaves urgent decisions without someone authorised to make them.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-6e1462b9f995b584b868a4db",
+      "title": "Responsibility for follow-up is unclear after a transfer",
+      "short_title": "Follow-up responsibility",
+      "lenses": [
+        "provider"
+      ],
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "The person moves between services without a clear owner for the next follow-up action.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-8e242eb0cdc9aaa8ff1ee90d",
+      "title": "Water or heating fails and we do not know how long care can continue safely",
+      "short_title": "Loss of essential utilities",
+      "lenses": [
+        "provider"
+      ],
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "An essential building service fails, leaving the manager unsure how long the current care arrangement can continue.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-881bd1b523d1676fdc0a5cfd",
+      "title": "Workers receive inconsistent instructions about precautions across services",
+      "short_title": "Consistent precautions",
+      "lenses": [
+        "provider"
+      ],
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "Workers receive different precaution instructions as care passes between services.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-72de693c7872de866e63064e",
+      "title": "A client's needs change but their scheduled visit length stays the same",
+      "short_title": "Visit length after changes",
+      "lenses": [
+        "worker",
+        "provider"
+      ],
+      "previous_summary": "A paid care worker or A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "The person’s support requirements change while the time assigned to the home visit remains fixed.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-7dd479546f2f4905fd0ad383",
+      "title": "A referral disappears between organisations and nobody knows its status",
+      "short_title": "Referral status",
+      "lenses": [
+        "provider"
+      ],
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "A referral crosses organisational boundaries without a status the care team can establish.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-f24ef23d56b3a0625221633a",
+      "title": "Repeated exposure to deaths and distress is treated as something staff should simply tolerate",
+      "short_title": "Cumulative distress",
+      "lenses": [
+        "provider"
+      ],
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "Workers encounter repeated deaths and distress without an organisational response to their support needs.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-b2b898ed3ddc66f96a9e6c7b",
+      "title": "An administration discrepancy cannot be reconciled across records",
+      "short_title": "Reconciling medicines",
+      "lenses": [
+        "provider"
+      ],
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "Records of medicine administration disagree and the team cannot establish a consistent account.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-8f5e78af2d791ab47b1f3353",
+      "title": "A corrective action is marked complete but has not changed daily practice",
+      "short_title": "Paper compliance",
+      "lenses": [
+        "provider"
+      ],
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "A reported correction has been closed on paper while the same issue remains in everyday care.",
+      "epistemic_status": "hypothesis"
+    }
+  ],
+  "delivery": {
+    "atlas_branch": "codex/atlas-experience-integration",
+    "research_branch": "codex/branch-research-expansion",
+    "public_ui_deployment": false,
+    "scheduler": "paused",
+    "image_generation": "paused",
+    "goal_complete": false
+  },
+  "remaining_gaps": [
+    "289 generic situation-context lines remain across the atlas.",
+    "These hypotheses still need direct research and scoped quantification.",
+    "The two browser examples each have only3 situations refined by this batch, not a complete empirical review of their branches.",
+    "Solutions, authentic media and illustrations still have gaps; no new coverage added by this editorial pass.",
+    "Autonomous indexing and refresh reliability remain unproven."
+  ]
+}
