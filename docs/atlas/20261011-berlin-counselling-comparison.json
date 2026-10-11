@@ -1,0 +1,188 @@
+{
+  "date": "2026-10-11",
+  "status": "verified_canonical_data_delivery",
+  "job_id": "0e620edc333d8ac0e16626cea9f04e04993d1864f7e6d6573059955567a697b2",
+  "original_dispatch_budget": {
+    "max_usd": 0.18,
+    "max_steps": 20,
+    "max_pages": 1,
+    "max_searches": 0,
+    "max_renders": 0
+  },
+  "correction_budget": {
+    "max_usd": 0.15,
+    "max_steps": 16,
+    "max_pages": 0,
+    "max_searches": 0,
+    "max_renders": 0
+  },
+  "metrics_by_dispatch": [
+    {
+      "duration_seconds": 226.073,
+      "model_calls": 10,
+      "model_calls_by_role": {
+        "researcher": 3,
+        "reviewer": 7
+      },
+      "counted_usd": 0.046611,
+      "provider_reported_usd": 0.024771094,
+      "http_requests": 0,
+      "page_calls": 0,
+      "search_calls": 0
+    },
+    {
+      "duration_seconds": 183.758,
+      "model_calls": 5,
+      "model_calls_by_role": {
+        "researcher": 0,
+        "reviewer": 5
+      },
+      "counted_usd": 0.026845199999999996,
+      "provider_reported_usd": 0.016473276,
+      "http_requests": 0,
+      "page_calls": 0,
+      "search_calls": 0
+    }
+  ],
+  "capture_http_requests": 2,
+  "source_version": {
+    "url": "https://www.pflegestuetzpunkteberlin.de/ueber-uns/ueber-uns-meistgestellte-fragen/",
+    "hash": "e60f7a06cd5fcc19c4a40d0d1513be35a727d992a607ab20e469a7a6db83561f",
+    "retrieved_at": "2026-10-11T05:47:22.433480+00:00",
+    "characters": 9064
+  },
+  "reviewed_current_findings": [
+    "finding-fabfb1596d31920063e21e94",
+    "finding-4dfd8b6ae6b2dcf6caa4e9fa"
+  ],
+  "held_draft_preserved": [
+    "finding-31c94b45dfeb93383eb08101"
+  ],
+  "manual_clause_check": "Nine unique exact same-version passages matched URL/hash/quoted text. Published scope retains statutory-insurance and private-insurance referral, cost, scheduled access, local home visits for people unable to attend, out-of-city advice without home visits, video-booking exceptions, and counselling distinct from practical care. No independently established legal entitlement, effectiveness, capacity or placement claim.",
+  "comparison": {
+    "verified": true,
+    "three_situations_now_have_two_options": true,
+    "new_offering_identities": 0,
+    "comparisons": [
+      {
+        "situation": "wc-candidate-a9e309907ef0626ea11efb1e",
+        "before": [
+          "solution-compass-pflegeberatung"
+        ],
+        "after": [
+          "solution-compass-pflegeberatung",
+          "wc-object-6e0bbbaef2c130696555fba3"
+        ],
+        "fit": "Berlin care-system advice; statutory-insurance scope, appointment capacity unverified."
+      },
+      {
+        "situation": "wc-candidate-9cbf95158fbf645528b9d861",
+        "before": [
+          "solution-compass-pflegeberatung"
+        ],
+        "after": [
+          "solution-compass-pflegeberatung",
+          "wc-object-6e0bbbaef2c130696555fba3"
+        ],
+        "fit": "Berlin care-options advice; no prediction of needs or guarantee of placement."
+      },
+      {
+        "situation": "wc-candidate-e9b355be17ec05b80c2e6880",
+        "before": [
+          "solution-compass-pflegeberatung"
+        ],
+        "after": [
+          "solution-compass-pflegeberatung",
+          "wc-object-6e0bbbaef2c130696555fba3"
+        ],
+        "fit": "Berlin advice on care arrangements; actual reassessment or support unverified."
+      }
+    ]
+  },
+  "test": {
+    "target": "test",
+    "verified": true,
+    "batch": "berlin-counselling-access-partial-fits-20261011",
+    "manifest_sha256": "a7e4f92786405518c9dbc0395947662c4c48b62cd98c471b06368133c329e094",
+    "backup_file": "backup-test-1791698236133.json",
+    "object_updates": 1,
+    "new_fit_links": 3,
+    "new_exact_evidence_links": 36,
+    "new_objects": 0,
+    "mapped": 1319,
+    "all_other_rows_unchanged": true,
+    "statuses_unchanged": true,
+    "new_sources": 1,
+    "paths_verified": [
+      [
+        "wc-candidate-f85711be98f5f495e1a4bc5d",
+        "wc-candidate-a9e309907ef0626ea11efb1e",
+        "wc-object-6e0bbbaef2c130696555fba3"
+      ],
+      [
+        "wc-candidate-97dac29c7127897418c2817f",
+        "wc-candidate-9cbf95158fbf645528b9d861",
+        "wc-object-6e0bbbaef2c130696555fba3"
+      ],
+      [
+        "wc-candidate-97dac29c7127897418c2817f",
+        "wc-candidate-e9b355be17ec05b80c2e6880",
+        "wc-object-6e0bbbaef2c130696555fba3"
+      ]
+    ],
+    "public_deployment": false
+  },
+  "live": {
+    "target": "live",
+    "verified": true,
+    "batch": "berlin-counselling-access-partial-fits-20261011",
+    "manifest_sha256": "a7e4f92786405518c9dbc0395947662c4c48b62cd98c471b06368133c329e094",
+    "backup_file": "backup-live-1791698274366.json",
+    "object_updates": 1,
+    "new_fit_links": 3,
+    "new_exact_evidence_links": 36,
+    "new_objects": 0,
+    "mapped": 1319,
+    "all_other_rows_unchanged": true,
+    "statuses_unchanged": true,
+    "new_sources": 1,
+    "paths_verified": [
+      [
+        "wc-candidate-f85711be98f5f495e1a4bc5d",
+        "wc-candidate-a9e309907ef0626ea11efb1e",
+        "wc-object-6e0bbbaef2c130696555fba3"
+      ],
+      [
+        "wc-candidate-97dac29c7127897418c2817f",
+        "wc-candidate-9cbf95158fbf645528b9d861",
+        "wc-object-6e0bbbaef2c130696555fba3"
+      ],
+      [
+        "wc-candidate-97dac29c7127897418c2817f",
+        "wc-candidate-e9b355be17ec05b80c2e6880",
+        "wc-object-6e0bbbaef2c130696555fba3"
+      ]
+    ],
+    "public_deployment": false
+  },
+  "browser": {
+    "url": "http://127.0.0.1:8793/#/all/g/wc-candidate-97dac29c7127897418c2817f%2Fwc-candidate-9cbf95158fbf645528b9d861",
+    "two_authentic_service_images_visible": true,
+    "detail_access_eligibility_sources_visible": true,
+    "stable_content_zoom": [
+      100,
+      120,
+      144
+    ],
+    "screenshot": "/private/tmp/whocares-berlin-counselling-comparison-20261011.png"
+  },
+  "limits": [
+    "Existing offering identity and all human hypotheses retained; three partial fits, no new need or product.",
+    "Statutory-insurance scope, private-insurance referral, district-specific home visits and video-booking exceptions retained.",
+    "Advice is not practical care, predicted progression, placement or benefit award. Capacity and independent effectiveness unverified.",
+    "Authentic reviewed service image reused internally; image generation paused and no public UI deployment.",
+    "No actual appointment, call, eligibility check, care visit or venture-builder user test.",
+    "Mapped unique count remains 1319; this adds alternatives to three existing situations rather than identity padding.",
+    "No public UI deployment; existing service imagery is internal and public reuse permission remains unverified."
+  ]
+}
