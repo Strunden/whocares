@@ -1,0 +1,445 @@
+{
+  "date": "2026-10-11",
+  "status": "verified_canonical_editorial_data_delivery",
+  "principles_sha256": "1698c1ce402af9694166b15938d24fb9fb05c55e85a330b4e589b7dca5b2a8c2",
+  "method": "Manual editorial clarification of existing hypothesis titles; no new observed event, empirical cause, prevalence, outcome or clinical/legal guidance. Initial drafts reviewed to remove motive and building-layout assumptions.",
+  "context_progress": {
+    "verified": true,
+    "generic_before": 434,
+    "generic_after": 392,
+    "updated": 42,
+    "per_icp": {
+      "adult": 10,
+      "family": 10,
+      "worker": 12,
+      "provider": 10
+    },
+    "complete_context_branch": {
+      "need": "wc-candidate-46a050e54c80024d4c7b9f02",
+      "all_five_specific": true,
+      "situations": [
+        "wc-candidate-3d71d40e330d96459673bc5a",
+        "wc-candidate-3df6ed0dc45b77e1ab3665db",
+        "wc-candidate-396f12736fc4caa5f1ebaf3a",
+        "wc-candidate-8c306873a5aac9dc51328548",
+        "wc-candidate-593419984e042d55d254499f"
+      ]
+    },
+    "hypotheses_retained": true,
+    "new_objects": 0
+  },
+  "test_main": {
+    "target": "test",
+    "verified": true,
+    "batch": "cross-icp-situation-context-clarity-v2-20261011",
+    "changes_sha256": "41fd0322d63a115babc00c79efcf55b6c0b503223b2a7be6b5f209a4dbfba3f1",
+    "backup_file": "backup-test-1791699166391.json",
+    "object_updates": 40,
+    "all_other_rows_unchanged": true,
+    "status_preserved": true,
+    "fields": [
+      "scope.navigation.summary",
+      "provenance.context_copy_review"
+    ],
+    "public_ui_deployment": false
+  },
+  "live_main": {
+    "target": "live",
+    "verified": true,
+    "batch": "cross-icp-situation-context-clarity-v2-20261011",
+    "changes_sha256": "41fd0322d63a115babc00c79efcf55b6c0b503223b2a7be6b5f209a4dbfba3f1",
+    "backup_file": "backup-live-1791699203779.json",
+    "object_updates": 40,
+    "all_other_rows_unchanged": true,
+    "status_preserved": true,
+    "fields": [
+      "scope.navigation.summary",
+      "provenance.context_copy_review"
+    ],
+    "public_ui_deployment": false
+  },
+  "test_completion": {
+    "target": "test",
+    "verified": true,
+    "batch": "safe-home-situation-context-completion-20261011",
+    "changes_sha256": "15ff230e84575695cace6e389b99ef5191a52bc64c9be92dc4848c59e89c1928",
+    "backup_file": "backup-test-1791699334710.json",
+    "object_updates": 2,
+    "all_other_rows_unchanged": true,
+    "status_preserved": true,
+    "fields": [
+      "scope.navigation.summary",
+      "provenance.context_copy_review"
+    ],
+    "public_ui_deployment": false
+  },
+  "live_completion": {
+    "target": "live",
+    "verified": true,
+    "batch": "safe-home-situation-context-completion-20261011",
+    "changes_sha256": "15ff230e84575695cace6e389b99ef5191a52bc64c9be92dc4848c59e89c1928",
+    "backup_file": "backup-live-1791699383797.json",
+    "object_updates": 2,
+    "all_other_rows_unchanged": true,
+    "status_preserved": true,
+    "fields": [
+      "scope.navigation.summary",
+      "provenance.context_copy_review"
+    ],
+    "public_ui_deployment": false
+  },
+  "browser": {
+    "url": "http://127.0.0.1:8793/#/all/g/wc-candidate-46a050e54c80024d4c7b9f02",
+    "all_five_specific_contexts_visible_in_accessibility_tree": true,
+    "fit_all_five_in_view": true,
+    "zoom": 56,
+    "screenshot": "/private/tmp/whocares-context-clarity-v2-20261011.png",
+    "neutral_fallback_media_gap_remains": true
+  },
+  "changed_entries": [
+    {
+      "id": "wc-candidate-3a6dc2333163dfc31cd9c31c",
+      "title": "I spend long stretches at home without a conversation",
+      "context": "Contact needs to fit a day spent largely at home, with few chances for conversation.",
+      "lenses": [
+        "adult"
+      ]
+    },
+    {
+      "id": "wc-candidate-3aa7404ffa004a32f401345d",
+      "title": "The drinks I like are not within reach",
+      "context": "Drinking depends on having a preferred drink close enough to get without help.",
+      "lenses": [
+        "adult"
+      ]
+    },
+    {
+      "id": "wc-candidate-3b5e544953e81f75205dd101",
+      "title": "Someone handling my money uses it in ways I did not agree to",
+      "context": "Money is being managed in ways that do not match the person’s consent.",
+      "lenses": [
+        "adult"
+      ]
+    },
+    {
+      "id": "wc-candidate-41826e130bddfa1ef1815983",
+      "title": "I cannot tell which messages or websites are scams",
+      "context": "Unclear warning signs make it difficult to judge whether a digital message is safe to act on.",
+      "lenses": [
+        "adult"
+      ]
+    },
+    {
+      "id": "wc-candidate-423309f40da1727a07114079",
+      "title": "I have stopped wanting to do things I used to enjoy",
+      "context": "Activities that previously mattered no longer feel worth starting.",
+      "lenses": [
+        "adult"
+      ]
+    },
+    {
+      "id": "wc-candidate-4395b25e6681892b30df220d",
+      "title": "I struggle to handle practical affairs while grieving",
+      "context": "Practical responsibilities still need attention during the disruption of grief.",
+      "lenses": [
+        "adult"
+      ]
+    },
+    {
+      "id": "wc-candidate-44ad07a373db0e4dcda3e959",
+      "title": "The person who helped with daily tasks is no longer here",
+      "context": "Daily tasks still need doing after a regular source of help is lost.",
+      "lenses": [
+        "adult"
+      ]
+    },
+    {
+      "id": "wc-candidate-45fb07fcdd1abecbb0995b57",
+      "title": "I cannot bring the belongings that make a room feel like mine",
+      "context": "A new room needs to feel familiar even when valued belongings cannot be brought along.",
+      "lenses": [
+        "adult"
+      ]
+    },
+    {
+      "id": "wc-candidate-48012c775cfd2204af6a3d98",
+      "title": "I find a new routine difficult even when someone explains it",
+      "context": "Understanding an explanation does not make a changed daily routine easy to follow.",
+      "lenses": [
+        "adult"
+      ]
+    },
+    {
+      "id": "wc-candidate-4a263ec42095c860405eec45",
+      "title": "If I fall, I may not be able to reach the phone",
+      "context": "Help needs to be reachable even if a fall leaves the person unable to get to the phone.",
+      "lenses": [
+        "adult"
+      ]
+    },
+    {
+      "id": "wc-candidate-396f12736fc4caa5f1ebaf3a",
+      "title": "Extreme indoor temperatures make a home visit unsafe for the person or me",
+      "context": "Temperature conditions in the home create a safety concern during a care visit.",
+      "lenses": [
+        "worker"
+      ]
+    },
+    {
+      "id": "wc-candidate-39f0da74f5bd067bdf43adc3",
+      "title": "The person wants to take a risk that my manager expects me to prevent",
+      "context": "The worker must reconcile the person’s choices with the manager’s safety expectations.",
+      "lenses": [
+        "worker"
+      ]
+    },
+    {
+      "id": "wc-candidate-3c7c9470477caa7592fc4ab6",
+      "title": "A person avoids drinking because they fear wetting themselves",
+      "context": "Fear of an accident affects whether the person accepts drinks offered during care.",
+      "lenses": [
+        "worker"
+      ]
+    },
+    {
+      "id": "wc-candidate-3ce7a30ab19ebde75b890e44",
+      "title": "A monitoring alert reaches me without enough context to decide what to do",
+      "context": "An alert gives a signal without the details the worker needs to choose a response.",
+      "lenses": [
+        "worker"
+      ]
+    },
+    {
+      "id": "wc-candidate-3d71d40e330d96459673bc5a",
+      "title": "Smoke exposure in a client's home makes it difficult for me to provide care",
+      "context": "Providing care requires staying in a home where smoke affects the caregiver.",
+      "lenses": [
+        "worker"
+      ]
+    },
+    {
+      "id": "wc-candidate-3df6ed0dc45b77e1ab3665db",
+      "title": "I am expected to work in a room with infestation and no agreed precautions",
+      "context": "The worker is expected to enter an infested room before protective arrangements are clear.",
+      "lenses": [
+        "worker"
+      ]
+    },
+    {
+      "id": "wc-candidate-3e5acf6b744c38d76173a7f1",
+      "title": "I cannot find a less physically demanding role without leaving care altogether",
+      "context": "Physical demands make the worker seek a different role while wanting to remain in care.",
+      "lenses": [
+        "worker"
+      ]
+    },
+    {
+      "id": "wc-candidate-423c8c3b8d1b1b88f0a5924a",
+      "title": "The working height makes me bend for long periods during care",
+      "context": "Care tasks require prolonged bending at the available working height.",
+      "lenses": [
+        "worker"
+      ]
+    },
+    {
+      "id": "wc-candidate-45d02c352c2fc003a3141ce7",
+      "title": "I am expected to teach a colleague while covering my usual workload",
+      "context": "Teaching a colleague competes with the care tasks already assigned to the worker.",
+      "lenses": [
+        "worker"
+      ]
+    },
+    {
+      "id": "wc-candidate-4dea968e65fc7f9b1585dc7f",
+      "title": "I observe a worrying change but do not know the agreed escalation threshold",
+      "context": "A change causes concern, but the worker lacks a clear threshold for seeking further help.",
+      "lenses": [
+        "worker"
+      ]
+    },
+    {
+      "id": "wc-candidate-38ecd934e351735ae1a437bb",
+      "title": "Potential volunteers leave because induction and checks take too long to complete",
+      "context": "The service loses potential volunteers before induction and checks are complete.",
+      "lenses": [
+        "provider"
+      ]
+    },
+    {
+      "id": "wc-candidate-3976f79efedd5f118e12907a",
+      "title": "Residents cannot find their way through the building without becoming distressed",
+      "context": "Residents need help orienting themselves while moving through the building.",
+      "lenses": [
+        "provider"
+      ]
+    },
+    {
+      "id": "wc-candidate-39cd4c7d1528a31598e99a35",
+      "title": "A suspected information breach has no clear response owner",
+      "context": "A possible information breach needs action, but responsibility for the response is unclear.",
+      "lenses": [
+        "provider"
+      ]
+    },
+    {
+      "id": "wc-candidate-3fa6e629e34b737f39e9995e",
+      "title": "Rising operating costs outpace the income from agreed services",
+      "context": "The provider must cover rising costs while service income remains tied to existing agreements.",
+      "lenses": [
+        "provider"
+      ]
+    },
+    {
+      "id": "wc-candidate-3fa80ca95b9bb462c85366b6",
+      "title": "Residents or relatives cannot get a clear explanation of who sees their information",
+      "context": "People want to understand access to their information, but the provider cannot explain it clearly.",
+      "lenses": [
+        "provider"
+      ]
+    },
+    {
+      "id": "wc-candidate-44487d0bac5eb9aa276e0705",
+      "title": "We cannot compare proposed systems against the work staff actually need to do",
+      "context": "System selection is difficult without comparing proposed features with actual staff tasks.",
+      "lenses": [
+        "provider"
+      ]
+    },
+    {
+      "id": "wc-candidate-457174577f54967d6e1877d4",
+      "title": "I cannot release staff for training without leaving the floor short",
+      "context": "Training attendance competes with the staffing needed to keep everyday care running.",
+      "lenses": [
+        "provider"
+      ]
+    },
+    {
+      "id": "wc-candidate-4909690e8e4b6ef2adb34828",
+      "title": "Energy-saving changes make rooms uncomfortable for residents",
+      "context": "Reducing energy use creates a conflict with keeping residents’ rooms comfortable.",
+      "lenses": [
+        "provider"
+      ]
+    },
+    {
+      "id": "wc-candidate-4a53b7e62e6c9ca109299202",
+      "title": "We receive referrals without enough information to judge whether we can meet the person's needs",
+      "context": "Accepting a referral requires a clearer picture of the support the person needs.",
+      "lenses": [
+        "provider"
+      ]
+    },
+    {
+      "id": "wc-candidate-51b2ce432b789c4bed08eea2",
+      "title": "After a resident dies, practical tasks leave no time to support relatives or colleagues",
+      "context": "Practical work after a death competes with attention needed by relatives and colleagues.",
+      "lenses": [
+        "provider"
+      ]
+    },
+    {
+      "id": "wc-candidate-395943f0809cb8cf497c02ca",
+      "title": "I cannot arrange visits from the religious or community supporters my relative trusts",
+      "context": "Trusted spiritual or community contact is wanted, but arranging access is difficult.",
+      "lenses": [
+        "family"
+      ]
+    },
+    {
+      "id": "wc-candidate-3a820cd89aa50fe25b518f63",
+      "title": "The food recommended for my relative is food they will not accept",
+      "context": "Recommended meals conflict with the foods the relative is willing to eat.",
+      "lenses": [
+        "family"
+      ]
+    },
+    {
+      "id": "wc-candidate-3dbd96d3841719be3a823a3e",
+      "title": "We have no agreed plan for what happens if I can no longer be the main carer",
+      "context": "Caring arrangements depend on one main person without an agreed replacement plan.",
+      "lenses": [
+        "family"
+      ]
+    },
+    {
+      "id": "wc-candidate-4095a1b89a5c57b55c28a1fe",
+      "title": "I cannot work out the ongoing total when several care services charge separately",
+      "context": "Separate service bills make the combined recurring cost difficult to estimate.",
+      "lenses": [
+        "family"
+      ]
+    },
+    {
+      "id": "wc-candidate-44c792efe4ab4d30cafc51b9",
+      "title": "I cannot reach timely professional advice during a difficult night",
+      "context": "A difficult night leaves the family without advice in time to decide what to do.",
+      "lenses": [
+        "family"
+      ]
+    },
+    {
+      "id": "wc-candidate-450e0b69a12194cfd7a4e5d1",
+      "title": "A change happens at night and I cannot obtain advice that fits the symptoms",
+      "context": "The family needs guidance about the particular symptoms when a change happens overnight.",
+      "lenses": [
+        "family"
+      ]
+    },
+    {
+      "id": "wc-candidate-454270c8738228b846f26699",
+      "title": "I cannot tell whether new pain needs emergency care or a routine appointment",
+      "context": "The family is unsure which route to use when pain appears or changes.",
+      "lenses": [
+        "family"
+      ]
+    },
+    {
+      "id": "wc-candidate-49da69bfcfa8b7d67ed84482",
+      "title": "Every conversation with my parent becomes about what they cannot do",
+      "context": "Attention stays on lost abilities, leaving little room to discuss what still matters to the parent.",
+      "lenses": [
+        "family"
+      ]
+    },
+    {
+      "id": "wc-candidate-49eddf0d43b32991dc115adc",
+      "title": "A bank will not accept the authority I thought allowed me to act",
+      "context": "Helping with banking is blocked when the bank does not recognise the family member’s authority.",
+      "lenses": [
+        "family"
+      ]
+    },
+    {
+      "id": "wc-candidate-4bc8bdefbc88c6c2f4c1364c",
+      "title": "Staff interpret my relative's cultural preferences as refusal or difficulty",
+      "context": "The relative’s cultural preferences are not being understood as intended during care.",
+      "lenses": [
+        "family"
+      ]
+    },
+    {
+      "id": "wc-candidate-8c306873a5aac9dc51328548",
+      "title": "Blocked exits or clutter leave no safe way to move during a home visit",
+      "context": "Clutter or blocked routes prevent the worker from moving safely through the home.",
+      "lenses": [
+        "worker"
+      ]
+    },
+    {
+      "id": "wc-candidate-593419984e042d55d254499f",
+      "title": "An aggressive pet prevents me from reaching the person safely",
+      "context": "Pet behaviour makes approaching the person unsafe during the visit.",
+      "lenses": [
+        "worker"
+      ]
+    }
+  ],
+  "limits": [
+    "Hypotheses stay hypotheses; plain editorial context is not validation or measured demand.",
+    "42 context updates: older adult10, family10, worker12, provider10. 392 generic situation contexts still remain.",
+    "Only navigation summaries and review provenance changed. Titles, status, research planning, evidence, hierarchy and media preserved.",
+    "Home-visit safety branch still needs solution research and empirical evidence; its five contexts are complete, not the research branch as a whole.",
+    "Image generation remains paused; neutral fallback is temporary and does not complete the media requirement.",
+    "No public UI deployment. Full backups and mutation manifests retained privately; 1319 mapped identities unchanged."
+  ]
+}
