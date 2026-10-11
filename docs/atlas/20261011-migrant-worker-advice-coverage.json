@@ -1,0 +1,188 @@
+{
+  "date": "2026-10-11",
+  "status": "verified_canonical_data_delivery",
+  "batch": "migrant-worker-advice-partial-fits-20261011",
+  "principles_sha256": "1698c1ce402af9694166b15938d24fb9fb05c55e85a330b4e589b7dca5b2a8c2",
+  "method": "Reuse two existing canonical offerings, nine unique previously independently reviewed exact passages and their authentic reviewed logos. Manually check situation fit and current official sources; no new paid indexer dispatch for unchanged offering facts.",
+  "previous_indexer_jobs": [
+    "395f4ed6e6adb0cffc4a07699f9b4047e3eee2127cd907858ccce341389b1e71",
+    "aaa932e8d83fe8b054c06ebf29eb719c4c4f5eacd480fc5985659d6b3cc18b75"
+  ],
+  "manual_source_verification": "Official Faire Integration home/contact and BMAS programme pages still describe worker employment advice, third-country-national scope, pay/hours topics and waiting-time caveat. Faire Mobilit\u00e4t request page still describes anonymous free labour advice, Central/Eastern European population, phone/email and prior appointment arrangement. Preserve original captures, hashes, dates and review status; current manual lookup is not a new captured version or independent outcome evidence.",
+  "coverage": {
+    "verified": true,
+    "covered_before": 114,
+    "covered_after": 116,
+    "new_covered_situations": [
+      "wc-candidate-5212776c5794a9b499721f37",
+      "wc-candidate-88f897dee8002c7255154d34"
+    ],
+    "new_offering_identities": 0,
+    "reused_offerings": 2,
+    "new_fit_links": 4
+  },
+  "fits": [
+    {
+      "solution": "solution-faire-integration-employment-advice",
+      "situation": "wc-candidate-88f897dee8002c7255154d34",
+      "fit": "Pay and hours advice for non-EU workers; individual pay entitlement unverified.",
+      "media_id": "media-journey-faire-integration-logo"
+    },
+    {
+      "solution": "wc-object-7bc9813788996c04969f35a5",
+      "situation": "wc-candidate-88f897dee8002c7255154d34",
+      "fit": "Labour advice for Central/Eastern European workers; pay calculation unverified.",
+      "media_id": "media-faire-mobilitaet-logo-20261010"
+    },
+    {
+      "solution": "solution-faire-integration-employment-advice",
+      "situation": "wc-candidate-5212776c5794a9b499721f37",
+      "fit": "Worker advice for eligible non-EU staff; employer complaint handling unverified.",
+      "media_id": "media-journey-faire-integration-logo"
+    },
+    {
+      "solution": "wc-object-7bc9813788996c04969f35a5",
+      "situation": "wc-candidate-5212776c5794a9b499721f37",
+      "fit": "Worker advice for Central/Eastern European staff; eligibility must be checked.",
+      "media_id": "media-faire-mobilitaet-logo-20261010"
+    }
+  ],
+  "test": {
+    "target": "test",
+    "verified": true,
+    "batch": "migrant-worker-advice-partial-fits-20261011",
+    "manifest_sha256": "35dcd77d5066eb68b3cc3c142f8309edaf8c24ef3f705eef14f135a733ae5123",
+    "backup_file": "backup-test-1791701925179.json",
+    "object_updates": 2,
+    "new_fit_links": 4,
+    "new_exact_evidence_links": 18,
+    "new_objects": 0,
+    "mapped": 1319,
+    "all_other_rows_unchanged": true,
+    "statuses_unchanged": true,
+    "paths_verified": [
+      [
+        "wc-candidate-5ffe7b63ab59c7db989da719",
+        "wc-candidate-88f897dee8002c7255154d34",
+        "solution-faire-integration-employment-advice"
+      ],
+      [
+        "wc-candidate-5ffe7b63ab59c7db989da719",
+        "wc-candidate-88f897dee8002c7255154d34",
+        "wc-object-7bc9813788996c04969f35a5"
+      ],
+      [
+        "wc-candidate-4877033705156ca6a03d9ed3",
+        "wc-candidate-5212776c5794a9b499721f37",
+        "solution-faire-integration-employment-advice"
+      ],
+      [
+        "wc-candidate-4877033705156ca6a03d9ed3",
+        "wc-candidate-5212776c5794a9b499721f37",
+        "wc-object-7bc9813788996c04969f35a5"
+      ]
+    ],
+    "public_deployment": false
+  },
+  "live": {
+    "target": "live",
+    "verified": true,
+    "batch": "migrant-worker-advice-partial-fits-20261011",
+    "manifest_sha256": "35dcd77d5066eb68b3cc3c142f8309edaf8c24ef3f705eef14f135a733ae5123",
+    "backup_file": "backup-live-1791701959604.json",
+    "object_updates": 2,
+    "new_fit_links": 4,
+    "new_exact_evidence_links": 18,
+    "new_objects": 0,
+    "mapped": 1319,
+    "all_other_rows_unchanged": true,
+    "statuses_unchanged": true,
+    "paths_verified": [
+      [
+        "wc-candidate-5ffe7b63ab59c7db989da719",
+        "wc-candidate-88f897dee8002c7255154d34",
+        "solution-faire-integration-employment-advice"
+      ],
+      [
+        "wc-candidate-5ffe7b63ab59c7db989da719",
+        "wc-candidate-88f897dee8002c7255154d34",
+        "wc-object-7bc9813788996c04969f35a5"
+      ],
+      [
+        "wc-candidate-4877033705156ca6a03d9ed3",
+        "wc-candidate-5212776c5794a9b499721f37",
+        "solution-faire-integration-employment-advice"
+      ],
+      [
+        "wc-candidate-4877033705156ca6a03d9ed3",
+        "wc-candidate-5212776c5794a9b499721f37",
+        "wc-object-7bc9813788996c04969f35a5"
+      ]
+    ],
+    "public_deployment": false
+  },
+  "qualification_test": {
+    "target": "test",
+    "verified": true,
+    "batch": "migrant-worker-advice-fit-qualification-20261011",
+    "changes_sha256": "da9819f5fdfe92cb8c28473b3174fe1ce46a1c71001c0fc11a357cfc5f51b721",
+    "backup_file": "backup-fit-refinement-test-1791702118958.json",
+    "relationship_updates": 1,
+    "all_other_rows_unchanged": true,
+    "status_preserved": true,
+    "fields": [
+      "statement",
+      "provenance.fit_copy_readability_review"
+    ],
+    "public_ui_deployment": false
+  },
+  "qualification_live": {
+    "target": "live",
+    "verified": true,
+    "batch": "migrant-worker-advice-fit-qualification-20261011",
+    "changes_sha256": "da9819f5fdfe92cb8c28473b3174fe1ce46a1c71001c0fc11a357cfc5f51b721",
+    "backup_file": "backup-fit-refinement-live-1791702171757.json",
+    "relationship_updates": 1,
+    "all_other_rows_unchanged": true,
+    "status_preserved": true,
+    "fields": [
+      "statement",
+      "provenance.fit_copy_readability_review"
+    ],
+    "public_ui_deployment": false
+  },
+  "qualification_reason": "Employer complaint handling is unverified, not a claimed exclusion. Original first-batch wording remains in immutable backup/audit history.",
+  "browser": {
+    "verified": true,
+    "routes": [
+      "http://127.0.0.1:8793/#/all/g/wc-candidate-5ffe7b63ab59c7db989da719%2Fwc-candidate-88f897dee8002c7255154d34",
+      "http://127.0.0.1:8793/#/all/g/wc-candidate-4877033705156ca6a03d9ed3%2Fwc-candidate-5212776c5794a9b499721f37"
+    ],
+    "checks": [
+      "Both offerings visible in each leaf with situation-specific partial-fit wording and reviewed authentic logos.",
+      "Both detailed records opened from the pay situation; distinct eligibility, cost/access qualifications and source links visible; original epistemic statuses retained.",
+      "Provider leaf shows corrected unverified employer complaint-handling wording.",
+      "Zoom100to120 retained same two offerings and text; screenshot shows both logos and complete fit lines."
+    ],
+    "screenshot": "/private/tmp/whocares-migrant-worker-advice-20261011.png",
+    "public_deployment": false
+  },
+  "mapped_counts": {
+    "needs": 198,
+    "situations": 1005,
+    "offerings": 116,
+    "total": 1319
+  },
+  "new_exact_relationship_evidence_links": 18,
+  "unique_prior_passages_reused": 9,
+  "new_objects": 0,
+  "new_sources": 0,
+  "new_media": 0,
+  "limits": [
+    "Knowledge-generated human situations remain hypotheses; these links do not validate prevalence, severity or unmet demand.",
+    "Advice is worker-facing and origin/citizenship scope applies; no binding pay entitlement, employer advocacy or complaint outcome established.",
+    "Current response times, local language availability and appointments not tested.",
+    "Authentic logos used internally; service-photograph gaps and public reuse-rights uncertainty remain.",
+    "No UI code change, image generation, scheduling activation or public deployment."
+  ]
+}
