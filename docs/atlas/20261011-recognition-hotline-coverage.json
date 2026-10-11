@@ -1,0 +1,202 @@
+{
+  "date": "2026-10-11",
+  "status": "verified_canonical_data_delivery",
+  "batch": "recognition-hotline-worker-fit-20261011",
+  "principles_sha256": "1698c1ce402af9694166b15938d24fb9fb05c55e85a330b4e589b7dca5b2a8c2",
+  "job_id": "365602aeff38d54a84fb7671bc3137fdcfbb7e0ad3be3f38cb2d49a42eca73e1",
+  "findings": {
+    "used": [
+      "finding-72c8c0bc6dc896f833f80d17"
+    ],
+    "original_editorial_hold": "finding-e01554ba53115f6cdedb0a0e",
+    "earlier_narrowed_controller_hold": "finding-c43f66bb9cd14f64b56ad9ab",
+    "reason": "Original media classification/publisher conflation unsupported; first narrowed version omitted controller-required hours and privacy; all originals preserved."
+  },
+  "coverage": {
+    "verified": true,
+    "covered_before": 116,
+    "covered_after": 117,
+    "new_covered_situations": [
+      "wc-candidate-7626ea4af339e95c48d029f3"
+    ],
+    "new_offering_identities": 1,
+    "new_fit_links": 1
+  },
+  "fits": [
+    {
+      "solution": "solution-bamf-ba-recognition-hotline",
+      "situation": "wc-candidate-7626ea4af339e95c48d029f3",
+      "fit": "Foreign-qualification advice in German/English; duties authorisation unverified.",
+      "media_id": "media-recognition-hotline-photo-20261011"
+    }
+  ],
+  "source_versions": [
+    {
+      "url": "https://www.anerkennung-in-deutschland.de/html/de/hotline.php",
+      "hash": "15c7760c55691313bf0e65b98d3c59a97cf0b34f933ca18d039a7b605bbedaf8",
+      "publisher": "Anerkennung in Deutschland / Bundesinstitut f\u00fcr Berufsbildung (BIBB)",
+      "kind": "provider_claim",
+      "limits": "Official description, no independent outcomes or functional call test. Portal opening hours are page-specific; conflicting BAMF search-result hours were not successfully captured and are not adopted as verified facts. Employer portal returned browser verification and is not cited."
+    }
+  ],
+  "exact_evidence_links": 34,
+  "capture_repair": {
+    "pipeline": "trafilatura-2.3.1-links-v15-recognition-topics",
+    "captures": [
+      {
+        "url": "https://www.anerkennung-in-deutschland.de/html/de/hotline.php",
+        "previous_hash": "0e1c590a110c3d6e14c26c057ea36aca64df2d0806a6ce0ffff0b718da07366a",
+        "corrected_hash": "15c7760c55691313bf0e65b98d3c59a97cf0b34f933ca18d039a7b605bbedaf8",
+        "prior_snapshot_preserved": true,
+        "new_snapshot_reextracts_exactly": true,
+        "recognition_topic_restored": true,
+        "call_charges_preserved": true
+      },
+      {
+        "url": "https://www.anerkennung-in-deutschland.de/html/de/pro/hotline-pro.php",
+        "previous_hash": "df0c1be3b76e7ff520fff7aeaa7e64f65afc7bff1b50f923dd52f784e5ab3a04",
+        "corrected_hash": "644c16c12d28b89e02a9f70f31b0f0129c8e197449013e25a82f7bbb9ba51251",
+        "prior_snapshot_preserved": true,
+        "new_snapshot_reextracts_exactly": true,
+        "recognition_topic_restored": true,
+        "call_charges_preserved": true
+      }
+    ],
+    "tests_passed": 264,
+    "model_calls_in_initial_failed_capture": 0,
+    "employer_page": "Thin verification page; excluded, not bypassed",
+    "original_finding_hold": "Unsupported stock-photo assertion and publisher conflation; original preserved and separately narrowed",
+    "atlas_changes_in_capture_verification": 0
+  },
+  "research_metrics": [
+    {
+      "duration_seconds": 101.949,
+      "model_calls": 6,
+      "model_calls_by_role": {
+        "researcher": 3,
+        "reviewer": 3
+      },
+      "counted_usd": 0.028385399999999998,
+      "provider_reported_usd": 0.007078175,
+      "http_requests": 0,
+      "page_calls": 0,
+      "search_calls": 0
+    },
+    {
+      "duration_seconds": 125.182,
+      "model_calls": 4,
+      "model_calls_by_role": {
+        "researcher": 0,
+        "reviewer": 4
+      },
+      "counted_usd": 0.010728,
+      "provider_reported_usd": 0.0038984299999999996,
+      "http_requests": 0,
+      "page_calls": 0,
+      "search_calls": 0
+    },
+    {
+      "duration_seconds": 39.999,
+      "model_calls": 3,
+      "model_calls_by_role": {
+        "researcher": 0,
+        "reviewer": 3
+      },
+      "counted_usd": 0.0075651,
+      "provider_reported_usd": 0.003646514,
+      "http_requests": 0,
+      "page_calls": 0,
+      "search_calls": 0
+    }
+  ],
+  "test": {
+    "target": "test",
+    "verified": true,
+    "batch": "recognition-hotline-worker-fit-20261011",
+    "manifest_sha256": "c8685fceb5a00b4bb5741013a6918491a110f30daf83c55ab36e295f53e52c82",
+    "backup_file": "backup-test-1791703463703.json",
+    "object_updates": 1,
+    "new_objects": 1,
+    "new_mapped": 1,
+    "mapped": 1320,
+    "all_prior_rows_preserved_except_declared_situation_context": true,
+    "prior_rows_checked": {
+      "objects": 1361,
+      "relationships": 1296,
+      "sources": 215,
+      "evidence_links": 2470,
+      "product_media": 157,
+      "import_batches": 111
+    },
+    "paths_verified": [
+      [
+        "wc-candidate-5ffe7b63ab59c7db989da719",
+        "wc-candidate-7626ea4af339e95c48d029f3",
+        "solution-bamf-ba-recognition-hotline"
+      ]
+    ],
+    "statuses_unchanged": true,
+    "internal_media": 2,
+    "public_media": 0,
+    "public_deployment": false
+  },
+  "live": {
+    "target": "live",
+    "verified": true,
+    "batch": "recognition-hotline-worker-fit-20261011",
+    "manifest_sha256": "c8685fceb5a00b4bb5741013a6918491a110f30daf83c55ab36e295f53e52c82",
+    "backup_file": "backup-live-1791703499489.json",
+    "object_updates": 1,
+    "new_objects": 1,
+    "new_mapped": 1,
+    "mapped": 1320,
+    "all_prior_rows_preserved_except_declared_situation_context": true,
+    "prior_rows_checked": {
+      "objects": 1361,
+      "relationships": 1296,
+      "sources": 215,
+      "evidence_links": 2470,
+      "product_media": 157,
+      "import_batches": 111
+    },
+    "paths_verified": [
+      [
+        "wc-candidate-5ffe7b63ab59c7db989da719",
+        "wc-candidate-7626ea4af339e95c48d029f3",
+        "solution-bamf-ba-recognition-hotline"
+      ]
+    ],
+    "statuses_unchanged": true,
+    "internal_media": 2,
+    "public_media": 0,
+    "public_deployment": false
+  },
+  "browser": {
+    "verified": true,
+    "url": "http://127.0.0.1:8793/#/all/g/wc-candidate-5ffe7b63ab59c7db989da719%2Fwc-candidate-7626ea4af339e95c48d029f3",
+    "need_to_situation_click_verified": true,
+    "solution_record_opened": true,
+    "access_cost_privacy_hours_limits_sources_visible": true,
+    "short_breadcrumbs_visible": true,
+    "media": {
+      "photo_loaded": true,
+      "photo_natural_width": 1500,
+      "ba_cooperator_logo_visible": true,
+      "staff_identity_unverified": true
+    },
+    "zoom": {
+      "before": "100%",
+      "after": "120%",
+      "same_offering_and_fit": true
+    },
+    "screenshot": "/private/tmp/whocares-recognition-hotline-20261011.png",
+    "public_deployment": false
+  },
+  "limits": [
+    "Human situation remains hypothesis; no empirical demand validation.",
+    "No actual hotline call, form submission, recognition decision or employer-scope verification.",
+    "No public UI deployment or image generation; media reuse rights unestablished."
+  ],
+  "scheduler_active": false,
+  "public_deployment": false
+}
