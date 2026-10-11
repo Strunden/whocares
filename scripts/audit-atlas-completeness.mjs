@@ -14,6 +14,7 @@ export function auditAtlas(data){
  for(const e of records.filter(e=>ids.has(e.id))){
   const nav=e.scope.navigation,missing=[];counts[nav.role]++;
   for(const field of ['title','short_title','summary'])if(!present(nav[field]))missing.push(field);
+  if(nav.role==='situation'&&/^(?:An?|The) .+ facing this situation; direct research is pending\.$/i.test(nav.summary||''))missing.push('specific situation context');
   if(!e.sources.some(s=>s.url&&s.reviewed_at))missing.push('reviewed source link');
   if(!present(e.scope.geography))missing.push('geography');
   if(nav.role==='solution'){

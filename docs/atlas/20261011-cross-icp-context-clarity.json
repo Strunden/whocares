@@ -1,0 +1,138 @@
+{
+  "date": "2026-10-11",
+  "status": "internal_delivery_verified",
+  "mapped_records": 1319,
+  "editorial_context_updates": 43,
+  "icp_counts": {
+    "older_adult": 6,
+    "family_carer": 19,
+    "care_worker": 10,
+    "provider": 8
+  },
+  "hierarchy_audit": {
+    "same_role_lens_normalized_identical_titles": [],
+    "sibling_short_title_collisions": [],
+    "generic_situation_contexts_before": 483,
+    "generic_situation_contexts_after": 440,
+    "limits": "Exact normalized title/label checks only. No semantic deduplication certification or empirical validation."
+  },
+  "batches": [
+    {
+      "test": {
+        "target": "test",
+        "verified": true,
+        "batch": "cross-icp-situation-context-clarity-20261011",
+        "changes_sha256": "c195235ffde13583396cde33e05e90ace9bc46e72da771f8212da966675e9aa1",
+        "backup_file": "backup-test-1791694719561.json",
+        "object_updates": 40,
+        "all_other_rows_unchanged": true,
+        "status_preserved": true,
+        "fields": [
+          "scope.navigation.summary",
+          "provenance.context_copy_review"
+        ],
+        "public_ui_deployment": false
+      },
+      "canonical": {
+        "target": "live",
+        "verified": true,
+        "batch": "cross-icp-situation-context-clarity-20261011",
+        "changes_sha256": "c195235ffde13583396cde33e05e90ace9bc46e72da771f8212da966675e9aa1",
+        "backup_file": "backup-live-1791694776644.json",
+        "object_updates": 40,
+        "all_other_rows_unchanged": true,
+        "status_preserved": true,
+        "fields": [
+          "scope.navigation.summary",
+          "provenance.context_copy_review"
+        ],
+        "public_ui_deployment": false
+      },
+      "projection": [
+        {
+          "target": "test",
+          "mapped": 1319,
+          "updated_contexts_verified": 40,
+          "generic_context_gaps_remaining": 443,
+          "statuses_and_planning_preserved": true
+        },
+        {
+          "target": "live",
+          "mapped": 1319,
+          "updated_contexts_verified": 40,
+          "generic_context_gaps_remaining": 443,
+          "statuses_and_planning_preserved": true
+        }
+      ]
+    },
+    {
+      "test": {
+        "target": "test",
+        "verified": true,
+        "batch": "family-sharing-context-completion-20261011",
+        "changes_sha256": "0282059777c257a978176bbb37a9f124918b86f111156f8905a7672a6638e8ec",
+        "backup_file": "backup-test-1791694895446.json",
+        "object_updates": 3,
+        "all_other_rows_unchanged": true,
+        "status_preserved": true,
+        "fields": [
+          "scope.navigation.summary",
+          "provenance.context_copy_review"
+        ],
+        "public_ui_deployment": false
+      },
+      "canonical": {
+        "target": "live",
+        "verified": true,
+        "batch": "family-sharing-context-completion-20261011",
+        "changes_sha256": "0282059777c257a978176bbb37a9f124918b86f111156f8905a7672a6638e8ec",
+        "backup_file": "backup-live-1791694948445.json",
+        "object_updates": 3,
+        "all_other_rows_unchanged": true,
+        "status_preserved": true,
+        "fields": [
+          "scope.navigation.summary",
+          "provenance.context_copy_review"
+        ],
+        "public_ui_deployment": false
+      },
+      "projection": [
+        {
+          "target": "test",
+          "mapped": 1319,
+          "updated_contexts_verified": 3,
+          "generic_context_gaps_remaining": 440,
+          "statuses_and_planning_preserved": true
+        },
+        {
+          "target": "live",
+          "mapped": 1319,
+          "updated_contexts_verified": 3,
+          "generic_context_gaps_remaining": 440,
+          "statuses_and_planning_preserved": true
+        }
+      ]
+    }
+  ],
+  "audit_change": "Generic ICP-only situation templates now appear as specific-context gaps, while counts and epistemic status remain unchanged.",
+  "focused_tests": {
+    "suite": "tests/atlas-completeness.test.mjs",
+    "passed": 2
+  },
+  "browser": {
+    "url": "http://127.0.0.1:8793/#/all/g/wc-candidate-cb4c7a46430d34553a55ba47",
+    "family_sharing_situations": 5,
+    "specific_contexts_visible": 5,
+    "show_all_zoom_percent": 56,
+    "stable_content_at_zoom": true,
+    "screenshot": "/private/tmp/whocares-family-sharing-context-20261011.png"
+  },
+  "limits": [
+    "Editorial clarification only; all 43 existing hypothesis statuses and research planning retained.",
+    "No new sources, observations, statistics, solutions, causal claims, guidance or object identities.",
+    "Neutral media placeholders remain under the image-generation pause.",
+    "Functional review is not venture-builder user testing.",
+    "No public UI deployment or scheduler activation."
+  ],
+  "private_backups": "Full six-table pre-change backups retained outside Git for both batches and both database branches."
+}

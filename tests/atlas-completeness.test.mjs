@@ -11,3 +11,12 @@ test('coverage counts unique offerings separately from placements and exposes mi
  assert.ok(result.gaps.find(g=>g.id==='s').missing.includes('provider'));
  assert.equal(result.relationshipGaps.length,2);
 });
+test('generic ICP templates remain context gaps while specific constraints count as present',()=>{
+ const node=(id,role,summary)=>({id,kind:'problem',title:id,epistemic_status:'hypothesis',scope:{geography:'Germany',navigation:{role,title:id,short_title:id,summary,image:'assets/illustrations/study/test.png'}}});
+ const graph={objects:[node('n','need','Shared need'),node('a','situation','A paid care worker facing this situation; direct research is pending.'),node('b','situation','Replacement stock arrives after essential supplies have run out.')],relationships:['a','b'].map(id=>({id:'p-'+id,from_id:id,to_id:'n',relation:'context_for',provenance:{navigation:true}})),sources:[],evidence_links:[]};
+ const result=auditAtlas({catalog:{entries:[]},graph,media:[]});
+ assert.ok(result.gaps.find(g=>g.id==='a').missing.includes('specific situation context'));
+ assert.ok(!result.gaps.find(g=>g.id==='b').missing.includes('specific situation context'));
+ assert.ok(graph.objects.every(o=>o.epistemic_status==='hypothesis'));
+ assert.equal(result.uniqueMappedRecords,3);
+});
