@@ -1,0 +1,208 @@
+{
+  "date": "2026-10-11",
+  "batch": "wound-patient-access-coverage-20261011",
+  "manifest_sha256": "d703cb77b7588e410c11d27259730ae24ff51fb76e663d08da33002460a1c793",
+  "principles_sha256": "1698c1ce402af9694166b15938d24fb9fb05c55e85a330b4e589b7dca5b2a8c2",
+  "mapped_counts": {
+    "need": 198,
+    "situation": 1005,
+    "solution": 116,
+    "total": 1319,
+    "situations_with_mapped_offerings_before": 106,
+    "situations_with_mapped_offerings_after": 108
+  },
+  "changes": {
+    "existing_offerings_enriched": 2,
+    "existing_situations_updated": 2,
+    "new_fit_links": 4,
+    "new_exact_source_versions": 2,
+    "new_evidence_links": 66,
+    "new_offering_identities": 0,
+    "new_media": 0
+  },
+  "test": {
+    "target": "test",
+    "verified": true,
+    "batch": "wound-patient-access-coverage-20261011",
+    "manifest_sha256": "d703cb77b7588e410c11d27259730ae24ff51fb76e663d08da33002460a1c793",
+    "backup_file": "backup-test-1791692719351.json",
+    "object_updates": 4,
+    "new_fit_links": 4,
+    "new_exact_evidence_links": 66,
+    "new_objects": 0,
+    "mapped": 1319,
+    "all_other_rows_unchanged": true,
+    "statuses_unchanged": true,
+    "new_sources": 2,
+    "paths_verified": [
+      [
+        "wc-candidate-284edf466aa35ce394711805",
+        "wc-candidate-606fbe0f0d8fab475cbca204",
+        "solution-wundex-wound-management"
+      ],
+      [
+        "wc-candidate-284edf466aa35ce394711805",
+        "wc-candidate-606fbe0f0d8fab475cbca204",
+        "solution-lifecare-wound-management"
+      ],
+      [
+        "wc-candidate-60ead43437597c24dd8cab5b",
+        "wc-candidate-541796c207fe593fc718ea31",
+        "solution-wundex-wound-management"
+      ],
+      [
+        "wc-candidate-60ead43437597c24dd8cab5b",
+        "wc-candidate-541796c207fe593fc718ea31",
+        "solution-lifecare-wound-management"
+      ]
+    ],
+    "public_deployment": false
+  },
+  "live": {
+    "target": "live",
+    "verified": true,
+    "batch": "wound-patient-access-coverage-20261011",
+    "manifest_sha256": "d703cb77b7588e410c11d27259730ae24ff51fb76e663d08da33002460a1c793",
+    "backup_file": "backup-live-1791692770069.json",
+    "object_updates": 4,
+    "new_fit_links": 4,
+    "new_exact_evidence_links": 66,
+    "new_objects": 0,
+    "mapped": 1319,
+    "all_other_rows_unchanged": true,
+    "statuses_unchanged": true,
+    "new_sources": 2,
+    "paths_verified": [
+      [
+        "wc-candidate-284edf466aa35ce394711805",
+        "wc-candidate-606fbe0f0d8fab475cbca204",
+        "solution-wundex-wound-management"
+      ],
+      [
+        "wc-candidate-284edf466aa35ce394711805",
+        "wc-candidate-606fbe0f0d8fab475cbca204",
+        "solution-lifecare-wound-management"
+      ],
+      [
+        "wc-candidate-60ead43437597c24dd8cab5b",
+        "wc-candidate-541796c207fe593fc718ea31",
+        "solution-wundex-wound-management"
+      ],
+      [
+        "wc-candidate-60ead43437597c24dd8cab5b",
+        "wc-candidate-541796c207fe593fc718ea31",
+        "solution-lifecare-wound-management"
+      ]
+    ],
+    "public_deployment": false
+  },
+  "exact_detail_proof": [
+    {
+      "target": "test",
+      "verified": true,
+      "updated_objects": 4,
+      "exact_new_source_versions": 2,
+      "exact_evidence_links": 66,
+      "mapped": 1319,
+      "situations_with_mapped_offerings": 108
+    },
+    {
+      "target": "live",
+      "verified": true,
+      "updated_objects": 4,
+      "exact_new_source_versions": 2,
+      "exact_evidence_links": 66,
+      "mapped": 1319,
+      "situations_with_mapped_offerings": 108
+    }
+  ],
+  "browser_refinement": {
+    "reason": "Remove repeated patient-service narrative, give each offering its own media note, and distinguish published copayments from unverified local access. Dedicated frequency, physician, cost and contract fields remain.",
+    "test": {
+      "target": "test",
+      "verified": true,
+      "batch": "wound-patient-access-coverage-20261011-readability",
+      "changes_sha256": "f9043a8bffd0672204692dc5966830e13d6fe408129f463bef325e1d506ac11d",
+      "backup_file": "backup-readability-test-1791692912991.json",
+      "object_updates": 2,
+      "relationship_updates": 2,
+      "all_other_rows_unchanged": true,
+      "statuses_preserved": true,
+      "public_ui_deployment": false
+    },
+    "live": {
+      "target": "live",
+      "verified": true,
+      "batch": "wound-patient-access-coverage-20261011-readability",
+      "changes_sha256": "f9043a8bffd0672204692dc5966830e13d6fe408129f463bef325e1d506ac11d",
+      "backup_file": "backup-readability-live-1791692939496.json",
+      "object_updates": 2,
+      "relationship_updates": 2,
+      "all_other_rows_unchanged": true,
+      "statuses_preserved": true,
+      "public_ui_deployment": false
+    },
+    "final_projection": [
+      {
+        "target": "test",
+        "verified": true,
+        "complete_paths": 4,
+        "payment_and_scope_qualifications_retained": true,
+        "statuses_unchanged": true,
+        "exact_evidence_links_preserved": 66
+      },
+      {
+        "target": "live",
+        "verified": true,
+        "complete_paths": 4,
+        "payment_and_scope_qualifications_retained": true,
+        "statuses_unchanged": true,
+        "exact_evidence_links_preserved": 66
+      }
+    ]
+  },
+  "indexer": {
+    "job_id": "d9c9bb82571039fd49318f87a7bce7b6746b322438d69e1895f822f5b49de508",
+    "findings": [
+      {
+        "id": "finding-07f4958dbe32b473f22f8809",
+        "review": "supported",
+        "review_current": true
+      },
+      {
+        "id": "finding-411589e5abfb10c74e66b423",
+        "review": "supported",
+        "review_current": true
+      }
+    ],
+    "metrics": {
+      "duration_seconds": 149.556,
+      "model_calls": 10,
+      "model_calls_by_role": {
+        "researcher": 2,
+        "reviewer": 8
+      },
+      "counted_usd": 0.034264199999999995,
+      "provider_reported_usd": 0.013214323,
+      "http_requests": 0,
+      "page_calls": 0,
+      "search_calls": 0
+    },
+    "research_receipt_commit": "ce6ee4a"
+  },
+  "browser_verified": "Both comparisons inspected and both offering details opened. Final home-access tiles state local access unverified; cost retains statutory copayments; physician and frequency terms readable; full patient narrative shortened. Two source cards per record preserve original and new evidence.",
+  "screenshots": {
+    "/private/tmp/whocares-wound-home-access-final-20261011.png": "26ff934e332fa89dd5e3eb3f5bbe615a673cad69eb40ca3ee85eb36ef6adb105",
+    "/private/tmp/whocares-wound-coordination-20261011.png": "0f9554c768ab8898960be35d3a444f511cef0d5a10afe1d601ee6d1a582cc866"
+  },
+  "media": "Existing authentic internal logos reused; Wundex home-access tile uses its reviewed wound-dressing photograph. Lifecare home-visit photograph gap remains explicit. Public reuse rights unconfirmed.",
+  "limits": [
+    "Existing identities and candidate/hypothesis statuses retained.",
+    "Patient-page payment scope only; no facility tariff or independent clinical benefit.",
+    "No immediate or emergency capacity, insurance admission or reassessment responsibility claimed.",
+    "Internal map and media only; no public UI deployment or image generation.",
+    "Local capacity, insurance admission, individual agreement, healing outcomes and reassessment responsibility remain unverified.",
+    "No clinical advice or universal patient eligibility inferred; no provider-defined human taxonomy.",
+    "No public UI deployment, scheduler activation or image generation."
+  ]
+}
