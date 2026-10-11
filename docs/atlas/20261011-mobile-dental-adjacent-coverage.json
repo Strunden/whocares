@@ -1,0 +1,282 @@
+{
+  "date": "2026-10-11",
+  "status": "verified_canonical_data_delivery",
+  "batch": "mobile-dental-adjacent-partial-fits-20261011",
+  "principles_sha256": "1698c1ce402af9694166b15938d24fb9fb05c55e85a330b4e589b7dca5b2a8c2",
+  "method": "Reuse three existing canonical offerings, fifteen exact previously independently reviewed passages and authentic service media. Current official pages manually opened for fit/context review; no new paid indexer dispatch, no refreshed capture date or evidence-status upgrade.",
+  "indexer_job_id": "b3a5cafde47ae3a41329986228896dc87d5d7907a4399bb7777a69403161a3c5",
+  "coverage": {
+    "verified": true,
+    "covered_before": 117,
+    "covered_after": 121,
+    "new_covered_situations": [
+      "wc-candidate-772a58efdd2faaa10ed8df20",
+      "wc-candidate-85aafa1609a34f8e56f130b1",
+      "wc-candidate-dd8cb128804a90f1c97844ae",
+      "wc-candidate-f3438656862c5abd1513f0e5"
+    ],
+    "new_offering_identities": 0,
+    "reused_offerings": 3,
+    "new_fit_links": 8
+  },
+  "fits": [
+    {
+      "solution": "solution-homedent-mobile-dental",
+      "situation": "wc-candidate-f3438656862c5abd1513f0e5",
+      "fit": "Care-home denture assessment and selected repair; timing and eligibility unverified.",
+      "media_id": "media-journey-homedent-mobile-dental-product_image"
+    },
+    {
+      "solution": "solution-indentalis-mobile-dental",
+      "situation": "wc-candidate-f3438656862c5abd1513f0e5",
+      "fit": "Care-home denture care; local coverage and individual treatment need checking.",
+      "media_id": "media-journey-indentalis-mobile-dental-product_image"
+    },
+    {
+      "solution": "solution-homedent-mobile-dental",
+      "situation": "wc-candidate-772a58efdd2faaa10ed8df20",
+      "fit": "Care-home visits and selected treatment; local coverage and contract need checking.",
+      "media_id": "media-journey-homedent-mobile-dental-product_image"
+    },
+    {
+      "solution": "solution-indentalis-mobile-dental",
+      "situation": "wc-candidate-772a58efdd2faaa10ed8df20",
+      "fit": "Care-facility visits; local coverage and private-service charges need checking.",
+      "media_id": "media-journey-indentalis-mobile-dental-product_image"
+    },
+    {
+      "solution": "solution-dentagil-mobile-dental",
+      "situation": "wc-candidate-772a58efdd2faaa10ed8df20",
+      "fit": "Dental treatment in participating care facilities; local coverage and costs unverified.",
+      "media_id": "media-journey-dentagil-mobile-dental-product_image"
+    },
+    {
+      "solution": "solution-homedent-mobile-dental",
+      "situation": "wc-candidate-85aafa1609a34f8e56f130b1",
+      "fit": "Care-home visits for denture pressure points; timing and individual costs unverified.",
+      "media_id": "media-journey-homedent-mobile-dental-product_image"
+    },
+    {
+      "solution": "solution-indentalis-mobile-dental",
+      "situation": "wc-candidate-85aafa1609a34f8e56f130b1",
+      "fit": "Care-home denture care; adjustment suitability and local coverage unverified.",
+      "media_id": "media-journey-indentalis-mobile-dental-product_image"
+    },
+    {
+      "solution": "solution-homedent-mobile-dental",
+      "situation": "wc-candidate-dd8cb128804a90f1c97844ae",
+      "fit": "Care-home pain assessment; facility agreement applies, appointment timing unverified.",
+      "media_id": "media-journey-homedent-mobile-dental-product_image"
+    }
+  ],
+  "unique_reviewed_passages_reused": 15,
+  "new_evidence_links": 45,
+  "source_versions": [
+    {
+      "id": "source-journey-offers-b25c9b77200b49e3ce5dc9bf",
+      "url": "https://homedent.de/fuer-pflegeheime/",
+      "hash": "b25c9b77200b49e3ce5dc9bfca44cbd65e74c6aeb1e4f1b2b1188cbb8bce9712",
+      "original_accessed_date": "2026-10-10",
+      "limitations": "Provider marketing claims; service area, current pricing and effectiveness not independently verified; '90% on-site' and '48h pain reaction' are unverified provider statements"
+    },
+    {
+      "id": "source-journey-offers-b98e95e9d7664e5f677c4d12",
+      "url": "https://indentalis.de/mobiler-zahnarzt/",
+      "hash": "b98e95e9d7664e5f677c4d1224845644b7db31792093015a5ce08f7ef1c905ad",
+      "original_accessed_date": "2026-10-10",
+      "limitations": "Provider marketing claims; legal entity, service area, current pricing, eligibility and effectiveness not independently verified; 'no additional cost' is a provider statement"
+    },
+    {
+      "id": "source-journey-offers-3399c390c3a3773f538493c2",
+      "url": "https://dentagil.de/pflegeeinrichtungen/",
+      "hash": "3399c390c3a3773f538493c2b32dfdc923b4f0072fd99df5dfe23d4df2b10bc0",
+      "original_accessed_date": "2026-10-10",
+      "limitations": "Provider marketing claims; nationwide coverage described as a goal, not confirmed; costs, eligibility and effectiveness unverified"
+    }
+  ],
+  "test": {
+    "target": "test",
+    "verified": true,
+    "batch": "mobile-dental-adjacent-partial-fits-20261011",
+    "manifest_sha256": "db9503fa594586fbbe62ee4d2d60ed4ecb8ed6da37cf4c6ee709b704da893621",
+    "backup_file": "backup-test-1791703977959.json",
+    "object_updates": 4,
+    "new_fit_links": 8,
+    "new_exact_evidence_links": 45,
+    "new_objects": 0,
+    "mapped": 1320,
+    "all_other_rows_unchanged": true,
+    "statuses_unchanged": true,
+    "paths_verified": [
+      [
+        "wc-candidate-e7a5dcfc527c5b1d8c85200b",
+        "wc-candidate-f3438656862c5abd1513f0e5",
+        "solution-homedent-mobile-dental"
+      ],
+      [
+        "wc-candidate-e7a5dcfc527c5b1d8c85200b",
+        "wc-candidate-f3438656862c5abd1513f0e5",
+        "solution-indentalis-mobile-dental"
+      ],
+      [
+        "wc-candidate-e4645e046a2a98d5f48e78eb",
+        "wc-candidate-772a58efdd2faaa10ed8df20",
+        "solution-homedent-mobile-dental"
+      ],
+      [
+        "wc-candidate-e4645e046a2a98d5f48e78eb",
+        "wc-candidate-772a58efdd2faaa10ed8df20",
+        "solution-indentalis-mobile-dental"
+      ],
+      [
+        "wc-candidate-e4645e046a2a98d5f48e78eb",
+        "wc-candidate-772a58efdd2faaa10ed8df20",
+        "solution-dentagil-mobile-dental"
+      ],
+      [
+        "wc-candidate-e4645e046a2a98d5f48e78eb",
+        "wc-candidate-85aafa1609a34f8e56f130b1",
+        "solution-homedent-mobile-dental"
+      ],
+      [
+        "wc-candidate-e4645e046a2a98d5f48e78eb",
+        "wc-candidate-85aafa1609a34f8e56f130b1",
+        "solution-indentalis-mobile-dental"
+      ],
+      [
+        "wc-candidate-e4645e046a2a98d5f48e78eb",
+        "wc-candidate-dd8cb128804a90f1c97844ae",
+        "solution-homedent-mobile-dental"
+      ]
+    ],
+    "public_deployment": false
+  },
+  "live": {
+    "target": "live",
+    "verified": true,
+    "batch": "mobile-dental-adjacent-partial-fits-20261011",
+    "manifest_sha256": "db9503fa594586fbbe62ee4d2d60ed4ecb8ed6da37cf4c6ee709b704da893621",
+    "backup_file": "backup-live-1791704014233.json",
+    "object_updates": 4,
+    "new_fit_links": 8,
+    "new_exact_evidence_links": 45,
+    "new_objects": 0,
+    "mapped": 1320,
+    "all_other_rows_unchanged": true,
+    "statuses_unchanged": true,
+    "paths_verified": [
+      [
+        "wc-candidate-e7a5dcfc527c5b1d8c85200b",
+        "wc-candidate-f3438656862c5abd1513f0e5",
+        "solution-homedent-mobile-dental"
+      ],
+      [
+        "wc-candidate-e7a5dcfc527c5b1d8c85200b",
+        "wc-candidate-f3438656862c5abd1513f0e5",
+        "solution-indentalis-mobile-dental"
+      ],
+      [
+        "wc-candidate-e4645e046a2a98d5f48e78eb",
+        "wc-candidate-772a58efdd2faaa10ed8df20",
+        "solution-homedent-mobile-dental"
+      ],
+      [
+        "wc-candidate-e4645e046a2a98d5f48e78eb",
+        "wc-candidate-772a58efdd2faaa10ed8df20",
+        "solution-indentalis-mobile-dental"
+      ],
+      [
+        "wc-candidate-e4645e046a2a98d5f48e78eb",
+        "wc-candidate-772a58efdd2faaa10ed8df20",
+        "solution-dentagil-mobile-dental"
+      ],
+      [
+        "wc-candidate-e4645e046a2a98d5f48e78eb",
+        "wc-candidate-85aafa1609a34f8e56f130b1",
+        "solution-homedent-mobile-dental"
+      ],
+      [
+        "wc-candidate-e4645e046a2a98d5f48e78eb",
+        "wc-candidate-85aafa1609a34f8e56f130b1",
+        "solution-indentalis-mobile-dental"
+      ],
+      [
+        "wc-candidate-e4645e046a2a98d5f48e78eb",
+        "wc-candidate-dd8cb128804a90f1c97844ae",
+        "solution-homedent-mobile-dental"
+      ]
+    ],
+    "public_deployment": false
+  },
+  "service_area_correction": {
+    "test": {
+      "target": "test",
+      "verified": true,
+      "batch": "homedent-service-area-qualification-20261011",
+      "manifest_sha256": "73bd38498812a925338257794b995c3ed2b4ff43843b4502066b783eddc00c4d",
+      "backup_file": "backup-test-1791704183531.json",
+      "object_updates": 1,
+      "new_fit_links": 0,
+      "new_exact_evidence_links": 0,
+      "new_objects": 0,
+      "mapped": 1320,
+      "all_other_rows_unchanged": true,
+      "statuses_unchanged": true,
+      "paths_verified": [],
+      "public_deployment": false
+    },
+    "live": {
+      "target": "live",
+      "verified": true,
+      "batch": "homedent-service-area-qualification-20261011",
+      "manifest_sha256": "73bd38498812a925338257794b995c3ed2b4ff43843b4502066b783eddc00c4d",
+      "backup_file": "backup-live-1791704240343.json",
+      "object_updates": 1,
+      "new_fit_links": 0,
+      "new_exact_evidence_links": 0,
+      "new_objects": 0,
+      "mapped": 1320,
+      "all_other_rows_unchanged": true,
+      "statuses_unchanged": true,
+      "paths_verified": [],
+      "public_deployment": false
+    }
+  },
+  "browser": {
+    "verified": true,
+    "branches": [
+      {
+        "situation": "wc-candidate-f3438656862c5abd1513f0e5",
+        "visible_offerings": 2
+      },
+      {
+        "situation": "wc-candidate-772a58efdd2faaa10ed8df20",
+        "visible_offerings": 3
+      },
+      {
+        "situation": "wc-candidate-85aafa1609a34f8e56f130b1",
+        "visible_offerings": 2
+      },
+      {
+        "situation": "wc-candidate-dd8cb128804a90f1c97844ae",
+        "visible_offerings": 1
+      }
+    ],
+    "all_three_detail_records_opened": true,
+    "logos_and_service_images_loaded": 6,
+    "zoom_100_to_120_content_stable": true,
+    "corrected_service_area_visible_after_fresh_reload": true,
+    "background_refresh_failure_observed": true,
+    "fresh_reload_recovered": true,
+    "screenshot": "/private/tmp/whocares-mobile-dental-access-20261011.png",
+    "deliverable_url": "http://127.0.0.1:8793/#/all/g/wc-candidate-e4645e046a2a98d5f48e78eb%2Fwc-candidate-772a58efdd2faaa10ed8df20"
+  },
+  "limits": [
+    "Internal branch only; no new product identities, media or public deployment.",
+    "Care-facility delivery only; no private-home coverage, prompt appointment, guaranteed repair, pain relief or independent effectiveness established.",
+    "Human hypotheses and validation gaps retained. Existing authentic service images reused; no participant identity, outcome or public reuse rights asserted. Current Homedent page contact address differs from older scope context; no locality is inferred from either address.",
+    "One background refresh failed during browsing; fresh reload recovered. No claim that automatic updating is flawless."
+  ],
+  "image_generation": false,
+  "public_deployment": false
+}
