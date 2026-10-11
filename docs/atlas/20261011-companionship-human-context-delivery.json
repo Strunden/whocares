@@ -1,0 +1,111 @@
+{
+  "date": "2026-10-11",
+  "status": "internal_delivery_verified",
+  "batch": "companionship-human-context-20261011",
+  "test": {
+    "target": "test",
+    "verified": true,
+    "batch": "companionship-human-context-20261011",
+    "manifest_sha256": "98066c32e72ffbb2bed7ec88a42b9125badccf2f20dd53074150c9ec2f6546a4",
+    "backup_file": "backup-test-1791693811996.json",
+    "object_updates": 1,
+    "new_fit_links": 0,
+    "new_exact_evidence_links": 23,
+    "new_objects": 0,
+    "mapped": 1319,
+    "all_other_rows_unchanged": true,
+    "statuses_unchanged": true,
+    "new_sources": 1,
+    "paths_verified": [
+      [
+        "study-aspiration-company"
+      ]
+    ],
+    "public_deployment": false
+  },
+  "canonical": {
+    "target": "live",
+    "verified": true,
+    "batch": "companionship-human-context-20261011",
+    "manifest_sha256": "98066c32e72ffbb2bed7ec88a42b9125badccf2f20dd53074150c9ec2f6546a4",
+    "backup_file": "backup-live-1791693894520.json",
+    "object_updates": 1,
+    "new_fit_links": 0,
+    "new_exact_evidence_links": 23,
+    "new_objects": 0,
+    "mapped": 1319,
+    "all_other_rows_unchanged": true,
+    "statuses_unchanged": true,
+    "new_sources": 1,
+    "paths_verified": [
+      [
+        "study-aspiration-company"
+      ]
+    ],
+    "public_deployment": false
+  },
+  "indexer": {
+    "initial_run_status": "reviewing",
+    "initial_review_deferral": "Offering condition sources exceed bounded review context; narrow the investigation",
+    "initial_metrics": {
+      "duration_seconds": 130.494,
+      "model_calls": 7,
+      "model_calls_by_role": {
+        "researcher": 7,
+        "reviewer": 0
+      },
+      "counted_usd": 0.0402543,
+      "provider_reported_usd": 0.004422462,
+      "http_requests": 0,
+      "page_calls": 0,
+      "search_calls": 0
+    },
+    "frozen_review_status": "reviewed_partial",
+    "frozen_review_metrics": {
+      "duration_seconds": 59.634,
+      "model_calls": 3,
+      "model_calls_by_role": {
+        "researcher": 0,
+        "reviewer": 3
+      },
+      "counted_usd": 0.013796999999999999,
+      "provider_reported_usd": 0.003110574,
+      "http_requests": 0,
+      "page_calls": 0,
+      "search_calls": 0
+    },
+    "finding_id": "finding-edc0ad22760712f94a84a1c9",
+    "independent_review": "supported/current",
+    "complete_source_limit_fix": "9e69db3",
+    "tests_passed": 260,
+    "scheduler": "paused"
+  },
+  "source": {
+    "url": "https://ceres.uni-koeln.de/fileadmin/user_upload/Bilder/Dokumente/NRW80plus_D80plus/20220126_D80__Kurzbericht-Nummer-4_Jan2022.pdf",
+    "content_sha256": "29acd87abc5304945c66a6393a73d29e2bb57b536df369028f80a071263b3088",
+    "publication_month": "2022-01",
+    "fieldwork": "2020-11 through 2021-04",
+    "rendered_pages_reviewed": [
+      7,
+      8
+    ],
+    "exact_context_links": 23,
+    "source_kind": "primary_research"
+  },
+  "scope": "Historical loneliness frequency in population aged80+, not desired companionship, unmet support, current prevalence, market demand, causation or service outcomes. Existing candidate status and map navigation retained.",
+  "browser": {
+    "url": "http://127.0.0.1:8793/#/all/e/study-aspiration-company?within=study-need-company",
+    "measurement_visible": true,
+    "candidate_status_visible": true,
+    "sources_accessible": true,
+    "screenshot": "/private/tmp/whocares-companionship-context-20261011.png"
+  },
+  "known_followups": [
+    "Older DZA2025 source on this need is misclassified as provider_claim; review and correct exact source identity separately.",
+    "Several situation summaries remain generic.",
+    "Neutral media placeholders remain; image generation paused.",
+    "Functional review is not venture-builder user testing."
+  ],
+  "public_ui_deployment": false,
+  "backups_and_capture_location": "Private local research staging; excluded from Git."
+}
