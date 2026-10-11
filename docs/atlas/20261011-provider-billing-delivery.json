@@ -1,0 +1,96 @@
+{
+  "date": "2026-10-11",
+  "batch": "provider-billing-payment-fit-20261011",
+  "manifest_sha256": "3e5dd4ea929d72f71563375eb2ffbd7df3c29cddb21df9888d53bee1af66059e",
+  "test_proof": {
+    "target": "test",
+    "verified": true,
+    "batch": "provider-billing-payment-fit-20261011",
+    "manifest_sha256": "3e5dd4ea929d72f71563375eb2ffbd7df3c29cddb21df9888d53bee1af66059e",
+    "backup_file": "backup-test-1791691395798.json",
+    "object_updates": 1,
+    "new_objects": 1,
+    "new_mapped": 1,
+    "mapped": 1319,
+    "all_prior_rows_preserved_except_declared_situation_context": true,
+    "prior_rows_checked": {
+      "objects": 1360,
+      "relationships": 1275,
+      "sources": 206,
+      "evidence_links": 2143,
+      "product_media": 155,
+      "import_batches": 90
+    },
+    "paths_verified": [
+      [
+        "wc-candidate-c0ec05291bc3bcd69e352287",
+        "wc-candidate-c31490a749fd672effbb16c3",
+        "solution-opta-data-home-care-billing"
+      ]
+    ],
+    "statuses_unchanged": true,
+    "internal_media": 2,
+    "public_media": 0,
+    "public_deployment": false
+  },
+  "live_proof": {
+    "target": "live",
+    "verified": true,
+    "batch": "provider-billing-payment-fit-20261011",
+    "manifest_sha256": "3e5dd4ea929d72f71563375eb2ffbd7df3c29cddb21df9888d53bee1af66059e",
+    "backup_file": "backup-live-1791691468137.json",
+    "object_updates": 1,
+    "new_objects": 1,
+    "new_mapped": 1,
+    "mapped": 1319,
+    "all_prior_rows_preserved_except_declared_situation_context": true,
+    "prior_rows_checked": {
+      "objects": 1360,
+      "relationships": 1275,
+      "sources": 206,
+      "evidence_links": 2143,
+      "product_media": 155,
+      "import_batches": 90
+    },
+    "paths_verified": [
+      [
+        "wc-candidate-c0ec05291bc3bcd69e352287",
+        "wc-candidate-c31490a749fd672effbb16c3",
+        "solution-opta-data-home-care-billing"
+      ]
+    ],
+    "statuses_unchanged": true,
+    "internal_media": 2,
+    "public_media": 0,
+    "public_deployment": false
+  },
+  "mapped_counts": {
+    "needs": 198,
+    "situations": 1005,
+    "offerings": 116,
+    "total": 1319,
+    "situations_with_mapped_offerings": 103
+  },
+  "added": {
+    "offerings": 1,
+    "fits": 1,
+    "sources": 2,
+    "exact_evidence_links": 62,
+    "internal_media": 2,
+    "context_updates": 1
+  },
+  "interpretation": "Earlier payment for home-care claims; fees, acceptance and recourse terms apply. No rejected-invoice correction or residential-care fit asserted.",
+  "browser_verified": "Full path, candidate offering and hypothesis situation, costs, timing, eligibility, contract, recourse qualifications and two source cards accessible in internal preview.",
+  "media_scope": "Official logo and calendar/euro service graphic. Graphic explicitly labelled as service illustration, not software UI or proof of payout. Internal-only; public reuse rights unconfirmed.",
+  "screenshots": {
+    "/private/tmp/whocares-provider-billing-map-20261011.png": "bf59689093944daa055aa522420ac00c5f588ea3641a6d5fbc0ed3a4056e91aa",
+    "/private/tmp/whocares-provider-billing-detail-20261011.png": "b6308c921ccf1fcf82298dcbef4f4ab513f9bc00c1bb1a9071850cf850db45cc"
+  },
+  "public_ui_deployment": false,
+  "image_generation": false,
+  "limitations": [
+    "Supervised publication, not autonomous publication.",
+    "Provider claims and selected framework clauses do not establish demand, actual payment timing, solvency or individual admission.",
+    "All raw captures and packets remain outside Git."
+  ]
+}
