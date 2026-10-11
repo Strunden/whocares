@@ -1,0 +1,340 @@
+{
+  "date": "2026-10-11",
+  "purpose": "Make older-adult and family candidate situations distinguishable through concise constraints rather than generic persona text.",
+  "total_context_updates": 33,
+  "mapped_counts": {
+    "need": 198,
+    "situation": 1005,
+    "solution": 116,
+    "total": 1319
+  },
+  "generic_context_before": 517,
+  "generic_context_after": 484,
+  "batches": [
+    {
+      "manifest_batch": "adult-family-situation-context-clarity-20261011",
+      "test": {
+        "target": "test",
+        "verified": true,
+        "batch": "adult-family-situation-context-clarity-20261011",
+        "changes_sha256": "252fb0216b4ce647abcc477090e21f828042fdb8e0b6acc3bd507dd36da8ea09",
+        "backup_file": "backup-test-1791692143904.json",
+        "object_updates": 30,
+        "all_other_rows_unchanged": true,
+        "status_preserved": true,
+        "fields": [
+          "scope.navigation.summary",
+          "provenance.context_copy_review"
+        ],
+        "public_ui_deployment": false
+      },
+      "live": {
+        "target": "live",
+        "verified": true,
+        "batch": "adult-family-situation-context-clarity-20261011",
+        "changes_sha256": "252fb0216b4ce647abcc477090e21f828042fdb8e0b6acc3bd507dd36da8ea09",
+        "backup_file": "backup-live-1791692175916.json",
+        "object_updates": 30,
+        "all_other_rows_unchanged": true,
+        "status_preserved": true,
+        "fields": [
+          "scope.navigation.summary",
+          "provenance.context_copy_review"
+        ],
+        "public_ui_deployment": false
+      },
+      "projection": {
+        "verified": true,
+        "verified_paths": 30,
+        "generic_summaries_remaining": 484,
+        "paths": [
+          {
+            "id": "wc-candidate-003dff1067858ecaa4ff9016",
+            "path": "wc-candidate-7945895a796c4b07c6a22d5d/wc-candidate-003dff1067858ecaa4ff9016",
+            "title": "Pain makes it difficult to keep up the activities I enjoy",
+            "description": "Activities the person values are difficult to sustain while in pain.",
+            "status": "hypothesis"
+          },
+          {
+            "id": "wc-candidate-03b8ebcf231494abb3373c2e",
+            "path": "study-need-care-home/wc-candidate-03b8ebcf231494abb3373c2e",
+            "title": "I cannot tell whether a home's stated services are actually available for my parent",
+            "description": "The family needs to distinguish advertised services from support available to their parent.",
+            "status": "hypothesis"
+          },
+          {
+            "id": "wc-candidate-04a20148174563dc17839f7a",
+            "path": "wc-candidate-007e282392f683b3e826afde/wc-candidate-04a20148174563dc17839f7a",
+            "title": "Recovery goals from different professionals do not fit our everyday routine",
+            "description": "Professional recovery goals conflict with the routine the family can sustain at home.",
+            "status": "hypothesis"
+          },
+          {
+            "id": "wc-candidate-055a6669f823c2115ad13b6b",
+            "path": "wc-candidate-3a50c9d5a3f0aee4de3a9a51/wc-candidate-055a6669f823c2115ad13b6b",
+            "title": "A person helping me threatens to withdraw care if I complain",
+            "description": "Complaining may put the person’s continued care at risk.",
+            "status": "hypothesis"
+          },
+          {
+            "id": "wc-candidate-07e69e05d65a96fcfa81e7b6",
+            "path": "wc-candidate-2a103f8b447a7be19ddf53e4/wc-candidate-07e69e05d65a96fcfa81e7b6",
+            "title": "My parent's home is difficult for me to help them move around in",
+            "description": "The home layout makes helping a parent move around difficult.",
+            "status": "hypothesis"
+          },
+          {
+            "id": "wc-candidate-0a25634d21426644b8881d7a",
+            "path": "wc-candidate-5a513fecae9596de5f9bdbcf/wc-candidate-0a25634d21426644b8881d7a",
+            "title": "I sleep during the day and struggle to rest at night",
+            "description": "Daytime sleep and difficulty resting at night disrupt the person’s sleep pattern.",
+            "status": "hypothesis"
+          },
+          {
+            "id": "wc-candidate-0a9ae5e61a6d2bcae9aff992",
+            "path": "wc-candidate-007e282392f683b3e826afde/wc-candidate-0a9ae5e61a6d2bcae9aff992",
+            "title": "Equipment used in rehabilitation is unavailable once my relative returns home",
+            "description": "Returning home removes access to equipment used during rehabilitation.",
+            "status": "hypothesis"
+          },
+          {
+            "id": "wc-candidate-0b250d6230f40e8b21e31c1d",
+            "path": "wc-object-dae6a42b17e3ab844ddca033/wc-candidate-0b250d6230f40e8b21e31c1d",
+            "title": "Chewing makes some of my favourite foods difficult to eat",
+            "description": "The person wants familiar foods that are now difficult to chew.",
+            "status": "hypothesis"
+          },
+          {
+            "id": "wc-candidate-0b96bab9100ebea4dba236e4",
+            "path": "wc-candidate-b682901c52ae1908815a1e38/wc-candidate-0b96bab9100ebea4dba236e4",
+            "title": "I cannot explain support needs that occur outside the assessor's visit",
+            "description": "An assessment visit does not show the support needed at other times.",
+            "status": "hypothesis"
+          },
+          {
+            "id": "wc-candidate-0c8847e6cc1f1a425f9b99d0",
+            "path": "wc-candidate-89a2d057b8314d298f875a7e/wc-candidate-0c8847e6cc1f1a425f9b99d0",
+            "title": "I cannot wash the parts of my body I need to reach",
+            "description": "The person cannot reach all the areas they need to wash.",
+            "status": "hypothesis"
+          },
+          {
+            "id": "wc-candidate-0f2ecbbbffd8d387ae477642",
+            "path": "wc-candidate-32387f009d1a50e89e55442e/wc-candidate-0f2ecbbbffd8d387ae477642",
+            "title": "I cannot arrange trusted local help without being there to meet people",
+            "description": "The family cannot be present to meet and assess potential local helpers.",
+            "status": "hypothesis"
+          },
+          {
+            "id": "wc-candidate-0f366da326c7f4d55c5bb3fb",
+            "path": "wc-candidate-284edf466aa35ce394711805/wc-candidate-0f366da326c7f4d55c5bb3fb",
+            "title": "I cannot tell whether a change in a wound needs urgent attention",
+            "description": "The person is unsure how urgently a changed wound needs professional attention.",
+            "status": "hypothesis"
+          },
+          {
+            "id": "wc-candidate-11908ee1e07194701d2ff880",
+            "path": "wc-candidate-721f9b672e3c1cad09f1ae16/wc-candidate-11908ee1e07194701d2ff880",
+            "title": "The discharge information does not explain who to call about problems at home",
+            "description": "After discharge, the family lacks a clear contact for problems that arise at home.",
+            "status": "hypothesis"
+          },
+          {
+            "id": "wc-candidate-12118322e6cbf566d8197328",
+            "path": "wc-candidate-b947f990b98d7f0678d05940/wc-candidate-12118322e6cbf566d8197328",
+            "title": "Family members use different languages and updates do not reach everyone consistently",
+            "description": "Updates do not reach relatives consistently across the languages they use.",
+            "status": "hypothesis"
+          },
+          {
+            "id": "wc-candidate-13129b68ad717c3dddc20535",
+            "path": "wc-candidate-7945895a796c4b07c6a22d5d/wc-candidate-13129b68ad717c3dddc20535",
+            "title": "Walking far enough to do my errands leaves me exhausted",
+            "description": "The distance needed for errands exceeds what the person can comfortably manage.",
+            "status": "hypothesis"
+          },
+          {
+            "id": "wc-candidate-14fae0790f0eb173655250d5",
+            "path": "wc-candidate-3a50c9d5a3f0aee4de3a9a51/wc-candidate-14fae0790f0eb173655250d5",
+            "title": "I do not know who will help me safely leave an unsafe arrangement",
+            "description": "The person needs a safe way out but cannot identify who will help.",
+            "status": "hypothesis"
+          },
+          {
+            "id": "wc-candidate-1504489887d2ef04a8ffb52e",
+            "path": "wc-candidate-0b2fb8e6171a61848f0c0712/wc-candidate-1504489887d2ef04a8ffb52e",
+            "title": "I want someone with me when dying feels frightening",
+            "description": "Fear of dying creates a wish for someone to remain alongside the person.",
+            "status": "hypothesis"
+          },
+          {
+            "id": "wc-candidate-15c510717248561c5a0bb9b2",
+            "path": "wc-candidate-bdc08fa9da391a8cd47f49c4/wc-candidate-15c510717248561c5a0bb9b2",
+            "title": "Pet costs compete with the essentials I need for myself",
+            "description": "Caring for a pet competes with the person’s own essential spending.",
+            "status": "hypothesis"
+          },
+          {
+            "id": "wc-candidate-15d194540db12aadcdc5c39b",
+            "path": "wc-candidate-f92dca85d4d3235106ab29e5/wc-candidate-15d194540db12aadcdc5c39b",
+            "title": "My relative is infectious and I do not know how to protect others at home",
+            "description": "The family lacks a clear way to protect others while caring for an infectious relative.",
+            "status": "hypothesis"
+          },
+          {
+            "id": "wc-candidate-161129e4c4a42701bad591dd",
+            "path": "wc-candidate-f85711be98f5f495e1a4bc5d/wc-candidate-161129e4c4a42701bad591dd",
+            "title": "I cannot tell which changes need professional help and which support I can provide",
+            "description": "The family is uncertain where their support ends and professional help is needed.",
+            "status": "hypothesis"
+          },
+          {
+            "id": "wc-candidate-16cfb3bcaa1d5dce0f3010b8",
+            "path": "wc-candidate-b682901c52ae1908815a1e38/wc-candidate-16cfb3bcaa1d5dce0f3010b8",
+            "title": "I do not know what evidence is needed to challenge a care assessment",
+            "description": "The family cannot identify the evidence required to contest the care assessment.",
+            "status": "hypothesis"
+          },
+          {
+            "id": "wc-candidate-17f45ce1277ce4766a82ad88",
+            "path": "wc-object-feb85efad0d8e87d4a23a836/wc-candidate-17f45ce1277ce4766a82ad88",
+            "title": "I miss what people say when several people talk at once",
+            "description": "Overlapping voices make it difficult to follow what others are saying.",
+            "status": "hypothesis"
+          },
+          {
+            "id": "wc-candidate-17fae3e5d279268fc1c16775",
+            "path": "wc-object-dae6a42b17e3ab844ddca033/wc-candidate-17fae3e5d279268fc1c16775",
+            "title": "Meals delivered to me do not match what I enjoy eating",
+            "description": "Available delivered meals differ from the food the person wants to eat.",
+            "status": "hypothesis"
+          },
+          {
+            "id": "wc-candidate-188847c736307512130f6b68",
+            "path": "wc-candidate-740c3cade9065741f9d68dc1/wc-candidate-188847c736307512130f6b68",
+            "title": "My relative sees my attempts to help as interference",
+            "description": "Help offered by the family conflicts with how the relative wants to be involved.",
+            "status": "hypothesis"
+          },
+          {
+            "id": "wc-candidate-1ec8c0eb0473c0aef0aff9b5",
+            "path": "wc-candidate-0b2fb8e6171a61848f0c0712/wc-candidate-1ec8c0eb0473c0aef0aff9b5",
+            "title": "I want to stay in my preferred place but cannot arrange the support",
+            "description": "The support needed to remain in the preferred place cannot be arranged.",
+            "status": "hypothesis"
+          },
+          {
+            "id": "wc-candidate-20382620602e57fdd8f2d228",
+            "path": "wc-candidate-284edf466aa35ce394711805/wc-candidate-20382620602e57fdd8f2d228",
+            "title": "Pressure discomfort limits how long I can sit or lie in one position",
+            "description": "Discomfort makes remaining in the same sitting or lying position difficult.",
+            "status": "hypothesis"
+          },
+          {
+            "id": "wc-candidate-20efc14d5988ffb0bd3cd097",
+            "path": "wc-candidate-5a513fecae9596de5f9bdbcf/wc-candidate-20efc14d5988ffb0bd3cd097",
+            "title": "Pain wakes me before I have had enough sleep",
+            "description": "Pain interrupts sleep before the person feels rested.",
+            "status": "hypothesis"
+          },
+          {
+            "id": "wc-candidate-22ac31852a8353cb4c184ed9",
+            "path": "wc-candidate-6e7882f5d2c88f03aa5186b0/wc-candidate-22ac31852a8353cb4c184ed9",
+            "title": "Care schedules conflict with prayer or observances that matter to my relative",
+            "description": "Care timing clashes with the relative’s valued religious practices.",
+            "status": "hypothesis"
+          },
+          {
+            "id": "wc-candidate-22e08d29df59acd64991a29b",
+            "path": "wc-candidate-ca9f11b1a0013be5212b234b/wc-candidate-22e08d29df59acd64991a29b",
+            "title": "I return home weaker than before and cannot resume my usual routine",
+            "description": "Reduced strength after returning home makes the previous routine difficult.",
+            "status": "hypothesis"
+          },
+          {
+            "id": "wc-candidate-22ff1fe07581b2ac81f55bbf",
+            "path": "wc-candidate-5a513fecae9596de5f9bdbcf/wc-candidate-22ff1fe07581b2ac81f55bbf",
+            "title": "I cannot find a sleeping position that feels comfortable",
+            "description": "No available sleeping position feels comfortable to the person.",
+            "status": "hypothesis"
+          }
+        ],
+        "limits": "Projection verifies reachability and preserved metadata. It does not validate occurrence, demand or illustration adequacy."
+      }
+    },
+    {
+      "manifest_batch": "assessment-situation-context-completion-20261011",
+      "test": {
+        "target": "test",
+        "verified": true,
+        "batch": "assessment-situation-context-completion-20261011",
+        "changes_sha256": "0ac1cb417f8314111ecdc6b48b1ff60e8cd51d8b3e19990ba5f932728664691d",
+        "backup_file": "backup-test-1791692253610.json",
+        "object_updates": 3,
+        "all_other_rows_unchanged": true,
+        "status_preserved": true,
+        "fields": [
+          "scope.navigation.summary",
+          "provenance.context_copy_review"
+        ],
+        "public_ui_deployment": false
+      },
+      "live": {
+        "target": "live",
+        "verified": true,
+        "batch": "assessment-situation-context-completion-20261011",
+        "changes_sha256": "0ac1cb417f8314111ecdc6b48b1ff60e8cd51d8b3e19990ba5f932728664691d",
+        "backup_file": "backup-live-1791692277965.json",
+        "object_updates": 3,
+        "all_other_rows_unchanged": true,
+        "status_preserved": true,
+        "fields": [
+          "scope.navigation.summary",
+          "provenance.context_copy_review"
+        ],
+        "public_ui_deployment": false
+      },
+      "projection": {
+        "verified": true,
+        "verified_paths": 3,
+        "generic_summaries_remaining": 484,
+        "paths": [
+          {
+            "id": "wc-candidate-9910aceefbef75f554c86fb2",
+            "path": "wc-candidate-b682901c52ae1908815a1e38/wc-candidate-9910aceefbef75f554c86fb2",
+            "title": "The written decision does not explain how our evidence was considered",
+            "description": "The family cannot see how its submitted evidence affected the decision.",
+            "status": "hypothesis"
+          },
+          {
+            "id": "wc-candidate-bd2da62e6772d6e0813e25f7",
+            "path": "wc-candidate-b682901c52ae1908815a1e38/wc-candidate-bd2da62e6772d6e0813e25f7",
+            "title": "My relative appears more capable during an assessment than on difficult days",
+            "description": "A relatively capable assessment day differs from days when more support is needed.",
+            "status": "hypothesis"
+          },
+          {
+            "id": "wc-candidate-bdbeb2640535dd3fe8cff621",
+            "path": "wc-candidate-b682901c52ae1908815a1e38/wc-candidate-bdbeb2640535dd3fe8cff621",
+            "title": "My relative's needs increase while we wait for a reassessment",
+            "description": "Support needs grow before the reassessment can take place.",
+            "status": "hypothesis"
+          }
+        ],
+        "limits": "Projection verifies reachability and preserved metadata. It does not validate occurrence, demand or illustration adequacy."
+      }
+    }
+  ],
+  "browser_review": "Current canonical data loaded in internal browser. Revised movement summaries inspected; all five family care-assessment situations inspected together, with specific constraints. Neutral placeholders remain while generation is paused.",
+  "screenshots": {
+    "/private/tmp/whocares-context-movement-20261011.png": "8cb0703c1c5b10248d6a77d99e74802d6221b4ad7e7ce2c296f08355f6521369",
+    "/private/tmp/whocares-context-assessment-20261011.png": "e1894d4cea80607e1101bb3552c4e72da9c974c1378d5da2dc5e748f2208359a"
+  },
+  "limits": [
+    "Editorial clarification of existing candidate titles only; no observation, prevalence, quantification, causal or solution claim added.",
+    "Hypothesis statuses, research planning, evidence, relationships, media and unrelated records preserved.",
+    "Functional projection and browser inspection do not establish venture-builder comprehension or demand.",
+    "Remaining generic summaries and neutral illustration placeholders are incomplete work.",
+    "No public UI deployment or image generation."
+  ]
+}
