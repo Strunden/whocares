@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-11",
+  "batch": "tuv-wound-training-depth-20261011",
+  "manifest_sha256": "dcf4d4d3f623f2210d2d8f7af9f2cb836d0848cb82f40335f86450abcb632971",
+  "principles_sha256": "1698c1ce402af9694166b15938d24fb9fb05c55e85a330b4e589b7dca5b2a8c2",
+  "internal_live_verified": true,
+  "isolated_test_verified": true,
+  "new_offering": "solution-tuv-wound-documentation-workshop",
+  "existing_offering_updated": "solution-tuv-wundexperte-icw",
+  "new_objects": 1,
+  "new_mapped": 1,
+  "mapped_records": 1317,
+  "new_sources": 2,
+  "new_exact_evidence_links": 32,
+  "new_internal_provider_logos": 1,
+  "complete_paths_verified": [
+    [
+      "wc-candidate-b0aff529febbb7d550272d0c",
+      "wc-candidate-7e7ae822f674e3370cefba06",
+      "solution-tuv-wound-documentation-workshop"
+    ]
+  ],
+  "all_other_rows_preserved": true,
+  "statuses_preserved": true,
+  "original_incomplete_workshop_finding_preserved": "finding-453569a1bc13b0cbc6005cfc",
+  "qualified_workshop_finding": "finding-ce663498787d4e818fc1934d",
+  "readability_refinement": {
+    "target": "live",
+    "verified": true,
+    "batch": "tuv-wound-training-depth-20261011-readability",
+    "changes_sha256": "e0c0c2518aafa0cf59735c6932c4309ba4aad6c85c45bc65649714e2ae8b3b76",
+    "backup_file": "backup-readability-live-1791684595433.json",
+    "relationship_updates": 2,
+    "all_other_rows_unchanged": true,
+    "public_deployment": false
+  },
+  "publication_limits": [
+    "Internal only; no generated images or public deployment.",
+    "Existing course identity and epistemic status retained; original metadata recorded before refinement.",
+    "Workshop retains candidate status; provider descriptions are not independently established outcomes.",
+    "Original incomplete finding remains held."
+  ],
+  "browser_review": {
+    "four_offerings_rendered": true,
+    "workshop_opens": true,
+    "discount_keyword_and_camera_qualification_visible": true,
+    "existing_course_updated_context_visible": true,
+    "dedicated_workshop_photo_missing": true,
+    "final_captions_verified": true,
+    "all_four_offering_images_loaded": true,
+    "screenshot_sha256": "9da1610bd406b2a1948efa2ca448010abe1447dc1880886adfee23462eea1c51"
+  },
+  "public_deployment": false,
+  "application_script_sha256": "135e346d4ed6dbb7eaa7bb587f8d803a40158070cc74a350b97c53475ffaff7c",
+  "readability_script_sha256": "baa4e318dd8d22b625729c6621149d36e3a58e8151f12fe303093825c00bdf7b"
+}
