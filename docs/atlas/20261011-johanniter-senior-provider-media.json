@@ -1,0 +1,139 @@
+{
+  "date": "2026-10-11",
+  "change": "Add authentic Johanniter Seniorenhäuser GmbH identity to two existing offerings; correct initial screenshot-region error before final visual acceptance.",
+  "targets": [
+    "solution-johanniter-short-stay",
+    "solution-johanniter-stift-berlin-lichterfelde"
+  ],
+  "addition": {
+    "test": {
+      "target": "test",
+      "verified": true,
+      "batch": "johanniter-senior-provider-logos-20261011",
+      "manifest_sha256": "5b89d3c6b19e0afe505c38200e3a69c5df7dfe3ca45d223f9544a453c189e27d",
+      "backup_file": "backup-test-1791720980875.json",
+      "internal_media": 2,
+      "public_media": 0,
+      "mapped": 1321,
+      "counts": {
+        "need": 198,
+        "situation": 1005,
+        "solution": 118
+      },
+      "logo_gaps_before": 28,
+      "logo_gaps_after": 26,
+      "all_prior_rows_preserved": true,
+      "public_deployment": false
+    },
+    "live": {
+      "target": "live",
+      "verified": true,
+      "batch": "johanniter-senior-provider-logos-20261011",
+      "manifest_sha256": "5b89d3c6b19e0afe505c38200e3a69c5df7dfe3ca45d223f9544a453c189e27d",
+      "backup_file": "backup-live-1791721010346.json",
+      "internal_media": 2,
+      "public_media": 0,
+      "mapped": 1321,
+      "counts": {
+        "need": 198,
+        "situation": 1005,
+        "solution": 118
+      },
+      "logo_gaps_before": 28,
+      "logo_gaps_after": 26,
+      "all_prior_rows_preserved": true,
+      "public_deployment": false
+    }
+  },
+  "capture_correction": {
+    "test": {
+      "target": "test",
+      "verified": true,
+      "batch": "johanniter-senior-capture-repair-20261011",
+      "manifest_sha256": "8229af8145a7800fb9546ea717eafa02d7eb9a886a229f020c7020bf5ab8f888",
+      "backup_file": "backup-test-1791733679429.json",
+      "internal_media_updated": 2,
+      "public_media": 0,
+      "mapped": 1321,
+      "counts": {
+        "need": 198,
+        "situation": 1005,
+        "solution": 118
+      },
+      "logo_gaps_before": 26,
+      "logo_gaps_after": 26,
+      "all_unrelated_rows_preserved": true,
+      "only_target_preview_provenance_changed": true,
+      "public_deployment": false
+    },
+    "live": {
+      "target": "live",
+      "verified": true,
+      "batch": "johanniter-senior-capture-repair-20261011",
+      "manifest_sha256": "8229af8145a7800fb9546ea717eafa02d7eb9a886a229f020c7020bf5ab8f888",
+      "backup_file": "backup-live-1791733775752.json",
+      "internal_media_updated": 2,
+      "public_media": 0,
+      "mapped": 1321,
+      "counts": {
+        "need": 198,
+        "situation": 1005,
+        "solution": 118
+      },
+      "logo_gaps_before": 26,
+      "logo_gaps_after": 26,
+      "all_unrelated_rows_preserved": true,
+      "only_target_preview_provenance_changed": true,
+      "public_deployment": false
+    }
+  },
+  "media_review": {
+    "source_url": "https://www.johanniter.de/johanniter-seniorenhaeuser/standorte/johanniter-stift-berlin-lichterfelde/",
+    "source_capture_sha256": "b7833b488b0d9050d828f6a8b1d58f36ca9f103337c3e46da5c10168b708c896",
+    "source_representation": "Official operator header DOM fragment; source URL is HTML containing inline SVG, not an invented standalone asset URL.",
+    "preview_path": "data/internal-media/johanniter-seniorenhaeuser-logo-20261011.png",
+    "preview_sha256": "f9efaa153842125b715436152c4c3ff5f8f16f66b175e2dc586a33bb95e5a43c",
+    "preview_representation": "Exact 488 by 65 pixel crop at (146,73) of saved 1280 by 720 full browser screenshot, saved losslessly as PNG. No redraw, retouching or generation.",
+    "identity_only": true,
+    "rights_status": "unknown",
+    "visibility": "internal",
+    "excluded_identity": "Johanniter-Unfall-Hilfe logo belongs to a different operator."
+  },
+  "browser_verification": [
+    {
+      "url": "http://127.0.0.1:8793/#/all/e/solution-johanniter-short-stay",
+      "src": "data/internal-media/johanniter-seniorenhaeuser-logo-20261011.png",
+      "loaded": true,
+      "intrinsic_dimensions": [
+        488,
+        65
+      ],
+      "screenshot": "/private/tmp/whocares-johanniter-short-stay-logo-detail-20261011.jpg",
+      "saved_pixels_inspected": true
+    },
+    {
+      "url": "http://127.0.0.1:8793/#/all/e/solution-johanniter-stift-berlin-lichterfelde",
+      "src": "data/internal-media/johanniter-seniorenhaeuser-logo-20261011.png",
+      "loaded": true,
+      "intrinsic_dimensions": [
+        488,
+        65
+      ],
+      "screenshot": "/private/tmp/whocares-johanniter-care-home-logo-detail-20261011.jpg",
+      "saved_pixels_inspected": true
+    }
+  ],
+  "verification_notes": [
+    "Seven atlas-media tests passed, including local preview path and public exclusion checks.",
+    "Initial browser clip returned a navigation strip. Replaced using exact pixels from saved full screenshot, inspected saved file and final rendered record.",
+    "Correction transaction initially passed mutation then preservation assertion failed on expected revision and timestamp audit changes. Verified committed test transaction from its backup without replay; canonical correction then passed.",
+    "Internal preview research service failed; restarted its verified local process and confirmed canonical data loaded. No automatic refresh timing claim."
+  ],
+  "preservation": "Six-table backups, exact guards, atlas.batch_id and row comparison for both additions and corrections. Offering claims, sources and relationships unchanged. Only corrected media provenance, its audit fields and import receipts changed.",
+  "limits": [
+    "1321 mapped IDs unchanged: 198 needs, 1005 situations, 118 solutions. This is not proof of semantic uniqueness or demand.",
+    "26 logo reference gaps remain; broader context, evidence and service-media gaps remain.",
+    "Preview PNG is local, ignored by Git, and must be provisioned on any other internal host.",
+    "Public rights unconfirmed, no public deployment, no generated imagery."
+  ]
+}
