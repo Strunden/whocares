@@ -1,0 +1,268 @@
+{
+  "target": "live",
+  "verified": true,
+  "batch": "provider-context30-20261011",
+  "changes_sha256": "89f8c0d2b0f61757df4dd28340b42f3cc0ed9f457e03e604e054baf8d0c2b71b",
+  "backup_file": "backup-live-1791712018308.json",
+  "object_updates": 30,
+  "all_other_rows_unchanged": true,
+  "status_preserved": true,
+  "fields": [
+    "scope.navigation.summary",
+    "provenance.context_copy_review"
+  ],
+  "public_ui_deployment": false,
+  "date": "2026-10-11",
+  "principles_sha256": "1698c1ce402af9694166b15938d24fb9fb05c55e85a330b4e589b7dca5b2a8c2",
+  "test": {
+    "target": "test",
+    "verified": true,
+    "batch": "provider-context30-20261011",
+    "changes_sha256": "89f8c0d2b0f61757df4dd28340b42f3cc0ed9f457e03e604e054baf8d0c2b71b",
+    "backup_file": "backup-test-1791711985218.json",
+    "object_updates": 30,
+    "all_other_rows_unchanged": true,
+    "status_preserved": true,
+    "fields": [
+      "scope.navigation.summary",
+      "provenance.context_copy_review"
+    ],
+    "public_ui_deployment": false
+  },
+  "mapped_records": 1321,
+  "generic_situation_contexts": {
+    "before": 289,
+    "after": 259
+  },
+  "current_revision": "8e010a4a0453541161e30f2ebe3a83d7",
+  "entries": [
+    {
+      "id": "wc-candidate-6e88d938386fc154fd5d37a1",
+      "title": "We cannot see who needs help eating before meals are cleared away",
+      "old_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "People needing help with a meal are not identified while food is still available to them.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-6f1cd50b8475a4f1400de540",
+      "title": "A power failure stops equipment that residents depend on",
+      "old_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "Equipment needed for residents’ care stops working when the electricity supply fails.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-72a480bc3d995fc9e5719424",
+      "title": "We lack a dependable way to supervise volunteers and respond to concerns",
+      "old_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "Volunteer involvement lacks an agreed supervisor and a clear route for raising concerns.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-742d7227a23eaef65f1f50d0",
+      "title": "A new recruit leaves before becoming confident in the role",
+      "old_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "A recruit leaves during the period when they are still learning how to work in the service.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-766b2843918abbad88b13cb9",
+      "title": "A missed visit is discovered too late to arrange replacement care",
+      "old_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "The service learns that care was missed after the opportunity to arrange timely cover has passed.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-767a4a4010f77a49db89758b",
+      "title": "A clinician cannot be reached when a resident's condition changes",
+      "old_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "A change in the person’s condition needs clinical input, but the team cannot reach the clinician.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-7aa6344151fed4f77c7e447e",
+      "title": "A maintenance contractor cannot attend before the equipment is needed again",
+      "old_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "The equipment is due to be used again before the contractor can complete the repair.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-7c15f34fe4b3e72ccf19693e",
+      "title": "Flooding or fire requires a move but some residents cannot evacuate without support",
+      "old_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "An emergency move requires assistance for residents who cannot leave the building independently.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-7c9e523338b71314e14d909f",
+      "title": "A required medicine is unavailable and there is no agreed alternative route",
+      "old_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "A medicine is needed, but neither its supply nor an agreed alternative arrangement is available.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-7d5df58fdd76f21b6c4603fc",
+      "title": "A resident's cultural food needs cannot be met through the standard menu arrangements",
+      "old_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "Standard menu arrangements leave the service unable to provide food matching the resident’s cultural needs.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-7e2a3866c319619d122df0a0",
+      "title": "I cannot find applicants with the skills our residents need",
+      "old_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "Recruitment does not produce applicants whose skills match the care residents require.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-7ef6c96bcf1c1acf8a2705ae",
+      "title": "Relatives receive conflicting updates from different staff members",
+      "old_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "Relatives hear different accounts depending on which member of staff gives the update.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-81e8f0d48da99f514db93833",
+      "title": "Only one manager knows how a critical contract or process works",
+      "old_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "A critical process depends on one manager’s knowledge, with no shared account of how it works.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-82378a259763b531eab235d8",
+      "title": "A new service starts before referral and clinical support arrangements are ready",
+      "old_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "The service opens before its routes for referrals and clinical support have been established.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-8e45448dfb259cd1755a6b73",
+      "title": "The agreed payment does not reflect a new level of support our residents require",
+      "old_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "Residents require more support while the agreed payment remains based on their earlier needs.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-8fd2a1d5647bac3cf0cac9c9",
+      "title": "Severe weather prevents staff from reaching the service",
+      "old_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "The service needs staff on site while weather prevents them from making the journey.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-946a8096667bcb50acb328b7",
+      "title": "Agency cover arrives without knowing our residents or routines",
+      "old_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "An agency worker arrives to provide care without knowing the people or the service’s routines.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-953f63fa9551d0cefa83cdcd",
+      "title": "I cannot tell which tasks a temporary colleague is competent and authorised to perform",
+      "old_context": "A paid care worker or A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "The team cannot establish which responsibilities a temporary colleague can safely be assigned.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-96d487894e0108c1297e6c13",
+      "title": "A new worker is assigned responsibility before receiving a proper handover or induction",
+      "old_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "A worker starts assigned responsibilities without the local information needed to carry them out.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-98f6bbd3e66be2b87d4b2e37",
+      "title": "Residents wait for appointments that are difficult to arrange around care and transport",
+      "old_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "An appointment depends on aligning care arrangements with transport that is difficult to coordinate.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-9919df9235114e1b0615aafd",
+      "title": "An admission is delayed because funding, records and transport are not ready together",
+      "old_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "The person cannot be admitted until funding, essential records and travel arrangements align.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-9a599d05f15da929d6b04c17",
+      "title": "We cannot identify why some local groups rarely reach our service",
+      "old_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "Some local groups rarely use the service, and the provider does not understand what prevents access.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-9ca8019eed0c72fb9516975d",
+      "title": "An item is purchased but does not fit the resident, room or staff workflow",
+      "old_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "A purchased item cannot be used as intended in the resident’s space or the team’s routine.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-9cecb4b0ffb1160abfa6491e",
+      "title": "A change in a resident's condition is recorded but does not reach the next shift",
+      "old_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "The next shift starts without receiving a recorded change in the person’s condition.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-9cf2c8f44285f8732ec7a5f1",
+      "title": "The roster is filled on paper but the mix of skills is wrong for the shift",
+      "old_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "Every shift position is filled, but the available workers do not have the skills that shift requires.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-a100c97b96db4369067edee5",
+      "title": "A prospective resident needs support beyond our team's current capability",
+      "old_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "The proposed admission requires support that the current team is not equipped to provide.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-a73c0fd1d999f58e0a3f1378",
+      "title": "Heat builds up in resident rooms and we cannot keep people comfortable",
+      "old_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "Rising room temperatures leave the service unable to maintain residents’ comfort.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-ad0cb604f10ecf7794e06782",
+      "title": "An outbreak leaves us short of staff and unable to maintain normal routines",
+      "old_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "An outbreak reduces available staffing while ordinary care routines still need to be delivered.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-afbb0b15364056c9bdd340a4",
+      "title": "A hospital discharge arrives without the records needed for the first night",
+      "old_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "The first night after hospital discharge begins without the information needed to plan care.",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-b10830ef3bc053a90b0cfc26",
+      "title": "Usable supplies are discarded because storage and expiry checks are inconsistent",
+      "old_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "Supplies are thrown away despite being usable because storage and expiry checks are inconsistent.",
+      "epistemic_status": "hypothesis"
+    }
+  ],
+  "browser_verification": {
+    "url": "http://127.0.0.1:8793/#/all/g/wc-candidate-1b562ea610f14c8bce1cb902",
+    "shown_situations": 5,
+    "show_all_zoom": "56%",
+    "checked_new_contexts": [
+      "power failure",
+      "supported evacuation",
+      "severe weather"
+    ],
+    "click_to_drill": "Power-failure situation opens the next map level; explicit research-incomplete empty state, no solutions mapped.",
+    "record": "Hypothesis, no claim-level source attached, empirical scope unknown; preserved.",
+    "screenshot": "/private/tmp/whocares-provider-context30-20261011.png"
+  },
+  "limits": [
+    "Editorial clarification is not empirical validation.",
+    "Illustration generation remains paused; neutral placeholders are still media gaps.",
+    "No public UI deployment."
+  ]
+}
