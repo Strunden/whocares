@@ -1,0 +1,663 @@
+{
+  "date": "2026-10-11",
+  "batch_id": "nursing-working-time-desires-context-20261011",
+  "change": "Attach independently reviewed original nursing-survey context to two existing needs; preserve their statuses and all prior rows.",
+  "test": {
+    "target": "test",
+    "verified": true,
+    "manifest_sha256": "b0649134e8fbb2da951be10e14459b2fa23fb4e96b00edfa10ff97f32b2955eb",
+    "backup_file": "backup-test-1791737188485.json",
+    "mapped": 1321,
+    "source_additions": 1,
+    "context_evidence_links": 39,
+    "new_map_items": 0,
+    "all_prior_rows_unchanged": true,
+    "prior_rows_checked": {
+      "objects": 1363,
+      "relationships": 1311,
+      "sources": 221,
+      "evidence_links": 2613,
+      "product_media": 170,
+      "import_batches": 132
+    },
+    "human_status_unchanged": true,
+    "existing_need_paths_verified": true,
+    "public_ui_deployment": false,
+    "image_generation": false
+  },
+  "live": {
+    "target": "live",
+    "verified": true,
+    "manifest_sha256": "b0649134e8fbb2da951be10e14459b2fa23fb4e96b00edfa10ff97f32b2955eb",
+    "backup_file": "backup-live-1791737226545.json",
+    "mapped": 1321,
+    "source_additions": 1,
+    "context_evidence_links": 39,
+    "new_map_items": 0,
+    "all_prior_rows_unchanged": true,
+    "prior_rows_checked": {
+      "objects": 1363,
+      "relationships": 1311,
+      "sources": 221,
+      "evidence_links": 2613,
+      "product_media": 170,
+      "import_batches": 132
+    },
+    "human_status_unchanged": true,
+    "existing_need_paths_verified": true,
+    "public_ui_deployment": false,
+    "image_generation": false
+  },
+  "source": {
+    "url": "https://www.arbeitnehmerkammer.de/fileadmin/Publikationen/Studien_Befragungen/Bundesweite_Studie_Ich_pflege_wieder_wenn_Kurzfassung.pdf",
+    "title": "Ich pflege wieder, wenn … — original short report",
+    "publication_month": "2022-04",
+    "fieldwork": "autumn 2021",
+    "captured_sha256": "1901e7b7bbed7366ccd07819ddf497f89d64dc5f9d5a57ae4e04b84ec81ba794",
+    "visual_review_pdf_pages": [
+      8,
+      14,
+      15
+    ]
+  },
+  "targets": [
+    {
+      "id": "wc-candidate-46f4e615c164f5322122a30f",
+      "kind": "aspiration",
+      "scope": {
+        "time": "Empirical time period not established.",
+        "geography": "Empirical geography not established; research target Germany.",
+        "navigation": {
+          "role": "need",
+          "order": 1241,
+          "title": "I need a working day I can plan my life around",
+          "lenses": [
+            "worker"
+          ],
+          "summary": "Know when work starts and ends, with changes that can be reconciled with life outside the job.",
+          "short_title": "Predictable working time",
+          "overview_group": {
+            "id": "worker-time",
+            "icp": "professional-caregiver",
+            "label": "Working life",
+            "order": 200,
+            "editorial": true,
+            "icp_label": "Care worker",
+            "rationale": "Time, rounds, livelihood, own health and life outside care determine whether the worker’s day is sustainable.",
+            "crosslinks": []
+          },
+          "affected_lenses": [
+            "worker"
+          ],
+          "research_status": "not_researched",
+          "candidate_rationale": "Knowledge-generated research candidate: relevant to professional-caregiver. This does not establish occurrence, frequency, severity or an unmet market.",
+          "illustration_status": "neutral_placeholder_while_image_generation_paused",
+          "validation_question": "Who experiences this, in what circumstances, and what counterexamples or successful arrangements exist?"
+        },
+        "population": "Empirical population not established; intended perspective: paid direct-care workers, nurses, assistants and live-in workers supporting older people; employment, qualification and setting not yet established.",
+        "research_planning": {
+          "role": "need",
+          "origin": "Knowledge-generated editorial research hypothesis; no interview, prevalence, observed event or efficacy asserted.",
+          "status": "awaiting_validation",
+          "batch_id": "knowledge-breadth-professional-caregivers-20261010",
+          "proposed_at": "2026-10-10",
+          "short_title": "Predictable working time",
+          "measurements": [],
+          "affected_icps": [
+            "professional-caregiver"
+          ],
+          "candidate_title": "I need a working day I can plan my life around",
+          "research_job_ids": [],
+          "target_geography": "Germany; empirical geography not established for new hypotheses",
+          "measurement_status": "not_started",
+          "research_questions": {
+            "quantify": "Find prevalence or reach, frequency, severity and time/money consequences for the exact population and setting; keep denominator, method, geography, dates and uncertainty. Do not interpret missing data as low relevance.",
+            "validate": "Who experiences this, in what circumstances, and what counterexamples or successful arrangements exist?",
+            "solutions": "Find named currently existing offerings relevant to this situation; verify access, eligibility, cost, actual capability, limits and authentic media. Reuse canonical offering identities."
+          },
+          "solution_search_status": "not_started"
+        }
+      },
+      "title": "I need a working day I can plan my life around",
+      "entry_id": null,
+      "revision": 4,
+      "statement": "Research hypothesis to validate: I need a working day I can plan my life around. Knowledge-generated editorial scenario; no observed person, interview, frequency or severity is asserted.",
+      "confidence": {
+        "basis": "not_assessed",
+        "rationale": "Knowledge-generated research hypothesis; no empirical validation or quantification claimed."
+      },
+      "created_at": "2026-10-10T17:41:33.518857+00:00",
+      "provenance": {
+        "method": "User-requested knowledge-first candidate generation",
+        "batch_id": "knowledge-breadth-professional-caregivers-20261010",
+        "authored_by": "Codex",
+        "context_copy_review": {
+          "date": "2026-10-11",
+          "method": "Editorial explanation of existing knowledge-generated need and its care context. Not a participant quote, observation, validated frequency, legal/clinical instruction, solution endorsement or unmet-market claim. Original hypothesis status and research planning retained.",
+          "previous_summary": "A paid care worker facing this need; direct research is pending."
+        },
+        "candidate_navigation": {
+          "date": "2026-10-10",
+          "actor": "Codex user-authorised breadth-first curation",
+          "method": "Planned need/situation placement only; hypothesis status and research planning preserved. Visibility is not empirical validation."
+        },
+        "empirical_evidence_status": "not_researched"
+      },
+      "updated_at": "2026-10-11T15:57:40.122599+00:00",
+      "epistemic_status": "hypothesis"
+    },
+    {
+      "id": "study-aspiration-wc-object-c1eb9499ddc4bba8175d4208",
+      "kind": "aspiration",
+      "scope": {
+        "geography": "Germany unless the linked source states otherwise",
+        "navigation": {
+          "role": "need",
+          "image": "assets/illustrations/study/need-care-time-v6.png",
+          "order": 5,
+          "title": "I need time to care, not just finish tasks",
+          "lenses": [
+            "worker",
+            "provider"
+          ],
+          "summary": "Support a resident’s own pace, even when the team is stretched.",
+          "view_id": "wc-object-c1eb9499ddc4bba8175d4208",
+          "short_title": "Time to care",
+          "overview_group": {
+            "id": "worker-time",
+            "icp": "professional-caregiver",
+            "label": "Working life",
+            "order": 200,
+            "editorial": true,
+            "icp_label": "Care worker",
+            "rationale": "Time, rounds, livelihood, own health and life outside care determine whether the worker’s day is sustainable.",
+            "crosslinks": []
+          },
+          "affected_lenses": [
+            "worker",
+            "provider",
+            "adult"
+          ]
+        },
+        "limitations": "Editorial expression of a valued outcome, not a participant quotation or a universal preference.",
+        "research_planning": {
+          "role": "need",
+          "origin": "Knowledge-generated editorial research hypothesis; no interview, prevalence, observed event or efficacy asserted.",
+          "status": "awaiting_validation",
+          "batch_id": "knowledge-breadth-professional-caregivers-20261010",
+          "proposed_at": "2026-10-10",
+          "short_title": "Time to care",
+          "measurements": [],
+          "affected_icps": [
+            "professional-caregiver"
+          ],
+          "candidate_title": "I need time to care, not just finish tasks",
+          "research_job_ids": [],
+          "target_geography": "Germany; empirical geography not established for new hypotheses",
+          "measurement_status": "not_started",
+          "research_questions": {
+            "quantify": "Find prevalence or reach, frequency, severity and time/money consequences for the exact population and setting; keep denominator, method, geography, dates and uncertainty. Do not interpret missing data as low relevance.",
+            "validate": "Who experiences this, in what circumstances, and what counterexamples or successful arrangements exist?",
+            "solutions": "Find named currently existing offerings relevant to this situation; verify access, eligibility, cost, actual capability, limits and authentic media. Reuse canonical offering identities."
+          },
+          "solution_search_status": "not_started"
+        }
+      },
+      "title": "Support a resident’s own pace, even when the team is stretched.",
+      "entry_id": null,
+      "revision": 4,
+      "statement": "Support a resident’s own pace, even when the team is stretched.",
+      "confidence": {
+        "basis": "not_assessed",
+        "rationale": "Editorial need or fit for discovery; requires direct research and is not an outcome or prevalence claim."
+      },
+      "created_at": "2026-10-09T16:59:26.180214+00:00",
+      "provenance": {
+        "date": "2026-10-09",
+        "method": "needs-situations-solutions-20261009",
+        "reviewed_by": "Codex: user-directed hierarchy integration",
+        "breadth_planning": {
+          "method": "Reviewed concept reuse; original statement, status, evidence and navigation preserved.",
+          "batch_id": "knowledge-breadth-professional-caregivers-20261010"
+        },
+        "original_local_record": {
+          "kind": "aspiration",
+          "scope": {
+            "geography": "Germany unless the linked source states otherwise",
+            "limitations": "Editorial expression of a valued outcome, not a participant quotation or a universal preference."
+          },
+          "title": "Support a resident’s own pace, even when the team is stretched.",
+          "sources": [
+            {
+              "url": "https://pflegenetzwerk-deutschland.de/fileadmin/files/Downloads/pflegenetzwerk-deutschland-selep-ergebnisbericht.pdf",
+              "title": "SeLeP: Selbstbestimmtes Leben im Pflegeheim – Ergebnisbericht (project 2019–2021)",
+              "stance": "supports",
+              "publisher": "Pflegenetzwerk Deutschland (SeLeP project report, University of Augsburg consortium)",
+              "limitations": "Case studies in selected facilities only; no prevalence claims; resident quotes attributable to specific cases; report date and sampling details not established from read passages",
+              "published_date": null
+            }
+          ],
+          "statement": "Support a resident’s own pace, even when the team is stretched.",
+          "confidence": {
+            "basis": "single_source",
+            "rationale": "Editorial expression of a valued outcome, not a participant quotation or a universal preference."
+          },
+          "epistemic_status": "candidate"
+        }
+      },
+      "updated_at": "2026-10-10T19:00:39.796441+00:00",
+      "epistemic_status": "candidate"
+    }
+  ],
+  "review": {
+    "job_id": "f8a71482742b4f76b2cc5220f14c2d23f00679dc1bca5244a9c059266c5b7994",
+    "status": "reviewed_partial",
+    "errors": [],
+    "metrics": {
+      "duration_seconds": 105.439,
+      "model_calls": 4,
+      "model_calls_by_role": {
+        "researcher": 0,
+        "reviewer": 4
+      },
+      "counted_usd": 0.013693499999999999,
+      "provider_reported_usd": 0.003761395,
+      "http_requests": 0,
+      "page_calls": 0,
+      "search_calls": 0
+    },
+    "budget": {
+      "max_usd": 0.1,
+      "max_steps": 10,
+      "max_pages": 0,
+      "max_searches": 0,
+      "max_renders": 0
+    },
+    "usage": [
+      {
+        "id": 2488,
+        "run_id": "8495aa5f-6723-40c7-88b3-af24bf5bad6f",
+        "job_id": "f8a71482742b4f76b2cc5220f14c2d23f00679dc1bca5244a9c059266c5b7994",
+        "kind": "model",
+        "reserved": 0.018707099999999997,
+        "actual": 0.002289,
+        "metadata": "{\"cost_kind\": \"ceiling_rate_estimate\", \"duration_ms\": 19632.271458161995, \"model\": \"deepseek/deepseek-v4.1-flash\", \"provider_reported_usd\": 0.00044653, \"response_metadata\": [{\"finish_reason\": \"tool_calls\", \"id\": \"gen-1791736992-BWAmidht5mtLw4G5C4rz\", \"model_name\": \"deepseek/deepseek-v4.1-flash\", \"token_usage\": {\"completion_tokens\": 192, \"completion_tokens_details\": {\"accepted_prediction_tokens\": null, \"audio_tokens\": 0, \"image_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": null, \"text_tokens\": null}, \"cost\": 0.00044653, \"cost_details\": {\"upstream_inference_completions_cost\": 6.912e-05, \"upstream_inference_cost\": 0.00044653, \"upstream_inference_prompt_cost\": 0.00037741}, \"is_byok\": false, \"prompt_tokens\": 6862, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cache_write_tokens\": 0, \"cached_tokens\": 0, \"image_tokens\": null, \"text_tokens\": null, \"video_tokens\": 0}, \"total_tokens\": 7054}}], \"role\": \"reviewer\", \"span_id\": \"12e952c248ab4fa0\", \"token_usage\": [{\"input_token_details\": {\"audio\": 0, \"cache_creation\": 0, \"cache_read\": 0}, \"input_tokens\": 6862, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}, \"output_tokens\": 192, \"total_tokens\": 7054}]}",
+        "at": 1791736992.0506299
+      },
+      {
+        "id": 2489,
+        "run_id": "8495aa5f-6723-40c7-88b3-af24bf5bad6f",
+        "job_id": "f8a71482742b4f76b2cc5220f14c2d23f00679dc1bca5244a9c059266c5b7994",
+        "kind": "model",
+        "reserved": 0.024286199999999997,
+        "actual": 0.0043557,
+        "metadata": "{\"cost_kind\": \"ceiling_rate_estimate\", \"duration_ms\": 40103.72233297676, \"model\": \"deepseek/deepseek-v4.1-flash\", \"provider_reported_usd\": 0.000862665, \"response_metadata\": [{\"finish_reason\": \"tool_calls\", \"id\": \"gen-1791737024-uQqxjMmUB5SI6G0DScmM\", \"model_name\": \"deepseek/deepseek-v4.1-flash\", \"token_usage\": {\"completion_tokens\": 458, \"completion_tokens_details\": {\"accepted_prediction_tokens\": null, \"audio_tokens\": 0, \"image_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": null, \"text_tokens\": null}, \"cost\": 0.000862665, \"cost_details\": {\"upstream_inference_completions_cost\": 0.00016488, \"upstream_inference_cost\": 0.000862665, \"upstream_inference_prompt_cost\": 0.000697785}, \"is_byok\": false, \"prompt_tokens\": 12687, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cache_write_tokens\": 0, \"cached_tokens\": 0, \"image_tokens\": null, \"text_tokens\": null, \"video_tokens\": 0}, \"total_tokens\": 13145}}], \"role\": \"reviewer\", \"span_id\": \"700548ce1bab4bbb\", \"token_usage\": [{\"input_token_details\": {\"audio\": 0, \"cache_creation\": 0, \"cache_read\": 0}, \"input_tokens\": 12687, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}, \"output_tokens\": 458, \"total_tokens\": 13145}]}",
+        "at": 1791737024.411595
+      },
+      {
+        "id": 2490,
+        "run_id": "8495aa5f-6723-40c7-88b3-af24bf5bad6f",
+        "job_id": "f8a71482742b4f76b2cc5220f14c2d23f00679dc1bca5244a9c059266c5b7994",
+        "kind": "model",
+        "reserved": 0.018891,
+        "actual": 0.0023568,
+        "metadata": "{\"cost_kind\": \"ceiling_rate_estimate\", \"duration_ms\": 2561.9982918724418, \"model\": \"deepseek/deepseek-v4.1-flash\", \"provider_reported_usd\": 0.001011312, \"response_metadata\": [{\"finish_reason\": \"tool_calls\", \"id\": \"gen-1791737068-0vVlpph9PXpZVZKKcbvY\", \"model_name\": \"deepseek/deepseek-v4.1-flash\", \"token_usage\": {\"completion_tokens\": 204, \"completion_tokens_details\": {\"accepted_prediction_tokens\": null, \"audio_tokens\": 0, \"image_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": null, \"text_tokens\": null}, \"cost\": 0.001011312, \"cost_details\": {\"upstream_inference_completions_cost\": 0.00013464, \"upstream_inference_cost\": 0.001011312, \"upstream_inference_prompt_cost\": 0.000876672}, \"is_byok\": false, \"prompt_tokens\": 7040, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cache_write_tokens\": 0, \"cached_tokens\": 1792, \"image_tokens\": null, \"text_tokens\": null, \"video_tokens\": 0}, \"total_tokens\": 7244}}], \"role\": \"reviewer\", \"span_id\": \"33d0f56ef8f045dd\", \"token_usage\": [{\"input_token_details\": {\"audio\": 0, \"cache_creation\": 0, \"cache_read\": 1792}, \"input_tokens\": 7040, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}, \"output_tokens\": 204, \"total_tokens\": 7244}]}",
+        "at": 1791737068.271465
+      },
+      {
+        "id": 2491,
+        "run_id": "8495aa5f-6723-40c7-88b3-af24bf5bad6f",
+        "job_id": "f8a71482742b4f76b2cc5220f14c2d23f00679dc1bca5244a9c059266c5b7994",
+        "kind": "model",
+        "reserved": 0.024239699999999996,
+        "actual": 0.004692,
+        "metadata": "{\"cost_kind\": \"ceiling_rate_estimate\", \"duration_ms\": 5182.059583021328, \"model\": \"deepseek/deepseek-v4.1-flash\", \"provider_reported_usd\": 0.001440888, \"response_metadata\": [{\"finish_reason\": \"tool_calls\", \"id\": \"gen-1791737084-VgQ7sJTcDss0oY4Sfp6z\", \"model_name\": \"deepseek/deepseek-v4.1-flash\", \"token_usage\": {\"completion_tokens\": 882, \"completion_tokens_details\": {\"accepted_prediction_tokens\": null, \"audio_tokens\": 0, \"image_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": null, \"text_tokens\": null}, \"cost\": 0.001440888, \"cost_details\": {\"upstream_inference_completions_cost\": 0.00058212, \"upstream_inference_cost\": 0.001440888, \"upstream_inference_prompt_cost\": 0.000858768}, \"is_byok\": false, \"prompt_tokens\": 12112, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cache_write_tokens\": 0, \"cached_tokens\": 7168, \"image_tokens\": null, \"text_tokens\": null, \"video_tokens\": 0}, \"total_tokens\": 12994}}], \"role\": \"reviewer\", \"span_id\": \"3a76b50b86854167\", \"token_usage\": [{\"input_token_details\": {\"audio\": 0, \"cache_creation\": 0, \"cache_read\": 7168}, \"input_tokens\": 12112, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}, \"output_tokens\": 882, \"total_tokens\": 12994}]}",
+        "at": 1791737083.7390049
+      }
+    ],
+    "findings": [
+      {
+        "epistemic_status": "candidate",
+        "evidence": [
+          {
+            "hash": "1901e7b7bbed7366ccd07819ddf497f89d64dc5f9d5a57ae4e04b84ec81ba794",
+            "passage_id": "passage-4be3c481c9b1e460cd803541",
+            "quote": "2\nVerlässliche Arbeitszeiten                                                              3,32",
+            "url": "https://www.arbeitnehmerkammer.de/fileadmin/Publikationen/Studien_Befragungen/Bundesweite_Studie_Ich_pflege_wieder_wenn_Kurzfassung.pdf"
+          },
+          {
+            "hash": "1901e7b7bbed7366ccd07819ddf497f89d64dc5f9d5a57ae4e04b84ec81ba794",
+            "passage_id": "passage-4fe169eb9e7fb60140c93767",
+            "quote": "Verlässliche Arbeitszeiten                                                              3,32",
+            "url": "https://www.arbeitnehmerkammer.de/fileadmin/Publikationen/Studien_Befragungen/Bundesweite_Studie_Ich_pflege_wieder_wenn_Kurzfassung.pdf"
+          },
+          {
+            "hash": "1901e7b7bbed7366ccd07819ddf497f89d64dc5f9d5a57ae4e04b84ec81ba794",
+            "passage_id": "passage-9ea025a328c585d4a98f94f3",
+            "quote": "1         Mehr Zeit für eine gute Pflege durch mehr Personal                                      2,15",
+            "url": "https://www.arbeitnehmerkammer.de/fileadmin/Publikationen/Studien_Befragungen/Bundesweite_Studie_Ich_pflege_wieder_wenn_Kurzfassung.pdf"
+          },
+          {
+            "hash": "1901e7b7bbed7366ccd07819ddf497f89d64dc5f9d5a57ae4e04b84ec81ba794",
+            "passage_id": "passage-6781ea4cba6d0a7852e5c4dc",
+            "quote": "Höhere Bezahlung                                                                       3,07",
+            "url": "https://www.arbeitnehmerkammer.de/fileadmin/Publikationen/Studien_Befragungen/Bundesweite_Studie_Ich_pflege_wieder_wenn_Kurzfassung.pdf"
+          },
+          {
+            "hash": "1901e7b7bbed7366ccd07819ddf497f89d64dc5f9d5a57ae4e04b84ec81ba794",
+            "passage_id": "passage-21cac35087c7f109ba82ea5d",
+            "quote": "n = 5.204.\nDie in Tabelle 3 ersichtliche Rangordnung der abgefragten Merkmale ist für insgesamt 25 Teilgruppen",
+            "url": "https://www.arbeitnehmerkammer.de/fileadmin/Publikationen/Studien_Befragungen/Bundesweite_Studie_Ich_pflege_wieder_wenn_Kurzfassung.pdf"
+          },
+          {
+            "hash": "1901e7b7bbed7366ccd07819ddf497f89d64dc5f9d5a57ae4e04b84ec81ba794",
+            "passage_id": "passage-cc667b3dd8a897288901234f",
+            "quote": "Bezahlung und verlässliche Arbeitszeiten ein. Mit etwas größerem Abstand auf der dritten Rangstufe",
+            "url": "https://www.arbeitnehmerkammer.de/fileadmin/Publikationen/Studien_Befragungen/Bundesweite_Studie_Ich_pflege_wieder_wenn_Kurzfassung.pdf"
+          },
+          {
+            "hash": "1901e7b7bbed7366ccd07819ddf497f89d64dc5f9d5a57ae4e04b84ec81ba794",
+            "passage_id": "passage-69de48da43b7cf15e9fcf3aa",
+            "quote": "folgenden Befunde sind bis auf eine kleine Ausnahme über alle Teilgruppen und die Gesamtheit der",
+            "url": "https://www.arbeitnehmerkammer.de/fileadmin/Publikationen/Studien_Befragungen/Bundesweite_Studie_Ich_pflege_wieder_wenn_Kurzfassung.pdf"
+          },
+          {
+            "hash": "1901e7b7bbed7366ccd07819ddf497f89d64dc5f9d5a57ae4e04b84ec81ba794",
+            "passage_id": "passage-b9f36823bdc6ae671a4bf678",
+            "quote": "Befragten hinweg stabil. Obwohl die exakte Reihenfolge der Arbeitsbedingungen nicht für alle Teil-",
+            "url": "https://www.arbeitnehmerkammer.de/fileadmin/Publikationen/Studien_Befragungen/Bundesweite_Studie_Ich_pflege_wieder_wenn_Kurzfassung.pdf"
+          },
+          {
+            "hash": "1901e7b7bbed7366ccd07819ddf497f89d64dc5f9d5a57ae4e04b84ec81ba794",
+            "passage_id": "passage-f51057e722173ce641927d8e",
+            "quote": "gruppen gleich ist, lassen sich insgesamt vier stabile Rangstufen aus den Berechnungen ableiten: Mehr",
+            "url": "https://www.arbeitnehmerkammer.de/fileadmin/Publikationen/Studien_Befragungen/Bundesweite_Studie_Ich_pflege_wieder_wenn_Kurzfassung.pdf"
+          },
+          {
+            "hash": "1901e7b7bbed7366ccd07819ddf497f89d64dc5f9d5a57ae4e04b84ec81ba794",
+            "passage_id": "passage-64c3a183813ad5b83d4a3a01",
+            "quote": "Zeit für eine gute Pflege durch mehr Personal ist die Bedingung, die von allen Befragten deutlich als die",
+            "url": "https://www.arbeitnehmerkammer.de/fileadmin/Publikationen/Studien_Befragungen/Bundesweite_Studie_Ich_pflege_wieder_wenn_Kurzfassung.pdf"
+          },
+          {
+            "hash": "1901e7b7bbed7366ccd07819ddf497f89d64dc5f9d5a57ae4e04b84ec81ba794",
+            "passage_id": "passage-682dea9c54141c009f8f7807",
+            "quote": "Die Befragung erfolgte im Herbst 2021. Die Stichprobe umfasst 12.684 auswertbare Antworten von",
+            "url": "https://www.arbeitnehmerkammer.de/fileadmin/Publikationen/Studien_Befragungen/Bundesweite_Studie_Ich_pflege_wieder_wenn_Kurzfassung.pdf"
+          },
+          {
+            "hash": "1901e7b7bbed7366ccd07819ddf497f89d64dc5f9d5a57ae4e04b84ec81ba794",
+            "passage_id": "passage-7223a3deb1c894ffd9b585c4",
+            "quote": "Langzeitpflege. Die Stichprobe ist selbstselektiv und daher trotz ihrer Größe nicht repräsentativ. Da die",
+            "url": "https://www.arbeitnehmerkammer.de/fileadmin/Publikationen/Studien_Befragungen/Bundesweite_Studie_Ich_pflege_wieder_wenn_Kurzfassung.pdf"
+          },
+          {
+            "hash": "1901e7b7bbed7366ccd07819ddf497f89d64dc5f9d5a57ae4e04b84ec81ba794",
+            "passage_id": "passage-d9e60d3f681235ae0d19d867",
+            "quote": "Tabelle 3: Ranking der wichtigsten Arbeitsbedingungen für Wiedereinstieg und",
+            "url": "https://www.arbeitnehmerkammer.de/fileadmin/Publikationen/Studien_Befragungen/Bundesweite_Studie_Ich_pflege_wieder_wenn_Kurzfassung.pdf"
+          },
+          {
+            "hash": "1901e7b7bbed7366ccd07819ddf497f89d64dc5f9d5a57ae4e04b84ec81ba794",
+            "passage_id": "passage-3d76a81966476807ac67c319",
+            "quote": "Rangstufe          Arbeitsbedingungen                                                        Mittlerer Rang",
+            "url": "https://www.arbeitnehmerkammer.de/fileadmin/Publikationen/Studien_Befragungen/Bundesweite_Studie_Ich_pflege_wieder_wenn_Kurzfassung.pdf"
+          },
+          {
+            "hash": "1901e7b7bbed7366ccd07819ddf497f89d64dc5f9d5a57ae4e04b84ec81ba794",
+            "passage_id": "passage-34e72d1043c226d88bcd29e5",
+            "quote": "wichtigste angesehen wird und auf der ersten Rangstufe zu finden ist. Dahinter reihen sich eine höhere",
+            "url": "https://www.arbeitnehmerkammer.de/fileadmin/Publikationen/Studien_Befragungen/Bundesweite_Studie_Ich_pflege_wieder_wenn_Kurzfassung.pdf"
+          },
+          {
+            "hash": "1901e7b7bbed7366ccd07819ddf497f89d64dc5f9d5a57ae4e04b84ec81ba794",
+            "passage_id": "passage-b4f5ef64eee89994f42ff9d0",
+            "quote": "Rangstufe und werden in Relation zu den anderen Bedingungen als am wenigsten wichtig angesehen.",
+            "url": "https://www.arbeitnehmerkammer.de/fileadmin/Publikationen/Studien_Befragungen/Bundesweite_Studie_Ich_pflege_wieder_wenn_Kurzfassung.pdf"
+          },
+          {
+            "hash": "1901e7b7bbed7366ccd07819ddf497f89d64dc5f9d5a57ae4e04b84ec81ba794",
+            "passage_id": "passage-456d9ef91778a3d03fdbc943",
+            "quote": "Tabelle 4: Die zehn wichtigsten Arbeitsbedingungen für Rückkehr bzw. Stundenerhöhung",
+            "url": "https://www.arbeitnehmerkammer.de/fileadmin/Publikationen/Studien_Befragungen/Bundesweite_Studie_Ich_pflege_wieder_wenn_Kurzfassung.pdf"
+          },
+          {
+            "hash": "1901e7b7bbed7366ccd07819ddf497f89d64dc5f9d5a57ae4e04b84ec81ba794",
+            "passage_id": "passage-12c30a8530432078d27f2fc5",
+            "quote": "Pflegekräfte n = 6.612–7.707.",
+            "url": "https://www.arbeitnehmerkammer.de/fileadmin/Publikationen/Studien_Befragungen/Bundesweite_Studie_Ich_pflege_wieder_wenn_Kurzfassung.pdf"
+          },
+          {
+            "hash": "1901e7b7bbed7366ccd07819ddf497f89d64dc5f9d5a57ae4e04b84ec81ba794",
+            "passage_id": "passage-d2726ee13860627140316f58",
+            "quote": "8    Verbindliche Dienstpläne                                                                89,1 %        7.392",
+            "url": "https://www.arbeitnehmerkammer.de/fileadmin/Publikationen/Studien_Befragungen/Bundesweite_Studie_Ich_pflege_wieder_wenn_Kurzfassung.pdf"
+          }
+        ],
+        "id": "finding-75d16420cbc5c8d4e47f02f6",
+        "kind": "problem",
+        "passage_ids": [
+          "passage-4be3c481c9b1e460cd803541",
+          "passage-4fe169eb9e7fb60140c93767",
+          "passage-9ea025a328c585d4a98f94f3",
+          "passage-6781ea4cba6d0a7852e5c4dc",
+          "passage-21cac35087c7f109ba82ea5d",
+          "passage-cc667b3dd8a897288901234f",
+          "passage-69de48da43b7cf15e9fcf3aa",
+          "passage-b9f36823bdc6ae671a4bf678",
+          "passage-f51057e722173ce641927d8e",
+          "passage-64c3a183813ad5b83d4a3a01",
+          "passage-682dea9c54141c009f8f7807",
+          "passage-7223a3deb1c894ffd9b585c4",
+          "passage-d9e60d3f681235ae0d19d867",
+          "passage-3d76a81966476807ac67c319",
+          "passage-34e72d1043c226d88bcd29e5",
+          "passage-b4f5ef64eee89994f42ff9d0",
+          "passage-456d9ef91778a3d03fdbc943",
+          "passage-12c30a8530432078d27f2fc5",
+          "passage-d2726ee13860627140316f58"
+        ],
+        "scope": {
+          "geography": "Germany (all federal states)",
+          "limitations": "Self-selected non-representative historical survey; ranking measures relative importance, not prevalence or magnitude; second rank group is not ordinal second place; item n=5204 differs from full sample; short report only; no Top-10 percentages asserted",
+          "methodology": "Ranking question over eight working conditions; mean rank reported; n=5,204 for this item, distinct from the full sample of 12,684; self-selected non-representative sample",
+          "setting": "German hospital and long-term care nursing; online questionnaire",
+          "time": "Fieldwork autumn 2021; report Stand April 2022",
+          "who": "Part-time and former (exited) nurses in hospital and long-term care who answered the eight-condition ranking question"
+        },
+        "statement": "In the autumn 2021 German online survey of part-time and former hospital and long-term-care nurses, Table 3 assigns reliable working times ('Verlässliche Arbeitszeiten') and higher pay to the second of four rank groups derived from eight working conditions. Reliable working times has mean rank 3.32; the ranking question has n=5,204, distinct from the full survey sample of 12,684. The sample is self-selected and not representative. This is evidence of respondents' desired conditions for return or increased hours, not current workforce prevalence, observed contact during time off, unrecorded overtime or actual return-to-work behaviour.",
+        "title": "Reliable working time in second rank group of eight conditions for return or increased hours (German nursing survey, autumn 2021)",
+        "review": "supported",
+        "review_reason": "Attached passages justify the finding within its stated scope. Table 3 caption (passage-d9e60d3f681235ae0d19d867) labels the ranking of the most important working conditions for re-entry and hour increase; the row \"Verlässliche Arbeitszeiten 3,32\" (passage-4be3c481c9b1e460cd803541 / passage-4fe169eb9e7fb60140c93767) and \"Höhere Bezahlung 3,07\" (passage-6781ea4cba6d0a7852e5c4dc) sit in the second rank group, with \"Mehr Zeit für eine gute Pflege durch mehr Personal 2,15\" (passage-9ea025a328c585d4a98f94f3) first and the surrounding text (passage-cc667b3dd8a897288901234f, passage-f51057e722173ce641927d8e, passage-64c3a183813ad5b83d4a3a01) describing four stable rank groups. The item n=5,204 (passage-21cac35087c7f109ba82ea5d) is correctly distinguished from the full sample of 12,684 (passage-682dea9c54141c009f8f7807), and the self-selected non-representative limitation is disclosed (passage-7223a3deb1c894ffd9b585c4). The finding appropriately frames this as relative importance for return/increased hours, not prevalence or actual return behaviour. Minor caveat: the \"second of four rank groups\" phrasing is interpretive (mean-rank grouping), but the scope already flags that the second rank group is not ordinal second place, so no material overreach. No price/admission/access condition applies to this survey finding.",
+        "review_current": true
+      },
+      {
+        "epistemic_status": "candidate",
+        "evidence": [
+          {
+            "hash": "1901e7b7bbed7366ccd07819ddf497f89d64dc5f9d5a57ae4e04b84ec81ba794",
+            "passage_id": "passage-0a23f6f00696cfabf016feec",
+            "quote": "6    Mehr Zeit für menschliche Zuwendung                                                    92,7 %         7.730",
+            "url": "https://www.arbeitnehmerkammer.de/fileadmin/Publikationen/Studien_Befragungen/Bundesweite_Studie_Ich_pflege_wieder_wenn_Kurzfassung.pdf"
+          },
+          {
+            "hash": "1901e7b7bbed7366ccd07819ddf497f89d64dc5f9d5a57ae4e04b84ec81ba794",
+            "passage_id": "passage-3e9b31864918128389216ca4",
+            "quote": "müssen (92,8 Prozent) und mehr Zeit für menschliche Zuwendung zu haben. Aus dem Bereich „Verein-",
+            "url": "https://www.arbeitnehmerkammer.de/fileadmin/Publikationen/Studien_Befragungen/Bundesweite_Studie_Ich_pflege_wieder_wenn_Kurzfassung.pdf"
+          },
+          {
+            "hash": "1901e7b7bbed7366ccd07819ddf497f89d64dc5f9d5a57ae4e04b84ec81ba794",
+            "passage_id": "passage-456d9ef91778a3d03fdbc943",
+            "quote": "Tabelle 4: Die zehn wichtigsten Arbeitsbedingungen für Rückkehr bzw. Stundenerhöhung",
+            "url": "https://www.arbeitnehmerkammer.de/fileadmin/Publikationen/Studien_Befragungen/Bundesweite_Studie_Ich_pflege_wieder_wenn_Kurzfassung.pdf"
+          },
+          {
+            "hash": "1901e7b7bbed7366ccd07819ddf497f89d64dc5f9d5a57ae4e04b84ec81ba794",
+            "passage_id": "passage-934fe7d54bf013f6c3b2d33a",
+            "quote": "präsentiert, da die wichtigsten zehn Arbeitsbedingungen in beiden Gruppen identisch sind und nur in",
+            "url": "https://www.arbeitnehmerkammer.de/fileadmin/Publikationen/Studien_Befragungen/Bundesweite_Studie_Ich_pflege_wieder_wenn_Kurzfassung.pdf"
+          },
+          {
+            "hash": "1901e7b7bbed7366ccd07819ddf497f89d64dc5f9d5a57ae4e04b84ec81ba794",
+            "passage_id": "passage-8ab22b580680ff82c73d9730",
+            "quote": "ihrer Rangfolge leicht abweichen.",
+            "url": "https://www.arbeitnehmerkammer.de/fileadmin/Publikationen/Studien_Befragungen/Bundesweite_Studie_Ich_pflege_wieder_wenn_Kurzfassung.pdf"
+          },
+          {
+            "hash": "1901e7b7bbed7366ccd07819ddf497f89d64dc5f9d5a57ae4e04b84ec81ba794",
+            "passage_id": "passage-51fe851b3390ac64fac1e964",
+            "quote": "Im Folgenden werden die zehn wichtigsten der 67 in den Themenbereichen abgefragten Arbeitsbedin-",
+            "url": "https://www.arbeitnehmerkammer.de/fileadmin/Publikationen/Studien_Befragungen/Bundesweite_Studie_Ich_pflege_wieder_wenn_Kurzfassung.pdf"
+          },
+          {
+            "hash": "1901e7b7bbed7366ccd07819ddf497f89d64dc5f9d5a57ae4e04b84ec81ba794",
+            "passage_id": "passage-0db8da1d264a001ae8c13ebd",
+            "quote": "wichtig\n1    Fairer Umgang unter Kolleg/innen                    Organisation und Führung           97,4 %      6.654",
+            "url": "https://www.arbeitnehmerkammer.de/fileadmin/Publikationen/Studien_Befragungen/Bundesweite_Studie_Ich_pflege_wieder_wenn_Kurzfassung.pdf"
+          },
+          {
+            "hash": "1901e7b7bbed7366ccd07819ddf497f89d64dc5f9d5a57ae4e04b84ec81ba794",
+            "passage_id": "passage-d152aa0bbe975c9f138f827e",
+            "quote": "3    Bedarfsgerechte Personalbemessung                                                       95,1 %        7.707",
+            "url": "https://www.arbeitnehmerkammer.de/fileadmin/Publikationen/Studien_Befragungen/Bundesweite_Studie_Ich_pflege_wieder_wenn_Kurzfassung.pdf"
+          },
+          {
+            "hash": "1901e7b7bbed7366ccd07819ddf497f89d64dc5f9d5a57ae4e04b84ec81ba794",
+            "passage_id": "passage-5b38b4f750d7d992f37f7efc",
+            "quote": "5    Nicht unterbesetzt arbeiten müssen                                                     92,8 %         7.741",
+            "url": "https://www.arbeitnehmerkammer.de/fileadmin/Publikationen/Studien_Befragungen/Bundesweite_Studie_Ich_pflege_wieder_wenn_Kurzfassung.pdf"
+          },
+          {
+            "hash": "1901e7b7bbed7366ccd07819ddf497f89d64dc5f9d5a57ae4e04b84ec81ba794",
+            "passage_id": "passage-682dea9c54141c009f8f7807",
+            "quote": "Die Befragung erfolgte im Herbst 2021. Die Stichprobe umfasst 12.684 auswertbare Antworten von",
+            "url": "https://www.arbeitnehmerkammer.de/fileadmin/Publikationen/Studien_Befragungen/Bundesweite_Studie_Ich_pflege_wieder_wenn_Kurzfassung.pdf"
+          },
+          {
+            "hash": "1901e7b7bbed7366ccd07819ddf497f89d64dc5f9d5a57ae4e04b84ec81ba794",
+            "passage_id": "passage-7223a3deb1c894ffd9b585c4",
+            "quote": "Langzeitpflege. Die Stichprobe ist selbstselektiv und daher trotz ihrer Größe nicht repräsentativ. Da die",
+            "url": "https://www.arbeitnehmerkammer.de/fileadmin/Publikationen/Studien_Befragungen/Bundesweite_Studie_Ich_pflege_wieder_wenn_Kurzfassung.pdf"
+          },
+          {
+            "hash": "1901e7b7bbed7366ccd07819ddf497f89d64dc5f9d5a57ae4e04b84ec81ba794",
+            "passage_id": "passage-d9e60d3f681235ae0d19d867",
+            "quote": "Tabelle 3: Ranking der wichtigsten Arbeitsbedingungen für Wiedereinstieg und",
+            "url": "https://www.arbeitnehmerkammer.de/fileadmin/Publikationen/Studien_Befragungen/Bundesweite_Studie_Ich_pflege_wieder_wenn_Kurzfassung.pdf"
+          },
+          {
+            "hash": "1901e7b7bbed7366ccd07819ddf497f89d64dc5f9d5a57ae4e04b84ec81ba794",
+            "passage_id": "passage-3d76a81966476807ac67c319",
+            "quote": "Rangstufe          Arbeitsbedingungen                                                        Mittlerer Rang",
+            "url": "https://www.arbeitnehmerkammer.de/fileadmin/Publikationen/Studien_Befragungen/Bundesweite_Studie_Ich_pflege_wieder_wenn_Kurzfassung.pdf"
+          },
+          {
+            "hash": "1901e7b7bbed7366ccd07819ddf497f89d64dc5f9d5a57ae4e04b84ec81ba794",
+            "passage_id": "passage-21cac35087c7f109ba82ea5d",
+            "quote": "n = 5.204.\nDie in Tabelle 3 ersichtliche Rangordnung der abgefragten Merkmale ist für insgesamt 25 Teilgruppen",
+            "url": "https://www.arbeitnehmerkammer.de/fileadmin/Publikationen/Studien_Befragungen/Bundesweite_Studie_Ich_pflege_wieder_wenn_Kurzfassung.pdf"
+          },
+          {
+            "hash": "1901e7b7bbed7366ccd07819ddf497f89d64dc5f9d5a57ae4e04b84ec81ba794",
+            "passage_id": "passage-f51057e722173ce641927d8e",
+            "quote": "gruppen gleich ist, lassen sich insgesamt vier stabile Rangstufen aus den Berechnungen ableiten: Mehr",
+            "url": "https://www.arbeitnehmerkammer.de/fileadmin/Publikationen/Studien_Befragungen/Bundesweite_Studie_Ich_pflege_wieder_wenn_Kurzfassung.pdf"
+          },
+          {
+            "hash": "1901e7b7bbed7366ccd07819ddf497f89d64dc5f9d5a57ae4e04b84ec81ba794",
+            "passage_id": "passage-34e72d1043c226d88bcd29e5",
+            "quote": "wichtigste angesehen wird und auf der ersten Rangstufe zu finden ist. Dahinter reihen sich eine höhere",
+            "url": "https://www.arbeitnehmerkammer.de/fileadmin/Publikationen/Studien_Befragungen/Bundesweite_Studie_Ich_pflege_wieder_wenn_Kurzfassung.pdf"
+          },
+          {
+            "hash": "1901e7b7bbed7366ccd07819ddf497f89d64dc5f9d5a57ae4e04b84ec81ba794",
+            "passage_id": "passage-cc667b3dd8a897288901234f",
+            "quote": "Bezahlung und verlässliche Arbeitszeiten ein. Mit etwas größerem Abstand auf der dritten Rangstufe",
+            "url": "https://www.arbeitnehmerkammer.de/fileadmin/Publikationen/Studien_Befragungen/Bundesweite_Studie_Ich_pflege_wieder_wenn_Kurzfassung.pdf"
+          },
+          {
+            "hash": "1901e7b7bbed7366ccd07819ddf497f89d64dc5f9d5a57ae4e04b84ec81ba794",
+            "passage_id": "passage-b4f5ef64eee89994f42ff9d0",
+            "quote": "Rangstufe und werden in Relation zu den anderen Bedingungen als am wenigsten wichtig angesehen.",
+            "url": "https://www.arbeitnehmerkammer.de/fileadmin/Publikationen/Studien_Befragungen/Bundesweite_Studie_Ich_pflege_wieder_wenn_Kurzfassung.pdf"
+          },
+          {
+            "hash": "1901e7b7bbed7366ccd07819ddf497f89d64dc5f9d5a57ae4e04b84ec81ba794",
+            "passage_id": "passage-12c30a8530432078d27f2fc5",
+            "quote": "Pflegekräfte n = 6.612–7.707.",
+            "url": "https://www.arbeitnehmerkammer.de/fileadmin/Publikationen/Studien_Befragungen/Bundesweite_Studie_Ich_pflege_wieder_wenn_Kurzfassung.pdf"
+          },
+          {
+            "hash": "1901e7b7bbed7366ccd07819ddf497f89d64dc5f9d5a57ae4e04b84ec81ba794",
+            "passage_id": "passage-a6dd758688a6871d78762d8e",
+            "quote": "wichtig/\nArbeitsbedingungen                                  Themenbereiche                   ganz         n",
+            "url": "https://www.arbeitnehmerkammer.de/fileadmin/Publikationen/Studien_Befragungen/Bundesweite_Studie_Ich_pflege_wieder_wenn_Kurzfassung.pdf"
+          }
+        ],
+        "id": "finding-e3f31741d73ce3b13d4474a4",
+        "kind": "problem",
+        "passage_ids": [
+          "passage-0a23f6f00696cfabf016feec",
+          "passage-3e9b31864918128389216ca4",
+          "passage-456d9ef91778a3d03fdbc943",
+          "passage-934fe7d54bf013f6c3b2d33a",
+          "passage-8ab22b580680ff82c73d9730",
+          "passage-51fe851b3390ac64fac1e964",
+          "passage-0db8da1d264a001ae8c13ebd",
+          "passage-d152aa0bbe975c9f138f827e",
+          "passage-5b38b4f750d7d992f37f7efc",
+          "passage-682dea9c54141c009f8f7807",
+          "passage-7223a3deb1c894ffd9b585c4",
+          "passage-d9e60d3f681235ae0d19d867",
+          "passage-3d76a81966476807ac67c319",
+          "passage-21cac35087c7f109ba82ea5d",
+          "passage-f51057e722173ce641927d8e",
+          "passage-34e72d1043c226d88bcd29e5",
+          "passage-cc667b3dd8a897288901234f",
+          "passage-b4f5ef64eee89994f42ff9d0",
+          "passage-12c30a8530432078d27f2fc5",
+          "passage-a6dd758688a6871d78762d8e"
+        ],
+        "scope": {
+          "geography": "Germany (all federal states)",
+          "limitations": "Historical short report; self-selection; subgroup ambiguity unresolved; no percentage or item denominator asserted; desired conditions do not establish actual care time, staffing, uptake or outcomes",
+          "methodology": "Online self-selected non-representative survey; thematic importance ratings; Table 4 subgroup labels conflict between surrounding text and source footer",
+          "setting": "German hospital and long-term care nursing; online questionnaire",
+          "time": "Fieldwork autumn 2021; report Stand April 2022",
+          "who": "Part-time and former hospital/long-term-care nurses in the overall survey; exact Table 4 subgroup unresolved (source footer says exited nurses, surrounding text says joint presentation)"
+        },
+        "statement": "The April 2022 short report of the autumn 2021 German online nursing survey includes more time for human attention ('Mehr Zeit für menschliche Zuwendung') among the ten most important desired working conditions for return or increased hours. The surrounding text describes the ten conditions as identical for part-time and former nurses, differing slightly in order. Table 4's source footer instead labels the respondents as former nurses, so the subgroup for its numerical ratings remains unresolved here; no percentage or item denominator is asserted. The overall survey contains 12,684 evaluable responses from a self-selected, non-representative sample of part-time and former hospital and long-term-care nurses. Desired conditions do not establish current workforce prevalence, actual time available for care, staffing or outcomes.",
+        "title": "Time for human attention among the ten most important conditions for return or increased hours (German nursing survey, autumn 2021)",
+        "review": "supported",
+        "review_reason": "Attached passages justify the statement within its declared scope. passage-0a23f6f00696cfabf016feec shows item 6 \"Mehr Zeit für menschliche Zuwendung\" at 92.7% (n=7.730); passage-456d9ef91778a3d03fdbc943 and passage-51fe851b3390ac64fac1e964 supply the Table 4 caption (\"Die zehn wichtigsten Arbeitsbedingungen für Rückkehr bzw. Stundenerhöhung\"). The subgroup conflict is real and preserved, not resolved: passage-934fe7d54bf013f6c3b2d33a states the ten conditions are identical for both groups with only slightly differing order, while the footer (passage-12c30a8530432078d27f2fc5) labels respondents as exited nurses (n=6.612–7.707). Methodology/sample are correctly bounded: autumn 2021 fieldwork and 12,684 evaluable responses (passage-682dea9c54141c009f8f7807), explicitly self-selected and non-representative (passage-7223a3deb1c894ffd9b585c4), item n varying by question. The finding asserts no percentage or item denominator, keeps candidate/hypothesis status, and correctly notes desired conditions do not establish prevalence, actual care time or outcomes. Title matches the scoped claim with no inflation beyond the sample. No material condition or denominator gap remains unaddressed.",
+        "review_current": true
+      }
+    ]
+  },
+  "workflow_guidance": [
+    "Rank groups are not ordinal ranks; item denominators are not the full sample; importance is not prevalence.",
+    "Inspect original PDF tables and methods when extraction truncates rows or subgroup labels conflict.",
+    "After operator curation, explicitly resubmit the packet and verify canonical reviewing status. Frozen fetching does not itself make a run reviewer-only."
+  ],
+  "browser_verification": {
+    "url": "http://127.0.0.1:8793/#/all/e/wc-candidate-46f4e615c164f5322122a30f?within=wc-candidate-46f4e615c164f5322122a30f",
+    "source_and_scoped_statement_visible": true,
+    "status_preserved": "hypothesis",
+    "screenshot": "/private/tmp/whocares-working-time-source-detail-20261011.jpg",
+    "second_need": "Projection verified; not separately screenshot-tested."
+  },
+  "tests": {
+    "command": "python -m unittest discover -s tests -q",
+    "passed": 270,
+    "log": "/private/tmp/whocares-working-time-tests-20261011.log"
+  },
+  "new_map_items": 0,
+  "image_generation": false,
+  "public_deployment": false,
+  "risks": [
+    "Self-selected historical preferences do not establish current workforce prevalence, actual return, care outcomes or specific child situations.",
+    "Table 4 subgroup labels conflict; no percentages or item denominators from it were asserted.",
+    "Guidance and supervised correction do not prove unattended quantitative extraction is reliable."
+  ]
+}
