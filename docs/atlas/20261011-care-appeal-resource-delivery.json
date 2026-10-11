@@ -1,0 +1,147 @@
+{
+  "date": "2026-10-11",
+  "delivery": "Existing care-assessment appeal resource made accessible in two internal map situations",
+  "live": {
+    "target": "live",
+    "verified": true,
+    "batch": "vz-care-appeal-resource-20261011",
+    "manifest_sha256": "9ff907e8043fe3d099c7028b09f63b3e446eab6d987deb49d5f2506b79c10500",
+    "backup_file": "backup-live-1791683238152.json",
+    "object_updates": 1,
+    "new_objects": 0,
+    "new_mapped": 1,
+    "mapped": 1316,
+    "all_prior_rows_preserved_except_declared_additive_metadata": true,
+    "prior_rows_checked": {
+      "objects": 1358,
+      "relationships": 1263,
+      "sources": 196,
+      "evidence_links": 2031,
+      "product_media": 151,
+      "import_batches": 80
+    },
+    "paths_verified": [
+      [
+        "wc-candidate-b682901c52ae1908815a1e38",
+        "wc-candidate-16cfb3bcaa1d5dce0f3010b8",
+        "wc-object-c4d10aab804f32297f44a2b1"
+      ],
+      [
+        "wc-candidate-b682901c52ae1908815a1e38",
+        "wc-candidate-9910aceefbef75f554c86fb2",
+        "wc-object-c4d10aab804f32297f44a2b1"
+      ]
+    ],
+    "statuses_unchanged": true,
+    "internal_media": 1,
+    "public_media": 0,
+    "public_deployment": false
+  },
+  "test": {
+    "target": "test",
+    "verified": true,
+    "batch": "vz-care-appeal-resource-20261011",
+    "manifest_sha256": "9ff907e8043fe3d099c7028b09f63b3e446eab6d987deb49d5f2506b79c10500",
+    "backup_file": "backup-test-1791683201432.json",
+    "object_updates": 1,
+    "new_objects": 0,
+    "new_mapped": 1,
+    "mapped": 1316,
+    "all_prior_rows_preserved_except_declared_additive_metadata": true,
+    "prior_rows_checked": {
+      "objects": 1358,
+      "relationships": 1263,
+      "sources": 196,
+      "evidence_links": 2031,
+      "product_media": 151,
+      "import_batches": 80
+    },
+    "paths_verified": [
+      [
+        "wc-candidate-b682901c52ae1908815a1e38",
+        "wc-candidate-16cfb3bcaa1d5dce0f3010b8",
+        "wc-object-c4d10aab804f32297f44a2b1"
+      ],
+      [
+        "wc-candidate-b682901c52ae1908815a1e38",
+        "wc-candidate-9910aceefbef75f554c86fb2",
+        "wc-object-c4d10aab804f32297f44a2b1"
+      ]
+    ],
+    "statuses_unchanged": true,
+    "internal_media": 1,
+    "public_media": 0,
+    "public_deployment": false
+  },
+  "readability_live": {
+    "target": "live",
+    "verified": true,
+    "batch": "vz-care-appeal-resource-20261011-readability",
+    "changes_sha256": "5215b1b05c4202f5cadf3a2b1b98eddfdae772935cf7c1cb68b69d5b96bf26c0",
+    "backup_file": "backup-refinement-live-1791683367150.json",
+    "object_updates": 1,
+    "relationship_updates": 2,
+    "all_other_rows_unchanged": true,
+    "public_deployment": false
+  },
+  "readability_test": {
+    "target": "test",
+    "verified": true,
+    "batch": "vz-care-appeal-resource-20261011-readability",
+    "changes_sha256": "5215b1b05c4202f5cadf3a2b1b98eddfdae772935cf7c1cb68b69d5b96bf26c0",
+    "backup_file": "backup-refinement-test-1791683332864.json",
+    "object_updates": 1,
+    "relationship_updates": 2,
+    "all_other_rows_unchanged": true,
+    "public_deployment": false
+  },
+  "counts": {
+    "need": 198,
+    "situation": 1005,
+    "solution": 113
+  },
+  "mapped": 1316,
+  "total_objects": 1358,
+  "situations_with_offerings": 94,
+  "reused_identity": "wc-object-c4d10aab804f32297f44a2b1",
+  "no_duplicate_object": true,
+  "human_statuses_preserved": true,
+  "source_evidence": {
+    "new_exact_links": 20,
+    "existing_guide_source_reused": true,
+    "new_pdf_source": 1,
+    "original_held_finding_preserved": true,
+    "qualified_finding_review": "supported",
+    "cost_and_procedural_conditions_retained": true
+  },
+  "media": {
+    "internal_only": true,
+    "preview_path": "data/internal-media/verbraucherzentrale-objection-template-20261011.png",
+    "source_url": "https://www.verbraucherzentrale.de/media/21276/download?file=Musterbrief_Widerspruch_Bescheid_der_Pflegekasse.pdf",
+    "document_date": "September 2020",
+    "raw_source_and_local_preview_not_in_git": true,
+    "rights": "unknown"
+  },
+  "browser_verification": {
+    "first_path_tile_visible": true,
+    "first_path_clicked_to_record": true,
+    "preview_loaded_dimensions": [
+      849,
+      1200
+    ],
+    "cost_scope_and_sources_visible": true,
+    "second_path_verified": true,
+    "second_path_clicked_to_record": true,
+    "short_fit_text_visible": true,
+    "corrected_pdf_inspection_text_visible": true,
+    "screenshot": "/private/tmp/whocares-care-appeal-resource-20261011.png"
+  },
+  "limitations": [
+    "Self-help resources do not establish personalised advice, valid individual deadlines or successful appeals.",
+    "Human situations remain hypotheses; solution existence does not validate demand.",
+    "Only objection PDF inspected; court-complaint PDF and independent contemporary legal validity not checked.",
+    "BIVA source-access check failed: no bypass or data update."
+  ],
+  "public_deployment": false,
+  "image_generation": false
+}
