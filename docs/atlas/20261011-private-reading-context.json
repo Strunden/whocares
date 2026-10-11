@@ -1,0 +1,150 @@
+{
+  "date": "2026-10-11",
+  "batch_id": "cnib-private-reading-context-20261011",
+  "source": {
+    "title": "Eitel Houedakor: Seeing AI — firsthand document-reading and privacy account",
+    "locator": "https://www.cnib.ca/en/blog/seeing-ai",
+    "source_kind": "field_observation",
+    "scope": "Undated first-person blog by a self-described young adult with a visual impairment; Canadian publisher, individual location not established.",
+    "limitations": "One personal account, not a systematic field study. No older-adult/German prevalence, verified software confidentiality or offline-processing claim. Publication date unknown; access date is not event date."
+  },
+  "job_id": "a15591258914e712e0b67ac0a036fcfd9b1c95e1cdf1eefed5fe34c93aaf4227",
+  "research": {
+    "status": "reviewed_partial",
+    "metrics": {
+      "duration_seconds": 59.224,
+      "model_calls": 6,
+      "model_calls_by_role": {
+        "researcher": 5,
+        "reviewer": 1
+      },
+      "counted_usd": 0.0204867,
+      "provider_reported_usd": 0.003996203,
+      "http_requests": 4,
+      "page_calls": 2,
+      "search_calls": 0
+    },
+    "budget": {
+      "max_usd": 0.2,
+      "max_steps": 30,
+      "max_pages": 2,
+      "max_searches": 0,
+      "max_renders": 0
+    },
+    "errors": []
+  },
+  "finding": {
+    "epistemic_status": "candidate",
+    "evidence": [
+      {
+        "hash": "2ed92b32915759f544e7c4cb455fb7997bf7f02516966b7be8778ce4cc1fcd79",
+        "passage_id": "passage-98fcd92a3e618c78572aaa63",
+        "quote": "For today's youth, technology is a part of our everyday life. It’s also an empowering tool that can help to keep us informed, educated, and organized. Being an independent young adult is not easy, but even more so when you have a visual impairment. I've experienced situations where I've had to ask someone for help to read a document, giving up my right to privacy because the information I'm presented with is inaccessible. That is until I stumbled upon an app from Microsoft called Seeing AI.",
+        "url": "https://www.cnib.ca/en/blog/seeing-ai"
+      },
+      {
+        "hash": "2ed92b32915759f544e7c4cb455fb7997bf7f02516966b7be8778ce4cc1fcd79",
+        "passage_id": "passage-93507b974212e70db100f184",
+        "quote": "By: Eitel Houedakor",
+        "url": "https://www.cnib.ca/en/blog/seeing-ai"
+      },
+      {
+        "hash": "2ed92b32915759f544e7c4cb455fb7997bf7f02516966b7be8778ce4cc1fcd79",
+        "passage_id": "passage-25a8e79f451f92278b4deaac",
+        "quote": "CNIB National Youth Council Member",
+        "url": "https://www.cnib.ca/en/blog/seeing-ai"
+      }
+    ],
+    "id": "finding-452fc0c7deaaea0e151c1ef0",
+    "kind": "situation",
+    "passage_ids": [
+      "passage-98fcd92a3e618c78572aaa63",
+      "passage-93507b974212e70db100f184",
+      "passage-25a8e79f451f92278b4deaac"
+    ],
+    "scope": {
+      "geography": "Canada (CNIB, a Canadian publisher); the writer's own location is not stated beyond that",
+      "limitations": "Single undated self-report; no method, sample or verification; the privacy cost is the writer's own attribution, not an independently measured outcome. Not generalisable to older adults, to Germany, or to any software's confidentiality properties. The account is contextual analogy only for the private-correspondence candidate situation wc-candidate-51bdf9ce33192bfc66c8885b, with no hypothesis promotion.",
+      "method": "First-person narrative blog post on a nonprofit organisation's website",
+      "perspective": "lived",
+      "setting": "Everyday situations in which the writer is presented with printed documents he cannot independently read",
+      "time": "Undated blog post; accessed/captured 2026-10-11",
+      "who": "The writer, self-described independent young adult with a visual impairment and a CNIB National Youth Council member; single first-person perspective"
+    },
+    "statement": "In a CNIB blog attributed to Eitel Houedakor, a CNIB National Youth Council member, the writer states in first person: \"I've experienced situations where I've had to ask someone for help to read a document, giving up my right to privacy because the information I'm presented with is inaccessible.\" This is one individual young-adult account of relying on another person to read documents that were not accessible to him, and of the privacy cost he attributes to that reliance. It is not evidence of older-adult or German prevalence, nor does it establish that any software processes documents privately or offline. The page is undated; the citation date is the capture date.",
+    "title": "Needing someone else to read inaccessible documents means giving up privacy (young adult, Canada)",
+    "review": "supported",
+    "review_reason": "Attached passages justify every material assertion: passage-98fcd92a3e618c78572aaa63 contains the exact first-person quote about asking someone to read a document and giving up privacy because the information was inaccessible; passage-93507b974212e70db100f184 and passage-25a8e79f451f92278b4deaac support the attribution to Eitel Houedakor as a CNIB National Youth Council member. The finding is correctly framed as a single lived young-adult account, explicitly disclaims older-adult/German prevalence and any software confidentiality or offline-processing claim, and labels the page undated with the capture date as the citation date. No price/admission/access assertion is made, so no FAQ/fees context is required. Scope, kind (situation/lived) and epistemic status (candidate) match the evidence; no invented observations or scope inflation.",
+    "review_current": true
+  },
+  "test": {
+    "target": "test",
+    "verified": true,
+    "manifest_sha256": "bb309c7494b667db3850a6db143d52576771ec0c513a803afc7862bac6173226",
+    "backup_file": "backup-test-1791738336475.json",
+    "mapped": 1321,
+    "source_additions": 1,
+    "context_evidence_links": 3,
+    "new_map_items": 0,
+    "all_prior_rows_unchanged": true,
+    "prior_rows_checked": {
+      "objects": 1363,
+      "relationships": 1311,
+      "sources": 222,
+      "evidence_links": 2652,
+      "product_media": 170,
+      "import_batches": 134
+    },
+    "human_status_unchanged": true,
+    "existing_situation_paths_verified": true,
+    "public_ui_deployment": false,
+    "image_generation": false
+  },
+  "live": {
+    "target": "live",
+    "verified": true,
+    "manifest_sha256": "bb309c7494b667db3850a6db143d52576771ec0c513a803afc7862bac6173226",
+    "backup_file": "backup-live-1791738365754.json",
+    "mapped": 1321,
+    "source_additions": 1,
+    "context_evidence_links": 3,
+    "new_map_items": 0,
+    "all_prior_rows_unchanged": true,
+    "prior_rows_checked": {
+      "objects": 1363,
+      "relationships": 1311,
+      "sources": 222,
+      "evidence_links": 2652,
+      "product_media": 170,
+      "import_batches": 134
+    },
+    "human_status_unchanged": true,
+    "existing_situation_paths_verified": true,
+    "public_ui_deployment": false,
+    "image_generation": false
+  },
+  "new_map_items": 0,
+  "image_generation": false,
+  "public_deployment": false,
+  "offering_admission": {
+    "Be My Eyes": "Not linked to private-correspondence situation. Opened current terms prohibit confidential information except specified trusted-group/company channels; they also restrict automated crawl/scrape/cache without permission. No indexer dispatch to that source.",
+    "Seeing AI": "Existing offering identity reused as research lead; privacy/offline guarantees not established, no new private-letter solution placement."
+  },
+  "risks": [
+    "Young-adult personal account is contextual analogy only, not validation of older-adult or German population.",
+    "No confidential-document offering admitted; solution-level gap remains.",
+    "Fresh internal browser load recovered after an extended loading period; sustained loading reliability remains unproven."
+  ],
+  "browser": {
+    "url": "http://127.0.0.1:8793/#/all/e/wc-candidate-51bdf9ce33192bfc66c8885b?within=wc-object-dc1696e6934bd1c9d6191f07%2Fwc-candidate-51bdf9ce33192bfc66c8885b",
+    "source_and_context_visible": true,
+    "hypothesis_preserved": true,
+    "no_solutions_gap_visible": true,
+    "manual_reload": true,
+    "screenshot": "/private/tmp/whocares-private-reading-context-20261011.jpg"
+  },
+  "tests": {
+    "passed": 12,
+    "command": "node --test tests/atlas-completeness.test.mjs tests/atlas-snapshot-loading.test.mjs"
+  }
+}
