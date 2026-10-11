@@ -1,0 +1,203 @@
+{
+  "date": "2026-10-11",
+  "principles_sha256": "1698c1ce402af9694166b15938d24fb9fb05c55e85a330b4e589b7dca5b2a8c2",
+  "summary": "Two authentic BGW provider-logo associations, one funding-eligibility clarification, one provider-source classification correction and one stale media-note correction. No new map entries or efficacy claims.",
+  "verified_batches": [
+    {
+      "test": {
+        "target": "test",
+        "verified": true,
+        "batch": "bgw-logo-eligibility-20261011",
+        "manifest_sha256": "68ef19c6b2f11cefe35cadb43e639dc2d8198e94ccf0fe8c02ae07447f7a14e2",
+        "backup_file": "backup-test-1791713610029.json",
+        "object_updates": 1,
+        "internal_media": 2,
+        "public_media": 0,
+        "mapped": 1321,
+        "logo_gaps_before": 33,
+        "logo_gaps_after": 31,
+        "all_prior_rows_preserved_except_declared_eligibility_summary": true,
+        "statuses_costs_fits_evidence_unchanged": true,
+        "public_deployment": false
+      },
+      "live": {
+        "target": "live",
+        "verified": true,
+        "batch": "bgw-logo-eligibility-20261011",
+        "manifest_sha256": "68ef19c6b2f11cefe35cadb43e639dc2d8198e94ccf0fe8c02ae07447f7a14e2",
+        "backup_file": "backup-live-1791713632805.json",
+        "object_updates": 1,
+        "internal_media": 2,
+        "public_media": 0,
+        "mapped": 1321,
+        "logo_gaps_before": 33,
+        "logo_gaps_after": 31,
+        "all_prior_rows_preserved_except_declared_eligibility_summary": true,
+        "statuses_costs_fits_evidence_unchanged": true,
+        "public_deployment": false
+      },
+      "backup_tables": [
+        "objects",
+        "relationships",
+        "sources",
+        "evidence_links",
+        "product_media",
+        "import_batches"
+      ],
+      "private_artifact_directory": "research-staging/bgw-logo-eligibility-20261011"
+    },
+    {
+      "test": {
+        "target": "test",
+        "verified": true,
+        "batch": "bgw-trainer-funding-source-kind-20261011",
+        "manifest_sha256": "d324a54029952235cf2c981c2765c9cc0f0d34cf03d56f0c34b29e3a086a30d8",
+        "backup_file": "backup-test-1791713811037.json",
+        "source_updates": 1,
+        "existing_links_preserved": 16,
+        "all_objects_statuses_navigation_media_unchanged": true,
+        "all_unrelated_rows_unchanged": true,
+        "mapped": 1321,
+        "public_ui_deployment": false
+      },
+      "live": {
+        "target": "live",
+        "verified": true,
+        "batch": "bgw-trainer-funding-source-kind-20261011",
+        "manifest_sha256": "d324a54029952235cf2c981c2765c9cc0f0d34cf03d56f0c34b29e3a086a30d8",
+        "backup_file": "backup-live-1791714102948.json",
+        "source_updates": 1,
+        "existing_links_preserved": 16,
+        "all_objects_statuses_navigation_media_unchanged": true,
+        "all_unrelated_rows_unchanged": true,
+        "mapped": 1321,
+        "public_ui_deployment": false
+      },
+      "backup_tables": [
+        "objects",
+        "relationships",
+        "sources",
+        "evidence_links",
+        "product_media",
+        "import_batches"
+      ],
+      "private_artifact_directory": "research-staging/bgw-logo-eligibility-20261011/source-classification"
+    },
+    {
+      "test": {
+        "target": "test",
+        "verified": true,
+        "batch": "bgw-advice-media-note-20261011",
+        "changes_sha256": "92314df9bb16866203288457932baab90a16f1addad58abb1c488d7531345145",
+        "backup_file": "backup-test-1791714186251.json",
+        "object_updates": 1,
+        "all_other_rows_unchanged": true,
+        "status_preserved": true,
+        "fields": [
+          "scope.media_gaps",
+          "provenance.media_note_review"
+        ],
+        "public_ui_deployment": false
+      },
+      "live": {
+        "target": "live",
+        "verified": true,
+        "batch": "bgw-advice-media-note-20261011",
+        "changes_sha256": "92314df9bb16866203288457932baab90a16f1addad58abb1c488d7531345145",
+        "backup_file": "backup-live-1791714224275.json",
+        "object_updates": 1,
+        "all_other_rows_unchanged": true,
+        "status_preserved": true,
+        "fields": [
+          "scope.media_gaps",
+          "provenance.media_note_review"
+        ],
+        "public_ui_deployment": false
+      },
+      "backup_tables": [
+        "objects",
+        "relationships",
+        "sources",
+        "evidence_links",
+        "product_media",
+        "import_batches"
+      ],
+      "private_artifact_directory": "research-staging/bgw-logo-eligibility-20261011/media-note"
+    }
+  ],
+  "mapped_records": 1321,
+  "counts": {
+    "need": 198,
+    "situation": 1005,
+    "solution": 118
+  },
+  "current_revision": "b711b0229125dec83e76229257301ff6",
+  "media_associations": [
+    {
+      "id": "media-bgw-organisational-advice-logo-20261011",
+      "object_id": "solution-bgw-violence-prevention-organisational-advice",
+      "asset_url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/BGW_Logo.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail_unscaled&_=20140615114949",
+      "media_role": "logo",
+      "visibility": "internal",
+      "rights_status": "unknown",
+      "source_capture_sha256": "587540f5b5966b1077d5753a05a2bda80b5d6b4e4245ab403340f1e72049e60e"
+    },
+    {
+      "id": "media-bgw-deescalation-funding-logo-20261011",
+      "object_id": "wc-object-4c89edd907eb5c203d07e02f",
+      "asset_url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/BGW_Logo.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail_unscaled&_=20140615114949",
+      "media_role": "logo",
+      "visibility": "internal",
+      "rights_status": "unknown",
+      "source_capture_sha256": "587540f5b5966b1077d5753a05a2bda80b5d6b4e4245ab403340f1e72049e60e"
+    }
+  ],
+  "eligibility": "BGW member establishments; funding requires training with a BGW-approved organiser and a valid award under a BGW bonus programme (at least BGW Orga-Check and Orga-Check plus). Funding covers trainer qualification, not general staff training. Whether dementia-specific units are explicitly covered is unknown.",
+  "exact_existing_eligibility_evidence_id": "wc-evidence-ff8915472eafab5c8b2320ef",
+  "source_kind_correction": {
+    "source_id": "wc-source-1c4620286659194d395df32f",
+    "before": "institutional",
+    "after": "provider_claim",
+    "reason": "Official named funding-programme page describes the provider\u2019s own service, not independent outcomes or validation of a human need.",
+    "existing_evidence_links_preserved": 16
+  },
+  "test_fixture_difference": "Test and live had different pre-existing navigation-review provenance and revisions; each branch used its own exact before-state guard and retained its history. No live guard was weakened.",
+  "browser_checks": {
+    "trainer_record_url": "http://127.0.0.1:8793/#/all/e/wc-object-4c89edd907eb5c203d07e02f?within=wc-object-62feeb87067152640cf5e703%2Fwc-object-ce682284426cdf57886cfc57",
+    "trainer_logo_loaded": {
+      "width": 214,
+      "height": 119
+    },
+    "trainer_source_label": "supports \u00b7 provider claim",
+    "trainer_status": "Research candidate (unchanged)",
+    "trainer_eligibility_visible": true,
+    "trainer_screenshot": "/private/tmp/whocares-bgw-logo-detail-20261011.png",
+    "advice_record_url": "http://127.0.0.1:8793/#/all/e/solution-bgw-violence-prevention-organisational-advice?within=wc-candidate-cfb6a6a4756e5cb3e9dc6c0f%2Fwc-candidate-54fc33bdd117c92bb8b6b6dd",
+    "advice_logo_loaded": {
+      "width": 214,
+      "height": 119
+    },
+    "existing_workshop_photo_loaded": {
+      "width": 1440,
+      "height": 350
+    },
+    "advice_media_note_corrected": true,
+    "advice_screenshot": "/private/tmp/whocares-bgw-advice-logo-20261011.png"
+  },
+  "presence_audit": {
+    "missing": {
+      "illustration": 1156,
+      "logo reference": 31,
+      "product/service visual": 50,
+      "reviewed source link": 1130,
+      "specific situation context": 259
+    },
+    "limits": "Field-presence audit only. Not proof of evidence quality, market demand, solution effectiveness or semantic duplicate absence."
+  },
+  "limits": [
+    "No public UI deployment; both new logos are internal only and public rights remain unknown.",
+    "No generated images; image generation remains paused. Neutral placeholders do not close illustration gaps.",
+    "Funding eligibility is conditional; provider-logo identity does not identify or validate third-party training organisers.",
+    "No scope expansion, status promotion, fit changes or new outcome claims."
+  ]
+}
