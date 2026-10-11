@@ -1,0 +1,104 @@
+{
+  "date": "2026-10-11",
+  "status": "internal_delivery_verified",
+  "batch": "dza-research-source-classification-20261011",
+  "test": {
+    "target": "test",
+    "verified": true,
+    "batch": "dza-research-source-classification-20261011",
+    "manifest_sha256": "b5fb86f1e4e0e5ec1d6808e0e8f901725c3dbf2c6a47db8870698908d2f7ef7a",
+    "backup_file": "backup-test-1791694389644.json",
+    "source_updates": 4,
+    "existing_links_preserved": 10,
+    "all_objects_statuses_navigation_media_unchanged": true,
+    "all_unrelated_rows_unchanged": true,
+    "mapped": 1319,
+    "public_ui_deployment": false
+  },
+  "canonical": {
+    "target": "live",
+    "verified": true,
+    "batch": "dza-research-source-classification-20261011",
+    "manifest_sha256": "b5fb86f1e4e0e5ec1d6808e0e8f901725c3dbf2c6a47db8870698908d2f7ef7a",
+    "backup_file": "backup-live-1791694430235.json",
+    "source_updates": 4,
+    "existing_links_preserved": 10,
+    "all_objects_statuses_navigation_media_unchanged": true,
+    "all_unrelated_rows_unchanged": true,
+    "mapped": 1319,
+    "public_ui_deployment": false
+  },
+  "source_rendering": [
+    {
+      "target": "test",
+      "source_id": "offering-source-2b279ca1245cddfb93f6",
+      "object_id": "review-problem-home-access",
+      "source_rendering_verified": true
+    },
+    {
+      "target": "test",
+      "source_id": "offering-source-53ad06b69d03f1a72c5d",
+      "object_id": "study-aspiration-stay-home",
+      "source_rendering_verified": true
+    },
+    {
+      "target": "test",
+      "source_id": "offering-source-8b5fc156819df8cc5129",
+      "object_id": "study-problem-housing-support",
+      "source_rendering_verified": true
+    },
+    {
+      "target": "test",
+      "source_id": "offering-source-ca065e7324cfdcc666f9",
+      "object_id": "study-aspiration-company",
+      "source_rendering_verified": true
+    },
+    {
+      "target": "live",
+      "source_id": "offering-source-2b279ca1245cddfb93f6",
+      "object_id": "review-problem-home-access",
+      "source_rendering_verified": true
+    },
+    {
+      "target": "live",
+      "source_id": "offering-source-53ad06b69d03f1a72c5d",
+      "object_id": "study-aspiration-stay-home",
+      "source_rendering_verified": true
+    },
+    {
+      "target": "live",
+      "source_id": "offering-source-8b5fc156819df8cc5129",
+      "object_id": "study-problem-housing-support",
+      "source_rendering_verified": true
+    },
+    {
+      "target": "live",
+      "source_id": "offering-source-ca065e7324cfdcc666f9",
+      "object_id": "study-aspiration-company",
+      "source_rendering_verified": true
+    }
+  ],
+  "source_ids": [
+    "offering-source-2b279ca1245cddfb93f6",
+    "offering-source-53ad06b69d03f1a72c5d",
+    "offering-source-8b5fc156819df8cc5129",
+    "offering-source-ca065e7324cfdcc666f9"
+  ],
+  "indexer_fix": "Retain full DZA schema.org Article text, pipeline v14; four old and corrected captures preserved, no model calls.",
+  "tests_passed": 261,
+  "skills_updated": [
+    ".agents/skills/whocares-hierarchy/SKILL.md"
+  ],
+  "browser": {
+    "url": "http://127.0.0.1:8793/#/all/e/study-aspiration-company?within=study-need-company",
+    "institutional_label_visible": true,
+    "published_date_visible": "2025-07-10",
+    "screenshot": "/private/tmp/whocares-dza-source-classification-20261011.png"
+  },
+  "limits": [
+    "No new statistics or findings published; exact original-study denominators not revalidated.",
+    "No global source-classification or extraction certification.",
+    "No image generation, scheduler activation or public UI deployment."
+  ],
+  "captures_and_backups": "Private local research staging, excluded from Git."
+}

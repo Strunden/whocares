@@ -72,6 +72,7 @@ One solution can respond to several situations. Reuse its identity; record fit a
 - Stable identity, geography, setting and time scope; preserve source records and provenance. Distinguish the person affected from the buyer/payer.
 - Honest epistemic status: documented observation, provider description, interpretation, candidate, hypothesis or unknown. Reorganisation and a citation do not upgrade status.
 - Claims have source URL/publisher, date or access date, locator and an explanation of what is supported. Search snippets alone are insufficient verification. Keep contrary evidence and missing perspectives.
+- Classify each source by what the cited page is: a publisher's research summary is institutional context, an original study is primary research, and a service description is a provider claim. A source attached to a solution or imported with an offering must not automatically become a provider claim. Research summaries require study-specific limits, not boilerplate about booking capacity or service effectiveness. Inspect the original study before using a summary's figures as scoped measurements.
 
 ### Need and situation
 
