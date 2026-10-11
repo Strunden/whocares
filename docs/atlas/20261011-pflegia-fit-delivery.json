@@ -1,0 +1,110 @@
+{
+  "date": "2026-10-11",
+  "status": "internal_delivery_verified",
+  "canonical_offering_reused": "wc-object-7908fa0224ecc3b561f2a2f7",
+  "test": {
+    "target": "test",
+    "verified": true,
+    "batch": "pflegia-applicant-skills-fit-20261011",
+    "backup_file": "backup-test-1791678948646.json",
+    "manifest_sha256": "139ef80e0e54bf28833d5cfb1e34863d0d1c9ca25cff7f3ab880aa70def41903",
+    "objects": 1358,
+    "mapped": 1315,
+    "newObjects": 0,
+    "navigationLinks": 1,
+    "exactPassages": 3,
+    "sourceVersions": 0,
+    "internalMedia": 1,
+    "publicMedia": 0,
+    "humanObjectsUnchanged": true,
+    "humanHypothesesNotValidated": true
+  },
+  "live": {
+    "target": "live",
+    "verified": true,
+    "batch": "pflegia-applicant-skills-fit-20261011",
+    "backup_file": "backup-live-1791678986861.json",
+    "manifest_sha256": "139ef80e0e54bf28833d5cfb1e34863d0d1c9ca25cff7f3ab880aa70def41903",
+    "objects": 1358,
+    "mapped": 1315,
+    "newObjects": 0,
+    "navigationLinks": 1,
+    "exactPassages": 3,
+    "sourceVersions": 0,
+    "internalMedia": 1,
+    "publicMedia": 0,
+    "humanObjectsUnchanged": true,
+    "humanHypothesesNotValidated": true
+  },
+  "preservation": {
+    "target": "live",
+    "verified": true,
+    "prior_rows_checked": {
+      "objects": 1358,
+      "relationships": 1262,
+      "sources": 196,
+      "evidence_links": 2028,
+      "product_media": 150,
+      "import_batches": 78
+    },
+    "all_prior_rows_preserved_except_declared_media_status_update": true,
+    "all_prior_offering_scope_keys_preserved_except_media_limitation": true,
+    "paths_verified": [
+      [
+        "wc-object-5d8ee8d07aa3924b1b0cf5ef",
+        "wc-candidate-7e2a3866c319619d122df0a0",
+        "wc-object-7908fa0224ecc3b561f2a2f7"
+      ]
+    ],
+    "new_product_identities": 0,
+    "human_status_unchanged": true,
+    "internal_media_selection_verified": true,
+    "public_deployment": false
+  },
+  "counts": {
+    "need": 198,
+    "situation": 1005,
+    "solution": 112,
+    "mapped_total": 1315,
+    "situations_with_offerings": 92
+  },
+  "review": {
+    "retained_current_independent_finding": "finding-48919d61c80bc59c924f4031",
+    "exact_stored_source_passages_checked": 3,
+    "new_model_calls": 0,
+    "new_offering_identities": 0,
+    "clinical_qualifications_verified": false,
+    "hiring_outcomes_verified": false
+  },
+  "browser": {
+    "path_verified": true,
+    "detail_verified": [
+      "Acceptance before profile unlock",
+      "Worker-stated qualifications and preferences",
+      "Success-based fees, amount and full terms unknown",
+      "No independent hiring/retention outcomes",
+      "Authentic wordmark loaded; internal rights restriction retained"
+    ],
+    "screenshot": "/private/tmp/whocares-pflegia-applicant-fit-20261011.png"
+  },
+  "held_research": {
+    "status": "source_capture_failed",
+    "source_url": "https://medwing.com/de/de/arbeitgeber",
+    "observed_error": "HTTP 403 Forbidden in bounded indexer transport",
+    "worker_process_exit_code": 1,
+    "model_calls": 0,
+    "publication": false,
+    "browser_observation": "Public employer page, pricing FAQ, budget page and registration form inspected; no forms submitted or account created. Observations not substituted for captured source passages.",
+    "next_action": "Retain candidate for permitted source capture investigation; no repeated transport requests in this turn. Reuse existing supported Pflegia identity for specific applicant-search fit instead."
+  },
+  "public_ui_deployed": false,
+  "image_generation": false,
+  "scheduler_activated": false,
+  "limitations": [
+    "Human situation remains a hypothesis.",
+    "Source review predates the new condition-inventory protocol; manual exact-clause check retained, no autonomous approval claim.",
+    "Fee amount, full contract terms, legal provider entity and hiring outcomes remain unverified.",
+    "No current platform-interface image reviewed; media rights unknown, internal only.",
+    "Original source limitation retains historical initial-media-review status; offering media metadata records subsequent wordmark review."
+  ]
+}
