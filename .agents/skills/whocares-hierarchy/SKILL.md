@@ -143,6 +143,8 @@ Relevant method references: [Product Talk opportunity solution trees](https://ww
 
 ### Scene and how-might-we trial — 11 October 2026
 
+**Subsequent user review rejected the scene.** Its database presentation status is `withdrawn`. The current preference is to preserve the strong list while explaining significance, relationships and coverage. Do not reproduce the rejected abstract scene or scale its layout. See [coverage and research purpose](../../../docs/COVERAGE_AND_RESEARCH_PURPOSE.md) for the current-state audit and methodological direction. A bounded research question supplies scope; the breadth inventory and a decision-specific synthesis serve different purposes on the same graph. Counts, equal generated child counts and source links alone prove neither completeness nor significance.
+
 The user approved trying compact related difficulties beneath a recognisable scene and a clear “How might we…” starting point. This is a one-branch desktop trial, not approval to turn every candidate into a validated insight or rewrite the whole graph. See [the trial, sources and evaluation plan](../../../docs/SCENE_BROWSING_TRIAL.md).
 
 - A scene explains who is trying to achieve what, in a bounded circumstance. Group points by a coherent experience or responsibility; shared wording alone is insufficient. Do not invent participant actions, emotions, dialogue or co-occurrence.
