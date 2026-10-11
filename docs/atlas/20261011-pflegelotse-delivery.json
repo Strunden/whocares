@@ -1,0 +1,107 @@
+{
+  "date": "2026-10-11",
+  "status": "internal_delivery_verified",
+  "offering": "solution-vdek-pflegelotse",
+  "test": {
+    "target": "test",
+    "verified": true,
+    "batch": "vdek-pflegelotse-comparison-20261011",
+    "backup_file": "backup-test-1791678549854.json",
+    "manifest_sha256": "7f00bf8f21a511d422203a0ac820fdda008266e2f5b10c69470fc5d99d8b4fc7",
+    "objects": 1358,
+    "mapped": 1315,
+    "newObjects": 1,
+    "navigationLinks": 2,
+    "exactPassages": 9,
+    "sourceVersions": 3,
+    "internalMedia": 1,
+    "publicMedia": 0,
+    "humanObjectsUnchanged": true,
+    "humanHypothesesNotValidated": true
+  },
+  "live": {
+    "target": "live",
+    "verified": true,
+    "batch": "vdek-pflegelotse-comparison-20261011",
+    "backup_file": "backup-live-1791678591858.json",
+    "manifest_sha256": "7f00bf8f21a511d422203a0ac820fdda008266e2f5b10c69470fc5d99d8b4fc7",
+    "objects": 1358,
+    "mapped": 1315,
+    "newObjects": 1,
+    "navigationLinks": 2,
+    "exactPassages": 9,
+    "sourceVersions": 3,
+    "internalMedia": 1,
+    "publicMedia": 0,
+    "humanObjectsUnchanged": true,
+    "humanHypothesesNotValidated": true
+  },
+  "preservation": {
+    "target": "live",
+    "verified": true,
+    "all_prior_rows_unchanged": true,
+    "prior_rows_checked": {
+      "objects": 1357,
+      "relationships": 1260,
+      "sources": 193,
+      "evidence_links": 2019,
+      "product_media": 149,
+      "import_batches": 77
+    },
+    "paths_verified": [
+      [
+        "study-aspiration-care-home",
+        "study-problem-care-fit",
+        "solution-vdek-pflegelotse"
+      ],
+      [
+        "study-aspiration-care-home",
+        "wc-candidate-03b8ebcf231494abb3373c2e",
+        "solution-vdek-pflegelotse"
+      ]
+    ],
+    "human_status_unchanged": true,
+    "public_deployment": false
+  },
+  "counts": {
+    "roles": {
+      "need": 198,
+      "situation": 1005,
+      "solution": 112
+    },
+    "situations_with_offerings": 91
+  },
+  "review": {
+    "supported_finding_id": "finding-20b0a51c2a27f701a7cd2637",
+    "original_held_finding_id": "finding-1e7ecc1151e7eee5fc117eef",
+    "original_held_finding_unchanged": true,
+    "manual_material_clause_checks": 5,
+    "review_model_calls": 6,
+    "review_counted_usd": 0.049963499999999994,
+    "new_review_http_requests": 0,
+    "condition_gate_note": "Original held because condition inventory selected a separate free-access heading absent from attached evidence despite equivalent paragraph wording. Separate qualified finding attaches that exact heading; original hold retained."
+  },
+  "browser": {
+    "paths_verified": 2,
+    "detail_verified": [
+      "Free information portal distinct from care costs",
+      "National comparison scope",
+      "Inspection information is not personal provision or outcomes",
+      "Facility-mean investment costs and individual-contract qualification",
+      "Provider logo loads; current interface/service-photo gap retained"
+    ],
+    "screenshots": [
+      "/private/tmp/whocares-pflegelotse-provision-20261011.png",
+      "/private/tmp/whocares-pflegelotse-comparison-20261011.png"
+    ]
+  },
+  "public_ui_deployed": false,
+  "image_generation": false,
+  "scheduler_activated": false,
+  "limitations": [
+    "Existing human candidates/hypotheses retain their status.",
+    "No actual directory search, vacancy, individual care provision or contract bill checked.",
+    "Media rights unknown; provider logo internal only; interface/photo gap explicit.",
+    "Autonomous condition-review benchmark still unresolved; manual clause review retained."
+  ]
+}
