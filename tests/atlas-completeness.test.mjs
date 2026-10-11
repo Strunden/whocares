@@ -13,10 +13,13 @@ test('coverage counts unique offerings separately from placements and exposes mi
 });
 test('generic ICP templates remain context gaps while specific constraints count as present',()=>{
  const node=(id,role,summary)=>({id,kind:'problem',title:id,epistemic_status:'hypothesis',scope:{geography:'Germany',navigation:{role,title:id,short_title:id,summary,image:'assets/illustrations/study/test.png'}}});
- const graph={objects:[node('n','need','Shared need'),node('a','situation','A paid care worker facing this situation; direct research is pending.'),node('b','situation','Replacement stock arrives after essential supplies have run out.')],relationships:['a','b'].map(id=>({id:'p-'+id,from_id:id,to_id:'n',relation:'context_for',provenance:{navigation:true}})),sources:[],evidence_links:[]};
+ const graph={objects:[node('n','need','An older person facing this need; direct research is pending.'),node('a','situation','A paid care worker facing this situation; direct research is pending.'),node('b','situation','Replacement stock arrives after essential supplies have run out.')],relationships:['a','b'].map(id=>({id:'p-'+id,from_id:id,to_id:'n',relation:'context_for',provenance:{navigation:true}})),sources:[],evidence_links:[]};
  const result=auditAtlas({catalog:{entries:[]},graph,media:[]});
  assert.ok(result.gaps.find(g=>g.id==='a').missing.includes('specific situation context'));
+ assert.ok(result.gaps.find(g=>g.id==='n').missing.includes('specific need context'));
  assert.ok(!result.gaps.find(g=>g.id==='b').missing.includes('specific situation context'));
  assert.ok(graph.objects.every(o=>o.epistemic_status==='hypothesis'));
  assert.equal(result.uniqueMappedRecords,3);
+ graph.objects[0].scope.navigation.summary='Keep familiar routines workable as organising daily activities becomes harder.';
+ assert.ok(!auditAtlas({catalog:{entries:[]},graph,media:[]}).gaps.find(g=>g.id==='n').missing.includes('specific need context'));
 });

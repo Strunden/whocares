@@ -1,0 +1,1046 @@
+{
+  "date": "2026-10-11",
+  "change": "Replace all 96 remaining role-only need descriptions with concise authored explanations across older-adult, family, care-worker and provider perspectives.",
+  "test": {
+    "target": "test",
+    "verified": true,
+    "batch": "need-context-clarity-20261011",
+    "changes_sha256": "fa7d40b898ed5eea8c6143cc8ad91030e1bbc40b88880b5d14936c9a0c553af5",
+    "backup_file": "backup-test-1791734206722.json",
+    "object_updates": 96,
+    "all_other_rows_unchanged": true,
+    "status_preserved": true,
+    "fields": [
+      "scope.navigation.summary",
+      "provenance.context_copy_review"
+    ],
+    "public_ui_deployment": false
+  },
+  "canonical": {
+    "target": "live",
+    "verified": true,
+    "batch": "need-context-clarity-20261011",
+    "changes_sha256": "fa7d40b898ed5eea8c6143cc8ad91030e1bbc40b88880b5d14936c9a0c553af5",
+    "backup_file": "backup-live-1791734259919.json",
+    "object_updates": 96,
+    "all_other_rows_unchanged": true,
+    "status_preserved": true,
+    "fields": [
+      "scope.navigation.summary",
+      "provenance.context_copy_review"
+    ],
+    "public_ui_deployment": false
+  },
+  "coverage": {
+    "updated_needs": 96,
+    "generic_need_contexts_remaining": 0,
+    "candidate_status_preserved": true,
+    "mapped_counts": {
+      "need": 198,
+      "situation": 1005,
+      "solution": 118
+    },
+    "unique_mapped_records": 1321,
+    "scope": "All 96 old template descriptions replaced and all 96 verified in navigation projection. Nine coverage/media tests passed. No empirical validation inferred."
+  },
+  "changes": [
+    {
+      "id": "wc-candidate-007e282392f683b3e826afde",
+      "title": "I need to help my relative regain abilities after illness",
+      "before": "A family caregiver facing this need; direct research is pending.",
+      "after": "Support a return to everyday activities while understanding what help and recovery time are needed.",
+      "status": "hypothesis",
+      "lenses": [
+        "family"
+      ]
+    },
+    {
+      "id": "wc-candidate-0129e92ea315098f1154458c",
+      "title": "I need to communicate with the person I am supporting",
+      "before": "A paid care worker facing this need; direct research is pending.",
+      "after": "Understand the person's wishes and make care understandable when communication is difficult.",
+      "status": "hypothesis",
+      "lenses": [
+        "worker"
+      ]
+    },
+    {
+      "id": "wc-candidate-02efaa4c475459598611cadf",
+      "title": "I need to support intimate relationships without overriding people's choices",
+      "before": "A paid care worker facing this need; direct research is pending.",
+      "after": "Respect chosen relationships, privacy and consent while responding to concerns about safety.",
+      "status": "hypothesis",
+      "lenses": [
+        "worker"
+      ]
+    },
+    {
+      "id": "wc-candidate-07814940409ffd871b58cc0c",
+      "title": "I need support after losing someone close",
+      "before": "An older person facing this need; direct research is pending.",
+      "after": "Find companionship and practical support while adjusting to life after a loss.",
+      "status": "hypothesis",
+      "lenses": [
+        "adult"
+      ]
+    },
+    {
+      "id": "wc-candidate-0b2fb8e6171a61848f0c0712",
+      "title": "I want comfort and control near the end of my life",
+      "before": "An older person facing this need; direct research is pending.",
+      "after": "Have symptoms, preferences and important relationships considered as care needs change near death.",
+      "status": "hypothesis",
+      "lenses": [
+        "adult"
+      ]
+    },
+    {
+      "id": "wc-candidate-135cad0eb03459edd6cd3645",
+      "title": "I need to reduce infection disruption while preserving everyday life",
+      "before": "A care-service operator or coordinator facing this need; direct research is pending.",
+      "after": "Limit infection risks without unnecessarily stopping visits, shared activities and familiar routines.",
+      "status": "hypothesis",
+      "lenses": [
+        "provider"
+      ]
+    },
+    {
+      "id": "wc-candidate-14ba2c1e1b696fb57f06badb",
+      "title": "I need staff to be capable before they work without support",
+      "before": "A care-service operator or coordinator facing this need; direct research is pending.",
+      "after": "Know which tasks a new worker can undertake and where supervision is still needed.",
+      "status": "hypothesis",
+      "lenses": [
+        "provider"
+      ]
+    },
+    {
+      "id": "wc-candidate-15c98ed88e6872d293671899",
+      "title": "I need care information to follow the person across services",
+      "before": "A paid care worker facing this need; direct research is pending.",
+      "after": "Keep instructions, preferences and responsibilities available when someone moves between care services.",
+      "status": "hypothesis",
+      "lenses": [
+        "worker"
+      ]
+    },
+    {
+      "id": "wc-candidate-167472f223d761af86100ef5",
+      "title": "I need our buildings to support safe and accessible daily care",
+      "before": "A care-service operator or coordinator facing this need; direct research is pending.",
+      "after": "Make rooms, routes and facilities usable for residents and the people supporting them.",
+      "status": "hypothesis",
+      "lenses": [
+        "provider"
+      ]
+    },
+    {
+      "id": "wc-candidate-1b562ea610f14c8bce1cb902",
+      "title": "I need essential care to continue during an emergency",
+      "before": "A care-service operator or coordinator facing this need; direct research is pending.",
+      "after": "Keep essential support available when normal staffing, premises, utilities or communications are disrupted.",
+      "status": "hypothesis",
+      "lenses": [
+        "provider"
+      ]
+    },
+    {
+      "id": "wc-candidate-1dd0f787d153927fe32f462a",
+      "title": "I need to manage my relative's money without putting either of us at risk",
+      "before": "A family caregiver facing this need; direct research is pending.",
+      "after": "Handle payments and accounts with clear authority, records and respect for the relative's choices.",
+      "status": "hypothesis",
+      "lenses": [
+        "family"
+      ]
+    },
+    {
+      "id": "wc-candidate-2764f2924f3b0ac5e283f73a",
+      "title": "I need to reduce waste and resource costs without compromising care",
+      "before": "A care-service operator or coordinator facing this need; direct research is pending.",
+      "after": "Understand where supplies, energy and money go without cutting support people depend on.",
+      "status": "hypothesis",
+      "lenses": [
+        "provider"
+      ]
+    },
+    {
+      "id": "wc-candidate-284edf466aa35ce394711805",
+      "title": "I need wounds and fragile skin to heal without disrupting my life",
+      "before": "An older person facing this need; direct research is pending.",
+      "after": "Fit treatment and skin protection around the activities and relationships that matter to me.",
+      "status": "hypothesis",
+      "lenses": [
+        "adult"
+      ]
+    },
+    {
+      "id": "wc-candidate-28b9df4ffdc769158804fc53",
+      "title": "I need consent and care responsibilities to be clear before I act",
+      "before": "A paid care worker facing this need; direct research is pending.",
+      "after": "Understand who can consent, which decisions are mine and when further advice is needed.",
+      "status": "hypothesis",
+      "lenses": [
+        "worker"
+      ]
+    },
+    {
+      "id": "wc-candidate-29bd943128e543cdf8053b47",
+      "title": "I need new colleagues to be ready for the care they will provide",
+      "before": "A paid care worker facing this need; direct research is pending.",
+      "after": "Help a colleague learn the person's needs, local routines and limits of their role before taking over.",
+      "status": "hypothesis",
+      "lenses": [
+        "worker"
+      ]
+    },
+    {
+      "id": "wc-candidate-2a103f8b447a7be19ddf53e4",
+      "title": "I need caring at home to remain manageable for both of us",
+      "before": "A family caregiver facing this need; direct research is pending.",
+      "after": "Arrange daily support around both the relative's needs and the carer's own limits.",
+      "status": "hypothesis",
+      "lenses": [
+        "family"
+      ]
+    },
+    {
+      "id": "wc-candidate-2cfb0cfa9e13ccb23bf7608b",
+      "title": "I want decisions about my life to include me",
+      "before": "An older person facing this need; direct research is pending.",
+      "after": "Understand the choices available and have my preferences heard before others decide what happens.",
+      "status": "hypothesis",
+      "lenses": [
+        "adult"
+      ]
+    },
+    {
+      "id": "wc-candidate-32387f009d1a50e89e55442e",
+      "title": "I need to support my relative from a distance",
+      "before": "A family caregiver facing this need; direct research is pending.",
+      "after": "Stay informed and coordinate help without being able to visit or respond in person each day.",
+      "status": "hypothesis",
+      "lenses": [
+        "family"
+      ]
+    },
+    {
+      "id": "wc-candidate-342486d05553ea7f9a860c28",
+      "title": "I need home-care visits to remain dependable as demand changes",
+      "before": "A care-service operator or coordinator facing this need; direct research is pending.",
+      "after": "Keep promised visits workable as people's needs, travel and available staff change.",
+      "status": "hypothesis",
+      "lenses": [
+        "provider"
+      ]
+    },
+    {
+      "id": "wc-candidate-3a50c9d5a3f0aee4de3a9a51",
+      "title": "I need protection when someone helping me causes harm",
+      "before": "An older person facing this need; direct research is pending.",
+      "after": "Recognise harmful treatment and reach support without losing control of my care arrangements.",
+      "status": "hypothesis",
+      "lenses": [
+        "adult"
+      ]
+    },
+    {
+      "id": "wc-candidate-3a9571d49bef2f3310512112",
+      "title": "I need purchasing decisions to improve care without creating new burdens",
+      "before": "A care-service operator or coordinator facing this need; direct research is pending.",
+      "after": "Choose equipment and services with their full costs, daily use and support requirements in view.",
+      "status": "hypothesis",
+      "lenses": [
+        "provider"
+      ]
+    },
+    {
+      "id": "wc-candidate-3d53aedff7d54f0c69451d53",
+      "title": "I need to support the team after distressing care events",
+      "before": "A care-service operator or coordinator facing this need; direct research is pending.",
+      "after": "Make room for recovery, discussion and follow-up after the team faces a distressing event.",
+      "status": "hypothesis",
+      "lenses": [
+        "provider"
+      ]
+    },
+    {
+      "id": "wc-candidate-40270a75682a5e5a3f09b50b",
+      "title": "I need workable rosters without exhausting the team",
+      "before": "A care-service operator or coordinator facing this need; direct research is pending.",
+      "after": "Cover care needs while respecting staff availability, rest and commitments outside work.",
+      "status": "hypothesis",
+      "lenses": [
+        "provider"
+      ]
+    },
+    {
+      "id": "wc-candidate-445ffcc844d4b1ccd3b9795d",
+      "title": "I need to match available places with people we can properly support",
+      "before": "A care-service operator or coordinator facing this need; direct research is pending.",
+      "after": "Connect available capacity with people whose care needs and preferences the service can meet.",
+      "status": "hypothesis",
+      "lenses": [
+        "provider"
+      ]
+    },
+    {
+      "id": "wc-candidate-446926166fafca659dc6cd48",
+      "title": "I need to expand services without weakening the care already provided",
+      "before": "A care-service operator or coordinator facing this need; direct research is pending.",
+      "after": "Add capacity or new services while keeping existing commitments, staffing and care dependable.",
+      "status": "hypothesis",
+      "lenses": [
+        "provider"
+      ]
+    },
+    {
+      "id": "wc-candidate-46a050e54c80024d4c7b9f02",
+      "title": "I need clients' homes to allow safe care work",
+      "before": "A paid care worker facing this need; direct research is pending.",
+      "after": "Carry out visits where space, access and household conditions allow the required care tasks.",
+      "status": "hypothesis",
+      "lenses": [
+        "worker"
+      ]
+    },
+    {
+      "id": "wc-candidate-46f4e615c164f5322122a30f",
+      "title": "I need a working day I can plan my life around",
+      "before": "A paid care worker facing this need; direct research is pending.",
+      "after": "Know when work starts and ends, with changes that can be reconciled with life outside the job.",
+      "status": "hypothesis",
+      "lenses": [
+        "worker"
+      ]
+    },
+    {
+      "id": "wc-candidate-546634a130e5a8a0277563c6",
+      "title": "I need to act when someone may be experiencing abuse or neglect",
+      "before": "A paid care worker facing this need; direct research is pending.",
+      "after": "Know how to raise a concern, protect the person and obtain help when harm is suspected.",
+      "status": "hypothesis",
+      "lenses": [
+        "worker"
+      ]
+    },
+    {
+      "id": "wc-candidate-54fea9a7e21197e6a3f94929",
+      "title": "I want a meaningful role after my relative moves into care",
+      "before": "A family caregiver facing this need; direct research is pending.",
+      "after": "Stay involved as a relative and companion while staff take on more of the everyday care.",
+      "status": "hypothesis",
+      "lenses": [
+        "family"
+      ]
+    },
+    {
+      "id": "wc-candidate-577d70a5dbda8389e142ded3",
+      "title": "I need medicine administration to be clear and manageable",
+      "before": "A paid care worker facing this need; direct research is pending.",
+      "after": "Keep medicine instructions, preparation, administration and records understandable across the working day.",
+      "status": "hypothesis",
+      "lenses": [
+        "worker"
+      ]
+    },
+    {
+      "id": "wc-candidate-578c53ed320ac13f88de5190",
+      "title": "I need personal care to respect each person's boundaries",
+      "before": "A paid care worker facing this need; direct research is pending.",
+      "after": "Provide intimate help in ways that respect privacy, consent and the person's preferences.",
+      "status": "hypothesis",
+      "lenses": [
+        "worker"
+      ]
+    },
+    {
+      "id": "wc-candidate-5a513fecae9596de5f9bdbcf",
+      "title": "I want restful nights",
+      "before": "An older person facing this need; direct research is pending.",
+      "after": "Sleep comfortably while having a workable way to respond to night-time needs.",
+      "status": "hypothesis",
+      "lenses": [
+        "adult"
+      ]
+    },
+    {
+      "id": "wc-candidate-5bdd0fd2487cd9759557800a",
+      "title": "I need support when caring near the end of someone's life",
+      "before": "A paid care worker facing this need; direct research is pending.",
+      "after": "Care for someone approaching death with support for difficult decisions and the emotional demands of the work.",
+      "status": "hypothesis",
+      "lenses": [
+        "worker"
+      ]
+    },
+    {
+      "id": "wc-candidate-5ffe7b63ab59c7db989da719",
+      "title": "I need care work to offer a sustainable livelihood and future",
+      "before": "A paid care worker facing this need; direct research is pending.",
+      "after": "Earn a dependable living while finding working conditions and development that make staying in care feasible.",
+      "status": "hypothesis",
+      "lenses": [
+        "worker"
+      ]
+    },
+    {
+      "id": "wc-candidate-6d31b8ffdf702ad13d1bf1b2",
+      "title": "I need to support my relative's choices without making decisions alone",
+      "before": "A family caregiver facing this need; direct research is pending.",
+      "after": "Respect my relative's preferences while knowing who can help with difficult or contested decisions.",
+      "status": "hypothesis",
+      "lenses": [
+        "family"
+      ]
+    },
+    {
+      "id": "wc-candidate-6dca20fae2a477e87c0bb779",
+      "title": "I need colleagues I can ask for help without being dismissed",
+      "before": "A paid care worker facing this need; direct research is pending.",
+      "after": "Get timely help with uncertainty or difficult tasks without fear of being dismissed for asking.",
+      "status": "hypothesis",
+      "lenses": [
+        "worker"
+      ]
+    },
+    {
+      "id": "wc-candidate-6e7882f5d2c88f03aa5186b0",
+      "title": "I want my relative's cultural and religious life respected in care",
+      "before": "A family caregiver facing this need; direct research is pending.",
+      "after": "Keep familiar practices, beliefs and important occasions part of my relative's daily care.",
+      "status": "hypothesis",
+      "lenses": [
+        "family"
+      ]
+    },
+    {
+      "id": "wc-candidate-6eb4ba28d4f51d96e44c0551",
+      "title": "I want to manage everyday life as my memory changes",
+      "before": "An older person facing this need; direct research is pending.",
+      "after": "Keep familiar routines and choices workable as remembering and organising daily tasks become harder.",
+      "status": "hypothesis",
+      "lenses": [
+        "adult"
+      ]
+    },
+    {
+      "id": "wc-candidate-705c269ff632a9ff5ec1578a",
+      "title": "I need care records and devices to work during the shift",
+      "before": "A paid care worker or A care-service operator or coordinator facing this need; direct research is pending.",
+      "after": "Access the right information and record care when devices, connectivity or systems are unreliable.",
+      "status": "hypothesis",
+      "lenses": [
+        "worker",
+        "provider"
+      ]
+    },
+    {
+      "id": "wc-candidate-709309ad0e8f74bef54618ae",
+      "title": "I need to afford care without losing financial stability",
+      "before": "A family caregiver facing this need; direct research is pending.",
+      "after": "Understand the costs and support available before care commitments strain the household budget.",
+      "status": "hypothesis",
+      "lenses": [
+        "family"
+      ]
+    },
+    {
+      "id": "wc-candidate-721f9b672e3c1cad09f1ae16",
+      "title": "I need my relative's return from hospital to be manageable",
+      "before": "A family caregiver facing this need; direct research is pending.",
+      "after": "Prepare the home, equipment and continuing help before taking on care after a hospital stay.",
+      "status": "hypothesis",
+      "lenses": [
+        "family"
+      ]
+    },
+    {
+      "id": "wc-candidate-740c3cade9065741f9d68dc1",
+      "title": "I need to keep our relationship from becoming only about care",
+      "before": "A family caregiver facing this need; direct research is pending.",
+      "after": "Keep time for companionship and shared interests alongside the tasks of giving and receiving care.",
+      "status": "hypothesis",
+      "lenses": [
+        "family"
+      ]
+    },
+    {
+      "id": "wc-candidate-75b317c7c4ee524658da1f41",
+      "title": "I want drinking enough to be easy",
+      "before": "An older person facing this need; direct research is pending.",
+      "after": "Have drinks I can reach and enjoy, with support that fits my routine and preferences.",
+      "status": "hypothesis",
+      "lenses": [
+        "adult"
+      ]
+    },
+    {
+      "id": "wc-candidate-7666c902d1161266bb3f5775",
+      "title": "I want to feel at home after moving into care",
+      "before": "An older person facing this need; direct research is pending.",
+      "after": "Keep familiar possessions, routines and relationships while settling into a new living environment.",
+      "status": "hypothesis",
+      "lenses": [
+        "adult"
+      ]
+    },
+    {
+      "id": "wc-candidate-76b72cbbf5ccc463ae1bef5c",
+      "title": "I need to get where I want to go",
+      "before": "An older person facing this need; direct research is pending.",
+      "after": "Find journeys that fit my mobility, timing and need for help before and after the ride.",
+      "status": "hypothesis",
+      "lenses": [
+        "adult"
+      ]
+    },
+    {
+      "id": "wc-candidate-77e5cac79b8786ddc3bd2a94",
+      "title": "I need support while caring near the end of my relative's life",
+      "before": "A family caregiver facing this need; direct research is pending.",
+      "after": "Understand what to expect and who can help while caring for a relative approaching death.",
+      "status": "hypothesis",
+      "lenses": [
+        "family"
+      ]
+    },
+    {
+      "id": "wc-candidate-7945895a796c4b07c6a22d5d",
+      "title": "I want to keep moving comfortably",
+      "before": "An older person facing this need; direct research is pending.",
+      "after": "Keep everyday movement and valued activities workable as comfort and support needs change.",
+      "status": "hypothesis",
+      "lenses": [
+        "adult"
+      ]
+    },
+    {
+      "id": "wc-candidate-7bebee131c9e2825bb52c599",
+      "title": "I need to protect my relative from mistreatment",
+      "before": "A family caregiver facing this need; direct research is pending.",
+      "after": "Recognise concerns, hear my relative's wishes and find a route to independent help.",
+      "status": "hypothesis",
+      "lenses": [
+        "family"
+      ]
+    },
+    {
+      "id": "wc-candidate-7e410ec272434b45ad304e52",
+      "title": "I want a life with things to look forward to",
+      "before": "An older person facing this need; direct research is pending.",
+      "after": "Have activities, relationships and plans that make the coming days feel worthwhile.",
+      "status": "hypothesis",
+      "lenses": [
+        "adult"
+      ]
+    },
+    {
+      "id": "wc-candidate-7ead58ed3e4cab55f7508e59",
+      "title": "I need care information to be accessible to the right people and protected",
+      "before": "A care-service operator or coordinator facing this need; direct research is pending.",
+      "after": "Let authorised people obtain needed care information while protecting it from inappropriate access.",
+      "status": "hypothesis",
+      "lenses": [
+        "provider"
+      ]
+    },
+    {
+      "id": "wc-candidate-7f0572688c077081751babbb",
+      "title": "I need a shared understanding with relatives about the person's care",
+      "before": "A paid care worker or A care-service operator or coordinator facing this need; direct research is pending.",
+      "after": "Agree what care can provide, what relatives expect and how changes will be discussed.",
+      "status": "hypothesis",
+      "lenses": [
+        "worker",
+        "provider"
+      ]
+    },
+    {
+      "id": "wc-candidate-8601368f9ca1a34d9ecfd99a",
+      "title": "I need to support restful nights without overlooking care needs",
+      "before": "A paid care worker facing this need; direct research is pending.",
+      "after": "Respond to night-time requests while respecting sleep, individual routines and changing support needs.",
+      "status": "hypothesis",
+      "lenses": [
+        "worker"
+      ]
+    },
+    {
+      "id": "wc-candidate-89a2d057b8314d298f875a7e",
+      "title": "I want help with personal care that preserves my dignity",
+      "before": "An older person facing this need; direct research is pending.",
+      "after": "Get help with washing, dressing and intimate needs while retaining privacy and choice.",
+      "status": "hypothesis",
+      "lenses": [
+        "adult"
+      ]
+    },
+    {
+      "id": "wc-candidate-8ae26423b300ac2ab651ac6f",
+      "title": "I need to recognise changes and get the right help promptly",
+      "before": "A paid care worker facing this need; direct research is pending.",
+      "after": "Notice and communicate changes in the person, with a clear route to further assessment or help.",
+      "status": "hypothesis",
+      "lenses": [
+        "worker"
+      ]
+    },
+    {
+      "id": "wc-candidate-91008dac2d852dc495cd233f",
+      "title": "I need to manage medicines without mistakes or arguments",
+      "before": "A family caregiver facing this need; direct research is pending.",
+      "after": "Keep instructions, supplies and daily medicine routines clear for both me and my relative.",
+      "status": "hypothesis",
+      "lenses": [
+        "family"
+      ]
+    },
+    {
+      "id": "wc-candidate-914fa8ae29bedbef36e0bc9e",
+      "title": "I need funding agreements to reflect the care we are expected to deliver",
+      "before": "A care-service operator or coordinator facing this need; direct research is pending.",
+      "after": "Align agreed funding, required evidence and the staffing needed to deliver the promised care.",
+      "status": "hypothesis",
+      "lenses": [
+        "provider"
+      ]
+    },
+    {
+      "id": "wc-candidate-944cedd917e26044b8a197e5",
+      "title": "I need residents' wishes to shape the care we organise",
+      "before": "A care-service operator or coordinator facing this need; direct research is pending.",
+      "after": "Turn individual preferences into everyday arrangements the team can understand and follow.",
+      "status": "hypothesis",
+      "lenses": [
+        "provider"
+      ]
+    },
+    {
+      "id": "wc-candidate-97dac29c7127897418c2817f",
+      "title": "I need to prepare for changes before a crisis forces decisions",
+      "before": "A family caregiver facing this need; direct research is pending.",
+      "after": "Understand possible next steps and discuss preferences while there is still time to plan.",
+      "status": "hypothesis",
+      "lenses": [
+        "family"
+      ]
+    },
+    {
+      "id": "wc-candidate-98128740f5c621da9d8e67c2",
+      "title": "I need healthcare visits to fit my relative's needs and my caring role",
+      "before": "A family caregiver facing this need; direct research is pending.",
+      "after": "Coordinate appointments, travel and information around my relative's support needs and my availability.",
+      "status": "hypothesis",
+      "lenses": [
+        "family"
+      ]
+    },
+    {
+      "id": "wc-candidate-9beaa7968e758d1db1abd6c7",
+      "title": "I need to recognise when my relative's condition needs urgent help",
+      "before": "A family caregiver facing this need; direct research is pending.",
+      "after": "Understand which changes warrant further help and how to reach someone able to assess them.",
+      "status": "hypothesis",
+      "lenses": [
+        "family"
+      ]
+    },
+    {
+      "id": "wc-candidate-9cd5c3386c6448f0c9d6b5a5",
+      "title": "I need outside professionals to act on residents' changing needs",
+      "before": "A care-service operator or coordinator facing this need; direct research is pending.",
+      "after": "Get timely advice and action from outside services when a resident's needs change.",
+      "status": "hypothesis",
+      "lenses": [
+        "provider"
+      ]
+    },
+    {
+      "id": "wc-candidate-a484cf8ac8ec49a9f3a1847f",
+      "title": "I need a workable plan when I suddenly cannot provide care",
+      "before": "A family caregiver facing this need; direct research is pending.",
+      "after": "Have people, information and arrangements ready if illness or another interruption stops me caring.",
+      "status": "hypothesis",
+      "lenses": [
+        "family"
+      ]
+    },
+    {
+      "id": "wc-candidate-a4960a56f53a66b977d031e2",
+      "title": "I need care I can understand in my own language",
+      "before": "An older person facing this need; direct research is pending.",
+      "after": "Understand explanations and express my wishes in the language I am comfortable using.",
+      "status": "hypothesis",
+      "lenses": [
+        "adult"
+      ]
+    },
+    {
+      "id": "wc-candidate-a9eb1c22bfb7d67f90a07621",
+      "title": "I need medicines to reach the right person at the right time",
+      "before": "A care-service operator or coordinator facing this need; direct research is pending.",
+      "after": "Coordinate prescriptions, supplies and records so the team can carry out the authorised medicine plan.",
+      "status": "hypothesis",
+      "lenses": [
+        "provider"
+      ]
+    },
+    {
+      "id": "wc-candidate-ade934776ed2702ada1ec173",
+      "title": "I need residents to receive consistent comfort and support near the end of life",
+      "before": "A care-service operator or coordinator facing this need; direct research is pending.",
+      "after": "Keep comfort, preferences and communication consistent across staff and services near a resident's death.",
+      "status": "hypothesis",
+      "lenses": [
+        "provider"
+      ]
+    },
+    {
+      "id": "wc-candidate-b0aff529febbb7d550272d0c",
+      "title": "I need to protect fragile skin and provide wound care safely",
+      "before": "A paid care worker facing this need; direct research is pending.",
+      "after": "Follow an agreed care plan with the supplies, skills and further advice needed for skin and wound care.",
+      "status": "hypothesis",
+      "lenses": [
+        "worker"
+      ]
+    },
+    {
+      "id": "wc-candidate-b682901c52ae1908815a1e38",
+      "title": "I need a care assessment that reflects my relative's everyday needs",
+      "before": "A family caregiver facing this need; direct research is pending.",
+      "after": "Explain the help my relative needs across ordinary days, including tasks an assessment might overlook.",
+      "status": "hypothesis",
+      "lenses": [
+        "family"
+      ]
+    },
+    {
+      "id": "wc-candidate-b947f990b98d7f0678d05940",
+      "title": "I need care information we can understand across languages",
+      "before": "A family caregiver facing this need; direct research is pending.",
+      "after": "Share instructions and preferences in forms residents, relatives and staff can understand.",
+      "status": "hypothesis",
+      "lenses": [
+        "family"
+      ]
+    },
+    {
+      "id": "wc-candidate-bdc08fa9da391a8cd47f49c4",
+      "title": "I want to keep caring for my pet",
+      "before": "An older person facing this need; direct research is pending.",
+      "after": "Keep my pet's daily needs met when my own health, mobility or living arrangements change.",
+      "status": "hypothesis",
+      "lenses": [
+        "adult"
+      ]
+    },
+    {
+      "id": "wc-candidate-c0ec05291bc3bcd69e352287",
+      "title": "I need to keep providing care without running out of money",
+      "before": "A care-service operator or coordinator facing this need; direct research is pending.",
+      "after": "Meet payroll and operating commitments while maintaining the care people rely on.",
+      "status": "hypothesis",
+      "lenses": [
+        "provider"
+      ]
+    },
+    {
+      "id": "wc-candidate-c2067a2c614f4ac0cb08407e",
+      "title": "I need to respond when my relative's memory or behaviour changes",
+      "before": "A family caregiver facing this need; direct research is pending.",
+      "after": "Understand changing behaviour and daily support needs without losing sight of my relative's preferences.",
+      "status": "hypothesis",
+      "lenses": [
+        "family"
+      ]
+    },
+    {
+      "id": "wc-candidate-c566ab319b6a1ffd267993c0",
+      "title": "I need to help with personal care while respecting my relative",
+      "before": "A family caregiver facing this need; direct research is pending.",
+      "after": "Help with washing, dressing and intimate tasks while preserving the relationship and my relative's choice.",
+      "status": "hypothesis",
+      "lenses": [
+        "family"
+      ]
+    },
+    {
+      "id": "wc-candidate-c5cf8c182745b61655a77f5c",
+      "title": "I need external workers and contractors to meet our care responsibilities",
+      "before": "A care-service operator or coordinator facing this need; direct research is pending.",
+      "after": "Make responsibilities, access and care expectations clear when work is carried out by external providers.",
+      "status": "hypothesis",
+      "lenses": [
+        "provider"
+      ]
+    },
+    {
+      "id": "wc-candidate-ca9f11b1a0013be5212b234b",
+      "title": "I need to rebuild everyday life after a serious illness",
+      "before": "An older person facing this need; direct research is pending.",
+      "after": "Rebuild routines, relationships and valued activities as abilities and support needs change after illness.",
+      "status": "hypothesis",
+      "lenses": [
+        "adult"
+      ]
+    },
+    {
+      "id": "wc-candidate-cad30ea8c111f017a5a0227c",
+      "title": "I need to demonstrate care quality without pulling people away from care",
+      "before": "A care-service operator or coordinator facing this need; direct research is pending.",
+      "after": "Produce useful evidence of care quality while keeping recording demands workable for the team.",
+      "status": "hypothesis",
+      "lenses": [
+        "provider"
+      ]
+    },
+    {
+      "id": "wc-candidate-cb4c7a46430d34553a55ba47",
+      "title": "I need the family to share caring responsibilities fairly",
+      "before": "A family caregiver facing this need; direct research is pending.",
+      "after": "Agree who does what, with commitments that reflect each family member's time and capacity.",
+      "status": "hypothesis",
+      "lenses": [
+        "family"
+      ]
+    },
+    {
+      "id": "wc-candidate-cc11b8fcd836b9272a0d8c68",
+      "title": "I need transitions between services to preserve continuity of care",
+      "before": "A care-service operator or coordinator facing this need; direct research is pending.",
+      "after": "Keep equipment, instructions and responsibility clear when care passes to another service.",
+      "status": "hypothesis",
+      "lenses": [
+        "provider"
+      ]
+    },
+    {
+      "id": "wc-candidate-cc65f2fcb08d4675dd70d7c6",
+      "title": "I need meals and drinks to meet individual needs reliably",
+      "before": "A care-service operator or coordinator facing this need; direct research is pending.",
+      "after": "Organise food, drinks and assistance around each person's preferences and assessed requirements.",
+      "status": "hypothesis",
+      "lenses": [
+        "provider"
+      ]
+    },
+    {
+      "id": "wc-candidate-cfb6a6a4756e5cb3e9dc6c0f",
+      "title": "I need to identify care failures early and learn from them",
+      "before": "A care-service operator or coordinator facing this need; direct research is pending.",
+      "after": "Turn concerns, incidents and near misses into follow-up that the team can act on.",
+      "status": "hypothesis",
+      "lenses": [
+        "provider"
+      ]
+    },
+    {
+      "id": "wc-candidate-d118a8ab87a669c28b3069aa",
+      "title": "I need my relative's support to work as one plan",
+      "before": "A family caregiver facing this need; direct research is pending.",
+      "after": "Bring visits, appointments, equipment and family help together with clear responsibility for coordination.",
+      "status": "hypothesis",
+      "lenses": [
+        "family"
+      ]
+    },
+    {
+      "id": "wc-candidate-d27d6546f40266483c7a39ba",
+      "title": "I want to feel safe when I am alone",
+      "before": "An older person facing this need; direct research is pending.",
+      "after": "Have a workable way to reach help and feel secure without giving up living independently.",
+      "status": "hypothesis",
+      "lenses": [
+        "adult"
+      ]
+    },
+    {
+      "id": "wc-candidate-d58788bac19ce9562ad351d9",
+      "title": "I need everyday care to preserve people's ability to move",
+      "before": "A paid care worker facing this need; direct research is pending.",
+      "after": "Fit movement and assistance into ordinary care while respecting abilities and preferences.",
+      "status": "hypothesis",
+      "lenses": [
+        "worker"
+      ]
+    },
+    {
+      "id": "wc-candidate-e5d5be8b2a630de99cb4107f",
+      "title": "I need my medicines to fit my daily life",
+      "before": "An older person facing this need; direct research is pending.",
+      "after": "Make taking and keeping track of medicines workable alongside meals, activities and time away from home.",
+      "status": "hypothesis",
+      "lenses": [
+        "adult"
+      ]
+    },
+    {
+      "id": "wc-candidate-e6cae2227ed5fe67ce6725ab",
+      "title": "I need equipment and supplies ready where care happens",
+      "before": "A paid care worker or A care-service operator or coordinator facing this need; direct research is pending.",
+      "after": "Have appropriate equipment and supplies available, maintained and accessible when care is due.",
+      "status": "hypothesis",
+      "lenses": [
+        "worker",
+        "provider"
+      ]
+    },
+    {
+      "id": "wc-candidate-e736eea7caa5b8a63b574c8f",
+      "title": "I need fair access to care for people with different backgrounds and needs",
+      "before": "A care-service operator or coordinator facing this need; direct research is pending.",
+      "after": "Make access and daily support workable across different languages, backgrounds and support requirements.",
+      "status": "hypothesis",
+      "lenses": [
+        "provider"
+      ]
+    },
+    {
+      "id": "wc-candidate-e780fbdcb725bb4ea6840d14",
+      "title": "I want my affairs to be manageable for the people I leave behind",
+      "before": "An older person facing this need; direct research is pending.",
+      "after": "Leave information, preferences and practical arrangements that others can understand and act on.",
+      "status": "hypothesis",
+      "lenses": [
+        "adult"
+      ]
+    },
+    {
+      "id": "wc-candidate-e7a5dcfc527c5b1d8c85200b",
+      "title": "I need to help people keep their mouths comfortable and healthy",
+      "before": "A paid care worker facing this need; direct research is pending.",
+      "after": "Provide everyday mouth care with the person's cooperation, suitable supplies and access to further help.",
+      "status": "hypothesis",
+      "lenses": [
+        "worker"
+      ]
+    },
+    {
+      "id": "wc-candidate-f0af2fa9bd88f5cec066e748",
+      "title": "I need continence care to preserve comfort and dignity",
+      "before": "A paid care worker facing this need; direct research is pending.",
+      "after": "Arrange products, assistance and privacy around the person's daily routine and preferences.",
+      "status": "hypothesis",
+      "lenses": [
+        "worker"
+      ]
+    },
+    {
+      "id": "wc-candidate-f0fa378f8e82542845b59880",
+      "title": "I need a way forward when care expectations conflict with my professional judgement",
+      "before": "A paid care worker facing this need; direct research is pending.",
+      "after": "Find a way to discuss and resolve care expectations that conflict with professional concerns.",
+      "status": "hypothesis",
+      "lenses": [
+        "worker"
+      ]
+    },
+    {
+      "id": "wc-candidate-f371b0b37a3ddfad25723756",
+      "title": "I need volunteers to contribute reliably without replacing essential care",
+      "before": "A care-service operator or coordinator facing this need; direct research is pending.",
+      "after": "Organise volunteers' roles and continuity while keeping essential care responsibilities clear.",
+      "status": "hypothesis",
+      "lenses": [
+        "provider"
+      ]
+    },
+    {
+      "id": "wc-candidate-f85711be98f5f495e1a4bc5d",
+      "title": "I need to understand what caring for my relative will involve",
+      "before": "A family caregiver facing this need; direct research is pending.",
+      "after": "Understand daily tasks, likely changes and available support before taking on caring responsibilities.",
+      "status": "hypothesis",
+      "lenses": [
+        "family"
+      ]
+    },
+    {
+      "id": "wc-candidate-f92dca85d4d3235106ab29e5",
+      "title": "I need to provide care without spreading infection between us",
+      "before": "A family caregiver facing this need; direct research is pending.",
+      "after": "Make infection precautions workable within the home and the support tasks I carry out.",
+      "status": "hypothesis",
+      "lenses": [
+        "family"
+      ]
+    },
+    {
+      "id": "wc-candidate-f9ba01ec7e181202034f6629",
+      "title": "I want closeness and a private life",
+      "before": "An older person facing this need; direct research is pending.",
+      "after": "Keep chosen relationships, intimacy and privacy possible as care or living arrangements change.",
+      "status": "hypothesis",
+      "lenses": [
+        "adult"
+      ]
+    },
+    {
+      "id": "wc-candidate-f9d77df57a4b3acad19e1549",
+      "title": "I need support when worry or low mood overwhelms me",
+      "before": "An older person facing this need; direct research is pending.",
+      "after": "Find someone to talk with and help that fits me when distress disrupts everyday life.",
+      "status": "hypothesis",
+      "lenses": [
+        "adult"
+      ]
+    },
+    {
+      "id": "wc-candidate-fe3fe5fb1986dabf95455add",
+      "title": "I need the organisation to remain dependable when key leaders leave",
+      "before": "A care-service operator or coordinator facing this need; direct research is pending.",
+      "after": "Keep decisions, knowledge and responsibilities accessible when a key leader is absent or leaves.",
+      "status": "hypothesis",
+      "lenses": [
+        "provider"
+      ]
+    },
+    {
+      "id": "wc-candidate-ffc37f9675019e7e96362ae3",
+      "title": "I need my relative to eat safely and enough",
+      "before": "A family caregiver facing this need; direct research is pending.",
+      "after": "Make meals and assistance fit my relative's preferences and assessed eating or swallowing needs.",
+      "status": "hypothesis",
+      "lenses": [
+        "family"
+      ]
+    }
+  ],
+  "workflow_change": "Completeness audit now flags generic context for needs as well as situations. Shared indexer research brief explicitly asks for concrete context and retains separate evidence-status fields. Guidance and mechanical checks do not establish autonomous research quality.",
+  "tests": {
+    "coverage_and_media": 9,
+    "passed": true,
+    "scope": "Generic need and situation detection; authored specific context accepted without changing hypothesis status; unique count and internal media controls."
+  },
+  "browser_verification": {
+    "url": "http://127.0.0.1:8793/#/",
+    "screenshot": "/private/tmp/whocares-need-context-overview-20261011.jpg",
+    "saved_pixels_inspected": true,
+    "representative_updated_tiles": [
+      "I want to feel at home after moving into care",
+      "I want to keep moving comfortably",
+      "I need to get where I want to go"
+    ],
+    "drill_path": "#/all/g/wc-candidate-7666c902d1161266bb3f5775",
+    "drill_verified": "Tile selection eventually opened the existing five situations and breadcrumb; initial snapshots observed the transition in progress. No pointer regression proved or changed.",
+    "all_updates_projected": 96,
+    "limits": "Browser review sampled the root and one path; projection and exact-preservation assertions cover all 96 updates. No automatic refresh timing claim."
+  },
+  "remaining_gaps": {
+    "reviewed_source_links": 1130,
+    "specific_situation_contexts": 259,
+    "illustrations": 1156,
+    "logos": 26,
+    "product_or_service_visuals": 50
+  },
+  "preservation": "Six-table backups and atlas.batch_id; only scope.navigation.summary and context_copy_review provenance plus normal object revision/timestamp updated. Titles, hierarchy, status, research planning, sources, relationships and media unchanged.",
+  "limits": [
+    "Editorial explanations of hypotheses, not new source observations, statistics, participant quotes or validated market demand.",
+    "1321 mapped identities is not proof of semantic uniqueness or complete research.",
+    "No new paid research in this pass; indexer autonomy still unproven.",
+    "Image generation paused; authorised neutral placeholders retained.",
+    "No public UI deployment."
+  ]
+}
