@@ -1,0 +1,490 @@
+{
+  "date": "2026-10-11",
+  "delivery": "40 care-worker and provider situation context refinements",
+  "alignment": "Clarify the circumstance or constraint of existing human hypotheses independently of solutions; preserve needs→situations→existing-offerings hierarchy and click-to-drill.",
+  "principles_sha256": "1698c1ce402af9694166b15938d24fb9fb05c55e85a330b4e589b7dca5b2a8c2",
+  "canonical_batch": "worker-provider-situation-context-clarity-20261011",
+  "changes_sha256": "c092aa6af44ecaa36283a56f31eea090612c86b3d24ef0f08859942e4e673e3c",
+  "before_after": [
+    {
+      "id": "wc-candidate-3ebdd2d5208cdd5d425fc2bb",
+      "title": "Different professionals give conflicting instructions about the same resident",
+      "lenses": [
+        "worker",
+        "provider"
+      ],
+      "previous_context": "A paid care worker or A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "Care decisions depend on outside advice, but the worker receives instructions that cannot all be followed.",
+      "status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-4aded088619c308f21f64271",
+      "title": "I spend repeated calls explaining changes because there is no agreed update arrangement",
+      "lenses": [
+        "worker",
+        "provider"
+      ],
+      "previous_context": "A paid care worker or A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "Relatives need updates while changes in care generate repeated calls without a shared communication plan.",
+      "status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-4e1310d87d1db41d0556f377",
+      "title": "I cannot distinguish constipation with overflow from the person's usual bowel pattern",
+      "lenses": [
+        "worker"
+      ],
+      "previous_context": "A paid care worker facing this situation; direct research is pending.",
+      "new_context": "An unfamiliar bowel pattern leaves the worker unsure how to describe the change or seek further assessment.",
+      "status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-4f5ed50663c81625c418656a",
+      "title": "After a person dies I must immediately continue the round without time to process it",
+      "lenses": [
+        "worker"
+      ],
+      "previous_context": "A paid care worker facing this situation; direct research is pending.",
+      "new_context": "The next visit still needs care while the worker has had no pause after a person’s death.",
+      "status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-56b552ea4c9e4fd4aec2dbe1",
+      "title": "Discharge instructions do not explain who will supply equipment or follow-up care",
+      "lenses": [
+        "worker"
+      ],
+      "previous_context": "A paid care worker facing this situation; direct research is pending.",
+      "new_context": "The person returns from another service without clear responsibility for equipment and continuing support.",
+      "status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-591e0b0175a8712f6827eb95",
+      "title": "Several people need help to the toilet at the same time during the night",
+      "lenses": [
+        "worker"
+      ],
+      "previous_context": "A paid care worker facing this situation; direct research is pending.",
+      "new_context": "Night-time requests arrive together, leaving the worker to choose who receives assistance first.",
+      "status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-5a493d069e4990277c0e7385",
+      "title": "The room or bathroom does not let me preserve privacy during care",
+      "lenses": [
+        "worker"
+      ],
+      "previous_context": "A paid care worker facing this situation; direct research is pending.",
+      "new_context": "Intimate care must happen in a space where the person can be seen or interrupted.",
+      "status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-5daf95b80fc007e822fda53b",
+      "title": "A relative objects to a resident's relationship and asks me to prevent contact",
+      "lenses": [
+        "worker"
+      ],
+      "previous_context": "A paid care worker facing this situation; direct research is pending.",
+      "new_context": "The worker is caught between a resident’s chosen contact and a relative’s request to stop it.",
+      "status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-5ea92c51bb35ffe833eebc68",
+      "title": "Different relatives give incompatible instructions about the same person's care",
+      "lenses": [
+        "worker",
+        "provider"
+      ],
+      "previous_context": "A paid care worker or A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "A shared care arrangement becomes difficult when family members expect different actions from the worker.",
+      "status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-5f152524a67bdc563d93d2ee",
+      "title": "The household asks me to take on tasks beyond the agreed arrangement",
+      "lenses": [
+        "worker"
+      ],
+      "previous_context": "A paid care worker facing this situation; direct research is pending.",
+      "new_context": "Extra household requests make the boundaries of the live-in care arrangement difficult to maintain.",
+      "status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-60e72bd4569ec41420aa23bf",
+      "title": "A person asks for a different caregiver for intimate care but no alternative is arranged",
+      "lenses": [
+        "worker"
+      ],
+      "previous_context": "A paid care worker facing this situation; direct research is pending.",
+      "new_context": "The person’s preference for intimate care cannot be met through the staff arrangement currently available.",
+      "status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-6142c7aa90a48eb1b70c879b",
+      "title": "A person is awake and distressed at night but I cannot establish what they need",
+      "lenses": [
+        "worker"
+      ],
+      "previous_context": "A paid care worker facing this situation; direct research is pending.",
+      "new_context": "Night-time distress needs a response, but its cause and the person’s wishes are unclear to the worker.",
+      "status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-65f83fbff987093e12b294ee",
+      "title": "The continence product leaks but I do not know whether its fit or the care plan should change",
+      "lenses": [
+        "worker"
+      ],
+      "previous_context": "A paid care worker facing this situation; direct research is pending.",
+      "new_context": "A leak leaves the worker unsure whether the product, its use or the wider support arrangement needs review.",
+      "status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-67a39dcb0a22060572e20f25",
+      "title": "I arrive at a locked door and cannot reach the client or an authorised contact",
+      "lenses": [
+        "worker"
+      ],
+      "previous_context": "A paid care worker facing this situation; direct research is pending.",
+      "new_context": "A scheduled home visit cannot begin, and nobody authorised to clarify access can be reached.",
+      "status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-68849b1ed35f43d08688191c",
+      "title": "Relatives expect support that our team has not agreed or cannot provide",
+      "lenses": [
+        "worker",
+        "provider"
+      ],
+      "previous_context": "A paid care worker or A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "The worker must explain the limits of the team’s care when relatives expect more support.",
+      "status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-68f7a4b180daa02f5444b4a0",
+      "title": "I work alone in people's homes with no colleague available for immediate advice",
+      "lenses": [
+        "worker"
+      ],
+      "previous_context": "A paid care worker facing this situation; direct research is pending.",
+      "new_context": "A difficult decision arises during a lone home visit without a colleague the worker can consult straight away.",
+      "status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-690671230bb09c280f248f7b",
+      "title": "I cannot identify who should clean, repair or replace equipment",
+      "lenses": [
+        "worker"
+      ],
+      "previous_context": "A paid care worker facing this situation; direct research is pending.",
+      "new_context": "Care depends on equipment whose upkeep and replacement have no clear owner.",
+      "status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-6ad41e799d33baf42a59bc7f",
+      "title": "I am told to follow a routine that I believe is harming the person",
+      "lenses": [
+        "worker"
+      ],
+      "previous_context": "A paid care worker facing this situation; direct research is pending.",
+      "new_context": "An expected routine conflicts with the worker’s concern about the person’s welfare.",
+      "status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-6bbfbada2ad2ac3faecddc61",
+      "title": "I cannot record and communicate an observation before the next worker takes over",
+      "lenses": [
+        "worker"
+      ],
+      "previous_context": "A paid care worker facing this situation; direct research is pending.",
+      "new_context": "A change noticed during care may not reach the next worker in time to inform their visit.",
+      "status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-6c26dedd5086a642f53ecf8a",
+      "title": "A person hints that someone takes their money but asks me not to tell anyone",
+      "lenses": [
+        "worker"
+      ],
+      "previous_context": "A paid care worker facing this situation; direct research is pending.",
+      "new_context": "The person’s request for secrecy conflicts with the worker’s concern about possible financial abuse.",
+      "status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-54fc33bdd117c92bb8b6b6dd",
+      "title": "An incident is recorded but nobody owns the follow-up actions",
+      "lenses": [
+        "provider"
+      ],
+      "previous_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "An incident has been documented without assigning responsibility for the follow-up.",
+      "status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-552b26b6372f2c3b541264f0",
+      "title": "Different funders apply incompatible reporting or eligibility requirements",
+      "lenses": [
+        "provider"
+      ],
+      "previous_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "The same service must satisfy funding rules that ask for different evidence or accept different care needs.",
+      "status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-56292090966e3ed1dc199cd7",
+      "title": "An empty room stays unfilled while families cannot find a suitable place",
+      "lenses": [
+        "provider"
+      ],
+      "previous_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "Available capacity and families’ searches do not connect to an agreed, suitable admission.",
+      "status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-562c699cf02e1634a64401db",
+      "title": "Our records do not explain why a care decision was made",
+      "lenses": [
+        "provider"
+      ],
+      "previous_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "The record describes the action taken but leaves the reasoning difficult for others to follow.",
+      "status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-5a0769b2d0935620a9aa964b",
+      "title": "A complaint process excludes people who cannot use written forms",
+      "lenses": [
+        "provider"
+      ],
+      "previous_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "Raising a concern depends on a written route some people cannot use.",
+      "status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-5a2a192c83785acbf38ce455",
+      "title": "Building repairs repeatedly disrupt the spaces residents rely on",
+      "lenses": [
+        "provider"
+      ],
+      "previous_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "Repair work takes place in areas residents still need for their usual daily routines.",
+      "status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-5a331d5eef286628e2c46279",
+      "title": "A volunteer stops attending and a resident loses a valued regular visit",
+      "lenses": [
+        "provider"
+      ],
+      "previous_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "A valued relationship depends on a volunteer’s attendance without continuity when visits stop.",
+      "status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-5c4c5f1f2d374e27466718f4",
+      "title": "A worker cannot enter a client's home and there is no clear next step",
+      "lenses": [
+        "provider"
+      ],
+      "previous_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "The provider needs to decide what happens to a planned visit when access to the home fails.",
+      "status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-5f7eaf27c479ae915b6e49a0",
+      "title": "A resident's wishes for end-of-life care are missing when urgent decisions arise",
+      "lenses": [
+        "provider"
+      ],
+      "previous_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "Urgent care choices must be made without a usable record of the resident’s preferences.",
+      "status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-6050ae0622a9ac5d216b41c3",
+      "title": "A resident's priorities change but their care plan stays the same",
+      "lenses": [
+        "provider"
+      ],
+      "previous_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "The documented arrangement no longer reflects what the resident currently wants from daily care.",
+      "status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-614d8375d75688f429294910",
+      "title": "Symptoms are recorded separately and an emerging cluster is missed",
+      "lenses": [
+        "provider"
+      ],
+      "previous_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "Separate symptom reports are not brought together in time to recognise a possible shared pattern.",
+      "status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-61f8e90587182c209686fa5d",
+      "title": "A transfer aid is unavailable when a resident needs to move",
+      "lenses": [
+        "provider"
+      ],
+      "previous_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "Movement assistance is needed before the team can obtain the appropriate transfer equipment.",
+      "status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-627c09dd1de6d69cba83d3a4",
+      "title": "We cannot give families a reliable answer about when a place will become available",
+      "lenses": [
+        "provider"
+      ],
+      "previous_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "A family needs to plan, but the provider cannot yet commit to an admission date.",
+      "status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-64cd4d026a4a6f7623acaa15",
+      "title": "Changing systems would lock us into costs or data arrangements we do not understand",
+      "lenses": [
+        "provider"
+      ],
+      "previous_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "A purchasing decision must account for future costs and access to data before changing systems.",
+      "status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-64efee3900a8e5f083e9775c",
+      "title": "Staff lack usable information about a resident's language, habits and important relationships",
+      "lenses": [
+        "provider"
+      ],
+      "previous_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "The team plans everyday care without a usable account of what feels familiar or important to the resident.",
+      "status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-65bc59de3461373b9cce140f",
+      "title": "Workers hesitate to report a near miss because they expect blame",
+      "lenses": [
+        "provider"
+      ],
+      "previous_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "Workers’ concerns about blame make near-miss reporting difficult for the team.",
+      "status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-681f59ca79415dfdab3301be",
+      "title": "A resident's preferred routine conflicts with our standard timetable",
+      "lenses": [
+        "provider"
+      ],
+      "previous_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "The resident’s preferred timing does not fit the timetable used to organise shared care work.",
+      "status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-68ac7c1957e241645d1c93ff",
+      "title": "Relatives cannot reach someone who can explain a change near the end of life",
+      "lenses": [
+        "provider"
+      ],
+      "previous_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "An important change happens when relatives cannot reach a staff member able to explain it.",
+      "status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-6a64350c5940c6d647484403",
+      "title": "A resident's needs increase but staffing hours do not adjust",
+      "lenses": [
+        "provider"
+      ],
+      "previous_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "The care arrangement must respond to greater support needs within the hours already allocated.",
+      "status": "hypothesis"
+    },
+    {
+      "id": "wc-candidate-6d5ebe6b2e4a1feadd94de13",
+      "title": "Contracted cleaning does not cover the times or spaces care staff actually need",
+      "lenses": [
+        "provider"
+      ],
+      "previous_context": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "new_context": "Cleaning arrangements miss the areas or hours needed to support the care team’s actual routine.",
+      "status": "hypothesis"
+    }
+  ],
+  "verification": {
+    "isolated_test": {
+      "target": "test",
+      "verified": true,
+      "batch": "worker-provider-situation-context-clarity-20261011",
+      "changes_sha256": "c092aa6af44ecaa36283a56f31eea090612c86b3d24ef0f08859942e4e673e3c",
+      "backup_file": "backup-test-1791705986654.json",
+      "object_updates": 40,
+      "all_other_rows_unchanged": true,
+      "status_preserved": true,
+      "fields": [
+        "scope.navigation.summary",
+        "provenance.context_copy_review"
+      ],
+      "public_ui_deployment": false
+    },
+    "canonical_live": {
+      "target": "live",
+      "verified": true,
+      "batch": "worker-provider-situation-context-clarity-20261011",
+      "changes_sha256": "c092aa6af44ecaa36283a56f31eea090612c86b3d24ef0f08859942e4e673e3c",
+      "backup_file": "backup-live-1791706007600.json",
+      "object_updates": 40,
+      "all_other_rows_unchanged": true,
+      "status_preserved": true,
+      "fields": [
+        "scope.navigation.summary",
+        "provenance.context_copy_review"
+      ],
+      "public_ui_deployment": false
+    },
+    "all40_situations_resolve_in_projected_map": true,
+    "parent_links_unchanged": true,
+    "all_other_rows_unchanged": true,
+    "new_objects": 0,
+    "new_solutions": 0,
+    "evidence_changes": 0,
+    "measurements_changed": 0,
+    "generic_contexts_before": 389,
+    "generic_contexts_after": 349,
+    "distinct_mapped_records": 1320,
+    "covered_situations": 122,
+    "browser": {
+      "scope": "Two representative branches plus one edited situation detail; all40 separately checked through the production projection. Not a40-tile pixel inspection or venture-builder usability test.",
+      "worker_branch": "http://127.0.0.1:8793/#/all/g/wc-candidate-7f0572688c077081751babbb",
+      "provider_branch": "http://127.0.0.1:8793/#/all/g/wc-candidate-944cedd917e26044b8a197e5",
+      "updated_worker_context_visible": true,
+      "updated_provider_context_visible": true,
+      "zoom85_to102_keeps_same5_situations_and_context": true,
+      "click_drills_to_child_map": true,
+      "empty_solution_level_states_coverage_incomplete": true,
+      "hypothesis_validation_question_and_missing_evidence_notice_visible": true,
+      "breadcrumbs_return_to_parent": true,
+      "screenshots": [
+        "/private/tmp/whocares-worker-context-clarity-20261011.png",
+        "/private/tmp/whocares-provider-context-clarity-20261011.png"
+      ]
+    }
+  },
+  "research_scope": {
+    "new_model_calls": 0,
+    "new_claim_validation": false,
+    "method": "Human-authored editorial clarification of already published knowledge-generated hypotheses; no clinical, legal or operational advice, observation, prevalence, service adequacy or quantified harm asserted.",
+    "continuous_campaign": "paused",
+    "image_generation": "paused"
+  },
+  "delivery_scope": {
+    "atlas_branch": "codex/atlas-experience-integration",
+    "indexer_branch": "codex/branch-research-expansion",
+    "public_ui_deployment": false,
+    "main_push": false
+  },
+  "remaining_gaps": [
+    "349 generic context lines still remain. This batch does not prove human-need validity or adequate coverage.",
+    "Most situations still need researched alternatives and empirical quantification. Neutral illustrations remain while image generation is paused."
+  ]
+}
