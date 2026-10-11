@@ -1,0 +1,195 @@
+{
+  "date": "2026-10-11",
+  "principles_sha256": "1698c1ce402af9694166b15938d24fb9fb05c55e85a330b4e589b7dca5b2a8c2",
+  "purpose": "Fill two care-manager leadership/mandate-handover coverage gaps without deriving needs from providers or validating human hypotheses.",
+  "batch": "contec-interim-care-leadership-fits-20261011",
+  "test": {
+    "target": "test",
+    "verified": true,
+    "batch": "contec-interim-care-leadership-fits-20261011",
+    "manifest_sha256": "cca08b0e15484524f3d8c50745e9ac5b64c86cd6e2cc7f9dbd0c99170d4cc90e",
+    "backup_file": "backup-test-1791710748926.json",
+    "object_updates": 2,
+    "new_objects": 1,
+    "new_mapped": 1,
+    "mapped": 1321,
+    "all_prior_rows_preserved_except_declared_situation_context": true,
+    "prior_rows_checked": {
+      "objects": 1362,
+      "relationships": 1309,
+      "sources": 220,
+      "evidence_links": 2591,
+      "product_media": 161,
+      "import_batches": 120
+    },
+    "paths_verified": [
+      [
+        "wc-candidate-fe3fe5fb1986dabf95455add",
+        "wc-candidate-c621f2bdd59f2200231e4ef4",
+        "solution-contec-interim-care-leadership"
+      ],
+      [
+        "wc-candidate-fe3fe5fb1986dabf95455add",
+        "wc-candidate-ec6cc1d7d515211a7b61e525",
+        "solution-contec-interim-care-leadership"
+      ]
+    ],
+    "statuses_unchanged": true,
+    "internal_media": 2,
+    "public_media": 0,
+    "public_deployment": false
+  },
+  "live": {
+    "target": "live",
+    "verified": true,
+    "batch": "contec-interim-care-leadership-fits-20261011",
+    "manifest_sha256": "cca08b0e15484524f3d8c50745e9ac5b64c86cd6e2cc7f9dbd0c99170d4cc90e",
+    "backup_file": "backup-live-1791710821271.json",
+    "object_updates": 2,
+    "new_objects": 1,
+    "new_mapped": 1,
+    "mapped": 1321,
+    "all_prior_rows_preserved_except_declared_situation_context": true,
+    "prior_rows_checked": {
+      "objects": 1362,
+      "relationships": 1309,
+      "sources": 220,
+      "evidence_links": 2591,
+      "product_media": 161,
+      "import_batches": 120
+    },
+    "paths_verified": [
+      [
+        "wc-candidate-fe3fe5fb1986dabf95455add",
+        "wc-candidate-c621f2bdd59f2200231e4ef4",
+        "solution-contec-interim-care-leadership"
+      ],
+      [
+        "wc-candidate-fe3fe5fb1986dabf95455add",
+        "wc-candidate-ec6cc1d7d515211a7b61e525",
+        "solution-contec-interim-care-leadership"
+      ]
+    ],
+    "statuses_unchanged": true,
+    "internal_media": 2,
+    "public_media": 0,
+    "public_deployment": false
+  },
+  "research": {
+    "job_id": "9e901d563a3073dc704221ddaf5db144bb49bbe34ac164f66ba1fb81d8c744a2",
+    "budgeted_runs": [
+      {
+        "max_usd": 0.16,
+        "max_steps": 16,
+        "max_pages": 1,
+        "max_searches": 0,
+        "max_renders": 0
+      },
+      {
+        "max_usd": 0.12,
+        "max_steps": 16,
+        "max_pages": 0,
+        "max_searches": 0,
+        "max_renders": 0
+      }
+    ],
+    "initial": {
+      "status": "deferred",
+      "metrics": {
+        "duration_seconds": 101.497,
+        "model_calls": 5,
+        "model_calls_by_role": {
+          "researcher": 2,
+          "reviewer": 3
+        },
+        "counted_usd": 0.022883399999999998,
+        "provider_reported_usd": 0.007511896,
+        "http_requests": 0,
+        "page_calls": 0,
+        "search_calls": 0
+      },
+      "held_finding": "finding-e188f7f4352c52fc37952a76"
+    },
+    "qualified": {
+      "status": "reviewed_partial",
+      "metrics": {
+        "duration_seconds": 85.513,
+        "model_calls": 4,
+        "model_calls_by_role": {
+          "researcher": 0,
+          "reviewer": 4
+        },
+        "counted_usd": 0.0191457,
+        "provider_reported_usd": 0.008945428,
+        "http_requests": 0,
+        "page_calls": 0,
+        "search_calls": 0
+      },
+      "supported_finding": "finding-17e541238036fcde9413e8a0",
+      "exact_distinct_passages": 14
+    },
+    "source": {
+      "url": "https://www.contec.de/leistungen/interim-management",
+      "hash": "9e16482c0db536dc4333c46b41acfa8df698dbb023a16378b373e751f8c6545f",
+      "captured_at": "2026-10-11T09:18:36.262130+00:00",
+      "kind": "provider_claim"
+    }
+  },
+  "indexer_change": "Condition extraction now distinguishes provider experience/marketing credentials and optional non-binding contact from real customer prerequisites. Explicit assessment/approval/fee requirements remain in scope. Scripted prompt checks and 264-test suite pass; live narrower finding supported, original hold preserved. This does not prove autonomous indexing reliability.",
+  "offering": {
+    "id": "solution-contec-interim-care-leadership",
+    "title": "contec: Interim Management for care leadership",
+    "short_title": "contec interim leadership"
+  },
+  "fits": [
+    {
+      "situation": "wc-candidate-c621f2bdd59f2200231e4ef4",
+      "statement": "Temporary agreed leadership; immediate deployment and authority not guaranteed.",
+      "media": "media-contec-interim-logo-20261011",
+      "status": "interpretation; human hypothesis unchanged"
+    },
+    {
+      "situation": "wc-candidate-ec6cc1d7d515211a7b61e525",
+      "statement": "Handover after an interim mandate; recovery of earlier missing information unverified.",
+      "media": "media-contec-interim-succession-20261011",
+      "status": "interpretation; human hypothesis unchanged"
+    }
+  ],
+  "counts": {
+    "mapped": 1321,
+    "needs": 198,
+    "situations": 1005,
+    "offerings": 118,
+    "situations_with_offerings": 125
+  },
+  "media": [
+    {
+      "id": "media-contec-interim-logo-20261011",
+      "url": "https://www.contec.de/hubfs/0%20Allgemeines/Logos/Logo_contec.svg",
+      "source": "https://www.contec.de/leistungen/interim-management",
+      "visibility": "internal",
+      "review": "Official source and original pixels inspected in real browser. Provider-published depiction; actual identities/client engagement unknown. Public reuse rights unestablished."
+    },
+    {
+      "id": "media-contec-interim-succession-20261011",
+      "url": "https://www.contec.de/hs-fs/hubfs/Website/Interim%20Management/Interim-Management-Nachfolge%20vorbereiten.jpg?width=855&name=Interim-Management-Nachfolge%20vorbereiten.jpg",
+      "source": "https://www.contec.de/leistungen/interim-management",
+      "visibility": "internal",
+      "review": "Official source and original pixels inspected in real browser. Provider-published depiction; actual identities/client engagement unknown. Public reuse rights unestablished."
+    }
+  ],
+  "browser": {
+    "root": "http://127.0.0.1:8793/#/all/g/wc-candidate-fe3fe5fb1986dabf95455add",
+    "changed_snapshot_appeared_without_reload": true,
+    "handover_map": "Offering and partial fit visible, authentic photograph loaded",
+    "record": "Price basis, case-specific availability, authority qualifications, source and two connected hypotheses visible",
+    "zoom": "100% to 120%; same single offering"
+  },
+  "limits": [
+    "Human situations remain hypotheses; no empirical demand validation.",
+    "Two partial fits; no immediate cover or recovery of historic information verified.",
+    "No public deployment; image generation remains paused; authentic media internal only.",
+    "Other leadership situations remain uncovered; no all-branch coverage claim.",
+    "Initial full graph load remains large; no public UI deployment."
+  ]
+}
