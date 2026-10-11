@@ -1,0 +1,93 @@
+{
+  "date": "2026-10-11",
+  "batch": "roster-partial-fit-extension-20261011",
+  "manifest_sha256": "6c81f4b332278bb5870b851a4b9816aa4eee78c5028b6772b7c1c7c6cb8ce7cf",
+  "principles_sha256": "1698c1ce402af9694166b15938d24fb9fb05c55e85a330b4e589b7dca5b2a8c2",
+  "isolated_test_verified": true,
+  "internal_live_verified": true,
+  "new_objects": 0,
+  "products_reused": 2,
+  "new_fit_links": 4,
+  "new_exact_relationship_evidence_links": 6,
+  "human_context_updates": 4,
+  "situations_with_offerings_before": 94,
+  "situations_with_offerings_after": 98,
+  "complete_paths_verified": [
+    [
+      "wc-candidate-342486d05553ea7f9a860c28",
+      "wc-candidate-966bcce3caefdf2009d8e0e3",
+      "wc-object-c739ab73838fbe35bdc95033"
+    ],
+    [
+      "wc-candidate-40270a75682a5e5a3f09b50b",
+      "wc-candidate-4083e6eb334ab723456b38aa",
+      "solution-medifox-md-stationaer"
+    ],
+    [
+      "wc-candidate-9dda8a8028461307c19016a4",
+      "wc-candidate-a20d3ad834918b3473f6e09e",
+      "solution-medifox-md-stationaer"
+    ],
+    [
+      "wc-object-3d0b46bb9b3e4c2030e87d7c",
+      "wc-candidate-3a02c7ce403b4ebc3dde50f4",
+      "solution-medifox-md-stationaer"
+    ]
+  ],
+  "statuses_preserved": true,
+  "unrelated_rows_unchanged": true,
+  "plans": [
+    {
+      "solution": "wc-object-c739ab73838fbe35bdc95033",
+      "situation": "wc-candidate-966bcce3caefdf2009d8e0e3",
+      "fit": "Adjust routes using travel times and qualifications; spare staffing capacity unverified.",
+      "media_id": "media-worker-round-solution-md-ambulant-product_image-20261010"
+    },
+    {
+      "solution": "solution-medifox-md-stationaer",
+      "situation": "wc-candidate-4083e6eb334ab723456b38aa",
+      "fit": "Use shift preferences and availability; cannot guarantee predictable rosters.",
+      "media_id": "media-md-stationaer-roster-20261010"
+    },
+    {
+      "solution": "solution-medifox-md-stationaer",
+      "situation": "wc-candidate-a20d3ad834918b3473f6e09e",
+      "fit": "Match recorded qualifications to shifts; equipment-specific competence unverified.",
+      "media_id": "media-md-stationaer-roster-20261010"
+    },
+    {
+      "solution": "solution-medifox-md-stationaer",
+      "situation": "wc-candidate-3a02c7ce403b4ebc3dde50f4",
+      "fit": "Plan around working-time rules; adequate recovery beyond those rules is unverified.",
+      "media_id": "media-md-stationaer-roster-20261010"
+    }
+  ],
+  "rejected_mapping": {
+    "from": "MD Ambulant",
+    "to": "Residential-care duplicate GP paperwork",
+    "reason": "Captured product evidence is for ambulatory care; did not transfer it to a residential-care observation."
+  },
+  "reviewed_backlog_audit": "Supported records found outside the provenance index were earlier versions of already mapped BAuA/BGW offerings. Hidden MD Ambulant claim was also represented by the existing mapped offering; no duplicate tiles added.",
+  "browser_review": {
+    "all_four_paths_rendered": true,
+    "correct_existing_product_image_selected_on_each_path": true,
+    "both_offering_records_opened": true,
+    "partial_limits_visible": true,
+    "record_access_cost_and_unknowns_visible": true
+  },
+  "screenshot_sha256": {
+    "home-client-planning": "361a166a645cf52d46057c7002a496d12111652b17239d1d999560e43c6b7dc7",
+    "roster-predictability": "a7ae659e6425e679613232d3893a525838110fbaede7fc7a218d5b69b37d102d",
+    "equipment-skill-coverage": "b2dd04febbe9535814267f55d18ba94063a6e08bbafc269b9e79b2eb86ef6c03",
+    "shift-recovery": "86d57ee535b710e9bc3f3cec9534e83722ce26d538de7cef28ab8b474adca4ab"
+  },
+  "public_deployment": false,
+  "paid_calls": 0,
+  "new_image_generation": false,
+  "limitations": [
+    "Internal branch only; no new product identities, media or public deployment.",
+    "Partial software capability comparison; no compliance, equipment competence, staffing capacity or health outcome claim.",
+    "Human hypotheses and validation gaps retained; selected authentic product images belong to the existing products."
+  ],
+  "application_script_sha256": "947b5624dd058391614756af0e94cee138c80c83767fea1888f2ef3d95a3efe8"
+}
