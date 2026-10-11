@@ -1,0 +1,264 @@
+{
+  "date": "2026-10-11",
+  "delivery": "BGW existing occupational-back programme: physical-work fit and authentic internal media",
+  "principles": {
+    "version": 1,
+    "canonical_sha256": "1698c1ce402af9694166b15938d24fb9fb05c55e85a330b4e589b7dca5b2a8c2"
+  },
+  "alignment": {
+    "job": "Help venture builders understand a specific care-worker struggle and the boundary of an existing response.",
+    "hierarchy": "Existing need \u2192 prolonged-bending situation \u2192 existing named BGW programme. No new mandatory categories or provider-defined need.",
+    "partial_fit": "Assessed eligible BGW-insured workers only. Back-friendly routines and workplace coaching do not guarantee an improved working height or equipment.",
+    "zoom": "Click drills; zoom magnifies stable content.",
+    "no_rankings_or_status_promotion": true
+  },
+  "research": {
+    "job_id": "7a4747f9dd9f77570316a852074630905b8132514f036738adb69a447e70fa93",
+    "source_versions": [
+      {
+        "url": "https://www.bgw-online.de/bgw-online-de/themen/gesund-im-betrieb/gesunder-ruecken/rueckenkolleg-und-refresher-kurs",
+        "hash": "87ced7977e6b39e5f3ee310ec9687cb6d20c510756533d95153b1834e662b52c",
+        "retrieved_at": "2026-10-10T12:10:14.718085+00:00",
+        "total_characters": 3975
+      }
+    ],
+    "source_capture_date_preserved": true,
+    "official_browser_inspection_date": "2026-10-11",
+    "bounded_capture_http_requests": 2,
+    "initial_metrics": {
+      "duration_seconds": 114.669,
+      "model_calls": 6,
+      "model_calls_by_role": {
+        "researcher": 3,
+        "reviewer": 3
+      },
+      "counted_usd": 0.021685199999999998,
+      "provider_reported_usd": 0.009412397,
+      "http_requests": 0,
+      "page_calls": 0,
+      "search_calls": 0
+    },
+    "correction_metrics": {
+      "duration_seconds": 88.068,
+      "model_calls": 7,
+      "model_calls_by_role": {
+        "researcher": 0,
+        "reviewer": 7
+      },
+      "counted_usd": 0.020266199999999998,
+      "provider_reported_usd": 0.0062954379999999996,
+      "http_requests": 0,
+      "page_calls": 0,
+      "search_calls": 0
+    },
+    "model_calls_total": 13,
+    "counted_usd_total": 0.0419514,
+    "original_finding": {
+      "id": "finding-cab3ed36fff8a8d2e5ff07d1",
+      "final_review": "unclear",
+      "reason": "Facility-history dates in scope lacked attached exact passage support; original preserved and excluded from publication."
+    },
+    "published_narrow_finding": {
+      "id": "finding-8730eaecede8b3ac90aa46a3",
+      "review": "supported",
+      "current": true,
+      "exact_programme_passages": 7
+    },
+    "reused_exact_eligibility_passages": 2,
+    "source_type_correction": "Existing official BGW help page changed from institutional to provider_claim; capture and14 evidence links preserved.",
+    "scheduling": "Continuous campaign remains paused; no recurring work enabled.",
+    "workflow_code_changes": 0
+  },
+  "canonical_changes": {
+    "existing_offering_reused": "wc-object-69cd23fb0726c7da8c5f29ac",
+    "new_fit_links": 1,
+    "human_planning_updates": 1,
+    "offering_supplemental_context_updates": 1,
+    "new_source_versions": 1,
+    "new_exact_evidence_links": 16,
+    "new_internal_media": 2,
+    "new_objects": 0,
+    "source_type_updates": 1,
+    "covered_situations_before": 121,
+    "covered_situations_after": 122,
+    "distinct_mapped_records": 1320,
+    "counts": {
+      "need": 198,
+      "situation": 1005,
+      "offering": 117
+    },
+    "counts_are_not_validation_or_completeness": true
+  },
+  "media": [
+    {
+      "id": "media-bgw-back-programme-provider-logo-20261011",
+      "role": "logo",
+      "source_url": "https://commons.wikimedia.org/wiki/File:BGW_Logo.png",
+      "asset_url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/BGW_Logo.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail_unscaled&_=20140615114949",
+      "credit": "BGW, attributed by Wikimedia Commons uploader Hanseaticus",
+      "rights_status": "unknown",
+      "visibility": "internal",
+      "review": "Real-browser loaded visual check; provider logo, transfer-practice demonstration. No actual participant identity or clinical benefit inferred."
+    },
+    {
+      "id": "media-bgw-back-programme-training-20261011",
+      "role": "product_image",
+      "source_url": "https://www.bgw-online.de/bgw-online-de/themen/gesund-im-betrieb/gesunder-ruecken/rueckenkolleg-und-refresher-kurs",
+      "asset_url": "https://www.bgw-online.de/resource/image/7126/landscape_ratio16x9/740/416/9f63b09b26b5a1a0dcb8ce144d5beb05/D25A22614992BA58E55ADD0D7EA8CBDF/rueckenkolleg-bild.jpg",
+      "credit": "Kr\u00f6ger/Gross, credited by BGW",
+      "rights_status": "unknown",
+      "visibility": "internal",
+      "review": "Real-browser loaded visual check; provider logo, transfer-practice demonstration. No actual participant identity or clinical benefit inferred."
+    }
+  ],
+  "database_verification": {
+    "main_test": {
+      "target": "test",
+      "verified": true,
+      "batch": "bgw-back-programme-media-fit-20261011",
+      "manifest_sha256": "d01abfd939489505caf5b19a76c2b7abb4c1768bf350a1f8c68ae83d1d63e879",
+      "backup_file": "backup-test-1791705316456.json",
+      "object_updates": 2,
+      "new_fit_links": 1,
+      "new_exact_evidence_links": 16,
+      "internal_media": 2,
+      "public_media": 0,
+      "new_objects": 0,
+      "mapped": 1320,
+      "all_other_rows_unchanged": true,
+      "statuses_unchanged": true,
+      "paths_verified": [
+        [
+          "wc-object-3d0b46bb9b3e4c2030e87d7c",
+          "wc-candidate-423c8c3b8d1b1b88f0a5924a",
+          "wc-object-69cd23fb0726c7da8c5f29ac"
+        ]
+      ],
+      "public_deployment": false
+    },
+    "main_live": {
+      "target": "live",
+      "verified": true,
+      "batch": "bgw-back-programme-media-fit-20261011",
+      "manifest_sha256": "d01abfd939489505caf5b19a76c2b7abb4c1768bf350a1f8c68ae83d1d63e879",
+      "backup_file": "backup-live-1791705356478.json",
+      "object_updates": 2,
+      "new_fit_links": 1,
+      "new_exact_evidence_links": 16,
+      "internal_media": 2,
+      "public_media": 0,
+      "new_objects": 0,
+      "mapped": 1320,
+      "all_other_rows_unchanged": true,
+      "statuses_unchanged": true,
+      "paths_verified": [
+        [
+          "wc-object-3d0b46bb9b3e4c2030e87d7c",
+          "wc-candidate-423c8c3b8d1b1b88f0a5924a",
+          "wc-object-69cd23fb0726c7da8c5f29ac"
+        ]
+      ],
+      "public_deployment": false
+    },
+    "classification_test": {
+      "target": "test",
+      "verified": true,
+      "batch": "bgw-back-source-kind-correction-20261011",
+      "manifest_sha256": "dc75efccda69cd2b5c01cec07ceaeb3cebe9c47f6e675d0c729f75a4ad9022fd",
+      "backup_file": "backup-test-1791705566454.json",
+      "source_updates": 1,
+      "existing_links_preserved": 14,
+      "all_objects_statuses_navigation_media_unchanged": true,
+      "all_unrelated_rows_unchanged": true,
+      "mapped": 1320,
+      "public_ui_deployment": false
+    },
+    "classification_live": {
+      "target": "live",
+      "verified": true,
+      "batch": "bgw-back-source-kind-correction-20261011",
+      "manifest_sha256": "dc75efccda69cd2b5c01cec07ceaeb3cebe9c47f6e675d0c729f75a4ad9022fd",
+      "backup_file": "backup-live-1791705610845.json",
+      "source_updates": 1,
+      "existing_links_preserved": 14,
+      "all_objects_statuses_navigation_media_unchanged": true,
+      "all_unrelated_rows_unchanged": true,
+      "mapped": 1320,
+      "public_ui_deployment": false
+    },
+    "scope_self_check": {
+      "covered_before": 121,
+      "expected_covered_after": 122,
+      "human_titles_short_labels_context_validation_and_measurements_unchanged": true,
+      "offering_existing_scope_preserved": true,
+      "no_new_identities": true
+    },
+    "six_table_backups_retained_privately": true,
+    "all_unrelated_rows_preserved": true,
+    "no_main_push_or_public_ui_deployment": true
+  },
+  "browser_verification": {
+    "date": "2026-10-11",
+    "branch_url": "http://127.0.0.1:8793/#/all/g/wc-object-3d0b46bb9b3e4c2030e87d7c%2Fwc-candidate-423c8c3b8d1b1b88f0a5924a",
+    "click_from_parent_need": true,
+    "solution_detail_opened": true,
+    "connection_evidence_expanded": true,
+    "corrected_source_classification_after_reload": true,
+    "images": [
+      {
+        "complete": true,
+        "height": 119,
+        "src": "https://upload.wikimedia.org/wikipedia/commons/9/9c/BGW_Logo.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail_unscaled&_=20140615114949",
+        "visible": true,
+        "width": 214
+      },
+      {
+        "complete": true,
+        "height": 416,
+        "src": "https://www.bgw-online.de/resource/image/7126/landscape_ratio16x9/740/416/9f63b09b26b5a1a0dcb8ce144d5beb05/D25A22614992BA58E55ADD0D7EA8CBDF/rueckenkolleg-bild.jpg",
+        "visible": true,
+        "width": 740
+      },
+      {
+        "complete": false,
+        "height": 416,
+        "src": "https://www.bgw-online.de/resource/image/7126/landscape_ratio16x9/740/416/9f63b09b26b5a1a0dcb8ce144d5beb05/D25A22614992BA58E55ADD0D7EA8CBDF/rueckenkolleg-bild.jpg",
+        "visible": false,
+        "width": 740
+      }
+    ],
+    "zoom": {
+      "from": 100,
+      "to": 120,
+      "items_before": 1,
+      "items_after": 1,
+      "title_and_fit_stable": true
+    },
+    "pan": {
+      "before_x": 465,
+      "after_x": 427,
+      "title_and_fit_stable": true
+    },
+    "map_screenshot": "/private/tmp/whocares-bgw-back-programme-map-20261011.png",
+    "detail_screenshot": "/private/tmp/whocares-bgw-back-programme-detail-20261011.png",
+    "official_screenshot": "/private/tmp/whocares-bgw-official-training-20261011.png",
+    "detail_images_previously_loaded": true,
+    "status": "verified",
+    "visible_assets_loaded": true,
+    "hidden_detail_panel_image_not_required_to_load_at_final_map": true
+  },
+  "limits": [
+    "Needs and situations retain their original candidate/hypothesis states; service existence does not validate demand or prevalence.",
+    "No functional enrollment, current capacity, equipment provision, altered working conditions or independent outcome evidence verified.",
+    "No new illustration generation; placeholders remain, public media reuse rights unconfirmed.",
+    "Many branches still lack solution alternatives, empirical quantification and complete reviewed illustrations. Whole-goal completion remains unproven."
+  ],
+  "delivery_scope": {
+    "canonical_database": "Applied after isolated test; exact source/object/evidence guards and six-table backups.",
+    "internal_preview": "Verified in real browser; new branch remains open.",
+    "atlas_branch": "codex/atlas-experience-integration",
+    "indexer_branch": "codex/branch-research-expansion",
+    "public_ui_deployment": false,
+    "main_push": false
+  }
+}
