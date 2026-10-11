@@ -1,0 +1,80 @@
+{
+  "date": "2026-10-11",
+  "change": "Add the official Alzheimer Gesellschaft Hamburg provider identity logo to the existing home-support visits and supported-holiday offerings.",
+  "targets": [
+    "solution-alzheimer-hamburg-home-visits",
+    "solution-alzheimer-hamburg-rerik"
+  ],
+  "principles_sha256": "1698c1ce402af9694166b15938d24fb9fb05c55e85a330b4e589b7dca5b2a8c2",
+  "test": {
+    "target": "test",
+    "verified": true,
+    "batch": "alzheimer-hamburg-provider-logos-20261011",
+    "manifest_sha256": "772725042246005e2145185c911757d8c34fd1a046ec1794425f0871e5181fd1",
+    "backup_file": "backup-test-1791719668706.json",
+    "internal_media": 2,
+    "public_media": 0,
+    "mapped": 1321,
+    "counts": {
+      "need": 198,
+      "situation": 1005,
+      "solution": 118
+    },
+    "logo_gaps_before": 31,
+    "logo_gaps_after": 29,
+    "all_prior_rows_preserved": true,
+    "public_deployment": false
+  },
+  "canonical": {
+    "target": "live",
+    "verified": true,
+    "batch": "alzheimer-hamburg-provider-logos-20261011",
+    "manifest_sha256": "772725042246005e2145185c911757d8c34fd1a046ec1794425f0871e5181fd1",
+    "backup_file": "backup-live-1791719707151.json",
+    "internal_media": 2,
+    "public_media": 0,
+    "mapped": 1321,
+    "counts": {
+      "need": 198,
+      "situation": 1005,
+      "solution": 118
+    },
+    "logo_gaps_before": 31,
+    "logo_gaps_after": 29,
+    "all_prior_rows_preserved": true,
+    "public_deployment": false
+  },
+  "media_review": {
+    "asset_url": "https://www.alzheimer-hamburg.de/media/logo_alz.svg",
+    "identity_only": true,
+    "rights_status": "unknown",
+    "visibility": "internal",
+    "source_capture_representation": "Browser accessibility snapshot, not crawler HTML.",
+    "source_capture_sha256": "6e27a6318efba02b0e10797f2b4a5e3447a6cecd1e0f6f30cdeaa0b0d6518103",
+    "scenery_excluded": "Official 200×150 Rerik beach image does not depict care delivery or outcomes."
+  },
+  "browser_verification": {
+    "both_images_loaded": true,
+    "intrinsic_dimensions": [
+      300,
+      86
+    ],
+    "home_visit_url": "http://127.0.0.1:8793/#/all/e/solution-alzheimer-hamburg-home-visits",
+    "holiday_url": "http://127.0.0.1:8793/#/all/e/solution-alzheimer-hamburg-rerik",
+    "screenshots": [
+      "/private/tmp/whocares-alzheimer-home-logo-detail-20261011.png",
+      "/private/tmp/whocares-alzheimer-holiday-logo-detail-20261011.png"
+    ],
+    "claim_limits_preserved": [
+      "Dementia-specific visits with individually arranged hours; no medical/nursing coverage or current waitlist assertion.",
+      "Holiday pairs with early dementia; 2026 trip underway, 2027 dates planned; no confirmed capacity."
+    ]
+  },
+  "preservation": "All rows in objects, relationships, sources, evidence_links and prior product_media/import_batches remain unchanged; six-table backups precede each transaction; atlas.batch_id set.",
+  "preparation_note": "First isolated attempt stopped before mutation because of evidence guard key mismatch; corrected and passed before canonical execution.",
+  "limits": [
+    "Two provider logos only; no new mapped needs, situations or offerings.",
+    "Provider authenticity does not prove service effectiveness or rights for public reuse.",
+    "No public deployment, image generation or scheduled research."
+  ]
+}
