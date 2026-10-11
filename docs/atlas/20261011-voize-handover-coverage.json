@@ -1,0 +1,373 @@
+{
+  "date": "2026-10-11",
+  "purpose": "Add three task-specific care-record/handover alternatives using the existing voize offering identity. Human problems remain independently defined hypotheses.",
+  "principles_sha256": "1698c1ce402af9694166b15938d24fb9fb05c55e85a330b4e589b7dca5b2a8c2",
+  "canonical_updates": {
+    "fit_batch": {
+      "target": "live",
+      "verified": true,
+      "batch": "voize-handover-partial-fits-20261011",
+      "manifest_sha256": "21b4fdd97c3e779dbc1c38208d0cea27a240beb10d0d4c1044d86ed35af287a4",
+      "backup_file": "backup-live-1791707750053.json",
+      "object_updates": 4,
+      "new_fit_links": 3,
+      "new_exact_evidence_links": 26,
+      "internal_media": 0,
+      "public_media": 0,
+      "new_objects": 0,
+      "mapped": 1320,
+      "all_other_rows_unchanged": true,
+      "statuses_unchanged": true,
+      "paths_verified": [
+        [
+          "wc-candidate-8ae26423b300ac2ab651ac6f",
+          "wc-candidate-6bbfbada2ad2ac3faecddc61",
+          "solution-voize-altenpflege"
+        ],
+        [
+          "wc-candidate-705c269ff632a9ff5ec1578a",
+          "wc-candidate-9cecb4b0ffb1160abfa6491e",
+          "solution-voize-altenpflege"
+        ],
+        [
+          "wc-candidate-15c98ed88e6872d293671899",
+          "wc-candidate-84387043fc8beb02979cff03",
+          "solution-voize-altenpflege"
+        ]
+      ],
+      "public_deployment": false
+    },
+    "isolated_fit_test": {
+      "target": "test",
+      "verified": true,
+      "batch": "voize-handover-partial-fits-20261011",
+      "manifest_sha256": "21b4fdd97c3e779dbc1c38208d0cea27a240beb10d0d4c1044d86ed35af287a4",
+      "backup_file": "backup-test-1791707700669.json",
+      "object_updates": 4,
+      "new_fit_links": 3,
+      "new_exact_evidence_links": 26,
+      "internal_media": 0,
+      "public_media": 0,
+      "new_objects": 0,
+      "mapped": 1320,
+      "all_other_rows_unchanged": true,
+      "statuses_unchanged": true,
+      "paths_verified": [
+        [
+          "wc-candidate-8ae26423b300ac2ab651ac6f",
+          "wc-candidate-6bbfbada2ad2ac3faecddc61",
+          "solution-voize-altenpflege"
+        ],
+        [
+          "wc-candidate-705c269ff632a9ff5ec1578a",
+          "wc-candidate-9cecb4b0ffb1160abfa6491e",
+          "solution-voize-altenpflege"
+        ],
+        [
+          "wc-candidate-15c98ed88e6872d293671899",
+          "wc-candidate-84387043fc8beb02979cff03",
+          "solution-voize-altenpflege"
+        ]
+      ],
+      "public_deployment": false
+    },
+    "media_note_batch": {
+      "target": "live",
+      "verified": true,
+      "batch": "voize-media-gap-copy-20261011",
+      "changes_sha256": "e732f9a50a087639a914fa4c38f221e508be73f1cb1867d15ddc86303ee09149",
+      "backup_file": "backup-live-1791708121710.json",
+      "object_updates": 1,
+      "all_other_rows_unchanged": true,
+      "status_preserved": true,
+      "fields": [
+        "scope.media_scope",
+        "provenance.media_gap_review"
+      ],
+      "public_ui_deployment": false
+    },
+    "isolated_media_note_test": {
+      "target": "test",
+      "verified": true,
+      "batch": "voize-media-gap-copy-20261011",
+      "changes_sha256": "e732f9a50a087639a914fa4c38f221e508be73f1cb1867d15ddc86303ee09149",
+      "backup_file": "backup-test-1791708085224.json",
+      "object_updates": 1,
+      "all_other_rows_unchanged": true,
+      "status_preserved": true,
+      "fields": [
+        "scope.media_scope",
+        "provenance.media_gap_review"
+      ],
+      "public_ui_deployment": false
+    }
+  },
+  "counts": {
+    "mapped_before": 1320,
+    "mapped_after": 1320,
+    "needs": 198,
+    "situations": 1005,
+    "existing_offerings": 117,
+    "covered_situations_before": 122,
+    "covered_situations_after": 123,
+    "new_offering_identities": 0,
+    "new_fit_links": 3,
+    "new_sources": 3,
+    "new_exact_evidence_links": 26,
+    "distinct_attached_provider_passages": 14,
+    "new_media": 0
+  },
+  "fit_links": [
+    {
+      "from": "solution-voize-altenpflege",
+      "to": "wc-candidate-6bbfbada2ad2ac3faecddc61",
+      "fit": "Speak observations into care records; timely receipt by the next worker remains unverified.",
+      "status": "interpretation",
+      "limitation": "Provider-described voice entry or editable overview offers a partial task response. German-only documentation, qualified staff release, facility adoption, compatible integration and local configuration required; no accurate or complete AI selection, timely delivery, staff acknowledgement, escalation or reduced workload established."
+    },
+    {
+      "from": "solution-voize-altenpflege",
+      "to": "wc-candidate-9cecb4b0ffb1160abfa6491e",
+      "fit": "Editable shift overview; acknowledgement and escalation remain unverified.",
+      "status": "interpretation",
+      "limitation": "Provider-described voice entry or editable overview offers a partial task response. German-only documentation, qualified staff release, facility adoption, compatible integration and local configuration required; no accurate or complete AI selection, timely delivery, staff acknowledgement, escalation or reduced workload established."
+    },
+    {
+      "from": "solution-voize-altenpflege",
+      "to": "wc-candidate-84387043fc8beb02979cff03",
+      "fit": "Handover overview of relevant records; completeness and accuracy remain unverified.",
+      "status": "interpretation",
+      "limitation": "Provider-described voice entry or editable overview offers a partial task response. German-only documentation, qualified staff release, facility adoption, compatible integration and local configuration required; no accurate or complete AI selection, timely delivery, staff acknowledgement, escalation or reduced workload established."
+    }
+  ],
+  "sources": [
+    {
+      "id": "source-voize-reviewed-bc84bd93223bb3cfb70ab03a",
+      "url": "https://www.voize.ai/de/loesungen/altenpflege",
+      "classification": "provider_claim",
+      "capture_sha256": "bc84bd93223bb3cfb70ab03a86d24ebf607e4604fa303b6c03e6ccf87fadac2b",
+      "captured_at": "2026-10-09T21:56:56.189095+00:00",
+      "cache_date_preserved": true
+    },
+    {
+      "id": "source-voize-reviewed-0d7be5b61f76d946839d8d35",
+      "url": "https://www.voize.ai/de/anwendungen/digitale-schichtubergabe-mit-dem-ki-assistenten-von-voize",
+      "classification": "provider_claim",
+      "capture_sha256": "0d7be5b61f76d946839d8d35696ddd2e42abd924e06e53279c477e1b95872d4d",
+      "captured_at": "2026-10-11T08:14:08.294002+00:00",
+      "cache_date_preserved": true
+    },
+    {
+      "id": "source-voize-reviewed-6f645b4d5bdb93b3cb04c9c5",
+      "url": "https://www.voize.ai/de/preise",
+      "classification": "provider_claim",
+      "capture_sha256": "6f645b4d5bdb93b3cb04c9c53b918d7972ae4b653af04a0886e6aa749e266819",
+      "captured_at": "2026-10-11T08:14:17.039815+00:00",
+      "cache_date_preserved": true
+    }
+  ],
+  "research_review": {
+    "job_id": "fffea5964da0711306f5444e9678772f8b045ed10e9b5707a6d6adff5018898c",
+    "supported_finding_id": "finding-8b20efd11bbaad43cd523271",
+    "final_status": "reviewed_partial",
+    "earlier_holds_preserved": [
+      {
+        "id": "finding-86459d8236dcbf9e31967110",
+        "reason": "Controller abstention: reviewer used two additional source windows without reaching a verdict. Narrow the claim or attach complete supporting passages before another review."
+      },
+      {
+        "id": "finding-6bd7d44615a7363eea694541",
+        "reason": "Controller hold: material conditions missing from the claim or attached evidence: voize creates a structured draft that can be professionally reviewed, updated and released."
+      }
+    ],
+    "runs": [
+      {
+        "run_id": "e77cf625-422d-443e-8409-1d816b2e1ff4",
+        "status": "deferred",
+        "budget": {
+          "max_usd": 0.18,
+          "max_steps": 20,
+          "max_pages": 3,
+          "max_searches": 0,
+          "max_renders": 0
+        },
+        "metrics": {
+          "duration_seconds": 195.788,
+          "model_calls": 8,
+          "model_calls_by_role": {
+            "researcher": 4,
+            "reviewer": 4
+          },
+          "counted_usd": 0.039259499999999996,
+          "provider_reported_usd": 0.010643693000000001,
+          "http_requests": 0,
+          "page_calls": 0,
+          "search_calls": 0
+        },
+        "errors": []
+      },
+      {
+        "run_id": "36af7353-5bae-4552-9f79-19ec070476f7",
+        "status": "deferred",
+        "budget": {
+          "max_usd": 0.1,
+          "max_steps": 14,
+          "max_pages": 0,
+          "max_searches": 0,
+          "max_renders": 0
+        },
+        "metrics": {
+          "duration_seconds": 111.277,
+          "model_calls": 7,
+          "model_calls_by_role": {
+            "researcher": 0,
+            "reviewer": 7
+          },
+          "counted_usd": 0.025981499999999998,
+          "provider_reported_usd": 0.01337414,
+          "http_requests": 0,
+          "page_calls": 0,
+          "search_calls": 0
+        },
+        "errors": []
+      },
+      {
+        "run_id": "b1e435be-0628-4343-ae11-e43881ab704e",
+        "status": "deferred",
+        "budget": {
+          "max_usd": 0.1,
+          "max_steps": 14,
+          "max_pages": 0,
+          "max_searches": 0,
+          "max_renders": 0
+        },
+        "metrics": {
+          "duration_seconds": 70.35,
+          "model_calls": 4,
+          "model_calls_by_role": {
+            "researcher": 0,
+            "reviewer": 4
+          },
+          "counted_usd": 0.016684499999999998,
+          "provider_reported_usd": 0.008777256,
+          "http_requests": 0,
+          "page_calls": 0,
+          "search_calls": 0
+        },
+        "errors": []
+      },
+      {
+        "run_id": "2edef51d-9c39-4234-ab86-855e722589e3",
+        "status": "deferred",
+        "budget": {
+          "max_usd": 0.1,
+          "max_steps": 14,
+          "max_pages": 0,
+          "max_searches": 0,
+          "max_renders": 0
+        },
+        "metrics": {
+          "duration_seconds": 70.397,
+          "model_calls": 5,
+          "model_calls_by_role": {
+            "researcher": 0,
+            "reviewer": 5
+          },
+          "counted_usd": 0.017214,
+          "provider_reported_usd": 0.00492184,
+          "http_requests": 0,
+          "page_calls": 0,
+          "search_calls": 0
+        },
+        "errors": []
+      },
+      {
+        "run_id": "b0538489-28cf-4721-904d-b9f9e7352057",
+        "status": "reviewed_partial",
+        "budget": {
+          "max_usd": 0.1,
+          "max_steps": 14,
+          "max_pages": 0,
+          "max_searches": 0,
+          "max_renders": 0
+        },
+        "metrics": {
+          "duration_seconds": 76.958,
+          "model_calls": 5,
+          "model_calls_by_role": {
+            "researcher": 0,
+            "reviewer": 5
+          },
+          "counted_usd": 0.0195444,
+          "provider_reported_usd": 0.007956738,
+          "http_requests": 0,
+          "page_calls": 0,
+          "search_calls": 0
+        },
+        "errors": []
+      }
+    ],
+    "total_model_calls": 29,
+    "total_counted_usd": 0.1186839,
+    "total_provider_reported_usd": 0.045673667,
+    "accounting_limit": "Provider-reported cost is not an invoice. Initial source capture happened separately; no model review authorized publication by itself.",
+    "workflow_change": "Condition-extraction instructions distinguish negated prerequisites, optional editing and data-processing properties from access obligations. Existing exact-source and claim-retention checks are unchanged.",
+    "workflow_limits": "Instructions do not guarantee correct semantic classification. Live reviews still inventoried some capabilities as conditions; earlier holds and human clause review remain necessary. This is not proof of autonomous readiness.",
+    "evidence_repair": "Added German-only documentation, qualified staff release and the provider-stated contractual data-processing agreement. Attached the repeated pricing-page draft-edit passage to satisfy that exact source version; no independent privacy-compliance claim adopted."
+  },
+  "tests": {
+    "command": "python -m unittest discover -s tests -v",
+    "tests": 264,
+    "passed": true,
+    "log_retained_privately": true,
+    "fixture_scope": "Exercises actual structured-tool orchestration and checks extraction instructions retain real price/eligibility restrictions; not a proof of model semantic reliability."
+  },
+  "media": {
+    "fallback": "Authorised neutral image placeholder; no generated scene, logo or product shot added.",
+    "gap": "No approved relevant voize logo/product imagery. Direct handover asset browser navigation was safety-blocked; no alternative route used to obtain it.",
+    "existing_comparison_logo": "Existing reviewed MEDIFOX DAN logo loaded in internal branches.",
+    "image_generation": "paused",
+    "public_reuse_permission": "not established"
+  },
+  "browser": {
+    "preview_origin": "http://127.0.0.1:8793",
+    "branch_counts": [
+      2,
+      2,
+      1
+    ],
+    "prior_empty_branch": "wc-candidate-84387043fc8beb02979cff03",
+    "observations": [
+      "Canonical data reload changed the previously empty information branch from zero to one offering without changing app code.",
+      "All three full paths rendered, with situation-specific fit limits.",
+      "Existing offering detail showed German-only documentation, staff review/release, licensing and contractual data-processing description with independent-compliance caveat.",
+      "Connected human nodes remained Hypothesis.",
+      "Zoom100to120 retained the same offering and fit text; ArrowRight input retained content.",
+      "New voize neutral fallback and existing comparison logo loaded.",
+      "Initial reload remained loading at the first observation; later resolved. Load latency was not fixed or benchmarked.",
+      "After final canonical reload, the visible media note is concise; browser-safety bookkeeping remains in provenance. Product context and access qualifications retained."
+    ],
+    "screenshots": [
+      "whocares-voize-map-20261011.png",
+      "whocares-voize-observation-alternatives-20261011.png",
+      "whocares-voize-handover-alternatives-20261011.png",
+      "whocares-voize-detail-20261011.png"
+    ],
+    "media_note_copy_verified_in_browser": true
+  },
+  "delivery": {
+    "atlas_branch": "codex/atlas-experience-integration",
+    "research_branch": "codex/branch-research-expansion",
+    "public_ui_deployment": false,
+    "scheduler": "paused",
+    "canonical_status": "applied with six-table backups and isolated checks",
+    "goal_complete": false
+  },
+  "remaining_gaps": [
+    "Authentic voize media is incomplete.",
+    "No independent handover accuracy, timeliness, acknowledgement, clinical benefit or workload reduction established.",
+    "Situation hypotheses and measurements remain unvalidated.",
+    "Numerical commercial quote, minimum term, cancellation, live capacity and local configuration remain unverified.",
+    "Whole-map evidence, context and media completeness and autonomous indexer reliability remain unproven."
+  ]
+}
