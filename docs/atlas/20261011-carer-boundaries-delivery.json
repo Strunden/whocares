@@ -1,0 +1,104 @@
+{
+  "date": "2026-10-11",
+  "batch": "carer-boundaries-partial-fit-20261011",
+  "manifest_sha256": "3918118990e72bf4c07de5bbb3b46c9d9c6955961ee08e94208d9b81c6962852",
+  "principles_sha256": "1698c1ce402af9694166b15938d24fb9fb05c55e85a330b4e589b7dca5b2a8c2",
+  "isolated_test_verified": true,
+  "internal_live_verified": true,
+  "new_objects": 0,
+  "existing_offerings_reused": 1,
+  "new_fit_links": 3,
+  "new_exact_evidence_links": 20,
+  "new_source_versions": 1,
+  "existing_evidence_reused_without_duplication": 5,
+  "mapped_records": 1318,
+  "situations_with_offerings_before": 99,
+  "situations_with_offerings_after": 102,
+  "complete_paths_verified": [
+    [
+      "wc-object-5c46dc0552ca559032668397",
+      "wc-candidate-13682285b936db84c59e6ff6",
+      "wc-object-d8cc9863574a0424893c5243"
+    ],
+    [
+      "wc-candidate-740c3cade9065741f9d68dc1",
+      "wc-candidate-d6b78f71c024dc1fa129b6d4",
+      "wc-object-d8cc9863574a0424893c5243"
+    ],
+    [
+      "wc-candidate-cbbdc1cbfcbe5d47ad796fd4",
+      "wc-candidate-2aa676b012cc42afe16976ae",
+      "wc-object-d8cc9863574a0424893c5243"
+    ]
+  ],
+  "statuses_unchanged": true,
+  "unrelated_rows_unchanged": true,
+  "terminology_refinement": {
+    "target": "live",
+    "verified": true,
+    "batch": "carer-boundaries-partial-fit-20261011-readability",
+    "changes_sha256": "b649d73d046a65453c88d7d6f52dfb1c1d0c5a97f31d9665fdba6bcee2807d11",
+    "backup_file": "backup-readability-live-1791689597219.json",
+    "object_updates": 1,
+    "all_other_rows_unchanged": true,
+    "status_preserved": true,
+    "terminology_fields": [
+      "scope.who",
+      "scope.cost.summary"
+    ],
+    "public_deployment": false
+  },
+  "browser_review": {
+    "all_three_paths_rendered": true,
+    "correct_existing_service_process_illustration": true,
+    "qualified_record_opened_after_reload": true,
+    "statutory_insurance_and_professional_carer_exclusion_visible": true,
+    "registration_and_response_time_terms_visible": true,
+    "privacy_wording_discrepancy_visible": true,
+    "candidate_and_hypothesis_labels_retained": true
+  },
+  "screenshot_sha256": {
+    "guilt-map": "84e21a031cc97ccce52666fb5dbf3f78e71e04357d792c18b8c272f1d4ff4a39",
+    "boundaries-map": "fd7271f6e4a7852c1c1832dcc5d517e71618d939308da51102429eb392844a7c",
+    "leisure-map": "a8f6fbac515e1dc8e7f494ce4667f963e6b9f785a72fef0149081e5e976f739a",
+    "qualified-record": "9d2cfcc7d62b43a95f385ae1f6f1850ae7b8aa9bbca456295ae94e8f45d07b2c"
+  },
+  "indexer_changes": {
+    "commits": [
+      "3f21578",
+      "0d91bbf"
+    ],
+    "tests_passed": 259,
+    "source_formatting_recovery_verified": true,
+    "final_review_metrics": {
+      "duration_seconds": 125.844,
+      "model_calls": 12,
+      "model_calls_by_role": {
+        "researcher": 0,
+        "reviewer": 12
+      },
+      "counted_usd": 0.029838299999999998,
+      "provider_reported_usd": 0.022789321,
+      "http_requests": 0,
+      "page_calls": 0,
+      "search_calls": 0
+    },
+    "earlier_hold_retained": "finding-33f50cc58bfa9393c99c7bc9",
+    "published_qualified_finding": "finding-7a5e7d75589a7aa9f06ffba3"
+  },
+  "public_deployment": false,
+  "new_image_generation": false,
+  "scheduler_activation": false,
+  "limitations": [
+    "Internal only; no new offering identity, generated media, scheduler or public deployment.",
+    "Provider counselling and editorial human hypotheses remain distinct; no guilt-reduction or unmet-market claims.",
+    "Professional-carer exclusion and dated registration terms retained; provider privacy wording qualified, no security certification.",
+    "102 of 1005 situations have offerings; no implication of complete supply coverage.",
+    "Notice is labelled January 2023, not a verified current legal or privacy guarantee.",
+    "Actual admission, waiting time, capacity, session limits and effects remain untested.",
+    "Editorial provider articles were not used as observed human situations or prevalence evidence.",
+    "Existing authentic logo and process illustration reused internally; public reuse rights remain unknown."
+  ],
+  "application_script_sha256": "dc0a102262b417568315861bb18e0e4d92eebdd6bc9fc8946ede86d6b4ad2df7",
+  "terminology_script_sha256": "3f2fd65cbed28aedf0a98124010bf435cd38767bbe408314029d863f57b09384"
+}
