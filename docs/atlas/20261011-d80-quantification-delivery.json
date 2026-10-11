@@ -1,0 +1,208 @@
+{
+  "date": "2026-10-11",
+  "status": "internal_delivery_verified",
+  "test": {
+    "target": "test",
+    "verified": true,
+    "batch": "d80-self-care-quantification-20261011",
+    "manifest_sha256": "68426e663409d13e197d65234dbbd67924bba8f7a6419119b4f58de0ca1aa01d",
+    "backup_file": "backup-test-1791679605965.json",
+    "object_updates": 3,
+    "new_objects": 0,
+    "all_prior_rows_preserved_except_declared_additive_metadata": true,
+    "prior_rows_checked": {
+      "objects": 1358,
+      "relationships": 1263,
+      "sources": 196,
+      "evidence_links": 2031,
+      "product_media": 151,
+      "import_batches": 79
+    },
+    "paths_verified": [
+      [
+        "study-aspiration-stay-home",
+        "wc-object-086bf8dd24a20c1955aebd57"
+      ],
+      [
+        "study-aspiration-stay-home",
+        "wc-object-927a5ab390cc3c8bcf421150"
+      ],
+      [
+        "study-aspiration-stay-home",
+        "wc-object-d212548931b47cbb7c77b644"
+      ]
+    ],
+    "statuses_unchanged": true,
+    "public_deployment": false
+  },
+  "live": {
+    "target": "live",
+    "verified": true,
+    "batch": "d80-self-care-quantification-20261011",
+    "manifest_sha256": "68426e663409d13e197d65234dbbd67924bba8f7a6419119b4f58de0ca1aa01d",
+    "backup_file": "backup-live-1791679634131.json",
+    "object_updates": 3,
+    "new_objects": 0,
+    "all_prior_rows_preserved_except_declared_additive_metadata": true,
+    "prior_rows_checked": {
+      "objects": 1358,
+      "relationships": 1263,
+      "sources": 196,
+      "evidence_links": 2031,
+      "product_media": 151,
+      "import_batches": 79
+    },
+    "paths_verified": [
+      [
+        "study-aspiration-stay-home",
+        "wc-object-086bf8dd24a20c1955aebd57"
+      ],
+      [
+        "study-aspiration-stay-home",
+        "wc-object-927a5ab390cc3c8bcf421150"
+      ],
+      [
+        "study-aspiration-stay-home",
+        "wc-object-d212548931b47cbb7c77b644"
+      ]
+    ],
+    "statuses_unchanged": true,
+    "public_deployment": false
+  },
+  "mapped_counts": {
+    "need": 198,
+    "situation": 1005,
+    "solution": 112,
+    "total": 1315
+  },
+  "quantification": [
+    {
+      "id": "wc-object-086bf8dd24a20c1955aebd57",
+      "title": "I need help getting dressed",
+      "measurement": {
+        "summary": "D80+ report, May 2022: among people aged 80+ in Germany, 8.8% could manage getting dressed and undressed only with help, 11.9% needed some help and 79.3% needed none. Weighted historical self-report; 3,233 telephone participants interviewed through December 2021. The figure does not separately report the valid-response denominator for this activity or establish unmet support.",
+        "measure": "Self-reported help required for getting dressed and undressed",
+        "categories_percent": {
+          "only_with_help": 8.8,
+          "some_help": 11.9,
+          "no_help": 79.3
+        },
+        "population": "People aged 80+ in Germany, including private households and care homes",
+        "telephone_cohort_n": 3233,
+        "activity_valid_response_n": null,
+        "weighted": true,
+        "telephone_fieldwork_end": "2021-12",
+        "report_publication": "2022-05",
+        "source_id": "wc-source-5be8fce2f804396493dc3af1",
+        "source_content_sha256": "fc0fff6182e321609c751d9b9355cd21903f58c98ba701a58507fa4534d64149",
+        "chart_passage_id": "passage-5420364651448f364bd90a89",
+        "evidence_link_ids": [
+          "wc-evidence-0a059863eafefe05f2744fd6",
+          "wc-evidence-26fba42d70c167ea3712da91",
+          "wc-evidence-3b2bc312db0efa1cfc628a06",
+          "wc-evidence-5733cdaa2ff5a7d1a8125f66",
+          "wc-evidence-7015695fcc55686805ec6937",
+          "wc-evidence-966504e7ab39472896d5b05b",
+          "wc-evidence-9f6c5e782b2a2273f00cd0db",
+          "wc-evidence-b24c925fc3c56df5b0f71431"
+        ],
+        "confidence_interval": null,
+        "limitations": "Historical need for help, not support availability, unmet need, cause, intervention effect or current prevalence. Most respondents reported no help needed."
+      }
+    },
+    {
+      "id": "wc-object-927a5ab390cc3c8bcf421150",
+      "title": "I need help to wash or bathe",
+      "measurement": {
+        "summary": "D80+ report, May 2022: among people aged 80+ in Germany, 18.8% could manage bathing or showering only with help, 9.5% needed some help and 71.7% needed none. Weighted historical self-report; 3,233 telephone participants interviewed through December 2021. The figure does not separately report the valid-response denominator for this activity or establish unmet support.",
+        "measure": "Self-reported help required for bathing or showering",
+        "categories_percent": {
+          "only_with_help": 18.8,
+          "some_help": 9.5,
+          "no_help": 71.7
+        },
+        "population": "People aged 80+ in Germany, including private households and care homes",
+        "telephone_cohort_n": 3233,
+        "activity_valid_response_n": null,
+        "weighted": true,
+        "telephone_fieldwork_end": "2021-12",
+        "report_publication": "2022-05",
+        "source_id": "wc-source-5be8fce2f804396493dc3af1",
+        "source_content_sha256": "fc0fff6182e321609c751d9b9355cd21903f58c98ba701a58507fa4534d64149",
+        "chart_passage_id": "passage-5358ccb7d8b9c199e413f2d7",
+        "evidence_link_ids": [
+          "wc-evidence-07483c4d6d316fe10520e935",
+          "wc-evidence-127b346a195a9e04b8f484ef",
+          "wc-evidence-1b566fa9cdaf31a57bd6b409",
+          "wc-evidence-369b3af7390fd8fccd03212c",
+          "wc-evidence-792b2ad6b209fb8c12fa20bc",
+          "wc-evidence-8264e0c23b34201adc5a34c3",
+          "wc-evidence-901ddb6bea4c34e26eb057d2",
+          "wc-evidence-be220d45ebaf23881eba4d50"
+        ],
+        "confidence_interval": null,
+        "limitations": "Historical need for help, not support availability, unmet need, cause, intervention effect or current prevalence. Most respondents reported no help needed."
+      }
+    },
+    {
+      "id": "wc-object-d212548931b47cbb7c77b644",
+      "title": "I need help taking my medicines",
+      "measurement": {
+        "summary": "D80+ report, May 2022: among people aged 80+ in Germany, 12.6% could manage taking medicines only with help, 9.2% needed some help and 78.2% needed none. Weighted historical self-report; 3,233 telephone participants interviewed through December 2021. The figure does not separately report the valid-response denominator for this activity or establish unmet support.",
+        "measure": "Self-reported help required for taking medicines",
+        "categories_percent": {
+          "only_with_help": 12.6,
+          "some_help": 9.2,
+          "no_help": 78.2
+        },
+        "population": "People aged 80+ in Germany, including private households and care homes",
+        "telephone_cohort_n": 3233,
+        "activity_valid_response_n": null,
+        "weighted": true,
+        "telephone_fieldwork_end": "2021-12",
+        "report_publication": "2022-05",
+        "source_id": "wc-source-5be8fce2f804396493dc3af1",
+        "source_content_sha256": "fc0fff6182e321609c751d9b9355cd21903f58c98ba701a58507fa4534d64149",
+        "chart_passage_id": "passage-3effe9d2fe9dae85ac33cc32",
+        "evidence_link_ids": [
+          "wc-evidence-2aa4fcf675c7760348a9f87b",
+          "wc-evidence-33cb93d2c94248c1228bdb2d",
+          "wc-evidence-43b881057beceecaa9ab2666",
+          "wc-evidence-8489cfde45be8e3cada5d805",
+          "wc-evidence-a667099cf8f02508ed5b9b53",
+          "wc-evidence-aca9a920bbb131b27a720565",
+          "wc-evidence-b41777089ce1daaaba99b909",
+          "wc-evidence-c0f6f20c6be5402d03295cf7"
+        ],
+        "confidence_interval": null,
+        "limitations": "Historical need for help, not support availability, unmet need, cause, intervention effect or current prevalence. Most respondents reported no help needed."
+      }
+    }
+  ],
+  "review": {
+    "original_source_preserved": true,
+    "rendered_pages_reviewed": [
+      3,
+      6,
+      8
+    ],
+    "existing_passages_reused": 24,
+    "new_model_calls": 0,
+    "new_http_requests": 0,
+    "unmet_need_inferred": false,
+    "status_promotion": false,
+    "ranking_added": false
+  },
+  "browser": {
+    "all_three_record_measurements_rendered": true,
+    "screenshot": "/private/tmp/whocares-d80-quantification-20261011.png",
+    "map_text_unchanged": true
+  },
+  "remaining_gaps": [
+    "Most human entries remain hypotheses; source presence alone is not validation.",
+    "Only 92 situations have mapped offerings.",
+    "Missing human illustrations retain neutral fallback while generation is paused.",
+    "Reviewer condition gate not ready for autonomous approval."
+  ],
+  "public_ui_deployed": false
+}
