@@ -1,0 +1,85 @@
+{
+  "date": "2026-10-11",
+  "change": "Add the official BIVA provider identity mark to the existing membership advice offering.",
+  "targets": [
+    "solution-biva-beratungsdienst"
+  ],
+  "test": {
+    "target": "test",
+    "verified": true,
+    "batch": "biva-provider-logo-20261011",
+    "manifest_sha256": "20ca979d04c14865b3a5791f4470facd52e400e4974364f093b345a39b377930",
+    "backup_file": "backup-test-1791720254487.json",
+    "internal_media": 1,
+    "public_media": 0,
+    "mapped": 1321,
+    "counts": {
+      "need": 198,
+      "situation": 1005,
+      "solution": 118
+    },
+    "logo_gaps_before": 29,
+    "logo_gaps_after": 28,
+    "all_prior_rows_preserved": true,
+    "public_deployment": false
+  },
+  "canonical": {
+    "target": "live",
+    "verified": true,
+    "batch": "biva-provider-logo-20261011",
+    "manifest_sha256": "20ca979d04c14865b3a5791f4470facd52e400e4974364f093b345a39b377930",
+    "backup_file": "backup-live-1791720291614.json",
+    "internal_media": 1,
+    "public_media": 0,
+    "mapped": 1321,
+    "counts": {
+      "need": 198,
+      "situation": 1005,
+      "solution": 118
+    },
+    "logo_gaps_before": 29,
+    "logo_gaps_after": 28,
+    "all_prior_rows_preserved": true,
+    "public_deployment": false
+  },
+  "media_review": {
+    "asset_url": "https://www.biva.de/wp-content/uploads/biva_logo_rgb.jpg",
+    "source_url": "https://www.biva.de/verein/die-biva/",
+    "source_capture_sha256": "0fb889f27d8172eb1d724519750494ad4a94573b27178f5a1b7d6457d5ad485c",
+    "source_capture_representation": "Browser accessibility snapshot, not crawler HTML.",
+    "identity_only": true,
+    "rights_status": "unknown",
+    "visibility": "internal"
+  },
+  "browser_verification": {
+    "url": "http://127.0.0.1:8793/#/all/e/solution-biva-beratungsdienst",
+    "loaded": true,
+    "intrinsic_dimensions": [
+      963,
+      961
+    ],
+    "screenshot": "/private/tmp/whocares-biva-internal-logo-detail-20261011.png",
+    "limits_preserved": [
+      "Advice contact is for members.",
+      "Current membership/separate review fees not verified.",
+      "Not a vacancy finder or direct care provider."
+    ],
+    "refresh": "Existing open view initially retained the previous data revision; explicit reload retrieved and rendered the new logo. No automatic refresh timing claim made."
+  },
+  "quality_findings": [
+    {
+      "provider": "Johanniter",
+      "reason": "Existing approved day-care mark identifies Unfall-Hilfe; senior-home operator uses a different identity. Do not transfer the logo between entities."
+    },
+    {
+      "provider": "DRK Leer",
+      "reason": "Official locality-specific mark is inline SVG; do not replace with generic national mark or invent an image URL."
+    }
+  ],
+  "preservation": "Six-table backups before test/canonical transactions; atlas.batch_id set; exact guards and row comparison proved all prior records preserved.",
+  "limits": [
+    "One internal identity logo only; 1321 mapped records unchanged, 28 missing logos remain.",
+    "Public reuse rights unconfirmed; no public deployment or generated imagery.",
+    "Johanniter Seniorenhäuser still needs its own identity asset; do not reuse Unfall-Hilfe branding. Locality-specific inline SVG logos require an authentic asset-delivery path, not an invented image URL."
+  ]
+}
