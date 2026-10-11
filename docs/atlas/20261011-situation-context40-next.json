@@ -1,0 +1,301 @@
+{
+  "date": "2026-10-11",
+  "batch_id": "situation-context40-next-20261011",
+  "change": "Clarify 40 care-worker and care-provider situation contexts using only existing hypothesis meanings.",
+  "test": {
+    "target": "test",
+    "verified": true,
+    "batch": "situation-context40-next-20261011",
+    "changes_sha256": "e1d21a487953e47d115e015edf1bc7bbad47f7cbfe2aee2648298460722e9cc3",
+    "backup_file": "backup-test-1791735589466.json",
+    "object_updates": 40,
+    "all_other_rows_unchanged": true,
+    "status_preserved": true,
+    "fields": [
+      "scope.navigation.summary",
+      "provenance.context_copy_review"
+    ],
+    "public_ui_deployment": false
+  },
+  "live": {
+    "target": "live",
+    "verified": true,
+    "batch": "situation-context40-next-20261011",
+    "changes_sha256": "e1d21a487953e47d115e015edf1bc7bbad47f7cbfe2aee2648298460722e9cc3",
+    "backup_file": "backup-live-1791735612740.json",
+    "object_updates": 40,
+    "all_other_rows_unchanged": true,
+    "status_preserved": true,
+    "fields": [
+      "scope.navigation.summary",
+      "provenance.context_copy_review"
+    ],
+    "public_ui_deployment": false
+  },
+  "updates": [
+    {
+      "id": "wc-candidate-6d328d381db63122c34810db",
+      "title": "I do not know whether new daytime drowsiness reflects poor sleep or another problem",
+      "before": "A paid care worker facing this situation; direct research is pending.",
+      "after": "A change in daytime alertness leaves the worker unsure what to report or which assessment to request."
+    },
+    {
+      "id": "wc-candidate-6eef5ecffaedbe316a3f7b71",
+      "title": "I cannot access advice independently when a dispute arises with the household or agency",
+      "before": "A paid care worker facing this situation; direct research is pending.",
+      "after": "The worker needs advice from someone outside the household or agency involved in the disagreement."
+    },
+    {
+      "id": "wc-candidate-718a5609b4dce566a9e1bbc4",
+      "title": "A resident will not take a prescribed medicine and the agreed next step is unclear",
+      "before": "A paid care worker facing this situation; direct research is pending.",
+      "after": "The person declines a medicine while the worker has no agreed route for advice or follow-up."
+    },
+    {
+      "id": "wc-candidate-73c91ef830d6436ed5b489b9",
+      "title": "The available lifting aid does not fit the person's room or home",
+      "before": "A paid care worker facing this situation; direct research is pending.",
+      "after": "The planned transfer depends on a lifting aid that cannot be positioned in the available space."
+    },
+    {
+      "id": "wc-candidate-78963211dc73e63916c527c5",
+      "title": "I do not know what movement remains appropriate after a new injury or procedure",
+      "before": "A paid care worker facing this situation; direct research is pending.",
+      "after": "An injury or procedure changes the person’s movement needs without clear guidance for everyday assistance."
+    },
+    {
+      "id": "wc-candidate-812bf2e4c4be555e5c286523",
+      "title": "A person's chosen clothes or grooming routine are difficult to support in the time available",
+      "before": "A paid care worker facing this situation; direct research is pending.",
+      "after": "Supporting the person’s preferred appearance competes with the time assigned to other care tasks."
+    },
+    {
+      "id": "wc-candidate-84387043fc8beb02979cff03",
+      "title": "Important information is buried in lengthy records when I need it quickly",
+      "before": "A paid care worker facing this situation; direct research is pending.",
+      "after": "A care decision is needed before the worker can locate the relevant detail in the person’s record."
+    },
+    {
+      "id": "wc-candidate-8a97d7e04f404400e43f14e2",
+      "title": "Gradual changes are noticed by different workers but never brought together",
+      "before": "A paid care worker facing this situation; direct research is pending.",
+      "after": "Each worker sees part of a developing change, but no shared account prompts follow-up."
+    },
+    {
+      "id": "wc-candidate-8e2d325413689426f6df7236",
+      "title": "I cannot reconcile a person's religious wishes with the proposed care arrangement",
+      "before": "A paid care worker facing this situation; direct research is pending.",
+      "after": "The proposed care arrangement conflicts with religious wishes that have not been worked through together."
+    },
+    {
+      "id": "wc-candidate-8ee9023ad50b4034afeccd04",
+      "title": "A complaint about care reaches me without enough information to respond",
+      "before": "A paid care worker facing this situation; direct research is pending.",
+      "after": "The worker receives a concern without a clear account of what happened or what needs to change."
+    },
+    {
+      "id": "wc-candidate-926fd064728406dd06a3e8a0",
+      "title": "An external service cannot access the current plan and asks me to relay it again",
+      "before": "A paid care worker facing this situation; direct research is pending.",
+      "after": "The worker becomes the information relay when an external professional cannot see the current care plan."
+    },
+    {
+      "id": "wc-candidate-a11f5c81fea10f456b183d7a",
+      "title": "The wound-care instructions do not match the dressings available on my shift",
+      "before": "A paid care worker facing this situation; direct research is pending.",
+      "after": "A planned dressing change cannot be followed with the supplies available at that time."
+    },
+    {
+      "id": "wc-candidate-a2457bc589a1072e814095a3",
+      "title": "I need a timely clinical decision but cannot tell whether my message was received",
+      "before": "A paid care worker facing this situation; direct research is pending.",
+      "after": "The worker has sent a clinical question but cannot establish who will respond or when."
+    },
+    {
+      "id": "wc-candidate-a3124665ba96db508683b2c6",
+      "title": "A person fears falling and refuses to move despite wanting more independence",
+      "before": "A paid care worker facing this situation; direct research is pending.",
+      "after": "The person wants more independence but fear of falling prevents attempts to move."
+    },
+    {
+      "id": "wc-candidate-a3c9fd40b535b077c28306f1",
+      "title": "I must use a personal phone or unapproved channel to reach the team",
+      "before": "A paid care worker facing this situation; direct research is pending.",
+      "after": "Reaching colleagues depends on the worker’s own phone or a channel the service has not approved."
+    },
+    {
+      "id": "wc-candidate-a6406828fea35ab961570440",
+      "title": "I am alone when a resident's behaviour puts either of us at immediate risk",
+      "before": "A paid care worker facing this situation; direct research is pending.",
+      "after": "The worker faces an immediate safety concern without another person available to assist."
+    },
+    {
+      "id": "wc-candidate-a96b5a6d04dbff15b0d9ba2d",
+      "title": "I cannot tell which hours in the household are work and which are my own time",
+      "before": "A paid care worker facing this situation; direct research is pending.",
+      "after": "Living in the care household leaves the boundary between duties and personal time unclear."
+    },
+    {
+      "id": "wc-candidate-aae82252a70d9fef71f5cfc5",
+      "title": "A person returns from therapy but I cannot translate the recommendations into daily routines",
+      "before": "A paid care worker facing this situation; direct research is pending.",
+      "after": "Therapy advice reaches the worker without a practical account of how to support it during ordinary care."
+    },
+    {
+      "id": "wc-candidate-ac4bf5ea5a41f6720e7c8838",
+      "title": "I find a new skin injury but cannot establish what caused it or who will assess it",
+      "before": "A paid care worker facing this situation; direct research is pending.",
+      "after": "A newly noticed skin injury has no clear explanation or agreed owner for assessment."
+    },
+    {
+      "id": "wc-candidate-adbba291bbeccee37bc7a464",
+      "title": "The toileting plan changes between shifts and the person receives inconsistent help",
+      "before": "A paid care worker facing this situation; direct research is pending.",
+      "after": "Different shifts follow different toileting arrangements, leaving the person unsure what help to expect."
+    },
+    {
+      "id": "wc-candidate-aedfc85c1865e17e971e0649",
+      "title": "I do not know how the person wants cultural or religious practices respected",
+      "before": "A paid care worker facing this situation; direct research is pending.",
+      "after": "The worker needs the person’s preferences before adapting care around cultural or religious practices."
+    },
+    {
+      "id": "wc-candidate-b344030a9d51afe3ba86ced7",
+      "title": "I must help a person transfer but the required equipment or second worker is unavailable",
+      "before": "A paid care worker facing this situation; direct research is pending.",
+      "after": "A transfer is needed while the assistance specified in the care arrangement is unavailable."
+    },
+    {
+      "id": "wc-candidate-b490ba678804144448555bd0",
+      "title": "I cannot tell whether a person understood an explanation or simply agreed politely",
+      "before": "A paid care worker facing this situation; direct research is pending.",
+      "after": "A polite response leaves the worker uncertain whether the person understood enough to make a choice."
+    },
+    {
+      "id": "wc-candidate-b764fb6695483228db27cc34",
+      "title": "Several residents need help at once and I cannot give each enough attention",
+      "before": "A paid care worker facing this situation; direct research is pending.",
+      "after": "Simultaneous requests force the worker to divide attention while each person still needs support."
+    },
+    {
+      "id": "wc-candidate-bd048dae7c281087b0739839",
+      "title": "We cannot judge which local demand we can sustainably meet",
+      "before": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "after": "The provider must match local requests with the staffing, costs and capacity needed to sustain the service."
+    },
+    {
+      "id": "wc-candidate-c0264d770579d9701d6f2432",
+      "title": "I do not know when a split shift will actually leave me free",
+      "before": "A paid care worker facing this situation; direct research is pending.",
+      "after": "The gap between parts of a shift has no reliable end point for planning time away from work."
+    },
+    {
+      "id": "wc-candidate-c2a2ba445f0f4e8782d338a5",
+      "title": "Equipment needed after discharge has not arrived when the resident returns",
+      "before": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "after": "The resident returns before equipment needed for the planned care arrangement is available."
+    },
+    {
+      "id": "wc-candidate-c435a44f4ab0ce847253ceb6",
+      "title": "I discover a device fault only when it is needed for care",
+      "before": "A paid care worker facing this situation; direct research is pending.",
+      "after": "A device fails at the point of use, leaving the worker without the planned means of providing care."
+    },
+    {
+      "id": "wc-candidate-c4533a2903238429d3232789",
+      "title": "A person arrives without information about how they communicate or prefer to receive help",
+      "before": "A paid care worker facing this situation; direct research is pending.",
+      "after": "The first care interaction begins without knowing how the person expresses choices or accepts assistance."
+    },
+    {
+      "id": "wc-candidate-c718e894406edbc7a73a6a49",
+      "title": "A move between services interrupts routines or relationships important to the person",
+      "before": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "after": "The receiving service needs to preserve valued routines and relationships during the change in care setting."
+    },
+    {
+      "id": "wc-candidate-cad13b1124567882354a7775",
+      "title": "My shift overruns but the extra time is not consistently recorded",
+      "before": "A paid care worker facing this situation; direct research is pending.",
+      "after": "Work continues beyond the planned shift without a consistent record of the time actually worked."
+    },
+    {
+      "id": "wc-candidate-cccdb03befc46d9769ccfff7",
+      "title": "Experienced colleagues leave and take essential knowledge with them",
+      "before": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "after": "Knowledge of residents and local routines is lost when experienced colleagues leave without a usable handover."
+    },
+    {
+      "id": "wc-candidate-cd3ff5d374c19f71329cb99c",
+      "title": "I notice unexplained injuries but do not know how to raise a concern without making an accusation",
+      "before": "A paid care worker facing this situation; direct research is pending.",
+      "after": "The worker needs a route to report unexplained injuries while preserving the distinction between concern and accusation."
+    },
+    {
+      "id": "wc-candidate-cdaaaefba77eb4bf330e90ef",
+      "title": "We cannot tell whether a change after an incident has improved care",
+      "before": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "after": "A corrective action has been introduced, but the provider lacks a clear comparison of care before and after it."
+    },
+    {
+      "id": "wc-candidate-cfad91a12cfff3340778fe2d",
+      "title": "No one can establish whether shared equipment has been checked or cleaned",
+      "before": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "after": "Shared equipment reaches the next user without a reliable account of its checks or cleaning."
+    },
+    {
+      "id": "wc-candidate-cff4bd6d66dfd45e63020059",
+      "title": "I do not have a private space where I can rest without interruptions",
+      "before": "A paid care worker facing this situation; direct research is pending.",
+      "after": "The worker’s break takes place where care requests and other interruptions continue."
+    },
+    {
+      "id": "wc-candidate-d355010daaff95defc3de831",
+      "title": "Managers are expected to handle emotional fallout without preparation or backup",
+      "before": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "after": "A manager is responsible for supporting others through distress without preparation or someone to turn to."
+    },
+    {
+      "id": "wc-candidate-d36469e412789722cd4e9d19",
+      "title": "I cannot tell whether a resident's distress reflects pain, fear or something else",
+      "before": "A paid care worker facing this situation; direct research is pending.",
+      "after": "The person shows distress while the worker cannot establish what is troubling them or whom to involve."
+    },
+    {
+      "id": "wc-candidate-d3a5a9846fc5752502889252",
+      "title": "A change in ownership leaves residents and staff uncertain about service continuity",
+      "before": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "after": "A new owner takes over before residents and workers know which care arrangements will continue."
+    },
+    {
+      "id": "wc-candidate-d493f9605d778106be46850e",
+      "title": "Communication aids are not within reach or working during care",
+      "before": "A paid care worker facing this situation; direct research is pending.",
+      "after": "The person’s usual means of communication is missing or unusable when a care decision is needed."
+    }
+  ],
+  "projection": "All 40 updated situations verified through navigationRoots on both test and canonical discovery graph.",
+  "browser": {
+    "url": "http://127.0.0.1:8793/#/all/g/wc-candidate-8601368f9ca1a34d9ecfd99a",
+    "verified": "Refreshed care-worker restful-nights branch shows new daytime-alertness context. Show all fits five existing situations; screenshot visually inspected.",
+    "screenshot": "/private/tmp/whocares-worker-context40-20261011.jpg",
+    "limitation": "Pre-existing open tab showed stale text until reload; automatic refresh timing not verified."
+  },
+  "tests": {
+    "command": "node --test tests/atlas-completeness.test.mjs tests/atlas-media.test.mjs",
+    "passed": 9
+  },
+  "counts": {
+    "need": 198,
+    "situation": 1005,
+    "solution": 118
+  },
+  "unique_mapped": 1321,
+  "specific_situation_context_gaps": {
+    "before": 259,
+    "after": 219
+  },
+  "limits": "40 care-worker/provider situation contexts clarified as editorial hypotheses. Titles, short labels, parent links, research planning, statuses, evidence, solutions and media preserved.",
+  "image_generation": false,
+  "public_deployment": false
+}
