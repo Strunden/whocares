@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-11",
+  "batch": "snap-ambulant-alternative-20261011",
+  "manifest_sha256": "61c30b8a39c7cb5d0a1791d7e95d3023293b1ec5ef4a001b8fbf3c609f942884",
+  "principles_sha256": "1698c1ce402af9694166b15938d24fb9fb05c55e85a330b4e589b7dca5b2a8c2",
+  "isolated_test_verified": true,
+  "internal_live_verified": true,
+  "new_offerings": 1,
+  "new_fit_links": 2,
+  "exact_source_versions": 6,
+  "exact_evidence_links": 34,
+  "reviewed_internal_media": 2,
+  "mapped_counts": {
+    "needs": 198,
+    "situations": 1005,
+    "offerings": 115,
+    "total": 1318
+  },
+  "situations_with_offerings": 99,
+  "complete_paths_verified": [
+    [
+      "wc-candidate-342486d05553ea7f9a860c28",
+      "wc-candidate-966bcce3caefdf2009d8e0e3",
+      "solution-euregon-snap-ambulant"
+    ],
+    [
+      "wc-candidate-705c269ff632a9ff5ec1578a",
+      "wc-candidate-25f3a609c368cbfdab3dcf45",
+      "solution-euregon-snap-ambulant"
+    ]
+  ],
+  "preservation": {
+    "statuses_unchanged": true,
+    "unrelated_rows_unchanged": true,
+    "prior_rows_checked": {
+      "objects": 1359,
+      "relationships": 1270,
+      "sources": 199,
+      "evidence_links": 2089,
+      "product_media": 153,
+      "import_batches": 85
+    }
+  },
+  "readability_refinement": {
+    "target": "live",
+    "verified": true,
+    "batch": "snap-ambulant-alternative-20261011-readability",
+    "changes_sha256": "1dc23f9783b383e68ca29b477d57ad6751cd465360b33a05477f7ddb77f49f35",
+    "backup_file": "backup-readability-live-1791687281639.json",
+    "object_updates": 1,
+    "all_other_rows_unchanged": true,
+    "status_preserved": true,
+    "previous_characters": 2589,
+    "current_characters": 1340,
+    "public_deployment": false
+  },
+  "browser_review": {
+    "both_paths_rendered": true,
+    "route_planning_product_image_on_planning_path": true,
+    "provider_logo_on_offline_path": true,
+    "offering_detail_opened_after_reload": true,
+    "shorter_setup_text_and_source_conflict_visible": true,
+    "candidate_label_visible": true
+  },
+  "screenshot_sha256": {
+    "planning": "132ef50499f5ddfc69edc70c45d24ceaa6986d39e1f365de83dfc14ae4152031",
+    "offline": "2bd421cd2355c17a10b2ab100c89bacd33f08f6ec63d9743dbd1dc570c677b30"
+  },
+  "indexer_fixes": {
+    "commits": [
+      "5a266c5",
+      "0ec6b22"
+    ],
+    "tests_passed": 256,
+    "changes": [
+      "Retain Elementor device prerequisites in euregon captures",
+      "Require every complete line from the same source version when validating multiline PDF conditions"
+    ],
+    "original_held_findings_preserved": true
+  },
+  "public_deployment": false,
+  "public_media": 0,
+  "image_generation": false,
+  "limitations": [
+    "Provider feature claims do not establish effectiveness, adequate staffing or independent outcomes.",
+    "HTML Intel Core and PDF Intel ATOM minimum discrepancy unresolved.",
+    "Individual licence, quote, compatibility and delivery capacity unverified.",
+    "99 of 1005 situations have offerings; sparse coverage is incomplete research, not proof of absent supply.",
+    "Original human hypotheses and reviewed-finding holds retained.",
+    "Authentic media reviewed for internal use; public reuse rights unknown."
+  ],
+  "application_script_sha256": "046d2623f40d0d9e7de292735a4b10844a73cc0ded2bbc25ad5165bb80245978",
+  "readability_script_sha256": "46ece8f8180b8b2a1cea449f7a5728c45b3b34f95000a82a8e50ddcaa64630af"
+}
