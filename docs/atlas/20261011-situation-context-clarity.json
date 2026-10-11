@@ -1,0 +1,226 @@
+{
+  "date": "2026-10-11",
+  "batch": "situation-context-clarity-20261011",
+  "changes_sha256": "54e88e55ee2906f90b2c94d19721809c7ab8e189623478849acd62024c813402",
+  "principles_sha256": "1698c1ce402af9694166b15938d24fb9fb05c55e85a330b4e589b7dca5b2a8c2",
+  "isolated_test_verified": true,
+  "canonical_database_verified": true,
+  "editorial_context_updates": 30,
+  "new_objects": 0,
+  "mapped_records": 1318,
+  "counts": {
+    "needs": 198,
+    "situations": 1005,
+    "offerings": 115
+  },
+  "all_30_paths_verified": true,
+  "status_and_research_planning_preserved": true,
+  "unrelated_rows_unchanged": true,
+  "generic_summaries_before": 549,
+  "generic_summaries_after": 519,
+  "exact_title_duplicates_same_role_and_lenses": 0,
+  "duplicate_audit_limits": "Exact normalized title grouping only; semantic overlaps and cross-lens duplicates have not been ruled out.",
+  "browser_checks": [
+    {
+      "branch": "Residents nutrition",
+      "url": "http://127.0.0.1:8793/#/all/g/wc-object-45ad43a012d9acdad642d9da",
+      "screenshot_sha256": "2f4e7b13a4ae675a87a9d5a4921d0d258148348beba696378e9cf5bf7143e4ee"
+    },
+    {
+      "branch": "Provider financial continuity",
+      "url": "http://127.0.0.1:8793/#/all/g/wc-candidate-c0ec05291bc3bcd69e352287",
+      "screenshot_sha256": "1a7a38395e36d0e53395812f5f86852e1da0620f42d4e35204ff10e11639ebce"
+    }
+  ],
+  "changes": [
+    {
+      "id": "wc-candidate-0168eb01f9208fbed9659da5",
+      "title": "Different sites develop incompatible practices as the organisation grows",
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "Practices diverge between locations, making a shared way of working difficult."
+    },
+    {
+      "id": "wc-candidate-026dc27c8fb41f29a759e5d9",
+      "title": "I cannot reliably track what a resident drinks across several shifts",
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "Drinking records across shifts do not give the worker a reliable picture."
+    },
+    {
+      "id": "wc-candidate-038ecf01c159e3581e43fef8",
+      "title": "Noise or lighting keeps people awake but I cannot change it from my shift",
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "The source of disrupted sleep is outside the worker’s control on this shift."
+    },
+    {
+      "id": "wc-candidate-0468a716bcfbb503081098d5",
+      "title": "An invoice is rejected and staff cannot identify what needs correcting",
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "Staff cannot identify which part of a rejected invoice needs correction."
+    },
+    {
+      "id": "wc-candidate-076ed00f32a6caf79e22ca83",
+      "title": "Visitors or colleagues interrupt while I am providing intimate care",
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "Interruptions intrude on the person’s privacy during intimate care."
+    },
+    {
+      "id": "wc-candidate-081270b591d965eb2aff5061",
+      "title": "A relative's request differs from what the person says they want",
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "The worker must navigate conflicting wishes from the person and their relative."
+    },
+    {
+      "id": "wc-candidate-0827e2a48e5515c2126438b0",
+      "title": "I am unsure about a care task but worry that asking will be treated as incompetence",
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "Fear of being judged makes it difficult to ask for help with an unfamiliar task."
+    },
+    {
+      "id": "wc-candidate-08776a712fe633dc20fbb537",
+      "title": "A resident returns with changed medicines that our records do not yet reflect",
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "After the resident returns, the care record still shows the earlier medicines."
+    },
+    {
+      "id": "wc-candidate-09651c482def6c83e03788d5",
+      "title": "A resident's funding is unclear and we do not know who will pay",
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "Care funding and responsibility for payment remain unresolved."
+    },
+    {
+      "id": "wc-candidate-0a06dc465627d42cd6291cea",
+      "title": "Supplies run out despite stock records showing that they are available",
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "Recorded availability differs from the supplies actually on hand."
+    },
+    {
+      "id": "wc-candidate-0b77e26bb02322a12494d4c7",
+      "title": "I cannot relieve pressure without disrupting the person's sleep or comfort",
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "Pressure relief conflicts with the person’s sleep or comfort."
+    },
+    {
+      "id": "wc-candidate-0b98fed14873241a3285fa5a",
+      "title": "I cannot establish whether intimate contact is wanted by both people",
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "The worker cannot establish whether both people want the intimate contact."
+    },
+    {
+      "id": "wc-candidate-0c9201b52a6405881bb8549a",
+      "title": "A client is repeatedly left without essentials but I cannot establish who can intervene",
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "Essentials are repeatedly missing, but responsibility for intervening is unclear."
+    },
+    {
+      "id": "wc-candidate-121cf19cb503775225927597",
+      "title": "I do not receive feedback after reporting a near miss",
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "The worker reports a near miss but does not hear what happens next."
+    },
+    {
+      "id": "wc-candidate-196946de431a77bda67282b8",
+      "title": "We cannot obtain the supplies needed when infection precautions change",
+      "previous_summary": "A care-service operator or coordinator or A family caregiver facing this situation; direct research is pending.",
+      "summary": "Changed infection precautions require supplies the service cannot obtain."
+    },
+    {
+      "id": "wc-candidate-1a0925457a72b427ace6af08",
+      "title": "We cannot distinguish a person's own wishes from relatives' preferences",
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "The team cannot tell which preferences belong to the person receiving care."
+    },
+    {
+      "id": "wc-candidate-1a1b98ebec0a93a9d14d179b",
+      "title": "I do not know where the person's current wishes and agreed treatment plan are recorded",
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "The worker cannot locate the current wishes and agreed treatment plan."
+    },
+    {
+      "id": "wc-candidate-1a551be84adcc25b26cac3b1",
+      "title": "A legitimate care worker cannot access the record when they need it",
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "The record is unavailable to an authorised worker at the point of need."
+    },
+    {
+      "id": "wc-candidate-1b4b4acc5c782d23fa70767d",
+      "title": "A proposed contract leaves responsibility for additional care unclear",
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "The contract does not establish who takes responsibility for additional care."
+    },
+    {
+      "id": "wc-candidate-1bca38529f36b8f76575d51d",
+      "title": "A resident's refusal of care is treated inconsistently across shifts",
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "Different shifts respond differently when the resident refuses care."
+    },
+    {
+      "id": "wc-candidate-1cc852d1030857d35ad2ebf1",
+      "title": "A cyber incident disables care systems and our fallback arrangements are unclear",
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "Care systems are disabled, and the team lacks a clear fallback arrangement."
+    },
+    {
+      "id": "wc-candidate-1cccacbc77190bd2bed11d42",
+      "title": "A volunteer is asked to undertake tasks beyond their agreed role",
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "Requested tasks exceed the role the volunteer agreed to undertake."
+    },
+    {
+      "id": "wc-candidate-1cd5a36018ef0b0ee9f896b2",
+      "title": "I have no reliable replacement when I leave the home during time off",
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "Time off is difficult to take because replacement care is unreliable."
+    },
+    {
+      "id": "wc-candidate-1f9b4f5f1b20ce245290c86d",
+      "title": "The medicine or authorised prescription is missing when a dose is due",
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "A dose is due, but the medicine or authorised prescription is unavailable."
+    },
+    {
+      "id": "wc-candidate-204b1773755bc1ea238ee839",
+      "title": "Login or access permissions prevent me from recording care I have provided",
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "Access restrictions block recording care that has already been provided."
+    },
+    {
+      "id": "wc-candidate-20cc47b0ed6c66837d4790d0",
+      "title": "Food is repeatedly thrown away but we do not know whether portions or preferences are the cause",
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "The team cannot tell whether discarded food reflects portions or preferences."
+    },
+    {
+      "id": "wc-candidate-20e075509784f569a8f34ad7",
+      "title": "A person declines treatment while others insist I carry it out",
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "The person’s refusal conflicts with others’ insistence on treatment."
+    },
+    {
+      "id": "wc-candidate-2107a76e74bb386aeb0513d2",
+      "title": "Opening another location draws experienced staff away from the existing team",
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "The new location draws experienced staff from the existing team."
+    },
+    {
+      "id": "wc-candidate-2143d22c4fdb52142f32a230",
+      "title": "An argument between colleagues makes it difficult to ask for help during care",
+      "previous_summary": "A paid care worker facing this situation; direct research is pending.",
+      "summary": "Tension between colleagues makes asking for help during care difficult."
+    },
+    {
+      "id": "wc-candidate-215b9e5057d0e4032d015b47",
+      "title": "Repeated incidents are treated separately and the shared cause is missed",
+      "previous_summary": "A care-service operator or coordinator facing this situation; direct research is pending.",
+      "summary": "Separate incident reviews may miss a cause shared across events."
+    }
+  ],
+  "public_ui_deployment": false,
+  "image_generation": false,
+  "limitations": [
+    "Editorial clarification of existing hypotheses, not validation of occurrence, prevalence or unmet demand.",
+    "519 generic situation summaries remain.",
+    "30 projected paths checked; pixels and accessibility reviewed in two representative branches.",
+    "Neutral placeholders remain while image generation is paused.",
+    "No indexer run or source publication in this batch."
+  ]
+}
