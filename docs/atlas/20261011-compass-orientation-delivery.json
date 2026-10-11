@@ -1,0 +1,251 @@
+{
+  "date": "2026-10-11",
+  "job_id": "a7890f3edbffc896d2da677a65e19600024a45fac20dc0f08e4bb23b5206aadb",
+  "status": "verified_canonical_data_delivery",
+  "research_budget_per_dispatch": {
+    "max_usd": 0.18,
+    "max_steps": 20,
+    "max_pages": 3,
+    "max_searches": 0,
+    "max_renders": 0
+  },
+  "frozen_review_budgets": [
+    {
+      "max_usd": 0.15,
+      "max_steps": 16,
+      "max_pages": 0,
+      "max_searches": 0,
+      "max_renders": 0
+    },
+    {
+      "max_usd": 0.15,
+      "max_steps": 16,
+      "max_pages": 0,
+      "max_searches": 0,
+      "max_renders": 0
+    }
+  ],
+  "metrics_by_dispatch": [
+    {
+      "duration_seconds": 125.236,
+      "model_calls": 8,
+      "model_calls_by_role": {
+        "researcher": 2,
+        "reviewer": 6
+      },
+      "counted_usd": 0.0269457,
+      "provider_reported_usd": 0.013603845,
+      "http_requests": 0,
+      "page_calls": 0,
+      "search_calls": 0
+    },
+    {
+      "duration_seconds": 63.142,
+      "model_calls": 4,
+      "model_calls_by_role": {
+        "researcher": 0,
+        "reviewer": 4
+      },
+      "counted_usd": 0.015205799999999998,
+      "provider_reported_usd": 0.007241736,
+      "http_requests": 0,
+      "page_calls": 0,
+      "search_calls": 0
+    },
+    {
+      "duration_seconds": 50.422,
+      "model_calls": 3,
+      "model_calls_by_role": {
+        "researcher": 0,
+        "reviewer": 3
+      },
+      "counted_usd": 0.010522199999999999,
+      "provider_reported_usd": 0.005387194,
+      "http_requests": 0,
+      "page_calls": 0,
+      "search_calls": 0
+    }
+  ],
+  "source_capture_http_requests": 3,
+  "supported_current_findings": [
+    "finding-8ca412aa443b1daf0e90c0d3",
+    "finding-53d4de244f59224672d27106"
+  ],
+  "held_drafts_preserved": [
+    "finding-3c4f05041ed38db777764ae3",
+    "finding-d3d10a5e01a507270a5f2fbb"
+  ],
+  "manual_evidence_check": "Sixteen unique exact passages matched URL, hash and captured passage text. Care orientation and repeat advice grounded in official descriptions; telephone price/access, home/video private-insurance scope, camera/microphone requirements and provider policies retained. Provider goals/testimonials not independent efficacy. Weekday start time was visible in page chrome but absent from these captured passages, so only captured until19:00 and Saturday10:00-16:00 hours asserted.",
+  "coverage": {
+    "verified": true,
+    "covered_before": 108,
+    "covered_after": 111,
+    "new_fits": [
+      [
+        "solution-compass-pflegeberatung",
+        "wc-candidate-a9e309907ef0626ea11efb1e",
+        "Care-system advice by phone; funding and placement are not guaranteed."
+      ],
+      [
+        "solution-compass-pflegeberatung",
+        "wc-candidate-9cbf95158fbf645528b9d861",
+        "Discuss future care options; no prediction of care needs or guarantee of placement."
+      ],
+      [
+        "solution-compass-pflegeberatung",
+        "wc-candidate-e9b355be17ec05b80c2e6880",
+        "Repeat counselling about changed needs; reassessment decisions are not guaranteed."
+      ]
+    ],
+    "human_statuses_unchanged": true,
+    "provider_claims_only": true,
+    "source_versions": 2,
+    "unique_exact_passages": 16,
+    "read_layer_evidence_links": 64
+  },
+  "test": {
+    "target": "test",
+    "verified": true,
+    "batch": "compass-orientation-partial-fit-20261011",
+    "manifest_sha256": "2b1078bc52b87a5701bde5976444a0ff60774b7b42d460125cd5ca3fa7d91218",
+    "backup_file": "backup-test-1791696838152.json",
+    "object_updates": 4,
+    "new_fit_links": 3,
+    "new_exact_evidence_links": 64,
+    "new_objects": 0,
+    "mapped": 1319,
+    "all_other_rows_unchanged": true,
+    "statuses_unchanged": true,
+    "new_sources": 2,
+    "paths_verified": [
+      [
+        "wc-candidate-f85711be98f5f495e1a4bc5d",
+        "wc-candidate-a9e309907ef0626ea11efb1e",
+        "solution-compass-pflegeberatung"
+      ],
+      [
+        "wc-candidate-97dac29c7127897418c2817f",
+        "wc-candidate-9cbf95158fbf645528b9d861",
+        "solution-compass-pflegeberatung"
+      ],
+      [
+        "wc-candidate-97dac29c7127897418c2817f",
+        "wc-candidate-e9b355be17ec05b80c2e6880",
+        "solution-compass-pflegeberatung"
+      ]
+    ],
+    "public_deployment": false
+  },
+  "live": {
+    "target": "live",
+    "verified": true,
+    "batch": "compass-orientation-partial-fit-20261011",
+    "manifest_sha256": "2b1078bc52b87a5701bde5976444a0ff60774b7b42d460125cd5ca3fa7d91218",
+    "backup_file": "backup-live-1791696884011.json",
+    "object_updates": 4,
+    "new_fit_links": 3,
+    "new_exact_evidence_links": 64,
+    "new_objects": 0,
+    "mapped": 1319,
+    "all_other_rows_unchanged": true,
+    "statuses_unchanged": true,
+    "new_sources": 2,
+    "paths_verified": [
+      [
+        "wc-candidate-f85711be98f5f495e1a4bc5d",
+        "wc-candidate-a9e309907ef0626ea11efb1e",
+        "solution-compass-pflegeberatung"
+      ],
+      [
+        "wc-candidate-97dac29c7127897418c2817f",
+        "wc-candidate-9cbf95158fbf645528b9d861",
+        "solution-compass-pflegeberatung"
+      ],
+      [
+        "wc-candidate-97dac29c7127897418c2817f",
+        "wc-candidate-e9b355be17ec05b80c2e6880",
+        "solution-compass-pflegeberatung"
+      ]
+    ],
+    "public_deployment": false
+  },
+  "copy_formatting_test": {
+    "target": "test",
+    "verified": true,
+    "batch": "compass-access-copy-formatting-20261011",
+    "changes_sha256": "e7874402a6e02586e4b7e97cf9c4cc250477e4ed4c255be8870ca36648294d43",
+    "backup_file": "backup-refinement-test-1791697014987.json",
+    "object_updates": 1,
+    "all_other_rows_unchanged": true,
+    "status_preserved": true,
+    "fields": [
+      "scope.time",
+      "scope.access",
+      "provenance.access_copy_formatting_review"
+    ],
+    "public_ui_deployment": false
+  },
+  "copy_formatting_live": {
+    "target": "live",
+    "verified": true,
+    "batch": "compass-access-copy-formatting-20261011",
+    "changes_sha256": "e7874402a6e02586e4b7e97cf9c4cc250477e4ed4c255be8870ca36648294d43",
+    "backup_file": "backup-refinement-live-1791697036354.json",
+    "object_updates": 1,
+    "all_other_rows_unchanged": true,
+    "status_preserved": true,
+    "fields": [
+      "scope.time",
+      "scope.access",
+      "provenance.access_copy_formatting_review"
+    ],
+    "public_ui_deployment": false
+  },
+  "fit_readability_test": {
+    "target": "test",
+    "verified": true,
+    "batch": "compass-future-fit-readability-20261011",
+    "changes_sha256": "258e7df79b8f7927c13c5fc64b3c0a93e4b4145a4d91ab2571fef08e8a0f947e",
+    "backup_file": "backup-fit-refinement-test-1791697106072.json",
+    "relationship_updates": 1,
+    "all_other_rows_unchanged": true,
+    "status_preserved": true,
+    "fields": [
+      "statement",
+      "provenance.fit_copy_readability_review"
+    ],
+    "public_ui_deployment": false
+  },
+  "fit_readability_live": {
+    "target": "live",
+    "verified": true,
+    "batch": "compass-future-fit-readability-20261011",
+    "changes_sha256": "258e7df79b8f7927c13c5fc64b3c0a93e4b4145a4d91ab2571fef08e8a0f947e",
+    "backup_file": "backup-fit-refinement-live-1791697133092.json",
+    "relationship_updates": 1,
+    "all_other_rows_unchanged": true,
+    "status_preserved": true,
+    "fields": [
+      "statement",
+      "provenance.fit_copy_readability_review"
+    ],
+    "public_ui_deployment": false
+  },
+  "browser": {
+    "url": "http://127.0.0.1:8793/#/all/g/wc-candidate-97dac29c7127897418c2817f%2Fwc-candidate-9cbf95158fbf645528b9d861",
+    "existing_authentic_service_image_visible": true,
+    "detail_cost_eligibility_and_sources_visible": true,
+    "stable_content_on_zoom": [
+      100,
+      144
+    ],
+    "screenshot": "/private/tmp/whocares-compass-orientation-final-20261011.png"
+  },
+  "limits": [
+    "Three partial counselling fits, not validated demand, progression prediction, funding approval, placement or replacement care.",
+    "Human hypotheses and existing offering documented-claim status retained. No new identity padding.",
+    "No actual call, booking, account or visit; individual eligibility and appointment capacity unverified.",
+    "Existing authentic reviewed service imagery remains internal; public reuse rights unknown. Image generation paused.",
+    "No public UI deployment. Full six-table backups, source captures and mutation manifests retained privately."
+  ]
+}
