@@ -11,4 +11,6 @@ Open http://127.0.0.1:8788/. The preview uses the same `queryDiscovery` as the d
 
 The server binds only to loopback, accepts only its exact Host and same-origin requests, and exposes read-only discovery and site assets. It does not expose credentials, database writes or arbitrary files. The preview omits the separate company-logo and funder-detail endpoints; add those only if their preview becomes necessary. Public deployment is separate.
 
+Refreshes send the last snapshot revision. An unchanged canonical payload returns only that revision; changed payloads still arrive in full. The checksum includes internal eligible media and is computed in the same database statement as the payload. This reduces repeat transfers, but initial loads and changed snapshots still transfer the full graph and every refresh still computes its checksum in Postgres.
+
 For a checkout with unfinished UI changes, use an isolated worktree at the tested UI commit. Do not overwrite unrelated edits to make the preview load.

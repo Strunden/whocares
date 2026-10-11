@@ -28,8 +28,15 @@ export async function loadAtlas(fetcher=fetch,apiBase='',{signal,knownRevision}=
   };
   try{
    const manifestResponse=await fetcher(base+'/api/discovery/manifest',{cache:'no-store',signal:AbortSignal.any([controller.signal,AbortSignal.timeout(20000)])});
-   // Existing local previews retain their full discovery route until upgraded.
-   if(manifestResponse.status===404)return validate(await (await request('/api/discovery')).json());
+   if(manifestResponse.status===404){
+    const revision=/^[a-f0-9]{32}$/.test(knownRevision)?knownRevision:undefined;
+    const data=await (await request('/api/discovery'+(revision?'?revision='+revision:''))).json();
+    if(data.unchanged===true){
+     if(data.schema_version!==2||!revision||data.revision!==revision)throw new Error('Research service returned an invalid unchanged snapshot');
+     return {unchanged:true,revision};
+    }
+    return validate(data);
+   }
    if(!manifestResponse.ok)throw new Error('Research service is unavailable');
    const manifest=await manifestResponse.json();
    if(manifest.schema_version!==3||!/^[a-f0-9]{32}$/.test(manifest.revision)||

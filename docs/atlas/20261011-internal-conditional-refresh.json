@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-11",
+  "scope": "Internal loopback preview conditional refresh; no canonical writes or public deployment",
+  "principles_sha256": "1698c1ce402af9694166b15938d24fb9fb05c55e85a330b4e589b7dca5b2a8c2",
+  "implementation": "One coherent database statement computes the existing payload checksum and suppresses payload transfer only for an exact validated known revision. Changed snapshots retain the full validated graph and media. Public paged delivery is unchanged.",
+  "checks": {
+    "tests": {"passed": 140, "failed": 0},
+    "real_database": {"revision": "8c3d53dc1ec4b3028968aa6a5865bdfe", "graph_objects": 1362, "eligible_internal_media": 161, "full_bytes": 15033543, "unchanged_bytes": 83, "changed_snapshot_exact_parity": true, "malformed_revision_http_status": 400, "origin_method_file_api_boundaries": "passed"},
+    "browser": {"branch": "wc-candidate-fe3fe5fb1986dabf95455add", "situation_count": 5, "zoom": "85% to 102% to 85%; same situation set", "automatic_refresh_status": 200, "automatic_refresh_bytes": 83, "research_state": "current", "first_load": "Timed out once; second reload succeeded. Initial-load reliability remains incomplete."}
+  },
+  "limits": ["Initial and changed snapshots still transfer the full graph", "Postgres still computes the full snapshot checksum on every request", "Initial browser timeout not resolved by this change", "Image generation remains paused; neutral placeholders remain", "No new offering or evidence coverage added this turn"]
+}

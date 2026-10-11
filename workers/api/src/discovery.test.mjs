@@ -33,6 +33,18 @@ test('internal media requires an explicit server-side opt-in; the public query s
  assert.doesNotMatch(query,/m.visibility='internal'/);
 });
 
+test('conditional discovery uses the same snapshot hash and media gate, returning full changes',async()=>{
+ const revision='a'.repeat(32),next='b'.repeat(32);let query;
+ const sql={simpleQuery:async value=>{query=value;return [{payload:null,revision}];}};
+ assert.deepEqual(await queryDiscovery(sql,{internalMedia:true,knownRevision:revision}),{schema_version:2,unchanged:true,revision});
+ assert.match(query,/m.visibility='internal' OR/);
+ assert.equal(query.replace(`CASE WHEN md5(payload::text)='${revision}' THEN NULL ELSE payload END AS payload`,'payload'),DISCOVERY_SQL.replace("m.visibility='public' AND m.rights_status<>'unknown' AND m.rights_url ~ '^https://'","m.visibility='internal' OR (m.visibility='public' AND m.rights_status<>'unknown' AND m.rights_url ~ '^https://')"));
+ const changed=await queryDiscovery({simpleQuery:async()=>[{payload,revision:next}]},{knownRevision:revision});
+ assert.equal(changed.revision,next);assert.equal(changed.catalog.entries.length,1);
+ await assert.rejects(queryDiscovery({simpleQuery:async()=>[{payload:null,revision:next}]},{knownRevision:revision}));
+ await assert.rejects(queryDiscovery(sql,{knownRevision:"' OR true--"}),/Invalid discovery revision/);
+});
+
 function textRow(p=payload){
  const {graph,media,...metadata}=p;
  return {metadata:JSON.stringify(metadata),graph_json:JSON.stringify(graph),media_json:JSON.stringify(media),revision:'abc',dangling:'f'};

@@ -57,10 +57,17 @@ export function shapeDiscovery(row){
  if(graph.relationships.some(r=>!ids.has(r.from_id)||!ids.has(r.to_id)))throw new Error('Dangling graph relationship');
  return {schema_version:2,revision:row.revision,catalog,graph,media:payload.media||[]};
 }
-export async function queryDiscovery(sql,{internalMedia=false}={}){
+export async function queryDiscovery(sql,{internalMedia=false,knownRevision}={}){
  // Only the loopback preview opts in; public callers retain the rights gate.
- const query=internalMedia?DISCOVERY_SQL.replace(publicMedia,"m.visibility='internal' OR ("+publicMedia+")"):DISCOVERY_SQL;
+ let query=internalMedia?DISCOVERY_SQL.replace(publicMedia,"m.visibility='internal' OR ("+publicMedia+")"):DISCOVERY_SQL;
+ if(knownRevision!==undefined){
+  if(!/^[a-f0-9]{32}$/.test(knownRevision))throw new Error('Invalid discovery revision');
+  // Hash and conditional payload share one snapshot, including the media gate.
+  query=query.replace('SELECT payload,md5(payload::text) AS revision FROM bundle',
+   `SELECT CASE WHEN md5(payload::text)='${knownRevision}' THEN NULL ELSE payload END AS payload,md5(payload::text) AS revision FROM bundle`);
+ }
  const rows=await sql.simpleQuery(query);
+ if(knownRevision&&rows[0]?.revision===knownRevision&&rows[0].payload===null)return {schema_version:2,unchanged:true,revision:knownRevision};
  return shapeDiscovery(rows[0]||{});
 }
 

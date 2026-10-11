@@ -19,6 +19,18 @@ test('legacy loopback compatibility loads a complete snapshot on manifest 404',a
  assert.deepEqual(calls,[{url:'https://example.org/api/discovery/manifest',cache:'no-store'},{url:'https://example.org/api/discovery',cache:'no-store'}]);
  assert.equal(data.entries[0].id,'new-company');assert.equal(data.graph,graph);assert.equal(data.revision,'database-revision');
 });
+test('legacy refresh skips unchanged payloads, validates revision and accepts changed snapshots',async()=>{
+ const revision='a'.repeat(32),next='b'.repeat(32),calls=[];
+ const run=(data,knownRevision=revision)=>loadAtlas(async url=>{
+  calls.push(url);return url.endsWith('/manifest')?{status:404,ok:false}:{ok:true,json:async()=>data};
+ },'http://127.0.0.1:8793',{knownRevision});
+ assert.deepEqual(await run({schema_version:2,unchanged:true,revision}),{unchanged:true,revision});
+ assert.equal(calls[1],'http://127.0.0.1:8793/api/discovery?revision='+revision);
+ assert.equal((await run({...response,revision:next})).revision,next);
+ for(const data of [{schema_version:2,unchanged:true,revision:next},{schema_version:3,unchanged:true,revision}])await assert.rejects(run(data),/invalid unchanged/);
+ await assert.rejects(run({schema_version:2,unchanged:true,revision},'legacy-revision'),/invalid unchanged/);
+ assert.equal(calls.at(-1),'http://127.0.0.1:8793/api/discovery');
+});
 test('outages and malformed responses fail without reading a saved copy',async()=>{
  for(const reply of [null,{ok:false},{ok:true,json:async()=>({...response,graph:{objects:[]}})},{ok:true,json:async()=>({...response,revision:null})}]){
   let count=0;await assert.rejects(loadAtlas(async()=>{count++;if(!reply)throw new Error('offline');return reply;},'https://example.org'));assert.equal(count,1);

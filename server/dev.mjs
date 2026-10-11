@@ -18,9 +18,11 @@ createServer(async(req,res)=>{
  if(req.headers.host!==`127.0.0.1:${port}`||(req.headers.origin&&req.headers.origin!==origin)){res.writeHead(403).end();return;}
  if(req.method!=='GET'){res.writeHead(405).end();return;}
  try{
-  const path=decodeURIComponent(new URL(req.url,origin).pathname);
+  const url=new URL(req.url,origin),path=decodeURIComponent(url.pathname);
   if(path==='/api/discovery'){
-   const data=await queryDiscovery({simpleQuery:query=>sql.unsafe(query)},{internalMedia:true});
+   const knownRevision=url.searchParams.get('revision')??undefined;
+   if(knownRevision!==undefined&&!/^[a-f0-9]{32}$/.test(knownRevision)){res.writeHead(400).end();return;}
+   const data=await queryDiscovery({simpleQuery:query=>sql.unsafe(query)},{internalMedia:true,knownRevision});
    res.setHeader('Content-Type','application/json');res.end(JSON.stringify(data));return;
   }
   if(path.startsWith('/api/logo/')){
