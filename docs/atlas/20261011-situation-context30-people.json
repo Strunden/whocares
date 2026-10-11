@@ -1,0 +1,239 @@
+{
+  "date": "2026-10-11",
+  "batch_id": "situation-context30-people-20261011",
+  "change": "30 older-adult and family-carer situation contexts clarified as editorial hypotheses; identities, titles, statuses, links, evidence and media preserved.",
+  "test": {
+    "target": "test",
+    "verified": true,
+    "batch": "situation-context30-people-20261011",
+    "changes_sha256": "82c30a0eb028807b4767e9d5da5000bcab1a9f4946d7964b55f419237e78ba8d",
+    "backup_file": "backup-test-1791737795876.json",
+    "object_updates": 30,
+    "all_other_rows_unchanged": true,
+    "status_preserved": true,
+    "fields": [
+      "scope.navigation.summary",
+      "provenance.context_copy_review"
+    ],
+    "public_ui_deployment": false
+  },
+  "live": {
+    "target": "live",
+    "verified": true,
+    "batch": "situation-context30-people-20261011",
+    "changes_sha256": "82c30a0eb028807b4767e9d5da5000bcab1a9f4946d7964b55f419237e78ba8d",
+    "backup_file": "backup-live-1791737824313.json",
+    "object_updates": 30,
+    "all_other_rows_unchanged": true,
+    "status_preserved": true,
+    "fields": [
+      "scope.navigation.summary",
+      "provenance.context_copy_review"
+    ],
+    "public_ui_deployment": false
+  },
+  "updates": [
+    {
+      "id": "wc-candidate-4a49bbaa1185aab3ae43ec2c",
+      "title": "An online booking system prevents me from arranging care myself",
+      "before": "An older person facing this situation; direct research is pending.",
+      "after": "Arranging care depends on a digital process the person cannot complete independently."
+    },
+    {
+      "id": "wc-candidate-4d5896f757fd35d10bdd55bf",
+      "title": "After my relative dies, I lose both the caring role and the support built around it",
+      "before": "A family caregiver facing this situation; direct research is pending.",
+      "after": "Bereavement also ends daily caring routines and contact with people or services organised around that role."
+    },
+    {
+      "id": "wc-candidate-4dcd7c012f03f9a810d7f957",
+      "title": "The home-care visit is too short for the help my relative needs that day",
+      "before": "A family caregiver facing this situation; direct research is pending.",
+      "after": "The planned visit ends before the relative has received all the help needed on that particular day."
+    },
+    {
+      "id": "wc-candidate-5076b1f3dba8facb4ac72df2",
+      "title": "Paid home support is unavailable during the hours I cannot be there",
+      "before": "A family caregiver facing this situation; direct research is pending.",
+      "after": "The family member’s unavailable hours do not overlap with the home support they can obtain."
+    },
+    {
+      "id": "wc-candidate-508f061c721d9b244038d930",
+      "title": "A hospital admission leaves my pet without someone to care for it",
+      "before": "An older person facing this situation; direct research is pending.",
+      "after": "An unplanned stay away from home interrupts the pet’s usual feeding and care arrangements."
+    },
+    {
+      "id": "wc-candidate-51774c8d65a6ae3e59bbcd45",
+      "title": "I am unsure which mobility aid fits my home and daily life",
+      "before": "An older person facing this situation; direct research is pending.",
+      "after": "The person needs to judge an aid against their actual rooms, routes and everyday activities."
+    },
+    {
+      "id": "wc-candidate-51bdf9ce33192bfc66c8885b",
+      "title": "I need help reading private letters without giving up my privacy",
+      "before": "An older person facing this situation; direct research is pending.",
+      "after": "Reading support requires access to personal correspondence the person wants to keep confidential."
+    },
+    {
+      "id": "wc-candidate-520dfb52465d94b5de246945",
+      "title": "Nobody notices when I have barely drunk anything all day",
+      "before": "An older person facing this situation; direct research is pending.",
+      "after": "A low intake goes unnoticed because there is no shared picture of what the person has had to drink."
+    },
+    {
+      "id": "wc-candidate-524524765d0b2ab8cb6e57d3",
+      "title": "My relative's needs have changed in hospital and our previous routine no longer works",
+      "before": "A family caregiver facing this situation; direct research is pending.",
+      "after": "The arrangements made before admission no longer fit the relative’s abilities and support needs afterward."
+    },
+    {
+      "id": "wc-candidate-525c2065c0343c5339f4ebec",
+      "title": "Written care instructions are not available in a language I can read",
+      "before": "An older person facing this situation; direct research is pending.",
+      "after": "The person cannot use the written instructions independently because the available language is unfamiliar."
+    },
+    {
+      "id": "wc-candidate-529de4f649abcd268a93b0fe",
+      "title": "I cannot explain my wishes when urgent treatment decisions arise",
+      "before": "An older person facing this situation; direct research is pending.",
+      "after": "A time-sensitive decision arises when the person cannot communicate what matters to them."
+    },
+    {
+      "id": "wc-candidate-530262e97b171ad401b979fd",
+      "title": "Helping my relative eat takes longer than the support I can arrange",
+      "before": "A family caregiver facing this situation; direct research is pending.",
+      "after": "The relative needs more time and assistance at meals than the family member can secure."
+    },
+    {
+      "id": "wc-candidate-5524b7782b3bcbeaa8b15067",
+      "title": "I notice a change but staff and I have no agreed way to share concerns",
+      "before": "A family caregiver facing this situation; direct research is pending.",
+      "after": "The family member has observations to contribute but no clear channel or expectation for follow-up."
+    },
+    {
+      "id": "wc-candidate-55fbec0c52d335ef1f8c5a07",
+      "title": "Professionals discuss my care with relatives instead of with me",
+      "before": "An older person facing this situation; direct research is pending.",
+      "after": "The person is present or affected but conversations about their care bypass their own voice."
+    },
+    {
+      "id": "wc-candidate-561b50ceeb863dfc82d765e4",
+      "title": "Changes to the care schedule reach me too late to adjust my own plans",
+      "before": "A family caregiver facing this situation; direct research is pending.",
+      "after": "Late notice of care changes leaves the family member little time to rearrange work or other commitments."
+    },
+    {
+      "id": "wc-candidate-566b49993b3012a8318a354c",
+      "title": "I want companionship without feeling pushed to replace the person I lost",
+      "before": "An older person facing this situation; direct research is pending.",
+      "after": "The person wants connection that allows space for bereavement and the relationship they still value."
+    },
+    {
+      "id": "wc-candidate-583eff13a08daad90c75393d",
+      "title": "I want regular company rather than a different visitor every time",
+      "before": "An older person facing this situation; direct research is pending.",
+      "after": "Repeated introductions make it harder to build the familiar relationship the person wants."
+    },
+    {
+      "id": "wc-candidate-588de471f37b7e71445fe4f7",
+      "title": "My relative has fallen but insists nothing is wrong",
+      "before": "A family caregiver facing this situation; direct research is pending.",
+      "after": "The family member is concerned after a fall while the relative does not share that concern."
+    },
+    {
+      "id": "wc-candidate-598aebdcb421412f31caa0a7",
+      "title": "I want to keep familiar daily rituals in an unfamiliar home",
+      "before": "An older person facing this situation; direct research is pending.",
+      "after": "Moving has disrupted small routines that help the person feel settled and recognise everyday life."
+    },
+    {
+      "id": "wc-candidate-599109d7f2b019bca8dca8ab",
+      "title": "Getting my relative to the appointment takes more help than I can arrange",
+      "before": "A family caregiver facing this situation; direct research is pending.",
+      "after": "The journey requires assistance that goes beyond simply booking transport or an appointment."
+    },
+    {
+      "id": "wc-candidate-599ac676856470301c9eb4f1",
+      "title": "I have little privacy when a partner or friend visits my care home",
+      "before": "An older person facing this situation; direct research is pending.",
+      "after": "The person cannot easily spend time alone with a visitor in the available space and visiting arrangements."
+    },
+    {
+      "id": "wc-candidate-5bb28be7a0186dbde84fd72f",
+      "title": "I have to help my relative wash but neither of us is comfortable with the arrangement",
+      "before": "A family caregiver facing this situation; direct research is pending.",
+      "after": "Personal washing crosses boundaries that the relative and family member find difficult to negotiate."
+    },
+    {
+      "id": "wc-candidate-5bbb65688472c1c6d33ce1ae",
+      "title": "I forget appointments or lose track of the day",
+      "before": "An older person facing this situation; direct research is pending.",
+      "after": "The person loses track of scheduled events and needs a way to orient themselves during the day."
+    },
+    {
+      "id": "wc-candidate-5e2a75b80f3cddf8b9c8ed12",
+      "title": "I cannot find continued recovery support after the initial programme ends",
+      "before": "A family caregiver facing this situation; direct research is pending.",
+      "after": "The initial support stops while the relative still needs help to continue their recovery."
+    },
+    {
+      "id": "wc-candidate-5e6038bb42a960c51d502585",
+      "title": "My recovery appointments are spread across places I cannot easily reach",
+      "before": "An older person facing this situation; direct research is pending.",
+      "after": "Following the recovery plan requires journeys between locations that are difficult for the person to manage."
+    },
+    {
+      "id": "wc-candidate-5f2111d302cc6087f7827d9e",
+      "title": "I repeat my relative's history whenever a new professional gets involved",
+      "before": "A family caregiver facing this situation; direct research is pending.",
+      "after": "Each new professional starts without enough shared history, leaving the family member to recount it."
+    },
+    {
+      "id": "wc-candidate-6201a9cffacf9a0938fdb082",
+      "title": "A different visiting carer arrives each time and I have to explain the routine again",
+      "before": "A family caregiver facing this situation; direct research is pending.",
+      "after": "Changes in visiting staff leave the family member explaining preferences and daily arrangements repeatedly."
+    },
+    {
+      "id": "wc-candidate-6237abc9cb996d1ed05cd90b",
+      "title": "I become ill and there is no one ready to take over the next care tasks",
+      "before": "A family caregiver facing this situation; direct research is pending.",
+      "after": "The usual carer cannot provide support and no substitute has the information or arrangements to begin."
+    },
+    {
+      "id": "wc-candidate-6457075cb75976a1348121b4",
+      "title": "I am worried about being unable to get up at night",
+      "before": "An older person facing this situation; direct research is pending.",
+      "after": "Night-time movement feels uncertain, especially when the person does not know what help will be available."
+    },
+    {
+      "id": "wc-candidate-657f49c1f7a9fc2523973aaf",
+      "title": "I want help without someone monitoring everything I do",
+      "before": "An older person facing this situation; direct research is pending.",
+      "after": "The person wants practical assistance while retaining control over which activities and information are observed."
+    }
+  ],
+  "map_projection": "All 30 descriptions and unchanged hypothesis/research-planning properties verified on test and live.",
+  "browser": {
+    "url": "http://127.0.0.1:8793/#/all/g/wc-object-dc1696e6934bd1c9d6191f07",
+    "verified_updated_tile": "Reading support requires access to personal correspondence the person wants to keep confidential.",
+    "drill_in": "Situation opens next map level; no mapped solutions is shown as incomplete research coverage. Detail preserves Hypothesis and no claim-level source.",
+    "screenshot": "/private/tmp/whocares-people-context30-20261011.jpg"
+  },
+  "tests": {
+    "command": "node --test tests/atlas-completeness.test.mjs tests/atlas-snapshot-loading.test.mjs",
+    "passed": 12
+  },
+  "generic_situation_context_gaps": {
+    "before": 191,
+    "after_expected": 161
+  },
+  "new_map_items": 0,
+  "image_generation": false,
+  "public_deployment": false,
+  "risks": [
+    "Editorial context is not empirical validation.",
+    "161 generic situation contexts remain; unreviewed solution and illustration coverage remains incomplete."
+  ]
+}
