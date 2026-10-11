@@ -1,0 +1,107 @@
+{
+  "date": "2026-10-11",
+  "batch": "hearing-worker-partial-fit-extension-20261011",
+  "principles_sha256": "1698c1ce402af9694166b15938d24fb9fb05c55e85a330b4e589b7dca5b2a8c2",
+  "manifest_sha256": "5441ff11d6a01db61f17bab987457f4f353c9708c90c6f9ff10ce2e7fe4ac323",
+  "test_proof": {
+    "target": "test",
+    "verified": true,
+    "batch": "hearing-worker-partial-fit-extension-20261011",
+    "manifest_sha256": "5441ff11d6a01db61f17bab987457f4f353c9708c90c6f9ff10ce2e7fe4ac323",
+    "backup_file": "backup-test-1791691919238.json",
+    "object_updates": 3,
+    "new_fit_links": 3,
+    "new_exact_evidence_links": 10,
+    "new_objects": 0,
+    "mapped": 1319,
+    "all_other_rows_unchanged": true,
+    "statuses_unchanged": true,
+    "paths_verified": [
+      [
+        "wc-candidate-9f63250f331320e5d8a1452d",
+        "wc-candidate-3e3140d5d1acb1d95a11ee4e",
+        "wc-object-3afcd012d618360144ef7e3f"
+      ],
+      [
+        "wc-candidate-9f63250f331320e5d8a1452d",
+        "wc-candidate-56c089395b5af15cc1aac074",
+        "wc-object-6f4c1c555de68f6f52ee0c96"
+      ],
+      [
+        "wc-candidate-0129e92ea315098f1154458c",
+        "wc-candidate-e30a91600eb96373649f15c5",
+        "wc-object-36955f1363b76d1cc9e69441"
+      ]
+    ],
+    "public_deployment": false
+  },
+  "live_proof": {
+    "target": "live",
+    "verified": true,
+    "batch": "hearing-worker-partial-fit-extension-20261011",
+    "manifest_sha256": "5441ff11d6a01db61f17bab987457f4f353c9708c90c6f9ff10ce2e7fe4ac323",
+    "backup_file": "backup-live-1791691953315.json",
+    "object_updates": 3,
+    "new_fit_links": 3,
+    "new_exact_evidence_links": 10,
+    "new_objects": 0,
+    "mapped": 1319,
+    "all_other_rows_unchanged": true,
+    "statuses_unchanged": true,
+    "paths_verified": [
+      [
+        "wc-candidate-9f63250f331320e5d8a1452d",
+        "wc-candidate-3e3140d5d1acb1d95a11ee4e",
+        "wc-object-3afcd012d618360144ef7e3f"
+      ],
+      [
+        "wc-candidate-9f63250f331320e5d8a1452d",
+        "wc-candidate-56c089395b5af15cc1aac074",
+        "wc-object-6f4c1c555de68f6f52ee0c96"
+      ],
+      [
+        "wc-candidate-0129e92ea315098f1154458c",
+        "wc-candidate-e30a91600eb96373649f15c5",
+        "wc-object-36955f1363b76d1cc9e69441"
+      ]
+    ],
+    "public_deployment": false
+  },
+  "counts": {
+    "needs": 198,
+    "situations": 1005,
+    "offerings": 116,
+    "unique_mapped": 1319,
+    "situations_with_mapped_offerings_before": 103,
+    "situations_with_mapped_offerings_after": 106
+  },
+  "reused_offerings": [
+    "wc-object-3afcd012d618360144ef7e3f",
+    "wc-object-6f4c1c555de68f6f52ee0c96",
+    "wc-object-36955f1363b76d1cc9e69441"
+  ],
+  "source_urls": [
+    "https://standorte.geers.de/hoerloesungen/hoergeraete/",
+    "https://standorte.geers.de/hoerloesungen/hoergeraete/preise/",
+    "https://rnid.org.uk/information-and-support/rnid-near-you/",
+    "https://rnid.org.uk/employers-and-professionals/training-courses/deaf-awareness-training/"
+  ],
+  "evidence": "Ten exact previously independently reviewed passages reused with original source hashes and provenance; no new paid research. Official pages reopened as a relevance check.",
+  "browser_review": {
+    "paths": "All three map branches inspected, authentic imagery loaded; battery-support and communication-course details opened with evidence and qualifications accessible.",
+    "interaction_limit": "Sensory-aid root click did not change route during the first observation; branch inspected by stable direct URL instead. Not a broad drill-in interaction certification.",
+    "screenshots": {
+      "/private/tmp/whocares-hearing-worker-battery-20261011.png": "e1c5f6710f525e65e116c1ca4ffe51cb8c91bf3ce2b5511fa04f4bc5b29780cb",
+      "/private/tmp/whocares-hearing-worker-checks-20261011.png": "ac59eeb3ed92d6a205f3162156bb38c37eb019c0e1ac2aadb0a074519493c61e",
+      "/private/tmp/whocares-hearing-worker-training-20261011.png": "a6f36cbb853f65c8d86809991dc7c601d82089073bdab965b24e16b8079aadeb"
+    }
+  },
+  "limitations": [
+    "Needs and situations remain hypotheses; links are partial interpretations, not demand or efficacy validation.",
+    "UK local hearing-aid help does not supply immediate on-site support or establish German availability.",
+    "GEERS device checks are not claimed to provide clinical hearing-change diagnosis.",
+    "General organisational communication training does not establish care-specific effects.",
+    "Existing authentic media remain internal-only with reuse rights unconfirmed; generation paused."
+  ],
+  "public_ui_deployment": false
+}
