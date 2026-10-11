@@ -1,10 +1,11 @@
 import postgres from '../workers/api/node_modules/postgres/src/index.js';
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import assert from 'node:assert/strict';
+const withdraw=process.argv.includes('--withdraw');
 const target=process.argv[2];assert(['inspect','test','live'].includes(target));
-const dir=new URL('../research-staging/starting-care-scene/',import.meta.url);await mkdir(dir,{recursive:true});
-const id='wc-candidate-f85711be98f5f495e1a4bc5d',batch='starting-care-illustrative-scene-20261011';
-const scene={status:'illustrative',title:'Care starts before the family feels ready',summary:'Taking on care can mean working out whom to contact, what help is needed and how much the family can realistically provide.',question:'How might we help a family get through the first weeks of care with a clear plan and realistic responsibilities?',points:{
+const dir=new URL(withdraw?'../research-staging/starting-care-scene-withdrawal/':'../research-staging/starting-care-scene/',import.meta.url);await mkdir(dir,{recursive:true});
+const id='wc-candidate-f85711be98f5f495e1a4bc5d',batch=withdraw?'starting-care-scene-withdrawal-20261011':'starting-care-illustrative-scene-20261011';
+const scene={status:withdraw?'withdrawn':'illustrative',title:'Care starts before the family feels ready',summary:'Taking on care can mean working out whom to contact, what help is needed and how much the family can realistically provide.',question:'How might we help a family get through the first weeks of care with a clear plan and realistic responsibilities?',points:{
  'wc-candidate-a71bd49ef00861c5ea62a976':'Care has started, but the first steps are unclear',
  'wc-candidate-f2e55b37c36627611264ac44':'No clear first contact for arranging support',
  'wc-candidate-161129e4c4a42701bad591dd':'Uncertainty about what needs professional help',
@@ -29,7 +30,7 @@ try{
   const rows=JSON.parse(JSON.stringify(await sql`SELECT * FROM atlas.objects`));
   await writeFile(new URL('backup-'+target+'.json',dir),JSON.stringify({objects:rows,target:before,edges}));
   const scope={...before.scope,navigation:{...before.scope.navigation,scene}};
-  const provenance={...before.provenance,scene_presentation_review:{date:'2026-10-11',actor:'Codex',method:'User-authorised illustrative scene trial. Grouping and how-might-we question are editorial, not observed co-occurrence, validated demand or a prescribed solution. Existing identities, evidence and hypothesis status retained.'}};
+  const provenance={...before.provenance,[withdraw?'scene_withdrawal_review':'scene_presentation_review']:{date:'2026-10-11',actor:'Codex',method:withdraw?'User rejected the scene as insufficiently concrete. Presentation withdrawn; original editorial content retained for audit. No data deletion or evidence promotion.':'User-authorised illustrative scene trial. Grouping and how-might-we question are editorial, not observed co-occurrence, validated demand or a prescribed solution. Existing identities, evidence and hypothesis status retained.'}};
   await sql.begin(async tx=>{
    await tx`SELECT set_config('atlas.batch_id',${batch},true)`;
    const locked=(await tx`SELECT * FROM atlas.objects WHERE id=${id} FOR UPDATE`)[0];assert.deepEqual(locked,before);

@@ -1,5 +1,7 @@
 # Scene-based discovery trial — 11 October 2026
 
+**Withdrawn after user review.** The user could not identify a starting point and found the scene insufficiently meaningful. Its presentation status is now `withdrawn`; the metadata remains in the database for audit, while the desktop renderer no longer displays it. Do not scale this design on the basis of functional tests. The failure was an abstract umbrella statement over hypotheses, with the long needs list still dominating orientation. A concrete situation requires a person, circumstance, goal and consequential obstacle; a headline plus plausible related points does not establish that situation.
+
 ## Product question
 
 Can a venture builder understand a bounded problem faster when related difficulties are presented through a recognisable scene and an open question, rather than a flat list of equally prominent statements?
