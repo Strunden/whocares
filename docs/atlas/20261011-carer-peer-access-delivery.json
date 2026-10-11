@@ -1,0 +1,133 @@
+{
+  "date": "2026-10-11",
+  "status": "verified_canonical_data_delivery",
+  "job_id": "5708067aa2ef8266631a1c3f96ab5489ecf7bf11980fd9b37d75326c62d35a9c",
+  "original_finding_held": "finding-1223eb174a14c3c19aa574a3",
+  "qualified_finding": "finding-9569a865c0c3459537f81bf5",
+  "qualified_review": "supported",
+  "qualified_review_current": true,
+  "review_metrics": {
+    "duration_seconds": 41.107,
+    "model_calls": 3,
+    "model_calls_by_role": {
+      "researcher": 0,
+      "reviewer": 3
+    },
+    "counted_usd": 0.0072105,
+    "provider_reported_usd": 0.002691174,
+    "http_requests": 0,
+    "page_calls": 0,
+    "search_calls": 0
+  },
+  "manual_clause_check": "All 15 attached exact passages matched capture URL, hash and passage text; price, self-help-group and phone-to-web prerequisites retain their own source versions. Uncaptured news publication date omitted. Provider claims do not establish outcomes, reply timing, moderation or security.",
+  "delivery": {
+    "existing_offering_updates": 1,
+    "existing_fit_updates": 1,
+    "new_identities": 0,
+    "new_source_versions": 1,
+    "new_exact_evidence_links": 30,
+    "status_unchanged": true,
+    "all_unrelated_rows_unchanged": true
+  },
+  "test": {
+    "target": "test",
+    "verified": true,
+    "batch": "carer-peer-access-qualification-20261011",
+    "manifest_sha256": "648945369f31e52af0a30e854b81c56ff4ba39c9e3fcd03eb7511faa89ba1dd6",
+    "backup_file": "backup-test-1791695950200.json",
+    "object_updates": 1,
+    "existing_fit_updates": 1,
+    "new_sources": 1,
+    "new_exact_evidence_links": 30,
+    "mapped": 1319,
+    "all_other_rows_unchanged": true,
+    "statuses_unchanged": true,
+    "public_ui_deployment": false
+  },
+  "live": {
+    "target": "live",
+    "verified": true,
+    "batch": "carer-peer-access-qualification-20261011",
+    "manifest_sha256": "648945369f31e52af0a30e854b81c56ff4ba39c9e3fcd03eb7511faa89ba1dd6",
+    "backup_file": "backup-live-1791695985366.json",
+    "object_updates": 1,
+    "existing_fit_updates": 1,
+    "new_sources": 1,
+    "new_exact_evidence_links": 30,
+    "mapped": 1319,
+    "all_other_rows_unchanged": true,
+    "statuses_unchanged": true,
+    "public_ui_deployment": false
+  },
+  "readability_test": {
+    "target": "test",
+    "verified": true,
+    "batch": "carer-peer-access-readability-20261011",
+    "changes_sha256": "37442a3da2375125b1e64bb556ab3ca9aef931303924fab90b3cd83edeaaed51",
+    "backup_file": "backup-refinement-test-1791696097519.json",
+    "object_updates": 1,
+    "all_other_rows_unchanged": true,
+    "status_preserved": true,
+    "fields": [
+      "scope.peer_access_review_context removed",
+      "provenance.peer_access_readability_review"
+    ],
+    "public_ui_deployment": false
+  },
+  "readability_live": {
+    "target": "live",
+    "verified": true,
+    "batch": "carer-peer-access-readability-20261011",
+    "changes_sha256": "37442a3da2375125b1e64bb556ab3ca9aef931303924fab90b3cd83edeaaed51",
+    "backup_file": "backup-refinement-live-1791696119418.json",
+    "object_updates": 1,
+    "all_other_rows_unchanged": true,
+    "status_preserved": true,
+    "fields": [
+      "scope.peer_access_review_context removed",
+      "provenance.peer_access_readability_review"
+    ],
+    "public_ui_deployment": false
+  },
+  "projection": {
+    "verified": true,
+    "paths": [
+      {
+        "target": "test",
+        "paths": [
+          [
+            "wc-object-5c46dc0552ca559032668397",
+            "wc-object-c03814a467f756e6a99f8b16",
+            "wc-object-d4ae12f156db25ed2809caa2"
+          ]
+        ]
+      },
+      {
+        "target": "live",
+        "paths": [
+          [
+            "wc-object-5c46dc0552ca559032668397",
+            "wc-object-c03814a467f756e6a99f8b16",
+            "wc-object-d4ae12f156db25ed2809caa2"
+          ]
+        ]
+      }
+    ],
+    "identity_preserved": true,
+    "fit_statement": "Peer chat from home; web login needs the smartphone app. Reply timing unverified."
+  },
+  "browser": {
+    "url": "http://127.0.0.1:8793/#/all/g/wc-object-5c46dc0552ca559032668397%2Fwc-object-c03814a467f756e6a99f8b16",
+    "fit": "Peer chat from home; web login needs the smartphone app. Reply timing unverified.",
+    "authentic_existing_app_media_visible": true,
+    "access_and_source_sections_visible": true,
+    "redundant_full_finding_removed": true,
+    "screenshot": "/private/tmp/whocares-carer-peer-access-20261011.png"
+  },
+  "limits": [
+    "No public UI deployment, new map identities or image generation.",
+    "Actual app/web login, eligibility, after-care access and security untested; provider descriptions only.",
+    "Original human and offering candidate statuses unchanged; functional rendering does not validate market demand.",
+    "Evidence/source versions and full six-table backups retained privately outside Git."
+  ]
+}
