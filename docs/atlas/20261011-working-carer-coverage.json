@@ -1,0 +1,129 @@
+{
+  "date": "2026-10-11",
+  "status": "verified_canonical_data_delivery",
+  "batch": "working-carer-partial-fit-extension-20261011",
+  "principles_sha256": "1698c1ce402af9694166b15938d24fb9fb05c55e85a330b4e589b7dca5b2a8c2",
+  "method": "Reuse one canonical offering, six exact previously independently reviewed passages and its reviewed authentic service identity; manual partial-fit and current official-page checks. No new paid indexer dispatch for unchanged source facts.",
+  "previous_indexer_job": "e3358612e54f57c2a7bfe865996512b4a2656d6a2d872fa6a494dbc838902933",
+  "original_source_capture_date": "2026-10-10",
+  "manual_source_verification": "Official page opened on 11 October still describes work-and-care relief/leave advice, nationwide phone/email access, Monday\u2013Thursday 9:00\u201318:00 and anonymous/confidential service claims. Reused exact captured passages and original source hashes/dates; did not upgrade them to a new capture. Provider description does not establish individual legal eligibility, employer agreement, replacement care, prevalence or efficacy.",
+  "coverage": {
+    "verified": true,
+    "covered_before": 111,
+    "covered_after": 114,
+    "new_covered_situations": [
+      "wc-candidate-4fd22ec569ea355ed9c74c26",
+      "wc-candidate-c33a9ebb4198951ea9925ff1",
+      "wc-candidate-d3b0e9d180c44ba3589ae1dc"
+    ],
+    "new_offering_identities": 0,
+    "reviewed_passages_reused": 6
+  },
+  "fits": [
+    {
+      "solution": "wc-object-47d1d9686ddeb2ed949408ae",
+      "situation": "wc-candidate-d3b0e9d180c44ba3589ae1dc",
+      "fit": "Advice on short-term work interruption; no emergency care cover supplied.",
+      "media_id": "media-pflegetelefon-logo-20261010"
+    },
+    {
+      "solution": "wc-object-47d1d9686ddeb2ed949408ae",
+      "situation": "wc-candidate-c33a9ebb4198951ea9925ff1",
+      "fit": "Discuss care-related leave options; a suitable arrangement remains unverified.",
+      "media_id": "media-pflegetelefon-logo-20261010"
+    },
+    {
+      "solution": "wc-object-47d1d9686ddeb2ed949408ae",
+      "situation": "wc-candidate-4fd22ec569ea355ed9c74c26",
+      "fit": "Advice on leave options to discuss at work; employer flexibility unverified.",
+      "media_id": "media-pflegetelefon-logo-20261010"
+    }
+  ],
+  "test": {
+    "target": "test",
+    "verified": true,
+    "batch": "working-carer-partial-fit-extension-20261011",
+    "manifest_sha256": "1b28b11722d11215237df10fed20794bfe0dd6000692e0b5cbc11de8d0cc3a47",
+    "backup_file": "backup-test-1791698600965.json",
+    "object_updates": 3,
+    "new_fit_links": 3,
+    "new_exact_evidence_links": 18,
+    "new_objects": 0,
+    "mapped": 1319,
+    "all_other_rows_unchanged": true,
+    "statuses_unchanged": true,
+    "paths_verified": [
+      [
+        "wc-object-fa9042d4e8da64241af3b3f1",
+        "wc-candidate-d3b0e9d180c44ba3589ae1dc",
+        "wc-object-47d1d9686ddeb2ed949408ae"
+      ],
+      [
+        "wc-object-fa9042d4e8da64241af3b3f1",
+        "wc-candidate-c33a9ebb4198951ea9925ff1",
+        "wc-object-47d1d9686ddeb2ed949408ae"
+      ],
+      [
+        "wc-object-fa9042d4e8da64241af3b3f1",
+        "wc-candidate-4fd22ec569ea355ed9c74c26",
+        "wc-object-47d1d9686ddeb2ed949408ae"
+      ]
+    ],
+    "public_deployment": false
+  },
+  "live": {
+    "target": "live",
+    "verified": true,
+    "batch": "working-carer-partial-fit-extension-20261011",
+    "manifest_sha256": "1b28b11722d11215237df10fed20794bfe0dd6000692e0b5cbc11de8d0cc3a47",
+    "backup_file": "backup-live-1791698660206.json",
+    "object_updates": 3,
+    "new_fit_links": 3,
+    "new_exact_evidence_links": 18,
+    "new_objects": 0,
+    "mapped": 1319,
+    "all_other_rows_unchanged": true,
+    "statuses_unchanged": true,
+    "paths_verified": [
+      [
+        "wc-object-fa9042d4e8da64241af3b3f1",
+        "wc-candidate-d3b0e9d180c44ba3589ae1dc",
+        "wc-object-47d1d9686ddeb2ed949408ae"
+      ],
+      [
+        "wc-object-fa9042d4e8da64241af3b3f1",
+        "wc-candidate-c33a9ebb4198951ea9925ff1",
+        "wc-object-47d1d9686ddeb2ed949408ae"
+      ],
+      [
+        "wc-object-fa9042d4e8da64241af3b3f1",
+        "wc-candidate-4fd22ec569ea355ed9c74c26",
+        "wc-object-47d1d9686ddeb2ed949408ae"
+      ]
+    ],
+    "public_deployment": false
+  },
+  "browser": {
+    "verified_leaves": [
+      "wc-candidate-d3b0e9d180c44ba3589ae1dc",
+      "wc-candidate-c33a9ebb4198951ea9925ff1",
+      "wc-candidate-4fd22ec569ea355ed9c74c26"
+    ],
+    "detail_access_unknowns_and_sources_visible": true,
+    "click_drill_verified": true,
+    "stable_content_zoom": [
+      100,
+      120
+    ],
+    "screenshot": "/private/tmp/whocares-working-carer-coverage-20261011.png",
+    "review_url": "http://127.0.0.1:8793/#/all/g/wc-object-fa9042d4e8da64241af3b3f1%2Fwc-candidate-4fd22ec569ea355ed9c74c26"
+  },
+  "limits": [
+    "Internal branch only; no new product identities, media or public deployment.",
+    "Care-and-employment advice only; no individual legal eligibility, employer flexibility, guaranteed leave, emergency cover or income outcome established.",
+    "Human hypotheses and validation gaps retained; selected reviewed service identity belongs to the existing offering. Service-photograph gap remains; source stock photograph is not a verified depiction of service staff.",
+    "Existing reviewed logo fills media slot; no actual service-staff photograph verified. Need/situation illustrations remain temporary neutral fallback while image generation is paused.",
+    "No actual call, eligibility check, employer negotiation, appointment or venture-builder user test.",
+    "No public UI deployment; canonical data is updated and internal preview checked."
+  ]
+}
